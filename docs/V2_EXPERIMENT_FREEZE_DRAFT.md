@@ -10,7 +10,9 @@ Primary objective: at a predeclared matched intervention budget, outperform the 
 
 The historical 9,000-trace evaluation is development-only evidence for V2. It must not be reused as the confirmatory superiority test.
 
-A retrospective frozen-ledger diagnostic found that global ranking by the existing state-symmetrized HGB score is materially stronger than the historical retriever-specific operating thresholds. These diagnostics are exploratory and must not be presented as fresh confirmatory evidence.
+A retrospective frozen-ledger diagnostic found that global ranking by the existing state-symmetrized HGB score is materially stronger than the historical retriever-specific operating thresholds. At 370 actions, global HGB ranking yielded 191 recoveries, 7 damages, and 184 net corrections on the historical cohort. Exact Conservative stratum budgets applied to HGB yielded 173 recoveries, 17 damages, and 156 net corrections. These diagnostics are exploratory and must not be presented as fresh confirmatory evidence.
+
+Repeated grouped nested development validation supports a lightweight three-state damage-aware correction on top of HGB. At a 5.0% reference budget (450 of 9,000 traces), the candidate improved net correction over raw HGB in all ten development seeds and lowered damage in all ten. Repeated folds are sensitivity analyses on one historical cohort, not independent replications.
 
 ## Prospective design to freeze before fresh-label access
 
@@ -41,20 +43,21 @@ Development targets, not guarantees:
 
 ## Candidate V2 family
 
-Start from the existing state-symmetrized HGB ranking because the historical frozen ledger indicates it is stronger than the historical logistic operating point. A more complex stacker or dual-head model is accepted only if nested question-grouped development validation improves matched-budget net correction over the raw HGB ranking; complexity is not itself a contribution.
+The provisional V2 architecture is **HGB backbone + three-state damage-aware meta correction**. The meta model predicts recovery, damage, or neutral transition behavior from label-free frozen selector signals. Its decision utility is
 
-Candidate utility forms may include:
+`U = p(recovery) - lambda * p(damage)`.
 
-- raw global HGB ranking;
-- recovery/damage two-head utility: U = p(recovery) - lambda * p(damage);
-- four-state expected utility over 00/01/10/11 transitions;
-- optional verification signals such as paired NLI scores, provided they are computed label-free and frozen before fresh evaluation.
+The utility is quantile-normalized and fused with the state-symmetrized HGB ranking. Raw global HGB remains a mandatory ablation and fallback. A meta correction is retained only if grouped nested development validation improves matched-budget net correction and/or reduces damage without dataset-ID features.
 
-Model-family and lambda selection must be completed on development/calibration data only.
+A four-state 00/01/10/11 model is not the primary candidate because the historical scorable set contains too few answer-different both-correct cases for a stable 11 class. Dataset identity is excluded from the primary feature set even though exploratory development showed gains, because benchmark-specific coding would weaken transfer claims.
+
+Optional paired NLI verification signals may be added only if they are computed label-free and improve grouped development validation before final freeze. Complexity itself is not a contribution.
 
 ## Budget policy
 
-Prefer a predeclared percentage budget for the new confirmatory study rather than inheriting the historical Conservative action count solely because it was used previously. Candidate primary budgets to compare during development include 4.1% and 5.0%; exactly one primary budget must be frozen before fresh-label access.
+The preferred prospective primary action rate is **5.0% of retriever-conditioned traces**. On the historical 9,000-trace reference cohort this is 450 actions. This replaces the arbitrary reuse of the historical 370-action count with a scale-free deployment budget.
+
+The 5.0% rate is a development-selected protocol choice and must be frozen before fresh-label access. V2 and GbV will receive the same total number of actions under the primary comparison. Secondary analyses will include exact dataset x retriever budget matching and a predeclared multi-budget curve to test whether any advantage is confined to one operating point.
 
 ## Integrity
 
