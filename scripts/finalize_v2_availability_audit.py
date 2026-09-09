@@ -129,12 +129,14 @@ def main() -> None:
 
     source_records = {}
     source_sets = {}
+    source_counts = {}
     for dataset in REQUIRED_DATASETS:
         path = source_paths[dataset]
         rows = read_ids(path)
         wrong_dataset = sum(row_dataset != dataset for row_dataset, _ in rows)
         duplicates = len(rows) - len(set(rows))
         source_sets[dataset] = set(rows)
+        source_counts[dataset] = len(set(rows))
         source_records[dataset] = {
             "path": str(path),
             "row_count": len(rows),
@@ -194,6 +196,10 @@ def main() -> None:
         )
 
     passed = all(item["passed"] for item in checks)
+    coverage_categories = coverage.get("categories", [])
+    if not isinstance(coverage_categories, list):
+        coverage_categories = []
+
     result = {
         "status": "PASS" if passed else "FAIL",
         "schema_version": "daa-v2-fresh-availability-audit-v1",
@@ -202,8 +208,16 @@ def main() -> None:
         "git_commit_or_tree_hash": args.git_state,
         "target_unique_questions_per_dataset": TARGET_PER_DATASET,
         "private_artifact_verification_sha256": sha256(args.private_artifacts),
+        "source_counts": source_counts,
         "source_ledgers": source_records,
         "raw_source_hashes": raw_hashes,
+        "forbidden_counts": forbidden_counts,
+        "forbidden_category_coverage": {
+            "path": str(args.forbidden_coverage),
+            "sha256": sha256(args.forbidden_coverage),
+            "category_count": len(coverage_categories),
+        },
+        "forbidden_ledgers": coverage_categories,
         "forbidden_union": {
             "path": str(args.forbidden_union),
             "sha256": sha256(args.forbidden_union),
@@ -211,12 +225,20 @@ def main() -> None:
             "counts_by_dataset": forbidden_counts,
             "coverage_manifest_sha256": sha256(args.forbidden_coverage),
         },
+        "overlap_checks": {
+            "independently_recounted": True,
+            "source_forbidden_overlap_counts": overlap,
+        },
         "source_forbidden_overlap_counts": overlap,
         "available_after_exclusion": available,
         "selector_manifest_sha256": sha256(args.selector_manifest),
         "no_selection_sha256": sha256(args.no_selection),
         "process_evidence_sha256": sha256(args.process_evidence),
         "process_evidence": {field: process.get(field) for field in required_process_fields},
+        "model_calls": process.get("model_calls"),
+        "generation_calls": process.get("generation_calls"),
+        "retrieval_calls": process.get("retrieval_calls"),
+        "fresh_labels_accessed": process.get("fresh_labels_accessed"),
         "identifier_only_projection_evidence": {
             "source_ledgers_schema_exact": True,
             "forbidden_union_schema_exact": True,
