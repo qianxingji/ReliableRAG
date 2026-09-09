@@ -15,59 +15,20 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.evaluation.answer_normalization import assess_pair_eligibility  # noqa: E402
+from src.evaluation.fresh_schema import read_fresh_branches  # noqa: E402
 from src.verification.gbv_nli import (  # noqa: E402
     GBV_MODEL_ID,
     GBV_MODEL_REVISION,
     GBVPostAnsweringNLI,
 )
 
-ALLOWED_INPUT_FIELDS = {
-    "dataset",
-    "retriever",
-    "sample_id",
-    "question",
-    "a0",
-    "a1",
-    "evidence0",
-    "evidence1",
-}
-REQUIRED_INPUT_FIELDS = ALLOWED_INPUT_FIELDS
-
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024, ), b""):
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
-
-
-def read_canonical(path: Path) -> list[dict]:
-    rows: list[dict] = []
-    with path.open("r", encoding="utf-8") as handle:
-        for line_number, line in enumerate(handle, 1):
-            if not line.strip():
-                continue
-            row = json.loads(line)
-            extra = set(row) - ALLOWED_INPUT_FIELDS
-            missing = REQUIRED_INPUT_FIELDS - set(row)
-            if extra or missing:
-                raise RuntimeError(
-                    f"canonical fresh row {line_number}: extra={sorted(extra)}, missing={sorted(missing)}"
-                )
-            if not isinstance(row["evidence0"], list) or not all(
-                isinstance(value, str) for value in row["evidence0"]
-            ):
-                raise RuntimeError(f"row {line_number}: evidence0 must be list[str]")
-            if not isinstance(row["evidence1"], list) or not all(
-                isinstance(value, str) for value in row["evidence1"]
-            ):
-                raise RuntimeError(f"row {line_number}: evidence1 must be list[str]")
-            rows.append(row)
-    keys = [(row["dataset"], row["retriever"], row["sample_id"]) for row in rows]
-    if len(set(keys)) != len(keys):
-        raise RuntimeError("duplicate dataset/retriever/sample_id keys in canonical fresh input")
-    return rows
 
 
 def main() -> None:
@@ -86,7 +47,7 @@ def main() -> None:
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    rows = read_canonical(args.branches)
+    rows = read_fresh_branches(args.branches)
     scorer = GBVPostAnsweringNLI(
         model_id=GBV_MODEL_ID,
         revision=GBV_MODEL_REVISION,
