@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Seal Generate-but-Verify comparison actions before fresh labels are opened.
 
-The primary comparison matches the total number of DAA-V2 REPLACE actions. A
-secondary comparison matches DAA-V2's action count inside each dataset x retriever
-stratum. Selection uses only the paired GbV margin and stable identifiers.
+Three frozen GbV operating points are produced:
+1. primary same-total-budget ranking comparator;
+2. secondary exact dataset x retriever budget-matched ranking comparator;
+3. historical-development-selected GbV thresholds transferred unchanged to fresh data.
+
+All three use only the paired GbV margin and stable identifiers. No fresh labels enter.
 """
 from __future__ import annotations
 
@@ -13,6 +16,12 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+
+GBV_DEV_THRESHOLDS = {
+    "bm25": 0.0473407506942749,
+    "dense": 0.01295558363199234,
+    "hybrid": 0.4287375956773758,
+}
 
 
 def sha256(path: Path) -> str:
@@ -33,7 +42,7 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def key(row: dict) -> tuple[str, str, str]:
-    return (row["dataset"], row["retriever"], row["sample_id"])
+    return (str(row["dataset"]), str(row["retriever"]), str(row["sample_id"]))
 
 
 def main() -> None:
@@ -65,6 +74,9 @@ def main() -> None:
         margin = row.get("gbv_margin")
         if margin is None or row.get("eligible") is False:
             continue
+        retriever = k[1].lower()
+        if retriever not in GBV_DEV_THRESHOLDS:
+            raise RuntimeError(f"unknown retriever for frozen GbV threshold: {retriever}")
         eligible.append((k, float(margin)))
     eligible.sort(key=lambda item: (-item[1], item[0]))
     if len(eligible) < len(v2_replace):
@@ -85,6 +97,12 @@ def main() -> None:
             )
         gbv_stratum.update(k for k, _ in candidates[:budget])
 
+    gbv_dev_selected = {
+        k
+        for k, margin in eligible
+        if margin >= GBV_DEV_THRESHOLDS[k[1].lower()]
+    }
+
     args.actions_output.parent.mkdir(parents=True, exist_ok=True)
     with args.actions_output.open("w", encoding="utf-8") as handle:
         for k in sorted(v2_by_key):
@@ -96,11 +114,13 @@ def main() -> None:
                 "gbv_margin": None if margin is None else float(margin),
                 "gbv_global_matched": "REPLACE" if k in gbv_global else "KEEP",
                 "gbv_stratum_matched": "REPLACE" if k in gbv_stratum else "KEEP",
+                "gbv_dev_selected": "REPLACE" if k in gbv_dev_selected else "KEEP",
             }
             handle.write(json.dumps(record, sort_keys=True) + "\n")
 
     global_strata = Counter((k[0], k[1]) for k in gbv_global)
     stratum_strata = Counter((k[0], k[1]) for k in gbv_stratum)
+    dev_strata = Counter((k[0], k[1]) for k in gbv_dev_selected)
     seal = {
         "status": "GBV_PRELABEL_MATCHED_ACTION_SEAL",
         "saved_utc": datetime.now(timezone.utc).isoformat(),
@@ -108,6 +128,7 @@ def main() -> None:
         "v2_replace_count": len(v2_replace),
         "gbv_global_replace_count": len(gbv_global),
         "gbv_stratum_replace_count": len(gbv_stratum),
+        "gbv_dev_selected_replace_count": len(gbv_dev_selected),
         "v2_actions_sha256": sha256(args.v2_actions),
         "gbv_score_ledger_sha256": sha256(args.gbv_scores),
         "gbv_actions_sha256": sha256(args.actions_output),
@@ -123,6 +144,15 @@ def main() -> None:
             f"{dataset}:{retriever}": count
             for (dataset, retriever), count in sorted(stratum_strata.items())
         },
+        "gbv_dev_selected_stratum_counts": {
+            f"{dataset}:{retriever}": count
+            for (dataset, retriever), count in sorted(dev_strata.items())
+        },
+        "gbv_dev_selected_thresholds": GBV_DEV_THRESHOLDS,
+        "gbv_dev_threshold_source": (
+            "Historical 7,200-trace development selection from the frozen published-baseline handoff; "
+            "transferred unchanged and never recalibrated on fresh labels."
+        ),
         "gold_or_outcome_input": False,
         "tie_break": "descending GbV margin; then dataset, retriever, sample_id lexical order",
     }
