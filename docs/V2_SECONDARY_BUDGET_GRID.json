@@ -1,0 +1,9 @@
+{
+  "schema_version": "daa-v2-secondary-budget-grid-v1",
+  "primary_action_rate": 0.05,
+  "secondary_action_rates": [0.01, 0.025, 0.05, 0.075, 0.10],
+  "budget_count_rule": "round(trace_count * action_rate)",
+  "comparison_rule": "At every rate, DAA-V2, raw global HGB, and GbV use exactly the same total action count and their own pre-label sealed ranking scores.",
+  "interpretation": "This grid is frozen before fresh-label access. It is secondary descriptive recovery-damage operating-point evidence and cannot replace the primary 5.0% result.",
+  "engineering_frontier_target": "DAA-V2 should have higher net correction than GbV with no more damage at at least 4 of the 5 frozen rates. This is not a familywise-controlled hypothesis test."
+}
