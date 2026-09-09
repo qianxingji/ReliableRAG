@@ -4,11 +4,15 @@
 Run this script only after both action ledgers have been sealed without labels. It joins
 numeric evaluation outcomes, computes policy metrics, and performs one predeclared
 question-cluster bootstrap for paired V2-minus-GbV differences.
+
+The script distinguishes the formal primary superiority statement (paired EM interval
+lower bound > 0) from deliberately stronger engineering success targets. The latter are
+predeclared design goals, not a claim of familywise statistical control.
 """
 from __future__ import annotations
 
 import argparse
-from collections import defaultdict
+from collections import Counter, defaultdict
 import hashlib
 import json
 from pathlib import Path
@@ -17,6 +21,10 @@ import numpy as np
 
 BOOTSTRAP_SEED = 20260920
 BOOTSTRAP_DRAWS = 10000
+HIGH_STANDARD_EM_POINT_PP = 0.60
+HIGH_STANDARD_EM_LCB_PP = 0.30
+HIGH_STANDARD_F1_POINT_PP = 0.50
+STRETCH_DAMAGE_RATIO = 0.75
 
 
 def sha256(path: Path) -> str:
@@ -37,7 +45,7 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def key(row: dict) -> tuple[str, str, str]:
-    return (row["dataset"], row["retriever"], row["sample_id"])
+    return (str(row["dataset"]), str(row["retriever"]), str(row["sample_id"]))
 
 
 def selected_metrics(actions: dict, outcomes: dict) -> dict[str, float | int]:
@@ -69,7 +77,7 @@ def selected_metrics(actions: dict, outcomes: dict) -> dict[str, float | int]:
         "f1": 100.0 * selected_f1 / n,
         "delta_em_pp": 100.0 * (selected_em - baseline_em) / n,
         "delta_f1_pp": 100.0 * (selected_f1 - baseline_f1) / n,
-        "system_damage_percent": 100.0 * damage / initially_correct,
+        "system_damage_percent": 100.0 * damage / initially_correct if initially_correct else 0.0,
         "action_recovery_percent": 100.0 * recovery / replace if replace else 0.0,
         "action_damage_percent": 100.0 * damage / replace if replace else 0.0,
     }
@@ -139,12 +147,17 @@ def cluster_bootstrap(v2_actions: dict, gbv_actions: dict, outcomes: dict) -> di
     point_em = 100.0 * sum(v2_em[k] - gbv_em[k] for k in outcomes) / len(outcomes)
     point_f1 = 100.0 * sum(v2_f1[k] - gbv_f1[k] for k in outcomes) / len(outcomes)
     initial_correct = sum(int(outcomes[k]["a0_em"]) for k in outcomes)
-    point_damage = 100.0 * sum(v2_damage[k] - gbv_damage[k] for k in outcomes) / initial_correct
+    point_damage = (
+        100.0 * sum(v2_damage[k] - gbv_damage[k] for k in outcomes) / initial_correct
+        if initial_correct
+        else float("nan")
+    )
 
     return {
         "cluster_count": len(clusters),
         "draws": BOOTSTRAP_DRAWS,
         "seed": BOOTSTRAP_SEED,
+        "resampling_unit": "dataset:sample_id cluster; all retriever rows retained",
         "v2_minus_gbv_em_pp": {"point": point_em, "ci95": interval(em_samples)},
         "v2_minus_gbv_f1_pp": {"point": point_f1, "ci95": interval(f1_samples)},
         "v2_minus_gbv_damage_pp": {
@@ -152,6 +165,28 @@ def cluster_bootstrap(v2_actions: dict, gbv_actions: dict, outcomes: dict) -> di
             "ci95": interval(damage_samples),
         },
     }
+
+
+def stratum_action_counts(actions: dict) -> Counter:
+    return Counter((k[0], k[1]) for k, action in actions.items() if action == "REPLACE")
+
+
+def subgroup_metrics(actions: dict, outcomes: dict, *, field: int) -> dict[str, dict]:
+    result = {}
+    for name in sorted({k[field] for k in outcomes}):
+        subset = {k: outcome for k, outcome in outcomes.items() if k[field] == name}
+        result[name] = selected_metrics({k: actions[k] for k in subset}, subset)
+    return result
+
+
+def subgroup_em_differences(v2_actions: dict, gbv_actions: dict, outcomes: dict, *, field: int) -> dict[str, float]:
+    points = {}
+    for name in sorted({k[field] for k in outcomes}):
+        subset = {k: outcome for k, outcome in outcomes.items() if k[field] == name}
+        v2_em, _, _ = policy_values({k: v2_actions[k] for k in subset}, subset)
+        gbv_em, _, _ = policy_values({k: gbv_actions[k] for k in subset}, subset)
+        points[name] = 100.0 * sum(v2_em[k] - gbv_em[k] for k in subset) / len(subset)
+    return points
 
 
 def main() -> None:
@@ -168,39 +203,68 @@ def main() -> None:
     v2_by_key = {key(row): row for row in v2_rows}
     gbv_by_key = {key(row): row for row in gbv_rows}
     outcomes = {key(row): row for row in outcome_rows}
+    if len(v2_by_key) != len(v2_rows) or len(gbv_by_key) != len(gbv_rows) or len(outcomes) != len(outcome_rows):
+        raise RuntimeError("duplicate keys in V2, GbV, or outcome ledger")
     if set(v2_by_key) != set(gbv_by_key) or set(v2_by_key) != set(outcomes):
         raise RuntimeError("V2, GbV, and outcome ledgers must contain identical keys")
 
     v2_actions = {k: row["action"] for k, row in v2_by_key.items()}
+    v2_replace_count = sum(action == "REPLACE" for action in v2_actions.values())
+    v2_strata = stratum_action_counts(v2_actions)
+
     comparisons = {}
     for field in ("gbv_global_matched", "gbv_stratum_matched"):
         gbv_actions = {k: row[field] for k, row in gbv_by_key.items()}
+        gbv_replace_count = sum(action == "REPLACE" for action in gbv_actions.values())
+        if gbv_replace_count != v2_replace_count:
+            raise RuntimeError(
+                f"{field} has {gbv_replace_count} replacements but V2 has {v2_replace_count}"
+            )
+        if field == "gbv_stratum_matched" and stratum_action_counts(gbv_actions) != v2_strata:
+            raise RuntimeError("GbV stratum-matched action counts do not exactly equal V2 strata")
+
         v2_metrics = selected_metrics(v2_actions, outcomes)
         gbv_metrics = selected_metrics(gbv_actions, outcomes)
         bootstrap = cluster_bootstrap(v2_actions, gbv_actions, outcomes)
+        dataset_points = subgroup_em_differences(v2_actions, gbv_actions, outcomes, field=0)
+        retriever_points = subgroup_em_differences(v2_actions, gbv_actions, outcomes, field=1)
+        v2_retriever_metrics = subgroup_metrics(v2_actions, outcomes, field=1)
+
+        formal_primary = {
+            "paired_em_superiority_ci_lower_gt_zero": bootstrap["v2_minus_gbv_em_pp"]["ci95"][0] > 0.0
+        }
+        damage_ratio = (
+            v2_metrics["damage"] / gbv_metrics["damage"]
+            if gbv_metrics["damage"] > 0
+            else (0.0 if v2_metrics["damage"] == 0 else float("inf"))
+        )
+        high_standard = {
+            "em_point_at_least_plus_0_60_pp": bootstrap["v2_minus_gbv_em_pp"]["point"] >= HIGH_STANDARD_EM_POINT_PP,
+            "em_ci_lower_at_least_plus_0_30_pp": bootstrap["v2_minus_gbv_em_pp"]["ci95"][0] >= HIGH_STANDARD_EM_LCB_PP,
+            "f1_point_at_least_plus_0_50_pp": bootstrap["v2_minus_gbv_f1_pp"]["point"] >= HIGH_STANDARD_F1_POINT_PP,
+            "f1_ci_lower_gt_zero": bootstrap["v2_minus_gbv_f1_pp"]["ci95"][0] > 0.0,
+            "damage_count_not_higher": v2_metrics["damage"] <= gbv_metrics["damage"],
+            "all_dataset_em_point_estimates_positive": all(value > 0.0 for value in dataset_points.values()),
+            "all_v2_retrievers_positive_net": all(metrics["net"] > 0 for metrics in v2_retriever_metrics.values()),
+        }
+        stretch = {
+            "damage_at_least_25_percent_lower": damage_ratio <= STRETCH_DAMAGE_RATIO,
+            "all_retriever_v2_minus_gbv_em_points_positive": all(value > 0.0 for value in retriever_points.values()),
+        }
         comparisons[field] = {
             "v2": v2_metrics,
             "gbv": gbv_metrics,
             "paired_cluster_bootstrap": bootstrap,
-            "high_standard_targets": {
-                "em_point_at_least_plus_0_60_pp": bootstrap["v2_minus_gbv_em_pp"]["point"] >= 0.60,
-                "em_ci_lower_at_least_plus_0_30_pp": bootstrap["v2_minus_gbv_em_pp"]["ci95"][0] >= 0.30,
-                "damage_count_not_higher": v2_metrics["damage"] <= gbv_metrics["damage"],
-            },
+            "v2_minus_gbv_em_pp_by_dataset": dataset_points,
+            "v2_minus_gbv_em_pp_by_retriever": retriever_points,
+            "v2_metrics_by_retriever": v2_retriever_metrics,
+            "damage_count_ratio_v2_over_gbv": damage_ratio,
+            "formal_primary_superiority": formal_primary,
+            "high_standard_engineering_targets": high_standard,
+            "high_standard_all_met": all(high_standard.values()),
+            "stretch_targets": stretch,
+            "stretch_all_met": all(stretch.values()),
         }
-
-    dataset_points = {}
-    for dataset in sorted({k[0] for k in outcomes}):
-        subset = {k: v for k, v in outcomes.items() if k[0] == dataset}
-        v2_subset = {k: v2_actions[k] for k in subset}
-        gbv_subset = {
-            k: gbv_by_key[k]["gbv_global_matched"] for k in subset
-        }
-        v2_em, _, _ = policy_values(v2_subset, subset)
-        gbv_em, _, _ = policy_values(gbv_subset, subset)
-        dataset_points[dataset] = 100.0 * sum(
-            v2_em[k] - gbv_em[k] for k in subset
-        ) / len(subset)
 
     result = {
         "status": "POST_SEAL_FRESH_EVALUATION",
@@ -209,15 +273,22 @@ def main() -> None:
             "gbv_actions_sha256": sha256(args.gbv_actions),
             "outcomes_sha256": sha256(args.outcomes),
         },
+        "bootstrap": {
+            "draws": BOOTSTRAP_DRAWS,
+            "seed": BOOTSTRAP_SEED,
+        },
+        "predeclared_high_standard_thresholds": {
+            "em_point_pp": HIGH_STANDARD_EM_POINT_PP,
+            "em_ci_lower_pp": HIGH_STANDARD_EM_LCB_PP,
+            "f1_point_pp": HIGH_STANDARD_F1_POINT_PP,
+            "stretch_damage_ratio": STRETCH_DAMAGE_RATIO,
+        },
         "comparisons": comparisons,
-        "v2_minus_gbv_global_em_pp_by_dataset": dataset_points,
-        "all_dataset_point_estimates_positive": all(
-            value > 0 for value in dataset_points.values()
-        ),
         "interpretation_guardrail": (
-            "Superiority may be claimed only for a comparison whose predeclared paired interval "
-            "and other success criteria are satisfied. Negative, tied, or inconclusive results "
-            "must be retained."
+            "Formal primary superiority is the predeclared paired EM interval criterion. "
+            "The stronger multi-condition high-standard and stretch gates are engineering "
+            "success criteria, not familywise-controlled hypothesis tests. Negative, tied, "
+            "or inconclusive results must be retained."
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
