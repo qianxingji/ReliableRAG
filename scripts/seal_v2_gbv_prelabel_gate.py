@@ -7,6 +7,12 @@ import hashlib
 import json
 from pathlib import Path
 
+EXPECTED_GBV_DEV_THRESHOLDS = {
+    "bm25": 0.0473407506942749,
+    "dense": 0.01295558363199234,
+    "hybrid": 0.4287375956773758,
+}
+
 
 def sha256(path: Path) -> str:
     h = hashlib.sha256()
@@ -53,6 +59,12 @@ def main() -> None:
     require(v2.get("status") == "V2_PRELABEL_ACTION_SEAL", "V2 action seal status is valid", checks)
     require(v2.get("gold_or_outcome_input") is False, "V2 action seal used no Gold/outcome input", checks)
     require(
+        int(v2.get("hgb_replace_count")) == int(v2.get("replace_count")),
+        "raw HGB backbone ablation exactly matches V2 total action budget",
+        checks,
+    )
+    require(v2.get("backbone_ablation_predeclared") is True, "raw HGB backbone ablation was predeclared", checks)
+    require(
         gbv_prov.get("status") == "GBV_FRESH_PRELABEL_SCORE_SEAL_INPUT",
         "GbV fresh score provenance status is valid",
         checks,
@@ -64,13 +76,18 @@ def main() -> None:
         checks,
     )
     require(gbv_match.get("gold_or_outcome_input") is False, "GbV action matching used no Gold/outcome input", checks)
+    require(
+        gbv_match.get("gbv_dev_selected_thresholds") == EXPECTED_GBV_DEV_THRESHOLDS,
+        "GbV historical development thresholds exactly match the frozen published-baseline handoff",
+        checks,
+    )
 
     actual_v2_actions_hash = sha256(args.v2_actions)
     actual_gbv_scores_hash = sha256(args.gbv_scores)
     actual_gbv_actions_hash = sha256(args.gbv_actions)
     require(
         v2.get("actions_sha256") == actual_v2_actions_hash,
-        "V2 action file matches its seal hash",
+        "V2/HGB action file matches its seal hash",
         checks,
     )
     require(
@@ -130,7 +147,10 @@ def main() -> None:
         "checks": checks,
         "trace_count": int(v2.get("trace_count")),
         "replace_count": int(v2.get("replace_count")),
+        "hgb_replace_count": int(v2.get("hgb_replace_count")),
+        "gbv_dev_selected_replace_count": int(gbv_match.get("gbv_dev_selected_replace_count")),
         "action_rate": v2.get("action_rate"),
+        "gbv_dev_selected_thresholds": EXPECTED_GBV_DEV_THRESHOLDS,
         "hashes": {
             "fresh_preflight_sha256": sha256(args.fresh_preflight),
             "v2_seal_sha256": sha256(args.v2_seal),
