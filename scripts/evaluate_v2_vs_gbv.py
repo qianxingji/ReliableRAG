@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-"""Post-seal evaluation of DAA-V2 versus matched Generate-but-Verify actions.
+"""Post-seal evaluation of DAA-V2, raw HGB, and Generate-but-Verify.
 
-Run this script only after both action ledgers have been sealed without labels. It joins
-numeric evaluation outcomes, computes policy metrics, and performs one predeclared
-question-cluster bootstrap for paired V2-minus-GbV differences.
-
-The script distinguishes the formal primary superiority statement (paired EM interval
-lower bound > 0) from deliberately stronger engineering success targets. The latter are
-predeclared design goals, not a claim of familywise statistical control.
+Run only after the combined pre-label gate has passed and a separate responsible-human
+authorization has permitted numeric outcome mapping. No model/threshold/budget
+selection occurs here.
 """
 from __future__ import annotations
 
@@ -54,7 +50,6 @@ def selected_metrics(actions: dict, outcomes: dict) -> dict[str, float | int]:
     initially_correct = 0
     for k, outcome in outcomes.items():
         use_repair = actions[k] == "REPLACE"
-        replace += int(use_repair)
         a0_em = int(outcome["a0_em"])
         a1_em = int(outcome["a1_em"])
         a0_f1 = float(outcome["a0_f1"])
@@ -62,6 +57,7 @@ def selected_metrics(actions: dict, outcomes: dict) -> dict[str, float | int]:
         initially_correct += a0_em
         recovery += int(use_repair and a0_em == 0 and a1_em == 1)
         damage += int(use_repair and a0_em == 1 and a1_em == 0)
+        replace += int(use_repair)
         baseline_em += a0_em
         baseline_f1 += a0_f1
         selected_em += a1_em if use_repair else a0_em
@@ -84,9 +80,7 @@ def selected_metrics(actions: dict, outcomes: dict) -> dict[str, float | int]:
 
 
 def policy_values(actions: dict, outcomes: dict):
-    em = {}
-    f1 = {}
-    damage = {}
+    em, f1, damage = {}, {}, {}
     for k, outcome in outcomes.items():
         use_repair = actions[k] == "REPLACE"
         a0_em = int(outcome["a0_em"])
@@ -99,9 +93,9 @@ def policy_values(actions: dict, outcomes: dict):
     return em, f1, damage
 
 
-def cluster_bootstrap(v2_actions: dict, gbv_actions: dict, outcomes: dict) -> dict:
-    v2_em, v2_f1, v2_damage = policy_values(v2_actions, outcomes)
-    gbv_em, gbv_f1, gbv_damage = policy_values(gbv_actions, outcomes)
+def cluster_bootstrap(left_actions: dict, right_actions: dict, outcomes: dict) -> dict:
+    left_em, left_f1, left_damage = policy_values(left_actions, outcomes)
+    right_em, right_f1, right_damage = policy_values(right_actions, outcomes)
 
     cluster_rows: dict[tuple[str, str], list[tuple[str, str, str]]] = defaultdict(list)
     for k in outcomes:
@@ -113,16 +107,19 @@ def cluster_bootstrap(v2_actions: dict, gbv_actions: dict, outcomes: dict) -> di
     per_cluster = []
     for cluster in clusters:
         rows = cluster_rows[cluster]
-        em_diff = sum(v2_em[k] - gbv_em[k] for k in rows)
-        f1_diff = sum(v2_f1[k] - gbv_f1[k] for k in rows)
-        damage_diff = sum(v2_damage[k] - gbv_damage[k] for k in rows)
-        initial_correct = sum(int(outcomes[k]["a0_em"]) for k in rows)
-        per_cluster.append((len(rows), em_diff, f1_diff, damage_diff, initial_correct))
+        per_cluster.append(
+            (
+                len(rows),
+                sum(left_em[k] - right_em[k] for k in rows),
+                sum(left_f1[k] - right_f1[k] for k in rows),
+                sum(left_damage[k] - right_damage[k] for k in rows),
+                sum(int(outcomes[k]["a0_em"]) for k in rows),
+            )
+        )
 
     matrix = np.asarray(per_cluster, dtype=float)
     rng = np.random.default_rng(BOOTSTRAP_SEED)
     draws = rng.integers(0, len(clusters), size=(BOOTSTRAP_DRAWS, len(clusters)))
-
     em_samples = np.empty(BOOTSTRAP_DRAWS, dtype=float)
     f1_samples = np.empty(BOOTSTRAP_DRAWS, dtype=float)
     damage_samples = np.empty(BOOTSTRAP_DRAWS, dtype=float)
@@ -131,37 +128,36 @@ def cluster_bootstrap(v2_actions: dict, gbv_actions: dict, outcomes: dict) -> di
         n_rows = selected[:, 0].sum()
         em_samples[i] = 100.0 * selected[:, 1].sum() / n_rows
         f1_samples[i] = 100.0 * selected[:, 2].sum() / n_rows
-        initial_correct = selected[:, 4].sum()
+        initially_correct = selected[:, 4].sum()
         damage_samples[i] = (
-            100.0 * selected[:, 3].sum() / initial_correct
-            if initial_correct > 0
+            100.0 * selected[:, 3].sum() / initially_correct
+            if initially_correct > 0
             else np.nan
         )
 
     def interval(samples: np.ndarray) -> list[float]:
-        return [
-            float(np.nanquantile(samples, 0.025)),
-            float(np.nanquantile(samples, 0.975)),
-        ]
+        return [float(np.nanquantile(samples, 0.025)), float(np.nanquantile(samples, 0.975))]
 
-    point_em = 100.0 * sum(v2_em[k] - gbv_em[k] for k in outcomes) / len(outcomes)
-    point_f1 = 100.0 * sum(v2_f1[k] - gbv_f1[k] for k in outcomes) / len(outcomes)
-    initial_correct = sum(int(outcomes[k]["a0_em"]) for k in outcomes)
-    point_damage = (
-        100.0 * sum(v2_damage[k] - gbv_damage[k] for k in outcomes) / initial_correct
-        if initial_correct
-        else float("nan")
-    )
-
+    n = len(outcomes)
+    initially_correct = sum(int(outcomes[k]["a0_em"]) for k in outcomes)
     return {
         "cluster_count": len(clusters),
         "draws": BOOTSTRAP_DRAWS,
         "seed": BOOTSTRAP_SEED,
         "resampling_unit": "dataset:sample_id cluster; all retriever rows retained",
-        "v2_minus_gbv_em_pp": {"point": point_em, "ci95": interval(em_samples)},
-        "v2_minus_gbv_f1_pp": {"point": point_f1, "ci95": interval(f1_samples)},
-        "v2_minus_gbv_damage_pp": {
-            "point": point_damage,
+        "left_minus_right_em_pp": {
+            "point": 100.0 * sum(left_em[k] - right_em[k] for k in outcomes) / n,
+            "ci95": interval(em_samples),
+        },
+        "left_minus_right_f1_pp": {
+            "point": 100.0 * sum(left_f1[k] - right_f1[k] for k in outcomes) / n,
+            "ci95": interval(f1_samples),
+        },
+        "left_minus_right_damage_pp": {
+            "point": (
+                100.0 * sum(left_damage[k] - right_damage[k] for k in outcomes) / initially_correct
+                if initially_correct else float("nan")
+            ),
             "ci95": interval(damage_samples),
         },
     }
@@ -179,14 +175,37 @@ def subgroup_metrics(actions: dict, outcomes: dict, *, field: int) -> dict[str, 
     return result
 
 
-def subgroup_em_differences(v2_actions: dict, gbv_actions: dict, outcomes: dict, *, field: int) -> dict[str, float]:
+def subgroup_em_differences(left_actions: dict, right_actions: dict, outcomes: dict, *, field: int) -> dict[str, float]:
     points = {}
     for name in sorted({k[field] for k in outcomes}):
         subset = {k: outcome for k, outcome in outcomes.items() if k[field] == name}
-        v2_em, _, _ = policy_values({k: v2_actions[k] for k in subset}, subset)
-        gbv_em, _, _ = policy_values({k: gbv_actions[k] for k in subset}, subset)
-        points[name] = 100.0 * sum(v2_em[k] - gbv_em[k] for k in subset) / len(subset)
+        left_em, _, _ = policy_values({k: left_actions[k] for k in subset}, subset)
+        right_em, _, _ = policy_values({k: right_actions[k] for k in subset}, subset)
+        points[name] = 100.0 * sum(left_em[k] - right_em[k] for k in subset) / len(subset)
     return points
+
+
+def compare(
+    left_name: str,
+    left_actions: dict,
+    right_name: str,
+    right_actions: dict,
+    outcomes: dict,
+) -> dict:
+    left_metrics = selected_metrics(left_actions, outcomes)
+    right_metrics = selected_metrics(right_actions, outcomes)
+    bootstrap = cluster_bootstrap(left_actions, right_actions, outcomes)
+    return {
+        "left_method": left_name,
+        "right_method": right_name,
+        "left": left_metrics,
+        "right": right_metrics,
+        "paired_cluster_bootstrap": bootstrap,
+        "left_minus_right_em_pp_by_dataset": subgroup_em_differences(left_actions, right_actions, outcomes, field=0),
+        "left_minus_right_em_pp_by_retriever": subgroup_em_differences(left_actions, right_actions, outcomes, field=1),
+        "left_metrics_by_retriever": subgroup_metrics(left_actions, outcomes, field=1),
+        "right_metrics_by_retriever": subgroup_metrics(right_actions, outcomes, field=1),
+    }
 
 
 def main() -> None:
@@ -209,55 +228,58 @@ def main() -> None:
         raise RuntimeError("V2, GbV, and outcome ledgers must contain identical keys")
 
     v2_actions = {k: row["action"] for k, row in v2_by_key.items()}
+    hgb_actions = {k: row["hgb_action"] for k, row in v2_by_key.items()}
     v2_replace_count = sum(action == "REPLACE" for action in v2_actions.values())
+    hgb_replace_count = sum(action == "REPLACE" for action in hgb_actions.values())
+    if hgb_replace_count != v2_replace_count:
+        raise RuntimeError("raw HGB ablation must exactly match V2 total action budget")
     v2_strata = stratum_action_counts(v2_actions)
 
-    comparisons = {}
-    for field in ("gbv_global_matched", "gbv_stratum_matched"):
-        gbv_actions = {k: row[field] for k, row in gbv_by_key.items()}
-        gbv_replace_count = sum(action == "REPLACE" for action in gbv_actions.values())
-        if gbv_replace_count != v2_replace_count:
-            raise RuntimeError(
-                f"{field} has {gbv_replace_count} replacements but V2 has {v2_replace_count}"
-            )
-        if field == "gbv_stratum_matched" and stratum_action_counts(gbv_actions) != v2_strata:
-            raise RuntimeError("GbV stratum-matched action counts do not exactly equal V2 strata")
+    gbv_global = {k: row["gbv_global_matched"] for k, row in gbv_by_key.items()}
+    gbv_stratum = {k: row["gbv_stratum_matched"] for k, row in gbv_by_key.items()}
+    gbv_dev = {k: row["gbv_dev_selected"] for k, row in gbv_by_key.items()}
 
-        v2_metrics = selected_metrics(v2_actions, outcomes)
-        gbv_metrics = selected_metrics(gbv_actions, outcomes)
-        bootstrap = cluster_bootstrap(v2_actions, gbv_actions, outcomes)
-        dataset_points = subgroup_em_differences(v2_actions, gbv_actions, outcomes, field=0)
-        retriever_points = subgroup_em_differences(v2_actions, gbv_actions, outcomes, field=1)
-        v2_retriever_metrics = subgroup_metrics(v2_actions, outcomes, field=1)
+    if sum(value == "REPLACE" for value in gbv_global.values()) != v2_replace_count:
+        raise RuntimeError("GbV global comparator does not match V2 total budget")
+    if sum(value == "REPLACE" for value in gbv_stratum.values()) != v2_replace_count:
+        raise RuntimeError("GbV stratum comparator does not match V2 total budget")
+    if stratum_action_counts(gbv_stratum) != v2_strata:
+        raise RuntimeError("GbV stratum comparator does not exactly match V2 strata")
 
-        formal_primary = {
-            "paired_em_superiority_ci_lower_gt_zero": bootstrap["v2_minus_gbv_em_pp"]["ci95"][0] > 0.0
-        }
-        damage_ratio = (
-            v2_metrics["damage"] / gbv_metrics["damage"]
-            if gbv_metrics["damage"] > 0
-            else (0.0 if v2_metrics["damage"] == 0 else float("inf"))
-        )
-        high_standard = {
-            "em_point_at_least_plus_0_60_pp": bootstrap["v2_minus_gbv_em_pp"]["point"] >= HIGH_STANDARD_EM_POINT_PP,
-            "em_ci_lower_at_least_plus_0_30_pp": bootstrap["v2_minus_gbv_em_pp"]["ci95"][0] >= HIGH_STANDARD_EM_LCB_PP,
-            "f1_point_at_least_plus_0_50_pp": bootstrap["v2_minus_gbv_f1_pp"]["point"] >= HIGH_STANDARD_F1_POINT_PP,
-            "f1_ci_lower_gt_zero": bootstrap["v2_minus_gbv_f1_pp"]["ci95"][0] > 0.0,
-            "damage_count_not_higher": v2_metrics["damage"] <= gbv_metrics["damage"],
-            "all_dataset_em_point_estimates_positive": all(value > 0.0 for value in dataset_points.values()),
-            "all_v2_retrievers_positive_net": all(metrics["net"] > 0 for metrics in v2_retriever_metrics.values()),
-        }
-        stretch = {
-            "damage_at_least_25_percent_lower": damage_ratio <= STRETCH_DAMAGE_RATIO,
-            "all_retriever_v2_minus_gbv_em_points_positive": all(value > 0.0 for value in retriever_points.values()),
-        }
-        comparisons[field] = {
-            "v2": v2_metrics,
-            "gbv": gbv_metrics,
-            "paired_cluster_bootstrap": bootstrap,
-            "v2_minus_gbv_em_pp_by_dataset": dataset_points,
-            "v2_minus_gbv_em_pp_by_retriever": retriever_points,
-            "v2_metrics_by_retriever": v2_retriever_metrics,
+    primary = compare("DAA-V2", v2_actions, "GbV-global-budget-matched", gbv_global, outcomes)
+    primary_boot = primary["paired_cluster_bootstrap"]
+    em_result = primary_boot["left_minus_right_em_pp"]
+    f1_result = primary_boot["left_minus_right_f1_pp"]
+    dataset_points = primary["left_minus_right_em_pp_by_dataset"]
+    v2_retriever_metrics = primary["left_metrics_by_retriever"]
+    v2_metrics = primary["left"]
+    gbv_metrics = primary["right"]
+    damage_ratio = (
+        v2_metrics["damage"] / gbv_metrics["damage"]
+        if gbv_metrics["damage"] > 0
+        else (0.0 if v2_metrics["damage"] == 0 else float("inf"))
+    )
+
+    formal_primary = {
+        "paired_em_superiority_ci_lower_gt_zero": em_result["ci95"][0] > 0.0
+    }
+    high_standard = {
+        "em_point_at_least_plus_0_60_pp": em_result["point"] >= HIGH_STANDARD_EM_POINT_PP,
+        "em_ci_lower_at_least_plus_0_30_pp": em_result["ci95"][0] >= HIGH_STANDARD_EM_LCB_PP,
+        "f1_point_at_least_plus_0_50_pp": f1_result["point"] >= HIGH_STANDARD_F1_POINT_PP,
+        "f1_ci_lower_gt_zero": f1_result["ci95"][0] > 0.0,
+        "damage_count_not_higher": v2_metrics["damage"] <= gbv_metrics["damage"],
+        "all_dataset_em_point_estimates_positive": all(value > 0.0 for value in dataset_points.values()),
+        "all_v2_retrievers_positive_net": all(metrics["net"] > 0 for metrics in v2_retriever_metrics.values()),
+    }
+    stretch = {
+        "damage_at_least_25_percent_lower": damage_ratio <= STRETCH_DAMAGE_RATIO,
+        "all_retriever_v2_minus_gbv_em_points_positive": all(
+            value > 0.0 for value in primary["left_minus_right_em_pp_by_retriever"].values()
+        ),
+    }
+    primary.update(
+        {
             "damage_count_ratio_v2_over_gbv": damage_ratio,
             "formal_primary_superiority": formal_primary,
             "high_standard_engineering_targets": high_standard,
@@ -265,6 +287,35 @@ def main() -> None:
             "stretch_targets": stretch,
             "stretch_all_met": all(stretch.values()),
         }
+    )
+
+    stratum_comparison = compare(
+        "DAA-V2", v2_actions, "GbV-exact-stratum-budget-matched", gbv_stratum, outcomes
+    )
+    dev_comparison = compare(
+        "DAA-V2", v2_actions, "GbV-historical-dev-selected", gbv_dev, outcomes
+    )
+    hgb_comparison = compare(
+        "DAA-V2", v2_actions, "Raw-global-HGB-same-budget", hgb_actions, outcomes
+    )
+
+    dev_boot = dev_comparison["paired_cluster_bootstrap"]["left_minus_right_em_pp"]
+    dev_comparison["stronger_published_operating_point_target"] = {
+        "v2_em_point_higher": dev_boot["point"] > 0.0,
+        "v2_em_ci_lower_gt_zero": dev_boot["ci95"][0] > 0.0,
+        "v2_damage_not_higher": dev_comparison["left"]["damage"] <= dev_comparison["right"]["damage"],
+        "v2_uses_no_more_actions": dev_comparison["left"]["replace"] <= dev_comparison["right"]["replace"],
+    }
+    dev_comparison["stronger_target_all_met"] = all(
+        dev_comparison["stronger_published_operating_point_target"].values()
+    )
+
+    hgb_boot = hgb_comparison["paired_cluster_bootstrap"]["left_minus_right_em_pp"]
+    hgb_comparison["backbone_increment_target"] = {
+        "v2_em_point_higher": hgb_boot["point"] > 0.0,
+        "v2_em_ci_lower_gt_zero": hgb_boot["ci95"][0] > 0.0,
+        "v2_damage_not_higher": hgb_comparison["left"]["damage"] <= hgb_comparison["right"]["damage"],
+    }
 
     result = {
         "status": "POST_SEAL_FRESH_EVALUATION",
@@ -273,22 +324,22 @@ def main() -> None:
             "gbv_actions_sha256": sha256(args.gbv_actions),
             "outcomes_sha256": sha256(args.outcomes),
         },
-        "bootstrap": {
-            "draws": BOOTSTRAP_DRAWS,
-            "seed": BOOTSTRAP_SEED,
-        },
+        "bootstrap": {"draws": BOOTSTRAP_DRAWS, "seed": BOOTSTRAP_SEED},
         "predeclared_high_standard_thresholds": {
             "em_point_pp": HIGH_STANDARD_EM_POINT_PP,
             "em_ci_lower_pp": HIGH_STANDARD_EM_LCB_PP,
             "f1_point_pp": HIGH_STANDARD_F1_POINT_PP,
             "stretch_damage_ratio": STRETCH_DAMAGE_RATIO,
         },
-        "comparisons": comparisons,
+        "primary_same_total_budget": primary,
+        "secondary_exact_stratum_budget": stratum_comparison,
+        "secondary_gbv_historical_dev_selected": dev_comparison,
+        "key_ablation_v2_vs_raw_hgb": hgb_comparison,
         "interpretation_guardrail": (
-            "Formal primary superiority is the predeclared paired EM interval criterion. "
-            "The stronger multi-condition high-standard and stretch gates are engineering "
-            "success criteria, not familywise-controlled hypothesis tests. Negative, tied, "
-            "or inconclusive results must be retained."
+            "The same-total-budget GbV comparison is the formal primary published-method contrast. "
+            "The exact-stratum, historical-dev-selected GbV, and raw-HGB comparisons are predeclared "
+            "secondary/key-ablation evidence. Stronger multi-condition targets are engineering goals, "
+            "not familywise-controlled tests. Negative, tied, or inconclusive results must be retained."
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
