@@ -35,11 +35,11 @@ The target is intentionally strict. If any dataset has fewer than 1,500 eligible
 
 ## Stage A — establish immutable private inputs
 
-1. Create a new audit-only namespace, for example:
+1. Create a new audit-only namespace:
    `outputs/daa_v2_fresh_v1/audit/`
 2. Do not modify historical `outputs/mars_full/`, Phase3--Phase10 outputs, or their private controls.
-3. Record the current project Git commit/tree state and the SHA-256 of every V2 protocol file used.
-4. Run the historical private-artifact verifier:
+3. Record the current project Git commit/tree state and SHA-256 of every V2 protocol file used.
+4. Run:
 
 ```powershell
 python scripts/verify_v2_private_artifacts.py `
@@ -49,70 +49,80 @@ python scripts/verify_v2_private_artifacts.py `
 
 Expected status: `PASS`.
 
-If the historical root differs in the full private project, resolve its actual accepted path from the existing manifests; do not create substitute model binaries. If any required file is missing or hash-mismatched, stop with `FAIL`.
+If the historical root differs, resolve its accepted location from existing manifests. Never create substitute model binaries. A missing or hash-mismatched required artifact is a hard `FAIL`.
 
 ## Stage B — construct identifier-only source inventories
 
-Use the already validated Phase10/source-projection machinery. Do not deserialize or retain answer, supporting-fact, alias, correctness, or other Gold/evaluation values.
+Reuse the validated Phase10/source-projection machinery. Do not deserialize or retain answer, supporting-fact, alias, correctness, or other Gold/evaluation values in this audit namespace.
 
-Each inventory row must contain exactly:
+Every inventory row must contain exactly:
 
 ```json
 {"dataset":"hotpotqa","sample_id":"..."}
 ```
 
-Create source ID inventories for:
+Create:
+
+- `hotpot_source_ids.jsonl`
+- `2wiki_source_ids.jsonl`
+- `musique_train_source_ids.jsonl`
 
 ### HotpotQA
 
-Primary source: distractor validation.
+Primary source: distractor validation. Audit the current runtime-only validation projection first. If it cannot leave 1,500 unused IDs after exclusions, expand the runtime-only identifier/question/context projection from the official distractor-validation source under the existing field-level guard. Gold/evaluation values remain forbidden.
 
-First audit the currently available runtime-only validation projection. If that projection is too small to leave 1,500 unused IDs after exclusion, expand the **runtime-only identifier/question/context projection** from the official HotpotQA distractor-validation source using the existing field-level source-projection guard. The expansion may expose IDs/runtime fields required to construct an inventory, but Gold/evaluation values remain forbidden and must not be materialized into the audit namespace.
-
-Do not switch HotpotQA to train data merely to satisfy the count without a prospective protocol amendment.
+Do not switch HotpotQA to train data without a prospective protocol amendment.
 
 ### 2WikiMultiHopQA
 
-Use the corrected `dev.json` source already accepted by the project. The audited raw source contains 12,576 rows, so a count shortage should be treated as a possible exclusion/implementation issue and investigated before any protocol change.
+Use the accepted corrected `dev.json`. The audited source contains 12,576 rows. A shortage should first be treated as a possible exclusion/projection problem, not as permission to change the source.
 
 ### MuSiQue
 
-Use `musique_ans_v1.0_train.jsonl` for the new primary fresh evaluation inventory. Do not use the already heavily consumed answerable-dev split for the 1,500-question target.
+Use `musique_ans_v1.0_train.jsonl`. Do not use the heavily consumed 2,417-row answerable-dev split for this 1,500-question target.
 
-Exclude the historical MuSiQue development IDs and every previously evaluated MuSiQue question ID. Record the raw train-file SHA-256 and verify it against the project's accepted source audit before deriving the ID-only inventory.
+Exclude the historical MuSiQue development IDs and every previously evaluated MuSiQue question ID. Verify the raw train-file SHA-256 against the accepted source audit before deriving its ID-only inventory.
 
-## Stage C — construct the union forbidden-ID ledger
+## Stage C — construct the strict forbidden-ID union
 
-Build an ID-only union covering every question that would invalidate the strong fresh claim.
+First create one **ID-only ledger per exclusion category**. At minimum cover:
 
-At minimum include IDs from:
-
-1. historical selector training/development/calibration;
+1. selector training/development/calibration;
 2. opened pilots used in selector development;
-3. historical main confirmatory evaluation;
+3. main confirmatory evaluation;
 4. operator-transfer evaluation;
 5. robustness/stress conditions whose outcomes were inspected;
 6. second-reader/reader-transfer analyses whose outcomes were inspected;
-7. previous Fresh-ID evaluation questions whose Gold/outcomes were opened;
-8. previous Fresh extension corpus-contributor IDs, including corpus-only contributors, for the strict primary freshness definition;
-9. any additional experimental namespace in which that question's correctness/outcome was accessed.
+7. prior Fresh-ID evaluation questions whose Gold/outcomes were opened;
+8. prior Fresh extension corpus contributors, including corpus-only contributors;
+9. every additional namespace in which question correctness/outcome was accessed.
 
-The union ledger itself must contain only `dataset` and `sample_id`.
+Every category ledger must contain exactly `dataset` and `sample_id`.
 
-Also produce a **forbidden-category coverage manifest** that reports, for each category:
+Build the union with the committed tool, for example:
 
-- source namespace/file;
-- row count;
-- unique question-ID count by dataset;
-- SHA-256 of the ID-only projection;
-- whether it is included in the final union;
-- overlap/duplicate handling.
+```powershell
+python scripts/build_v2_forbidden_union.py `
+  --category "selector_development=outputs/daa_v2_fresh_v1/audit/forbidden/selector_development.jsonl" `
+  --category "opened_pilots=outputs/daa_v2_fresh_v1/audit/forbidden/opened_pilots.jsonl" `
+  --category "main_confirmatory=outputs/daa_v2_fresh_v1/audit/forbidden/main_confirmatory.jsonl" `
+  --category "operator_transfer=outputs/daa_v2_fresh_v1/audit/forbidden/operator_transfer.jsonl" `
+  --category "robustness=outputs/daa_v2_fresh_v1/audit/forbidden/robustness.jsonl" `
+  --category "reader_transfer=outputs/daa_v2_fresh_v1/audit/forbidden/reader_transfer.jsonl" `
+  --category "prior_fresh_eval=outputs/daa_v2_fresh_v1/audit/forbidden/prior_fresh_eval.jsonl" `
+  --category "prior_fresh_contributors=outputs/daa_v2_fresh_v1/audit/forbidden/prior_fresh_contributors.jsonl" `
+  --category "other_opened_outcomes=outputs/daa_v2_fresh_v1/audit/forbidden/other_opened_outcomes.jsonl" `
+  --union-output outputs/daa_v2_fresh_v1/audit/all_forbidden_ids.jsonl `
+  --coverage-output outputs/daa_v2_fresh_v1/audit/forbidden_coverage.json
+```
 
-Do not report raw questions, answers, predictions, passages, or Gold values.
+If the private project contains more relevant historical categories, add them as additional `--category` inputs rather than folding them invisibly into another category.
+
+The coverage manifest must preserve every category hash/count and pairwise overlap. Do not report benchmark text.
 
 ## Stage D — audit only; select zero questions
 
-Run the selector in audit mode:
+Run:
 
 ```powershell
 python scripts/select_v2_fresh_ids.py `
@@ -126,56 +136,68 @@ python scripts/select_v2_fresh_ids.py `
   --manifest-output outputs/daa_v2_fresh_v1/audit/availability_selector_manifest.json
 ```
 
-`no_selection.jsonl` must be empty.
+`no_selection.jsonl` must be empty. Do **not** rerun with `--per-dataset 1500` in this task.
 
-Do not rerun with `--per-dataset 1500` in this task.
+## Stage E — execution evidence
 
-## Stage E — independent audit validation
+Create `outputs/daa_v2_fresh_v1/audit/process_evidence.json` from the actual audit execution trace/logs, with exactly these scientific counters/flags:
 
-Create:
+```json
+{
+  "model_calls": 0,
+  "generation_calls": 0,
+  "retrieval_calls": 0,
+  "fresh_labels_accessed": 0,
+  "selected_questions": 0,
+  "fresh_generation_started": false,
+  "prelabel_scoring_started": false
+}
+```
 
-`outputs/daa_v2_fresh_v1/audit/V2_AVAILABILITY_AUDIT.json`
+Do not infer `0` merely because an output file is absent. Support the counters from the executed command allowlist/log, source-projection boundaries, and stage controls.
 
-It must conform semantically to `docs/V2_AVAILABILITY_AUDIT_SCHEMA.json` and contain at minimum:
+## Stage F — independent fail-closed finalization
 
-- status PASS/FAIL;
-- UTC timestamp;
-- project root;
-- current Git commit/tree identifier;
-- private-artifact verification SHA-256;
-- source inventory path/count/SHA for each dataset;
-- raw-source hashes;
-- forbidden category coverage;
-- union forbidden counts by dataset;
-- available-after-exclusion count by dataset;
-- explicit overlap checks;
-- evidence that source/forbidden projections were identifier-only;
-- `model_calls = 0`;
-- `generation_calls = 0`;
-- `retrieval_calls = 0`;
-- `fresh_labels_accessed = 0`;
-- `selected_questions = 0`;
-- mandatory stop boundary.
+Run the committed finalizer. Replace `<...SHA256...>` with the actual raw-source digests verified during this audit:
 
-PASS only when all three datasets have at least 1,500 available IDs and all integrity/leakage checks pass.
+```powershell
+python scripts/finalize_v2_availability_audit.py `
+  --project-root "E:\paper\ReliableRAG" `
+  --git-state "<CURRENT_GIT_COMMIT_OR_TREE>" `
+  --private-artifacts outputs/daa_v2_fresh_v1/audit/private_artifacts.json `
+  --forbidden-union outputs/daa_v2_fresh_v1/audit/all_forbidden_ids.jsonl `
+  --forbidden-coverage outputs/daa_v2_fresh_v1/audit/forbidden_coverage.json `
+  --selector-manifest outputs/daa_v2_fresh_v1/audit/availability_selector_manifest.json `
+  --no-selection outputs/daa_v2_fresh_v1/audit/no_selection.jsonl `
+  --source "hotpotqa=outputs/daa_v2_fresh_v1/audit/hotpot_source_ids.jsonl" `
+  --source "2wikimultihopqa=outputs/daa_v2_fresh_v1/audit/2wiki_source_ids.jsonl" `
+  --source "musique=outputs/daa_v2_fresh_v1/audit/musique_train_source_ids.jsonl" `
+  --raw-source-hash "hotpotqa=<HOTPOT_RAW_SHA256>" `
+  --raw-source-hash "2wikimultihopqa=<2WIKI_RAW_SHA256>" `
+  --raw-source-hash "musique=<MUSIQUE_TRAIN_RAW_SHA256>" `
+  --process-evidence outputs/daa_v2_fresh_v1/audit/process_evidence.json `
+  --output outputs/daa_v2_fresh_v1/audit/V2_AVAILABILITY_AUDIT.json
+```
 
-Also save a machine-readable hash manifest of all audit outputs.
+The finalizer independently recomputes source/forbidden overlaps and available counts. `PASS` is permitted only when all three datasets independently retain at least 1,500 unused IDs and every zero-call/no-Gold/no-selection condition passes.
+
+Also create a machine-readable SHA-256 manifest covering all audit files.
 
 ## Required final report to the author
 
-Return only audit facts, not benchmark content:
+Return only audit facts, never benchmark content:
 
-1. private historical artifact verification PASS/FAIL;
-2. source count for each dataset;
+1. historical private-artifact verification PASS/FAIL;
+2. source ID count for each dataset;
 3. unique forbidden count for each dataset;
 4. available unused count for each dataset;
-5. whether the 1,500-per-dataset target is feasible;
-6. source hash and ID-inventory hash for each dataset;
-7. union-forbidden hash;
+5. whether 1,500 per dataset is feasible;
+6. raw-source and ID-inventory hash for each dataset;
+7. forbidden-union hash and category-coverage hash;
 8. `V2_AVAILABILITY_AUDIT.json` hash;
 9. confirmation that model/generation/retrieval calls were zero;
 10. confirmation that no fresh Gold/correctness/outcome values were accessed;
-11. confirmation that no fresh IDs were selected and no fresh generation began.
+11. confirmation that zero fresh questions were selected and no generation began.
 
 ## Hard stop
 
