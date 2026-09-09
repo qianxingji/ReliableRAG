@@ -1,0 +1,61 @@
+{
+  "schema_version": "daa-v2-fresh-availability-audit-v1",
+  "target_unique_questions_per_dataset": 1500,
+  "required_datasets": [
+    "hotpotqa",
+    "2wikimultihopqa",
+    "musique"
+  ],
+  "preferred_sources": {
+    "hotpotqa": "genuinely unused distractor-validation IDs; expand the runtime-only validation projection if the current 4,000-row local materialization cannot provide 1,500 IDs after exclusion",
+    "2wikimultihopqa": "genuinely unused IDs from the corrected dev.json",
+    "musique": "genuinely unused IDs from musique_ans_v1.0_train.jsonl; exclude the historical MuSiQue development IDs and every previously evaluated ID"
+  },
+  "freshness_exclusion_categories": [
+    "historical selector training/development/calibration IDs",
+    "historical main confirmatory IDs",
+    "operator-transfer IDs",
+    "all robustness/stress-test IDs whose outcomes were inspected",
+    "all reader-transfer IDs whose outcomes were inspected",
+    "all previous Fresh-ID evaluation IDs whose Gold/outcomes were opened",
+    "all previous Fresh extension corpus-contributor IDs from the same dataset, for the strictest primary evaluation freshness definition",
+    "any other question ID appearing in an experiment namespace whose correctness/outcome was accessed"
+  ],
+  "hard_pass_conditions": {
+    "private_historical_artifact_verification": "PASS",
+    "identifier_only_source_and_forbidden_ledgers": true,
+    "gold_or_correctness_values_materialized": 0,
+    "model_calls": 0,
+    "generation_calls": 0,
+    "retrieval_calls": 0,
+    "fresh_labels_accessed": 0,
+    "available_questions_each_dataset_at_least": 1500,
+    "selected_questions": 0,
+    "fresh_generation_started": false,
+    "prelabel_scoring_started": false
+  },
+  "required_report_fields": [
+    "status",
+    "created_at_utc",
+    "project_root",
+    "git_commit_or_tree_hash",
+    "private_artifact_verification_sha256",
+    "source_ledgers",
+    "forbidden_ledgers",
+    "forbidden_category_coverage",
+    "source_counts",
+    "forbidden_counts",
+    "available_after_exclusion",
+    "overlap_checks",
+    "raw_source_hashes",
+    "identifier_only_projection_evidence",
+    "model_calls",
+    "generation_calls",
+    "retrieval_calls",
+    "fresh_labels_accessed",
+    "selected_questions",
+    "stop_boundary"
+  ],
+  "pass_rule": "PASS only if all hard-pass conditions hold and each required dataset has >=1500 genuinely unused evaluation IDs. Otherwise FAIL and stop before selecting IDs or running retrieval/generation.",
+  "stop_boundary": "This audit authorizes no fresh-ID selection, retrieval, generation, V2 scoring, GbV scoring, Gold mapping, or evaluation. A subsequent protocol step is required after human review of the audit."
+}
