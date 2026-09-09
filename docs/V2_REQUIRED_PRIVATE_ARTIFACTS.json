@@ -1,0 +1,81 @@
+{
+  "schema_version": "daa-v2-required-private-artifacts-v1",
+  "purpose": "Pre-label integrity allowlist for reconstructing the ten historical label-free base scores used by DAA-V2 on a new fresh cohort.",
+  "historical_root_note": "Paths are relative to the original private mars_full output root. The preflight must fail if a required artifact is absent or its SHA-256 differs.",
+  "required_historical_files": [
+    {
+      "path": "method_freeze.json",
+      "size_bytes": 38110,
+      "sha256": "af69d7b3a974656bf81da0514a32385476421ac5bd0b32a6585d2291f10aa87a"
+    },
+    {
+      "path": "models/manifest.json",
+      "size_bytes": 14938,
+      "sha256": "44ddafcc59f854e28b2a88f4e6dd05c5efb8d7c30021310275dd0d97564a5a82"
+    },
+    {
+      "path": "models/state_symmetric_hgb.joblib",
+      "size_bytes": 639652,
+      "sha256": "9245170f855435b5603b04013bd4fbab79a75d2761853a012ab9f3259600bf6e"
+    },
+    {
+      "path": "models/state_symmetric_logistic.joblib",
+      "size_bytes": 5404,
+      "sha256": "0adde50ca869a216edb4a2b4a7898e5b60a9f148ec279a0c4b757d1c439fd0bf"
+    },
+    {
+      "path": "models/no_cross_state.joblib",
+      "size_bytes": 4476,
+      "sha256": "5ca5fc84e5b58e44b9271282e8629af3c3d8a579bc51bf536ce65abd3a78a64b"
+    },
+    {
+      "path": "models/no_B.joblib",
+      "size_bytes": 4940,
+      "sha256": "8c9dd6cccb5081e12f67ac21efc7d268635cee0a279f3dd48c9e5f7ca4980e11"
+    },
+    {
+      "path": "models/no_evidence_change.joblib",
+      "size_bytes": 1852,
+      "sha256": "bd225da486eeab63bfa64c2f50a2d85910a1042bfe6c2314066ac7f5d0757336"
+    },
+    {
+      "path": "models/no_answer_form.joblib",
+      "size_bytes": 3644,
+      "sha256": "cc6cb1ba307ade2440a4423c268641077217eac6b7490c28a0f258ca3cea53dd"
+    },
+    {
+      "path": "models/ordinary_compact_logistic.joblib",
+      "size_bytes": 2165,
+      "sha256": "761dc0238f4da181a5693da881b914134ca7603269f6fee21d66a32539d01242"
+    }
+  ],
+  "required_base_score_fields": [
+    "state_symmetric_hgb",
+    "state_symmetric_logistic",
+    "no_cross_state",
+    "no_B",
+    "no_evidence_change",
+    "no_answer_form",
+    "ordinary_compact_logistic",
+    "B_rule",
+    "higher_own_likelihood",
+    "likelihood_margin"
+  ],
+  "runtime_model_freeze": {
+    "primary_reader": {
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "decoding": "deterministic",
+      "likelihood_dtype": "bfloat16",
+      "device": "cuda",
+      "batch_size": 1
+    },
+    "dense_retriever_and_answer_embedding": {
+      "model_id": "BAAI/bge-base-en-v1.5",
+      "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "repair_operator": "fixed missing-information query; retrieve from the same candidate pool; first depth-50 document outside original Top-5 replaces rank 5",
+    "reader_evidence_budget_chars": 16000
+  },
+  "integrity_rule": "Do not silently retrain, replace, or regenerate any historical base estimator after fresh-label access. If a historical binary is missing before the fresh run, stop and resolve it before freezing the prospective experiment."
+}
