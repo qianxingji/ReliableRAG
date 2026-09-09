@@ -1,0 +1,8 @@
+-r requirements-v2.txt
+transformers>=4.45,<5
+sentencepiece==0.2.1
+safetensors>=0.4.5
+
+# Install a CUDA-compatible torch build separately on the target machine.
+# The exact torch/transformers/CUDA versions used for the fresh run must be
+# captured in the pre-label provenance and frozen before labels are opened.
