@@ -1,0 +1,23 @@
+{
+  "status": "DEVELOPMENT_PARAMETER_STABILITY_ONLY",
+  "historical_cohort_role": "V2 development evidence only",
+  "action_budget": 450,
+  "action_rate_reference": 0.05,
+  "grouped_cv_seeds": [20260909, 20260910, 20260911, 20260912, 20260913, 20260914, 20260915, 20260916, 20260917, 20260918],
+  "selected_fixed_parameters": {
+    "lambda_damage": 1.0,
+    "meta_alpha": 2.0,
+    "selection_principle": "maximize worst-case net correction across the ten grouped OOF seeds, then prefer median net, lower median damage, and lower complexity"
+  },
+  "fixed_parameter_oof_results": {
+    "net_by_seed": [214, 214, 211, 212, 212, 216, 215, 213, 212, 215],
+    "damage_by_seed": [7, 6, 7, 7, 6, 7, 5, 7, 7, 7],
+    "minimum_net": 211,
+    "median_net": 213.5,
+    "mean_net": 213.4,
+    "maximum_net": 216,
+    "maximum_damage": 7,
+    "median_damage": 7.0
+  },
+  "interpretation": "The same lambda and fusion weight remain strong across grouped development partitions; no test-fold-specific parameter tuning is intended for the final candidate. This is not prospective evidence."
+}
