@@ -1,0 +1,47 @@
+{
+  "conservative_stratum_budgets": {
+    "2wikimultihopqa:bm25": 42,
+    "2wikimultihopqa:dense": 81,
+    "2wikimultihopqa:hybrid": 2,
+    "hotpotqa:bm25": 50,
+    "hotpotqa:dense": 92,
+    "hotpotqa:hybrid": 2,
+    "musique:bm25": 22,
+    "musique:dense": 79,
+    "musique:hybrid": 0
+  },
+  "global_370": {
+    "by_dataset": {
+      "2wikimultihopqa": {"actions": 114, "damage": 3, "net": 54, "recovery": 57, "sum_em_delta": 54.0, "sum_f1_delta": 64.03809523809522},
+      "hotpotqa": {"actions": 143, "damage": 2, "net": 77, "recovery": 79, "sum_em_delta": 77.0, "sum_f1_delta": 86.88368298368299},
+      "musique": {"actions": 113, "damage": 2, "net": 53, "recovery": 55, "sum_em_delta": 53.0, "sum_f1_delta": 61.448484848484846}
+    },
+    "by_retriever": {
+      "bm25": {"actions": 160, "damage": 4, "net": 73, "recovery": 77, "sum_em_delta": 73.0, "sum_f1_delta": 84.88333333333334},
+      "dense": {"actions": 103, "damage": 2, "net": 59, "recovery": 61, "sum_em_delta": 59.0, "sum_f1_delta": 67.28658008658007},
+      "hybrid": {"actions": 107, "damage": 1, "net": 52, "recovery": 53, "sum_em_delta": 52.0, "sum_f1_delta": 60.20034965034965}
+    },
+    "overall": {"actions": 370, "damage": 7, "net": 184, "recovery": 191, "sum_em_delta": 184.0, "sum_f1_delta": 212.37026307026318}
+  },
+  "global_budget_sweep": [
+    {"actions": 100, "budget": 100, "damage": 2, "net": 57, "recovery": 59, "sum_em_delta": 57.0, "sum_f1_delta": 65.61550116550117},
+    {"actions": 200, "budget": 200, "damage": 3, "net": 115, "recovery": 118, "sum_em_delta": 115.0, "sum_f1_delta": 129.34883449883455},
+    {"actions": 300, "budget": 300, "damage": 5, "net": 160, "recovery": 165, "sum_em_delta": 160.0, "sum_f1_delta": 181.58216783216793},
+    {"actions": 370, "budget": 370, "damage": 7, "net": 184, "recovery": 191, "sum_em_delta": 184.0, "sum_f1_delta": 212.37026307026318},
+    {"actions": 387, "budget": 387, "damage": 8, "net": 189, "recovery": 197, "sum_em_delta": 189.0, "sum_f1_delta": 219.27026307026318},
+    {"actions": 407, "budget": 407, "damage": 9, "net": 191, "recovery": 200, "sum_em_delta": 191.0, "sum_f1_delta": 223.33692973692985},
+    {"actions": 450, "budget": 450, "damage": 10, "net": 199, "recovery": 209, "sum_em_delta": 199.0, "sum_f1_delta": 232.7440725940727},
+    {"actions": 500, "budget": 500, "damage": 15, "net": 209, "recovery": 224, "sum_em_delta": 209.0, "sum_f1_delta": 245.62661227661243},
+    {"actions": 750, "budget": 750, "damage": 31, "net": 278, "recovery": 309, "sum_em_delta": 278.0, "sum_f1_delta": 320.7087378499967},
+    {"actions": 1000, "budget": 1000, "damage": 54, "net": 316, "recovery": 370, "sum_em_delta": 316.0, "sum_f1_delta": 362.4483036003384}
+  ],
+  "hgb_at_conservative_stratum_budgets": {"actions": 370, "damage": 17, "net": 156, "recovery": 173, "sum_em_delta": 156.0, "sum_f1_delta": 177.61458930847945},
+  "historical_hgb_operating_point": {"actions": 387, "damage": 14, "net": 179, "recovery": 193, "sum_em_delta": 179.0, "sum_f1_delta": 203.17889776889783},
+  "integrity_note": "Scores are frozen non-oracle HGB outputs. Gold-derived EM/F1 fields are joined only for retrospective evaluation. These results must not be relabeled as a new prospective confirmatory experiment.",
+  "scorable_hgb_records": 2132,
+  "source_hashes": {
+    "decisions_sha256": "74bd8e45a3bbdb7716a02fc063b5a6e35c6ded8810441d422d964b7633b19cbd",
+    "outcomes_sha256": "a1862495b6e0c9033c420773da93fe36bd335cd8c04da01825b327477848f2f7"
+  },
+  "status": "RETROSPECTIVE_DEVELOPMENT_DIAGNOSTIC_ONLY"
+}
