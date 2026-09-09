@@ -133,7 +133,7 @@ def main() -> None:
             "damage": damage,
             "net": recovery - damage,
         },
-        "runtime_gold_free": true,
+        "runtime_gold_free": True,
         "environment": {
             "python": platform.python_version(),
             "numpy": np.__version__,
