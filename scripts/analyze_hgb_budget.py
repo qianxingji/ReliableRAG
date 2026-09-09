@@ -69,9 +69,11 @@ def main() -> None:
     ranked_records: list[RankedTrace] = []
     original_hgb: list[RankedTrace] = []
     conservative_budgets: Counter[tuple[str, str]] = Counter()
+    all_strata: set[tuple[str, str]] = set()
 
     for row in read_jsonl(args.decisions):
         row_key = key(row)
+        all_strata.add((row["dataset"], row["retriever"]))
         if row_key not in outcome_map:
             raise RuntimeError(f"decision missing evaluation outcome: {row_key}")
         score = row.get("scores", {}).get("state_symmetric_hgb")
@@ -87,6 +89,9 @@ def main() -> None:
                 original_hgb.append(record)
         if row["actions"].get("selected_mars") == "REPLACE":
             conservative_budgets[(row["dataset"], row["retriever"])] += 1
+
+    for stratum in all_strata:
+        conservative_budgets.setdefault(stratum, 0)
 
     budgets = [int(value) for value in args.budgets.split(",") if value.strip()]
     budget_rows = []
