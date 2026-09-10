@@ -1,10 +1,19 @@
 # Current method: verifier-augmented recovery arbitration
 
+Current review, 2026-09-11: ROA-FULL remains the historical candidate name, but
+its full-stack attribution gate failed against HGB_GBV_R. The latter is not an
+accepted replacement candidate: its subsequent HGB-only attribution study also
+failed the frozen LODO floor. There is no accepted final deployment candidate.
+See P0_2_CONTRIBUTION_REVIEW.md and P0_3_RESEARCH_DECISION.md. The method and
+original development evidence described below are preserved historical facts.
+Saved-parameter replay is now PASS, not missing; upstream provenance limitations
+are recorded in P0_1_CLIENT_ACCEPTANCE.md. CAS Q2 STATUS: NOT READY.
+
 Evidence cutoff: ROA isolation closed 2026-09-10T13:41:54Z.
 Protocol commit: `cd06659739810f9d0ff5dcd0e646264a26de3109`.
 Binding protocol: [ROA isolation](../V3_RECOVERY_ONLY_ISOLATION_PROTOCOL.md).
 
-## What is established
+## Original method and development findings (historical)
 
 ROA-FULL is supported for final-candidate consideration, not yet a final
 deployment model. It predicts normalized-EM Recovery (a0 incorrect, a1 correct)
@@ -37,7 +46,7 @@ threshold or formal risk guarantee. Fold caps can sum to 675 or 676.
 | GbV paired adaptation | Published verifier component adapted to answer pairs; primary external comparator |
 | RG-HGB | Rejected simple gate |
 | DHC-V3 | Dual-head development inconclusive; added constraint necessity not established |
-| ROA-FULL | Current candidate, development support only |
+| ROA-FULL | Historical candidate; subsequent attribution rule failed |
 | ROA-NOGBV | Required dependence ablation; baseline independence not supported |
 
 ROA uses 4,500 already opened question groups, 13,500 traces, 3,202 eligible rows.
@@ -55,8 +64,8 @@ These failed/inconclusive findings remain unchanged.
 No fresh V3 superiority, independent replacement of GbV, hard risk guarantee,
 cross-state feature necessity, full-corpus generality or broad reader transfer
 has been established for ROA. Old-method ablations/transfer/cost results are not
-ROA evidence. The private runtime/model/outcome bytes must be authenticated and
-replayed before the current implementation can be accepted as reproducible.
+ROA evidence. Saved-parameter replay is accepted with the historical training
+provenance limits in P0_1_CLIENT_ACCEPTANCE.md; replay does not resolve these claims.
 
 Research Lead follow-up: [method and baseline position](METHOD_AND_BASELINE_POSITION.md)
 explains why ranking Recovery alone does not generally optimize expected Net;

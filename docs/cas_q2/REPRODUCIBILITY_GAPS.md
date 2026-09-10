@@ -1,5 +1,23 @@
 # Reproducibility gap record
 
+## Latest host review — 2026-09-11
+
+The historical access failures below described the prior host. On the original
+machine, 216/216 ROA payloads now authenticate and both full replay paths pass
+with zero maximum error. Fourteen upstream manifests and 16,291 unique files
+were checked. The two supervised controls and one subsequent HGB-only control
+were executed and independently validated. See P0_1_CLIENT_ACCEPTANCE.md,
+P0_2_CONTRIBUTION_REVIEW.md and P0_3_RESEARCH_DECISION.md for exact scope.
+
+Remaining historical gaps: no original per-estimator fit-time ID/matrix receipts
+for seven upstream models; no earlier independent pin for the full mars_full
+manifest. Training membership is source/ledger reconstruction, with zero observed
+overlap with ROA questions. No pretraining decontamination or original upstream
+training replay is claimed. Final-candidate/confirmation and scientific-contribution
+gaps remain; CAS Q2 STATUS: NOT READY.
+
+## Historical prior-host notes (retained verbatim)
+
 ## Verified in this continuation
 
 - A source checkout at cd066597 is available.

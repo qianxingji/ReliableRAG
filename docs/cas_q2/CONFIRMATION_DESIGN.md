@@ -1,5 +1,13 @@
 # Next confirmation: design and unresolved preflight — 2026-09-10
 
+2026-09-11 update: original replay and all three now-designed supervised controls
+are complete. Both prospective advancement criteria failed; see
+P0_3_RESEARCH_DECISION.md. No candidate has been cleared for final confirmation.
+An ID-only inventory found 2,105 / 7,276 / 17,838 remaining questions in the
+existing HotpotQA / 2Wiki / MuSiQue source ledgers; none were selected. The
+unavailability statements below are historical. This document remains a draft,
+not a freeze, and the new Research Lead decision governs the next work.
+
 Research Lead design work. **NOT AN EXECUTABLE FREEZE.** No new IDs, final fits,
 test outcomes or scientific results are authorized by this document alone.
 This advances preparation while original-artifact replay is unavailable; it does

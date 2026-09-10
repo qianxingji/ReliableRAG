@@ -1,4 +1,25 @@
-# Current task: CAS Q2 P0-1, then two bounded controls
+# Current task: research reassessment after authenticated replay and controls
+
+## Current accepted state — 2026-09-11
+
+**CAS Q2 STATUS: NOT READY.** P0-1 full saved-parameter replay passed; P0-2's
+two controls and the subsequently frozen HGB-only attribution control are
+complete and independently sealed. Total new scientific fits: 168. No new
+retrieval/generation, final deployment fit or confirmation-ID selection occurred.
+
+Read [P0_1_CLIENT_ACCEPTANCE.md](P0_1_CLIENT_ACCEPTANCE.md),
+[P0_2_CONTRIBUTION_REVIEW.md](P0_2_CONTRIBUTION_REVIEW.md), and
+[P0_3_RESEARCH_DECISION.md](P0_3_RESEARCH_DECISION.md) before choosing work.
+The full-stack and two-signal advancement criteria both failed. Do not rerun
+either sealed experiment, loosen its criteria, or start confirmation.
+
+Next: the focused empirical-study contribution/design assessment specified in
+P0_3_RESEARCH_DECISION.md, plus read-only source/claim/cost work. No accepted final
+deployment candidate or executable confirmation freeze exists. The engineering
+worktree is `E:/paper/ReliableRAG-cas-q2-p0-1`; original data remain read-only at
+`E:/paper/ReliableRAG`. All new private experiment namespaces are ignored by Git.
+
+## Historical execution contract below (completed; retained for reproducibility)
 
 Read PROJECT_CHARTER.md, CURRENT_METHOD.md, EVIDENCE_INDEX.json and
 REPRODUCIBILITY_GAPS.md. Preserve all existing worktree edits and sealed outputs.

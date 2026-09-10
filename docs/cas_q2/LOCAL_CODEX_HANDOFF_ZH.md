@@ -1,5 +1,7 @@
 # 本地 Codex 执行任务：ROA 原始复现与审查包
 
+2026-09-11 接续说明：本任务卡的原始认证、重放和两个监督对照已完成；随后按新冻结设计补做 HGB_ONLY_R。两项贡献晋级规则均失败，没有获准进入最终确认的候选。最新入口为 CURRENT_TASK.md 与 P0_3_RESEARCH_DECISION.md。下文保留原始交接合同，不应再次执行封存实验。
+
 当前目标为中科院二区 Submission Ready；不是 JCR Q2。
 本任务依据 Work 已冻结的科研设计实施，不自行改变科研方向。
 当前候选为 ROA-FULL，开发支持标签为 GBV_AUGMENTED_ONLY。

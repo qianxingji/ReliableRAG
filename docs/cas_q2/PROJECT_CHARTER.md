@@ -41,7 +41,14 @@ P0 blocks credible submission, P1 materially improves competitiveness, P2 is opt
 
 ## Current decision
 
-Keep ROA-FULL as the sole candidate pending contribution controls and final
+2026-09-11 superseding execution state: saved-parameter replay passed and the
+prespecified controls are complete. ROA-FULL's complexity criterion and the
+subsequent minimal-fusion advancement criterion both failed. No final candidate
+is cleared. Follow P0_3_RESEARCH_DECISION.md for the bounded research reassessment;
+the earlier candidate rationale below is historical, not permission to ignore
+these results or start confirmation.
+
+Historical pre-control decision: keep ROA-FULL as the sole candidate pending contribution controls and final
 confirmation. Its label is GBV_AUGMENTED_ONLY. Do not resume risk-gate, dual-head,
 MILP or sibling searches without a new Research Lead design. Preserve V2's
 failed primary comparison. The shortest credible next step uses cached scores.

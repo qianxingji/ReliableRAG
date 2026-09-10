@@ -12,13 +12,20 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-10)
 
+Latest update (2026-09-11): original full replay passed. The frozen two-control
+experiment and one subsequently designed HGB-only attribution study are complete,
+with 168 total new scientific fits. Both advancement rules failed. Read
+`docs/cas_q2/P0_3_RESEARCH_DECISION.md` before further scientific work. Do not
+rerun sealed controls or start confirmation; no final candidate is cleared.
+
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.
 
 - Work is Research Project Lead; ChatGPT pro 6 owns research design and
   scientific argument; Codex GPT-6 Astra implements the reviewed design.
-- Current candidate: ROA-FULL, development-supported and GbV-augmented only.
-  No final deployment model or new V3 confirmation exists in the audited evidence.
+- Historical candidate: ROA-FULL, originally development-supported and
+  GbV-augmented only. Subsequent attribution gates failed; no current candidate
+  is cleared. No final deployment model or new V3 confirmation exists.
 - Preserve completed V2, risk-gate, dual-head and ROA experiments. Do not restart
   Phase 0, reopen rejected searches, or promote development results to confirmation.
 - Start with artifact authentication and replay. A hash PASS is not a replay PASS
