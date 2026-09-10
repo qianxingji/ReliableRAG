@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-10T16:38:03.200286+00:00",
+  "as_of_utc": "2026-09-10T18:08:13.860563+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -168,6 +168,9 @@
     "control_decision": "SIMPLER_CONTROL_COMPETITIVE_REVIEW_CONTRIBUTION",
     "minimal_fusion_decision": "TWO_SIGNAL_INCREMENT_NOT_ESTABLISHED",
     "final_candidate_cleared": false,
-    "confirmation_frozen": false
+    "confirmation_frozen": false,
+    "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
+    "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
+    "empirical_route_decision": "EMPIRICAL_REPLICATION_REQUIRES_DESIGN"
   }
 }

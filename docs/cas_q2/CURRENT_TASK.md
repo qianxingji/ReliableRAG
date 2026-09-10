@@ -13,8 +13,12 @@ Read [P0_1_CLIENT_ACCEPTANCE.md](P0_1_CLIENT_ACCEPTANCE.md),
 The full-stack and two-signal advancement criteria both failed. Do not rerun
 either sealed experiment, loosen its criteria, or start confirmation.
 
-Next: the focused empirical-study contribution/design assessment specified in
-P0_3_RESEARCH_DECISION.md, plus read-only source/claim/cost work. No accepted final
+Read [EMPIRICAL_ROUTE_REVIEW.md](EMPIRICAL_ROUTE_REVIEW.md) for the completed
+read-only cost and conditional precision audits and their scientific decision.
+The method-novelty route is unsupported. An empirical replication requires a
+complete claim-specific design; it is not automatically cleared for execution.
+Next: design assessment for that bounded replication, plus read-only
+provenance/availability and reproducibility preparation. No accepted final
 deployment candidate or executable confirmation freeze exists. The engineering
 worktree is `E:/paper/ReliableRAG-cas-q2-p0-1`; original data remain read-only at
 `E:/paper/ReliableRAG`. All new private experiment namespaces are ignored by Git.

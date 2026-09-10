@@ -17,6 +17,8 @@ experiment and one subsequently designed HGB-only attribution study are complete
 with 168 total new scientific fits. Both advancement rules failed. Read
 `docs/cas_q2/P0_3_RESEARCH_DECISION.md` before further scientific work. Do not
 rerun sealed controls or start confirmation; no final candidate is cleared.
+The cost/precision and empirical-route follow-up is in
+`docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md`; no further fit or confirmation is frozen.
 
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.

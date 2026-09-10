@@ -7,6 +7,9 @@ An ID-only inventory found 2,105 / 7,276 / 17,838 remaining questions in the
 existing HotpotQA / 2Wiki / MuSiQue source ledgers; none were selected. The
 unavailability statements below are historical. This document remains a draft,
 not a freeze, and the new Research Lead decision governs the next work.
+Subsequent conditional OOF precision and current-input cost audits are complete;
+see EMPIRICAL_ROUTE_REVIEW.md. They do not supply final-model power or a sample-size
+decision and do not reopen either failed advancement rule.
 
 Research Lead design work. **NOT AN EXECUTABLE FREEZE.** No new IDs, final fits,
 test outcomes or scientific results are authorized by this document alone.
