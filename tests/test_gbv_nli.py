@@ -49,6 +49,22 @@ class TestGBVHelpers(unittest.TestCase):
         with self.assertRaises(ValueError):
             resolve_entailment_index({0: "LABEL_0", 1: "LABEL_1"})
 
+    def test_pinned_binary_entailment_label_resolution(self):
+        self.assertEqual(
+            resolve_entailment_index({0: "entailment", 1: "not_entailment"}),
+            0,
+        )
+
+    def test_reversed_binary_entailment_label_resolution(self):
+        self.assertEqual(
+            resolve_entailment_index({0: "not_entailment", 1: "entailment"}),
+            1,
+        )
+
+    def test_negative_entailment_substring_does_not_match(self):
+        with self.assertRaises(ValueError):
+            resolve_entailment_index({0: "not_entailment", 1: "neutral"})
+
     def test_twenty_word_style_overlap_chunking_contract(self):
         tokenizer = DummyTokenizer()
         passage = "one two three four five six seven eight nine ten"
