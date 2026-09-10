@@ -15,10 +15,17 @@ def format_hypothesis(question: str, answer: str) -> str:
 
 
 def resolve_entailment_index(id2label: dict[Any, str]) -> int:
+    """Resolve the unique positive entailment class and fail closed otherwise.
+
+    The pinned GbV model uses the binary labels ``entailment`` and
+    ``not_entailment``. Substring matching is therefore unsafe because the negative
+    label also contains ``entailment``. After the existing normalization, require an
+    exact positive ``entailment`` label.
+    """
     matches: list[int] = []
     for raw_index, raw_label in id2label.items():
         label = re.sub(r"[^a-z]", "", str(raw_label).lower())
-        if "entail" in label:
+        if label == "entailment":
             matches.append(int(raw_index))
     if len(matches) != 1:
         raise ValueError(f"expected exactly one entailment label, found {matches}")
