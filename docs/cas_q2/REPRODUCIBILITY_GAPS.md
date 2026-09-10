@@ -43,6 +43,26 @@ experiment files were corrupted. Numeric replay remains NOT_RUN; CAS Q2 status
 remains NOT READY. No retrieval, generation, base scoring or scientific fitting
 was run in this continuation.
 
+## Subsequent autonomous preparation
+
+The original AUTHOR_REPORT.md was obtained separately and its pinned hash
+matched. All 40 aggregate rows were rechecked; the paired five-repetition
+mean/sample-standard-deviation summary is in REPORT_RECHECK.json. This checks
+reported arithmetic only and does not reconstruct F1 from predictions.
+
+The local-only ZIP packager has five synthetic-fixture tests in addition to the
+ten existing integrity tests. Round-trip authentication and refusal to overwrite
+files or package changed artifacts passed. A future batch-reallocation arithmetic
+kernel has four tests, including comparison against 100 explicitly replicated
+toy batches. These 19 tests are engineering evidence; there are still zero new
+scientific fits, retrieval/generation calls or ROA numerical replays.
+
+Source inspection also identified that the old V2 ID availability loop omits
+datasets with no available IDs, and its bootstrap retains old action selections.
+The confirmation design documents these reuse boundaries; historical source and
+results were not changed. Final confirmation is not executable until its data,
+deployment recipe and complete analysis protocol are frozen.
+
 The authoritative private source remains E:/paper/ReliableRAG on the original
 experiment machine, subject to matching hashes. Public source should contain the
 reusable implementation and manifest references; private predictions or raw

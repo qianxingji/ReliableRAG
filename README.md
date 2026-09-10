@@ -29,5 +29,9 @@ this checkout; missing files are a blocking result.
 - [Current method](docs/cas_q2/CURRENT_METHOD.md)
 - [Evidence index](docs/cas_q2/EVIDENCE_INDEX.json)
 - [Reproducibility gaps](docs/cas_q2/REPRODUCIBILITY_GAPS.md)
+- [Rechecked development summary and limitations](docs/cas_q2/REPORT_RECHECK.md)
+- [本地 Codex 执行与回传任务卡](docs/cas_q2/LOCAL_CODEX_HANDOFF_ZH.md)
+- [Method and baseline position](docs/cas_q2/METHOD_AND_BASELINE_POSITION.md)
+- [Confirmation design and unresolved preflight](docs/cas_q2/CONFIRMATION_DESIGN.md)
 
 Historical protocols are retained. `CODEX_TASK_PHASE0.md` is not the current starting task.

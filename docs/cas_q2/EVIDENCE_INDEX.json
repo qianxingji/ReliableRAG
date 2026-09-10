@@ -143,5 +143,16 @@
     "end_to_end_reproducibility_in_Work",
     "formal_risk_guarantee",
     "broad_reader_or_full_corpus_transfer"
-  ]
+  ],
+  "subsequent_review": {
+    "date": "2026-09-10",
+    "report_recheck": "docs/cas_q2/REPORT_RECHECK.json",
+    "report_rows_checked": 40,
+    "method_assessment": "docs/cas_q2/METHOD_AND_BASELINE_POSITION.md",
+    "confirmation_design": "docs/cas_q2/CONFIRMATION_DESIGN.md",
+    "confirmation_design_status": "NOT_EXECUTABLE_FREEZE",
+    "engineering_tests_passed": 19,
+    "numeric_replay_status": "NOT_RUN",
+    "new_scientific_fit_calls": 0
+  }
 }

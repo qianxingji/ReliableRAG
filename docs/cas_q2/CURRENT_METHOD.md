@@ -57,3 +57,8 @@ cross-state feature necessity, full-corpus generality or broad reader transfer
 has been established for ROA. Old-method ablations/transfer/cost results are not
 ROA evidence. The private runtime/model/outcome bytes must be authenticated and
 replayed before the current implementation can be accepted as reproducible.
+
+Research Lead follow-up: [method and baseline position](METHOD_AND_BASELINE_POSITION.md)
+explains why ranking Recovery alone does not generally optimize expected Net;
+[report recheck](REPORT_RECHECK.md) records paired mean/std and LODO limitations.
+These findings do not authorize a new model search.

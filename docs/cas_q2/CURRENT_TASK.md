@@ -2,6 +2,8 @@
 
 Read PROJECT_CHARTER.md, CURRENT_METHOD.md, EVIDENCE_INDEX.json and
 REPRODUCIBILITY_GAPS.md. Preserve all existing worktree edits and sealed outputs.
+Chinese local execution and return instructions:
+[LOCAL_CODEX_HANDOFF_ZH.md](LOCAL_CODEX_HANDOFF_ZH.md).
 
 ## P0-1: authenticate and replay the original implementation
 
@@ -29,8 +31,8 @@ After integrity passes:
    reimplementation claimed as equivalent.
 5. In a separate output directory replay saved model coefficients/calibrators,
    preprocessing, group splits, probabilities and actions; no scientific refit.
-   Fix the replay sample by sorted keys before examining prediction errors;
-   include all 28 partition contexts and both variants where present.
+   Cover every row required by the original validator across all 28 partition
+   contexts and both variants. A sampled check is not full replay acceptance.
 6. Use a second implementation to compare numeric outputs at the existing
    1e-10 tolerance and exact action membership. Explain platform issues; do not
    silently alter scores, tolerances or ties to force a pass.
@@ -57,6 +59,6 @@ Report method/baseline/experiment/argument gaps separately.
 
 Immediate priorities:
 - P0: acquire/authenticate/replay private runtime and scores, then compare the two controls.
-- P1: final-candidate confirmation and targeted external validation after a frozen design;
-  final confirmation itself becomes a P0 prerequisite to submission.
+- P0: final-candidate confirmation after a frozen design and contribution review.
+- P1: targeted external validation and current-method cost/error analysis.
 - P2: no larger models, broader searches or cosmetic expansion at this stage.
