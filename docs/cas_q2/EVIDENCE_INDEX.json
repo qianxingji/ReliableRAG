@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "as_of_utc": "2026-09-10T13:41:54.673394Z",
+  "cas_q2_status": "NOT READY",
+  "repository": "qianxingji/ReliableRAG",
+  "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
+  "current_candidate": "ROA-FULL",
+  "scientific_scope": "V3_DEVELOPMENT_ONLY",
+  "development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
+  "dependence_label": "GBV_AUGMENTED_ONLY",
+  "final_deployment_model_fitted": false,
+  "fresh_confirmatory_ids_selected": false,
+  "work_full_numeric_replay": "NOT_RUN_PRIVATE_INPUTS_UNAVAILABLE",
+  "cohort": {
+    "questions": 4500,
+    "traces": 13500,
+    "eligible": 3202,
+    "primary_seeds": [
+      20260917,
+      20260918,
+      20260919,
+      20260920,
+      20260921
+    ],
+    "lodo_seed": 20260922
+  },
+  "roa_manifest": {
+    "schema_version": 1,
+    "namespace": "outputs/daa_v3_development/recovery_only_isolation_v1",
+    "manifest_path": "outputs/daa_v3_development/recovery_only_isolation_v1/SHA256_MANIFEST.json",
+    "manifest_sha256": "0921b3b15be2a58b7863911e60cd4ce10cb2b063055dda9823508c3ab2e6a8d6",
+    "payload_file_count": 216,
+    "payload_size_bytes": 54435934
+  },
+  "critical_artifacts": [
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/AUTHOR_REPORT.md",
+      "sha256": "4090ec70c4a9154ecfc960c9c2bc26317b585d06cc308ee962a984e8981bbf6d",
+      "size_bytes": 11814
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/DEVELOPMENT_DECISION.json",
+      "sha256": "a38673592d9d0cba7dadf92c66439919d3fbd99949545aa2868ee01c15796acf",
+      "size_bytes": 1975
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/EXECUTABLE_CONFIG_FREEZE.json",
+      "sha256": "d46ddbf83a70311ae799b576488d7df60296997a0e1e013b5176771e100b3a5d",
+      "size_bytes": 8662
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/FEATURE_SCHEMA.json",
+      "sha256": "7ae5a0cd6dde6ff8e27eafc7fe1f1e80ec814e1249827c5b106f044adf2b63c0",
+      "size_bytes": 3415
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/INDEPENDENT_VALIDATION.json",
+      "sha256": "4a809efaf38de9c14e7df696d803a88bf4bab1d1226a688f08813810d90206b7",
+      "size_bytes": 283143
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/INPUT_VERIFICATION.json",
+      "sha256": "f45d43b7f2721fad254e087e80a493a9138f6ce57f588d722c829530c9c7b60f",
+      "size_bytes": 629570
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/LODO_TRANSPORT.json",
+      "sha256": "fd49ba0e81bd07df67707857886837707e9a54cd7b8e0f9faf49346e644a1faa",
+      "size_bytes": 199925
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/MODEL_FIT_MANIFEST.json",
+      "sha256": "3f45c02e0d2eb9352dcfd29be7a603b28214385cb8ee821eefaa54879c2d686e",
+      "size_bytes": 149738
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/OUTER_RESULTS.json",
+      "sha256": "7198fa57a084e295cce97a739aa856833fbe352ef66fbfa0f2eea044c5b11f5f",
+      "size_bytes": 130895
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/RECOVERY_ONLY_ISOLATION_SEAL.json",
+      "sha256": "61f5b0c8103af32ce6bb901fdebfff61f1130deee7f382720feee12caf6cede5",
+      "size_bytes": 52357
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/SPLIT_MANIFEST.json",
+      "sha256": "afad8a66836dc70d78201ba884206288c2ebc5f2ecb9c78e4b42699f38da5314",
+      "size_bytes": 40087
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/design.py",
+      "sha256": "c8cf3ac7abc230fbe02f3fa2115f09bf980a49627a7d88e740c6fa7ecb4251f6",
+      "size_bytes": 5527
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/execute.py",
+      "sha256": "af26a64eecd6a6fa84e6802b55dce976e2fef9a798c548251ebf3275d8658a09",
+      "size_bytes": 7339
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/independent.py",
+      "sha256": "0354b43ee86a139449a9552df552e8635576f5440d47f4b40178addd4fbae9f5",
+      "size_bytes": 20023
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/learning.py",
+      "sha256": "1ee2f9bacfe8f2cb9bed79aa450f679ded6d8d4d18c6b99fa105eaf5c6da664f",
+      "size_bytes": 4699
+    },
+    {
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/metrics.py",
+      "sha256": "e6ca97f3e00afe9f8f0d8e9d0c611ea1508de115eac1ed57d829f55e8648fa58",
+      "size_bytes": 1794
+    }
+  ],
+  "stage_decisions": [
+    {
+      "stage": "V2",
+      "decision": "PRIMARY_SUPERIORITY_NOT_ESTABLISHED",
+      "em_difference_vs_gbv_pp": 0.214815,
+      "em_ci_95_pp": [
+        -0.066667,
+        0.496296
+      ],
+      "source": "docs/V3_DEVELOPMENT_STATUS.md"
+    },
+    {
+      "stage": "RG-HGB",
+      "decision": "REJECT_SIMPLE_RISK_GATE_MOVE_TO_DUAL_HEAD",
+      "validation_sha256": "a7345245a1d919d1f86a8067377699974c919a40181d4228f7b0cff89ce46bde"
+    },
+    {
+      "stage": "DHC-V3-R1",
+      "decision": "INCONCLUSIVE_DUAL_HEAD_STAGE",
+      "validation_sha256": "16c3aa52dd9de337afe57d388fd8bc8da6d086fac1f645f7a1f85a41c9039d8b"
+    }
+  ],
+  "not_proven": [
+    "fresh_ROA_superiority",
+    "baseline_independence",
+    "necessity_of_full_feature_stack",
+    "end_to_end_reproducibility_in_Work",
+    "formal_risk_guarantee",
+    "broad_reader_or_full_corpus_transfer"
+  ]
+}

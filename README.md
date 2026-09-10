@@ -1,24 +1,33 @@
-# ReliableRAG — Codex Research Workspace
+# ReliableRAG
 
-This workspace is prepared for an SCI Q1 / CCF-level RAG research project under a single RTX 5060 Ti 16GB constraint.
+Research on selective adoption of repaired RAG answers. Current target:
+**CAS Journal Ranking Q2 Submission Ready**, on one RTX 5060 Ti 16 GB.
+CAS Q2 is not JCR Q2. Scientific integrity, fairness and reproducibility remain mandatory.
 
-## First Codex instruction
-Open this repository in Codex and send only:
+**CAS Q2 STATUS: NOT READY**
 
-> Read AGENTS.md and CODEX_TASK_PHASE0.md, then execute Phase 0 exactly as specified. Stop after Phase 0.
+ROA-FULL is the current development-supported candidate. Its benefit depends on
+GbV verifier scores. The final deployment model and fresh V3 confirmation remain outstanding.
 
-Do not ask Codex to implement the full method before the oracle headroom audit in Phase 2.
+## Continue here
 
-## Phase 0 dataset verification
+1. Read [AGENTS.md](AGENTS.md) and [CURRENT_TASK.md](docs/cas_q2/CURRENT_TASK.md).
+2. Authenticate the private ROA artifacts on the machine holding them:
 
-Phase 0 contains only dataset loading, normalization, documentation, and smoke
-tests. It does not implement retrieval, generation, or evidence intervention.
+   ```powershell
+   python -m scripts.verify_roa_artifacts --project-root E:/paper/ReliableRAG
+   ```
 
-From the repository root with Python 3.10 or newer:
+3. Complete the replay handoff, then implement the bounded
+   [supervision-matched controls](docs/cas_q2/CONTROLS_PROTOCOL.md).
 
-```powershell
-python -m unittest discover -s tests -v
-python -m scripts.smoke_datasets --limit 10
-```
+The checker only reads/hashes files. It does not execute archived scripts, train,
+generate or establish numerical reproducibility. Private artifacts are not in
+this checkout; missing files are a blocking result.
 
-See `docs/DATASETS.md` for sources, schema, annotation boundaries, and caveats.
+- [Project charter](docs/cas_q2/PROJECT_CHARTER.md)
+- [Current method](docs/cas_q2/CURRENT_METHOD.md)
+- [Evidence index](docs/cas_q2/EVIDENCE_INDEX.json)
+- [Reproducibility gaps](docs/cas_q2/REPRODUCIBILITY_GAPS.md)
+
+Historical protocols are retained. `CODEX_TASK_PHASE0.md` is not the current starting task.

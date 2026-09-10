@@ -5,8 +5,33 @@ This repository implements experiments for a research project on:
 
 **Runtime Paired Evidence Interventions for Reliable RAG under Retrieval-State Lock-In.**
 
-Target: a high-quality SCI Q1 / CCF-level research paper.
+Target: a submission-ready paper competitive for CAS Journal Ranking Q2
+(Chinese Academy of Sciences journal partition, not JCR Q2). The user's
+2026-09-10 goal update supersedes the earlier Q1/CCF target.
 This repository is for experimental research code only. Do NOT write the paper manuscript unless explicitly requested.
+
+## Current execution entry point (2026-09-10)
+
+Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
+and `EVIDENCE_INDEX.json` in that directory before choosing work.
+
+- Work is Research Project Lead; ChatGPT pro 6 owns research design and
+  scientific argument; Codex GPT-6 Astra implements the reviewed design.
+- Current candidate: ROA-FULL, development-supported and GbV-augmented only.
+  No final deployment model or new V3 confirmation exists in the audited evidence.
+- Preserve completed V2, risk-gate, dual-head and ROA experiments. Do not restart
+  Phase 0, reopen rejected searches, or promote development results to confirmation.
+- Start with artifact authentication and replay. A hash PASS is not a replay PASS
+  and neither means submission readiness.
+- Core algorithms, feature/model searches and confirmatory protocols require a
+  concrete Research Lead design before implementation; do not optimize for a win.
+- End each important stage with `CAS Q2 STATUS: NOT READY` or
+  `CAS Q2 STATUS: SUBMISSION READY`. If not ready, report rejection risks, missing
+  evidence, method/baseline/experiment/argument problems and P0/P1/P2 priorities.
+
+The research-question/component/phase sections below preserve the original
+research plan. They are historical context, not an instruction to repeat completed
+phases or to present their hypotheses as current established contributions.
 
 ## Hardware Constraints
 Primary machine:
