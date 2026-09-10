@@ -126,9 +126,11 @@ Do not run a new bootstrap or significance test unless explicitly defined by the
 
 Implement exactly the decision rule from the protocol:
 
-`SUPPORTED_FOR_V3_FINALIZATION` only if all five support conditions pass.
+Apply the human-authorized prospective clarification in `docs/V3_RISK_GATE_REJECTION_RULE_CLARIFICATION_001.md`. For each repetition/comparator, success means `RG-HGB net > comparator net` AND `RG-HGB damage <= comparator damage`. Count `success_vs_hgb` and `success_vs_gbv` separately over five repetitions (integers 0..5).
 
-`REJECT_SIMPLE_RISK_GATE_MOVE_TO_DUAL_HEAD` if the predeclared rejection rule passes.
+`SUPPORTED_FOR_V3_FINALIZATION` requires `success_vs_hgb >= 4 AND success_vs_gbv >= 4` and all unchanged protocol conditions 3–5: median RG-HGB minus GbV EM >= +0.30 pp; no dataset median below -0.20 pp; q > 0 in at least 15/25 outer folds.
+
+`REJECT_SIMPLE_RISK_GATE_MOVE_TO_DUAL_HEAD` iff `success_vs_hgb < 3 OR success_vs_gbv < 3` (only 0, 1, or 2 successes against either comparator).
 
 Otherwise:
 

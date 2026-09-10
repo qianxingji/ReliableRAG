@@ -124,6 +124,8 @@ For each repetition report for RG-HGB, raw HGB, GbV, and optional V2:
 
 ## Development evidence criteria
 
+Prospective clarification: `V3_RISK_GATE_REJECTION_RULE_CLARIFICATION_001.md`, explicitly authorized before any policy evaluation. For each repetition and comparator, a success means `RG-HGB net > comparator net` AND `RG-HGB damage <= comparator damage`. Count successes separately over five repetitions as `success_vs_hgb` and `success_vs_gbv` (integers 0..5).
+
 Mark the simple risk-gated architecture `SUPPORTED_FOR_V3_FINALIZATION` only if all conditions below hold:
 
 1. RG-HGB has higher net than raw HGB and no more damage than raw HGB in at least 4 of 5 repetitions;
@@ -132,10 +134,12 @@ Mark the simple risk-gated architecture `SUPPORTED_FOR_V3_FINALIZATION` only if 
 4. no dataset has a median repetition-level RG-HGB minus GbV EM difference below `-0.20` pp;
 5. the selected gate is nontrivial (`q>0`) in at least 15 of the 25 outer folds.
 
-Mark `REJECT_SIMPLE_RISK_GATE_MOVE_TO_DUAL_HEAD` if either:
+Mark `REJECT_SIMPLE_RISK_GATE_MOVE_TO_DUAL_HEAD` iff:
 
-- condition 1 fails in fewer than 3 of 5 repetitions, or
-- condition 2 fails in fewer than 3 of 5 repetitions.
+- `success_vs_hgb < 3 OR success_vs_gbv < 3`;
+- that is, either comparator has only 0, 1, or 2 successful repetitions.
+
+Support still requires `success_vs_hgb >= 4 AND success_vs_gbv >= 4` and all unchanged conditions 3–5 above. This clarification changes no other scientific setting.
 
 Otherwise mark `INCONCLUSIVE_POLICY_STAGE`.
 
