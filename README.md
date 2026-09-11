@@ -28,7 +28,13 @@ with freshly installed, hash-locked numerical packages and zero error. The
 current Windows host and CPython base are reused; full neural-pipeline and
 another-host reproduction remain unverified. An [offline runbook](docs/cas_q2/ROA_OFFLINE_CPU_REPLAY_RUNBOOK.md)
 and [package hash lock](requirements/roa-replay-win-cp310.lock) are available.
-Private data and archives are excluded from Git. The suite has 151 tests,
+The [current neural inventory](docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md)
+covers 35 distributions and 22 model assets; all 30,912 checked inputs are
+unchanged. A real NumPy RECORD discrepancy remains explicitly reported. All
+35 exact official wheels are now acquired and role-specific hash locks are in
+`requirements/`; clean neural installation and arbitrary-path delivery remain
+pending. [Current results](docs/cas_q2/NEURAL_RUNTIME_INVENTORY_RESULTS.json)
+retain failure and acquisition manifests. Private data and archives are excluded from Git. The suite has 151 tests,
 149 passing and two existing Windows capability skips. Implemented
 [D evaluation](docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md) and
 [cost auditing](docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) still await

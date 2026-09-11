@@ -12,35 +12,37 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Latest acceptance: ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md and
-ROA_CLEAN_ENVIRONMENT_RESULTS.json. Five official, hash-locked numerical wheels
-were installed offline into a new isolated environment. Full original primary
-and independent replay pass with zero error and no observed old-venv access;
-12,017 checked inputs, including 5,214 new environment files, remain unchanged.
-This reuses the current Windows host and separate CPython 3.10.6 installation;
-it is not full neural-pipeline, another-host or original-training reproduction.
-The accepted source/data package has 2,821 files; all earlier failure records
-and archives are preserved. Do not repeat these accepted release/environment runs.
+Current runtime inventory is complete with a preserved NumPy RECORD discrepancy;
+see NEURAL_RUNTIME_INVENTORY_REVIEW.md and NEURAL_RUNTIME_INVENTORY_RESULTS.json.
+All 30,912 inventoried inputs remain unchanged; 35 distributions, 38 satisfied
+active dependency requirements and 22 authenticated model assets are covered.
+All 35 exact official wheels (3,406,099,923 bytes) are now acquired and hash-locked.
+No clean neural installation is accepted yet. Preserve the initial audit/metadata
+failures, the duplicate cache declaration, and all existing environment bytes.
+Three original literal roots and the C4 root-equality bridge constrain delivery;
+do not modify active loaders or treat a requirements file as portable execution.
 
+The separate CPU numerical environment and full original saved-parameter replay
+remain accepted with zero error and no observed old-venv access. Do not repeat
+accepted replay, release, CPU installation, runtime inventory or wheel acquisition.
 Original P0-1 replay and all three supervised controls are complete. Both
 historical advancement rules failed; no final novel-method candidate is cleared.
 The frozen empirical design has five fitted policies, 6,000 new question IDs,
 accepted C1 native pools and C2 original retrieval. Total scientific fits: 178.
-C3 continues in its original canonical process from cc304ee, with 6,837 pairs
-at 08:44:58 UTC. Recheck live process/receipts; never duplicate or restart it.
-Finish canonical generation, the fixed 180-trace replay and independent C3
-acceptance, then actual C4 preflight/base/GbV/policies/full prelabel validation.
-C4, D and cost executors are already implemented and CPU-accepted. Only full
-prelabel acceptance permits the cost audit and four real D processes.
-Fresh Gold reads remain zero. Engineering tests: 151, with 149 pass and two
-existing Windows capability skips; no scientific quality is implied.
+C3 remains its original canonical process from cc304ee, PID 55688: 7,949 pairs
+at 09:33:20 UTC. Recheck live process/receipts; never duplicate or restart it.
+Finish canonical generation, fixed 180-trace replay and independent acceptance,
+then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
+C4 acceptance permits the implemented cost auditor and four real D processes.
+Fresh Gold reads remain zero. Existing engineering tests: 151, with 149 pass and
+two Windows capability skips; these were not repeated for the inventory.
 
-Next independent work: complete neural-runtime environment/dependency and
-source-path reconstruction, plus remaining comparison/provenance review.
-Historical fit-time receipts and the fresh empirical result/contribution are
-still missing. CAS Q2 STATUS: NOT READY. CURRENT_TASK.md is the consolidated
-active handoff; prior checkpoint prose remains in Git history and the linked
-immutable acceptance/protocol records, not as instructions to redo closed work.
+Next independent work: prospective separate neural-environment installation and
+source-path delivery design using the acquired role-specific locks. Keep all GPU
+preflights/inference behind actual stage gates. Historical fit-time receipts and
+fresh empirical result/contribution remain missing. CAS Q2 STATUS: NOT READY.
+CURRENT_TASK.md is the consolidated active handoff; linked immutable records and
+Git history preserve previous checkpoints without instructing closed work again.
 
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.

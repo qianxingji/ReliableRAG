@@ -1,7 +1,7 @@
 # Current task: complete the frozen empirical replication
 
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
-independent numerical-environment acceptance. Previous checkpoint prose is
+independent numerical-environment acceptance and current neural inventory. Previous checkpoint prose is
 preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
@@ -56,8 +56,8 @@ actions or cohorts; version any necessary correction prospectively.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 08:44:58 UTC snapshot has 6,837 pairs / 20,512 generation receipts,
-   non-atomic and not completion; see [latest results](ROA_CLEAN_ENVIRONMENT_RESULTS.json).
+   failures. The 09:33:20 UTC snapshot has 7,949 pairs / 23,848 generation receipts,
+   non-atomic and not completion; see [latest results](NEURAL_RUNTIME_INVENTORY_RESULTS.json).
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -79,12 +79,21 @@ actions or cohorts; version any necessary correction prospectively.
 ## P1 and P2 while C3 runs
 
 The CPU replay delivery/installation scope is accepted; use its
-[offline runbook](ROA_OFFLINE_CPU_REPLAY_RUNBOOK.md). Next useful independent
-work is the **complete C3/C4 neural runtime environment/dependency and source-path
-inventory**: identify exact installed distributions, binary/model assets,
-provenance and absolute-path obligations before designing reconstruction. Do not
-claim the CPU wheel lock reconstructs neural acquisition/scoring. Do not run new
-GPU preflights or inference before the actual stage gates.
+[offline runbook](ROA_OFFLINE_CPU_REPLAY_RUNBOOK.md). The full current neural
+[inventory review](NEURAL_RUNTIME_INVENTORY_REVIEW.md) now covers 35 distributions,
+22 model assets and 30,912 unchanged inputs. It retains a real NumPy RECORD
+size/digest discrepancy and all failed audit/resolution attempts. All 35 exact
+official wheels (3,406,099,923 bytes) have been acquired; see
+[results and manifest pins](NEURAL_RUNTIME_INVENTORY_RESULTS.json). Do not repeat
+this inventory or wheel acquisition. The four `requirements/neural-*-win-cp310.lock`
+files distinguish the 33-package venv from SentencePiece and PyArrow targets.
+
+Next: design and perform a separate clean neural installation, then specify an
+honest delivery path strategy. Three literal original roots, the C4 root-equality
+check and absolute predecessor records remain real constraints. Do not modify the
+running environment or frozen C3/C4 source. No new GPU preflight or neural replay
+is authorized before the actual stage gates. Wheel acquisition alone is not
+installation, historical full-environment authentication or pipeline relocation.
 
 Maintain [GbV component/paired-adaptation boundaries](GBV_SOURCE_FIDELITY_REVIEW.md),
 complete shared-inference cost accounting and contamination/training provenance

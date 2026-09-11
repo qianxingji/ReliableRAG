@@ -1,0 +1,608 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T09:33:20.995872+00:00",
+  "status": "COMPLETE_CURRENT_RUNTIME_INVENTORY_WITH_PRESERVED_RECORD_DISCREPANCY",
+  "raw_inventory_status": "FAIL_REPORTED_INVENTORY_ISSUES",
+  "wheel_acquisition_status": "PASS_35_OFFICIAL_WHEELS_ACQUIRED_ONLY",
+  "manifests": {
+    "neural_runtime_inventory_v1": "4b0d3a3662d5051fd4b2cbd6ed732e4ce65af0621324854403caff00b3328ec8",
+    "neural_runtime_inventory_v1_diagnostic": "3240903795b5445e00b48845daf6c45f414272aed9de01f4ec58353d2ced3967",
+    "neural_runtime_record_diagnostic_v2": "1070a0bd94c419836f04c23e672ecbd8585792955a8e428aa85bfaf68efc71cf",
+    "neural_runtime_inventory_v2": "0befadadef664a7dd052b1f843f555db513147965eed3bb51f01870ba6958788",
+    "neural_official_wheel_resolution_v1": "0fe71dfab921bad5946e6694570db21c3d99209c69f423d31076c23aaacafff2",
+    "neural_official_wheel_resolution_v3": "fd87bc532b391ba78b02b1dd88e241ac7b25dae7d5a08288179a841555ca0f2c",
+    "neural_official_wheels_v1": "813f7faeb51f015135e6d85d496c359225b234e9692d4eb079e63ba432c8ac89"
+  },
+  "inventory": {
+    "distributions": 35,
+    "main_environment_distributions": 33,
+    "targeted_distributions": 2,
+    "declared_record_entries": 30707,
+    "hashed_record_entries": 21201,
+    "unhashed_record_entries": 9506,
+    "physical_files_by_root": {
+      "original_venv": 30032,
+      "sentencepiece_target": 21,
+      "pyarrow_target": 770
+    },
+    "unowned_physical_files": 117,
+    "active_dependency_edges": 38,
+    "inactive_or_extra_dependency_edges": 899,
+    "package_record_issues": 2,
+    "duplicate_record_paths": 1,
+    "model_asset_files": 22,
+    "model_asset_bytes": 7494996533,
+    "unique_input_files": 30912,
+    "unique_input_bytes": 13873730901,
+    "all_inputs_unchanged": true
+  },
+  "record_issues": [
+    {
+      "package": "numpy",
+      "record_path": "numpy/distutils/__pycache__/conv_template.cpython-310.pyc",
+      "reason": "RECORD_SIZE",
+      "expected": 8278,
+      "actual": 8284
+    },
+    {
+      "package": "numpy",
+      "record_path": "numpy/distutils/__pycache__/conv_template.cpython-310.pyc",
+      "reason": "RECORD_DIGEST",
+      "expected": "fyHEvzWlDsUAMPJilcJGYRmrErHEWK91SC_qL7i2ACQ",
+      "actual": "QsK_w84Ok-TAsNscqlQtCM2v1lw2eQS6eerDkwrTvg4"
+    }
+  ],
+  "unowned_cache_filename_tags": {
+    "cpython-312": 97,
+    "cpython-313": 13
+  },
+  "current_missing_or_incompatible_dependencies": 0,
+  "installed_distributions": [
+    {
+      "name": "certifi",
+      "version": "2026.7.22",
+      "role": "original_venv"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.1",
+      "role": "original_venv"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "role": "original_venv"
+    },
+    {
+      "name": "faiss-cpu",
+      "version": "1.11.0.post1",
+      "role": "original_venv"
+    },
+    {
+      "name": "filelock",
+      "version": "3.32.3",
+      "role": "original_venv"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.7.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "huggingface-hub",
+      "version": "0.36.2",
+      "role": "original_venv"
+    },
+    {
+      "name": "idna",
+      "version": "3.19",
+      "role": "original_venv"
+    },
+    {
+      "name": "ijson",
+      "version": "3.4.0.post0",
+      "role": "original_venv"
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6",
+      "role": "original_venv"
+    },
+    {
+      "name": "joblib",
+      "version": "1.5.3",
+      "role": "original_venv"
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.3",
+      "role": "original_venv"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "networkx",
+      "version": "3.4.2",
+      "role": "original_venv"
+    },
+    {
+      "name": "numpy",
+      "version": "2.2.6",
+      "role": "original_venv"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "role": "original_venv"
+    },
+    {
+      "name": "pip",
+      "version": "26.2.1",
+      "role": "original_venv"
+    },
+    {
+      "name": "psutil",
+      "version": "7.0.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.2",
+      "role": "original_venv"
+    },
+    {
+      "name": "regex",
+      "version": "2026.7.19",
+      "role": "original_venv"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "role": "original_venv"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.7.2",
+      "role": "original_venv"
+    },
+    {
+      "name": "scipy",
+      "version": "1.15.3",
+      "role": "original_venv"
+    },
+    {
+      "name": "setuptools",
+      "version": "63.2.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.6.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.21.4",
+      "role": "original_venv"
+    },
+    {
+      "name": "torch",
+      "version": "2.7.1+cu128",
+      "role": "original_venv"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "transformers",
+      "version": "4.53.2",
+      "role": "original_venv"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.7.0",
+      "role": "original_venv"
+    },
+    {
+      "name": "sentencepiece",
+      "version": "0.2.1",
+      "role": "sentencepiece_target"
+    },
+    {
+      "name": "pyarrow",
+      "version": "20.0.0",
+      "role": "pyarrow_target"
+    }
+  ],
+  "absolute_freeze_path_counts": [
+    {
+      "stage": "empirical_runtime_v1",
+      "records": 121,
+      "root_classes": {
+        "original_project": 46,
+        "engineering_worktree": 75
+      }
+    },
+    {
+      "stage": "empirical_scoring_stage_engineering_v1",
+      "records": 243,
+      "root_classes": {
+        "task_workspace": 3,
+        "original_project": 70,
+        "engineering_worktree": 170
+      }
+    },
+    {
+      "stage": "empirical_outcome_engineering_v1",
+      "records": 1054,
+      "root_classes": {
+        "task_workspace": 4,
+        "original_project": 852,
+        "engineering_worktree": 198
+      }
+    },
+    {
+      "stage": "empirical_cost_engineering_v1",
+      "records": 1065,
+      "root_classes": {
+        "task_workspace": 5,
+        "original_project": 852,
+        "engineering_worktree": 208
+      }
+    }
+  ],
+  "literal_original_root_bindings": 3,
+  "arbitrary_neural_root_relocation_supported": false,
+  "original_runtime_named_versions": 8,
+  "original_scoring_named_versions": 6,
+  "official_wheels": 35,
+  "official_wheel_bytes": 3406099923,
+  "wheel_roles": {
+    "original_venv": 33,
+    "pyarrow_target": 1,
+    "sentencepiece_target": 1
+  },
+  "official_payloads_reused_from_CPU_kit": 5,
+  "wheel_selections": [
+    {
+      "package": "certifi",
+      "version": "2026.7.22",
+      "role": "original_venv",
+      "filename": "certifi-2026.7.22-py3-none-any.whl",
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "size_bytes": 136983
+    },
+    {
+      "package": "charset-normalizer",
+      "version": "3.5.1",
+      "role": "original_venv",
+      "filename": "charset_normalizer-3.5.1-cp310-cp310-win_amd64.whl",
+      "sha256": "be47f99644b208bff7766314013f9acf57b056b04191d570d68ad14022cf5b1d",
+      "size_bytes": 206030
+    },
+    {
+      "package": "colorama",
+      "version": "0.4.6",
+      "role": "original_venv",
+      "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+      "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+      "size_bytes": 25335
+    },
+    {
+      "package": "faiss-cpu",
+      "version": "1.11.0.post1",
+      "role": "original_venv",
+      "filename": "faiss_cpu-1.11.0.post1-cp310-cp310-win_amd64.whl",
+      "sha256": "9dccf67d4087f9b0f937d4dccd1183929ebb6fe7622b75cba51b53e4f0055a0c",
+      "size_bytes": 14880811
+    },
+    {
+      "package": "filelock",
+      "version": "3.32.3",
+      "role": "original_venv",
+      "filename": "filelock-3.32.3-py3-none-any.whl",
+      "sha256": "7f0ca4bcc0e181c60dbbd8aa9ab5b120ebb99e4e064e83636340056f833a1f09",
+      "size_bytes": 98901
+    },
+    {
+      "package": "fsspec",
+      "version": "2026.7.0",
+      "role": "original_venv",
+      "filename": "fsspec-2026.7.0-py3-none-any.whl",
+      "sha256": "b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279",
+      "size_bytes": 206583
+    },
+    {
+      "package": "huggingface-hub",
+      "version": "0.36.2",
+      "role": "original_venv",
+      "filename": "huggingface_hub-0.36.2-py3-none-any.whl",
+      "sha256": "48f0c8eac16145dfce371e9d2d7772854a4f591bcb56c9cf548accf531d54270",
+      "size_bytes": 566395
+    },
+    {
+      "package": "idna",
+      "version": "3.19",
+      "role": "original_venv",
+      "filename": "idna-3.19-py3-none-any.whl",
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4",
+      "size_bytes": 68550
+    },
+    {
+      "package": "ijson",
+      "version": "3.4.0.post0",
+      "role": "original_venv",
+      "filename": "ijson-3.4.0.post0-cp310-cp310-win_amd64.whl",
+      "sha256": "09127c06e5dec753feb9e4b8c5f6a23603d1cd672d098159a17e53a73b898eec",
+      "size_bytes": 54407
+    },
+    {
+      "package": "jinja2",
+      "version": "3.1.6",
+      "role": "original_venv",
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "size_bytes": 134899
+    },
+    {
+      "package": "joblib",
+      "version": "1.5.3",
+      "role": "original_venv",
+      "filename": "joblib-1.5.3-py3-none-any.whl",
+      "sha256": "5fc3c5039fc5ca8c0276333a188bbd59d6b7ab37fe6632daa76bc7f9ec18e713",
+      "size_bytes": 309071
+    },
+    {
+      "package": "markupsafe",
+      "version": "3.0.3",
+      "role": "original_venv",
+      "filename": "markupsafe-3.0.3-cp310-cp310-win_amd64.whl",
+      "sha256": "c4ffb7ebf07cfe8931028e3e4c85f0357459a3f9f9490886198848f4fa002ec8",
+      "size_bytes": 15056
+    },
+    {
+      "package": "mpmath",
+      "version": "1.3.0",
+      "role": "original_venv",
+      "filename": "mpmath-1.3.0-py3-none-any.whl",
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "size_bytes": 536198
+    },
+    {
+      "package": "networkx",
+      "version": "3.4.2",
+      "role": "original_venv",
+      "filename": "networkx-3.4.2-py3-none-any.whl",
+      "sha256": "df5d4365b724cf81b8c6a7312509d0c22386097011ad1abe274afd5e9d3bbc5f",
+      "size_bytes": 1723263
+    },
+    {
+      "package": "numpy",
+      "version": "2.2.6",
+      "role": "original_venv",
+      "filename": "numpy-2.2.6-cp310-cp310-win_amd64.whl",
+      "sha256": "f0fd6321b839904e15c46e0d257fdd101dd7f530fe03fd6359c1ea63738703f3",
+      "size_bytes": 12904620
+    },
+    {
+      "package": "packaging",
+      "version": "26.3",
+      "role": "original_venv",
+      "filename": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "size_bytes": 129956
+    },
+    {
+      "package": "pip",
+      "version": "26.2.1",
+      "role": "original_venv",
+      "filename": "pip-26.2.1-py3-none-any.whl",
+      "sha256": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+      "size_bytes": 1816632
+    },
+    {
+      "package": "psutil",
+      "version": "7.0.0",
+      "role": "original_venv",
+      "filename": "psutil-7.0.0-cp37-abi3-win_amd64.whl",
+      "sha256": "4cf3d4eb1aa9b348dec30105c55cd9b7d4629285735a102beb4441e38db90553",
+      "size_bytes": 244885
+    },
+    {
+      "package": "pyarrow",
+      "version": "20.0.0",
+      "role": "pyarrow_target",
+      "filename": "pyarrow-20.0.0-cp310-cp310-win_amd64.whl",
+      "sha256": "4a8b029a07956b8d7bd742ffca25374dd3f634b35e46cc7a7c3fa4c75b297191",
+      "size_bytes": 25770759
+    },
+    {
+      "package": "pyyaml",
+      "version": "6.0.2",
+      "role": "original_venv",
+      "filename": "PyYAML-6.0.2-cp310-cp310-win_amd64.whl",
+      "sha256": "a4d3091415f010369ae4ed1fc6b79def9416358877534caf6a0fdd2146c87a3e",
+      "size_bytes": 161774
+    },
+    {
+      "package": "regex",
+      "version": "2026.7.19",
+      "role": "original_venv",
+      "filename": "regex-2026.7.19-cp310-cp310-win_amd64.whl",
+      "sha256": "1c398716054621aa300b3d411f467dda903806c5da0df6945ab73982b8d115db",
+      "size_bytes": 277967
+    },
+    {
+      "package": "requests",
+      "version": "2.34.2",
+      "role": "original_venv",
+      "filename": "requests-2.34.2-py3-none-any.whl",
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "size_bytes": 73075
+    },
+    {
+      "package": "safetensors",
+      "version": "0.8.0",
+      "role": "original_venv",
+      "filename": "safetensors-0.8.0-cp310-abi3-win_amd64.whl",
+      "sha256": "096ec1a98435df7beb08853bb5aa9081a84f23d0adc67ed1a0a10550f608373f",
+      "size_bytes": 355540
+    },
+    {
+      "package": "scikit-learn",
+      "version": "1.7.2",
+      "role": "original_venv",
+      "filename": "scikit_learn-1.7.2-cp310-cp310-win_amd64.whl",
+      "sha256": "ca250e6836d10e6f402436d6463d6c0e4d8e0234cfb6a9a47835bd392b852ce5",
+      "size_bytes": 8886969
+    },
+    {
+      "package": "scipy",
+      "version": "1.15.3",
+      "role": "original_venv",
+      "filename": "scipy-1.15.3-cp310-cp310-win_amd64.whl",
+      "sha256": "9d61e97b186a57350f6d6fd72640f9e99d5a4a2b8fbf4b9ee9a841eab327dc13",
+      "size_bytes": 41259201
+    },
+    {
+      "package": "sentencepiece",
+      "version": "0.2.1",
+      "role": "sentencepiece_target",
+      "filename": "sentencepiece-0.2.1-cp310-cp310-win_amd64.whl",
+      "sha256": "e52144670738b4b477fade6c2a9b6af71a8d0094514c9853ac9f6fc1fcfabae7",
+      "size_bytes": 1054613
+    },
+    {
+      "package": "setuptools",
+      "version": "63.2.0",
+      "role": "original_venv",
+      "filename": "setuptools-63.2.0-py3-none-any.whl",
+      "sha256": "0d33c374d41c7863419fc8f6c10bfe25b7b498aa34164d135c622e52580c6b16",
+      "size_bytes": 1228000
+    },
+    {
+      "package": "sympy",
+      "version": "1.14.0",
+      "role": "original_venv",
+      "filename": "sympy-1.14.0-py3-none-any.whl",
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "size_bytes": 6299353
+    },
+    {
+      "package": "threadpoolctl",
+      "version": "3.6.0",
+      "role": "original_venv",
+      "filename": "threadpoolctl-3.6.0-py3-none-any.whl",
+      "sha256": "43a0b8fd5a2928500110039e43a5eed8480b918967083ea48dc3ab9f13c4a7fb",
+      "size_bytes": 18638
+    },
+    {
+      "package": "tokenizers",
+      "version": "0.21.4",
+      "role": "original_venv",
+      "filename": "tokenizers-0.21.4-cp39-abi3-win_amd64.whl",
+      "sha256": "475d807a5c3eb72c59ad9b5fcdb254f6e17f53dfcbb9903233b0dfa9c943b597",
+      "size_bytes": 2507568
+    },
+    {
+      "package": "torch",
+      "version": "2.7.1+cu128",
+      "role": "original_venv",
+      "filename": "torch-2.7.1+cu128-cp310-cp310-win_amd64.whl",
+      "sha256": "5174f02de8ca14df87c8e333c4c39cf3ce93a323c9d470d690301d110a053b3c",
+      "size_bytes": 3273064440
+    },
+    {
+      "package": "tqdm",
+      "version": "4.70.0",
+      "role": "original_venv",
+      "filename": "tqdm-4.70.0-py3-none-any.whl",
+      "sha256": "7f585706bfddbdebf89daac705b2dfcc16890130727d3197ca62c732b4310953",
+      "size_bytes": 80184
+    },
+    {
+      "package": "transformers",
+      "version": "4.53.2",
+      "role": "original_venv",
+      "filename": "transformers-4.53.2-py3-none-any.whl",
+      "sha256": "db8f4819bb34f000029c73c3c557e7d06fc1b8e612ec142eecdae3947a9c78bf",
+      "size_bytes": 10826609
+    },
+    {
+      "package": "typing-extensions",
+      "version": "4.16.0",
+      "role": "original_venv",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "size_bytes": 45571
+    },
+    {
+      "package": "urllib3",
+      "version": "2.7.0",
+      "role": "original_venv",
+      "filename": "urllib3-2.7.0-py3-none-any.whl",
+      "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897",
+      "size_bytes": 131087
+    }
+  ],
+  "metadata_private_kit": {
+    "filename": "NEURAL_RUNTIME_INVENTORY_V2_METADATA_PRIVATE.zip",
+    "sha256": "afb7f82348ae48df6a332ae7de1d402c41688a1ca7f051a891ad4e742f22cd9f",
+    "size_bytes": 5016569,
+    "files": 580,
+    "all_members_roundtrip_equal": true,
+    "contains_model_or_wheel_payloads": false,
+    "uploaded": false
+  },
+  "neural_environment_installations_this_stage": 0,
+  "clean_neural_environment_tested": false,
+  "historical_full_environment_proven": false,
+  "new_scientific_fits_this_stage": 0,
+  "scientific_fit_total": 178,
+  "new_neural_forwards_this_stage": 0,
+  "fresh_gold_values_materialized": 0,
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_canonical_pid": 55688,
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 7949,
+    "generation_receipts.jsonl": 23848,
+    "repair_bindings.jsonl": 7949,
+    "branch_provenance.jsonl": 7949
+  },
+  "snapshot_scope": "Sequential non-atomic newline byte counts; no fresh answer/score/Gold decoding",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "engineering_suite": {
+    "tests": 151,
+    "passed": 149,
+    "windows_skips": 2,
+    "suite_repeated_for_this_stage": false
+  },
+  "pending": [
+    "C3 completion/fixed replay/independent acceptance",
+    "Actual C4 and full prelabel seal",
+    "Cost reconciliation and four D processes",
+    "Fresh result/contribution review",
+    "Separate clean neural installation and reviewed delivery paths",
+    "Historical training provenance limits"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T07:51:19.802092+00:00",
+  "as_of_utc": "2026-09-11T09:33:20.995872+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -173,7 +173,8 @@
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
     "empirical_route_decision": "C3_CANONICAL_READER_RUNNING; C4_D_AND_COST_EXECUTORS_CPU_TESTED; ACTUAL_PRELABEL_OUTCOMES_AND_COST_PENDING",
     "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md"
+    "latest_stage_acceptance": "docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md",
+    "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
   "empirical_replication": {
@@ -202,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/ROA_CLEAN_ENVIRONMENT_RESULTS.json",
+    "latest_execution_snapshot": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_RESULTS.json",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -273,6 +274,35 @@
     "old_venv_accesses_observed": 0,
     "fresh_CPython_or_OS_installation": false,
     "full_neural_environment_tested": false,
+    "private_artifacts_uploaded": false
+  },
+  "current_neural_runtime_inventory": {
+    "status": "COMPLETE_CURRENT_RUNTIME_INVENTORY_WITH_PRESERVED_RECORD_DISCREPANCY",
+    "raw_inventory_status": "FAIL_REPORTED_INVENTORY_ISSUES",
+    "review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md",
+    "results": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_RESULTS.json",
+    "manifest": "0befadadef664a7dd052b1f843f555db513147965eed3bb51f01870ba6958788",
+    "distributions": 35,
+    "unique_unchanged_input_files": 30912,
+    "model_asset_files": 22,
+    "record_issues": 2,
+    "duplicate_record_paths": 1,
+    "missing_active_dependencies": 0,
+    "literal_original_root_bindings": 3,
+    "arbitrary_root_relocation_supported": false,
+    "historical_full_environment_proven": false
+  },
+  "neural_official_wheels": {
+    "status": "PASS_35_OFFICIAL_WHEELS_ACQUIRED_ONLY",
+    "manifest": "813f7faeb51f015135e6d85d496c359225b234e9692d4eb079e63ba432c8ac89",
+    "wheels": 35,
+    "size_bytes": 3406099923,
+    "roles": {
+      "original_venv": 33,
+      "pyarrow_target": 1,
+      "sentencepiece_target": 1
+    },
+    "clean_neural_environment_tested": false,
     "private_artifacts_uploaded": false
   }
 }
