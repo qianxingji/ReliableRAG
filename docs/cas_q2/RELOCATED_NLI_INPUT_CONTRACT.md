@@ -30,6 +30,11 @@ F0/F1/margin values may be decoded solely to bind the archived row hash; they ar
 not used, recomputed or accepted as replayed probabilities. No outcome/Gold file
 is opened. The current empirical C3 ledgers remain excluded.
 
+The archived execution/gbv.json records 6,404 observed forward calls and 32,174
+scored NLI pairs. Authenticate that metadata too and reconcile the newly prepared
+batch/pair totals to those historical observations. The new processes still make
+zero forwards; matching these counts does not reproduce logits or probabilities.
+
 ## Native and independent preparation
 
 Use the already accepted new neural environment plus exactly its separate
