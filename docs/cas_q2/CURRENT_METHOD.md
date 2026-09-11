@@ -6,11 +6,12 @@ split. HGB_GBV_R is the focal empirical policy under its existing name; it is no
 a new algorithm or a passed robustness candidate. See EMPIRICAL_AB_ACCEPTANCE.md.
 All 6,000 fresh questions now have guarded runtime projections and three shared
 native pools (54,716 documents total), independently accepted in
-EMPIRICAL_C1_ACCEPTANCE.md. Original retrieval now passed complete independent
-saved-array validation (EMPIRICAL_C2_ACCEPTANCE.md); native reader/repair
-generation is running under EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md. No fresh
-performance, frozen actions or outcome analysis exists. The historical
-method/contribution judgments below remain unchanged.
+EMPIRICAL_C1_ACCEPTANCE.md. Original retrieval passed complete independent
+saved-array validation (EMPIRICAL_C2_ACCEPTANCE.md). Native reader/repair
+generation, fixed replay and complete V3.2 validation are now accepted in
+C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md. C4 fresh scoring, frozen actions and
+outcome analysis do not yet exist. The historical method/contribution judgments
+below remain unchanged.
 
 Current review, 2026-09-11: ROA-FULL remains the historical candidate name, but
 its full-stack attribution gate failed against HGB_GBV_R. The latter is not an

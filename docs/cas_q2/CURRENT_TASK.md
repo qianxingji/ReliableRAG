@@ -59,42 +59,21 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
 
 ## P0: actual stage order
 
-1. Original C3 canonical generation (18,000 traces / 54,000 generations) and the
-   fixed neural replay (180 traces / 540 generations) completed successfully.
-   Preserve both native manifests and all fourteen files; never repeat either
-   neural pass. Their hashes and completed-source checks are in the
-   [failure review](C3_VALIDATION_V1_FAILURE_REVIEW.md).
-2. V1's missing-helper constants were corrected under the accepted
-   [V2 fixture gate](C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md); the
-   [V1 archival move](C3_VALIDATION_V1_FAILURE_PRESERVATION.md) is accepted.
-   V2 has now run once and FAILED after 18,026 generation checks. Read the
-   [Astra anomaly audit](C3_VALIDATION_V2_FAILURE_REVIEW.md): canonical position
-   6008 differs at dense component rank 95 by 2 float32 ULPs. The subsequent
-   [complete two-mode census and Astra audit](C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md)
-   cover all 18,180 rows and 1,818,000 component entries per mode. One global
-   current-default 12-thread computation matches every saved field. One-thread
-   has 507 score-only rows, zero membership/order/replacement changes. Original
-   BLAS thread count remains unrecorded and V2 stays failed. Two preserved V3
-   fixture failures exposed the distinction between the NumPy repair backend and
-   tokenizer-loaded auxiliary pools. The Astra xhigh
-   [V3.1 amendment](C3_VALIDATION_V3_1_CONTRACT_AMENDMENT.md) and independent
-   [fixture audit](C3_VALIDATION_V3_1_FIXTURE_AUDIT.md) are now accepted. The
-   frozen [V2 failure archive/relocation](C3_VALIDATION_V2_FAILURE_PRESERVATION.md)
-   is also client-accepted. The first full V3.1 launch failed before config read
-   because isolated mode lacked the repo import path; its independent
-   [failure review](C3_VALIDATION_V3_1_LAUNCH_FAILURE_REVIEW.md) is accepted.
-   The [V3.2 bootstrap](C3_VALIDATION_V3_2_BOOTSTRAP_ACCEPTANCE.md) now passes its
-   dedicated gate without changing the V3.1 entry or binding. Its implementation
-   commit is now remotely aligned, so one full V3.2 launch is permitted. Never repeat V1/V2, either
-   neural pass, the census or accepted fixtures. C4 still needs Astra-accepted
-   full V3.2 and the actual unchanged
-   predecessor check.
-3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
-   and complete independent prelabel validation. Follow the
+1. Original C3 canonical generation (18,000 traces / 54,000 generations) and
+   fixed neural replay (180 / 540) are sealed and must never be repeated.
+2. Complete V3.2 validation is now independently accepted in
+   [C3 final acceptance](C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md). The Astra xhigh
+   audit recomputed 18,000 canonical and 180 replay signatures, rehashed all
+   30,912 environment files and 66 controls, reconstructed the pre-binding
+   result hash, and preserved every earlier failure. The actual unchanged C4
+   GPU-preflight prerequisite check passed for runtime manifest
+   `dc2905224798b07302db8950f68db228de1faff9042c44dbaee7111ba107878f`.
+3. Execute actual C4 GPU preflight, base, GbV, policies and complete independent
+   prelabel validation, in that order. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
    [stage acceptance](EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md) with exact
    predecessor manifest arguments and new single-use namespaces. Do not rebuild
-   already CPU-accepted executors or alter their frozen byte pins.
+   accepted executors or alter frozen byte pins.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -245,16 +224,13 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the single full V3.2 C3 validation, perform Astra xhigh
-authenticity review and verify
-BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
-relocated neural/pipeline validation. The graph proves declared static edges; live C3
-ledgers/future stages and arbitrary source IO remain outside its accepted scope.
-C4's root/target-package checks and absolute predecessor records remain real
-constraints. Keep all original definitions/hashes intact and disclose each IO
-adaptation. Do not switch live C3's interpreter or inputs, or run new GPU work
-before its stage gates. Full neural replay and complete arbitrary-root delivery
-remain unverified; source assembly alone does not establish them.
+Next: execute the authorized C4 GPU preflight and inspect its immutable
+receipt before base scoring. Continue through base, GbV, policies and independent
+prelabel validation only through the exact predecessor chain. C3's final
+runtime/validation namespace is sealed and must not be reacquired or modified.
+The static graph still proves declared byte delivery only; complete relocated
+neural/pipeline validation remains later reproducibility work. Keep all original
+definitions/hashes intact and disclose each IO adaptation.
 
 Maintain [GbV component/paired-adaptation boundaries](GBV_SOURCE_FIDELITY_REVIEW.md),
 complete shared-inference cost accounting and contamination/training provenance

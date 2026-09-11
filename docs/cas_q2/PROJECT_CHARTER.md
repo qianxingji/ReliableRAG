@@ -67,12 +67,17 @@ still unrecorded and V2 stays failed. C3_VALIDATION_V3_CONTRACT.md and its
 prospective V3.1 numerical-runtime amendment freeze the single permitted route
 to complete validation. The V3.1 invented-only gate and V2 failure relocation
 are client-accepted. A preserved V3.1 pre-config import failure is independently
-audited, and the bootstrap-only V3.2 gate is accepted; successful independent validation,
-frozen scoring/prelabel sealing and outcome analysis remain pending. Total control/panel fits: 178. Seven historical final-fit reproduction calls
+audited, and the bootstrap-only V3.2 gate is accepted. The unique full V3.2 run
+and Astra xhigh authenticity audit now accept complete C3: all 18,180 signatures,
+30,912 environment files and 66 controls were independently rechecked, and the
+actual C4 GPU-preflight predecessor gate passed. Frozen C4 scoring/prelabel
+sealing and outcome analysis remain pending. Total control/panel fits: 178.
+Seven historical final-fit reproduction calls
 bring actual takeover fits to 185; their strict HGB byte failure remains in
 HISTORICAL_TRAINING_REPLAY_REVIEW.md. The C3 validation binding has separate
-engineering acceptance in C3_VALIDATION_BINDING_ACCEPTANCE.md; actual complete
-C3 validation and all later fresh scoring/outcome stages remain pending. Historical
+engineering acceptance in C3_VALIDATION_BINDING_ACCEPTANCE.md; complete current
+C3 is accepted in C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md. Later fresh
+scoring/outcome stages remain pending. Historical
 reference/outcome replay is separately accepted in HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md;
 current Gold stays closed.
 Both historical method-advancement failures remain unchanged.

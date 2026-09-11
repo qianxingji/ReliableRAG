@@ -12,28 +12,17 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-12)
 
-Latest C3 status: canonical and fixed 180-trace neural replay completed. Both
-complete validator attempts failed and remain preserved. The accepted exhaustive
-two-mode census now covers 18,180 rows, 24,240 component lists and 1,818,000
-component entries per mode. Current-native-default OpenBLAS 12-thread arithmetic
-matches every saved component, final ranking and replacement exactly. Explicit
-one-thread arithmetic has 507 score-only rows, 565 component-entry differences
-and 177 final-score differences, with zero membership/order/replacement change.
-Read C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md and RESULTS.json. Historical acquisition
-thread count remains unrecorded; V2 remains a literal failure. Never repeat V1,
-V2, either neural pass or the accepted census.
-
-Next authorized work follows C3_VALIDATION_V3_CONTRACT.md and the prospective
-C3_VALIDATION_V3_1_CONTRACT_AMENDMENT.md. Two V3 fixture failures are preserved;
-the corrected V3.1 invented-only gate, client audit and frozen V2 failure
-archive/relocation are accepted. The first V3.1 full launch failed before config
-read under Python isolated mode and is preserved. Its V3.2 standard-library
-bootstrap and client gate are accepted. Sol High may execute one full V3.2 launch
-through the unchanged V3.1 entry/binding after remote commit alignment. The V2 report now
-exists only in its sealed sibling v2 namespace. No tolerance, expected score/hash,
-scientific source, dataset or thread search is authorized. C4 remains blocked
-until Astra xhigh accepts the complete V3.2 result and the actual unchanged C4
-prerequisite check passes. Total fits remain 185 and current Gold remains closed.
+Latest C3 status: **ACCEPTED_COMPLETE_CURRENT_C3_V3_2**. The unique full
+V3.2 launch completed 18,000 canonical and 180 actual replay traces. The Astra
+xhigh client audit independently rehashed the complete producer/runtime
+namespaces, reconstructed the pre-binding result hash, recomputed all 18,180
+signatures, rehashed 30,912 environment files and 66 controls, and passed the
+actual C4 GPU-preflight prerequisite gate. Read
+C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md and RESULTS.json. Never repeat C3 neural
+generation, replay, census, fixtures or validation. Preserve all V1/V2/V3/V3.1
+failures; V2 remains a literal one-thread numerical failure and historical BLAS
+thread count remains unrecorded. Total fits remain 185 and current Gold remains
+closed. C4 is now authorized under its frozen execution contract.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
 The scoped length adapter is implemented and client-accepted for full validation
@@ -68,8 +57,8 @@ reading is disclosed; current D/full CLI/neural replay is not claimed. Do not
 repeat this accepted gate. The existing HGB byte failure stays failed.
 
 The earlier C3_VALIDATION_BINDING_ACCEPTANCE.md records V1 fixture scope.
-Successful full validation is still pending after the recorded V1/V2 failures and accepted census;
-keep all 41 source/config files and every scientific check unchanged.
+The complete V3.2 validation is accepted after the preserved V1/V2 failures and accepted census;
+keep every frozen source/config file and scientific check unchanged.
 
 Earlier historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
 HISTORICAL_TRAINING_REPLAY_RESULTS.json. Exactly seven original final fits were
@@ -179,8 +168,8 @@ no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
 C3 canonical (18,000) and original fixed neural replay (180) finished; their
 processes exited successfully. The full independent V1/V2 attempts failed as above.
-Complete the single V3.2 run, authenticity review and full C3 acceptance,
-then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
+C3 is complete and accepted. Execute actual C4 GPU preflight, then the
+base/GbV/policies stages and full independent prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
 149 pass and two Windows capability skips; that suite was not repeated here.
