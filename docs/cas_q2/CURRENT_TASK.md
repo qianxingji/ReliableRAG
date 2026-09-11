@@ -2,6 +2,18 @@
 
 ## Superseding execution contract — fixed empirical replication
 
+Latest: [EMPIRICAL_C1_ACCEPTANCE.md](EMPIRICAL_C1_ACCEPTANCE.md) accepts all 6,000
+native runtime projections and 54,716 pool documents, with 60,818 independent
+checks. The first Windows metadata failure is preserved; v2 passed without
+changing cohort, scientific parameters or guards. Next is C2 retrieval/runtime
+engineering and its complete executable input freeze. Qwen/BGE byte and package
+availability passed; there has been no new retrieval, generation, embedding/NLI
+forward, scoring, action selection or outcome mapping. Total fits remain 178.
+See EMPIRICAL_C1_RESULTS.json for aggregate evidence. Journal scope is undecided
+by user choice and does not block experiments.
+
+Earlier A/B acceptance entry, retained chronologically:
+
 Read EMPIRICAL_REPLICATION_PROTOCOL_V1.md, EMPIRICAL_PANEL_ACCEPTANCE.md,
 EMPIRICAL_AB_ACCEPTANCE.md and EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md first.
 Stages A/B are complete: five fixed comparison model bundles, ten additional

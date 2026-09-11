@@ -4,8 +4,10 @@
 are now fitted on one disjoint 3,600/900-question development fit/calibration
 split. HGB_GBV_R is the focal empirical policy under its existing name; it is not
 a new algorithm or a passed robustness candidate. See EMPIRICAL_AB_ACCEPTANCE.md.
-The fresh 6,000-question cohort is ID-only; no fresh performance exists. The
-historical method/contribution judgments below remain unchanged.
+All 6,000 fresh questions now have guarded runtime projections and three shared
+native pools (54,716 documents total), independently accepted in
+EMPIRICAL_C1_ACCEPTANCE.md. No fresh retrieval/generation/performance exists.
+The historical method/contribution judgments below remain unchanged.
 
 Current review, 2026-09-11: ROA-FULL remains the historical candidate name, but
 its full-stack attribution gate failed against HGB_GBV_R. The latter is not an

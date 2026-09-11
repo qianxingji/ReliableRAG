@@ -2,8 +2,10 @@
 
 Superseded for execution by EMPIRICAL_REPLICATION_PROTOCOL_V1.md (scientific
 freeze) and EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md. Stages A/B now have accepted
-fixed models and a 6,000-question ID-only cohort; stage C/D engineering is still
-incomplete. This older draft remains historical and must not be executed.
+fixed models and a 6,000-question cohort. C1 now has accepted native runtime
+projections/pools under EMPIRICAL_C1_EXECUTION_CONTRACT.md and its Windows
+correction. C2 acquisition and D analysis engineering are still incomplete.
+This older draft remains historical and must not be executed.
 
 2026-09-11 update: original replay and all three now-designed supervised controls
 are complete. Both prospective advancement criteria failed; see

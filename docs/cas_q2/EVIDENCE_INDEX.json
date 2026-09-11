@@ -171,8 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "STAGES_A_B_ACCEPTED; NEXT_STAGE_C_ENGINEERING",
-    "confirmation_freeze_scope": "Scientific empirical-replication protocol only; C/D executable input freezes pending"
+    "empirical_route_decision": "STAGES_A_B_C1_ACCEPTED; NEXT_C2_ACQUISITION_ENGINEERING",
+    "confirmation_freeze_scope": "Scientific empirical protocol and C1 executable pool freeze complete; C2 acquisition and D analysis executable freezes pending",
+    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
   "empirical_replication": {
@@ -184,9 +185,11 @@
     "fixed_panel_status": "PASS",
     "selected_questions": 6000,
     "fresh_outcomes_read": 0,
-    "new_runtime_questions_projected": 0,
-    "stage_C": "VALUE_BLIND_PREFLIGHT_ONLY; complete adapters and executable freezes pending",
-    "novel_method_candidate_cleared": false
+    "new_runtime_questions_projected": 6000,
+    "stage_C": "C1_POOL_ACCEPTED; C2 input inventory PASS, complete acquisition adapters/freezes pending",
+    "novel_method_candidate_cleared": false,
+    "stage_C1_acceptance": "docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md",
+    "stage_C1_results": "docs/cas_q2/EMPIRICAL_C1_RESULTS.json"
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

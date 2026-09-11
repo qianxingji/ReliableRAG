@@ -19,8 +19,13 @@ fit/calibration model bundles and 6,000-question ID-only cohort are independentl
 accepted in `docs/cas_q2/EMPIRICAL_AB_ACCEPTANCE.md`; total takeover fits are 178.
 Read `docs/cas_q2/EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md`: the original sample-size
 prose contained an arithmetic error; neither frozen bytes nor selected IDs changed.
-Next is stage C engineering preflight/adapters and acceptance before fresh
-inference. No fresh outcomes have been read. Do not rerun any sealed experiment.
+Stage C1 is now complete: 6,000 guarded runtime projections and 54,716 native
+pool documents passed 60,818 independent derivation checks. Read
+`docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md` and its Windows failure correction.
+Next is C2 retrieval/runtime adapters and complete executable input freeze.
+Reader/encoder bytes and package versions passed a read-only availability audit;
+GPU compatibility and actual fresh inference remain pending. No fresh outcomes
+have been read. Do not rerun any sealed experiment.
 No novel-method candidate or Submission Ready claim is cleared.
 
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
