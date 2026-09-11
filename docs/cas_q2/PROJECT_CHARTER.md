@@ -41,6 +41,20 @@ P0 blocks credible submission, P1 materially improves competitiveness, P2 is opt
 
 ## Current decision
 
+2026-09-11 latest execution state: the fixed-policy empirical replication
+scientific design is frozen in EMPIRICAL_REPLICATION_PROTOCOL_V1.md. Five fixed
+comparison models and the 6,000-question ID-only cohort passed independent
+acceptance; see EMPIRICAL_AB_ACCEPTANCE.md and the separate sample-size prose
+corrigendum. Stage C's value-blind source preflight passed; fresh acquisition,
+prelabel sealing and outcome analysis remain pending. Total takeover fits: 178.
+Both historical method-advancement failures remain unchanged.
+
+The user confirmed that CAS partition year, institutional major/minor-category
+recognition and target journal are undecided. Record them as pending, not as an
+experimental blocker or a verified journal qualification.
+
+Earlier post-control decision, retained as history:
+
 2026-09-11 superseding execution state: saved-parameter replay passed and the
 prespecified controls are complete. ROA-FULL's complexity criterion and the
 subsequent minimal-fusion advancement criterion both failed. No final candidate

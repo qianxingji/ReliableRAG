@@ -1,4 +1,25 @@
-# Current task: research reassessment after authenticated replay and controls
+# Current task: fixed-policy empirical replication after failed advancement gates
+
+## Superseding execution contract — fixed empirical replication
+
+Read EMPIRICAL_REPLICATION_PROTOCOL_V1.md, EMPIRICAL_PANEL_ACCEPTANCE.md,
+EMPIRICAL_AB_ACCEPTANCE.md and EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md first.
+Stages A/B are complete: five fixed comparison model bundles, ten additional
+fits (178 takeover total), 57,388 independent checks with zero numeric error;
+then 6,000 fresh ID-only questions with 111 independent checks and zero overlap
+with 18,600 known exclusions. No fresh runtime/Gold outcomes have been projected
+or evaluated. Original advancement failures remain unchanged.
+
+Next: complete stage C's native gold-free projection/pool adapter and independent
+validator, then retrieval/runtime/frozen scoring/prelabel sealing in new namespaces.
+Value-blind source preflight is separate from actual projection or inference.
+The scientific sample/model/statistical design is frozen; stage C/D executable
+input freezes still require implementation and client Lead acceptance. Do not
+blindly run old V2 executors with hardcoded roots and 1,500-question counts.
+No external Work approval is awaited. CAS Q2 STATUS: NOT READY.
+
+The earlier review state below is retained chronologically, not an instruction
+to redo the closed work or ignore the new bounded scientific freeze.
 
 ## Current accepted state — 2026-09-11
 

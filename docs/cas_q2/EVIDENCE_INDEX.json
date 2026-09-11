@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-10T18:08:13.860563+00:00",
+  "as_of_utc": "2026-09-11T02:11:47.394527+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -10,8 +10,8 @@
   "development_decision": "FINAL_CANDIDATE_NOT_CLEARED",
   "historical_roa_development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
   "dependence_label": "GBV_AUGMENTED_ONLY",
-  "final_deployment_model_fitted": false,
-  "fresh_confirmatory_ids_selected": false,
+  "final_deployment_model_fitted": true,
+  "fresh_confirmatory_ids_selected": true,
   "work_full_numeric_replay": "PASS_FULL_ORIGINAL_PARAMETERS",
   "cohort": {
     "questions": 4500,
@@ -163,14 +163,36 @@
     "P0_1": "docs/cas_q2/P0_1_CLIENT_ACCEPTANCE.md",
     "P0_2": "docs/cas_q2/P0_2_CONTRIBUTION_REVIEW.md",
     "P0_3": "docs/cas_q2/P0_3_RESEARCH_DECISION.md",
-    "scientific_fit_calls": 168,
+    "scientific_fit_calls": 178,
     "original_replay_max_error": 0.0,
     "control_decision": "SIMPLER_CONTROL_COMPETITIVE_REVIEW_CONTRIBUTION",
     "minimal_fusion_decision": "TWO_SIGNAL_INCREMENT_NOT_ESTABLISHED",
     "final_candidate_cleared": false,
-    "confirmation_frozen": false,
+    "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "EMPIRICAL_REPLICATION_REQUIRES_DESIGN"
+    "empirical_route_decision": "STAGES_A_B_ACCEPTED; NEXT_STAGE_C_ENGINEERING",
+    "confirmation_freeze_scope": "Scientific empirical-replication protocol only; C/D executable input freezes pending"
+  },
+  "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
+  "empirical_replication": {
+    "scientific_protocol": "docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md",
+    "acceptance": "docs/cas_q2/EMPIRICAL_AB_ACCEPTANCE.md",
+    "corrigendum": "docs/cas_q2/EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md",
+    "results": "docs/cas_q2/EMPIRICAL_REPLICATION_RESULTS.json",
+    "focal_empirical_policy": "HGB_GBV_R",
+    "fixed_panel_status": "PASS",
+    "selected_questions": 6000,
+    "fresh_outcomes_read": 0,
+    "new_runtime_questions_projected": 0,
+    "stage_C": "VALUE_BLIND_PREFLIGHT_ONLY; complete adapters and executable freezes pending",
+    "novel_method_candidate_cleared": false
+  },
+  "journal_scope": {
+    "status": "UNDECIDED_USER_CONFIRMED",
+    "cas_partition_year": null,
+    "institutional_category_rule": null,
+    "target_journal": null,
+    "blocks_experiment_execution": false
   }
 }

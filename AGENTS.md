@@ -10,15 +10,18 @@ Target: a submission-ready paper competitive for CAS Journal Ranking Q2
 2026-09-10 goal update supersedes the earlier Q1/CCF target.
 This repository is for experimental research code only. Do NOT write the paper manuscript unless explicitly requested.
 
-## Current execution entry point (2026-09-10)
+## Current execution entry point (2026-09-11)
 
-Latest update (2026-09-11): original full replay passed. The frozen two-control
-experiment and one subsequently designed HGB-only attribution study are complete,
-with 168 total new scientific fits. Both advancement rules failed. Read
-`docs/cas_q2/P0_3_RESEARCH_DECISION.md` before further scientific work. Do not
-rerun sealed controls or start confirmation; no final candidate is cleared.
-The cost/precision and empirical-route follow-up is in
-`docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md`; no further fit or confirmation is frozen.
+Original full replay and all three supervised controls are complete; both
+historical advancement rules failed. The new fixed-policy empirical replication
+design is in `docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md`. Its five fixed
+fit/calibration model bundles and 6,000-question ID-only cohort are independently
+accepted in `docs/cas_q2/EMPIRICAL_AB_ACCEPTANCE.md`; total takeover fits are 178.
+Read `docs/cas_q2/EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md`: the original sample-size
+prose contained an arithmetic error; neither frozen bytes nor selected IDs changed.
+Next is stage C engineering preflight/adapters and acceptance before fresh
+inference. No fresh outcomes have been read. Do not rerun any sealed experiment.
+No novel-method candidate or Submission Ready claim is cleared.
 
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.
@@ -27,7 +30,8 @@ and `EVIDENCE_INDEX.json` in that directory before choosing work.
   scientific argument; Codex GPT-6 Astra implements the reviewed design.
 - Historical candidate: ROA-FULL, originally development-supported and
   GbV-augmented only. Subsequent attribution gates failed; no current candidate
-  is cleared. No final deployment model or new V3 confirmation exists.
+  is cleared. Five fixed empirical comparison models now exist; they do not
+  establish fresh quality, universal robustness or a new algorithm contribution.
 - Preserve completed V2, risk-gate, dual-head and ROA experiments. Do not restart
   Phase 0, reopen rejected searches, or promote development results to confirmation.
 - Start with artifact authentication and replay. A hash PASS is not a replay PASS
