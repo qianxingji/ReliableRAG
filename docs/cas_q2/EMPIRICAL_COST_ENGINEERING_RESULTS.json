@@ -1,0 +1,40 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T07:51:19.802092+00:00",
+  "engineering_source_commit": "e311a24a547a62c0726a6d146b697bc26ecd9e6e",
+  "engineering_manifest": "304ba81f0cf28a64ea8fb03b8412cce2e85e419d4adef33d5cce75b98553d252",
+  "tests_run": 141,
+  "tests_passed": 139,
+  "windows_capability_skips": 2,
+  "input_files_unchanged": 1065,
+  "new_cost_tests": 7,
+  "elapsed_test_seconds": 10.743,
+  "actual_cost_audit_run": false,
+  "actual_D_mapping_run": false,
+  "complete_prelabel_accepted": false,
+  "fresh_gold_values_materialized": 0,
+  "scientific_fit_total": 178,
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_source_commit": "cc304ee37ba589cff42b936c6e1fd0a692618864",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 5556,
+    "generation_receipts.jsonl": 16669,
+    "repair_bindings.jsonl": 5556,
+    "branch_provenance.jsonl": 5556
+  },
+  "count_scope": "Sequential non-atomic byte counts; no answer quality or cost payload assessment",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "baseline_source_review": "docs/cas_q2/GBV_SOURCE_FIDELITY_REVIEW.md",
+  "missing_cost_measurements": [
+    "Canonical C2/C3 CUDA allocator peaks",
+    "Per-generation latency and standalone policy timing",
+    "C2/C3 BGE token totals and generation per-forward token touches",
+    "Uniform end-to-end timer or FLOPs"
+  ],
+  "pending": [
+    "Complete C3 and fixed replay/independent acceptance",
+    "Actual C4 and full prelabel acceptance",
+    "Accepted-prelabel cost reconciliation and four real D stages",
+    "Honest contribution review and reproducible release"
+  ]
+}

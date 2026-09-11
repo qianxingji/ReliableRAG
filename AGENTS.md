@@ -12,6 +12,16 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
+Newest checkpoint: EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md. All C4, D and
+receipt-only cost executors are implemented; actual runs remain gated by C3
+completion/replay/acceptance and the full C4 prelabel seal. Regression now has
+141 tests, 139 pass, two existing Windows capability skips; 1,065 inputs unchanged.
+Read EMPIRICAL_COST_ENGINEERING_RESULTS.json (5,556 C3 pairs at 07:51:19 UTC)
+and GBV_SOURCE_FIDELITY_REVIEW.md. Preserve the original running C3 process and
+all frozen source bytes. Do not repeat closed implementation or sealed tests.
+Next independent work is reproducible-release preparation and remaining
+comparison/provenance review; execute real stages in their fixed order.
+
 Latest: EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md accepts the separate selected-label
 mapper, independent outcome validator, frozen bootstrap analyzer and complete
 independent replay on invented CPU inputs only. Full regression: 134 tests,

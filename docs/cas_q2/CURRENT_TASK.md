@@ -2,6 +2,27 @@
 
 ## Superseding execution contract — fixed empirical replication
 
+Latest checkpoint (2026-09-11):
+[EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md).
+C4, D and the accepted-prelabel cost audit are implemented and CPU-tested.
+Full regression: 141 tests, 139 pass, two existing Windows capability skips;
+all 1,065 inputs unchanged. This remains engineering evidence, not actual fresh
+scoring, Gold mapping or cost reconciliation. Source e311a24 is now frozen.
+
+The latest C3 byte-count snapshot is 5,556/18,000 pairs at 07:51:19 UTC. Continue
+the original process; fixed 180-trace replay and full independent validation
+must follow canonical completion. Then execute C4 in order and seal prelabel;
+that seal permits the cost audit and four D stages. Keep exact predecessor
+pins and single-use namespaces. No fresh Gold has been read; total fits 178.
+
+Read [GBV_SOURCE_FIDELITY_REVIEW.md](GBV_SOURCE_FIDELITY_REVIEW.md) for the
+completed primary-paper/component review. Preserve the existing paired GbV
+policy, and identify its paired-margin/budget/task adaptations explicitly.
+Canonical C2/C3 peak memory and per-generation latency were not saved; report
+these measurement gaps instead of changing frozen sources or repeating inference.
+Next independent work is reproducible release and remaining comparison/provenance
+review. CAS Q2 STATUS: NOT READY. Earlier implementation tasks below are history.
+
 Current acceptance (2026-09-11):
 [EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md](EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md).
 The four separated D controllers and independent statistical/metric checks are
