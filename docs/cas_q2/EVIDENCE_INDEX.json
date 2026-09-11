@@ -202,7 +202,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/EMPIRICAL_COST_ENGINEERING_RESULTS.json",
+    "latest_execution_snapshot": "docs/cas_q2/ROA_REPLAY_RELEASE_RESULTS.json",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -223,7 +223,7 @@
     "stage_C4_stage_engineering_status": "PASS_CPU_INVENTED_STAGE_ENGINEERING_ONLY",
     "stage_C4_actual_scoring_started": false,
     "stage_C4_complete_prelabel_accepted": false,
-    "stage_D_implementation": "PENDING_NO_GOLD_READ",
+    "stage_D_implementation": "IMPLEMENTED_CPU_ACCEPTED_ACTUAL_EXECUTION_PENDING",
     "stage_D_engineering_acceptance": "docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md",
     "stage_D_engineering_manifest": "9461d2d4dd54c6935eb9dac949b381c6bd3489857b8b4a6ddbb1e2864e34e0c8",
     "stage_D_engineering_status": "PASS_CPU_D_ENGINEERING_ONLY",
@@ -242,5 +242,21 @@
     "institutional_category_rule": null,
     "target_journal": null,
     "blocks_experiment_execution": false
+  },
+  "bounded_roa_reproducibility_release": {
+    "status": "PASS_SAME_HOST_SOURCE_AND_DATA_RELOCATION",
+    "acceptance": "docs/cas_q2/ROA_REPLAY_RELEASE_ACCEPTANCE.md",
+    "results": "docs/cas_q2/ROA_REPLAY_RELEASE_RESULTS.json",
+    "release_manifest": "77cb08f879595c9da47aff52c9ed6531453ab961ee330f3d13d1b814ab537c73",
+    "relocation_manifest": "4f0acd5432dd4b4e37ad4246c75b7168f188f05e7d9bbe583da4c95977f99299",
+    "private_artifacts_uploaded": false,
+    "data_files": 2821,
+    "independent_checks": 2744203,
+    "max_numeric_error": 0,
+    "clean_environment_tested": false,
+    "other_host_or_OS_tested": false,
+    "rejected_v1_preserved": true,
+    "line_ending_preflight_preserved": true,
+    "full_fresh_pipeline_release": "PENDING"
   }
 }

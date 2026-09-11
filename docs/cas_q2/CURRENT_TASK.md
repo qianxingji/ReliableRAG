@@ -2,6 +2,27 @@
 
 ## Superseding execution contract — fixed empirical replication
 
+Latest accepted checkpoint: [ROA_REPLAY_RELEASE_ACCEPTANCE.md](ROA_REPLAY_RELEASE_ACCEPTANCE.md).
+The actual private dependency release and source/data relocation passed: 2,821
+original files, 38,424 primary predictions and 2,744,203 independent checks,
+zero numerical error and exact actions; all 6,755 checked inputs unchanged.
+The guard observed no fallback to old project data/code; the existing Windows
+Python runtime is still reused. This does not establish clean installation,
+original training replay or fresh-pipeline portability. Keep both rejected
+prechecks and all sealed package bytes. Latest suite: 151 tests, 149 pass, two
+existing Windows skips; 1,087 engineering inputs unchanged. Do not repeat it.
+
+The latest C3 snapshot is 6,355 pairs / 19,065 generation receipts at 08:23:57 UTC,
+non-atomic and not accepted completion. Continue the original process, then
+fixed 180-trace replay and full independent acceptance. Next execute C4 in order;
+only complete prelabel acceptance permits the implemented cost audit and four
+D stages. No fresh Gold has been read; total scientific fits remain 178.
+
+Next independent work: complete fresh-pipeline release/environment preparation
+and remaining comparison/provenance review. No new algorithm candidate has been
+cleared; both historical advancement failures and missing fit-time receipts
+remain. CAS Q2 STATUS: NOT READY. The entries below preserve earlier checkpoints.
+
 Latest checkpoint (2026-09-11):
 [EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md).
 C4, D and the accepted-prelabel cost audit are implemented and CPU-tested.

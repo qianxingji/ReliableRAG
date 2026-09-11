@@ -12,6 +12,21 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
+Newest checkpoint: ROA_REPLAY_RELEASE_ACCEPTANCE.md and ROA_REPLAY_RELEASE_RESULTS.json.
+The private ROA dependency package now contains 2,821 original files and its Git
+source bundle; restored source/data passed full primary and independent saved-
+parameter replay with zero error and no old-data fallback. This is current-host
+relocation with the existing Python runtime, not a clean-install or training
+reconstruction. Preserve rejected package v1 and the Git line-ending preflight
+record. Latest engineering: 151 tests, 149 pass, two Windows skips, 1,087 frozen
+inputs unchanged; relocation rechecked 6,755 inputs. Source 73f8158 is frozen.
+C3 continues from its original process (6,355/18,000 at 08:23:57 UTC). Do not
+repeat accepted release, replay or engineering runs. Next actual stages remain
+C3 fixed replay/full acceptance, C4, accepted-prelabel cost and four D processes.
+Independent remaining work is complete fresh-pipeline release/environment and
+comparison/provenance review. CAS Q2 STATUS: NOT READY; fresh Gold reads zero.
+Older checkpoints below are retained history.
+
 Newest checkpoint: EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md. All C4, D and
 receipt-only cost executors are implemented; actual runs remain gated by C3
 completion/replay/acceptance and the full C4 prelabel seal. Regression now has

@@ -22,11 +22,15 @@ scoring, outcome analysis and contribution assessment remain outstanding.
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
-Latest engineering acceptance: [D evaluation](docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md)
-and [cost auditing](docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md).
-The suite has 141 tests, 139 passing and two existing Windows capability skips.
-These invented-input tests are not fresh scientific evidence. Private artifacts
-are excluded from Git and require the original host's authenticated input tree.
+Latest acceptance: [ROA dependency release and source/data relocation](docs/cas_q2/ROA_REPLAY_RELEASE_ACCEPTANCE.md).
+The private 2,821-file package passed full saved-parameter replay from restored
+source/data, with zero error. It still uses the current Windows Python runtime;
+a clean installation and complete fresh-pipeline release remain unverified.
+Private data and archives are excluded from Git. The suite has 151 tests,
+149 passing and two existing Windows capability skips. Implemented
+[D evaluation](docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md) and
+[cost auditing](docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) still await
+their actual prelabel gates; engineering tests do not establish fresh quality.
 
 - [Project charter](docs/cas_q2/PROJECT_CHARTER.md)
 - [Current method](docs/cas_q2/CURRENT_METHOD.md)
