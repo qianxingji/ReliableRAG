@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T15:07:33.823120+00:00",
+  "as_of_utc": "2026-09-11T15:36:10.229154+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -546,8 +546,8 @@
   "total_takeover_fit_attempts": 185,
   "total_takeover_fit_completions": 185,
   "historical_outcome_replay_in_progress": {
-    "status": "RUNNING_NOT_ACCEPTED",
-    "snapshot_utc": "2026-09-11T15:07:33.823120+00:00",
+    "status": "RUNNING_INDEPENDENT_NOT_YET_ACCEPTED",
+    "snapshot_utc": "2026-09-11T15:36:10.229154+00:00",
     "implementation_commit": "65e28d9f9b83074f04ef353bfdb17740899df34f",
     "execution_freeze_sha256": "76e83cab97d0ea566be425b27f3a669df2223011d1d1bf4f889edbc6bb2a26c4",
     "id_only_precheck": {
@@ -558,13 +558,48 @@
     },
     "environment_before_execution_checked_files": 21267,
     "environment_after_execution_not_yet_checked": true,
-    "full_historical_reference_reconstruction_complete": false,
-    "independent_validation_not_yet_executed": true,
-    "checkpoint": "docs/cas_q2/HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json"
+    "full_historical_reference_reconstruction_complete": true,
+    "independent_validation_not_yet_executed": false,
+    "checkpoint": "docs/cas_q2/HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json",
+    "producer_status": "PASS_FULL_HISTORICAL_SOURCE_MAPPING_PENDING_INDEPENDENT",
+    "producer_result_sha256": "f01af4098ba877bf9bb6027ce29b465f23e1424e3a88fe95ae63d320950d7506",
+    "producer_ledger_sha256": "2ead94602f5aaf2c63cda7acf87e8ef2aa3d28a2feffb245f3d557be0e250576",
+    "producer_traces": 13500,
+    "producer_metric_values": 54000
   },
   "c3_validation_execution_issue": {
     "note": "docs/cas_q2/C3_VALIDATION_EXECUTION_NOTE.md",
-    "status": "SOURCE_OBSERVATION_ADAPTER_NOT_YET_DESIGNED_OR_EXECUTED",
-    "active_sources_changed": false
+    "status": "IMPLEMENTED_FIXTURES_CLIENT_ACCEPTED_ACTUAL_VALIDATION_PENDING",
+    "active_sources_changed": false,
+    "acceptance": "docs/cas_q2/C3_VALIDATION_BINDING_ACCEPTANCE.md"
+  },
+  "c3_validation_binding": {
+    "status": "ACCEPTED_C3_VALIDATION_BINDING_FOR_FULL_CURRENT_VALIDATION",
+    "fixture_manifest_sha256": "360cf355a92a3a5ddabdaed7ccfe9c7b35d14c8e04b2e4d28e8479096aa347de",
+    "fixture_acceptance_sha256": "f7cae10ae6ae4b1bd47087db5e1e7c05a7cd745490cf306d3d3055a1ed02badf",
+    "fixture_freeze_sha256": "4c706d9cf226ad3127cde9302ee7d6f8e1f71d997437e29078a373e924ad437a",
+    "implementation_commit": "3bc67ae755a6e9bb0afaec6c41952f8d323f4c31",
+    "tested_adapter_sources": {
+      "length": "9d31641d349de5c542524506f0e8311b57d9ff4a321b1267eeeec86b1a6965c1",
+      "bindings": "3d435f3d40c4a1b943797c5fd9f2fc00926c08a74fa5196b2ad8a195a5777113",
+      "entry": "e15fb0c47b82d14374d5b65b4a83a89f955b949c0acfd18d145b0efa6b9534df"
+    },
+    "equivalence_cases": 16,
+    "matching_original_rejection_reasons": 13,
+    "ordinary_len_cases": 9,
+    "original_helper_asts_rechecked": 13,
+    "periodic_fixture_generations": 1500,
+    "generated_ids_checked": 5500,
+    "complete_vocabulary_checks": 3,
+    "inputs_unchanged": 56,
+    "controls_unchanged": 6,
+    "old_environment_files_unchanged": 30823,
+    "original_C3_frozen_sources_unchanged": 41,
+    "actual_current_C3_validation": false,
+    "current_C4_predecessor_check_executed": false,
+    "full_validation_required_generations": 54540,
+    "acceptance": "docs/cas_q2/C3_VALIDATION_BINDING_ACCEPTANCE.md",
+    "results": "docs/cas_q2/C3_VALIDATION_BINDING_RESULTS.json",
+    "contract": "docs/cas_q2/C3_VALIDATION_BINDING_CONTRACT.md"
   }
 }

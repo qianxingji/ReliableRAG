@@ -51,7 +51,11 @@ also passed independent acceptance (EMPIRICAL_C2_ACCEPTANCE.md). C3's frozen
 trace/replay inputs and joint GPU preflight passed; canonical reader/repair
 generation is running under EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md. Its completion,
 bounded replay and independent validation, followed by frozen scoring/prelabel
-sealing and outcome analysis, remain pending. Total takeover fits: 178.
+sealing and outcome analysis, remain pending. Total control/panel fits: 178. Seven historical final-fit reproduction calls
+bring actual takeover fits to 185; their strict HGB byte failure remains in
+HISTORICAL_TRAINING_REPLAY_REVIEW.md. The C3 validation binding has separate
+engineering acceptance in C3_VALIDATION_BINDING_ACCEPTANCE.md; actual complete
+C3 validation and all later fresh scoring/outcome stages remain pending.
 Both historical method-advancement failures remain unchanged.
 
 The user confirmed that CAS partition year, institutional major/minor-category

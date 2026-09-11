@@ -12,9 +12,26 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
+Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
+The scoped length adapter is implemented and client-accepted for full validation
+after original canonical/replay completion. Sixteen ordinary/adapted cases,
+13 exact rejection reasons, nine ordinary-len cases and 1,500 invented generation
+checks / 5,500 token IDs pass. Three complete vocabulary checks pass; all 56
+inputs, six controls, 30,823 original environment files and 41 active sources
+remain unchanged. Original result fields and final namespace/control inclusion
+are separately verified. This is fixture acceptance, not current C3 validation.
+Use the separate bound entry without editing original source or reducing checks.
+Prepared task work/run_complete_c3_bound_validation_v1.py is not yet executed;
+it requires completed original canonical/replay manifests and freezes their
+actual pins before the one full 54,540-generation validation. Do not launch the
+unbound per-token length loop or repeat accepted fixtures. The original main,
+validate_all and scientific helper bodies remain unchanged; entry/global and
+finalization bindings are disclosed, so this is not literal unchanged CLI replay.
+
 Active historical outcome execution: HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json.
-Status RUNNING_NOT_ACCEPTED; controller session 17907 already schedules the full
-producer/independent sequence. Read CURRENT_TASK.md before acting; do not duplicate.
+The producer now reconstructs all 13,500 historical numeric rows byte-exact;
+full independent validation and after-environment checks are still running.
+Controller session 17907 already schedules them. Read CURRENT_TASK.md; do not duplicate.
 
 Latest historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
 HISTORICAL_TRAINING_REPLAY_RESULTS.json. Exactly seven original final fits were
@@ -122,8 +139,8 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
-C3 remains its original canonical process from cc304ee, PID 55688: 14,684 pairs
-at 14:20:02 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 16,499 pairs
+at 15:36:10 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.

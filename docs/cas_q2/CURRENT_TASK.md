@@ -21,32 +21,32 @@ actions or cohorts; version any necessary correction prospectively.
 
 ## Active historical outcome execution
 
-The frozen [historical outcome contract](HISTORICAL_OUTCOME_REPLAY_CONTRACT.md)
-is executing from implementation 65e28d9. Read the [execution checkpoint](HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json)
-before choosing work. Its status is RUNNING_NOT_ACCEPTED: old/current IDs are
-disjoint (4,500 / 6,000), all 15 original/restored inputs are authenticated and
-21,267 environment files passed the before-execution check. Complete reference
-reconstruction, producer/independent numerical results and the after-execution
-environment check are still pending at this checkpoint. Do not call it a PASS.
+The [historical outcome contract](HISTORICAL_OUTCOME_REPLAY_CONTRACT.md) is
+executing from 65e28d9. The producer has completed all 13,500 historical rows /
+54,000 metric values, with exact original numeric-ledger bytes and reference
+binding. Its seven invented selection/metric fixtures pass and stderr is empty.
+The original controller session 17907, writer PID 46608, has automatically
+started independent reference rereading and metric comparison. The overall
+gate remains RUNNING_NOT_ACCEPTED until it finishes, rechecks preservation and
+seals its actual outcome. Do not launch a duplicate or overwrite partial files.
 
-The original private controller is task work/run_historical_outcome_replay_v1.py,
-unified session 17907, writer PID 46608; producer PID 57064. Its namespace is
-task outputs/historical_outcome_replay_v1. Verify PID creation times from the
-checkpoint before interacting. The controller already schedules producer,
-separate independent validation on producer success, preservation checks and
-success/failure sealing. Do not launch a duplicate or overwrite partial outputs.
-Prepared task helpers review_historical_outcome_replay_v1.py,
-export_historical_outcome_replay_v1.py and publish_historical_outcome_handoff.py
-have not run. First inspect the actual sealed result; only a passed full gate
-permits client acceptance, acceptance prose, private export and accepted handoff.
+The earlier [15:07 checkpoint](HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json)
+is historical; [current binding results](C3_VALIDATION_BINDING_RESULTS.json)
+record the completed producer and still-pending independent phase. Task helper
+work/run_historical_outcome_replay_v1.py owns the running sequence. After its
+actual seal, use the already prepared review_historical_outcome_replay_v1.py,
+write acceptance prose only if accepted, then export_historical_outcome_replay_v1.py
+and publish_historical_outcome_handoff.py. Those acceptance/export helpers have
+not executed. Actual full current C3 validation also has not run.
 
-The original C3 process remains independent and live. The checkpoint at
-15:07:33 UTC contains 15,833 pairs / 47,500 generation receipts; these are
-non-atomic newline counts, with all 41 source/config hashes unchanged.
-Before its full independent validation, resolve the [source-observed tokenizer
-length issue](C3_VALIDATION_EXECUTION_NOTE.md) prospectively; no adapter has yet
-been designed, implemented or accepted. Preserve frozen sources and full checks.
-The canonical run and fixed 180-trace neural replay keep their existing order.
+The original C3 snapshot at 15:36:10 UTC is 16,499 pairs / 49,498 generation
+receipts, non-atomic, with all 41 frozen source/config files unchanged. The
+[C3 binding adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) has now passed invented
+fixtures and client engineering acceptance. Its production controller
+work/run_complete_c3_bound_validation_v1.py is prepared but unexecuted. It refuses
+live or incomplete original neural passes and freezes the actual canonical/
+replay manifest pins at launch. Keep the existing canonical run and fixed
+180-trace neural replay order; then execute this accepted complete validator.
 
 ## Actual accepted work
 
@@ -89,8 +89,11 @@ The canonical run and fixed 180-trace neural replay keep their existing order.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 14:20:02 UTC snapshot has 14,684 pairs / 44,053 generation receipts,
-   non-atomic and not completion; see [latest results](HISTORICAL_TRAINING_REPLAY_RESULTS.json).
+   failures. The 15:36:10 UTC snapshot has 16,499 pairs / 49,498 generation receipts,
+   non-atomic and not completion; see [latest results](C3_VALIDATION_BINDING_RESULTS.json).
+   Use the [accepted disclosed validation binding](C3_VALIDATION_BINDING_ACCEPTANCE.md)
+   for all 54,540 generation checks after both original neural passes finish.
+   Keep original sources/criteria and freeze the production command and pins.
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -108,6 +111,17 @@ The canonical run and fixed 180-trace neural replay keep their existing order.
    fresh outcomes or promote a winning slice to confirmation. The old
    [CONFIRMATION_DESIGN.md](CONFIRMATION_DESIGN.md) remains a historical draft,
    not an executable confirmation protocol or final-model authorization.
+
+The [C3 execution adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) passes 16
+original/adapted cases, 13 exact rejection reasons, nine ordinary-len cases and
+1,500 invented generation checks with 5,500 token IDs / three complete vocabulary
+checks. Finalization preserves original result fields, failures and no-overwrite
+rules and includes controls in the original full namespace seal. All 56 inputs,
+six controls, 30,823 environment files and 41 current frozen sources are unchanged.
+The [results/private kit](C3_VALIDATION_BINDING_RESULTS.json) include exact source
+pins and client acceptance. Do not repeat fixtures. Full current C3 execution,
+its complete predecessor chain and the actual C4 prerequisite check remain
+pending; no current payload or Gold was used in adapter design or fixtures.
 
 ## P1 and P2 while C3 runs
 
