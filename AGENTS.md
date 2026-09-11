@@ -12,7 +12,21 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Latest historical CPU replay: RELOCATED_HISTORICAL_SCORING_ACCEPTANCE.md and
+Latest Qwen input/decoder gate: RELOCATED_QWEN_TOKENIZER_ACCEPTANCE.md and
+RELOCATED_QWEN_TOKENIZER_RESULTS.json. All 41,040 historical generation receipts
+pass in the restored roots/new environment: 39,750,420 input tokens, 627,012
+archived output tokens and 410,400 exact field comparisons. The independent
+process reconstructs all 180 fixed replay traces and verifies their signatures.
+All 21 original/restored used inputs and 21,267 environment/target files remain
+unchanged. Both v2 stderr logs are empty; three counterfeit receipts are rejected.
+There is one explicit global len binding for the fixed tokenizer's cardinality,
+with 11 complete vocabulary/length rechecks; scientific function ASTs stay
+unchanged. This is not a literal unchanged original CLI or neural forward replay.
+Preserve the v1 exit-profile failure, intentionally stopped independent attempt,
+two failed diagnostics and the successful lifecycle/timing diagnoses. The v1
+and v2 producer row files are byte-identical. Do not repeat this accepted gate.
+
+Earlier historical CPU replay: RELOCATED_HISTORICAL_SCORING_ACCEPTANCE.md and
 RELOCATED_HISTORICAL_SCORING_RESULTS.json. All 13,500 historical rows, 3,202
 rebuilt feature pairs, seven saved upstream estimators and the V2 bundle pass
 from restored roots in the accepted new environment. Independent validation
@@ -76,15 +90,15 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 11,781 pairs
-at 12:16:25 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 12,878 pairs
+at 13:05:51 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
 149 pass and two Windows capability skips; that suite was not repeated here.
 
-Next independent work: prospectively verify remaining neural-package and
+Next independent work: prospectively verify BGE/NLI tokenizer/target-package and
 predecessor execution bindings; later add completed-stage output dependencies
 and execute full relocated neural/pipeline replay. Declared static delivery,
 native assembly and full historical CPU scoring are accepted, but
