@@ -34,6 +34,13 @@ Interpret only declared metadata schemas, after authenticating their bytes:
 - The three accepted acquisition/scoring/outcome audits: `checked_files`.
 - The accepted upstream provenance report: its 14 manifest records, relative to
   the original project. Keep its historical provenance gaps unchanged.
+- Native runtime config freezes: `accepted_sources`, `preflight_sources`.
+  Native preflight metadata: `accepted_source_files`, `source_byte_inputs` and
+  `historical_source_authentication.sources`. Implementation provenance:
+  `sources`, `evidence_controls`. Cohort freezes: `source_id_ledgers` and
+  `selected_id_ledger`. These are the additional explicit record locations used
+  by the inspected original/native input-authentication code, not permission
+  to decode arbitrary configuration or outcome payloads.
 
 Resolve the original project, engineering worktree and task workspace as three
 separate logical roots. Deduplicate identical file identities while retaining
