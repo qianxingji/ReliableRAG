@@ -2,6 +2,28 @@
 
 ## Superseding execution contract — fixed empirical replication
 
+Current acceptance (2026-09-11):
+[EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md](EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md).
+C4 protected executors, durable journals and the separate complete prelabel
+validator are implemented and CPU-tested: 110 tests, 108 pass, two existing
+Windows capability skips, 243 frozen inputs unchanged. They have not executed
+actual scoring GPU preflight or fresh scoring. The initial invented cache-hit
+test assertion failure is preserved separately; no scientific rule changed.
+
+C3's original process remains active (latest snapshot: 3,762/18,000 canonical
+pairs at 06:37:45 UTC). Do not restart it or occupy its GPU. On completion,
+execute the fixed 180-trace replay and full C3 validator before any real C4
+stage. Then run the prospective scoring preflight, base, GbV, policies and
+separate validator in order with accepted manifest pins. Single-use namespaces
+and CPU-frozen source must be preserved. Read the new acceptance for entrypoints.
+
+Next useful independent task: implement and test the frozen D outcome analysis
+and its separate evaluator. Read EMPIRICAL_REPLICATION_PROTOCOL_V1.md and the
+fixed C4 statistical contract first. Do not decode new Gold or assess generated
+answers while implementing. Only complete C4 prelabel PASS authorizes Gold
+mapping. Contribution review, historical fit-time provenance gaps and undecided
+CAS qualification remain open. CAS Q2 STATUS: NOT READY; total fits remain 178.
+
 Latest acceptance (2026-09-11):
 [EMPIRICAL_C4_NEURAL_CPU_ACCEPTANCE.md](EMPIRICAL_C4_NEURAL_CPU_ACCEPTANCE.md).
 Independent likelihood/cache, GbV chunk/token/softmax/failure and answer-semantic

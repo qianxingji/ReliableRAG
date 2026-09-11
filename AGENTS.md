@@ -12,6 +12,16 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
+Latest: EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md accepts protected C4 stage
+executors and the separate full-file validator on invented CPU inputs only.
+Full regression: 110 tests, 108 pass, two Windows capability skips; 243 frozen
+inputs unchanged. Real scoring/GPU preflight remains pending accepted C3.
+Check the original C3 process and namespace first; never duplicate it. Next
+independent work is the already frozen D analysis implementation without Gold
+reads. Actual D evaluation requires complete prelabel acceptance. The source
+at 61edb9a is now CPU-frozen; version corrections instead of editing its bytes.
+Read EMPIRICAL_C4_STAGE_ENGINEERING_RESULTS.json for the latest runtime snapshot.
+
 Original full replay and all three supervised controls are complete; both
 historical advancement rules failed. The new fixed-policy empirical replication
 design is in `docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md`. Its five fixed
