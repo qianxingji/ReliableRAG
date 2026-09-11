@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T11:10:18.071598+00:00",
+  "as_of_utc": "2026-09-11T11:49:29.080269+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -203,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_RESULTS.json",
+    "latest_execution_snapshot": "docs/cas_q2/STATIC_DELIVERY_RESULTS.json",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -380,5 +380,31 @@
     "results": "docs/cas_q2/PRETRAINED_ASSET_DELIVERY_RESULTS.json",
     "lock": "docs/cas_q2/PRETRAINED_ASSET_LOCK.json",
     "runbook": "docs/cas_q2/PRETRAINED_ASSET_OFFLINE_RUNBOOK.md"
+  },
+  "static_dependency_delivery": {
+    "status": "PASS_DECLARED_STATIC_TRANSPORT_AND_RESTORATION_ONLY",
+    "acceptance_manifest": "54b44ed473665264a366ee0bb24e5a205b43c0bb012799fdd654592c620a4ff6",
+    "graph_manifest_sha256": "aa5c3da7ed764405e92602b64303984931a798abf2aee3e64c5d56ae34e892ea",
+    "execution_freeze_sha256": "c80258e345b23300f1f5830f64aac7d3c33913146e30f3aaa599f518d6c362f1",
+    "independent_receipt_sha256": "fbd0d232ed22f2574f6aa0d071eaaad67ea75f5f78086014e1728c028393a41b",
+    "original_files_unchanged": 17617,
+    "restored_files_rechecked": 17617,
+    "restored_bytes": 11840356271,
+    "internal_files": 17595,
+    "external_pretrained_files": 22,
+    "support_files_unchanged": 15,
+    "independent_original_content_reads": 0,
+    "full_pipeline_replay": false,
+    "private_artifacts_uploaded": false,
+    "graph_nodes": 17617,
+    "graph_edges": 21118,
+    "graph_issue_count": 0,
+    "exact_namespace_checks": 36,
+    "acceptance": "docs/cas_q2/STATIC_DELIVERY_ACCEPTANCE.md",
+    "results": "docs/cas_q2/STATIC_DELIVERY_RESULTS.json",
+    "runbook": "docs/cas_q2/STATIC_DELIVERY_OFFLINE_RUNBOOK.md",
+    "source_absolute_metadata_rewritten": false,
+    "live_or_future_stage_payloads_delivered": false,
+    "another_host_tested": false
   }
 }

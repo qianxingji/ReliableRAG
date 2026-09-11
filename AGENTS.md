@@ -12,15 +12,26 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Latest asset delivery: PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md and
+Latest static delivery: STATIC_DELIVERY_ACCEPTANCE.md and STATIC_DELIVERY_RESULTS.json.
+The 21-seed graph passes 17,617 files / 21,118 edges, zero issues and 36 exact
+namespace checks. Its 17,595 non-pretrained files are in a new private archive;
+the existing 22-asset archive supplies the external members. A separate process
+restored all 17,617 files to three fresh roots. All originals/restored files and
+15 support files were rehashed unchanged; no scientific payload was decoded.
+Use STATIC_DELIVERY_OFFLINE_RUNBOOK.md and the exact evidence-companion controls.
+This closes declared static byte delivery, not arbitrary source IO, live C3/future
+stage outputs, package/predecessor execution bindings or full pipeline replay.
+Do not repeat the accepted audit/package/restoration; keep all namespaces sealed.
+
+Earlier asset delivery: PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md and
 PRETRAINED_ASSET_DELIVERY_RESULTS.json.
 All 22 original BGE/Qwen/GbV NLI snapshot files (7,494,996,533 bytes) are packaged
 and independently restored from the private archive. Every original/restored
 file matches prior audit hashes; Qwen's index closes over exactly two shards.
 The validator has zero old-project content reads, model loads, forwards or Gold
 access. Use the exact controls and freeze in the small evidence companion and
-PRETRAINED_ASSET_OFFLINE_RUNBOOK.md. This closes pretrained asset delivery only;
-learned-policy/data/output closure and complete pipeline replay remain pending.
+PRETRAINED_ASSET_OFFLINE_RUNBOOK.md. This gate closes pretrained asset delivery;
+the later static gate adds declared learned-policy/data/sealed-output bytes.
 Do not repeat accepted packaging or restoration; preserve all earlier failures.
 
 Previous native delivery gate: EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md and
@@ -53,17 +64,18 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 10,274 pairs
-at 11:10:18 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 11,182 pairs
+at 11:49:29 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
 149 pass and two Windows capability skips; that suite was not repeated here.
 
-Next independent work: close dataset/learned-policy and completed-output
-delivery dependencies, then design the remaining package/predecessor bindings
-and prospective pipeline replay. Native source assembly is now accepted, but
+Next independent work: prospectively design and verify restored learned-object,
+package and predecessor bindings; later add completed-stage output dependencies
+and execute relocated pipeline replay. Declared static byte delivery and native
+source assembly are accepted, but
 C4 root/package-path checks and absolute predecessor bindings remain constraints;
 do not silently modify active loaders or redirect the running C3 process.
 Historical fit-time receipts and fresh result/contribution remain missing.

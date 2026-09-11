@@ -22,7 +22,9 @@ scoring, outcome analysis and contribution assessment remain outstanding.
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
-Latest asset delivery: [22 fixed pretrained files packaged and independently restored](docs/cas_q2/PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md), with every byte bound to the prior audits. The private model archive contains 7,494,996,533 payload bytes; its small evidence companion supplies exact controls and freeze metadata. No model inference was run. Use the [offline restoration runbook](docs/cas_q2/PRETRAINED_ASSET_OFFLINE_RUNBOOK.md).
+Latest static delivery: [declared dependency graph and actual restoration](docs/cas_q2/STATIC_DELIVERY_ACCEPTANCE.md) pass for 17,617 files / 21,118 edges, with zero issues. All 11,840,356,271 bytes were restored into three new roots and rechecked against unchanged originals. A new private package supplies 17,595 files; the existing asset archive supplies 22 external members. Use the [results](docs/cas_q2/STATIC_DELIVERY_RESULTS.json) and [offline runbook](docs/cas_q2/STATIC_DELIVERY_OFFLINE_RUNBOOK.md). This is declared static byte delivery; complete relocated execution remains pending.
+
+Earlier asset delivery: [22 fixed pretrained files packaged and independently restored](docs/cas_q2/PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md), with every byte bound to the prior audits. The private model archive contains 7,494,996,533 payload bytes; its small evidence companion supplies exact controls and freeze metadata. No model inference was run. Use the [offline restoration runbook](docs/cas_q2/PRETRAINED_ASSET_OFFLINE_RUNBOOK.md).
 
 Earlier native delivery gate: [two-root native source assembly](docs/cas_q2/EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md), with 80 prior AST records and 21 explicit Path bindings matching in each root. Thirteen path tests pass; three failed attempts remain preserved. This does not establish full pipeline replay.
 

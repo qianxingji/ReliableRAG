@@ -2,7 +2,7 @@
 
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
 independent numerical replay, neural-package/CPU acceptance and the separate
-native assembly and pretrained-asset delivery gates. Prior checkpoint prose is
+native assembly, pretrained-asset and declared static delivery gates. Prior checkpoint prose is
 preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
@@ -57,8 +57,8 @@ actions or cohorts; version any necessary correction prospectively.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 11:10:18 UTC snapshot has 10,274 pairs / 30,823 generation receipts,
-   non-atomic and not completion; see [latest results](PRETRAINED_ASSET_DELIVERY_RESULTS.json).
+   failures. The 11:49:29 UTC snapshot has 11,182 pairs / 33,547 generation receipts,
+   non-atomic and not completion; see [latest results](STATIC_DELIVERY_RESULTS.json).
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -117,8 +117,21 @@ Use the [file lock](PRETRAINED_ASSET_LOCK.json),
 and [offline runbook](PRETRAINED_ASSET_OFFLINE_RUNBOOK.md). Keep the restored
 namespace sealed and do not repeat accepted asset delivery.
 
-Next: complete dataset/learned-policy/completed-output dependency closure and
-design remaining package/predecessor bindings and actual relocated pipeline validation.
+The [declared static graph and transport](STATIC_DELIVERY_ACCEPTANCE.md) now pass:
+21 seeds, 17,617 nodes, 21,118 edges, zero issues and 36 exact namespace checks.
+All 17,595 non-pretrained files are in a new private archive; the previously
+accepted asset archive supplies 22 external members. The independent process
+actually restored every graph file to three new roots, totaling 11,840,356,271
+bytes. The writer separately rehashed all originals and restored files unchanged.
+Scientific payloads stayed opaque; all original absolute metadata bytes remain
+intact. Use [results](STATIC_DELIVERY_RESULTS.json) and the
+[offline runbook](STATIC_DELIVERY_OFFLINE_RUNBOOK.md), with exact controls from
+the evidence companion. Do not repeat the accepted static audit or restoration.
+
+Next: prospectively design and verify restored learned-object, package and
+predecessor bindings, then close actual completed-stage dependencies and execute
+relocated pipeline validation. The graph proves declared static edges; live C3
+ledgers/future stages and arbitrary source IO remain outside its accepted scope.
 C4's root/target-package checks and absolute predecessor records remain real
 constraints. Keep all original definitions/hashes intact and disclose each IO
 adaptation. Do not switch live C3's interpreter or inputs, or run new GPU work
