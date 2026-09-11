@@ -33,8 +33,15 @@ direct-caller binding design. Sol High implemented it; the 125-test producer gat
 and separate seven-test client audit are accepted in
 C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md. The single V2 invented GPU preflight
 and independent saved-witness audit are accepted in
-C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md. Never repeat V2. Full base scoring is now
-authorized through the same bound entry and exact accepted predecessor manifest.
+C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md. Never repeat V2. The full 18,000-trace base
+stage and its independent saved-witness/arithmetic audit are now accepted. The
+Astra xhigh authenticity audit identified a validator-only `cuda`/`cuda:0`
+metadata mismatch and authorized the exact hash-bound prospective correction.
+Its 132-test producer gate and separate seven-test client audit pass in
+C4_BASE_DEVICE_ALIAS_CORRIGENDUM_V2_ACCEPTANCE.md. The original validator,
+base receipt and scientific output remain unchanged. A single GbV stage is now
+authorized through `run_roa_empirical_scoring_bound_v3` with the exact accepted
+runtime, V2 preflight and base manifests; preserve and audit any failure.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.

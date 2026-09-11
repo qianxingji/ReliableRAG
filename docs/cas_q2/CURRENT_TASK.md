@@ -82,8 +82,16 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    [CPU acceptance](C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md) passes 125
    producer tests and seven independent tests. The single complete
    [V2 GPU preflight](C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md) and separate saved-witness
-   audit now pass. Never repeat or relocate V1 or V2. Execute the full base stage
-   once through the same bound entry and exact V2 predecessor manifest.
+   audit pass. Never repeat or relocate V1 or V2. The full base stage has now
+   completed and passed ordinary independent saved-witness/arithmetic audit plus
+   Astra xhigh final authenticity review. The frozen final validator's incorrect
+   `cuda:0` metadata equality conflicts with the original constructors' `cuda`
+   string, while every actual forward tensor is recorded on `cuda:0`. The exact,
+   additive and base-hash-bound [V2 corrigendum](C4_BASE_DEVICE_ALIAS_CORRIGENDUM_V2_ACCEPTANCE.md)
+   passes 132 producer tests and a separate seven-test client audit without
+   modifying the original validator, base receipt or output. Execute one GbV
+   stage through `run_roa_empirical_scoring_bound_v3` with the exact runtime,
+   V2 preflight and base predecessor manifests, then independently audit it.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -234,9 +242,9 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the full 18,000-trace C4 base-scoring stage once with raw logs,
-then independently audit it before GbV scoring.
-Continue through base, GbV, policies and independent prelabel validation only
+Next: execute the single full 18,000-trace C4 GbV-scoring stage with raw logs,
+then independently audit its complete NLI witness and branch ledgers before policies.
+Continue through GbV, policies and independent prelabel validation only
 through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The static graph still proves declared byte delivery only; complete relocated
