@@ -28,12 +28,26 @@ unbound per-token length loop or repeat accepted fixtures. The original main,
 validate_all and scientific helper bodies remain unchanged; entry/global and
 finalization bindings are disclosed, so this is not literal unchanged CLI replay.
 
-Active historical outcome execution: HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json.
-The producer now reconstructs all 13,500 historical numeric rows byte-exact;
-full independent validation and after-environment checks are still running.
-Controller session 17907 already schedules them. Read CURRENT_TASK.md; do not duplicate.
+Latest historical outcome gate: HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md and
+HISTORICAL_OUTCOME_REPLAY_RESULTS.json. The 4,500 historical IDs and 6,000 current
+IDs have zero intersection. Original reference-reader and metric ASTs reconstruct
+all 13,500 historical outcomes; complete new/original ledger bytes match. A
+separate reference reread and independent metric formulas verify 108,000 values
+at the unchanged EM/F1 criteria. Actual new PyArrow 20.0.0 modules and native
+binaries are recorded. Each process converts only 1,500 selected Hotpot answer
+cells to Python; native page decompression can include unselected rows. No raw
+reference strings are written. All 15 original/restored inputs, 21,267 environment
+files and nine controls remain unchanged. Seven invented fixtures per process
+and an independent corrupted-metric rejection pass; both stderr logs are empty.
+No fits, neural forward or current Gold/payload decode. Shared original reference
+reading is disclosed; current D/full CLI/neural replay is not claimed. Do not
+repeat this accepted gate. The existing HGB byte failure stays failed.
 
-Latest historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
+Use the separately accepted C3_VALIDATION_BINDING_ACCEPTANCE.md after the
+original canonical/fixed neural replay finish. The complete actual validator
+is still pending; keep all 41 source/config files and every check unchanged.
+
+Earlier historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
 HISTORICAL_TRAINING_REPLAY_RESULTS.json. Exactly seven original final fits were
 replayed on the same 601 ordered traces / 518 questions, with original schemas
 and seeds. Independent reconstruction checks all 140,033 matrix values and
@@ -139,8 +153,8 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
-C3 remains its original canonical process from cc304ee, PID 55688: 16,499 pairs
-at 15:36:10 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 16,943 pairs
+at 15:54:44 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
@@ -159,8 +173,12 @@ linked immutable records and Git history preserve earlier checkpoints.
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.
 
-- Work is Research Project Lead; ChatGPT pro 6 owns research design and
-  scientific argument; Codex GPT-6 Astra implements the reviewed design.
+- Work is Research Project Lead; ChatGPT owns research design and scientific
+  argument; Codex implements reviewed designs. Per the user's 2026-09-11 update,
+  routine engineering, experiment execution, monitoring and documentation use
+  Sol High (`gpt-5.6-sol`, `high`). Key research decisions and final acceptance
+  use Astra xhigh (`gpt-6-astra`, `xhigh`), then return to Sol High. This replaces
+  the earlier routine Astra assignment; see `docs/cas_q2/MODEL_ROUTING.md`.
 - Historical candidate: ROA-FULL, originally development-supported and
   GbV-augmented only. Subsequent attribution gates failed; no current candidate
   is cleared. Five fixed empirical comparison models now exist; they do not

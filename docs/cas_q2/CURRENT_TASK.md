@@ -4,7 +4,8 @@
 independent numerical replay, neural-package/CPU acceptance and the separate
 native assembly, pretrained-asset/static delivery and full relocated historical
 CPU scoring, full historical Qwen input/decoder and NLI preparation gates, plus
-the reviewed seven-fit byte failure and complete HGB state diagnosis. Prior checkpoint prose is
+the reviewed seven-fit byte failure, complete HGB state diagnosis and full
+historical source-reference/outcome replay. Prior checkpoint prose is
 preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
@@ -19,34 +20,9 @@ in `E:/paper/ReliableRAG-cas-q2-p0-1`, branch `work/cas-q2-p0-1` and draft PR #1
 No manuscript is authorized. Do not change frozen sources, hashes, tolerances,
 actions or cohorts; version any necessary correction prospectively.
 
-## Active historical outcome execution
-
-The [historical outcome contract](HISTORICAL_OUTCOME_REPLAY_CONTRACT.md) is
-executing from 65e28d9. The producer has completed all 13,500 historical rows /
-54,000 metric values, with exact original numeric-ledger bytes and reference
-binding. Its seven invented selection/metric fixtures pass and stderr is empty.
-The original controller session 17907, writer PID 46608, has automatically
-started independent reference rereading and metric comparison. The overall
-gate remains RUNNING_NOT_ACCEPTED until it finishes, rechecks preservation and
-seals its actual outcome. Do not launch a duplicate or overwrite partial files.
-
-The earlier [15:07 checkpoint](HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json)
-is historical; [current binding results](C3_VALIDATION_BINDING_RESULTS.json)
-record the completed producer and still-pending independent phase. Task helper
-work/run_historical_outcome_replay_v1.py owns the running sequence. After its
-actual seal, use the already prepared review_historical_outcome_replay_v1.py,
-write acceptance prose only if accepted, then export_historical_outcome_replay_v1.py
-and publish_historical_outcome_handoff.py. Those acceptance/export helpers have
-not executed. Actual full current C3 validation also has not run.
-
-The original C3 snapshot at 15:36:10 UTC is 16,499 pairs / 49,498 generation
-receipts, non-atomic, with all 41 frozen source/config files unchanged. The
-[C3 binding adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) has now passed invented
-fixtures and client engineering acceptance. Its production controller
-work/run_complete_c3_bound_validation_v1.py is prepared but unexecuted. It refuses
-live or incomplete original neural passes and freezes the actual canonical/
-replay manifest pins at launch. Keep the existing canonical run and fixed
-180-trace neural replay order; then execute this accepted complete validator.
+Model routing follows the user's latest [policy](MODEL_ROUTING.md): routine
+execution uses Sol High; key research decisions and final client acceptance use
+Astra xhigh, then return to Sol High. Do not run every stage on Astra xhigh.
 
 ## Actual accepted work
 
@@ -89,8 +65,8 @@ replay manifest pins at launch. Keep the existing canonical run and fixed
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 15:36:10 UTC snapshot has 16,499 pairs / 49,498 generation receipts,
-   non-atomic and not completion; see [latest results](C3_VALIDATION_BINDING_RESULTS.json).
+   failures. The 15:54:44 UTC snapshot has 16,943 pairs / 50,830 generation receipts,
+   non-atomic and not completion; see [latest results](HISTORICAL_OUTCOME_REPLAY_RESULTS.json).
    Use the [accepted disclosed validation binding](C3_VALIDATION_BINDING_ACCEPTANCE.md)
    for all 54,540 generation checks after both original neural passes finish.
    Keep original sources/criteria and freeze the production command and pins.
@@ -233,7 +209,24 @@ not recover missing original fit-time receipts or an earlier whole-manifest pin.
 Do not repeat accepted replay prerequisites, this completed seven-fit run or
 the finished state diagnosis. Keep original upstream estimators/current heads.
 
-Next: prospectively verify BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
+The [full historical reference/outcome replay](HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md)
+now passes. Historical/current IDs are disjoint (4,500 / 6,000). The unchanged
+original selected-reference readers and metrics reconstruct all 13,500 historical
+rows, matching the original reference hash and complete numeric-ledger bytes.
+A separate process rereads all selected references and checks 108,000 metrics
+with independent formulas under the original EM/F1 criteria. Actual PyArrow
+20.0.0 native binaries load from the accepted new target. Seven invented fixtures
+per process and a corrupt-metric rejection pass; both stderr logs are empty.
+All 15 original/restored inputs, 21,267 environment files and nine controls
+remain unchanged. [Results/private kit](HISTORICAL_OUTCOME_REPLAY_RESULTS.json)
+disclose shared original reference reading and possible unselected Arrow page
+decompression; no unselected answer is converted to Python or raw reference
+written. This is historical outcome replay, not current D execution, unchanged
+full CLI or full neural replay. No new fits or current empirical payload/Gold
+access occurs; total fits remain 185. Do not repeat the accepted gate.
+
+Next: execute the accepted complete C3 binding after the neural passes, then verify
+BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.
 C4's root/target-package checks and absolute predecessor records remain real

@@ -9,10 +9,13 @@ ambition is no longer a hard acceptance criterion. Verify the journal's year,
 ISSN, major/minor category and institutional recognition rule before submission.
 
 Work is Research Project Lead: priorities, research decisions, task contracts,
-review and stage acceptance. ChatGPT pro 6 handles research/method/experiment
-design and argument. Codex GPT-6 Astra implements reviewed designs, tests, runs
-experiments and prepares PRs. These labels describe the agreed division of work;
-this file does not claim that external model sessions have been started.
+review and stage acceptance. ChatGPT handles research/method/experiment design
+and argument. Codex implements reviewed designs, tests, runs experiments and
+prepares PRs. The user's 2026-09-11 model policy fixes routine work to Sol High
+(`gpt-5.6-sol`, `high`); key research decisions and final acceptance use Astra
+xhigh (`gpt-6-astra`, `xhigh`), followed by a return to Sol High. See
+[model routing](MODEL_ROUTING.md). These role labels do not claim that separate
+external model sessions have been started.
 
 The user's current instructions supersede old goal text. Preserve historical
 protocols and outcomes rather than changing their thresholds retrospectively.
@@ -55,7 +58,9 @@ sealing and outcome analysis, remain pending. Total control/panel fits: 178. Sev
 bring actual takeover fits to 185; their strict HGB byte failure remains in
 HISTORICAL_TRAINING_REPLAY_REVIEW.md. The C3 validation binding has separate
 engineering acceptance in C3_VALIDATION_BINDING_ACCEPTANCE.md; actual complete
-C3 validation and all later fresh scoring/outcome stages remain pending.
+C3 validation and all later fresh scoring/outcome stages remain pending. Historical
+reference/outcome replay is separately accepted in HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md;
+current Gold stays closed.
 Both historical method-advancement failures remain unchanged.
 
 The user confirmed that CAS partition year, institutional major/minor-category

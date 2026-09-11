@@ -1,0 +1,155 @@
+{
+  "status": "ACCEPTED_FULL_HISTORICAL_REFERENCE_AND_OUTCOME_REPLAY",
+  "cas_q2_status": "NOT READY",
+  "execution_manifest_sha256": "2deedc9104b74f50b242f5fe7e1a1a35e503fb097760ab58a336724476c22408",
+  "execution_freeze_sha256": "76e83cab97d0ea566be425b27f3a669df2223011d1d1bf4f889edbc6bb2a26c4",
+  "implementation_commit": "65e28d9f9b83074f04ef353bfdb17740899df34f",
+  "historical_questions": 4500,
+  "current_excluded_questions": 6000,
+  "intersection": 0,
+  "traces": 13500,
+  "metric_comparisons": 108000,
+  "max_f1_absolute_error": 0.0,
+  "f1_absolute_tolerance": 1e-15,
+  "em_exact": true,
+  "complete_original_numeric_ledger_byte_exact": true,
+  "numeric_ledger_sha256": "2ead94602f5aaf2c63cda7acf87e8ef2aa3d28a2feffb245f3d557be0e250576",
+  "selected_reference_binding_sha256": "f31bc4f39f37ebbcb05eff0d15fa568c0c352d3bf8da0c7579397192eb99ebd1",
+  "source_counts": {
+    "2wikimultihopqa": {
+      "source_rows": 12576,
+      "selected_question_labels": 1500,
+      "unselected_reference_python_values_materialized": 0,
+      "source_id_passes": 1,
+      "selected_reference_passes": 1
+    },
+    "hotpotqa": {
+      "source_rows": 7405,
+      "selected_question_labels": 1500,
+      "unselected_reference_python_values_materialized": 0,
+      "decoded_columns": [
+        "id",
+        "answer"
+      ],
+      "supporting_fact_question_context_columns_decoded": false,
+      "physical_page_decompression_may_include_unselected_rows": true
+    },
+    "musique": {
+      "source_rows": 19938,
+      "selected_question_labels": 1500,
+      "unselected_reference_python_values_materialized": 0,
+      "source_id_passes": 1,
+      "selected_reference_passes": 1
+    }
+  },
+  "original_ast_records_rechecked": 30,
+  "fixtures_per_process": 7,
+  "independent_corrupt_metric_rejected": true,
+  "actual_new_arrow_version": "20.0.0",
+  "actual_new_arrow_module_paths": {
+    "pyarrow": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\__init__.py",
+    "pyarrow.lib": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\lib.cp310-win_amd64.pyd",
+    "pyarrow._parquet": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\_parquet.cp310-win_amd64.pyd",
+    "pyarrow.parquet": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\parquet\\__init__.py"
+  },
+  "actual_mapped_arrow_binary_records": [
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\_fs.cp310-win_amd64.pyd",
+      "sha256": "3ed52d9adab673bc41af57d5dc8dd750db6ea741d5cbc44f192e9c576f54857a",
+      "size_bytes": 363008
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\_gcsfs.cp310-win_amd64.pyd",
+      "sha256": "cb875c2df84591e20cd06c293628cfe5dd760c179a8be89bb5dad415b199e85a",
+      "size_bytes": 91648
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\_hdfs.cp310-win_amd64.pyd",
+      "sha256": "6c494613993bd885ee539ec1a30b4ec18886ac2fe9260b7ad023bb44ba6dca93",
+      "size_bytes": 89088
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\_parquet.cp310-win_amd64.pyd",
+      "sha256": "264d3cd38378a3b93ffbd50cf650c3bb31b83a608f76453e55f52a4eedb41350",
+      "size_bytes": 403968
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\_s3fs.cp310-win_amd64.pyd",
+      "sha256": "807927e664a9c1b33087cc05b4205c958cbe2fedf91c17620a306123d3650b45",
+      "size_bytes": 164864
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\arrow.dll",
+      "sha256": "9bbbdb28a64961062af3615d9b72d51163144d548b384ac6a6057b395d7cb928",
+      "size_bytes": 31191552
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\arrow_python.dll",
+      "sha256": "a57ca577b702e7329145a8cce475c89a82df903c033e791e1a386feb67979d5a",
+      "size_bytes": 1209856
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\lib.cp310-win_amd64.pyd",
+      "sha256": "971506a2e03b4d7003dbbfa276ec471d2682178c99075006d201c3346a89b695",
+      "size_bytes": 3766784
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow\\parquet.dll",
+      "sha256": "a4ec9393759097d064970d86c5094e78ba056f4a3a0996a652201b41889fbe13",
+      "size_bytes": 6086656
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-targets-v1\\pyarrow\\pyarrow.libs\\msvcp140-a118642f3ae8774fb9dc223e15c4a52e.dll",
+      "sha256": "a5429f08ec9e4b12c89ffb461d8d988496010b75850f7398c74d908f3bc7d66b",
+      "size_bytes": 576128
+    }
+  ],
+  "arrow_selected_answer_python_values_per_process": 1500,
+  "arrow_source_identifier_python_values_per_process": 7405,
+  "arrow_row_group_column_calls_per_process": 14,
+  "physical_page_decompression_may_include_unselected_rows": true,
+  "shared_original_reference_reader": true,
+  "independent_metric_formulas": true,
+  "raw_reference_strings_written": false,
+  "original_used_inputs_unchanged": 15,
+  "restored_used_inputs_unchanged": 15,
+  "new_environment_files_unchanged": 21267,
+  "controls_unchanged": 9,
+  "prior_failure_diagnostic_seals_unchanged": 5,
+  "both_stderr_empty": true,
+  "new_fits": 0,
+  "total_scientific_fits": 185,
+  "neural_forwards": 0,
+  "fresh_gold_python_values": 0,
+  "current_empirical_payload_reads": 0,
+  "original_full_cli_replayed": false,
+  "current_D_pipeline_executed": false,
+  "another_host_or_os_tested": false,
+  "private_artifacts_uploaded": false,
+  "snapshot_utc": "2026-09-11T15:54:44.403721+00:00",
+  "evidence_kit": {
+    "filename": "HISTORICAL_OUTCOME_V1_EVIDENCE_PRIVATE.zip",
+    "sha256": "f98733035922bb408c36b6ed715c5afaafa5029cecb8ea336e8010424b043ca4",
+    "size_bytes": 162720,
+    "members": 29,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "external_dependencies": [
+    "Accepted restored static source/config/IDs/canonical historical answers/raw reference bytes",
+    "Accepted new environment and separate new PyArrow target",
+    "Current Windows/CPython"
+  ],
+  "live_canonical_pid": 55688,
+  "live_process_creation_time": "2026-09-11T12:02:54.8331660+08:00",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 16943,
+    "generation_receipts.jsonl": 50830,
+    "repair_bindings.jsonl": 16944,
+    "branch_provenance.jsonl": 16943
+  },
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "snapshot_scope": "Non-atomic newline byte counts only; no current empirical answer, score or Gold decode",
+  "established_engineering_suite_repeated": false
+}
