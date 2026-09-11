@@ -12,6 +12,10 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
+Active historical outcome execution: HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json.
+Status RUNNING_NOT_ACCEPTED; controller session 17907 already schedules the full
+producer/independent sequence. Read CURRENT_TASK.md before acting; do not duplicate.
+
 Latest historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
 HISTORICAL_TRAINING_REPLAY_RESULTS.json. Exactly seven original final fits were
 replayed on the same 601 ordered traces / 518 questions, with original schemas

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T14:20:02.551649+00:00",
+  "as_of_utc": "2026-09-11T15:07:33.823120+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -544,5 +544,27 @@
     "fresh_gold_values": 0
   },
   "total_takeover_fit_attempts": 185,
-  "total_takeover_fit_completions": 185
+  "total_takeover_fit_completions": 185,
+  "historical_outcome_replay_in_progress": {
+    "status": "RUNNING_NOT_ACCEPTED",
+    "snapshot_utc": "2026-09-11T15:07:33.823120+00:00",
+    "implementation_commit": "65e28d9f9b83074f04ef353bfdb17740899df34f",
+    "execution_freeze_sha256": "76e83cab97d0ea566be425b27f3a669df2223011d1d1bf4f889edbc6bb2a26c4",
+    "id_only_precheck": {
+      "historical_questions": 4500,
+      "current_questions": 6000,
+      "overlap": 0,
+      "reference_decode_performed": false
+    },
+    "environment_before_execution_checked_files": 21267,
+    "environment_after_execution_not_yet_checked": true,
+    "full_historical_reference_reconstruction_complete": false,
+    "independent_validation_not_yet_executed": true,
+    "checkpoint": "docs/cas_q2/HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json"
+  },
+  "c3_validation_execution_issue": {
+    "note": "docs/cas_q2/C3_VALIDATION_EXECUTION_NOTE.md",
+    "status": "SOURCE_OBSERVATION_ADAPTER_NOT_YET_DESIGNED_OR_EXECUTED",
+    "active_sources_changed": false
+  }
 }

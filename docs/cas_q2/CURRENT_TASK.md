@@ -19,6 +19,35 @@ in `E:/paper/ReliableRAG-cas-q2-p0-1`, branch `work/cas-q2-p0-1` and draft PR #1
 No manuscript is authorized. Do not change frozen sources, hashes, tolerances,
 actions or cohorts; version any necessary correction prospectively.
 
+## Active historical outcome execution
+
+The frozen [historical outcome contract](HISTORICAL_OUTCOME_REPLAY_CONTRACT.md)
+is executing from implementation 65e28d9. Read the [execution checkpoint](HISTORICAL_OUTCOME_EXECUTION_CHECKPOINT.json)
+before choosing work. Its status is RUNNING_NOT_ACCEPTED: old/current IDs are
+disjoint (4,500 / 6,000), all 15 original/restored inputs are authenticated and
+21,267 environment files passed the before-execution check. Complete reference
+reconstruction, producer/independent numerical results and the after-execution
+environment check are still pending at this checkpoint. Do not call it a PASS.
+
+The original private controller is task work/run_historical_outcome_replay_v1.py,
+unified session 17907, writer PID 46608; producer PID 57064. Its namespace is
+task outputs/historical_outcome_replay_v1. Verify PID creation times from the
+checkpoint before interacting. The controller already schedules producer,
+separate independent validation on producer success, preservation checks and
+success/failure sealing. Do not launch a duplicate or overwrite partial outputs.
+Prepared task helpers review_historical_outcome_replay_v1.py,
+export_historical_outcome_replay_v1.py and publish_historical_outcome_handoff.py
+have not run. First inspect the actual sealed result; only a passed full gate
+permits client acceptance, acceptance prose, private export and accepted handoff.
+
+The original C3 process remains independent and live. The checkpoint at
+15:07:33 UTC contains 15,833 pairs / 47,500 generation receipts; these are
+non-atomic newline counts, with all 41 source/config hashes unchanged.
+Before its full independent validation, resolve the [source-observed tokenizer
+length issue](C3_VALIDATION_EXECUTION_NOTE.md) prospectively; no adapter has yet
+been designed, implemented or accepted. Preserve frozen sources and full checks.
+The canonical run and fixed 180-trace neural replay keep their existing order.
+
 ## Actual accepted work
 
 - P0-1 original saved-parameter replay and source audit:
