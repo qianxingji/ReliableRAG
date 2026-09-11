@@ -12,6 +12,19 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
+Latest: EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md accepts the separate selected-label
+mapper, independent outcome validator, frozen bootstrap analyzer and complete
+independent replay on invented CPU inputs only. Full regression: 134 tests,
+132 pass, two existing Windows capability skips; 1,054 frozen inputs unchanged.
+The original reference-source inventory authenticated 785 files without fresh
+Gold reads. D actual execution still requires complete C4 prelabel acceptance.
+Source at 4249598 is now frozen; version corrections. The original C3 process
+continues (5,099/18,000 at 07:32:22 UTC); check it first and never duplicate it.
+Next independent work is complete cost/release preparation; actual next stages
+are C3 replay/acceptance, C4 execution/acceptance and the four D processes.
+Read EMPIRICAL_D_ENGINEERING_RESULTS.json for the latest snapshot. Older
+engineering checkpoints below are retained history, not open implementation tasks.
+
 Latest: EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md accepts protected C4 stage
 executors and the separate full-file validator on invented CPU inputs only.
 Full regression: 110 tests, 108 pass, two Windows capability skips; 243 frozen

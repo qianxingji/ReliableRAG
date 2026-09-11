@@ -3,6 +3,29 @@
 ## Superseding execution contract — fixed empirical replication
 
 Current acceptance (2026-09-11):
+[EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md](EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md).
+The four separated D controllers and independent statistical/metric checks are
+implemented and CPU-tested: 134 tests, 132 pass, two existing Windows capability
+skips; all 1,054 frozen inputs unchanged. Original reference sources and their
+reader/metric environment passed a 785-file value-blind inventory. Fresh Gold
+reads remain zero; no actual D mapping or performance analysis has run.
+
+C3 still runs from its original frozen source; latest byte-count snapshot is
+5,099/18,000 pairs at 07:32:22 UTC. Inspect the original process/receipts first.
+Do not restart it, compete for its GPU or alter its frozen sources. Complete
+canonical generation, the fixed 180-trace replay and independent acceptance;
+then execute actual C4 preflight/base/GbV/policies/full validation. Only that
+complete prelabel seal permits D mapping, outcome validation, analysis and
+independent full-draw validation, with exact predecessor manifest arguments.
+
+Next independent work while C3 runs: full cost and reproducible-release
+preparation. D code at 4249598 is now CPU-frozen; preserve it and use a separate
+version for any necessary correction. Do not use fresh answers/Gold for test
+fixtures. Both historical advancement failures and missing original fit-time
+receipts remain. CAS Q2 STATUS: NOT READY; total scientific fits remain 178.
+Older entries below record superseded checkpoints, not requests to repeat work.
+
+Current acceptance (2026-09-11):
 [EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md](EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md).
 C4 protected executors, durable journals and the separate complete prelabel
 validator are implemented and CPU-tested: 110 tests, 108 pass, two existing

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T06:37:45.526159+00:00",
+  "as_of_utc": "2026-09-11T07:32:22.691316+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_CANONICAL_READER_RUNNING; C4_PROTECTED_EXECUTORS_AND_INDEPENDENT_GATE_CPU_TESTED; ACTUAL_SCORING_PENDING",
+    "empirical_route_decision": "C3_CANONICAL_READER_RUNNING; C4_AND_D_EXECUTORS_CPU_TESTED; ACTUAL_PRELABEL_AND_OUTCOMES_PENDING",
     "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md"
+    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
   "empirical_replication": {
@@ -202,7 +202,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/EMPIRICAL_C4_STAGE_ENGINEERING_RESULTS.json",
+    "latest_execution_snapshot": "docs/cas_q2/EMPIRICAL_D_ENGINEERING_RESULTS.json",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -223,7 +223,13 @@
     "stage_C4_stage_engineering_status": "PASS_CPU_INVENTED_STAGE_ENGINEERING_ONLY",
     "stage_C4_actual_scoring_started": false,
     "stage_C4_complete_prelabel_accepted": false,
-    "stage_D_implementation": "PENDING_NO_GOLD_READ"
+    "stage_D_implementation": "PENDING_NO_GOLD_READ",
+    "stage_D_engineering_acceptance": "docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md",
+    "stage_D_engineering_manifest": "9461d2d4dd54c6935eb9dac949b381c6bd3489857b8b4a6ddbb1e2864e34e0c8",
+    "stage_D_engineering_status": "PASS_CPU_D_ENGINEERING_ONLY",
+    "stage_D_inventory_manifest": "13a9e14d8f58c737dd1aef2f8556bb9bf1a6d81a86acdd910acdeecde9732ef2",
+    "stage_D_actual_mapping_run": false,
+    "stage_D_actual_analysis_run": false
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

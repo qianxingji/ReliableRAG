@@ -1,0 +1,57 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T07:32:22.691316+00:00",
+  "engineering_source_commit": "4249598d975cdc15649b2fcee029603806bbc5b3",
+  "engineering_manifest": "9461d2d4dd54c6935eb9dac949b381c6bd3489857b8b4a6ddbb1e2864e34e0c8",
+  "inventory_manifest": "13a9e14d8f58c737dd1aef2f8556bb9bf1a6d81a86acdd910acdeecde9732ef2",
+  "tests_run": 134,
+  "tests_passed": 132,
+  "windows_capability_skips": 2,
+  "new_D_tests": 24,
+  "frozen_input_files_unchanged": 1054,
+  "elapsed_test_seconds": 10.95,
+  "outcome_source_inventory": {
+    "status": "PASS_OUTCOME_SOURCE_INVENTORY_ONLY",
+    "files": 785,
+    "size_bytes": 407507969,
+    "original_arrow_package_files": 770,
+    "selected_reference_datasets": [
+      "2wikimultihopqa",
+      "hotpotqa",
+      "musique"
+    ],
+    "raw_values_decoded": 0
+  },
+  "implemented": [
+    "Method-blind selected-reference mapper and separate independent EM/F1 validator",
+    "Nine-policy numeric point/cell analysis, fixed 20000-draw paired question bootstrap and all-six intervals",
+    "Complete independent RNG/count-file replay and explicit-copy allocation",
+    "Separate authenticated-file and decoded-file boundaries with complete C4 prelabel gates"
+  ],
+  "actual_D_mapping_run": false,
+  "actual_D_analysis_run": false,
+  "complete_prelabel_accepted": false,
+  "fresh_gold_values_materialized": 0,
+  "scientific_fit_total": 178,
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_source_commit": "cc304ee37ba589cff42b936c6e1fd0a692618864",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 5099,
+    "generation_receipts.jsonl": 15298,
+    "repair_bindings.jsonl": 5099,
+    "branch_provenance.jsonl": 5099
+  },
+  "count_scope": "Sequential byte newline counts, non-atomic; no answer quality assessed",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "limitations": [
+    "Synthetic engineering acceptance is not actual D execution or fresh performance evidence.",
+    "Independent outcome metrics share original selected-source parsers; bootstrap shares pinned NumPy RNG/quantiles.",
+    "Statistical analysis remains conditional on fixed models and realized bounded pools."
+  ],
+  "pending": [
+    "C3 completion, fixed 180-trace replay and full independent acceptance",
+    "Actual C4 scoring GPU preflight, base/GbV/policies and full independent prelabel seal",
+    "Actual separate D mapping, metric validation, frozen analysis and complete independent replay",
+    "Full cost, comparison fidelity, contribution review, historical fit-time receipts and undecided CAS qualification"
+  ]
+}
