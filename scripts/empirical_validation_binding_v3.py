@@ -14,8 +14,10 @@ def validate_native_default(pools, expected, numpy_version, environment):
     """Pure validation surface used by production and invented negatives."""
     require(all(name not in environment for name in THREAD_VARIABLES), "V3_THREAD_OVERRIDES_MUST_BE_ABSENT")
     require(numpy_version == "2.2.6", "V3_NUMPY_VERSION")
-    require(len(pools) == 1, "V3_EXACTLY_ONE_BLAS_POOL")
-    pool = pools[0]
+    blas_pools = [pool for pool in pools if pool.get("user_api") == "blas"]
+    non_blas_pools = [pool for pool in pools if pool.get("user_api") != "blas"]
+    require(len(blas_pools) == 1, "V3_EXACTLY_ONE_BLAS_POOL")
+    pool = blas_pools[0]
     require(pool.get("internal_api") == "openblas", "V3_OPENBLAS_REQUIRED")
     require(pool.get("num_threads") == 12, "V3_EXACTLY_TWELVE_THREADS")
     require(pool.get("version") == "0.3.29", "V3_OPENBLAS_VERSION")
@@ -26,7 +28,8 @@ def validate_native_default(pools, expected, numpy_version, environment):
     require(path.stat().st_size == expected["size_bytes"] and hashlib.sha256(path.read_bytes()).hexdigest() == expected["sha256"],
             "V3_OPENBLAS_DLL_BYTES")
     return {"thread_environment": {name: None for name in THREAD_VARIABLES}, "numpy_version": numpy_version,
-            "threadpools": pools, "dll_sha256": expected["sha256"]}
+            "threadpools": blas_pools, "non_blas_threadpools": non_blas_pools,
+            "dll_sha256": expected["sha256"]}
 
 
 def observe_native_default(config):
