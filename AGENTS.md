@@ -31,8 +31,10 @@ C4_PREFLIGHT_V1_FAILURE_REVIEW.md and C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md.
 Astra xhigh accepted failure preservation/diagnosis and froze the exact-code and
 direct-caller binding design. Sol High implemented it; the 125-test producer gate
 and separate seven-test client audit are accepted in
-C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md. One complete V2 invented GPU
-preflight is now authorized with a commit-bound external controller and raw logs.
+C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md. The single V2 invented GPU preflight
+and independent saved-witness audit are accepted in
+C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md. Never repeat V2. Full base scoring is now
+authorized through the same bound entry and exact accepted predecessor manifest.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.

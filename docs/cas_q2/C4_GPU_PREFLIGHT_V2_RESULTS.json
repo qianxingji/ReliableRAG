@@ -1,0 +1,44 @@
+{
+  "status": "ACCEPTED_C4_V2_GPU_PREFLIGHT_INVENTED_ONLY",
+  "cas_q2_status": "NOT READY",
+  "base_scoring_authorized": true,
+  "source_commit": "f6368506f495cc5a0e122bd5810fa0fa230305b2",
+  "binding_config_sha256": "b449d7366c1202262ee62a2a4d5a4dfc605017c755ccb61131b5ace82ce384e3",
+  "scientific_manifest_sha256": "1aabac381c8a5e5381f46729f49e9afcaae915c1fa84cd375141486e513b530a",
+  "external_run_manifest_sha256": "3dd82ce8a8d865011f8e8d559f0e844f335633f73f4b47e980d50e003b13ead9",
+  "client_audit_manifest_sha256": "65a7916f2d6db67158d49b7ba2be4994519decef102a3e1fad87c4c9a31cca71",
+  "metadata_archive_sha256": "600e5ca8881cfa71060ef8546026fb81f165a3a86f15d43543e26f8556e07b1d",
+  "binding_admitted_compiler_calls": 1,
+  "binding_delegated_profile_events": 17584560,
+  "binding_denials": 0,
+  "bge": {
+    "forward_calls": 2,
+    "rows": 22,
+    "padded_input_tokens": 8210,
+    "independent_saved_witness_checks": 30
+  },
+  "qwen": {
+    "forward_calls": 8,
+    "rows": 8,
+    "padded_input_tokens": 33618,
+    "requests": 12,
+    "cache_hits": 4,
+    "independent_saved_witness_checks": 136
+  },
+  "nli": {
+    "forward_calls": 7,
+    "pairs": 33,
+    "completed_branches": 5,
+    "deterministic_unscorable_pairs": 1,
+    "independent_saved_witness_checks": 376,
+    "maximum_probability_error": 6.603025604068335e-08,
+    "absolute_error_bound": 9.5367431640625e-07
+  },
+  "executable_inputs_rehashed": 444,
+  "environment_files_rehashed": 30912,
+  "scientific_fit_calls": 0,
+  "answer_generation_calls": 0,
+  "new_retrieval_calls": 0,
+  "fresh_gold_values_materialized": 0,
+  "scope": "Invented-only GPU compatibility and saved-witness acceptance; full benchmark scoring and outcome evidence remain pending."
+}

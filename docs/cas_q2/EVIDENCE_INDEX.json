@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; JINJA_IDENTITY_V2_CPU_GATE_ACCEPTED; ONE_V2_GPU_PREFLIGHT_AUTHORIZED",
+    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; C4_V2_GPU_PREFLIGHT_ACCEPTED; FULL_BASE_SCORING_AUTHORIZED",
     "confirmation_freeze_scope": "C1/C2/C3 acquisition complete and sealed; C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md",
+    "latest_stage_acceptance": "docs/cas_q2/C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -222,7 +222,7 @@
     "stage_C4_stage_engineering_results": "docs/cas_q2/EMPIRICAL_C4_STAGE_ENGINEERING_RESULTS.json",
     "stage_C4_stage_engineering_manifest": "4164666e8ad38360a3980393cd569a00476c4a196dc601db8a896aa37477017e",
     "stage_C4_stage_engineering_status": "PASS_CPU_INVENTED_STAGE_ENGINEERING_ONLY",
-    "stage_C4_actual_scoring_started": false,
+    "stage_C4_actual_scoring_started": true,
     "stage_C4_complete_prelabel_accepted": false,
     "stage_D_implementation": "IMPLEMENTED_CPU_ACCEPTED_ACTUAL_EXECUTION_PENDING",
     "stage_D_engineering_acceptance": "docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md",
@@ -269,7 +269,14 @@
     "stage_C4_v2_fixture_manifest_sha256": "42872b7b7f0b56a7b22eddf5bb6de75ec1a61c1a0e11eff241bc11c175e86517",
     "stage_C4_v2_fixture_client_audit_manifest_sha256": "9529abbb046a86f50bbad90550f9dc1192682169722f21424e4fb394ff2e1e74",
     "stage_C4_v2_gpu_launch_authorized": true,
-    "stage_C4_v2_gpu_preflight_executed": false
+    "stage_C4_v2_gpu_preflight_executed": true,
+    "stage_C4_v2_gpu_preflight_accepted": true,
+    "stage_C4_v2_gpu_preflight_acceptance": "docs/cas_q2/C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md",
+    "stage_C4_v2_gpu_preflight_results": "docs/cas_q2/C4_GPU_PREFLIGHT_V2_RESULTS.json",
+    "stage_C4_v2_gpu_preflight_manifest_sha256": "1aabac381c8a5e5381f46729f49e9afcaae915c1fa84cd375141486e513b530a",
+    "stage_C4_v2_gpu_preflight_client_audit_manifest_sha256": "65a7916f2d6db67158d49b7ba2be4994519decef102a3e1fad87c4c9a31cca71",
+    "stage_C4_base_scoring_authorized": true,
+    "stage_C4_base_scoring_executed": false
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

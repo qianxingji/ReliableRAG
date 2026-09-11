@@ -79,9 +79,11 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    Gold remained zero. The [failure audit](C4_PREFLIGHT_V1_FAILURE_REVIEW.md)
    verifies all original files and preserves V1 in place. Implement the frozen
    [V2 exact-identity binding](C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md). Its
-   [CPU acceptance](C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md) now passes 125
-   producer tests and seven independent tests. Execute one complete V2 GPU
-   preflight with a commit-bound external controller; never repeat or relocate V1.
+   [CPU acceptance](C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md) passes 125
+   producer tests and seven independent tests. The single complete
+   [V2 GPU preflight](C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md) and separate saved-witness
+   audit now pass. Never repeat or relocate V1 or V2. Execute the full base stage
+   once through the same bound entry and exact V2 predecessor manifest.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -232,8 +234,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the single authorized C4 V2 invented GPU preflight with raw logs,
-then independently audit it before base scoring.
+Next: execute the full 18,000-trace C4 base-scoring stage once with raw logs,
+then independently audit it before GbV scoring.
 Continue through base, GbV, policies and independent prelabel validation only
 through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
