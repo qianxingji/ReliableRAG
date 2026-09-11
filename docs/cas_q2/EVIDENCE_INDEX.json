@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T09:33:20.995872+00:00",
+  "as_of_utc": "2026-09-11T10:07:59.578270+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -173,7 +173,7 @@
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
     "empirical_route_decision": "C3_CANONICAL_READER_RUNNING; C4_D_AND_COST_EXECUTORS_CPU_TESTED; ACTUAL_PRELABEL_OUTCOMES_AND_COST_PENDING",
     "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md",
+    "latest_stage_acceptance": "docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -203,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_RESULTS.json",
+    "latest_execution_snapshot": "docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_RESULTS.json",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -303,6 +303,26 @@
       "sentencepiece_target": 1
     },
     "clean_neural_environment_tested": false,
+    "private_artifacts_uploaded": false,
+    "offline_installation_and_cpu_smoke_tested": true
+  },
+  "independent_neural_package_environment": {
+    "status": "PASS_OFFLINE_NEURAL_PACKAGES_AND_CPU_SMOKE_ONLY",
+    "acceptance": "docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md",
+    "results": "docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_RESULTS.json",
+    "runbook": "docs/cas_q2/NEURAL_OFFLINE_PACKAGE_RUNBOOK.md",
+    "preserved_initial_failure_manifest": "6f31eabcdaf4e1ddb286cf72736806595f8f82d506d164d099cf712e90a1a09b",
+    "acceptance_manifest": "9ee936df3f2e3e2370991b3dcefccaba96de263a54abc7bb1b412c8c97c734f8",
+    "installed_files_unchanged": 21267,
+    "original_environment_files_unchanged": 30823,
+    "official_payload_files": 21139,
+    "installed_record_issues": 0,
+    "observed_old_venv_accesses": 0,
+    "local_ipv6_capability_binds": 1,
+    "CUDA_execution_tested": false,
+    "pretrained_inference_tested": false,
+    "arbitrary_root_delivery_tested": false,
+    "fresh_python_or_OS_installation": false,
     "private_artifacts_uploaded": false
   }
 }

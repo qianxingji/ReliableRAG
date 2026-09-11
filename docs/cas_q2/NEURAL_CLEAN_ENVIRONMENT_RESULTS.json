@@ -1,0 +1,84 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T10:07:59.578270+00:00",
+  "status": "PASS_OFFLINE_NEURAL_PACKAGES_AND_CPU_SMOKE_ONLY",
+  "prospective_contract_commit": "1c476d6ad4170914c18dc4e83e8234b59b15da15",
+  "refinement_commit": "77992e140c126df680c5d19c0e744e94212cbbe1",
+  "manifests": {
+    "neural_official_wheels_v1": "813f7faeb51f015135e6d85d496c359225b234e9692d4eb079e63ba432c8ac89",
+    "neural_clean_installation_v1": "6f31eabcdaf4e1ddb286cf72736806595f8f82d506d164d099cf712e90a1a09b",
+    "neural_import_socket_diagnostic_v1": "7d2d7d18854ddc929a8d8199be4e99786153b58bcc7f7b6c0a7f2695d7205777",
+    "neural_clean_environment_acceptance_v2": "9ee936df3f2e3e2370991b3dcefccaba96de263a54abc7bb1b412c8c97c734f8"
+  },
+  "installation_repeated": false,
+  "installation": {
+    "main_distributions": 33,
+    "targeted_distributions": 2,
+    "installed_files": 21267,
+    "installed_bytes": 6231699885,
+    "official_payload_files": 21139,
+    "official_payload_bytes": 6227247823,
+    "installed_RECORD_hashed_entries": 21225,
+    "installed_RECORD_issues": 0,
+    "old_environment_files_unchanged": 30823,
+    "old_venv_accesses_observed": 0,
+    "local_ipv6_capability_binds": 1,
+    "local_capability_sockets_closed": true,
+    "loaded_binary_ownership": {
+      "new_environment": 174,
+      "new_targets": 5,
+      "base_python": 26,
+      "reused_windows": 43
+    },
+    "loaded_python_modules": 3146,
+    "initial_installation_inputs_unchanged": 217,
+    "v2_acceptance_inputs_unchanged": 28
+  },
+  "original_environment_exact_fileset_unchanged": true,
+  "offline_package_kit": {
+    "filename": "NEURAL_OFFLINE_PACKAGE_KIT_V1_PRIVATE.zip",
+    "sha256": "97ed19f724240cd18838e4e3e32e0010331f65824cbd763aff969b8d9177db89",
+    "size_bytes": 3416377116,
+    "files": 256,
+    "official_runtime_wheels": 35,
+    "base_bootstrap_wheels": 2,
+    "all_members_roundtrip_equal": true,
+    "contains_model_weights": false,
+    "contains_Python_or_OS_installer": false,
+    "uploaded": false
+  },
+  "original_NUMPY_RECORD_discrepancy_preserved": true,
+  "new_scientific_fits_this_stage": 0,
+  "scientific_fit_total": 178,
+  "new_neural_forwards_this_stage": 0,
+  "fresh_gold_values_materialized": 0,
+  "torch_cuda_initialized": false,
+  "CUDA_execution_tested": false,
+  "pretrained_inference_tested": false,
+  "fresh_CPython_or_OS_installation": false,
+  "arbitrary_root_pipeline_delivery_tested": false,
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_canonical_pid": 55688,
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 8805,
+    "generation_receipts.jsonl": 26417,
+    "repair_bindings.jsonl": 8806,
+    "branch_provenance.jsonl": 8805
+  },
+  "snapshot_scope": "Sequential non-atomic newline byte counts; no fresh answer/score/Gold decoding",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "engineering_suite": {
+    "tests": 151,
+    "passed": 149,
+    "windows_skips": 2,
+    "suite_repeated_for_this_stage": false
+  },
+  "pending": [
+    "C3 completion/fixed replay/independent acceptance",
+    "Actual C4/full prelabel",
+    "Cost reconciliation and four D processes",
+    "Fresh result/contribution review",
+    "Full pipeline delivery/path design and replay",
+    "Historical fit-time provenance/contamination limits"
+  ]
+}

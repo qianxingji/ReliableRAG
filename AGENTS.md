@@ -12,37 +12,41 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Current runtime inventory is complete with a preserved NumPy RECORD discrepancy;
-see NEURAL_RUNTIME_INVENTORY_REVIEW.md and NEURAL_RUNTIME_INVENTORY_RESULTS.json.
-All 30,912 inventoried inputs remain unchanged; 35 distributions, 38 satisfied
-active dependency requirements and 22 authenticated model assets are covered.
-All 35 exact official wheels (3,406,099,923 bytes) are now acquired and hash-locked.
-No clean neural installation is accepted yet. Preserve the initial audit/metadata
-failures, the duplicate cache declaration, and all existing environment bytes.
-Three original literal roots and the C4 root-equality bridge constrain delivery;
-do not modify active loaders or treat a requirements file as portable execution.
+Latest environment acceptance: NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md and
+NEURAL_CLEAN_ENVIRONMENT_RESULTS.json. The 35 exact official wheels are now
+installed as 33 main distributions plus separate SentencePiece/PyArrow targets.
+All 21,139 installed official payload files match; 21,225 RECORD hashes pass.
+Fixed CPU import/binary fixtures pass in an isolated process: no pretrained
+model, CUDA initialization or observed old-venv access. All 21,267 new files and
+30,823 original environment files remain unchanged. Preserve the first smoke
+failure and its diagnostic; v2 permits only the authenticated local IPv6
+capability bind and requires that socket closed. The original NumPy RECORD
+discrepancy remains untouched. This is package/CPU acceptance, not CUDA execution,
+full neural replay, arbitrary-root delivery or another-host/OS reproduction.
+A complete private offline package kit is built and verified; no private upload.
+Do not repeat accepted wheel acquisition, installation or CPU smoke.
 
 The separate CPU numerical environment and full original saved-parameter replay
 remain accepted with zero error and no observed old-venv access. Do not repeat
-accepted replay, release, CPU installation, runtime inventory or wheel acquisition.
-Original P0-1 replay and all three supervised controls are complete. Both
-historical advancement rules failed; no final novel-method candidate is cleared.
-The frozen empirical design has five fitted policies, 6,000 new question IDs,
-accepted C1 native pools and C2 original retrieval. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 7,949 pairs
-at 09:33:20 UTC. Recheck live process/receipts; never duplicate or restart it.
+accepted replay, release or runtime inventory. Original P0-1 replay and all three
+supervised controls are complete. Both historical advancement rules failed;
+no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
+and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
+C3 remains its original canonical process from cc304ee, PID 55688: 8,805 pairs
+at 10:07:59 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. Existing engineering tests: 151, with 149 pass and
-two Windows capability skips; these were not repeated for the inventory.
+two Windows capability skips; that suite was not repeated for the environment.
 
-Next independent work: prospective separate neural-environment installation and
-source-path delivery design using the acquired role-specific locks. Keep all GPU
-preflights/inference behind actual stage gates. Historical fit-time receipts and
-fresh empirical result/contribution remain missing. CAS Q2 STATUS: NOT READY.
-CURRENT_TASK.md is the consolidated active handoff; linked immutable records and
-Git history preserve previous checkpoints without instructing closed work again.
+Next independent work: prospectively design full pipeline delivery and explicit
+source/path bindings, using the authenticated assets and new package environment.
+Three original literal roots and C4 root/package-path checks remain constraints;
+do not silently modify active loaders or redirect the running C3 process.
+Historical fit-time receipts and fresh result/contribution remain missing.
+CAS Q2 STATUS: NOT READY. CURRENT_TASK.md is the consolidated active handoff;
+linked immutable records and Git history preserve earlier checkpoints.
 
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.

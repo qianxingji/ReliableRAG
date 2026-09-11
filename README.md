@@ -22,7 +22,8 @@ scoring, outcome analysis and contribution assessment remain outstanding.
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
-Latest acceptance: [independent numerical environment and offline replay](docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md).
+Latest environment acceptance: [offline neural packages and CPU smoke](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md).
+The earlier [independent numerical replay](docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md) remains accepted.
 The private 2,821-file source/data release now passes full saved-parameter replay
 with freshly installed, hash-locked numerical packages and zero error. The
 current Windows host and CPython base are reused; full neural-pipeline and
@@ -32,9 +33,11 @@ The [current neural inventory](docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md)
 covers 35 distributions and 22 model assets; all 30,912 checked inputs are
 unchanged. A real NumPy RECORD discrepancy remains explicitly reported. All
 35 exact official wheels are now acquired and role-specific hash locks are in
-`requirements/`; clean neural installation and arbitrary-path delivery remain
-pending. [Current results](docs/cas_q2/NEURAL_RUNTIME_INVENTORY_RESULTS.json)
-retain failure and acquisition manifests. Private data and archives are excluded from Git. The suite has 151 tests,
+`requirements/`. Their [offline installation and CPU smoke](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md)
+now pass in a separate environment, with all new and old package files unchanged.
+CUDA execution, pretrained replay and arbitrary-path delivery remain unverified.
+[Current results](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_RESULTS.json) retain the first
+smoke failure, corrected acceptance and complete offline package-kit hash. Private data and archives are excluded from Git. The suite has 151 tests,
 149 passing and two existing Windows capability skips. Implemented
 [D evaluation](docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md) and
 [cost auditing](docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) still await
