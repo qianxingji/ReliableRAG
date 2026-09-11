@@ -78,9 +78,10 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    fixture failures exposed the distinction between the NumPy repair backend and
    tokenizer-loaded auxiliary pools. The Astra xhigh
    [V3.1 amendment](C3_VALIDATION_V3_1_CONTRACT_AMENDMENT.md) and independent
-   [fixture audit](C3_VALIDATION_V3_1_FIXTURE_AUDIT.md) are now accepted. Before
-   the single full V3.1 run, complete the frozen V2 failure archive/relocation
-   step. Never repeat V1/V2, either neural pass, the census or accepted V3.1
+   [fixture audit](C3_VALIDATION_V3_1_FIXTURE_AUDIT.md) are now accepted. The
+   frozen [V2 failure archive/relocation](C3_VALIDATION_V2_FAILURE_PRESERVATION.md)
+   is also client-accepted, so exactly one full V3.1 run is now permitted. Never
+   repeat V1/V2, either neural pass, the census or accepted V3.1
    fixtures. C4 still needs Astra-accepted full V3.1 and the actual unchanged
    predecessor check.
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
@@ -239,8 +240,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: archive and relocate the V2 failure exactly once, execute the single full
-V3.1 C3 validation, perform Astra xhigh authenticity review and verify
+Next: execute the single full V3.1 C3 validation, perform Astra xhigh
+authenticity review and verify
 BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.

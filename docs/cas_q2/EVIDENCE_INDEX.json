@@ -171,7 +171,7 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_NEURAL_PASSES_COMPLETE; FULL_V1_AND_V2_VALIDATION_FAILED; CENSUS_AND_V3_1_FIXTURES_ACCEPTED; V2_FAILURE_RELOCATION_NEXT; ACTUAL_C4_PRELABEL_OUTCOMES_AND_COST_PENDING",
+    "empirical_route_decision": "C3_NEURAL_PASSES_COMPLETE; FULL_V1_AND_V2_VALIDATION_FAILED; CENSUS_V3_1_FIXTURES_AND_V2_FAILURE_RELOCATION_ACCEPTED; ONE_FULL_V3_1_NEXT; ACTUAL_C4_PRELABEL_OUTCOMES_AND_COST_PENDING",
     "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
     "latest_stage_acceptance": "docs/cas_q2/PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
@@ -187,7 +187,7 @@
     "selected_questions": 6000,
     "fresh_outcomes_read": 0,
     "new_runtime_questions_projected": 6000,
-    "stage_C": "C2_ACCEPTED; C3_CANONICAL_AND_FIXED_REPLAY_COMPLETE; V1_AND_V2_VALIDATION_FAILED; COMPLETE_REPAIR_CENSUS_ACCEPTED; V3_1_FIXTURE_GATE_ACCEPTED; V2_FAILURE_RELOCATION_PENDING",
+    "stage_C": "C2_ACCEPTED; C3_CANONICAL_AND_FIXED_REPLAY_COMPLETE; V1_AND_V2_VALIDATION_FAILED; COMPLETE_REPAIR_CENSUS_ACCEPTED; V3_1_FIXTURE_AND_V2_FAILURE_RELOCATION_ACCEPTED; ONE_FULL_V3_1_PENDING",
     "novel_method_candidate_cleared": false,
     "stage_C1_acceptance": "docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md",
     "stage_C1_results": "docs/cas_q2/EMPIRICAL_C1_RESULTS.json",
@@ -557,7 +557,7 @@
   "total_takeover_fit_completions": 185,
   "c3_validation_execution_issue": {
     "note": "docs/cas_q2/C3_VALIDATION_EXECUTION_NOTE.md",
-    "status": "ACTUAL_V1_AND_V2_FAILED_PRESERVED; COMPLETE_TWO_MODE_CENSUS_ACCEPTED; V3_1_FIXTURE_GATE_ACCEPTED; V2_FAILURE_RELOCATION_NEXT",
+    "status": "ACTUAL_V1_AND_V2_FAILED_PRESERVED; COMPLETE_TWO_MODE_CENSUS_ACCEPTED; V3_1_FIXTURE_AND_V2_FAILURE_RELOCATION_ACCEPTED; ONE_FULL_V3_1_NEXT",
     "active_sources_changed": false,
     "acceptance": "docs/cas_q2/C3_VALIDATION_BINDING_ACCEPTANCE.md",
     "failure_review": "docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md",
@@ -582,7 +582,7 @@
     "current_native_default_blas_threads_observed": 12,
     "v2_validation_blas_threads": 1,
     "full_discrepancy_extent_known": true,
-    "next_full_validator_authorized": false,
+    "next_full_validator_authorized": true,
     "census_contract": "docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md",
     "census_audit": "docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md",
     "census_results": "docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_RESULTS.json",
@@ -600,7 +600,13 @@
     "v3_1_fixture_client_audit_manifest_sha256": "dddb9a4ae72c7697e84d2ff0e0688ebfb82ff5064707842506dcea39c2004484",
     "v3_1_environment_anomaly_audit_manifest_sha256": "bb4f4f04a8a96759edfade612bc32a12dbf6a7f6df17f194a4e24fc1fdd8a4db",
     "v3_1_results": "docs/cas_q2/C3_VALIDATION_V3_1_FIXTURE_RESULTS.json",
-    "v3_1_audit": "docs/cas_q2/C3_VALIDATION_V3_1_FIXTURE_AUDIT.md"
+    "v3_1_audit": "docs/cas_q2/C3_VALIDATION_V3_1_FIXTURE_AUDIT.md",
+    "v2_failure_relocation_accepted": true,
+    "v2_failure_relocation_task_manifest_sha256": "64be365f8d4aaa32aa10af85fd858bfb3e47231cd0766dac7196ad19d6629ebf",
+    "v2_failure_relocation_client_audit_manifest_sha256": "78df6c27f61311a9d7811c626c6b646e10d6ecb0a48fe9355828d6c7544d2ad5",
+    "v2_sibling_failure_manifest_sha256": "e2109fa09dd085142709596747191f44b9a0881245f6c04924175010130ef141",
+    "v2_failure_relocation_acceptance": "docs/cas_q2/C3_VALIDATION_V2_FAILURE_PRESERVATION.md",
+    "v2_failure_relocation_results": "docs/cas_q2/C3_VALIDATION_V2_FAILURE_PRESERVATION_RESULTS.json"
   },
   "c3_validation_binding": {
     "status": "ACCEPTED_C3_VALIDATION_BINDING_FOR_FULL_CURRENT_VALIDATION",
@@ -654,7 +660,10 @@
     "v3_1_fixture_manifest_sha256": "43ac159a7776017e257e158e955be42777cff7f1f9e7e4b99526b28d9fb807fc",
     "v3_1_client_audit_manifest_sha256": "dddb9a4ae72c7697e84d2ff0e0688ebfb82ff5064707842506dcea39c2004484",
     "v3_1_full_execution_pending": true,
-    "v3_1_full_execution_status": "NOT_RUN_PENDING_V2_FAILURE_RELOCATION"
+    "v3_1_full_execution_status": "AUTHORIZED_SINGLE_RUN_NOT_YET_STARTED",
+    "v3_1_v2_failure_relocation_accepted": true,
+    "v3_1_v2_failure_relocation_task_manifest_sha256": "64be365f8d4aaa32aa10af85fd858bfb3e47231cd0766dac7196ad19d6629ebf",
+    "v3_1_v2_sibling_failure_manifest_sha256": "e2109fa09dd085142709596747191f44b9a0881245f6c04924175010130ef141"
   },
   "historical_outcome_replay_execution_checkpoint_history": {
     "status": "RUNNING_INDEPENDENT_NOT_YET_ACCEPTED",
