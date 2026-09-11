@@ -195,7 +195,7 @@ def independent_intervals(panel, draws):
     return result
 
 
-def validate_draw_files(panel, weights_path, receipts_path, *, draws=20000, seed=20260926):
+def validate_draw_files(panel, weights_path, receipts_path, *, draws=20000, seed=20260926, progress=None):
     """Recreate every RNG draw and explicitly rank every policy's replicated rows."""
     a = panel.audit
     width = len(panel.groups) * 2
@@ -213,6 +213,8 @@ def validate_draw_files(panel, weights_path, receipts_path, *, draws=20000, seed
             expected = panel.draw(expected_counts, index)
             compare_report(observed, expected, a)
             accepted.append(observed)
+            if progress is not None:
+                progress(index + 1)
         a.require(weights.read(1) == b"", "no extra bootstrap multiplicity bytes")
         a.exact(receipts.read(), "", "no extra bootstrap draw receipts")
     return accepted
