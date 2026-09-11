@@ -582,8 +582,8 @@
     "current_native_default_blas_threads_observed": 12,
     "v2_validation_blas_threads": 1,
     "full_discrepancy_extent_known": true,
-    "next_full_validator_authorized": false,
-    "next_full_validator_blocker": "V3_2_IMPLEMENTATION_COMMIT_NOT_YET_CONFIRMED_REMOTE",
+    "next_full_validator_authorized": true,
+    "next_full_validator_blocker": null,
     "census_contract": "docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md",
     "census_audit": "docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md",
     "census_results": "docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_RESULTS.json",
@@ -678,7 +678,7 @@
     "v3_2_bootstrap_implementation_commit": "768e9d95b0f6a319a9c9f342c41220ac265c0996",
     "v3_2_bootstrap_fixture_manifest_sha256": "c8d66e7144813ca5a49c91d851a36b5e3af48ec87dcd9946094c932fe26cfb26",
     "v3_2_bootstrap_client_audit_manifest_sha256": "9fdf6a8e5ef232d0006dc27959098b0bcc7ad083bb01a7f2c23e2deb8feb0b7e",
-    "v3_2_full_execution_status": "PENDING_REMOTE_COMMIT_ALIGNMENT"
+    "v3_2_full_execution_status": "AUTHORIZED_SINGLE_RUN_NOT_YET_STARTED"
   },
   "historical_outcome_replay_execution_checkpoint_history": {
     "status": "RUNNING_INDEPENDENT_NOT_YET_ACCEPTED",

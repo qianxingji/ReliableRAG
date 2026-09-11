@@ -84,8 +84,8 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    because isolated mode lacked the repo import path; its independent
    [failure review](C3_VALIDATION_V3_1_LAUNCH_FAILURE_REVIEW.md) is accepted.
    The [V3.2 bootstrap](C3_VALIDATION_V3_2_BOOTSTRAP_ACCEPTANCE.md) now passes its
-   dedicated gate without changing the V3.1 entry or binding. One full V3.2
-   launch is permitted after remote commit alignment. Never repeat V1/V2, either
+   dedicated gate without changing the V3.1 entry or binding. Its implementation
+   commit is now remotely aligned, so one full V3.2 launch is permitted. Never repeat V1/V2, either
    neural pass, the census or accepted fixtures. C4 still needs Astra-accepted
    full V3.2 and the actual unchanged
    predecessor check.
@@ -245,8 +245,7 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: align the V3.2 bootstrap commit remotely, execute its single full C3
-validation, perform Astra xhigh
+Next: execute the single full V3.2 C3 validation, perform Astra xhigh
 authenticity review and verify
 BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
