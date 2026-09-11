@@ -251,7 +251,12 @@
     "stage_C3_runtime_manifest_sha256": "dc2905224798b07302db8950f68db228de1faff9042c44dbaee7111ba107878f",
     "stage_C3_client_audit_manifest_sha256": "bfc4921074be0dbba5fe647f9664b949a645b6f37bb14ddb477f6ba01affa7b5",
     "stage_C4_prerequisite_check_executed": true,
-    "stage_C4_prerequisite_check_passed": true
+    "stage_C4_prerequisite_check_passed": true,
+    "stage_C4_gpu_preflight_launch_failure_status": "FAIL_PRECONFIG_REPO_IMPORT",
+    "stage_C4_gpu_preflight_launch_failure_results": "docs/cas_q2/C4_GPU_PREFLIGHT_LAUNCH_FAILURE_RESULTS.json",
+    "stage_C4_gpu_preflight_launch_failure_manifest_sha256": "98ddd984d9e1de5f8d36a1eb52d767a8116806ab58c0341bfbe2c8b21e687471",
+    "stage_C4_gpu_preflight_module_launch_amendment": "docs/cas_q2/C4_GPU_PREFLIGHT_MODULE_LAUNCH_AMENDMENT.md",
+    "stage_C4_gpu_preflight_scientific_namespace_created": false
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

@@ -23,6 +23,9 @@ generation, replay, census, fixtures or validation. Preserve all V1/V2/V3/V3.1
 failures; V2 remains a literal one-thread numerical failure and historical BLAS
 thread count remains unrecorded. Total fits remain 185 and current Gold remains
 closed. C4 is now authorized under its frozen execution contract.
+The first C4 preflight file-path launch failed before import/config/output
+creation and is preserved. Use C4_GPU_PREFLIGHT_MODULE_LAUNCH_AMENDMENT.md and
+the repository-root module command for the only scientific preflight run.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
 The scoped length adapter is implemented and client-accepted for full validation

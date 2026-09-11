@@ -73,7 +73,10 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
    [stage acceptance](EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md) with exact
    predecessor manifest arguments and new single-use namespaces. Do not rebuild
-   accepted executors or alter frozen byte pins.
+   accepted executors or alter frozen byte pins. The first file-path preflight
+   launch failed before import/config/output creation and is preserved. Use the
+   prospectively frozen [module-launch amendment](C4_GPU_PREFLIGHT_MODULE_LAUNCH_AMENDMENT.md)
+   for the only scientific preflight run.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
