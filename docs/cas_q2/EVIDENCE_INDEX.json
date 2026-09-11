@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T17:18:24.658009+00:00",
+  "as_of_utc": "2026-09-11T17:39:19.786321+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -171,7 +171,7 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_CANONICAL_READER_RUNNING; C4_D_AND_COST_EXECUTORS_CPU_TESTED; ACTUAL_PRELABEL_OUTCOMES_AND_COST_PENDING",
+    "empirical_route_decision": "C3_NEURAL_PASSES_COMPLETE; FULL_V1_AND_V2_VALIDATION_FAILED; TWO_MODE_REPAIR_CENSUS_NEXT; ACTUAL_C4_PRELABEL_OUTCOMES_AND_COST_PENDING",
     "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
     "latest_stage_acceptance": "docs/cas_q2/PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
@@ -187,7 +187,7 @@
     "selected_questions": 6000,
     "fresh_outcomes_read": 0,
     "new_runtime_questions_projected": 6000,
-    "stage_C": "C2_ACCEPTED; C3_CANONICAL_AND_FIXED_REPLAY_COMPLETE; V1_FAILURE_PRESERVED; V2_FIXTURE_ACCEPTED; FULL_V2_PENDING",
+    "stage_C": "C2_ACCEPTED; C3_CANONICAL_AND_FIXED_REPLAY_COMPLETE; V1_AND_V2_VALIDATION_FAILED; BOUNDED_THREAD_DISCREPANCY_AUDITED; EXHAUSTIVE_REPAIR_CENSUS_FROZEN",
     "novel_method_candidate_cleared": false,
     "stage_C1_acceptance": "docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md",
     "stage_C1_results": "docs/cas_q2/EMPIRICAL_C1_RESULTS.json",
@@ -203,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/C3_VALIDATION_V1_FAILURE_PRESERVATION.md",
+    "latest_execution_snapshot": "docs/cas_q2/C3_VALIDATION_V2_FAILURE_REVIEW.md",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -557,7 +557,7 @@
   "total_takeover_fit_completions": 185,
   "c3_validation_execution_issue": {
     "note": "docs/cas_q2/C3_VALIDATION_EXECUTION_NOTE.md",
-    "status": "ACTUAL_V1_FAILED_PRESERVED_AND_RELOCATED; V2_FIXTURE_ACCEPTED; FULL_RUN_PENDING",
+    "status": "ACTUAL_V1_FAILED_PRESERVED_AND_RELOCATED; ACTUAL_V2_FAILED_DENSE_COMPONENT_SCORE; EXHAUSTIVE_TWO_MODE_CENSUS_NEXT",
     "active_sources_changed": false,
     "acceptance": "docs/cas_q2/C3_VALIDATION_BINDING_ACCEPTANCE.md",
     "failure_review": "docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md",
@@ -569,7 +569,20 @@
     "external_failure_archive_sha256": "1e08e481a253ef2837dcfc62a690873c97ae498737672fa37119f61694730ed1",
     "external_failure_task_manifest_sha256": "20ccc68681ba45c52cac68b2f6204aa7d4a262e6a49109c8cf2d8e339aea0016",
     "sibling_failure_manifest_sha256": "9c7ec69191c05dccab7abeb2302e4cc0ff6db370b3777f127b9807859acb81bf",
-    "failure_preservation_client_review_sha256": "8669d2973fdc4bec330567574ab9171a2d31e9b786f01e08993badea34ac51dc"
+    "failure_preservation_client_review_sha256": "8669d2973fdc4bec330567574ab9171a2d31e9b786f01e08993badea34ac51dc",
+    "v2_failure_review": "docs/cas_q2/C3_VALIDATION_V2_FAILURE_REVIEW.md",
+    "v2_failure_results": "docs/cas_q2/C3_VALIDATION_V2_FAILURE_RESULTS.json",
+    "next_contract": "docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md",
+    "v2_failure_manifest_sha256": "2642f6f0e1df4f0987e5ab43f4c7e470f479e09dc1fe23062ea36f131d20fa88",
+    "v2_failed_report_sha256": "1979588de22cc5b450acdffb0f2231500fb70e61e2e9e612d776f91574f7c36b",
+    "v2_failure_client_audit_sha256": "c0772bc1838e4134b017598ee20174612b6e3c4262897ff02aa7f0f070e2f98b",
+    "v2_anomaly_evidence_archive_sha256": "cbf5f4db47da638237608668b70032331faeab841045522a091a68c51be66cb8",
+    "v2_anomaly_evidence_task_manifest_sha256": "f3ee5fef062787ea8c6d99524a3c7bebc7118459904415e709fa6bdb4b746d1b",
+    "historical_actual_blas_thread_count_recorded": false,
+    "current_native_default_blas_threads_observed": 12,
+    "v2_validation_blas_threads": 1,
+    "full_discrepancy_extent_known": false,
+    "next_full_validator_authorized": false
   },
   "c3_validation_binding": {
     "status": "ACCEPTED_C3_VALIDATION_BINDING_FOR_FULL_CURRENT_VALIDATION",
@@ -608,10 +621,14 @@
     "v2_implementation_commit": "f12213c6f32e3f825b31d99b907d6a3d68a2357c",
     "v2_all_nine_strata_passed": true,
     "v2_exact_branch_rejections": 8,
-    "v2_actual_current_C3_validation": false,
+    "v2_actual_current_C3_validation": true,
     "v2_failure_preservation_and_relocation_pending": false,
     "v2_failure_preservation_accepted": true,
-    "v2_full_execution_pending": true
+    "v2_full_execution_pending": false,
+    "v2_full_execution_status": "FAIL_INDEPENDENT_REPAIR_COMPONENT_RANKS_SCORES",
+    "v2_successful_generation_checks_before_stop": 18026,
+    "v2_first_failed_canonical_position": 6008,
+    "v2_complete_validation_accepted": false
   },
   "historical_outcome_replay_execution_checkpoint_history": {
     "status": "RUNNING_INDEPENDENT_NOT_YET_ACCEPTED",

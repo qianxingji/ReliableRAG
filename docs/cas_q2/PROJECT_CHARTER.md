@@ -57,8 +57,12 @@ also passed independent acceptance (EMPIRICAL_C2_ACCEPTANCE.md). C3's frozen
 trace/replay inputs and joint GPU preflight passed; canonical reader/repair
 generation and fixed neural replay completed under EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md.
 The first full independent validation failed due to two missing helper-scope
-constants; C3_VALIDATION_V1_FAILURE_REVIEW.md and C3_VALIDATION_V2_CONTRACT.md
-record the failure and prospective correction. Successful independent validation,
+constants. Separate V2 code/fixtures corrected those, and the V1 report is
+preserved in its accepted failure directory. V2 then failed on one observed
+dense component score after 18,026 generation checks. C3_VALIDATION_V2_FAILURE_REVIEW.md
+records the bounded 1/default-12-thread discrepancy and its limits. The prospective
+C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md requires all saved repairs in both modes
+before any V3 execution decision. Successful independent validation,
 frozen scoring/prelabel sealing and outcome analysis remain pending. Total control/panel fits: 178. Seven historical final-fit reproduction calls
 bring actual takeover fits to 185; their strict HGB byte failure remains in
 HISTORICAL_TRAINING_REPLAY_REVIEW.md. The C3 validation binding has separate

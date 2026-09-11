@@ -64,19 +64,21 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    Preserve both native manifests and all fourteen files; never repeat either
    neural pass. Their hashes and completed-source checks are in the
    [failure review](C3_VALIDATION_V1_FAILURE_REVIEW.md).
-2. The first actual full validator failed with a missing DATASETS global in the
-   extracted original validate_branch scope, before any generation check. The
-   [complete static dependency audit](C3_HELPER_SCOPE_AUDIT_V1.json) finds only
-   DATASETS/RETRIEVERS missing. Follow the [prospective V2 contract](C3_VALIDATION_V2_CONTRACT.md):
-   use the accepted separate V2 code and
-   [invented-only scope/branch gate](C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md),
-   preserve and verifiably move the failed report to its dedicated sibling
-   failure directory, then run one complete V2 validation. V2 code, fixtures and
-   the [archival move](C3_VALIDATION_V1_FAILURE_PRESERVATION.md) are accepted;
-   the actual complete execution has not yet occurred. Keep the sealed V1
-   failure, every original source and all 54,540 generation checks. Sol High
-   executes; Astra xhigh performs final authenticity/integration acceptance,
-   including the actual unchanged C4 prerequisite chain before step 3.
+2. V1's missing-helper constants were corrected under the accepted
+   [V2 fixture gate](C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md); the
+   [V1 archival move](C3_VALIDATION_V1_FAILURE_PRESERVATION.md) is accepted.
+   V2 has now run once and FAILED after 18,026 generation checks. Read the
+   [Astra anomaly audit](C3_VALIDATION_V2_FAILURE_REVIEW.md): canonical position
+   6008 differs at dense component rank 95 by 2 float32 ULPs. Current-default
+   12-thread arithmetic matches this saved component; 1-thread arithmetic
+   reproduces V2's failure. Original BLAS thread count was not recorded and the
+   full extent/effect is unknown. Preserve both attempts and the standard V2
+   report. Next, Sol High implements and runs the
+   [complete two-mode repair census](C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md).
+   Return to Astra xhigh for the full evidence review before a separate V3
+   design or complete C3 validation. Never automatically rerun V1/V2 or either
+   neural pass. C4 still needs actual accepted C3 and the unchanged predecessor
+   check, not a bounded arithmetic observation.
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -233,7 +235,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: complete V2 C3 validation, then verify
+Next: complete the saved-repair arithmetic census and anomaly review, then
+complete C3 validation and verify
 BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.

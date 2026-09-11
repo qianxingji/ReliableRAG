@@ -9,26 +9,25 @@ CAS Q2 is not JCR Q2. Scientific integrity, fairness and reproducibility remain 
 Original ROA saved-parameter replay and all three supervised controls are complete.
 Both historical method-advancement rules failed; no novel-method candidate is
 cleared. A frozen empirical replication now has five fitted comparison policies
-and 6,000 new question IDs. Native generation and fixed neural replay completed;
-the first full validator failed on missing helper-scope constants. The
-prospective V2 binding, its invented-only gate and the exact V1 failure
-preservation are accepted for one complete run; full validation remains pending. Fresh
+and 6,000 new question IDs. Native generation and fixed neural replay completed.
+The first full validator failed on missing helper constants. After the separate
+V2 correction, full validation failed on a dense component score. A bounded
+diagnostic finds thread-dependent arithmetic; a complete discrepancy census
+is now frozen before further validation. Fresh
 scoring, outcome analysis and contribution assessment remain outstanding.
 
 ## Continue here
 
 1. Read [AGENTS.md](AGENTS.md) and [CURRENT_TASK.md](docs/cas_q2/CURRENT_TASK.md).
-2. Preserve completed C3 canonical/fixed replay and the actual full-validation
-   failure. Follow the [review](docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md)
-   [V2 fixture acceptance](docs/cas_q2/C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md)
-   and [failure-preservation acceptance](docs/cas_q2/C3_VALIDATION_V1_FAILURE_PRESERVATION.md)
-   for corrected validation. Do not repeat neural acquisition or alter the
-   preserved failed report.
+2. Preserve completed C3 canonical/fixed replay and both full-validation
+   failures. Follow the [V2 anomaly audit](docs/cas_q2/C3_VALIDATION_V2_FAILURE_REVIEW.md)
+   and [complete repair-census contract](docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md).
+   Complete that diagnostic before any V3 design or full-validation retry.
 3. Execute the already implemented C4 scoring/prelabel stages; only their complete
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
-Latest validation review: the original helper loader omitted DATASETS/RETRIEVERS from its independent scope. The first full run failed in validate_branch before any generation check; the failure is sealed and all original acquisition bytes remain unchanged. The [V2 contract](docs/cas_q2/C3_VALIDATION_V2_CONTRACT.md) was frozen before implementation. The [V2 invented-only fixture](docs/cas_q2/C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md) now passes all nine strata, exact branch rejections, negative scope checks and the composed generation/finalization path. It authorizes one full run only after the V1 failure is preserved and relocated.
+Latest validation review: V2's helper constants work, but the actual full run failed at canonical position 6008 after 18,026 generation checks. One dense component score differs by 2 float32 ULPs; IDs/ranks on that row agree. The bounded observer exactly reproduces the saved component with the current native default of 12 BLAS threads, and V2's discrepancy with 1 thread. The original actual thread count was not recorded. [Audit and full evidence](docs/cas_q2/C3_VALIDATION_V2_FAILURE_REVIEW.md) preserve both failed runs and a diagnostic observer failure. All 14 original runtime files, 41 sources, 25 controls and 30,823 environment files remain unchanged. The exhaustive two-mode repair census is next; no tolerance or expected hash is relaxed.
 
 Latest outcome replay: [full historical source/reference mapping](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md) reconstructs all 13,500 rows for 4,500 old questions, disjoint from the 6,000 current IDs. New/original numeric ledgers are byte-exact; separate reference rereading and independent metric formulas check 108,000 values. Actual new PyArrow native bindings, selected-cell limits, all unchanged inputs and full evidence are in the [results](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_RESULTS.json). No current Gold is opened. Current C3 full validation requires the V2 correction above.
 
