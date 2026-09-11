@@ -22,6 +22,8 @@ scoring, outcome analysis and contribution assessment remain outstanding.
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
+Latest delivery gate: [two-root native source assembly](docs/cas_q2/EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md), with 80 prior AST records and 21 explicit Path bindings matching in each root. Thirteen path tests pass; three failed attempts remain preserved. This does not establish full pipeline replay.
+
 Latest environment acceptance: [offline neural packages and CPU smoke](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md).
 The earlier [independent numerical replay](docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md) remains accepted.
 The private 2,821-file source/data release now passes full saved-parameter replay
@@ -35,10 +37,11 @@ unchanged. A real NumPy RECORD discrepancy remains explicitly reported. All
 35 exact official wheels are now acquired and role-specific hash locks are in
 `requirements/`. Their [offline installation and CPU smoke](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md)
 now pass in a separate environment, with all new and old package files unchanged.
-CUDA execution, pretrained replay and arbitrary-path delivery remain unverified.
+CUDA execution, pretrained replay and full pipeline delivery remain unverified.
 [Current results](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_RESULTS.json) retain the first
-smoke failure, corrected acceptance and complete offline package-kit hash. Private data and archives are excluded from Git. The suite has 151 tests,
-149 passing and two existing Windows capability skips. Implemented
+smoke failure, corrected acceptance and complete offline package-kit hash. Private data and archives are excluded from Git. The earlier full engineering run had 151 tests,
+149 passing and two existing Windows capability skips; it was not repeated for
+the separate 13-test path/assembly gate. Implemented
 [D evaluation](docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md) and
 [cost auditing](docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) still await
 their actual prelabel gates; engineering tests do not establish fresh quality.

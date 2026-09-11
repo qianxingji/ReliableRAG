@@ -1,0 +1,107 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T10:49:57.741427+00:00",
+  "status": "PASS_TWO_ROOT_NATIVE_ASSEMBLY_ONLY",
+  "source_commit": "143ba2d20ab35dff19cac42fd4975e8d89e82fef",
+  "first_gate_only": true,
+  "acceptance_manifest": "cb2efd72fe1e67c0dc02678d1f6e4c24cf04daf3d12755f9a736e889319057aa",
+  "preserved_failures": [
+    {
+      "version": "empirical_delivery_assembly_v1",
+      "manifest_sha256": "0225eb7c633088a370c92f15999f174fc768c124fae54f6e1d886106e2ff451b"
+    },
+    {
+      "version": "empirical_delivery_assembly_v2",
+      "manifest_sha256": "9dd2b9a5fb458172cdd629f7cf2f07d1cf94137567da2e21cd1cd380161d3d64"
+    },
+    {
+      "version": "empirical_delivery_assembly_v3",
+      "manifest_sha256": "a2ce4b3ae879bfdc4d656fa5d6b14b0fe2a86bea64c32aa50995abe3543d2cb4"
+    }
+  ],
+  "path_tests": {
+    "tests": 13,
+    "passed": 13,
+    "manifest_sha256": "fb4e52c5d98203c90605bb43c94a531ec4297f78ce31af5286778b7b030a346d"
+  },
+  "runs": [
+    {
+      "label": "root_a",
+      "exit_code": 0,
+      "transport_sha256": "77dbe868c950aa9edadbd08f26c68ff55d0e7e0cdaca1b3324bb034455180338",
+      "runtime_ast_records": 46,
+      "scoring_ast_records": 34,
+      "support_path_bindings": 21,
+      "copied_files_unchanged": 83,
+      "blocked_events": [],
+      "fresh_outcome_values": 0
+    },
+    {
+      "label": "\u8fc1\u79fb\u9a8c\u8bc1 root b",
+      "exit_code": 0,
+      "transport_sha256": "d533bbd456fd8ea239cd823517c0f161d646334daca26a80f9117eb1d48cfbe5",
+      "runtime_ast_records": 46,
+      "scoring_ast_records": 34,
+      "support_path_bindings": 21,
+      "copied_files_unchanged": 83,
+      "blocked_events": [],
+      "fresh_outcome_values": 0
+    }
+  ],
+  "source_config_files_per_root": 83,
+  "copied_bytes_per_root": 1103522,
+  "original_inputs_unchanged": 83,
+  "new_environment_files_unchanged": 21267,
+  "original_metadata_rewritten": false,
+  "native_ast_records_per_run": {
+    "retrieval_reader": 46,
+    "base_and_v2": 34
+  },
+  "support_path_bindings_per_run": 21,
+  "bootstrap_scope": "One authenticated System32 cmd /c ver plus its stock NUL handle per process; no subprocess allowed during assembly",
+  "optional_import_scope": "One denied sklearn PyArrow availability probe per process; optional target remains absent",
+  "scientific_fits_this_stage": 0,
+  "scientific_fit_total": 178,
+  "model_loads": 0,
+  "neural_forwards": 0,
+  "fresh_gold_values": 0,
+  "observed_old_project_content_accesses": 0,
+  "CUDA_execution_tested": false,
+  "pretrained_pipeline_replay_tested": false,
+  "full_pipeline_delivery_accepted": false,
+  "another_host_tested": false,
+  "private_kit": {
+    "filename": "EMPIRICAL_NATIVE_ASSEMBLY_V4_PRIVATE.zip",
+    "sha256": "bc1f8e5a640223dca81e5b5b70c393f60cc2f38cf2914beca240f7a9fc033dfc",
+    "size_bytes": 1496967,
+    "members": 433,
+    "all_members_roundtrip_equal": true,
+    "contains_weights_datasets_or_fresh_answers": false,
+    "uploaded": false
+  },
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_canonical_pid": 55688,
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 9801,
+    "generation_receipts.jsonl": 29404,
+    "repair_bindings.jsonl": 9801,
+    "branch_provenance.jsonl": 9801
+  },
+  "snapshot_scope": "Sequential non-atomic newline byte counts; no answer/score/Gold decoding",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "established_engineering_suite": {
+    "tests": 151,
+    "passed": 149,
+    "windows_skips": 2,
+    "repeated_this_stage": false
+  },
+  "pending": [
+    "C3 completion/fixed replay/independent acceptance",
+    "Actual C4 and complete prelabel",
+    "Cost and four D processes",
+    "Real contribution review",
+    "Full source/data/model/completed-output closure and prospective relocated pipeline replay",
+    "C4 package/root and absolute predecessor bindings",
+    "Historical training receipts/contamination limitations"
+  ]
+}

@@ -12,6 +12,16 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
+Latest delivery gate: EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md and
+EMPIRICAL_DELIVERY_ASSEMBLY_RESULTS.json.
+The separate v2 adapter/v4 probe passed two fresh source/config-only processes,
+including spaces/Chinese paths: 46 runtime and 34 scoring AST records, unchanged
+existing generation boundary, 21 explicit Path bindings, 83 unchanged files per
+root and 21,267 unchanged environment files. Thirteen path tests pass; no model,
+forward, fit or fresh outcome access. Preserve all three failed attempts and
+explicit OS/optional-import refinements. This is native assembly only, not full
+pipeline delivery or neural replay. Do not repeat the accepted assembly gate.
+
 Latest environment acceptance: NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md and
 NEURAL_CLEAN_ENVIRONMENT_RESULTS.json. The 35 exact official wheels are now
 installed as 33 main distributions plus separate SentencePiece/PyArrow targets.
@@ -32,17 +42,18 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 8,805 pairs
-at 10:07:59 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 9,801 pairs
+at 10:49:57 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
-Fresh Gold reads remain zero. Existing engineering tests: 151, with 149 pass and
-two Windows capability skips; that suite was not repeated for the environment.
+Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
+149 pass and two Windows capability skips; that suite was not repeated here.
 
-Next independent work: prospectively design full pipeline delivery and explicit
-source/path bindings, using the authenticated assets and new package environment.
-Three original literal roots and C4 root/package-path checks remain constraints;
+Next independent work: close full scientific data/model and completed-output
+delivery dependencies, then design the remaining package/predecessor bindings
+and prospective pipeline replay. Native source assembly is now accepted, but
+C4 root/package-path checks and absolute predecessor bindings remain constraints;
 do not silently modify active loaders or redirect the running C3 process.
 Historical fit-time receipts and fresh result/contribution remain missing.
 CAS Q2 STATUS: NOT READY. CURRENT_TASK.md is the consolidated active handoff;

@@ -1,8 +1,9 @@
 # Current task: complete the frozen empirical replication
 
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
-independent numerical replay and neural-package/CPU acceptance. Prior checkpoint prose is
-preserved in Git history through cb9600b and the linked stage records. It is not
+independent numerical replay, neural-package/CPU acceptance and the separate
+native assembly gate. Prior checkpoint prose is preserved in Git history through
+cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
 ## Authority and preserved state
@@ -56,8 +57,8 @@ actions or cohorts; version any necessary correction prospectively.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 10:07:59 UTC snapshot has 8,805 pairs / 26,417 generation receipts,
-   non-atomic and not completion; see [latest results](NEURAL_CLEAN_ENVIRONMENT_RESULTS.json).
+   failures. The 10:49:57 UTC snapshot has 9,801 pairs / 29,404 generation receipts,
+   non-atomic and not completion; see [latest results](EMPIRICAL_DELIVERY_ASSEMBLY_RESULTS.json).
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -96,13 +97,23 @@ repeat the accepted smoke. Four `requirements/neural-*-win-cp310.lock` files
 preserve role separation. The private complete package kit contains 35 runtime
 wheels and two bootstrap wheels, not model weights or a Python/OS installer.
 
-Next: prospectively design full pipeline delivery and source/path bindings.
-Three literal original roots, C4's root/target-package checks and absolute
-predecessor records remain real constraints. Keep original scientific definitions
-and all frozen hashes intact; disclose and validate any separate IO adaptation.
-Do not switch the live C3 interpreter, change its inputs or run new GPU work
-before the actual stage gates. Full neural replay and arbitrary-root delivery
-remain unverified despite successful package/CPU acceptance.
+The [separate native assembly gate](EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md)
+now passes in two isolated relocated processes, including a Chinese/space path.
+The v2 adapter/v4 probe matches 46 runtime and 34 scoring AST records, preserves
+the existing generation boundary and explicitly binds 21 Path globals. All 83
+files per root and 21,267 environment files remain unchanged. Thirteen v2 path
+tests pass. Keep three failed runs and their prospective corrections; the
+[results](EMPIRICAL_DELIVERY_ASSEMBLY_RESULTS.json) include the private-kit hash.
+This is source/config-only assembly, with no model, fit or fresh outcome read.
+Do not repeat this accepted gate or alter its frozen implementation.
+
+Next: complete source/data/model/completed-output dependency closure and design
+remaining package/predecessor bindings and actual relocated pipeline validation.
+C4's root/target-package checks and absolute predecessor records remain real
+constraints. Keep all original definitions/hashes intact and disclose each IO
+adaptation. Do not switch live C3's interpreter or inputs, or run new GPU work
+before its stage gates. Full neural replay and complete arbitrary-root delivery
+remain unverified; source assembly alone does not establish them.
 
 Maintain [GbV component/paired-adaptation boundaries](GBV_SOURCE_FIDELITY_REVIEW.md),
 complete shared-inference cost accounting and contamination/training provenance
