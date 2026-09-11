@@ -82,6 +82,13 @@ reference/outcome replay is separately accepted in HISTORICAL_OUTCOME_REPLAY_ACC
 current Gold stays closed.
 Both historical method-advancement failures remain unchanged.
 
+C4 GPU preflight V1 subsequently failed on a Jinja compiler `generate` name
+collision in its guard. The independently accepted failure audit preserves the
+directory, all 428 inputs and all 30,912 inventory files. The exact-code and
+direct-caller correction is prospectively frozen in
+C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md; Sol High CPU implementation is next.
+No base scoring or current Gold read is authorized until its prerequisite gates.
+
 The user confirmed that CAS partition year, institutional major/minor-category
 recognition and target journal are undecided. Record them as pending, not as an
 experimental blocker or a verified journal qualification.

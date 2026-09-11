@@ -73,10 +73,13 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
    [stage acceptance](EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md) with exact
    predecessor manifest arguments and new single-use namespaces. Do not rebuild
-   accepted executors or alter frozen byte pins. The first file-path preflight
-   launch failed before import/config/output creation and is preserved. Use the
-   prospectively frozen [module-launch amendment](C4_GPU_PREFLIGHT_MODULE_LAUNCH_AMENDMENT.md)
-   for the only scientific preflight run.
+   accepted executors or alter frozen byte pins. V1 preflight ran once and failed
+   when the name-only guard rejected Jinja's template compiler at the first
+   likelihood preparation. Two BGE forwards completed; Qwen/NLI forwards and
+   Gold remained zero. The [failure audit](C4_PREFLIGHT_V1_FAILURE_REVIEW.md)
+   verifies all original files and preserves V1 in place. Implement the frozen
+   [V2 exact-identity binding](C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md) and pass
+   its CPU gate before one new V2 GPU preflight; never repeat or relocate V1.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -227,9 +230,10 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the authorized C4 GPU preflight and inspect its immutable
-receipt before base scoring. Continue through base, GbV, policies and independent
-prelabel validation only through the exact predecessor chain. C3's final
+Next: implement/test the separate C4 V2 Jinja binding with Sol High. Its positive
+and per-process negative CPU tests must pass before the new complete GPU preflight.
+Continue through base, GbV, policies and independent prelabel validation only
+through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original

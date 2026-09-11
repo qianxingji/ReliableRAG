@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T00:00:00+00:00",
+  "as_of_utc": "2026-09-11T20:09:31.677101+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_COMPLETE_V3_2_ASTRA_XHIGH_ACCEPTED; C4_GPU_PREFLIGHT_AUTHORIZED_NEXT",
+    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; JINJA_IDENTITY_V2_DESIGN_FROZEN_CPU_IMPLEMENTATION_NEXT",
     "confirmation_freeze_scope": "C1/C2/C3 acquisition complete and sealed; C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md",
+    "latest_stage_acceptance": "docs/cas_q2/C4_PREFLIGHT_V1_FAILURE_REVIEW.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -256,7 +256,15 @@
     "stage_C4_gpu_preflight_launch_failure_results": "docs/cas_q2/C4_GPU_PREFLIGHT_LAUNCH_FAILURE_RESULTS.json",
     "stage_C4_gpu_preflight_launch_failure_manifest_sha256": "98ddd984d9e1de5f8d36a1eb52d767a8116806ab58c0341bfbe2c8b21e687471",
     "stage_C4_gpu_preflight_module_launch_amendment": "docs/cas_q2/C4_GPU_PREFLIGHT_MODULE_LAUNCH_AMENDMENT.md",
-    "stage_C4_gpu_preflight_scientific_namespace_created": false
+    "stage_C4_gpu_preflight_scientific_namespace_created": true,
+    "stage_C4_gpu_preflight_status": "FAIL_ORIGINAL_GUARD_REJECTS_JINJA_COMPILER_GENERATE",
+    "stage_C4_gpu_preflight_manifest_sha256": "c03555a4a3562be34345bd79b35abb11c8b6bb913a4c812e24837cfb8c88f3b6",
+    "stage_C4_gpu_preflight_failure_review": "docs/cas_q2/C4_PREFLIGHT_V1_FAILURE_REVIEW.md",
+    "stage_C4_gpu_preflight_failure_results": "docs/cas_q2/C4_PREFLIGHT_V1_FAILURE_RESULTS.json",
+    "stage_C4_gpu_preflight_failure_audit_manifest_sha256": "cbb9911c17c7c1b3f65f31d36b79814383bbba42a4cf4477b483ab1d9b2efc13",
+    "stage_C4_v2_correction_contract": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md",
+    "stage_C4_v2_cpu_gate_accepted": false,
+    "stage_C4_v2_gpu_launch_authorized": false
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

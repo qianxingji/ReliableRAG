@@ -23,9 +23,15 @@ generation, replay, census, fixtures or validation. Preserve all V1/V2/V3/V3.1
 failures; V2 remains a literal one-thread numerical failure and historical BLAS
 thread count remains unrecorded. Total fits remain 185 and current Gold remains
 closed. C4 is now authorized under its frozen execution contract.
-The first C4 preflight file-path launch failed before import/config/output
-creation and is preserved. Use C4_GPU_PREFLIGHT_MODULE_LAUNCH_AMENDMENT.md and
-the repository-root module command for the only scientific preflight run.
+The C4 preflight V1 has now run once and FAILED at the first Qwen likelihood
+preparation: the name-only guard rejected authenticated Jinja template compiler
+`generate`. Two BGE forwards completed; Qwen/NLI forwards, generation and Gold
+were zero. V1 remains in place and must not be repeated or relocated. Read
+C4_PREFLIGHT_V1_FAILURE_REVIEW.md and C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md.
+Astra xhigh has accepted failure preservation/diagnosis and frozen the exact-code
+and direct-caller binding design. Sol High implements/tests the separate V2
+binding and entry next. No V2 GPU launch until its invented CPU gate is accepted.
+Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
 The scoped length adapter is implemented and client-accepted for full validation
