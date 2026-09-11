@@ -59,19 +59,22 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
 
 ## P0: actual stage order
 
-1. Inspect the **original live C3 process**, not merely a lock/log file. It began
-   canonical generation from cc304ee under [C3 execution acceptance](EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md)
-   in `outputs/cas_q2/empirical_runtime_v1`. Never launch another canonical run,
-   restart on an observation timeout or occupy its single GPU with other work.
-   A missing BUILD_RECEIPT while the process is live is not failure/completion.
-2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
-   fixed 180-trace / 540-generation bounded replay and full independent runtime
-   validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 15:54:44 UTC snapshot has 16,943 pairs / 50,830 generation receipts,
-   non-atomic and not completion; see [latest results](HISTORICAL_OUTCOME_REPLAY_RESULTS.json).
-   Use the [accepted disclosed validation binding](C3_VALIDATION_BINDING_ACCEPTANCE.md)
-   for all 54,540 generation checks after both original neural passes finish.
-   Keep original sources/criteria and freeze the production command and pins.
+1. Original C3 canonical generation (18,000 traces / 54,000 generations) and the
+   fixed neural replay (180 traces / 540 generations) completed successfully.
+   Preserve both native manifests and all fourteen files; never repeat either
+   neural pass. Their hashes and completed-source checks are in the
+   [failure review](C3_VALIDATION_V1_FAILURE_REVIEW.md).
+2. The first actual full validator failed with a missing DATASETS global in the
+   extracted original validate_branch scope, before any generation check. The
+   [complete static dependency audit](C3_HELPER_SCOPE_AUDIT_V1.json) finds only
+   DATASETS/RETRIEVERS missing. Follow the [prospective V2 contract](C3_VALIDATION_V2_CONTRACT.md):
+   implement separate V2 code and invented-only scope/branch integration checks,
+   preserve and verifiably move the failed report to its dedicated sibling
+   failure directory, then run one complete V2 validation. V2 code, fixtures,
+   archival move and actual execution have not yet occurred. Keep the sealed V1
+   failure, every original source and all 54,540 generation checks. Sol High
+   executes; Astra xhigh performs final authenticity/integration acceptance,
+   including the actual unchanged C4 prerequisite chain before step 3.
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -97,11 +100,12 @@ checks. Finalization preserves original result fields, failures and no-overwrite
 rules and includes controls in the original full namespace seal. All 56 inputs,
 six controls, 30,823 environment files and 41 current frozen sources are unchanged.
 The [results/private kit](C3_VALIDATION_BINDING_RESULTS.json) include exact source
-pins and client acceptance. Do not repeat fixtures. Full current C3 execution,
-its complete predecessor chain and the actual C4 prerequisite check remain
-pending; no current payload or Gold was used in adapter design or fixtures.
+pins and prior fixture acceptance. That gate omitted validate_branch; the actual
+V1 failure and V2 correction above supersede its unexecuted-integration status.
+No current payload or Gold was used in adapter design or invented fixtures.
+The failed actual validator decoded initial runtime rows; it did not read Gold.
 
-## P1 and P2 while C3 runs
+## P1 and P2 alongside C3 correction
 
 The CPU replay delivery/installation scope remains accepted; use its
 [replay runbook](ROA_OFFLINE_CPU_REPLAY_RUNBOOK.md). The separate current neural
@@ -227,7 +231,7 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the accepted complete C3 binding after the neural passes, then verify
+Next: complete the V2 correction and full C3 validation, then verify
 BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.

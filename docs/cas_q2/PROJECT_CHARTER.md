@@ -47,7 +47,7 @@ P0 blocks credible submission, P1 materially improves competitiveness, P2 is opt
 
 ## Current decision
 
-2026-09-11 latest execution state: the fixed-policy empirical replication
+2026-09-12 latest execution state: the fixed-policy empirical replication
 scientific design is frozen in EMPIRICAL_REPLICATION_PROTOCOL_V1.md. Five fixed
 comparison models and the 6,000-question ID-only cohort passed independent
 acceptance; see EMPIRICAL_AB_ACCEPTANCE.md and the separate sample-size prose
@@ -55,9 +55,11 @@ corrigendum. Stage C1's guarded native runtime projections and candidate pools
 passed independent acceptance (EMPIRICAL_C1_ACCEPTANCE.md). C2 original retrieval
 also passed independent acceptance (EMPIRICAL_C2_ACCEPTANCE.md). C3's frozen
 trace/replay inputs and joint GPU preflight passed; canonical reader/repair
-generation is running under EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md. Its completion,
-bounded replay and independent validation, followed by frozen scoring/prelabel
-sealing and outcome analysis, remain pending. Total control/panel fits: 178. Seven historical final-fit reproduction calls
+generation and fixed neural replay completed under EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md.
+The first full independent validation failed due to two missing helper-scope
+constants; C3_VALIDATION_V1_FAILURE_REVIEW.md and C3_VALIDATION_V2_CONTRACT.md
+record the failure and prospective correction. Successful independent validation,
+frozen scoring/prelabel sealing and outcome analysis remain pending. Total control/panel fits: 178. Seven historical final-fit reproduction calls
 bring actual takeover fits to 185; their strict HGB byte failure remains in
 HISTORICAL_TRAINING_REPLAY_REVIEW.md. The C3 validation binding has separate
 engineering acceptance in C3_VALIDATION_BINDING_ACCEPTANCE.md; actual complete

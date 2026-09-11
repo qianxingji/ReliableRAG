@@ -10,7 +10,17 @@ Target: a submission-ready paper competitive for CAS Journal Ranking Q2
 2026-09-10 goal update supersedes the earlier Q1/CCF target.
 This repository is for experimental research code only. Do NOT write the paper manuscript unless explicitly requested.
 
-## Current execution entry point (2026-09-11)
+## Current execution entry point (2026-09-12)
+
+Latest C3 status: original canonical generation and the fixed 180-trace neural
+replay completed, but the first full validator FAILED before any generation
+check: its extracted validate_branch scope lacks DATASETS/RETRIEVERS. Read
+C3_VALIDATION_V1_FAILURE_REVIEW.md and the prospective C3_VALIDATION_V2_CONTRACT.md.
+The read-only complete helper dependency audit finds only these two missing
+names. V2 implementation/fixtures and full execution remain pending. Preserve
+the standard failed report and the sealed task c3_bound_validation_v1 directory.
+Never rerun either neural pass or overwrite the failed report. The contract
+authorizes its verified archival move only after preserving an independent copy.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
 The scoped length adapter is implemented and client-accepted for full validation
@@ -20,10 +30,10 @@ checks / 5,500 token IDs pass. Three complete vocabulary checks pass; all 56
 inputs, six controls, 30,823 original environment files and 41 active sources
 remain unchanged. Original result fields and final namespace/control inclusion
 are separately verified. This is fixture acceptance, not current C3 validation.
-Use the separate bound entry without editing original source or reducing checks.
-Prepared task work/run_complete_c3_bound_validation_v1.py is not yet executed;
-it requires completed original canonical/replay manifests and freezes their
-actual pins before the one full 54,540-generation validation. Do not launch the
+That accepted V1 entry has now executed once and failed; do not repeat it.
+Task work/run_complete_c3_bound_validation_v1.py and its complete failure remain
+unchanged. Implement only the prospectively specified separate V2 correction.
+Do not launch the
 unbound per-token length loop or repeat accepted fixtures. The original main,
 validate_all and scientific helper bodies remain unchanged; entry/global and
 finalization bindings are disclosed, so this is not literal unchanged CLI replay.
@@ -43,9 +53,9 @@ No fits, neural forward or current Gold/payload decode. Shared original referenc
 reading is disclosed; current D/full CLI/neural replay is not claimed. Do not
 repeat this accepted gate. The existing HGB byte failure stays failed.
 
-Use the separately accepted C3_VALIDATION_BINDING_ACCEPTANCE.md after the
-original canonical/fixed neural replay finish. The complete actual validator
-is still pending; keep all 41 source/config files and every check unchanged.
+The earlier C3_VALIDATION_BINDING_ACCEPTANCE.md records V1 fixture scope.
+Successful full validation is still pending after the recorded V1 failure;
+keep all 41 source/config files and every scientific check unchanged.
 
 Earlier historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
 HISTORICAL_TRAINING_REPLAY_RESULTS.json. Exactly seven original final fits were
@@ -153,9 +163,9 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
-C3 remains its original canonical process from cc304ee, PID 55688: 16,943 pairs
-at 15:54:44 UTC. Recheck live process/receipts; never duplicate or restart it.
-Finish canonical generation, fixed 180-trace replay and independent acceptance,
+C3 canonical (18,000) and original fixed neural replay (180) finished; their
+processes exited successfully. The full independent V1 attempt failed as above.
+Complete the V2 correction/validation and client acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
@@ -165,7 +175,7 @@ Next independent work: prospectively verify BGE and predecessor execution bindin
 and execute full relocated neural/pipeline replay. Declared static delivery,
 native assembly and full historical CPU scoring are accepted, but
 C4 root/package-path checks and absolute predecessor bindings remain constraints;
-do not silently modify active loaders or redirect the running C3 process.
+do not silently modify frozen loaders or reacquire the completed C3 data.
 Historical fit-time receipts and fresh result/contribution remain missing.
 CAS Q2 STATUS: NOT READY. CURRENT_TASK.md is the consolidated active handoff;
 linked immutable records and Git history preserve earlier checkpoints.

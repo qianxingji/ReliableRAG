@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T15:54:44.403721+00:00",
+  "as_of_utc": "2026-09-11T16:54:10.052835+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -187,7 +187,7 @@
     "selected_questions": 6000,
     "fresh_outcomes_read": 0,
     "new_runtime_questions_projected": 6000,
-    "stage_C": "C2_ORIGINAL_RETRIEVAL_ACCEPTED; C3_CANONICAL_READER_RUNNING",
+    "stage_C": "C2_ACCEPTED; C3_CANONICAL_AND_FIXED_REPLAY_COMPLETE; FULL_VALIDATION_V1_FAILED_V2_DESIGNED",
     "novel_method_candidate_cleared": false,
     "stage_C1_acceptance": "docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md",
     "stage_C1_results": "docs/cas_q2/EMPIRICAL_C1_RESULTS.json",
@@ -196,14 +196,14 @@
     "stage_C3_execution_acceptance": "docs/cas_q2/EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md",
     "new_original_retrieval_traces": 18000,
     "new_original_retrieval_bge_forwards": 15422,
-    "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+    "canonical_reader_state": "GENERATED_PENDING_REPLAY_AND_INDEPENDENT",
     "canonical_reader_source_commit": "cc304ee",
     "runtime_namespace": "outputs/cas_q2/empirical_runtime_v1",
     "prospective_reader_replay_traces": 180,
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/RELOCATED_HISTORICAL_SCORING_RESULTS.json",
+    "latest_execution_snapshot": "docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -235,7 +235,17 @@
     "cost_engineering_status": "PASS_CPU_COST_ENGINEERING_ONLY",
     "cost_engineering_acceptance": "docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md",
     "actual_fresh_cost_audit_run": false,
-    "gbv_component_fidelity_review": "docs/cas_q2/GBV_SOURCE_FIDELITY_REVIEW.md"
+    "gbv_component_fidelity_review": "docs/cas_q2/GBV_SOURCE_FIDELITY_REVIEW.md",
+    "canonical_manifest_sha256": "4df45c4c68d5961198ab7ecf2857a19efb0d15e1990aad9a3a7dc85b627415c4",
+    "canonical_completed_traces": 18000,
+    "canonical_completed_generations": 54000,
+    "canonical_bge_query_forwards": 12000,
+    "fixed_neural_replay_status": "PASS_BOUNDED_REPLAY_PENDING_INDEPENDENT",
+    "fixed_neural_replay_manifest_sha256": "0597b34a5b0a51b146d6ffd53002b0c96c65579929e22353cb8fbafbb87e1c2d",
+    "fixed_neural_replay_completed_traces": 180,
+    "fixed_neural_replay_generations": 540,
+    "fixed_neural_replay_bge_query_forwards": 120,
+    "current_C3_final_accepted": false
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",
@@ -547,9 +557,11 @@
   "total_takeover_fit_completions": 185,
   "c3_validation_execution_issue": {
     "note": "docs/cas_q2/C3_VALIDATION_EXECUTION_NOTE.md",
-    "status": "IMPLEMENTED_FIXTURES_CLIENT_ACCEPTED_ACTUAL_VALIDATION_PENDING",
+    "status": "ACTUAL_V1_FAILED_MISSING_HELPER_CONSTANTS_V2_DESIGNED_NOT_IMPLEMENTED",
     "active_sources_changed": false,
-    "acceptance": "docs/cas_q2/C3_VALIDATION_BINDING_ACCEPTANCE.md"
+    "acceptance": "docs/cas_q2/C3_VALIDATION_BINDING_ACCEPTANCE.md",
+    "failure_review": "docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md",
+    "correction_contract": "docs/cas_q2/C3_VALIDATION_V2_CONTRACT.md"
   },
   "c3_validation_binding": {
     "status": "ACCEPTED_C3_VALIDATION_BINDING_FOR_FULL_CURRENT_VALIDATION",
@@ -573,12 +585,14 @@
     "controls_unchanged": 6,
     "old_environment_files_unchanged": 30823,
     "original_C3_frozen_sources_unchanged": 41,
-    "actual_current_C3_validation": false,
+    "actual_current_C3_validation": true,
     "current_C4_predecessor_check_executed": false,
     "full_validation_required_generations": 54540,
     "acceptance": "docs/cas_q2/C3_VALIDATION_BINDING_ACCEPTANCE.md",
     "results": "docs/cas_q2/C3_VALIDATION_BINDING_RESULTS.json",
-    "contract": "docs/cas_q2/C3_VALIDATION_BINDING_CONTRACT.md"
+    "contract": "docs/cas_q2/C3_VALIDATION_BINDING_CONTRACT.md",
+    "actual_current_C3_validation_status": "FAIL_NAMEERROR_DATASETS_BEFORE_GENERATION_CHECKS",
+    "v1_fixture_scope_limitation": "Original validate_branch was not exercised; generation/finalization fixtures remain valid within their scope"
   },
   "historical_outcome_replay_execution_checkpoint_history": {
     "status": "RUNNING_INDEPENDENT_NOT_YET_ACCEPTED",
@@ -642,5 +656,32 @@
     "contract": "docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_CONTRACT.md"
   },
   "final_deployment_model_fitted_scope": "FIVE_FIXED_EMPIRICAL_COMPARISON_HEADS_ONLY",
-  "final_deployment_model_cleared_for_submission": false
+  "final_deployment_model_cleared_for_submission": false,
+  "c3_validation_v1_failure": {
+    "status": "FAIL_PRESERVED",
+    "failure_manifest_sha256": "45f6ebc715282c0098538f68d16bb35144a1c58b9a52cfe47e6e008f7b04c8f6",
+    "execution_freeze_sha256": "c63c6b99ba174922aa5dca31aa0f7155dd10883c4b3387738f91511410349e01",
+    "original_failed_report_sha256": "ca90d4d03eca6f6d1620aa9c0c03c9d821dc498c815b3bc5e2a11d7d642442ce",
+    "source_commit": "3f09244346ff756486b57fcff7c0dcdc0378409b",
+    "diagnostic": "name 'DATASETS' is not defined",
+    "completed_generation_checks": 0,
+    "original_runtime_files_unchanged": 14,
+    "original_C3_sources_unchanged": 41,
+    "controls_unchanged": 11,
+    "original_environment_files_unchanged": 30823,
+    "stderr_empty": true,
+    "neural_forwards": 0,
+    "scientific_fits": 0,
+    "fresh_gold_values": 0,
+    "first_runtime_rows_decoded": true,
+    "original_failed_report_relocated": false,
+    "audit": "docs/cas_q2/C3_HELPER_SCOPE_AUDIT_V1.json",
+    "audit_sha256": "04e180e93c1dd97c1b84cc3b3d9205d986473bb9367309c89d3d579d89f0468f",
+    "confirmed_missing_names": [
+      "DATASETS",
+      "RETRIEVERS"
+    ],
+    "affected_helper": "validate_branch",
+    "v2_status": "PROSPECTIVE_CONTRACT_ONLY_NO_IMPLEMENTATION_OR_EXECUTION"
+  }
 }
