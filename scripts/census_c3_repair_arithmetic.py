@@ -10,6 +10,7 @@ import argparse
 import ast
 import collections
 import hashlib
+import importlib.util
 import json
 import math
 import os
@@ -356,7 +357,12 @@ def main() -> int:
     project_root = Path(config["project_root"]).resolve(); engineering_root = Path(config["engineering_root"]).resolve()
     runtime_root = Path(config["runtime_root"]).resolve(); preparation = Path(config["preparation_root"]).resolve()
     helper_path = Path(config["helper_source"]["path"]).resolve(); inventory_path = Path(config["environment_inventory"]["path"]).resolve()
-    authenticated = [verify_record(config["helper_source"]), verify_record(config["environment_inventory"]),
+    digest_source = verify_record(config["digest_source"])
+    digest_spec = importlib.util.spec_from_file_location("authenticated_c3_digest", digest_source)
+    require(digest_spec is not None and digest_spec.loader is not None, "authenticated digest loader")
+    digest_module = importlib.util.module_from_spec(digest_spec); digest_spec.loader.exec_module(digest_module)
+    opaque_digest = digest_module.digest
+    authenticated = [verify_record(config["helper_source"]), verify_record(config["environment_inventory"]), digest_source,
         verify_record(config["failed_report"]), verify_record(config["contract"])]
     v2_manifest = verify_record(config["v2_failure_manifest"])
     v1_manifest = verify_record(config["v1_sibling_manifest"])
@@ -382,9 +388,13 @@ def main() -> int:
                    any(part in entry["path"] for part in ("\\numpy\\", "\\numpy.libs\\", "\\threadpoolctl.py"))]
     require(len(env_records) == 1544, "exact NumPy/threadpool environment subset")
     for entry in env_records:
-        authenticated.append(verify_record(entry))
+        path = Path(entry["path"]).resolve()
+        require(path.is_file() and not path.is_symlink() and path.stat().st_size == entry["size_bytes"] and
+                opaque_digest(path) == entry["sha256"], "opaque environment input changed: " + str(path))
+        authenticated.append(path)
     authenticated = sorted(set(authenticated))
-    initial_records = {str(path): record(path) for path in authenticated}
+    environment_paths = {str(Path(entry["path"]).resolve()): entry for entry in env_records}
+    initial_records = {str(path): record(path) for path in authenticated if str(path) not in environment_paths}
     sys.path.insert(0, str(engineering_root))
     import numpy as np
     import threadpoolctl
@@ -412,7 +422,12 @@ def main() -> int:
         require(dict(strata) == expected_strata, "exact census strata")
         pools_end = threadpoolctl.threadpool_info(); expected_pool(config, pools_end, args.mode)
         for path in authenticated:
-            require(record(path) == initial_records[str(path)], "authenticated input changed during census: " + str(path))
+            if str(path) in environment_paths:
+                entry = environment_paths[str(path)]
+                require(path.stat().st_size == entry["size_bytes"] and opaque_digest(path) == entry["sha256"],
+                        "opaque environment input changed during census: " + str(path))
+            else:
+                require(record(path) == initial_records[str(path)], "authenticated input changed during census: " + str(path))
         require(not guard["denied"], "empty denied-access ledger")
         result = {"status": "COMPLETE_DIAGNOSTIC_CENSUS_MODE", "cas_q2_status": "NOT READY", "mode": args.mode,
             "thread_environment": thread_values, "numpy_version": np.__version__, "threadpools_start": pools_start,
