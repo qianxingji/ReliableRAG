@@ -2,6 +2,23 @@
 
 ## Superseding execution contract — fixed empirical replication
 
+Newest engineering acceptance (2026-09-11):
+[EMPIRICAL_C4_INTEGRATION_ACCEPTANCE.md](EMPIRICAL_C4_INTEGRATION_ACCEPTANCE.md)
+accepts native trace/semantic/scoring adapters and independent downstream policy
+integration on 36 invented traces with real saved estimators. The guarded run
+passed 1,637 numeric comparisons (max 4.440892098500626e-16), exact common masks
+and all nine action sets, plus identical serialized-file round-trip validation.
+Full regression is now 88 tests: 86 pass, two Windows capability skips. No new
+fit, neural load/forward, fresh branch scoring or Gold read occurred. The new
+checkpoint is EMPIRICAL_C4_INTEGRATION_RESULTS.json; prior snapshots below remain
+historical. C3 still runs from cc304ee; never duplicate or restart it.
+
+Next independent engineering work: complete token/chunk/logit witness validators,
+protected neural executor and pinned-model scoring GPU preflight. Execute no C4
+GPU work while C3 uses the single GPU, and no fresh scoring before C3's canonical,
+fixed replay and independent acceptance. Existing downstream code is frozen by
+the accepted integration manifest; version any necessary change prospectively.
+
 Latest execution checkpoint (2026-09-11): original retrieval is complete and
 independently accepted in [EMPIRICAL_C2_ACCEPTANCE.md](EMPIRICAL_C2_ACCEPTANCE.md).
 All 18,000 traces passed 18,173 independent checks with exact saved-array

@@ -38,6 +38,13 @@ likelihood/GbV witness and common-budget kernels passed tests. Read
 correction. Real scoring GPU preflights and full integration remain pending.
 No novel-method candidate or Submission Ready claim is cleared.
 
+Latest C4 checkpoint: EMPIRICAL_C4_INTEGRATION_ACCEPTANCE.md accepts a guarded
+36-invented-trace downstream run with the real saved estimators/heads: 1,637
+independent numeric comparisons and exact common masks/actions. Native trace,
+semantic and score adapters are implemented; full neural executors, actual
+neural witness validation and GPU preflights remain pending. Full regression:
+88 tests, 86 pass, two Windows capability skips. No fresh scoring or Gold read.
+
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.
 
