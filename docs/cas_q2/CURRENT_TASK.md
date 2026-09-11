@@ -2,6 +2,25 @@
 
 ## Superseding execution contract — fixed empirical replication
 
+Latest acceptance (2026-09-11):
+[EMPIRICAL_C4_NEURAL_CPU_ACCEPTANCE.md](EMPIRICAL_C4_NEURAL_CPU_ACCEPTANCE.md).
+Independent likelihood/cache, GbV chunk/token/softmax/failure and answer-semantic
+validators now pass native CPU fake-logit tests. Model factories and exclusive
+new-cache IO are implemented and tested without real neural loading. Full
+regression: 101 tests, 99 pass and two Windows capability skips; 226 frozen
+inputs rechecked unchanged. See EMPIRICAL_C4_NEURAL_CPU_RESULTS.json for the
+timestamped running-generation snapshot. This is synthetic engineering evidence.
+
+Next concrete engineering work: complete the protected C4 GPU preflight and
+stage executors, including SentencePiece package setup before HF imports,
+per-stage manifests, durable neural witnesses and a separate complete file-level
+validator. Use empirical_scoring_models.py and the independent modules; preserve
+their accepted source bytes and version any necessary correction. Neural model
+factories are not yet GPU-tested. The new prospective 8*FP32-epsilon allowance
+applies only to the CPU recomputation of saved NLI logits; the 1e-10 head gate and
+exact observed scores/actions remain unchanged. Do not execute GPU preflight
+while C3 runs, or fresh scoring before canonical/replay/independent C3 acceptance.
+
 Newest engineering acceptance (2026-09-11):
 [EMPIRICAL_C4_INTEGRATION_ACCEPTANCE.md](EMPIRICAL_C4_INTEGRATION_ACCEPTANCE.md)
 accepts native trace/semantic/scoring adapters and independent downstream policy

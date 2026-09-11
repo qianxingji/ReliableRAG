@@ -45,6 +45,14 @@ semantic and score adapters are implemented; full neural executors, actual
 neural witness validation and GPU preflights remain pending. Full regression:
 88 tests, 86 pass, two Windows capability skips. No fresh scoring or Gold read.
 
+Newest C4 checkpoint: EMPIRICAL_C4_NEURAL_CPU_ACCEPTANCE.md accepts independent
+token/cache/chunk/softmax/semantic witness validators on CPU fake-logit fixtures
+and isolated model-cache IO tests. Full regression: 101 tests, 99 pass and two
+Windows capability skips. The prospective numerical rules are in
+EMPIRICAL_C4_NEURAL_VALIDATION_CONTRACT.md. Real neural constructors, protected
+executors, scoring GPU preflights and complete file-level acceptance remain
+pending. Never use the new softmax-only allowance to relax head replay/actions.
+
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.
 
