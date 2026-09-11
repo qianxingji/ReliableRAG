@@ -12,7 +12,19 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Latest static delivery: STATIC_DELIVERY_ACCEPTANCE.md and STATIC_DELIVERY_RESULTS.json.
+Latest historical CPU replay: RELOCATED_HISTORICAL_SCORING_ACCEPTANCE.md and
+RELOCATED_HISTORICAL_SCORING_RESULTS.json. All 13,500 historical rows, 3,202
+rebuilt feature pairs, seven saved upstream estimators and the V2 bundle pass
+from restored roots in the accepted new environment. Independent validation
+checks 240,150 numeric values with zero maximum error, all 27,000 archived actions
+and another 27,000 derived top-K decisions. All 69 original/restored inputs and
+21,267 environment/target files remain unchanged. No fit, neural forward or Gold
+read. The five current heads were metadata-checked only; fresh scoring is pending.
+Preserve the diagnosed Windows metadata difference: hidden-process ver decoding
+falls back to WinAPI build 26100; default creation reports build 26200. Both
+receipts and the separate diagnostic remain immutable. Do not repeat this gate.
+
+Earlier static delivery: STATIC_DELIVERY_ACCEPTANCE.md and STATIC_DELIVERY_RESULTS.json.
 The 21-seed graph passes 17,617 files / 21,118 edges, zero issues and 36 exact
 namespace checks. Its 17,595 non-pretrained files are in a new private archive;
 the existing 22-asset archive supplies the external members. A separate process
@@ -64,18 +76,18 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 11,182 pairs
-at 11:49:29 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 11,781 pairs
+at 12:16:25 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
 149 pass and two Windows capability skips; that suite was not repeated here.
 
-Next independent work: prospectively design and verify restored learned-object,
-package and predecessor bindings; later add completed-stage output dependencies
-and execute relocated pipeline replay. Declared static byte delivery and native
-source assembly are accepted, but
+Next independent work: prospectively verify remaining neural-package and
+predecessor execution bindings; later add completed-stage output dependencies
+and execute full relocated neural/pipeline replay. Declared static delivery,
+native assembly and full historical CPU scoring are accepted, but
 C4 root/package-path checks and absolute predecessor bindings remain constraints;
 do not silently modify active loaders or redirect the running C3 process.
 Historical fit-time receipts and fresh result/contribution remain missing.

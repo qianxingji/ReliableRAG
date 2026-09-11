@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T11:49:29.080269+00:00",
+  "as_of_utc": "2026-09-11T12:16:25.526570+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -203,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/STATIC_DELIVERY_RESULTS.json",
+    "latest_execution_snapshot": "docs/cas_q2/RELOCATED_HISTORICAL_SCORING_RESULTS.json",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -406,5 +406,29 @@
     "source_absolute_metadata_rewritten": false,
     "live_or_future_stage_payloads_delivered": false,
     "another_host_tested": false
+  },
+  "relocated_historical_scoring": {
+    "status": "PASS_FULL_RELOCATED_HISTORICAL_SCORING",
+    "acceptance_manifest": "6066a29364a1555a27bebdbdd3efa147f4188f1d2f918457a660b9493c90d1e7",
+    "config_sha256": "7ee3060a2bc87c037f0ae0d2127563a6ddfcc51a4bba03c5eac159053be84ecf",
+    "traces": 13500,
+    "eligible_pairs": 3202,
+    "independent_numeric_checks": 240150,
+    "independent_max_numeric_error": 0.0,
+    "archived_action_comparisons": 27000,
+    "independent_top_k_comparisons": 27000,
+    "original_used_inputs_unchanged": 69,
+    "restored_used_inputs_unchanged": 69,
+    "new_environment_files_unchanged": 21267,
+    "historical_saved_model_loads": 8,
+    "current_empirical_pipeline_replay": false,
+    "historical_neural_replay": false,
+    "metadata_diagnostic_manifest": "5a1974d07e010f7b0c80d3a74a98b2cb71f49af0b1a6b065562d04edb5d32595",
+    "private_artifacts_uploaded": false,
+    "acceptance": "docs/cas_q2/RELOCATED_HISTORICAL_SCORING_ACCEPTANCE.md",
+    "results": "docs/cas_q2/RELOCATED_HISTORICAL_SCORING_RESULTS.json",
+    "contract": "docs/cas_q2/RELOCATED_HISTORICAL_SCORING_CONTRACT.md",
+    "fresh_gold_values": 0,
+    "scientific_fits": 0
   }
 }

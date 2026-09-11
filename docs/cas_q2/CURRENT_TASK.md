@@ -2,7 +2,8 @@
 
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
 independent numerical replay, neural-package/CPU acceptance and the separate
-native assembly, pretrained-asset and declared static delivery gates. Prior checkpoint prose is
+native assembly, pretrained-asset/static delivery and full relocated historical
+CPU scoring gates. Prior checkpoint prose is
 preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
@@ -57,8 +58,8 @@ actions or cohorts; version any necessary correction prospectively.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 11:49:29 UTC snapshot has 11,182 pairs / 33,547 generation receipts,
-   non-atomic and not completion; see [latest results](STATIC_DELIVERY_RESULTS.json).
+   failures. The 12:16:25 UTC snapshot has 11,781 pairs / 35,344 generation receipts,
+   non-atomic and not completion; see [latest results](RELOCATED_HISTORICAL_SCORING_RESULTS.json).
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -128,9 +129,23 @@ intact. Use [results](STATIC_DELIVERY_RESULTS.json) and the
 [offline runbook](STATIC_DELIVERY_OFFLINE_RUNBOOK.md), with exact controls from
 the evidence companion. Do not repeat the accepted static audit or restoration.
 
-Next: prospectively design and verify restored learned-object, package and
-predecessor bindings, then close actual completed-stage dependencies and execute
-relocated pipeline validation. The graph proves declared static edges; live C3
+The [full relocated historical CPU replay](RELOCATED_HISTORICAL_SCORING_ACCEPTANCE.md)
+now passes all 13,500 historical traces and 3,202 rebuilt feature pairs using seven
+original saved upstream estimators and the V2 bundle. The independent process
+checks 240,150 numeric values with zero maximum error, all 27,000 archived actions
+and 27,000 independently derived top-K decisions. All 69 original/restored inputs
+and 21,267 environment/target files remain unchanged. The 10,298 forced-KEEP rows
+and all null scores are retained. No fit, neural forward or historical/current
+Gold access occurs. The five current heads are only metadata-checked here.
+[Results/private evidence kit](RELOCATED_HISTORICAL_SCORING_RESULTS.json) retain
+every row, command and disclosed IO binding. A separate diagnostic explains
+the 26200/26100 Windows metadata difference as hidden-process ver text-decoding
+failure and CPython's existing WinAPI fallback; neither receipt is rewritten.
+Do not repeat this accepted full historical CPU replay or its prerequisites.
+
+Next: prospectively verify remaining neural-package and predecessor execution
+bindings, then close actual completed-stage dependencies and execute full
+relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.
 C4's root/target-package checks and absolute predecessor records remain real
 constraints. Keep all original definitions/hashes intact and disclose each IO
