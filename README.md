@@ -10,7 +10,9 @@ Original ROA saved-parameter replay and all three supervised controls are comple
 Both historical method-advancement rules failed; no novel-method candidate is
 cleared. A frozen empirical replication now has five fitted comparison policies
 and 6,000 new question IDs. Native generation and fixed neural replay completed;
-the first full validator failed on missing helper-scope constants. Fresh
+the first full validator failed on missing helper-scope constants. The
+prospective V2 binding and its invented-only gate are now accepted for one
+complete run; failure preservation and full validation remain pending. Fresh
 scoring, outcome analysis and contribution assessment remain outstanding.
 
 ## Continue here
@@ -18,13 +20,14 @@ scoring, outcome analysis and contribution assessment remain outstanding.
 1. Read [AGENTS.md](AGENTS.md) and [CURRENT_TASK.md](docs/cas_q2/CURRENT_TASK.md).
 2. Preserve completed C3 canonical/fixed replay and the actual full-validation
    failure. Follow the [review](docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md)
-   and [V2 contract](docs/cas_q2/C3_VALIDATION_V2_CONTRACT.md) for corrected
-   validation. Do not repeat neural acquisition or overwrite the failed report.
+   and [V2 fixture acceptance](docs/cas_q2/C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md)
+   for corrected validation. Do not repeat neural acquisition or overwrite the
+   failed report.
 3. Execute the already implemented C4 scoring/prelabel stages; only their complete
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
-Latest validation review: the original helper loader omitted DATASETS/RETRIEVERS from its independent scope. The first full run failed in validate_branch before any generation check; the failure is sealed and all original acquisition bytes remain unchanged. The [V2 contract](docs/cas_q2/C3_VALIDATION_V2_CONTRACT.md) is frozen before implementation. Earlier [V1 fixture results](docs/cas_q2/C3_VALIDATION_BINDING_RESULTS.json) covered generation and finalization but missed this branch check; they remain preserved within that limited scope.
+Latest validation review: the original helper loader omitted DATASETS/RETRIEVERS from its independent scope. The first full run failed in validate_branch before any generation check; the failure is sealed and all original acquisition bytes remain unchanged. The [V2 contract](docs/cas_q2/C3_VALIDATION_V2_CONTRACT.md) was frozen before implementation. The [V2 invented-only fixture](docs/cas_q2/C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md) now passes all nine strata, exact branch rejections, negative scope checks and the composed generation/finalization path. It authorizes one full run only after the V1 failure is preserved and relocated.
 
 Latest outcome replay: [full historical source/reference mapping](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md) reconstructs all 13,500 rows for 4,500 old questions, disjoint from the 6,000 current IDs. New/original numeric ledgers are byte-exact; separate reference rereading and independent metric formulas check 108,000 values. Actual new PyArrow native bindings, selected-cell limits, all unchanged inputs and full evidence are in the [results](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_RESULTS.json). No current Gold is opened. Current C3 full validation requires the V2 correction above.
 

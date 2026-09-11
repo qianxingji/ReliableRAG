@@ -68,10 +68,12 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    extracted original validate_branch scope, before any generation check. The
    [complete static dependency audit](C3_HELPER_SCOPE_AUDIT_V1.json) finds only
    DATASETS/RETRIEVERS missing. Follow the [prospective V2 contract](C3_VALIDATION_V2_CONTRACT.md):
-   implement separate V2 code and invented-only scope/branch integration checks,
+   use the accepted separate V2 code and
+   [invented-only scope/branch gate](C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md),
    preserve and verifiably move the failed report to its dedicated sibling
-   failure directory, then run one complete V2 validation. V2 code, fixtures,
-   archival move and actual execution have not yet occurred. Keep the sealed V1
+   failure directory, then run one complete V2 validation. V2 code and fixtures
+   are accepted; the archival move and actual execution have not yet occurred.
+   Keep the sealed V1
    failure, every original source and all 54,540 generation checks. Sol High
    executes; Astra xhigh performs final authenticity/integration acceptance,
    including the actual unchanged C4 prerequisite chain before step 3.
@@ -231,7 +233,7 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: complete the V2 correction and full C3 validation, then verify
+Next: preserve/relocate the V1 failure and complete V2 C3 validation, then verify
 BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.
