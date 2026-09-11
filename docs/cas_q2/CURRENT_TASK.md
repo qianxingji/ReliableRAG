@@ -74,11 +74,15 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    cover all 18,180 rows and 1,818,000 component entries per mode. One global
    current-default 12-thread computation matches every saved field. One-thread
    has 507 score-only rows, zero membership/order/replacement changes. Original
-   BLAS thread count remains unrecorded and V2 stays failed. Next, Sol High
-   implements the invented-only gate in the prospectively frozen
-   [V3 contract](C3_VALIDATION_V3_CONTRACT.md); only accepted fixtures permit its
-   one full V3 run. Never repeat V1/V2, either neural pass or the census. C4 still
-   needs Astra-accepted V3 and the actual unchanged predecessor check.
+   BLAS thread count remains unrecorded and V2 stays failed. Two preserved V3
+   fixture failures exposed the distinction between the NumPy repair backend and
+   tokenizer-loaded auxiliary pools. The Astra xhigh
+   [V3.1 amendment](C3_VALIDATION_V3_1_CONTRACT_AMENDMENT.md) and independent
+   [fixture audit](C3_VALIDATION_V3_1_FIXTURE_AUDIT.md) are now accepted. Before
+   the single full V3.1 run, complete the frozen V2 failure archive/relocation
+   step. Never repeat V1/V2, either neural pass, the census or accepted V3.1
+   fixtures. C4 still needs Astra-accepted full V3.1 and the actual unchanged
+   predecessor check.
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -235,8 +239,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: implement and accept the frozen V3 fixture gate, execute its single full
-C3 validation, perform Astra xhigh authenticity review and verify
+Next: archive and relocate the V2 failure exactly once, execute the single full
+V3.1 C3 validation, perform Astra xhigh authenticity review and verify
 BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.

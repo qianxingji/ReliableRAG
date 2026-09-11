@@ -23,13 +23,14 @@ Read C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md and RESULTS.json. Historical acquisiti
 thread count remains unrecorded; V2 remains a literal failure. Never repeat V1,
 V2, either neural pass or the accepted census.
 
-Next authorized work follows C3_VALIDATION_V3_CONTRACT.md, frozen prospectively
-after Astra xhigh review. Sol High may implement and run the invented-only V3
-fixture gate. Only accepted fixtures permit the contract's single full V3 run
-under one global current-native-default 12-thread mode. Preserve and relocate the
+Next authorized work follows C3_VALIDATION_V3_CONTRACT.md and the prospective
+C3_VALIDATION_V3_1_CONTRACT_AMENDMENT.md. Two V3 fixture failures are preserved;
+the corrected V3.1 invented-only gate and client audit are accepted. Sol High
+must complete the frozen V2 failure archive/relocation before the single full V3.1 run
+under the frozen current-native-default numerical runtime. Preserve and relocate the
 V2 report exactly as specified before that run. No tolerance, expected score/hash,
 scientific source, dataset or thread search is authorized. C4 remains blocked
-until Astra xhigh accepts the complete V3 result and the actual unchanged C4
+until Astra xhigh accepts the complete V3.1 result and the actual unchanged C4
 prerequisite check passes. Total fits remain 185 and current Gold remains closed.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
@@ -176,7 +177,7 @@ no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
 C3 canonical (18,000) and original fixed neural replay (180) finished; their
 processes exited successfully. The full independent V1/V2 attempts failed as above.
-Implement the frozen V3 gate, complete V3 authenticity review and full C3 acceptance,
+Complete the V2 failure relocation, single V3.1 run, V3.1 authenticity review and full C3 acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
