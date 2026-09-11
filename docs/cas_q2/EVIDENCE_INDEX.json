@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T13:47:00.434574+00:00",
+  "as_of_utc": "2026-09-11T14:20:02.551649+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -502,5 +502,47 @@
     "fresh_gold_values": 0,
     "scientific_fits": 0,
     "actual_new_sentencepiece_binary_verified": true
-  }
+  },
+  "historical_training_replay": {
+    "status": "REVIEWED_LITERAL_BYTE_FAILURE_WITH_EXACT_NUMERICAL_MATCH",
+    "literal_byte_gate_passed": false,
+    "model_byte_matches": 6,
+    "models": 7,
+    "score_comparisons": 10773,
+    "producer_score_comparisons": 10773,
+    "maximum_score_error": 0,
+    "training_matrix_scalar_values": 140033,
+    "new_fit_attempts": 7,
+    "new_fit_completions": 7,
+    "total_fit_attempts": 185,
+    "total_fit_completions": 185,
+    "hgb_state_difference": {
+      "path": "state/state/values/2/values/1/values/model/state/values/2/values/_bin_mapper/state/values/2/values/n_threads",
+      "kind": "VALUE",
+      "original": 6,
+      "new": 1
+    },
+    "hgb_byte_difference_offset": 4820,
+    "hgb_size_bytes": 639652,
+    "arrays_observed_per_model": 4856,
+    "objects_observed_per_model": 312,
+    "visited_values_per_model": 136341,
+    "all_array_buffer_hashes_and_named_fields_equal": true,
+    "original_fit_time_receipts_recovered": false,
+    "prior_failure_manifest": "e85024fc8e697cf9f69220d90c85a944027f14a9cef3c7624f463ff75981cc84",
+    "diagnostic_manifest": "b1330d58e74e7d2d1376644bce33987b6e588ab741f0ecf0319b75653a451084",
+    "diagnostic_failures": [
+      "f8b86d183976451f6e8e5dd7a8ad61bf719cb8b01bd84bdf5821df1b45b612e6",
+      "e609b4aa3a8c223ce3cc5010999b7eeff09704e59fa5743a26df795475a098af",
+      "86caecb042a2bfa6f604bf099129f40fd71d6d1bf9607b15b111379033a9e96c"
+    ],
+    "review": "docs/cas_q2/HISTORICAL_TRAINING_REPLAY_REVIEW.md",
+    "results": "docs/cas_q2/HISTORICAL_TRAINING_REPLAY_RESULTS.json",
+    "contract": "docs/cas_q2/HISTORICAL_TRAINING_REPLAY_CONTRACT.md",
+    "original_upstream_models_replaced": false,
+    "private_artifacts_uploaded": false,
+    "fresh_gold_values": 0
+  },
+  "total_takeover_fit_attempts": 185,
+  "total_takeover_fit_completions": 185
 }

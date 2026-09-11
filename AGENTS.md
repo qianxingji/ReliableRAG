@@ -12,7 +12,23 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Latest NLI input gate: RELOCATED_NLI_INPUT_ACCEPTANCE.md and
+Latest historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
+HISTORICAL_TRAINING_REPLAY_RESULTS.json. Exactly seven original final fits were
+replayed on the same 601 ordered traces / 518 questions, with original schemas
+and seeds. Independent reconstruction checks all 140,033 matrix values and
+10,773 original/new scores (maximum error zero). Six model files are byte-exact;
+the frozen seven-model byte gate remains FAILED. Read-only complete HGB state
+diagnosis finds only _bin_mapper.n_threads 6 versus 1, exactly one file byte;
+all observed learning arrays and tree fields match. Do not modify either model
+or refit to force thread metadata. Keep all three failed diagnostic observers
+and the original failed replay seal. All 13 used original/restored inputs,
+21,267 environment files and controls remain unchanged. Actual takeover fits
+now total 185: 178 control/panel fits plus seven historical reproduction fits.
+Original fit-time receipts and an earlier whole-training-manifest pin remain
+missing. No upstream model was replaced, no fresh Gold read or neural forward.
+Do not repeat this completed replay/diagnosis or treat new receipts as old ones.
+
+Earlier NLI input gate: RELOCATED_NLI_INPUT_ACCEPTANCE.md and
 RELOCATED_NLI_INPUT_RESULTS.json. All 13,500 historical traces pass 81,000
 count/reason/eligibility comparisons. The newly prepared 32,174 chunk pairs and
 6,404 batches match archived execution counts; 22,799,715 new token/mask/type
@@ -101,9 +117,9 @@ remain accepted with zero error and no observed old-venv access. Do not repeat
 accepted replay, release or runtime inventory. Original P0-1 replay and all three
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
-and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 13,897 pairs
-at 13:47:00 UTC. Recheck live process/receipts; never duplicate or restart it.
+and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
+C3 remains its original canonical process from cc304ee, PID 55688: 14,684 pairs
+at 14:20:02 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.

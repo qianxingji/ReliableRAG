@@ -3,7 +3,8 @@
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
 independent numerical replay, neural-package/CPU acceptance and the separate
 native assembly, pretrained-asset/static delivery and full relocated historical
-CPU scoring, full historical Qwen input/decoder and NLI preparation gates. Prior checkpoint prose is
+CPU scoring, full historical Qwen input/decoder and NLI preparation gates, plus
+the reviewed seven-fit byte failure and complete HGB state diagnosis. Prior checkpoint prose is
 preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
@@ -28,7 +29,8 @@ actions or cohorts; version any necessary correction prospectively.
   [research decision](P0_3_RESEARCH_DECISION.md) clear no final novel candidate.
   [Empirical route review](EMPIRICAL_ROUTE_REVIEW.md) defines the bounded route.
 - Five fixed policy models and 6,000 new question IDs:
-  [A/B acceptance](EMPIRICAL_AB_ACCEPTANCE.md). Total takeover fits: 178.
+  [A/B acceptance](EMPIRICAL_AB_ACCEPTANCE.md). Control/panel fits: 178.
+  Seven subsequent historical reproduction fits bring the actual total to 185.
   Follow the [frozen empirical protocol](EMPIRICAL_REPLICATION_PROTOCOL_V1.md)
   and separate [sample-size prose correction](EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md).
 - [C1](EMPIRICAL_C1_ACCEPTANCE.md) and [C2](EMPIRICAL_C2_ACCEPTANCE.md) accepted
@@ -58,8 +60,8 @@ actions or cohorts; version any necessary correction prospectively.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 13:47:00 UTC snapshot has 13,897 pairs / 41,692 generation receipts,
-   non-atomic and not completion; see [latest results](RELOCATED_NLI_INPUT_RESULTS.json).
+   failures. The 14:20:02 UTC snapshot has 14,684 pairs / 44,053 generation receipts,
+   non-atomic and not completion; see [latest results](HISTORICAL_TRAINING_REPLAY_RESULTS.json).
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -168,6 +170,25 @@ environment files and 11 controls remain unchanged. The [results/private kit](RE
 retain all new witnesses, source controls, commands and logs. No original token
 arrays or logits exist in the ledger; this does not replay historical neural
 scores. Zero model loads, forwards, fits or Gold reads. Do not repeat this gate.
+
+The [seven historical final-fit replay](HISTORICAL_TRAINING_REPLAY_REVIEW.md)
+has completed with its literal seven-model byte gate **failed and preserved**.
+All seven original final fits used the original 601-row order / 518 question
+groups, schemas and seeds. Independent reconstruction checks 140,033 input
+matrix values; all 10,773 original/new and 10,773 new/producer score comparisons
+have maximum error zero. Six model files are byte-exact. A separate complete
+read-only HGB state diagnosis finds one difference: _bin_mapper.n_threads is 6
+in the original and 1 in the single-thread replay. It is exactly one byte at
+offset 4820; all observed learning arrays/tree fields match. The original byte
+gate stays failed. No model or expected hash was edited and no refit followed.
+Three failed diagnostic observers and their prospective refinements are retained
+in the [results/private kit](HISTORICAL_TRAINING_REPLAY_RESULTS.json), along with
+all seven models, inputs, fit receipts and complete state observations. All 13
+original/restored inputs and 21,267 environment files remain unchanged. Total
+actual fits are now 185. The new records improve recipe reproducibility; they do
+not recover missing original fit-time receipts or an earlier whole-manifest pin.
+Do not repeat accepted replay prerequisites, this completed seven-fit run or
+the finished state diagnosis. Keep original upstream estimators/current heads.
 
 Next: prospectively verify BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
