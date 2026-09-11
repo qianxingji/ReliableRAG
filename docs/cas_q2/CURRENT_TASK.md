@@ -2,15 +2,33 @@
 
 ## Superseding execution contract — fixed empirical replication
 
-Latest: [EMPIRICAL_C1_ACCEPTANCE.md](EMPIRICAL_C1_ACCEPTANCE.md) accepts all 6,000
-native runtime projections and 54,716 pool documents, with 60,818 independent
-checks. The first Windows metadata failure is preserved; v2 passed without
-changing cohort, scientific parameters or guards. Next is C2 retrieval/runtime
-engineering and its complete executable input freeze. Qwen/BGE byte and package
-availability passed; there has been no new retrieval, generation, embedding/NLI
-forward, scoring, action selection or outcome mapping. Total fits remain 178.
-See EMPIRICAL_C1_RESULTS.json for aggregate evidence. Journal scope is undecided
-by user choice and does not block experiments.
+Latest execution checkpoint (2026-09-11): original retrieval is complete and
+independently accepted in [EMPIRICAL_C2_ACCEPTANCE.md](EMPIRICAL_C2_ACCEPTANCE.md).
+All 18,000 traces passed 18,173 independent checks with exact saved-array
+BM25/dense/RRF scores, rankings and Top-5 bindings. Canonical retrieval performed
+15,422 BGE forwards and took 1,096.56 seconds. This is not a second full encoder
+replay. Aggregate evidence: EMPIRICAL_C2_RESULTS.json.
+
+C3 preparation and joint GPU preflight passed. The 18,000 complete trace inputs
+and 180-trace replay membership were fixed before reader generation; two
+invented answer generations replayed exactly. Canonical generation is now
+running from commit cc304ee in outputs/cas_q2/empirical_runtime_v1 under
+EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md. Inspect process/receipts first; never
+launch a duplicate pass. A missing BUILD_RECEIPT while the process runs is not
+completion or a failure. Keep all durable partial ledgers on any failure.
+
+Next P0: finish 54,000 canonical generations, execute the fixed 540-generation
+bounded replay and full independent validator, then accept candidate-pair
+acquisition. Prepare authenticated scoring while acquisition runs, without
+reading generated answers for quality. Actual scoring/actions/prelabel sealing
+and Gold outcome analysis remain pending. Total fits remain 178; both prior
+advancement failures remain unchanged and no final novel-method candidate is
+cleared. Historical upstream fit-time receipts are still incomplete.
+
+P1: comparison fidelity, complete inference cost, contamination boundaries and
+reproducible release. P2: no automatic feature/model/seed/budget search. CAS year,
+institutional category rule and target journal are undecided by user choice;
+this does not block experiments. CAS Q2 STATUS: NOT READY.
 
 Earlier A/B acceptance entry, retained chronologically:
 

@@ -46,9 +46,12 @@ scientific design is frozen in EMPIRICAL_REPLICATION_PROTOCOL_V1.md. Five fixed
 comparison models and the 6,000-question ID-only cohort passed independent
 acceptance; see EMPIRICAL_AB_ACCEPTANCE.md and the separate sample-size prose
 corrigendum. Stage C1's guarded native runtime projections and candidate pools
-passed independent acceptance (EMPIRICAL_C1_ACCEPTANCE.md). C2 input availability
-passed, but acquisition adapters, prelabel sealing and outcome analysis remain
-pending. Total takeover fits: 178.
+passed independent acceptance (EMPIRICAL_C1_ACCEPTANCE.md). C2 original retrieval
+also passed independent acceptance (EMPIRICAL_C2_ACCEPTANCE.md). C3's frozen
+trace/replay inputs and joint GPU preflight passed; canonical reader/repair
+generation is running under EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md. Its completion,
+bounded replay and independent validation, followed by frozen scoring/prelabel
+sealing and outcome analysis, remain pending. Total takeover fits: 178.
 Both historical method-advancement failures remain unchanged.
 
 The user confirmed that CAS partition year, institutional major/minor-category

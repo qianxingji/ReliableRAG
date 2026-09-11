@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "STAGES_A_B_C1_ACCEPTED; NEXT_C2_ACQUISITION_ENGINEERING",
-    "confirmation_freeze_scope": "Scientific empirical protocol and C1 executable pool freeze complete; C2 acquisition and D analysis executable freezes pending",
-    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md"
+    "empirical_route_decision": "STAGES_A_B_C1_C2_ACCEPTED; C3_CANONICAL_READER_RUNNING",
+    "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
+    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
   "empirical_replication": {
@@ -186,10 +186,19 @@
     "selected_questions": 6000,
     "fresh_outcomes_read": 0,
     "new_runtime_questions_projected": 6000,
-    "stage_C": "C1_POOL_ACCEPTED; C2 input inventory PASS, complete acquisition adapters/freezes pending",
+    "stage_C": "C2_ORIGINAL_RETRIEVAL_ACCEPTED; C3_CANONICAL_READER_RUNNING",
     "novel_method_candidate_cleared": false,
     "stage_C1_acceptance": "docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md",
-    "stage_C1_results": "docs/cas_q2/EMPIRICAL_C1_RESULTS.json"
+    "stage_C1_results": "docs/cas_q2/EMPIRICAL_C1_RESULTS.json",
+    "stage_C2_acceptance": "docs/cas_q2/EMPIRICAL_C2_ACCEPTANCE.md",
+    "stage_C2_results": "docs/cas_q2/EMPIRICAL_C2_RESULTS.json",
+    "stage_C3_execution_acceptance": "docs/cas_q2/EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md",
+    "new_original_retrieval_traces": 18000,
+    "new_original_retrieval_bge_forwards": 15422,
+    "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+    "canonical_reader_source_commit": "cc304ee",
+    "runtime_namespace": "outputs/cas_q2/empirical_runtime_v1",
+    "prospective_reader_replay_traces": 180
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

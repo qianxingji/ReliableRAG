@@ -1,0 +1,111 @@
+{
+  "cas_q2_status": "NOT READY",
+  "stage_C2": "ACCEPTED_ORIGINAL_RETRIEVAL",
+  "scientific_fit_total": 178,
+  "questions": 6000,
+  "traces": 18000,
+  "datasets": {
+    "hotpotqa": {
+      "questions": 2000,
+      "traces": 6000,
+      "pool_documents": 19352,
+      "exact_numeric_rankings": true
+    },
+    "2wikimultihopqa": {
+      "questions": 2000,
+      "traces": 6000,
+      "pool_documents": 11746,
+      "exact_numeric_rankings": true
+    },
+    "musique": {
+      "questions": 2000,
+      "traces": 6000,
+      "pool_documents": 23618,
+      "exact_numeric_rankings": true
+    }
+  },
+  "independent_checks": 18173,
+  "independently_recomputed_score_vectors": 12000,
+  "independent_rrf_fusions": 6000,
+  "exact_bm25_dense_rrf_top5": true,
+  "retrieval_scope": "Saved-array retrieval arithmetic and complete trace binding; no second full encoder replay or reader outcome evidence",
+  "actual_backend": {
+    "device": "cuda",
+    "model_class": "BertModel",
+    "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+    "dtype": "torch.bfloat16",
+    "deterministic": true,
+    "tf32": false,
+    "dimension": 768,
+    "document_batch_size": 16,
+    "query_batch_size": 1,
+    "eval_mode": true
+  },
+  "canonical_retrieval_counters": {
+    "bm25_structure_builds": 3,
+    "embedding_forward_calls": 15422,
+    "embedding_forward_documents": 3422,
+    "embedding_document_rows": 54716,
+    "original_retrieval_calls": 18000,
+    "original_bm25_calls": 6000,
+    "embedding_query_rows": 12000,
+    "embedding_forward_queries": 12000,
+    "original_dense_calls": 6000,
+    "original_hybrid_calls": 6000
+  },
+  "retrieval_elapsed_seconds": 1096.5623014000012,
+  "stage_C3_preparation": {
+    "canonical_traces": 18000,
+    "prospective_replay_traces": 180,
+    "independent_trace_and_membership_check": "PASS"
+  },
+  "stage_C3_joint_preflight": {
+    "status": "PASS_JOINT_READER_GPU_SYNTHETIC_ONLY",
+    "synthetic_reader_generation_calls": 2,
+    "synthetic_qwen_forward_calls": 4,
+    "synthetic_bge_forward_calls": 0,
+    "exact_synthetic_token_replay": true,
+    "actual_backend": {
+      "qwen_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "bge_revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+      "device": "cuda",
+      "dtype": "torch.bfloat16",
+      "qwen_attention": "sdpa",
+      "bge_attention": "sdpa",
+      "tokenizer_chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+      "runtime_config_sha256": "5ccd7fd0f840fed5e83161aa814d272c4a8cf9435deeb2ec23187328a5a2d1d4",
+      "deterministic_algorithms": true,
+      "tf32": false,
+      "runtime_seed": 20260828,
+      "peak_allocated_cuda_bytes": 6574814720
+    },
+    "limitation": "Short invented context checks compatibility; it does not guarantee peak memory or token determinism for every benchmark trace"
+  },
+  "original_cpu_fixture_tests": {
+    "run": 22,
+    "passed": 22,
+    "pretrained_model_loads": 0
+  },
+  "engineering_tests": {
+    "run": 47,
+    "passed": 45,
+    "windows_capability_skips": 2
+  },
+  "manifest_pins": {
+    "empirical_retrieval_v1": "81b9c7163adf669a828bd2ef772e14fecbda727cf596bced45856a1e699a354d",
+    "empirical_retrieval_gpu_preflight_v1": "3861f34c6add005baa1889d36679b740c90677d0fbbbc04ea85ab8b5cc6a2b3d",
+    "empirical_runtime_native_tests_v1": "cf861b1a90c3725e04878bc49892d609a27b12a1ba64fab9d6d712fe69e01410",
+    "empirical_runtime_preparation_v1": "7ecc9c22d3a400fcafdf51a4d5ce09adbbb7e30d5bef180d046ead70ba2bb258",
+    "empirical_runtime_gpu_preflight_v1": "050efac3a47c4c5cc8a9ffb82284dc8a60b8b480cf4561e6aa8788db504ab5f8"
+  },
+  "fresh_gold_values_materialized": 0,
+  "stage_C3_acceptance": "EXECUTION_CLEARED; NOT_COMPLETION_ACCEPTED",
+  "limitations": [
+    "Original encoder arithmetic is fully checked from saved arrays, not a second full encoder replay.",
+    "Two invented reader generations are compatibility evidence, not fresh answer quality.",
+    "Both historical advancement gates failed; no novel method candidate cleared.",
+    "Historical upstream fit-time receipts and earlier full-manifest pin remain incomplete.",
+    "CAS partition year, institutional category rule and target journal remain undecided."
+  ],
+  "next": "Complete canonical reader/repair, fixed bounded replay and independent validation; then frozen scoring/actions, prelabel sealing and outcome analysis."
+}

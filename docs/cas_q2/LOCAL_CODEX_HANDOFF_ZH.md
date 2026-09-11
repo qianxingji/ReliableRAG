@@ -2,6 +2,8 @@
 
 2026-09-11 接续说明：本任务卡的原始认证、重放和两个监督对照已完成；随后按新冻结设计补做 HGB_ONLY_R。两项贡献晋级规则均失败，没有获准进入最终确认的候选。最新入口为 CURRENT_TASK.md 与 P0_3_RESEARCH_DECISION.md。下文保留原始交接合同，不应再次执行封存实验。
 
+最新工程状态：固定五策略与 6,000 个新问题已验收，候选池和 18,000 条原始检索轨迹已通过全量独立核对。原生 reader/repair 正在 empirical_runtime_v1 单次生成；先检查现有进程与回执，禁止重复启动。后续按 EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md 完成固定重放和独立验证，再进入评分/动作冻结与标签开启前验收。
+
 当前目标为中科院二区 Submission Ready；不是 JCR Q2。
 本任务依据 Work 已冻结的科研设计实施，不自行改变科研方向。
 当前候选为 ROA-FULL，开发支持标签为 GBV_AUGMENTED_ONLY。

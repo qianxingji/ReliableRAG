@@ -22,9 +22,15 @@ prose contained an arithmetic error; neither frozen bytes nor selected IDs chang
 Stage C1 is now complete: 6,000 guarded runtime projections and 54,716 native
 pool documents passed 60,818 independent derivation checks. Read
 `docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md` and its Windows failure correction.
-Next is C2 retrieval/runtime adapters and complete executable input freeze.
-Reader/encoder bytes and package versions passed a read-only availability audit;
-GPU compatibility and actual fresh inference remain pending. No fresh outcomes
+Stage C2 is independently accepted: 18,000 original retrieval traces,
+18,173 checks and exact saved-array BM25/dense/RRF rankings. Read
+`docs/cas_q2/EMPIRICAL_C2_ACCEPTANCE.md` and `EMPIRICAL_C2_RESULTS.json`.
+C3's 18,000 trace bindings and prospective 180-trace replay set are frozen;
+joint Qwen/BGE GPU preflight passed and canonical reader/repair generation has
+started under `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`. Check the live namespace
+`outputs/cas_q2/empirical_runtime_v1` before acting: no duplicate run or retry.
+Generation completion, bounded replay, full independent validation, scoring,
+prelabel actions and outcome analysis remain pending. No fresh Gold outcomes
 have been read. Do not rerun any sealed experiment.
 No novel-method candidate or Submission Ready claim is cleared.
 
