@@ -27,9 +27,16 @@ cleared. Historical upstream fit-time receipts are still incomplete.
 
 Scoring preparation: EMPIRICAL_C4_SCORING_CONTRACT.md is frozen before scoring;
 its read-only input audit passed 73 files / 880,110,248 bytes with zero model
-loads or fresh branch reads. Complete C4 adapters and their own synthetic/GPU
-preflights before scoring. The C2/C3 timestamped progress snapshot is
-EMPIRICAL_C2_C3_CHECKPOINT.json; it is not a completion receipt.
+loads or fresh branch reads. Subsequent CPU model compatibility passed:
+EMPIRICAL_C4_CPU_ACCEPTANCE.md accepts seven saved upstream estimators, V2 and
+five fixed parameter heads after 102 invented-input checks (max error
+2.220446049250313e-16). Preserve the first import-cache failure and the separate
+source-only IO correction. Likelihood/GbV witness and common-budget kernels are
+implemented; the full repository suite passed 80/82 tests with two Windows
+capability skips. Complete neural scoring adapters, real GPU preflights and
+independent integration before fresh scoring; do not compete with running C3.
+The latest timestamped snapshot is EMPIRICAL_C4_CPU_RESULTS.json (1,140 complete
+candidate pairs at 2026-09-11 04:51:59 UTC), not a completion receipt.
 
 P1: comparison fidelity, complete inference cost, contamination boundaries and
 reproducible release. P2: no automatic feature/model/seed/budget search. CAS year,

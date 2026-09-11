@@ -1,0 +1,52 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T04:51:59.943043+00:00",
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_source_commit": "cc304ee37ba589cff42b936c6e1fd0a692618864",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 1140,
+    "generation_receipts.jsonl": 3420,
+    "repair_bindings.jsonl": 1140,
+    "branch_provenance.jsonl": 1140
+  },
+  "live_count_scope": "Sequential byte-line counts only, not atomic; generated text was not decoded or assessed",
+  "scoring_cpu_status": "PASS_SAVED_SCORING_CPU_INVENTED_ONLY",
+  "scoring_cpu_source_commit": "79613a0c7f78e72d102fa6affcdf066d58d2a864",
+  "numeric_checks": 102,
+  "maximum_numeric_error": 2.220446049250313e-16,
+  "unchanged_numeric_tolerance": 1e-10,
+  "upstream_estimators_loaded": 7,
+  "v2_ensemble_bundles_loaded": 1,
+  "fixed_parameter_heads": 5,
+  "invented_traces": 3,
+  "native_ast_records": 34,
+  "pretrained_neural_loads": 0,
+  "neural_forwards": 0,
+  "fresh_branch_rows_read_by_scoring": 0,
+  "scientific_fit_total": 178,
+  "fresh_gold_values_materialized": 0,
+  "manifest_pins": {
+    "empirical_saved_scoring_preflight_v1": "d57d4d55849f32a981bae477fcbb1b98a84e9a42bdef705725dd56c2158a6fbd",
+    "empirical_scoring_import_diagnostic_v1": "727b0741051fe971c084e006e8b904a47b28c7ea0db73df80212b776a3b04eb5",
+    "empirical_saved_scoring_preflight_v2": "65bfe79a80974c67204eb1dd792d420ffc974b4e9e6be95d3496ae2b86aa0ceb"
+  },
+  "first_cpu_attempt": "FAIL before source execution/model loading: unlisted nonexistent bytecode-cache probe",
+  "engineering_tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "run": 82,
+    "passed": 80,
+    "windows_capability_skips": 2,
+    "exit_code": 0
+  },
+  "kernels_tested": [
+    "native likelihood token/reduction/cache witnesses with CPU dummy logits",
+    "native GbV chunk/token/logit/branch maximum witnesses with CPU dummy logits",
+    "nine-policy common eligibility/global 5% allocation, including 18000 invented rows and 900 switches"
+  ],
+  "limitations": [
+    "CPU synthetic compatibility only; HGB checks still use the saved sklearn tree estimator.",
+    "Scoring witnesses add preparation/reduction overhead; future observed costs must state this boundary.",
+    "C3 acquisition is still running; real scoring GPU preflights, full adapters and independent validation remain incomplete.",
+    "Historical attribution failures, missing original fit-time receipts and undecided CAS qualification remain."
+  ]
+}

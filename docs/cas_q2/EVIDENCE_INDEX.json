@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "STAGES_A_B_C1_C2_ACCEPTED; C3_CANONICAL_READER_RUNNING",
+    "empirical_route_decision": "C3_CANONICAL_READER_RUNNING; C4_CPU_COMPATIBILITY_ACCEPTED; NEURAL_SCORING_PENDING",
     "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md"
+    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
   "empirical_replication": {
@@ -202,7 +202,11 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/EMPIRICAL_C2_C3_CHECKPOINT.json"
+    "latest_execution_snapshot": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
+    "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
+    "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
+    "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
+    "stage_C4_cpu_manifest": "65bfe79a80974c67204eb1dd792d420ffc974b4e9e6be95d3496ae2b86aa0ceb"
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

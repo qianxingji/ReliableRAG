@@ -32,6 +32,10 @@ started under `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`. Check the live namespace
 Generation completion, bounded replay, full independent validation, scoring,
 prelabel actions and outcome analysis remain pending. No fresh Gold outcomes
 have been read. Do not rerun any sealed experiment.
+Scoring CPU compatibility now passed 102 invented-input numeric checks;
+likelihood/GbV witness and common-budget kernels passed tests. Read
+`docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md` and the preserved import-failure
+correction. Real scoring GPU preflights and full integration remain pending.
 No novel-method candidate or Submission Ready claim is cleared.
 
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
