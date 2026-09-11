@@ -12,7 +12,19 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Latest Qwen input/decoder gate: RELOCATED_QWEN_TOKENIZER_ACCEPTANCE.md and
+Latest NLI input gate: RELOCATED_NLI_INPUT_ACCEPTANCE.md and
+RELOCATED_NLI_INPUT_RESULTS.json. All 13,500 historical traces pass 81,000
+count/reason/eligibility comparisons. The newly prepared 32,174 chunk pairs and
+6,404 batches match archived execution counts; 22,799,715 new token/mask/type
+scalar comparisons pass in an independent process. Actual SentencePiece 0.2.1
+native code loads from the separate new target. Four invented fixtures pass;
+one expected original long-sequence warning per process is preserved, with no
+other stderr. All 13 original/restored inputs, 21,267 environment/target files
+and 11 controls remain unchanged. Original token arrays/logits were not archived;
+new witnesses do not establish historical token/probability replay. No neural
+forward, model load, fit or Gold read. Do not repeat this accepted bounded gate.
+
+Earlier Qwen input/decoder gate: RELOCATED_QWEN_TOKENIZER_ACCEPTANCE.md and
 RELOCATED_QWEN_TOKENIZER_RESULTS.json. All 41,040 historical generation receipts
 pass in the restored roots/new environment: 39,750,420 input tokens, 627,012
 archived output tokens and 410,400 exact field comparisons. The independent
@@ -90,16 +102,15 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 12,878 pairs
-at 13:05:51 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 13,897 pairs
+at 13:47:00 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
 149 pass and two Windows capability skips; that suite was not repeated here.
 
-Next independent work: prospectively verify BGE/NLI tokenizer/target-package and
-predecessor execution bindings; later add completed-stage output dependencies
+Next independent work: prospectively verify BGE and predecessor execution bindings; later add completed-stage output dependencies
 and execute full relocated neural/pipeline replay. Declared static delivery,
 native assembly and full historical CPU scoring are accepted, but
 C4 root/package-path checks and absolute predecessor bindings remain constraints;

@@ -3,7 +3,7 @@
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
 independent numerical replay, neural-package/CPU acceptance and the separate
 native assembly, pretrained-asset/static delivery and full relocated historical
-CPU scoring and full historical Qwen input/decoder gates. Prior checkpoint prose is
+CPU scoring, full historical Qwen input/decoder and NLI preparation gates. Prior checkpoint prose is
 preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
@@ -58,8 +58,8 @@ actions or cohorts; version any necessary correction prospectively.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 13:05:51 UTC snapshot has 12,878 pairs / 38,635 generation receipts,
-   non-atomic and not completion; see [latest results](RELOCATED_QWEN_TOKENIZER_RESULTS.json).
+   failures. The 13:47:00 UTC snapshot has 13,897 pairs / 41,692 generation receipts,
+   non-atomic and not completion; see [latest results](RELOCATED_NLI_INPUT_RESULTS.json).
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -156,8 +156,20 @@ the complete vocabulary 11 times; it is not a literal unchanged original CLI.
 No weights, model, neural forward, fit or Gold read occurs. This closes the Qwen
 tokenizer binding only. Do not repeat the accepted gate or rewrite its sources.
 
-Next: prospectively verify BGE/NLI tokenizer/target-package and predecessor execution
-bindings, then close actual completed-stage dependencies and execute full
+The [historical NLI preparation gate](RELOCATED_NLI_INPUT_ACCEPTANCE.md) now
+passes all 13,500 rows and 81,000 historical count/reason/eligibility comparisons.
+The new preparation contains 32,174 chunk pairs in 6,404 batches, matching the
+archived execution counts. A separate process exactly compares 22,799,715 new
+token/mask/type scalar values and verifies all hypotheses/chunks/batches. Four
+invented fixtures pass. Each process preserves one expected original length-probe
+warning, with no other stderr. The actual mapped SentencePiece native library
+comes from the separate new target. All 13 original/restored inputs, 21,267
+environment files and 11 controls remain unchanged. The [results/private kit](RELOCATED_NLI_INPUT_RESULTS.json)
+retain all new witnesses, source controls, commands and logs. No original token
+arrays or logits exist in the ledger; this does not replay historical neural
+scores. Zero model loads, forwards, fits or Gold reads. Do not repeat this gate.
+
+Next: prospectively verify BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.
 C4's root/target-package checks and absolute predecessor records remain real
