@@ -12,7 +12,18 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Latest delivery gate: EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md and
+Latest asset delivery: PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md and
+PRETRAINED_ASSET_DELIVERY_RESULTS.json.
+All 22 original BGE/Qwen/GbV NLI snapshot files (7,494,996,533 bytes) are packaged
+and independently restored from the private archive. Every original/restored
+file matches prior audit hashes; Qwen's index closes over exactly two shards.
+The validator has zero old-project content reads, model loads, forwards or Gold
+access. Use the exact controls and freeze in the small evidence companion and
+PRETRAINED_ASSET_OFFLINE_RUNBOOK.md. This closes pretrained asset delivery only;
+learned-policy/data/output closure and complete pipeline replay remain pending.
+Do not repeat accepted packaging or restoration; preserve all earlier failures.
+
+Previous native delivery gate: EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md and
 EMPIRICAL_DELIVERY_ASSEMBLY_RESULTS.json.
 The separate v2 adapter/v4 probe passed two fresh source/config-only processes,
 including spaces/Chinese paths: 46 runtime and 34 scoring AST records, unchanged
@@ -42,15 +53,15 @@ accepted replay, release or runtime inventory. Original P0-1 replay and all thre
 supervised controls are complete. Both historical advancement rules failed;
 no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 178.
-C3 remains its original canonical process from cc304ee, PID 55688: 9,801 pairs
-at 10:49:57 UTC. Recheck live process/receipts; never duplicate or restart it.
+C3 remains its original canonical process from cc304ee, PID 55688: 10,274 pairs
+at 11:10:18 UTC. Recheck live process/receipts; never duplicate or restart it.
 Finish canonical generation, fixed 180-trace replay and independent acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
 149 pass and two Windows capability skips; that suite was not repeated here.
 
-Next independent work: close full scientific data/model and completed-output
+Next independent work: close dataset/learned-policy and completed-output
 delivery dependencies, then design the remaining package/predecessor bindings
 and prospective pipeline replay. Native source assembly is now accepted, but
 C4 root/package-path checks and absolute predecessor bindings remain constraints;

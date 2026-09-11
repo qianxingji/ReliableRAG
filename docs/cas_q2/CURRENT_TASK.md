@@ -2,8 +2,8 @@
 
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
 independent numerical replay, neural-package/CPU acceptance and the separate
-native assembly gate. Prior checkpoint prose is preserved in Git history through
-cb9600b and the linked stage records. It is not
+native assembly and pretrained-asset delivery gates. Prior checkpoint prose is
+preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
 
 ## Authority and preserved state
@@ -38,7 +38,7 @@ actions or cohorts; version any necessary correction prospectively.
   [D engineering](EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md), and
   [cost engineering](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md). Actual fresh
   scoring, prelabel sealing, cost reconciliation and D execution remain pending.
-  Existing engineering suite: 151 tests, 149 pass, two Windows capability skips.
+  Earlier full engineering run: 151 tests, 149 pass, two Windows capability skips.
 - The original 2,821-file data/source package passed full
   [directory relocation](ROA_REPLAY_RELEASE_ACCEPTANCE.md). Five authenticated
   official numerical wheels now also pass [fresh offline installation and full
@@ -57,8 +57,8 @@ actions or cohorts; version any necessary correction prospectively.
 2. Complete all 18,000 canonical traces / 54,000 generations. Execute the already
    fixed 180-trace / 540-generation bounded replay and full independent runtime
    validator, then perform client Lead acceptance. Preserve partial ledgers and
-   failures. The 10:49:57 UTC snapshot has 9,801 pairs / 29,404 generation receipts,
-   non-atomic and not completion; see [latest results](EMPIRICAL_DELIVERY_ASSEMBLY_RESULTS.json).
+   failures. The 11:10:18 UTC snapshot has 10,274 pairs / 30,823 generation receipts,
+   non-atomic and not completion; see [latest results](PRETRAINED_ASSET_DELIVERY_RESULTS.json).
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -107,8 +107,18 @@ tests pass. Keep three failed runs and their prospective corrections; the
 This is source/config-only assembly, with no model, fit or fresh outcome read.
 Do not repeat this accepted gate or alter its frozen implementation.
 
-Next: complete source/data/model/completed-output dependency closure and design
-remaining package/predecessor bindings and actual relocated pipeline validation.
+The [pretrained asset delivery](PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md) now
+passes independent archive validation and actual restoration: all 22 original
+BGE/Qwen/GbV NLI files, 7,494,996,533 bytes, match their historical audit pins.
+All original and restored files remain unchanged. Qwen's index references exactly
+two included shards. No model, fit, forward or fresh Gold access occurred.
+Use the [file lock](PRETRAINED_ASSET_LOCK.json),
+[results/two-part private release hashes](PRETRAINED_ASSET_DELIVERY_RESULTS.json)
+and [offline runbook](PRETRAINED_ASSET_OFFLINE_RUNBOOK.md). Keep the restored
+namespace sealed and do not repeat accepted asset delivery.
+
+Next: complete dataset/learned-policy/completed-output dependency closure and
+design remaining package/predecessor bindings and actual relocated pipeline validation.
 C4's root/target-package checks and absolute predecessor records remain real
 constraints. Keep all original definitions/hashes intact and disclose each IO
 adaptation. Do not switch live C3's interpreter or inputs, or run new GPU work

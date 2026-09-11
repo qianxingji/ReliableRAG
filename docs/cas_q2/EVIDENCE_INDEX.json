@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T10:49:57.741427+00:00",
+  "as_of_utc": "2026-09-11T11:10:18.071598+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -173,7 +173,7 @@
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
     "empirical_route_decision": "C3_CANONICAL_READER_RUNNING; C4_D_AND_COST_EXECUTORS_CPU_TESTED; ACTUAL_PRELABEL_OUTCOMES_AND_COST_PENDING",
     "confirmation_freeze_scope": "Scientific empirical protocol and C1/C2/C3 acquisition executable inputs frozen; C3 completion, C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md",
+    "latest_stage_acceptance": "docs/cas_q2/PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -362,5 +362,23 @@
     "adapter": "scripts/empirical_delivery_paths_v2.py",
     "probe": "scripts/probe_empirical_delivery_assembly_v4.py",
     "private_artifacts_uploaded": false
+  },
+  "pretrained_asset_delivery": {
+    "status": "PASS_PRETRAINED_ASSET_DELIVERY_AND_RESTORATION_ONLY",
+    "acceptance_manifest": "d8b867e17d74b1dce59e2ec5fb3b4af38b9991b83fbfe3fdd2d403d6d61f36cc",
+    "execution_freeze_sha256": "d5941e8b5bfeed2bd3c1ad272349d7cfdc50d4ac7a7da85b23558a6282f561a2",
+    "asset_lock_sha256": "53fc72dd7e85dfd6dab703531cdf2599b029e2adec8430610c688ab8a4a1a12c",
+    "payload_files": 22,
+    "payload_bytes": 7494996533,
+    "original_assets_unchanged": 22,
+    "restored_assets_rechecked": 22,
+    "independent_validator_original_content_reads": 0,
+    "full_pipeline_replay": false,
+    "CUDA_execution": false,
+    "private_artifacts_uploaded": false,
+    "acceptance": "docs/cas_q2/PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md",
+    "results": "docs/cas_q2/PRETRAINED_ASSET_DELIVERY_RESULTS.json",
+    "lock": "docs/cas_q2/PRETRAINED_ASSET_LOCK.json",
+    "runbook": "docs/cas_q2/PRETRAINED_ASSET_OFFLINE_RUNBOOK.md"
   }
 }
