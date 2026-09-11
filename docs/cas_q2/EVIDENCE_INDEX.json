@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; JINJA_IDENTITY_V2_DESIGN_FROZEN_CPU_IMPLEMENTATION_NEXT",
+    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; JINJA_IDENTITY_V2_CPU_GATE_ACCEPTED; ONE_V2_GPU_PREFLIGHT_AUTHORIZED",
     "confirmation_freeze_scope": "C1/C2/C3 acquisition complete and sealed; C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/C4_PREFLIGHT_V1_FAILURE_REVIEW.md",
+    "latest_stage_acceptance": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -263,8 +263,13 @@
     "stage_C4_gpu_preflight_failure_results": "docs/cas_q2/C4_PREFLIGHT_V1_FAILURE_RESULTS.json",
     "stage_C4_gpu_preflight_failure_audit_manifest_sha256": "cbb9911c17c7c1b3f65f31d36b79814383bbba42a4cf4477b483ab1d9b2efc13",
     "stage_C4_v2_correction_contract": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md",
-    "stage_C4_v2_cpu_gate_accepted": false,
-    "stage_C4_v2_gpu_launch_authorized": false
+    "stage_C4_v2_cpu_gate_accepted": true,
+    "stage_C4_v2_cpu_acceptance": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md",
+    "stage_C4_v2_cpu_results": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_RESULTS.json",
+    "stage_C4_v2_fixture_manifest_sha256": "42872b7b7f0b56a7b22eddf5bb6de75ec1a61c1a0e11eff241bc11c175e86517",
+    "stage_C4_v2_fixture_client_audit_manifest_sha256": "9529abbb046a86f50bbad90550f9dc1192682169722f21424e4fb394ff2e1e74",
+    "stage_C4_v2_gpu_launch_authorized": true,
+    "stage_C4_v2_gpu_preflight_executed": false
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",

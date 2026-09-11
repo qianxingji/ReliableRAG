@@ -78,8 +78,10 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    likelihood preparation. Two BGE forwards completed; Qwen/NLI forwards and
    Gold remained zero. The [failure audit](C4_PREFLIGHT_V1_FAILURE_REVIEW.md)
    verifies all original files and preserves V1 in place. Implement the frozen
-   [V2 exact-identity binding](C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md) and pass
-   its CPU gate before one new V2 GPU preflight; never repeat or relocate V1.
+   [V2 exact-identity binding](C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md). Its
+   [CPU acceptance](C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md) now passes 125
+   producer tests and seven independent tests. Execute one complete V2 GPU
+   preflight with a commit-bound external controller; never repeat or relocate V1.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -230,8 +232,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: implement/test the separate C4 V2 Jinja binding with Sol High. Its positive
-and per-process negative CPU tests must pass before the new complete GPU preflight.
+Next: execute the single authorized C4 V2 invented GPU preflight with raw logs,
+then independently audit it before base scoring.
 Continue through base, GbV, policies and independent prelabel validation only
 through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.

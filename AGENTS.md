@@ -28,9 +28,11 @@ preparation: the name-only guard rejected authenticated Jinja template compiler
 `generate`. Two BGE forwards completed; Qwen/NLI forwards, generation and Gold
 were zero. V1 remains in place and must not be repeated or relocated. Read
 C4_PREFLIGHT_V1_FAILURE_REVIEW.md and C4_JINJA_EXECUTION_BINDING_V2_CONTRACT.md.
-Astra xhigh has accepted failure preservation/diagnosis and frozen the exact-code
-and direct-caller binding design. Sol High implements/tests the separate V2
-binding and entry next. No V2 GPU launch until its invented CPU gate is accepted.
+Astra xhigh accepted failure preservation/diagnosis and froze the exact-code and
+direct-caller binding design. Sol High implemented it; the 125-test producer gate
+and separate seven-test client audit are accepted in
+C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md. One complete V2 invented GPU
+preflight is now authorized with a commit-bound external controller and raw logs.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
