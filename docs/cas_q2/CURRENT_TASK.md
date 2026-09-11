@@ -69,16 +69,16 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    [V1 archival move](C3_VALIDATION_V1_FAILURE_PRESERVATION.md) is accepted.
    V2 has now run once and FAILED after 18,026 generation checks. Read the
    [Astra anomaly audit](C3_VALIDATION_V2_FAILURE_REVIEW.md): canonical position
-   6008 differs at dense component rank 95 by 2 float32 ULPs. Current-default
-   12-thread arithmetic matches this saved component; 1-thread arithmetic
-   reproduces V2's failure. Original BLAS thread count was not recorded and the
-   full extent/effect is unknown. Preserve both attempts and the standard V2
-   report. Next, Sol High implements and runs the
-   [complete two-mode repair census](C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md).
-   Return to Astra xhigh for the full evidence review before a separate V3
-   design or complete C3 validation. Never automatically rerun V1/V2 or either
-   neural pass. C4 still needs actual accepted C3 and the unchanged predecessor
-   check, not a bounded arithmetic observation.
+   6008 differs at dense component rank 95 by 2 float32 ULPs. The subsequent
+   [complete two-mode census and Astra audit](C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md)
+   cover all 18,180 rows and 1,818,000 component entries per mode. One global
+   current-default 12-thread computation matches every saved field. One-thread
+   has 507 score-only rows, zero membership/order/replacement changes. Original
+   BLAS thread count remains unrecorded and V2 stays failed. Next, Sol High
+   implements the invented-only gate in the prospectively frozen
+   [V3 contract](C3_VALIDATION_V3_CONTRACT.md); only accepted fixtures permit its
+   one full V3 run. Never repeat V1/V2, either neural pass or the census. C4 still
+   needs Astra-accepted V3 and the actual unchanged predecessor check.
 3. Only after accepted C3, execute actual C4 GPU preflight, base, GbV, policies
    and complete independent prelabel validation. Follow the
    [C4 execution contract](EMPIRICAL_C4_EXECUTION_CONTRACT.md) and
@@ -235,8 +235,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: complete the saved-repair arithmetic census and anomaly review, then
-complete C3 validation and verify
+Next: implement and accept the frozen V3 fixture gate, execute its single full
+C3 validation, perform Astra xhigh authenticity review and verify
 BGE and predecessor execution bindings, then close actual completed-stage dependencies and execute full
 relocated neural/pipeline validation. The graph proves declared static edges; live C3
 ledgers/future stages and arbitrary source IO remain outside its accepted scope.

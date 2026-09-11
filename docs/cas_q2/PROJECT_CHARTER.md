@@ -59,10 +59,12 @@ generation and fixed neural replay completed under EMPIRICAL_C3_EXECUTION_ACCEPT
 The first full independent validation failed due to two missing helper-scope
 constants. Separate V2 code/fixtures corrected those, and the V1 report is
 preserved in its accepted failure directory. V2 then failed on one observed
-dense component score after 18,026 generation checks. C3_VALIDATION_V2_FAILURE_REVIEW.md
-records the bounded 1/default-12-thread discrepancy and its limits. The prospective
-C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md requires all saved repairs in both modes
-before any V3 execution decision. Successful independent validation,
+dense component score after 18,026 generation checks. The complete census and
+Astra xhigh audit now establish exact current-native-default 12-thread
+reconstruction for every saved repair field and 507 one-thread score-only rows,
+with no membership/order/replacement change. Historical acquisition threads are
+still unrecorded and V2 stays failed. C3_VALIDATION_V3_CONTRACT.md prospectively
+freezes the single permitted route to complete validation. Successful independent validation,
 frozen scoring/prelabel sealing and outcome analysis remain pending. Total control/panel fits: 178. Seven historical final-fit reproduction calls
 bring actual takeover fits to 185; their strict HGB byte failure remains in
 HISTORICAL_TRAINING_REPLAY_REVIEW.md. The C3 validation binding has separate

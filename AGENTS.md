@@ -13,24 +13,24 @@ This repository is for experimental research code only. Do NOT write the paper m
 ## Current execution entry point (2026-09-12)
 
 Latest C3 status: canonical and fixed 180-trace neural replay completed. Both
-complete validator attempts failed and remain preserved. V1's missing-helper
-constants were corrected in separate V2 code after prospective fixtures. V1's
-failed report was archived/moved under its accepted contract. V2 passed 18,026
-generation checks before failing at canonical position 6008 on one dense
-component score (rank 95; 2 float32 ULPs). Read C3_VALIDATION_V2_FAILURE_REVIEW.md
-and RESULTS.json. A bounded two-mode observation reproduces this score with
-1 versus current-default 12 BLAS threads; all IDs/ranks at that row agree, but
-the acquisition's actual historical thread count and full impact remain unknown.
-The V2 report stays at the standard path. Never repeat V1/V2 or neural passes.
+complete validator attempts failed and remain preserved. The accepted exhaustive
+two-mode census now covers 18,180 rows, 24,240 component lists and 1,818,000
+component entries per mode. Current-native-default OpenBLAS 12-thread arithmetic
+matches every saved component, final ranking and replacement exactly. Explicit
+one-thread arithmetic has 507 score-only rows, 565 component-entry differences
+and 177 final-score differences, with zero membership/order/replacement change.
+Read C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md and RESULTS.json. Historical acquisition
+thread count remains unrecorded; V2 remains a literal failure. Never repeat V1,
+V2, either neural pass or the accepted census.
 
-Next authorized work: C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md, frozen before
-implementation. Sol High runs the exhaustive saved-repair arithmetic census for
-18,180 rows in exactly the two prescribed thread modes and preserves every
-component/ranking/replacement discrepancy. Return to Astra xhigh for the complete
-anomaly review before any separate V3 design or C4 launch. No tolerance, expected
-score/hash, original scientific source or dataset change is authorized. The full
-audit rehashed 14 runtime files, 41 sources, 25 controls and 30,823 environment
-files unchanged; total fits remain 185 and current Gold remains closed.
+Next authorized work follows C3_VALIDATION_V3_CONTRACT.md, frozen prospectively
+after Astra xhigh review. Sol High may implement and run the invented-only V3
+fixture gate. Only accepted fixtures permit the contract's single full V3 run
+under one global current-native-default 12-thread mode. Preserve and relocate the
+V2 report exactly as specified before that run. No tolerance, expected score/hash,
+scientific source, dataset or thread search is authorized. C4 remains blocked
+until Astra xhigh accepts the complete V3 result and the actual unchanged C4
+prerequisite check passes. Total fits remain 185 and current Gold remains closed.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
 The scoped length adapter is implemented and client-accepted for full validation
@@ -42,8 +42,8 @@ remain unchanged. Original result fields and final namespace/control inclusion
 are separately verified. This is fixture acceptance, not current C3 validation.
 That accepted V1 entry has now executed once and failed; do not repeat it.
 Task work/run_complete_c3_bound_validation_v1.py and its complete failure remain
-unchanged. The prospectively specified separate V2 correction has now executed
-once and failed as recorded above; use the newer census contract next.
+unchanged. The prospectively specified separate V2 correction executed once and
+failed as recorded above; the accepted census and V3 contract now govern next work.
 Do not launch the
 unbound per-token length loop or repeat accepted fixtures. The original main,
 validate_all and scientific helper bodies remain unchanged; entry/global and
@@ -65,7 +65,7 @@ reading is disclosed; current D/full CLI/neural replay is not claimed. Do not
 repeat this accepted gate. The existing HGB byte failure stays failed.
 
 The earlier C3_VALIDATION_BINDING_ACCEPTANCE.md records V1 fixture scope.
-Successful full validation is still pending after the recorded V1/V2 failures;
+Successful full validation is still pending after the recorded V1/V2 failures and accepted census;
 keep all 41 source/config files and every scientific check unchanged.
 
 Earlier historical training review: HISTORICAL_TRAINING_REPLAY_REVIEW.md and
@@ -176,7 +176,7 @@ no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
 C3 canonical (18,000) and original fixed neural replay (180) finished; their
 processes exited successfully. The full independent V1/V2 attempts failed as above.
-Complete the saved-repair census, anomaly review and full C3 acceptance,
+Implement the frozen V3 gate, complete V3 authenticity review and full C3 acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with

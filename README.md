@@ -11,9 +11,10 @@ Both historical method-advancement rules failed; no novel-method candidate is
 cleared. A frozen empirical replication now has five fitted comparison policies
 and 6,000 new question IDs. Native generation and fixed neural replay completed.
 The first full validator failed on missing helper constants. After the separate
-V2 correction, full validation failed on a dense component score. A bounded
-diagnostic finds thread-dependent arithmetic; a complete discrepancy census
-is now frozen before further validation. Fresh
+V2 correction, full validation failed on a dense component score. The accepted
+complete census finds 12-thread current-native-default arithmetic exact on every
+saved repair field and 507 one-thread score-only rows with no ranking/replacement
+change. A prospective V3 validation contract is now frozen. Fresh
 scoring, outcome analysis and contribution assessment remain outstanding.
 
 ## Continue here
@@ -21,13 +22,14 @@ scoring, outcome analysis and contribution assessment remain outstanding.
 1. Read [AGENTS.md](AGENTS.md) and [CURRENT_TASK.md](docs/cas_q2/CURRENT_TASK.md).
 2. Preserve completed C3 canonical/fixed replay and both full-validation
    failures. Follow the [V2 anomaly audit](docs/cas_q2/C3_VALIDATION_V2_FAILURE_REVIEW.md)
-   and [complete repair-census contract](docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_CONTRACT.md).
-   Complete that diagnostic before any V3 design or full-validation retry.
+   [complete census audit](docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md) and
+   [prospective V3 contract](docs/cas_q2/C3_VALIDATION_V3_CONTRACT.md). Implement
+   its fixture gate before the single authorized V3 validation.
 3. Execute the already implemented C4 scoring/prelabel stages; only their complete
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
-Latest validation review: V2's helper constants work, but the actual full run failed at canonical position 6008 after 18,026 generation checks. One dense component score differs by 2 float32 ULPs; IDs/ranks on that row agree. The bounded observer exactly reproduces the saved component with the current native default of 12 BLAS threads, and V2's discrepancy with 1 thread. The original actual thread count was not recorded. [Audit and full evidence](docs/cas_q2/C3_VALIDATION_V2_FAILURE_REVIEW.md) preserve both failed runs and a diagnostic observer failure. All 14 original runtime files, 41 sources, 25 controls and 30,823 environment files remain unchanged. The exhaustive two-mode repair census is next; no tolerance or expected hash is relaxed.
+Latest validation review: the [complete arithmetic census and Astra xhigh audit](docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md) cover all 18,180 canonical/replay rows and 1,818,000 component entries per mode. One global current native-default OpenBLAS 12-thread run matches every saved field; one-thread has 507 score-only rows, no membership/order or replacement change. The 7,075 cross-mode score-vector differences are arithmetic sensitivity, while only 507 reach saved entries. Historical acquisition threads remain unrecorded and V2 remains failed. The [V3 contract](docs/cas_q2/C3_VALIDATION_V3_CONTRACT.md) freezes the sole next validation path; C3 and C4 remain unaccepted.
 
 Latest outcome replay: [full historical source/reference mapping](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md) reconstructs all 13,500 rows for 4,500 old questions, disjoint from the 6,000 current IDs. New/original numeric ledgers are byte-exact; separate reference rereading and independent metric formulas check 108,000 values. Actual new PyArrow native bindings, selected-cell limits, all unchanged inputs and full evidence are in the [results](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_RESULTS.json). No current Gold is opened. Current C3 full validation requires the V2 correction above.
 
