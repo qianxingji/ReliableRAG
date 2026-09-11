@@ -175,10 +175,13 @@ and `EVIDENCE_INDEX.json` in that directory before choosing work.
 
 - Work is Research Project Lead; ChatGPT owns research design and scientific
   argument; Codex implements reviewed designs. Per the user's 2026-09-11 update,
-  routine engineering, experiment execution, monitoring and documentation use
-  Sol High (`gpt-5.6-sol`, `high`). Key research decisions and final acceptance
-  use Astra xhigh (`gpt-6-astra`, `xhigh`), then return to Sol High. This replaces
-  the earlier routine Astra assignment; see `docs/cas_q2/MODEL_ROUTING.md`.
+  formal experiments, numerical replay, routine engineering and ordinary result
+  analysis default to Sol High (`gpt-5.6-sol`, `high`; routine code/tests may use
+  Medium). P0-3 research design/novelty and core Method/Claim argument use Astra
+  High. Final authenticity/fairness/claim/reviewer/Submission Ready audits,
+  anomalous-result conflicts and major method decisions use Astra xhigh
+  (`gpt-6-astra`, `xhigh`), then return to Sol High. This replaces the earlier
+  routine Astra assignment; see `docs/cas_q2/MODEL_ROUTING.md` for the full table.
 - Historical candidate: ROA-FULL, originally development-supported and
   GbV-augmented only. Subsequent attribution gates failed; no current candidate
   is cleared. Five fixed empirical comparison models now exist; they do not

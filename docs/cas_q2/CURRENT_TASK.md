@@ -20,9 +20,11 @@ in `E:/paper/ReliableRAG-cas-q2-p0-1`, branch `work/cas-q2-p0-1` and draft PR #1
 No manuscript is authorized. Do not change frozen sources, hashes, tolerances,
 actions or cohorts; version any necessary correction prospectively.
 
-Model routing follows the user's latest [policy](MODEL_ROUTING.md): routine
-execution uses Sol High; key research decisions and final client acceptance use
-Astra xhigh, then return to Sol High. Do not run every stage on Astra xhigh.
+Model routing follows the user's exact [policy](MODEL_ROUTING.md): formal runs,
+replay and ordinary analysis use Sol High; P0-3 research design/novelty and core
+Method/Claim reasoning use Astra High; final authenticity/fairness/claim/reviewer/
+Submission Ready audits, anomalous conflicts and major method decisions use
+Astra xhigh, then return to Sol High. Do not run every stage on Astra.
 
 ## Actual accepted work
 

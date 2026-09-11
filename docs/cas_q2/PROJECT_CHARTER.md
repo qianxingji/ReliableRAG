@@ -11,9 +11,12 @@ ISSN, major/minor category and institutional recognition rule before submission.
 Work is Research Project Lead: priorities, research decisions, task contracts,
 review and stage acceptance. ChatGPT handles research/method/experiment design
 and argument. Codex implements reviewed designs, tests, runs experiments and
-prepares PRs. The user's 2026-09-11 model policy fixes routine work to Sol High
-(`gpt-5.6-sol`, `high`); key research decisions and final acceptance use Astra
-xhigh (`gpt-6-astra`, `xhigh`), followed by a return to Sol High. See
+prepares PRs. The user's 2026-09-11 model policy fixes formal experiments,
+replay and ordinary analysis to Sol High (`gpt-5.6-sol`, `high`; routine code
+and tests may use Medium). P0-3 design/novelty and core Method/Claim argument use
+Astra High; final authenticity, fairness, claim, reviewer and Submission Ready
+audits, conflicting results and major method decisions use Astra xhigh
+(`gpt-6-astra`, `xhigh`), followed by a return to Sol High. See the complete
 [model routing](MODEL_ROUTING.md). These role labels do not claim that separate
 external model sessions have been started.
 

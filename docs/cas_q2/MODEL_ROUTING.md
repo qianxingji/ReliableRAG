@@ -4,16 +4,34 @@ User instruction, 2026-09-11:
 
 > 日常固定 Sol High，关键科研决策和最终验收再 Astra xhigh。
 
-Routine implementation of frozen designs, experiment launches, process
-monitoring, debugging within an unchanged protocol, evidence packaging,
-documentation and PR maintenance use **Sol High** (`gpt-5.6-sol`, `high`).
+Use the following exact routing. `Sol` means `gpt-5.6-sol`; `Astra` means
+`gpt-6-astra`.
 
-Key research decisions use **Astra xhigh** (`gpt-6-astra`, `xhigh`): contribution
-assessment, candidate selection, new method/experiment/confirmation design,
-changes to scientific assumptions or evaluation criteria, and final client
-acceptance of a substantive research gate or submission readiness. Routine
-file verification does not itself require escalation. Return to Sol High after
-the bounded decision or final acceptance is recorded.
+| Work | Model | Reasoning |
+| --- | --- | --- |
+| Routine code, script changes and tests | Sol | Medium or High |
+| Formal experiments, benchmarks and numerical replay | Sol | High |
+| P0-1 artifact authentication and provenance tracing | Sol | High |
+| P0-1 final authenticity audit | Astra | xhigh |
+| P0-2 baseline implementation and controlled experiments | Sol | High |
+| P0-2 final fairness audit | Astra | xhigh |
+| P0-3 routine experiment implementation | Sol | High |
+| P0-3 research design and novelty judgment | Astra | High |
+| P0-3 major method decisions | Astra | xhigh |
+| Ablation, sensitivity and robustness experiments | Sol | High |
+| Ordinary experiment-result analysis | Sol | High |
+| Anomalous results or conflicting conclusions | Astra | xhigh |
+| Manuscript first draft, tables and experiment section, if authorized | Sol | High |
+| Core Method argument and Claim boundaries | Astra | High |
+| Deciding whether evidence supports a Claim | Astra | xhigh |
+| Full simulated-reviewer audit | Astra | xhigh |
+| Final Submission Ready acceptance | Astra | xhigh |
+
+Use Sol High as the routine default. Sol Medium is permitted only for routine
+code, script changes and tests when the task does not include a formal run,
+benchmark, numerical replay or research judgment. A formal stage's execution
+remains Sol High even if its later final audit is assigned to Astra xhigh.
+Return to Sol High after each bounded Astra decision or audit is recorded.
 
 Research design precedes core algorithm implementation. Work remains project
 lead and client acceptance authority, ChatGPT owns research design and argument,
@@ -23,5 +41,6 @@ seeds, parameters, budgets, evidence requirements or sealed artifacts.
 
 Apply explicit model/reasoning overrides through the available task continuation
 control and check its result before claiming a switch. Keep work in the existing
-task. This document records the requested policy; it is not evidence of an app
-setting change or of a model replacement within an already running turn.
+task. A final audit means review of already concrete, frozen evidence; prepare
+that evidence under the assigned Sol stage before switching. This document is
+not evidence of a model replacement within an already running turn.
