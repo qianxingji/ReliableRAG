@@ -11,8 +11,8 @@ Both historical method-advancement rules failed; no novel-method candidate is
 cleared. A frozen empirical replication now has five fitted comparison policies
 and 6,000 new question IDs. Native generation and fixed neural replay completed;
 the first full validator failed on missing helper-scope constants. The
-prospective V2 binding and its invented-only gate are now accepted for one
-complete run; failure preservation and full validation remain pending. Fresh
+prospective V2 binding, its invented-only gate and the exact V1 failure
+preservation are accepted for one complete run; full validation remains pending. Fresh
 scoring, outcome analysis and contribution assessment remain outstanding.
 
 ## Continue here
@@ -20,9 +20,10 @@ scoring, outcome analysis and contribution assessment remain outstanding.
 1. Read [AGENTS.md](AGENTS.md) and [CURRENT_TASK.md](docs/cas_q2/CURRENT_TASK.md).
 2. Preserve completed C3 canonical/fixed replay and the actual full-validation
    failure. Follow the [review](docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md)
-   and [V2 fixture acceptance](docs/cas_q2/C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md)
-   for corrected validation. Do not repeat neural acquisition or overwrite the
-   failed report.
+   [V2 fixture acceptance](docs/cas_q2/C3_VALIDATION_V2_FIXTURE_ACCEPTANCE.md)
+   and [failure-preservation acceptance](docs/cas_q2/C3_VALIDATION_V1_FAILURE_PRESERVATION.md)
+   for corrected validation. Do not repeat neural acquisition or alter the
+   preserved failed report.
 3. Execute the already implemented C4 scoring/prelabel stages; only their complete
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
