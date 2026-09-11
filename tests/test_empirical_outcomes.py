@@ -157,6 +157,29 @@ print('PASS')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(result.stdout.strip(), 'PASS')
 
+    def test_mapper_can_hash_but_not_decode_authenticated_score_sidecars(self):
+        code = r'''
+import sys
+from pathlib import Path
+from scripts.empirical_outcome_guard_v2 import guard
+from scripts.verify_roa_artifacts import digest
+root=Path(sys.argv[1]);out=root/'new';out.mkdir()
+score=root/'old_base_scores.jsonl';score.write_text('invented numeric method scores')
+answer=root/'allowed_answers.jsonl';answer.write_text('invented answer-only projection')
+state=guard(root,out,[score,answer],mode='mapping',readable_paths=[answer])
+assert len(digest(score))==64
+assert answer.read_text()=='invented answer-only projection'
+try:score.read_text()
+except RuntimeError:pass
+else:raise AssertionError('authenticated sidecar became decoded input')
+assert state['denied']==['UNLISTED_DECODED_INPUT']
+print('PASS')
+'''
+        with tempfile.TemporaryDirectory() as tmp:
+            result = subprocess.run([sys.executable, '-B', '-c', code, tmp], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stdout.strip(), 'PASS')
+
 
 if __name__ == '__main__':
     unittest.main()
