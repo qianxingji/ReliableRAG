@@ -12,94 +12,35 @@ This repository is for experimental research code only. Do NOT write the paper m
 
 ## Current execution entry point (2026-09-11)
 
-Newest checkpoint: ROA_REPLAY_RELEASE_ACCEPTANCE.md and ROA_REPLAY_RELEASE_RESULTS.json.
-The private ROA dependency package now contains 2,821 original files and its Git
-source bundle; restored source/data passed full primary and independent saved-
-parameter replay with zero error and no old-data fallback. This is current-host
-relocation with the existing Python runtime, not a clean-install or training
-reconstruction. Preserve rejected package v1 and the Git line-ending preflight
-record. Latest engineering: 151 tests, 149 pass, two Windows skips, 1,087 frozen
-inputs unchanged; relocation rechecked 6,755 inputs. Source 73f8158 is frozen.
-C3 continues from its original process (6,355/18,000 at 08:23:57 UTC). Do not
-repeat accepted release, replay or engineering runs. Next actual stages remain
-C3 fixed replay/full acceptance, C4, accepted-prelabel cost and four D processes.
-Independent remaining work is complete fresh-pipeline release/environment and
-comparison/provenance review. CAS Q2 STATUS: NOT READY; fresh Gold reads zero.
-Older checkpoints below are retained history.
+Latest acceptance: ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md and
+ROA_CLEAN_ENVIRONMENT_RESULTS.json. Five official, hash-locked numerical wheels
+were installed offline into a new isolated environment. Full original primary
+and independent replay pass with zero error and no observed old-venv access;
+12,017 checked inputs, including 5,214 new environment files, remain unchanged.
+This reuses the current Windows host and separate CPython 3.10.6 installation;
+it is not full neural-pipeline, another-host or original-training reproduction.
+The accepted source/data package has 2,821 files; all earlier failure records
+and archives are preserved. Do not repeat these accepted release/environment runs.
 
-Newest checkpoint: EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md. All C4, D and
-receipt-only cost executors are implemented; actual runs remain gated by C3
-completion/replay/acceptance and the full C4 prelabel seal. Regression now has
-141 tests, 139 pass, two existing Windows capability skips; 1,065 inputs unchanged.
-Read EMPIRICAL_COST_ENGINEERING_RESULTS.json (5,556 C3 pairs at 07:51:19 UTC)
-and GBV_SOURCE_FIDELITY_REVIEW.md. Preserve the original running C3 process and
-all frozen source bytes. Do not repeat closed implementation or sealed tests.
-Next independent work is reproducible-release preparation and remaining
-comparison/provenance review; execute real stages in their fixed order.
+Original P0-1 replay and all three supervised controls are complete. Both
+historical advancement rules failed; no final novel-method candidate is cleared.
+The frozen empirical design has five fitted policies, 6,000 new question IDs,
+accepted C1 native pools and C2 original retrieval. Total scientific fits: 178.
+C3 continues in its original canonical process from cc304ee, with 6,837 pairs
+at 08:44:58 UTC. Recheck live process/receipts; never duplicate or restart it.
+Finish canonical generation, the fixed 180-trace replay and independent C3
+acceptance, then actual C4 preflight/base/GbV/policies/full prelabel validation.
+C4, D and cost executors are already implemented and CPU-accepted. Only full
+prelabel acceptance permits the cost audit and four real D processes.
+Fresh Gold reads remain zero. Engineering tests: 151, with 149 pass and two
+existing Windows capability skips; no scientific quality is implied.
 
-Latest: EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md accepts the separate selected-label
-mapper, independent outcome validator, frozen bootstrap analyzer and complete
-independent replay on invented CPU inputs only. Full regression: 134 tests,
-132 pass, two existing Windows capability skips; 1,054 frozen inputs unchanged.
-The original reference-source inventory authenticated 785 files without fresh
-Gold reads. D actual execution still requires complete C4 prelabel acceptance.
-Source at 4249598 is now frozen; version corrections. The original C3 process
-continues (5,099/18,000 at 07:32:22 UTC); check it first and never duplicate it.
-Next independent work is complete cost/release preparation; actual next stages
-are C3 replay/acceptance, C4 execution/acceptance and the four D processes.
-Read EMPIRICAL_D_ENGINEERING_RESULTS.json for the latest snapshot. Older
-engineering checkpoints below are retained history, not open implementation tasks.
-
-Latest: EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md accepts protected C4 stage
-executors and the separate full-file validator on invented CPU inputs only.
-Full regression: 110 tests, 108 pass, two Windows capability skips; 243 frozen
-inputs unchanged. Real scoring/GPU preflight remains pending accepted C3.
-Check the original C3 process and namespace first; never duplicate it. Next
-independent work is the already frozen D analysis implementation without Gold
-reads. Actual D evaluation requires complete prelabel acceptance. The source
-at 61edb9a is now CPU-frozen; version corrections instead of editing its bytes.
-Read EMPIRICAL_C4_STAGE_ENGINEERING_RESULTS.json for the latest runtime snapshot.
-
-Original full replay and all three supervised controls are complete; both
-historical advancement rules failed. The new fixed-policy empirical replication
-design is in `docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md`. Its five fixed
-fit/calibration model bundles and 6,000-question ID-only cohort are independently
-accepted in `docs/cas_q2/EMPIRICAL_AB_ACCEPTANCE.md`; total takeover fits are 178.
-Read `docs/cas_q2/EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md`: the original sample-size
-prose contained an arithmetic error; neither frozen bytes nor selected IDs changed.
-Stage C1 is now complete: 6,000 guarded runtime projections and 54,716 native
-pool documents passed 60,818 independent derivation checks. Read
-`docs/cas_q2/EMPIRICAL_C1_ACCEPTANCE.md` and its Windows failure correction.
-Stage C2 is independently accepted: 18,000 original retrieval traces,
-18,173 checks and exact saved-array BM25/dense/RRF rankings. Read
-`docs/cas_q2/EMPIRICAL_C2_ACCEPTANCE.md` and `EMPIRICAL_C2_RESULTS.json`.
-C3's 18,000 trace bindings and prospective 180-trace replay set are frozen;
-joint Qwen/BGE GPU preflight passed and canonical reader/repair generation has
-started under `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`. Check the live namespace
-`outputs/cas_q2/empirical_runtime_v1` before acting: no duplicate run or retry.
-Generation completion, bounded replay, full independent validation, scoring,
-prelabel actions and outcome analysis remain pending. No fresh Gold outcomes
-have been read. Do not rerun any sealed experiment.
-Scoring CPU compatibility now passed 102 invented-input numeric checks;
-likelihood/GbV witness and common-budget kernels passed tests. Read
-`docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md` and the preserved import-failure
-correction. Real scoring GPU preflights and full integration remain pending.
-No novel-method candidate or Submission Ready claim is cleared.
-
-Latest C4 checkpoint: EMPIRICAL_C4_INTEGRATION_ACCEPTANCE.md accepts a guarded
-36-invented-trace downstream run with the real saved estimators/heads: 1,637
-independent numeric comparisons and exact common masks/actions. Native trace,
-semantic and score adapters are implemented; full neural executors, actual
-neural witness validation and GPU preflights remain pending. Full regression:
-88 tests, 86 pass, two Windows capability skips. No fresh scoring or Gold read.
-
-Newest C4 checkpoint: EMPIRICAL_C4_NEURAL_CPU_ACCEPTANCE.md accepts independent
-token/cache/chunk/softmax/semantic witness validators on CPU fake-logit fixtures
-and isolated model-cache IO tests. Full regression: 101 tests, 99 pass and two
-Windows capability skips. The prospective numerical rules are in
-EMPIRICAL_C4_NEURAL_VALIDATION_CONTRACT.md. Real neural constructors, protected
-executors, scoring GPU preflights and complete file-level acceptance remain
-pending. Never use the new softmax-only allowance to relax head replay/actions.
+Next independent work: complete neural-runtime environment/dependency and
+source-path reconstruction, plus remaining comparison/provenance review.
+Historical fit-time receipts and the fresh empirical result/contribution are
+still missing. CAS Q2 STATUS: NOT READY. CURRENT_TASK.md is the consolidated
+active handoff; prior checkpoint prose remains in Git history and the linked
+immutable acceptance/protocol records, not as instructions to redo closed work.
 
 Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
 and `EVIDENCE_INDEX.json` in that directory before choosing work.

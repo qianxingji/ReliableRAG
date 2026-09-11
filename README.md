@@ -22,10 +22,12 @@ scoring, outcome analysis and contribution assessment remain outstanding.
    acceptance permits the four separate D outcome/analysis stages. Follow exact
    manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
 
-Latest acceptance: [ROA dependency release and source/data relocation](docs/cas_q2/ROA_REPLAY_RELEASE_ACCEPTANCE.md).
-The private 2,821-file package passed full saved-parameter replay from restored
-source/data, with zero error. It still uses the current Windows Python runtime;
-a clean installation and complete fresh-pipeline release remain unverified.
+Latest acceptance: [independent numerical environment and offline replay](docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md).
+The private 2,821-file source/data release now passes full saved-parameter replay
+with freshly installed, hash-locked numerical packages and zero error. The
+current Windows host and CPython base are reused; full neural-pipeline and
+another-host reproduction remain unverified. An [offline runbook](docs/cas_q2/ROA_OFFLINE_CPU_REPLAY_RUNBOOK.md)
+and [package hash lock](requirements/roa-replay-win-cp310.lock) are available.
 Private data and archives are excluded from Git. The suite has 151 tests,
 149 passing and two existing Windows capability skips. Implemented
 [D evaluation](docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md) and
