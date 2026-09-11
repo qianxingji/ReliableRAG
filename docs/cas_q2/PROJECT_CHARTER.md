@@ -66,7 +66,8 @@ with no membership/order/replacement change. Historical acquisition threads are
 still unrecorded and V2 stays failed. C3_VALIDATION_V3_CONTRACT.md and its
 prospective V3.1 numerical-runtime amendment freeze the single permitted route
 to complete validation. The V3.1 invented-only gate and V2 failure relocation
-are client-accepted; successful independent validation,
+are client-accepted. A preserved V3.1 pre-config import failure is independently
+audited, and the bootstrap-only V3.2 gate is accepted; successful independent validation,
 frozen scoring/prelabel sealing and outcome analysis remain pending. Total control/panel fits: 178. Seven historical final-fit reproduction calls
 bring actual takeover fits to 185; their strict HGB byte failure remains in
 HISTORICAL_TRAINING_REPLAY_REVIEW.md. The C3 validation binding has separate

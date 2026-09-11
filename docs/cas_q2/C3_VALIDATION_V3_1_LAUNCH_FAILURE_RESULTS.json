@@ -1,0 +1,22 @@
+{
+  "status": "ACCEPTED_V3_1_PRECONFIG_LAUNCH_FAILURE",
+  "cas_q2_status": "NOT READY",
+  "source_commit": "2a0b4a5188accb5c6a47b877caec0651847623f8",
+  "failure_task_manifest_sha256": "ea708bac7c7d5c323327b55bd738324a20459435c581dce930f5e11e41413c1a",
+  "failure_config_sha256": "3f75d94100ba41002c2fcdabd0138424a76c0349fe66bba3b76788386fc8db64",
+  "client_audit_manifest_sha256": "8c096f320c6c839cfc56fcb519ccef3addcb41c2d27b6739241db376781f0bde",
+  "private_archive_sha256": "c86fdfcf8fd263242350b0792b025ebff6f1a4724f0fe51e0fa965e6dfaef5d4",
+  "private_archive_members": 58,
+  "failure_type": "PYTHON_ISOLATED_MODE_REPO_IMPORT_NOT_BOOTSTRAPPED",
+  "configuration_read_by_child": false,
+  "current_runtime_payloads_read": 0,
+  "scientific_validation_started": false,
+  "generation_checks": 0,
+  "fresh_gold_values": 0,
+  "neural_forwards": 0,
+  "scientific_fits": 0,
+  "standard_runtime_files_unchanged": 14,
+  "original_environment_files_unchanged": 30823,
+  "automatic_retry_permitted": false,
+  "private_artifacts_uploaded": false
+}

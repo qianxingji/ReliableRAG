@@ -26,11 +26,13 @@ V2, either neural pass or the accepted census.
 Next authorized work follows C3_VALIDATION_V3_CONTRACT.md and the prospective
 C3_VALIDATION_V3_1_CONTRACT_AMENDMENT.md. Two V3 fixture failures are preserved;
 the corrected V3.1 invented-only gate, client audit and frozen V2 failure
-archive/relocation are accepted. Sol High may execute the single full V3.1 run
-under the frozen current-native-default numerical runtime. The V2 report now
+archive/relocation are accepted. The first V3.1 full launch failed before config
+read under Python isolated mode and is preserved. Its V3.2 standard-library
+bootstrap and client gate are accepted. Sol High may execute one full V3.2 launch
+through the unchanged V3.1 entry/binding after remote commit alignment. The V2 report now
 exists only in its sealed sibling v2 namespace. No tolerance, expected score/hash,
 scientific source, dataset or thread search is authorized. C4 remains blocked
-until Astra xhigh accepts the complete V3.1 result and the actual unchanged C4
+until Astra xhigh accepts the complete V3.2 result and the actual unchanged C4
 prerequisite check passes. Total fits remain 185 and current Gold remains closed.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
@@ -177,7 +179,7 @@ no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
 C3 canonical (18,000) and original fixed neural replay (180) finished; their
 processes exited successfully. The full independent V1/V2 attempts failed as above.
-Complete the single V3.1 run, V3.1 authenticity review and full C3 acceptance,
+Complete the single V3.2 run, authenticity review and full C3 acceptance,
 then actual C4 preflight/base/GbV/policies/full prelabel validation. Only complete
 C4 acceptance permits the implemented cost auditor and four real D processes.
 Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
