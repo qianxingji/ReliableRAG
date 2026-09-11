@@ -25,6 +25,12 @@ and Gold outcome analysis remain pending. Total fits remain 178; both prior
 advancement failures remain unchanged and no final novel-method candidate is
 cleared. Historical upstream fit-time receipts are still incomplete.
 
+Scoring preparation: EMPIRICAL_C4_SCORING_CONTRACT.md is frozen before scoring;
+its read-only input audit passed 73 files / 880,110,248 bytes with zero model
+loads or fresh branch reads. Complete C4 adapters and their own synthetic/GPU
+preflights before scoring. The C2/C3 timestamped progress snapshot is
+EMPIRICAL_C2_C3_CHECKPOINT.json; it is not a completion receipt.
+
 P1: comparison fidelity, complete inference cost, contamination boundaries and
 reproducible release. P2: no automatic feature/model/seed/budget search. CAS year,
 institutional category rule and target journal are undecided by user choice;

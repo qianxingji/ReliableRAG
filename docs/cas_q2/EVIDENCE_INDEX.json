@@ -198,7 +198,11 @@
     "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
     "canonical_reader_source_commit": "cc304ee",
     "runtime_namespace": "outputs/cas_q2/empirical_runtime_v1",
-    "prospective_reader_replay_traces": 180
+    "prospective_reader_replay_traces": 180,
+    "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
+    "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
+    "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
+    "latest_execution_snapshot": "docs/cas_q2/EMPIRICAL_C2_C3_CHECKPOINT.json"
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",
