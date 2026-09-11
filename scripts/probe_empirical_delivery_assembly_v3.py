@@ -68,7 +68,7 @@ def main():
         return p in expected or any(p == root or p.is_relative_to(root) for root in permitted_libraries)
 
     def audit(event, values):
-        if bootstrap_active and original_platform_query():
+        if bootstrap_active and event in {"open", "subprocess.Popen"} and original_platform_query():
             if event == "subprocess.Popen":
                 executable, command, cwd, child_env = values
                 if (sum(e["event"] == event for e in bootstrap_events) == 0
