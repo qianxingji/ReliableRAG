@@ -113,6 +113,10 @@ def main():
                        CUDA_VISIBLE_DEVICES="-1", HF_HUB_OFFLINE="1",
                        TRANSFORMERS_OFFLINE="1", TOKENIZERS_PARALLELISM="false")
     run = subprocess.run(command, cwd=REPO, env=environment, capture_output=True)
+    with (out / "UNITTEST_STDOUT.log").open("xb") as stream:
+        stream.write(run.stdout)
+    with (out / "UNITTEST_STDERR.log").open("xb") as stream:
+        stream.write(run.stderr)
     stdout = run.stdout.decode("utf-8", errors="strict")
     stderr = run.stderr.decode("utf-8", errors="strict")
     require(run.returncode == 0 and stderr.rstrip().endswith("OK"),
@@ -135,6 +139,8 @@ def main():
         test_process_exit_code=run.returncode,
         test_stdout=stdout,
         test_stderr=stderr,
+        raw_test_stdout=record(out / "UNITTEST_STDOUT.log"),
+        raw_test_stderr=record(out / "UNITTEST_STDERR.log"),
         controls_unchanged=len(controls),
         environment_files_rehashed_before_and_after=len(inventory["files"]),
         c3_runtime_files_reverified=runtime_files,
