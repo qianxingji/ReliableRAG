@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T06:24:32+00:00",
+  "as_of_utc": "2026-09-12T08:07:15+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -1176,6 +1176,21 @@
     "joint_preflight_allocated_fraction": 0.9480180416543728,
     "joint_preflight_reserved_counter_is_physical_headroom": false,
     "development_runtime_execution_authorized": true,
-    "binding_runtime_mode": "ONE_PROCESS_ONE_PHI_ONE_BGE_BF16_BATCH_ONE_FAIL_CLOSED"
+    "binding_runtime_mode": "ONE_PROCESS_ONE_PHI_ONE_BGE_BF16_BATCH_ONE_FAIL_CLOSED",
+    "development_runtime_v1_failure_acceptance": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V1_FAILURE_ACCEPTANCE.md",
+    "development_runtime_v1_status": "FAIL_PRE_SCIENTIFIC_IO_BOUNDARY_ENVIRONMENT_SCAN",
+    "development_runtime_v1_namespace": "outputs/cas_q2/phi_reader_development_runtime_v1",
+    "development_runtime_v1_source_commit": "460b7405db446a6b091cf031666930764fd40888",
+    "development_runtime_v1_manifest_sha256": "42152a3c237bd0c1ade6d25d6a57d07e774d2377322803a471a815e037c9dbe5",
+    "development_runtime_v1_completed_traces": 0,
+    "development_runtime_v1_model_calls": 0,
+    "development_runtime_v1_gold_reads": 0,
+    "development_runtime_v1_scientific_fit_calls": 0,
+    "development_runtime_v1_preserved_no_resume_or_reuse": true,
+    "prospective_runtime_namespaces": {
+      "canonical": "phi_reader_development_runtime_v2",
+      "replay": "phi_reader_development_runtime_replay_v2",
+      "validation": "phi_reader_development_runtime_validation_v2"
+    }
   }
 }

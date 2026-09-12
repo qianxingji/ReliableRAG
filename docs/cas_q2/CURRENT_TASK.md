@@ -148,8 +148,13 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
     by Astra xhigh for one-process development execution under the binding guard
     and fail-closed OOM controls. Its 94.80% allocated peak is an operational
     risk; the WDDM/caching-allocator reserved counter above physical capacity is
-    preserved and is not treated as headroom. Implement, execute and independently
-    validate only the Phi development runtime next. Do not execute the test
+    preserved and is not treated as headroom. The first formal canonical V1
+    launch [failed before scientific execution](PHI_READER_DEVELOPMENT_RUNTIME_V1_FAILURE_ACCEPTANCE.md)
+    because the IO guard rejected an authenticated torch-package directory scan.
+    Its exact sealed namespace records zero traces, model calls, Gold reads and
+    fits; preserve it permanently and never resume or reuse it. Correct the
+    launch boundary prospectively, then execute and independently validate only
+    the fixed V2 Phi development runtime namespaces. Do not execute the test
     benchmark, fit the ten reader-specific heads or reopen test Gold before the
     development stage is independently accepted.
 

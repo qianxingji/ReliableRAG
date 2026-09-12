@@ -8,6 +8,12 @@ value-blind input gates. It authorizes the fixed 4,500-question development
 runtime only. It does not authorize the 6,000-question test runtime, scientific
 head fitting, test Gold, outcome analysis or claims.
 
+The sealed failed namespace `phi_reader_development_runtime_v1` is immutable
+and may never be resumed or reused. The only prospective corrected names are
+`phi_reader_development_runtime_v2`,
+`phi_reader_development_runtime_replay_v2` and
+`phi_reader_development_runtime_validation_v2`.
+
 ## Exact scope and inputs
 
 Use the original accepted `outputs/daa_v2_fresh_v1` label-free development
@@ -34,6 +40,17 @@ peak allocation without changing prompt, generation, parsing or retrieval
 semantics.
 
 ## Binding token and failure boundary
+
+Before installing the scientific IO audit, authenticate `source_paths`, every
+input record and every predecessor manifest.  Then import and configure the
+accepted torch/transformers framework and assemble the already authenticated
+native runtime definitions, without constructing or loading a model.  The
+runtime freeze and final receipt must record that exact audit-boundary start.
+The boundary is installed before either Phi or BGE is loaded, before the CUDA
+device-start query, and before runtime trace or dataset content is interpreted.
+Framework directory scans under the original or implementation `.venv` are
+environment operations and are allowed; all other project-directory scans
+remain limited to authenticated member parents.
 
 Wrap the exact tokenizer used by the authenticated reader so the same tensor
 batch returned to the original `_generate` method is checked before its CUDA

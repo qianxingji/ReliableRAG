@@ -92,6 +92,18 @@ class ValidatorPrimitivesTests(unittest.TestCase):
         for value in ("../escape", "a/b", "a\\b", "", ".", ".."):
             with self.assertRaises(RuntimeError): validator.safe_name(value)
 
+    def test_runtime_audit_boundary_exact_binding_passes(self):
+        boundary = validator.EXPECTED_RUNTIME_AUDIT_BOUNDARY_START
+        validator.validate_runtime_audit_boundary({"audit_boundary_start": boundary},
+                                                  {"audit_boundary_start": boundary})
+
+    def test_runtime_audit_boundary_tamper_is_rejected_on_either_side(self):
+        boundary = validator.EXPECTED_RUNTIME_AUDIT_BOUNDARY_START
+        for freeze_value, receipt_value in ((boundary + " tampered", boundary), (boundary, boundary + " tampered")):
+            with self.subTest(freeze=freeze_value == boundary), self.assertRaisesRegex(RuntimeError, "audit boundary"):
+                validator.validate_runtime_audit_boundary({"audit_boundary_start": freeze_value},
+                                                          {"audit_boundary_start": receipt_value})
+
     def test_canonical_jsonl_rejects_partial_and_noncanonical(self):
         with tempfile.TemporaryDirectory() as td:
             path = Path(td) / "rows.jsonl"; path.write_bytes(b'{"b":2,"a":1}\n')

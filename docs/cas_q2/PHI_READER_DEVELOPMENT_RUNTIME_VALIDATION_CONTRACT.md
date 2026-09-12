@@ -33,6 +33,12 @@ input record.  Model-weight records are not opened: their path, size and digest
 records must instead equal the already accepted joint-preflight records, which
 preserves the zero-weight-byte-read boundary.
 
+Both the runtime executable freeze and its success receipt must contain the
+same exact audit-boundary string: `after authenticated source records, framework
+imports/configuration, and authenticated native assembly; before model loads,
+CUDA device query, and runtime trace/dataset semantic reads`.  The independent
+validator pins that text and rejects a missing, divergent or edited copy.
+
 The validator independently checks the old 13,500-row development order and
 the fixed 180-row, 20-per-cell replay selection against the accepted input
 freeze.  It validates all four ledgers and every call-event intent/completion

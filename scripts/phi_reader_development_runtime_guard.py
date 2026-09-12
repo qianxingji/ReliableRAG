@@ -52,7 +52,9 @@ class DevelopmentRuntimeIOPolicy:
 
     def check_scan(self, path: Path) -> None:
         path = Path(path).resolve()
-        if path in self.allowed_scan_dirs or path.is_relative_to(self.output) or self._under(path, self.allowed_read_roots):
+        environment_roots = ((self.original / ".venv").resolve(), (self.repository / ".venv").resolve())
+        if (path in self.allowed_scan_dirs or path.is_relative_to(self.output) or
+                self._under(path, self.allowed_read_roots) or self._under(path, environment_roots)):
             return
         if path.is_relative_to(self.original) or path.is_relative_to(self.repository):
             raise RuntimeError(f"unlisted project directory scan: {path}")

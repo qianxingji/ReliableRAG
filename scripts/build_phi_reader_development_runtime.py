@@ -42,6 +42,10 @@ LEDGER_FILES = {
 }
 PHI_REVISION = "2fe192450127e6a83f7441aef6e3ca586c338b77"
 BGE_REVISION = "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+RUNTIME_AUDIT_BOUNDARY_START = (
+    "after authenticated source records, framework imports/configuration, and authenticated native assembly; "
+    "before model loads, CUDA device query, and runtime trace/dataset semantic reads"
+)
 PINNED_MANIFESTS = {
     "phi_input_freeze": ("outputs/cas_q2/phi_reader_input_freeze_v2/SHA256_MANIFEST.json", "17cb0c29e4d4a5b98991bbebf1368bdff0ebece6221ca163c73327bcf4bcedd9"),
     "phi_input_validation": ("outputs/cas_q2/phi_reader_input_freeze_validation_v1/SHA256_MANIFEST.json", "3d0488e18ff5433abc721230763aa82d57452a13a66322040904392a1ff0ccd0"),
@@ -71,6 +75,14 @@ def write_json_durable(path: Path, value: object) -> None:
     with path.open("xb") as stream:
         stream.write(json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False).encode("utf-8") + b"\n")
         stream.flush(); os.fsync(stream.fileno())
+
+
+def require_unsealed_runtime_namespace(output: Path) -> None:
+    """Reject every terminal namespace marker, including preserved failures."""
+    output = Path(output)
+    require(not any((output / name).exists() for name in
+                    ("BUILD_RECEIPT.json", "RUNTIME_FAILURE.json", "SHA256_MANIFEST.json")),
+            "completed or failed namespace is immutable")
 
 
 def seal_output(output: Path) -> None:
@@ -357,8 +369,7 @@ def main() -> int:
     canonical_output = None if args.mode == "canonical" else (OUTPUT_PARENT / args.canonical_output_name).resolve()
     require(not args.resume or output.is_dir(), "resume namespace missing")
     require(args.resume or not output.exists(), "single-use output namespace exists; use --resume only after interruption")
-    require(not (output / "BUILD_RECEIPT.json").exists() and not (output / "RUNTIME_FAILURE.json").exists() and
-            not (output / "SHA256_MANIFEST.json").exists(), "completed or failed namespace is immutable")
+    require_unsealed_runtime_namespace(output)
     require(not subprocess.check_output(["git", "status", "--porcelain"], cwd=REPO, text=True).strip(), "commit runtime implementation before execution")
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
     started = time.perf_counter(); phase = {"stage": "freeze", "position": None}; boundary = None
@@ -373,27 +384,32 @@ def main() -> int:
         "replay_canonical_answer_fields_decoded": 0, "replay_canonical_reference_raw_lines_scanned": 0,
         "replay_canonical_reference_raw_bytes_scanned": 0,
         "original_question_retrieval_calls": 0, "document_embedding_calls": 0, "bm25_structure_rebuild_calls": 0,
-        "automatic_retry_allowed": False}
+        "automatic_retry_allowed": False, "audit_boundary_start": RUNTIME_AUDIT_BOUNDARY_START}
     try:
         if not args.resume: output.mkdir(parents=True, exist_ok=False)
         environment = configure_environment(output)
         gpu_mutex = acquire_gpu_mutex()
         result["gpu_mutex"] = "Local\\ReliableRAG_Phi_Development_Runtime_GPU"
         input_paths = source_paths(original, canonical_output)
-        boundary = install_boundary(repository=REPO, original=original, output=output,
-            allowed_reads=input_paths, canonical_reference=canonical_output)
         input_records = [record(path) for path in input_paths]
         pins = verify_pins(original)
+        # Match the accepted joint-preflight launch boundary: authenticate all
+        # sources first, then finish framework import/configuration and assemble
+        # the authenticated native definitions before installing the scientific
+        # IO boundary.  No model is constructed or loaded in this prefix.
+        import torch
+        import transformers  # noqa: F401 -- freezes the accepted framework import before the audit hook
+        configure_torch(torch)
+        loader, native, nodes, generation_boundary = load_original_native(original)
+        boundary = install_boundary(repository=REPO, original=original, output=output,
+            allowed_reads=input_paths, canonical_reference=canonical_output)
         if canonical_output is not None:
             require(canonical_output != output and canonical_output.is_dir(), "canonical replay reference namespace")
             verify_sealed_namespace(canonical_output)
             canonical_receipt = load(canonical_output / "BUILD_RECEIPT.json")
             require(canonical_receipt.get("status") == "PASS_PHI_DEVELOPMENT_RUNTIME" and canonical_receipt.get("mode") == "canonical",
                     "canonical replay reference status")
-        import torch
-        configure_torch(torch)
         start_free, start_total = (int(value) for value in torch.cuda.mem_get_info())
-        loader, native, nodes, generation_boundary = load_original_native(original)
         bge = native.ExactLocalBGEBackend(model_cache_dir=original / "data/models/huggingface"); bge._ensure_loaded()
         reader = native.HFProspectiveReaderAdapter(reader="phi", model_cache_dir=original / "data/models/huggingface",
             answer_prompt_path=original / "prompts/baseline_v1.txt", repair_prompt_path=original / "prompts/repair_missing_v1.txt",
@@ -413,6 +429,7 @@ def main() -> int:
             "inputs": input_records, "predecessor_manifests": pins, "runtime_config": config,
             "runtime_config_sha256": config_sha, "native_ast_nodes": nodes, "generation_boundary": generation_boundary,
             "environment": environment, "device_at_start": device,
+            "audit_boundary_start": result["audit_boundary_start"],
             "trace_source": record(original / OLD_RUNTIME_RELATIVE / "trace_manifest.jsonl"),
             "replay_source": record(original / OLD_RUNTIME_RELATIVE / "replay_subset.jsonl"),
             "call_durability": "fsync intent; execute one call; fsync main ledger row; fsync completion; unmatched intent forbids resume",

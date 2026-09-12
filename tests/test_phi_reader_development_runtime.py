@@ -2,7 +2,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.build_phi_reader_development_runtime import LEDGER_FILES, selected_reference_bytes, verify_applicable_joint_bindings
+from scripts.build_phi_reader_development_runtime import (
+    LEDGER_FILES, require_unsealed_runtime_namespace, selected_reference_bytes, verify_applicable_joint_bindings,
+)
 from scripts.phi_reader_development_runtime_common import (
     DurableCallEvents,
     DurableJsonl,
@@ -199,6 +201,13 @@ class PhiDevelopmentRuntimeTests(unittest.TestCase):
         for bad in ("../escape", "a/b", "a\\b", ".", "", " C:"):
             with self.subTest(name=bad), self.assertRaises(RuntimeError): validate_output_name(bad)
 
+    def test_terminal_runtime_namespace_can_never_resume_or_be_reused(self):
+        for marker in ("BUILD_RECEIPT.json", "RUNTIME_FAILURE.json", "SHA256_MANIFEST.json"):
+            with self.subTest(marker=marker), tempfile.TemporaryDirectory() as folder:
+                output = Path(folder); (output / marker).write_text("{}\n", encoding="utf-8")
+                with self.assertRaisesRegex(RuntimeError, "immutable"):
+                    require_unsealed_runtime_namespace(output)
+
     def test_full_trace_order_and_frozen_capture_binding(self):
         traces, frozen = [], []
         for position in range(13_500):
@@ -242,6 +251,26 @@ class PhiDevelopmentRuntimeTests(unittest.TestCase):
                            original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/canonical_branches.jsonl"):
                 with self.subTest(path=denied), self.assertRaises(RuntimeError): policy.check_read(denied)
             with self.assertRaises(RuntimeError): policy.check_write(repo / "outside.json")
+
+    def test_io_policy_allows_venv_scans_and_rejects_unlisted_project_scans(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base = Path(folder); repo = base / "repo"; original = base / "original"
+            policy = DevelopmentRuntimeIOPolicy(repository=repo, original=original,
+                output=repo / "outputs/cas_q2/run")
+            policy.check_scan(original / ".venv/Lib/site-packages/torch")
+            policy.check_scan(repo / ".venv/Lib/site-packages/transformers")
+            for denied in (original / "src/unlisted", repo / "scripts/unlisted"):
+                with self.subTest(path=denied), self.assertRaisesRegex(RuntimeError, "unlisted project"):
+                    policy.check_scan(denied)
+
+    def test_runtime_audit_boundary_order_keeps_model_loads_inside(self):
+        source = (Path(__file__).resolve().parents[1] / "scripts/build_phi_reader_development_runtime.py").read_text(encoding="utf-8")
+        main = source[source.index("def main() -> int:"):]
+        ordered = [main.index(fragment) for fragment in (
+            "input_paths = source_paths", "input_records =", "pins = verify_pins", "import torch", "import transformers",
+            "configure_torch(torch)", "load_original_native(original)", "boundary = install_boundary",
+            "torch.cuda.mem_get_info()", "bge._ensure_loaded()", "reader._ensure_loaded()", "read_runtime_inputs(original)")]
+        self.assertEqual(ordered, sorted(ordered))
 
     def test_manifest_allowlist_ignores_only_unsealed_pycache_and_rejects_other_extra(self):
         with tempfile.TemporaryDirectory() as folder:

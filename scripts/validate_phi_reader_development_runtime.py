@@ -36,6 +36,10 @@ INPUT_FREEZE_MANIFEST_SHA256 = "17cb0c29e4d4a5b98991bbebf1368bdff0ebece6221ca163
 JOINT_PREFLIGHT_MANIFEST_SHA256 = "ecf17a8af6c21fe2887700993bafe53c4aa8ae3c5419112737049db5c91ef2bf"
 WEIGHT_SUFFIXES = {".safetensors", ".bin", ".pt", ".pth", ".ckpt"}
 HEX64 = re.compile(r"[0-9a-f]{64}")
+EXPECTED_RUNTIME_AUDIT_BOUNDARY_START = (
+    "after authenticated source records, framework imports/configuration, and authenticated native assembly; "
+    "before model loads, CUDA device query, and runtime trace/dataset semantic reads"
+)
 
 
 def require(condition: bool, message: str) -> None:
@@ -240,6 +244,11 @@ def validate_runtime_config(config: dict) -> None:
             config.get("bge_attention") == "sdpa", "runtime CUDA/attention config")
 
 
+def validate_runtime_audit_boundary(freeze: dict, receipt: dict) -> None:
+    require(freeze.get("audit_boundary_start") == receipt.get("audit_boundary_start") ==
+            EXPECTED_RUNTIME_AUDIT_BOUNDARY_START, "runtime audit boundary binding")
+
+
 def validate_runtime_namespace(namespace: Path, *, mode: str, expected_commit: str,
                                expected_manifest_sha256: str | None = None) -> dict:
     if expected_manifest_sha256 is not None:
@@ -254,6 +263,7 @@ def validate_runtime_namespace(namespace: Path, *, mode: str, expected_commit: s
             receipt.get("expected_traces") == expected, "runtime receipt status/count")
     require(receipt.get("source_commit") == freeze.get("source_commit") == expected_commit and
             re.fullmatch(r"[0-9a-f]{40}", expected_commit) is not None, "runtime source commit")
+    validate_runtime_audit_boundary(freeze, receipt)
     require(freeze.get("mode") == mode and freeze.get("output_name") == namespace.name and
             freeze.get("command_contract", {}).get("output_name") == namespace.name, "runtime freeze namespace/mode")
     command = freeze["command_contract"]
