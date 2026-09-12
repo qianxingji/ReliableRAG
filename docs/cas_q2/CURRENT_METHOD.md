@@ -1,5 +1,12 @@
 # Current method: verifier-augmented recovery arbitration
 
+2026-09-12 fresh empirical result update: the complete 18,000-trace fixed study,
+20,000-draw analysis and independent validator are accepted. HGB_GBV_R jointly
+improves EM and Damage versus GBV_ONLY_R, but not versus HGB_ONLY_R; ROA-FULL
+does not improve on HGB_GBV_R under the primary joint rule. No novel final
+candidate is cleared. HGB_GBV_R remains only the prospectively focal empirical
+object for a possible independent replication. See P0_3_FRESH_RESULT_DECISION.md.
+
 2026-09-11 fixed empirical replication update: five separate comparison policies
 are now fitted on one disjoint 3,600/900-question development fit/calibration
 split. HGB_GBV_R is the focal empirical policy under its existing name; it is not
@@ -9,9 +16,9 @@ native pools (54,716 documents total), independently accepted in
 EMPIRICAL_C1_ACCEPTANCE.md. Original retrieval passed complete independent
 saved-array validation (EMPIRICAL_C2_ACCEPTANCE.md). Native reader/repair
 generation, fixed replay and complete V3.2 validation are now accepted in
-C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md. C4 fresh scoring, frozen actions and
-outcome analysis do not yet exist. The historical method/contribution judgments
-below remain unchanged.
+C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md. C4 scoring, fixed actions, cost,
+fresh-outcome mapping and D analysis are now complete and independently
+accepted. The historical method/contribution judgments below remain visible.
 
 Current review, 2026-09-11: ROA-FULL remains the historical candidate name, but
 its full-stack attribution gate failed against HGB_GBV_R. The latter is not an

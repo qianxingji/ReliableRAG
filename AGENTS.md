@@ -57,7 +57,12 @@ rehash 18,306 inputs plus 30,912 environment files. No Gold, fit or inference
 occurs. The first fresh-Gold mapping and independent outcome validator are now
 accepted in EMPIRICAL_OUTCOME_ACCEPTANCE.md: both materialize only the 6,000
 selected labels, the validator recomputes all 72,000 metrics, and no method input
-is decoded. The frozen analysis and its complete independent validator are next.
+is decoded. The frozen analysis and its complete independent validator are now
+accepted in EMPIRICAL_D_ACCEPTANCE.md. The Astra xhigh Claim review in
+P0_3_FRESH_RESULT_DECISION.md rejects ROA-FULL advancement, finds joint support
+only for HGB_GBV_R over GBV_ONLY_R, and clears no novel final candidate. Do not
+repeat D or promote point-estimate rankings. Next work is an independent-axis
+availability/provenance and literature audit before a new protocol is frozen.
 The first cost invocation failed before its scientific namespace because the
 frozen outcome prerequisite helper resolved the preserved C4 V1 preflight path.
 Use the five-test accepted prospective binding in

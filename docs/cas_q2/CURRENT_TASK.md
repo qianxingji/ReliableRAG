@@ -49,7 +49,8 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
   [cost engineering](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md). Actual C4 and
   the [shared-inference cost audit](EMPIRICAL_COST_ACCEPTANCE.md) are now
   independently accepted. D mapping and independent outcome validation are now
-  accepted; frozen analysis and its independent validator remain pending.
+  accepted. The frozen analysis, its complete independent validator and Astra
+  xhigh client audit are also accepted in [D acceptance](EMPIRICAL_D_ACCEPTANCE.md).
   Earlier full engineering run: 151 tests, 149 pass, two Windows capability skips.
 - The original 2,821-file data/source package passed full
   [directory relocation](ROA_REPLAY_RELEASE_ACCEPTANCE.md). Five authenticated
@@ -119,9 +120,11 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    D selected-reference mapping and its independent validator now pass. Each
    process materializes the same 6,000 selected labels; the validator recomputes
    all 72,000 EM/F1 scalar values and the [client audit](EMPIRICAL_OUTCOME_ACCEPTANCE.md)
-   rehashes 18,304 inputs plus 30,912 environment files. Execute the frozen
-   analysis next, then its complete independent validator. Preserve the method-
-   blind mapping/validation namespaces and do not reread raw references in analysis.
+   rehashes 18,304 inputs plus 30,912 environment files. The frozen analysis and
+   its complete independent validator now pass. Preserve every D namespace and
+   bulk draw file; do not repeat or amend the four processes. The
+   [fresh-result decision](P0_3_FRESH_RESULT_DECISION.md) rejects ROA-FULL
+   advancement and clears no novel final candidate.
 5. Review actual results against the fixed claim/endpoint/statistical design.
    Preserve null/negative findings and both historical failures. Do not tune on
    fresh outcomes or promote a winning slice to confirmation. The old
@@ -266,8 +269,10 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the frozen analysis and its independent validator, preserving all
-raw numeric results and bootstrap draws.
+Next: audit availability/provenance and current literature for one justified
+independent replication axis, then freeze a claim-consistent protocol or stop
+that route explicitly. Do not start new model calls, fits or Gold reads before
+the Research Lead design is complete.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The first cost invocation failed before creating a scientific namespace because
