@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-11T23:02:29.301957+00:00",
+  "as_of_utc": "2026-09-12T00:20:15.483715+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; C4_V2_GPU_PREFLIGHT_ACCEPTED; FULL_BASE_SCORING_AUTHORIZED",
-    "confirmation_freeze_scope": "C1/C2/C3 acquisition complete and sealed; C4 scoring/prelabel and D analysis execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/C4_GPU_PREFLIGHT_V2_ACCEPTANCE.md",
+    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; C4_V2_GPU_PREFLIGHT_ACCEPTED; BASE_AND_GBV_ACCEPTED; POLICIES_AUTHORIZED",
+    "confirmation_freeze_scope": "C1/C2/C3 and C4 base/GbV complete and sealed; C4 policies/independent validation and D analysis pending",
+    "latest_stage_acceptance": "docs/cas_q2/C4_GBV_SCORING_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -203,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/C3_VALIDATION_V3_2_FINAL_ACCEPTANCE.md",
+    "latest_execution_snapshot": "docs/cas_q2/C4_GBV_SCORING_ACCEPTANCE.md",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -276,7 +276,14 @@
     "stage_C4_v2_gpu_preflight_manifest_sha256": "1aabac381c8a5e5381f46729f49e9afcaae915c1fa84cd375141486e513b530a",
     "stage_C4_v2_gpu_preflight_client_audit_manifest_sha256": "65a7916f2d6db67158d49b7ba2be4994519decef102a3e1fad87c4c9a31cca71",
     "stage_C4_base_scoring_authorized": true,
-    "stage_C4_base_scoring_executed": false
+    "stage_C4_base_scoring_executed": true,
+    "stage_C4_base_scoring_accepted": true,
+    "stage_C4_gbv_scoring_executed": true,
+    "stage_C4_gbv_scoring_accepted": true,
+    "stage_C4_gbv_scientific_manifest_sha256": "0316b48996435da3f6e9ea20ffa329780c5bf0181af7706e113fd0b4a4de085c",
+    "stage_C4_gbv_client_audit_manifest_sha256": "549bfcc82a78d9b75aa18fb2c297310c8d1e257f8310b456b1eaa060372cbfd3",
+    "stage_C4_policies_authorized": true,
+    "stage_C4_policies_executed": false
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",
@@ -892,5 +899,31 @@
     "acceptance": "docs/cas_q2/C4_BASE_DEVICE_ALIAS_CORRIGENDUM_V2_ACCEPTANCE.md",
     "contract": "docs/cas_q2/C4_BASE_DEVICE_ALIAS_CORRIGENDUM_V2.md",
     "results": "docs/cas_q2/C4_BASE_DEVICE_ALIAS_CORRIGENDUM_V2_RESULTS.json"
+  },
+  "c4_gbv_scoring": {
+    "status": "ACCEPTED_C4_GBV_SAVED_WITNESS_AND_BRANCH_ARITHMETIC",
+    "scientific_manifest_sha256": "0316b48996435da3f6e9ea20ffa329780c5bf0181af7706e113fd0b4a4de085c",
+    "external_run_manifest_sha256": "3cc31eeeab0837ca95d2f1fd077034980c6964a20f011d9ecdf6790200aea0ef",
+    "binding_config_sha256": "a0f5c80d89ed9bdd014f90664d4d038e07ae3d8d8d7fdfb422535716eb08249f",
+    "client_audit_manifest_sha256": "549bfcc82a78d9b75aa18fb2c297310c8d1e257f8310b456b1eaa060372cbfd3",
+    "preserved_failed_audit_manifest_sha256": "a9acbeda5ab52ba48ec2f6819a6f393c1cf303a63fb6a5371e816cd1364eb5dd",
+    "source_commit": "efe595a25060b83e30b1d36413d6e2de3e11893a",
+    "traces": 18000,
+    "native_eligible_traces": 4267,
+    "common_eligible_traces": 4267,
+    "nli_forward_calls": 8534,
+    "nli_pairs": 42946,
+    "nli_input_tokens_including_padding": 10132344,
+    "completed_branches": 8534,
+    "maximum_probability_error": 9.04739765328344e-08,
+    "softmax_absolute_bound": 9.5367431640625e-07,
+    "inputs_rehashed": 17435,
+    "environment_files_rehashed": 30912,
+    "scientific_fits": 0,
+    "fresh_gold_values": 0,
+    "second_full_neural_forward_replay": false,
+    "policies_authorized": true,
+    "acceptance": "docs/cas_q2/C4_GBV_SCORING_ACCEPTANCE.md",
+    "results": "docs/cas_q2/C4_GBV_SCORING_RESULTS.json"
   }
 }

@@ -39,9 +39,13 @@ Astra xhigh authenticity audit identified a validator-only `cuda`/`cuda:0`
 metadata mismatch and authorized the exact hash-bound prospective correction.
 Its 132-test producer gate and separate seven-test client audit pass in
 C4_BASE_DEVICE_ALIAS_CORRIGENDUM_V2_ACCEPTANCE.md. The original validator,
-base receipt and scientific output remain unchanged. A single GbV stage is now
-authorized through `run_roa_empirical_scoring_bound_v3` with the exact accepted
-runtime, V2 preflight and base manifests; preserve and audit any failure.
+base receipt and scientific output remain unchanged. The single full GbV stage
+and independent saved-logit/token/softmax/branch audit are accepted in
+C4_GBV_SCORING_ACCEPTANCE.md. All 18,000 traces, 8,534 NLI forwards and 42,946
+pairs close; 17,435 executable inputs and 30,912 environment files rehash
+unchanged. Preserve the initial audit-controller environment failure. One fixed
+CPU policies stage is now authorized through `run_roa_empirical_scoring_bound_v3`
+with the exact accepted runtime, V2 preflight, base and GbV manifests.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.

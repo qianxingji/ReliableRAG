@@ -89,9 +89,14 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    string, while every actual forward tensor is recorded on `cuda:0`. The exact,
    additive and base-hash-bound [V2 corrigendum](C4_BASE_DEVICE_ALIAS_CORRIGENDUM_V2_ACCEPTANCE.md)
    passes 132 producer tests and a separate seven-test client audit without
-   modifying the original validator, base receipt or output. Execute one GbV
-   stage through `run_roa_empirical_scoring_bound_v3` with the exact runtime,
-   V2 preflight and base predecessor manifests, then independently audit it.
+   modifying the original validator, base receipt or output. The single full
+   [GbV stage](C4_GBV_SCORING_ACCEPTANCE.md) is now accepted: all 18,000 traces,
+   8,534 saved NLI forwards and 42,946 pairs pass the independent token/logit/
+   softmax/branch audit, with 17,435 executable inputs and 30,912 environment
+   files rehashed unchanged. The initial system-Python audit-controller failure
+   is preserved. Execute one fixed CPU policies stage through
+   `run_roa_empirical_scoring_bound_v3` with the exact runtime, V2 preflight,
+   base and GbV predecessor manifests, then audit it separately.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -242,10 +247,10 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the single full 18,000-trace C4 GbV-scoring stage with raw logs,
-then independently audit its complete NLI witness and branch ledgers before policies.
-Continue through GbV, policies and independent prelabel validation only
-through the exact accepted predecessor chain. C3's final
+Next: execute the single fixed CPU C4 policies stage with raw logs, then
+independently audit all 18,000 action rows and the global 900-action cap before
+the complete C4 independent prelabel validator. Continue only through the exact
+accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original
