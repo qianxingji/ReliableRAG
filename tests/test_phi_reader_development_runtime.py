@@ -71,6 +71,32 @@ class PhiDevelopmentRuntimeTests(unittest.TestCase):
             path.write_text('{"b":2,"a":1}\n', encoding="utf-8")
             with self.assertRaises(RuntimeError): DurableJsonl(path, resume=True)
 
+    def test_fresh_durable_ledgers_do_not_retain_appended_rows(self):
+        with tempfile.TemporaryDirectory() as folder:
+            ledger = DurableJsonl(Path(folder) / "rows.jsonl", resume=False, retain_rows=False)
+            for index in range(100): ledger.append({"index": index, "payload": "x" * 1000})
+            self.assertEqual(ledger.rows, []); self.assertEqual(ledger.row_count, 100); ledger.close()
+
+    def test_resume_history_can_be_validated_then_released(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "rows.jsonl"; initial = DurableJsonl(path, resume=False)
+            initial.append({"index": 0}); initial.close()
+            resumed = DurableJsonl(path, resume=True); self.assertEqual(len(resumed.rows), 1)
+            resumed.release_rows(); resumed.append({"index": 1})
+            self.assertEqual(resumed.rows, []); self.assertEqual(resumed.row_count, 2); resumed.close()
+
+    def test_streaming_call_events_keep_only_pending_intent(self):
+        with tempfile.TemporaryDirectory() as folder:
+            events = DurableCallEvents(Path(folder) / "events.jsonl", resume=False, retain_rows=False)
+            for index in range(50):
+                identifier = f"event-{index}"
+                events.intent({"event": "intent", "event_id": identifier, "operation": "a0"})
+                events.completion({"event": "completion", "event_id": identifier, "operation": "a0",
+                    "ledger": "generation_receipts", "ledger_row_sha256": "a" * 64})
+            self.assertTrue(events.paired); self.assertEqual(events.rows, [])
+            self.assertEqual(events.completed, {}); self.assertEqual(events.completed_count, 50)
+            self.assertEqual(events.ledger.row_count, 100); events.close()
+
     def test_call_events_bind_after_main_ledger_and_unpaired_intent_blocks_resume(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "events.jsonl"; row = dict(trace(), stage="a0", value="ok",
@@ -136,6 +162,31 @@ class PhiDevelopmentRuntimeTests(unittest.TestCase):
         ledgers = {"generation_receipts": generations, "repair_bindings": [], "canonical_branches": [], "branch_provenance": []}
         completed, partial = validate_resume_prefix(traces, ledgers)
         self.assertEqual(completed, 0); self.assertEqual(partial["present"]["repair_query"], True)
+
+    def test_resume_prefix_accepts_every_durable_partial_trace_boundary(self):
+        trace_row = trace(0); key = {"dataset": "hotpotqa", "retriever": "bm25", "sample_id": "s0"}
+        stages = (
+            ("a0",),
+            ("a0", "repair_query"),
+            ("a0", "repair_query", "repair"),
+            ("a0", "repair_query", "repair", "a1"),
+            ("a0", "repair_query", "repair", "a1", "provenance"),
+        )
+        for present in stages:
+            with self.subTest(present=present):
+                ledgers = {"generation_receipts": [dict(key, stage=stage) for stage in ("a0", "repair_query", "a1") if stage in present],
+                    "repair_bindings": [dict(key)] if "repair" in present else [],
+                    "branch_provenance": [dict(key)] if "provenance" in present else [],
+                    "canonical_branches": []}
+                completed, partial = validate_resume_prefix([trace_row], ledgers)
+                self.assertEqual(completed, 0); self.assertEqual(partial["index"], 0)
+
+    def test_resume_prefix_treats_branch_write_as_complete_trace(self):
+        key = {"dataset": "hotpotqa", "retriever": "bm25", "sample_id": "s0"}
+        ledgers = {"generation_receipts": [dict(key, stage=stage) for stage in ("a0", "repair_query", "a1")],
+            "repair_bindings": [dict(key)], "branch_provenance": [dict(key)], "canonical_branches": [dict(key)]}
+        completed, partial = validate_resume_prefix([trace(0)], ledgers)
+        self.assertEqual((completed, partial), (1, None))
 
     def test_resume_prefix_rejects_stage_gap(self):
         traces = [trace(0)]

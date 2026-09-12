@@ -365,6 +365,7 @@ def main() -> int:
     environment = {}
     reader = bge = None; hooks = []; streams = {}; events = None; gpu_mutex = None
     counters = collections.Counter(); failclosed = collections.Counter(); completed_traces = 0
+    row_counts = collections.Counter(); guard_admission_max_tokens = 0
     result = {"status": "FAIL", "mode": args.mode, "cas_q2_status": "NOT READY", "source_commit": commit,
         "output_name": args.output_name, "resume_requested": args.resume, "phase": phase,
         "fresh_gold_values_materialized": 0, "historical_qwen_answer_strings_read": 0, "scientific_fit_calls": 0,
@@ -441,33 +442,61 @@ def main() -> int:
                 replay_canonical_answer_fields_decoded=reference_audit["answer_fields_decoded"],
                 replay_canonical_reference_raw_lines_scanned=reference_audit["raw_lines_scanned"],
                 replay_canonical_reference_raw_bytes_scanned=reference_audit["raw_bytes_scanned"])
-        for name, filename in LEDGER_FILES.items(): streams[name] = DurableJsonl(output / filename, resume=args.resume)
-        events = DurableCallEvents(output / "call_events.jsonl", resume=args.resume)
-        ledger_rows = {name: stream.rows for name, stream in streams.items()}
-        validate_call_events(events.rows, ledger_rows)
-        completed_traces, partial = validate_resume_prefix(selected, ledger_rows)
-        validate_completed_trace_rows(selected, ledger_rows, config_sha)
-        require(all(row["intent"].get("runtime_config_sha256") == config_sha for row in events.completed.values()),
-                "call event runtime config binding")
-        generation_lookup = _row_lookup(ledger_rows["generation_receipts"], stages=True)
-        repair_lookup = _row_lookup(ledger_rows["repair_bindings"])
-        provenance_lookup = _row_lookup(ledger_rows["branch_provenance"])
-        branch_lookup = _row_lookup(ledger_rows["canonical_branches"])
-        for row in ledger_rows["generation_receipts"]:
-            validate_generation_receipt(row, config_sha)
-            if row["stage"] in {"a0", "repair_query"}:
-                validate_frozen_generation_capture(row, frozen_index[(row["dataset"], row["retriever"], row["sample_id"])],
-                    row["stage"], row["guard_input_tokens"])
-        for row in ledger_rows["generation_receipts"]:
-            counters[row["stage"] + "_generation_calls"] += 1
-            counters[row["stage"] + "_generation_completed"] += 1
-            counters["phi_forward_calls"] += row["phi_forward_calls"]
-            counters[row["stage"] + "_forward_calls"] += row["phi_forward_calls"]
-        counters["repair_retrieval_completed"] = len(ledger_rows["repair_bindings"])
-        counters["repair_retrieval_calls"] = len(ledger_rows["repair_bindings"])
-        for row in ledger_rows["repair_bindings"]: counters["repair_" + row["retriever"] + "_calls"] += 1
-        counters["repair_query_embedding_calls"] = sum(row["retriever"] in {"dense", "hybrid"} for row in ledger_rows["repair_bindings"])
-        counters["bge_query_forward_calls"] = counters["repair_query_embedding_calls"]
+        for name, filename in LEDGER_FILES.items():
+            streams[name] = DurableJsonl(output / filename, resume=args.resume, retain_rows=args.resume)
+        events = DurableCallEvents(output / "call_events.jsonl", resume=args.resume, retain_rows=args.resume)
+        generation_lookup = {}; repair_lookup = {}; provenance_lookup = {}; branch_lookup = {}; partial = None
+        if args.resume:
+            ledger_rows = {name: stream.rows for name, stream in streams.items()}
+            validate_call_events(events.rows, ledger_rows)
+            completed_traces, partial = validate_resume_prefix(selected, ledger_rows)
+            validate_completed_trace_rows(selected, ledger_rows, config_sha)
+            require(all(row["intent"].get("runtime_config_sha256") == config_sha for row in events.completed.values()),
+                    "call event runtime config binding")
+            partial_key = None if partial is None else partial["key"]
+            for row in ledger_rows["generation_receipts"]:
+                validate_generation_receipt(row, config_sha)
+                if row["stage"] in {"a0", "repair_query"}:
+                    validate_frozen_generation_capture(row, frozen_index[(row["dataset"], row["retriever"], row["sample_id"])],
+                        row["stage"], row["guard_input_tokens"])
+                counters[row["stage"] + "_generation_calls"] += 1
+                counters[row["stage"] + "_generation_completed"] += 1
+                counters["phi_forward_calls"] += row["phi_forward_calls"]
+                counters[row["stage"] + "_forward_calls"] += row["phi_forward_calls"]
+                guard_admission_max_tokens = max(guard_admission_max_tokens, row["guard_input_tokens"])
+                if row["stage"] in {"a0", "a1"} and not row["parsed_text"]:
+                    failclosed["empty_" + row["stage"] + "_retained"] += 1
+                if row["stage"] == "repair_query" and row["parser_fallback"]:
+                    failclosed["native_repair_parser_fallback_retained"] += 1
+                key = (row["dataset"], row["retriever"], row["sample_id"])
+                if key == partial_key: generation_lookup[(*key, row["stage"])] = row
+            counters["repair_retrieval_completed"] = len(ledger_rows["repair_bindings"])
+            counters["repair_retrieval_calls"] = len(ledger_rows["repair_bindings"])
+            for row in ledger_rows["repair_bindings"]:
+                counters["repair_" + row["retriever"] + "_calls"] += 1
+                key = (row["dataset"], row["retriever"], row["sample_id"])
+                if key == partial_key: repair_lookup[key] = row
+            counters["repair_query_embedding_calls"] = sum(row["retriever"] in {"dense", "hybrid"} for row in ledger_rows["repair_bindings"])
+            counters["bge_query_forward_calls"] = counters["repair_query_embedding_calls"]
+            for name, target in (("branch_provenance", provenance_lookup), ("canonical_branches", branch_lookup)):
+                for row in ledger_rows[name]:
+                    key = (row["dataset"], row["retriever"], row["sample_id"])
+                    if key == partial_key: target[key] = row
+            if reference_maps is not None:
+                for name, rows_ in ledger_rows.items():
+                    for row in rows_:
+                        key = (row["dataset"], row["retriever"], row["sample_id"])
+                        if name == "generation_receipts": key = (*key, row["stage"])
+                        require(reference_maps[name].get(key) == canonical(row) + b"\n", "resumed replay row differs byte-for-byte")
+            row_counts.update({name: len(rows_) for name, rows_ in ledger_rows.items()})
+            for stream in streams.values(): stream.release_rows()
+            events.release_history(); del ledger_rows
+            # Python loop variables retain their final value.  Drop the last
+            # potentially large scientific row once the partial-trace copies
+            # above are the only history needed for continuation.
+            row = None; rows_ = None
+        else:
+            completed_traces = 0
         admissions = []
         phase.update(stage="ready", position=None)
         reader.tokenizer = GuardedGenerationTokenizer(reader.tokenizer, phase, admissions)
@@ -500,6 +529,7 @@ def main() -> int:
 
         def append(name: str, row: dict) -> None:
             streams[name].append(row)
+            row_counts[name] += 1
             if reference_maps is not None:
                 key = (row["dataset"], row["retriever"], row["sample_id"])
                 if name == "generation_receipts": key = (*key, row["stage"])
@@ -510,13 +540,15 @@ def main() -> int:
                 "ledger": ledger, "ledger_row_sha256": object_sha(row)})
 
         def generate(trace: dict, question: str, evidence, stage: str):
+            nonlocal guard_admission_max_tokens
             lookup_key = (trace["dataset"], trace["retriever"], trace["sample_id"], stage)
             if lookup_key in generation_lookup:
                 saved = generation_lookup[lookup_key]
                 require(saved["question_sha256"] == text_sha(question) and
                         saved["evidence_sha256"] == object_sha([row.as_private_dict() for row in evidence]),
                         "resumed generation call input mismatch")
-                return _query(native, saved) if stage == "repair_query" else _answer(native, saved)
+                value = _query(native, saved) if stage == "repair_query" else _answer(native, saved)
+                return value, saved
             phase.update(stage=stage, position=trace["position"]); before_forwards = counters["phi_forward_calls"]
             counters[stage + "_generation_calls"] += 1
             intent = {"event": "intent", "event_id": event_id(trace, stage), "operation": stage,
@@ -528,7 +560,8 @@ def main() -> int:
             value = (reader.generate_repair_query(key=key, question=question, evidence=evidence) if stage == "repair_query" else
                 reader.generate_answer(key=key, question=question, evidence=evidence, state="e0" if stage == "a0" else "e1"))
             require(len(admissions) == admission_index + 1, "exactly one pre-CUDA admission per generation")
-            admission = admissions[-1]; capture = copy.deepcopy(reader._generation_capture)
+            admission = admissions.pop(); capture = copy.deepcopy(reader._generation_capture)
+            require(len(admissions) == admission_index, "generation admission released after capture")
             require(admission == {"stage": stage, "position": trace["position"], "input_tokens": capture["input_tokens"]},
                     "guard/native generation capture mismatch")
             if stage in {"a0", "repair_query"}:
@@ -541,13 +574,15 @@ def main() -> int:
                 "parser_fallback": value.parser_fallback if stage == "repair_query" else None,
                 "logical_generation_calls": 1, "phi_forward_calls": counters["phi_forward_calls"] - before_forwards,
                 "reader": "phi", "guard_input_tokens": admission["input_tokens"], "runtime_config_sha256": config_sha}
+            validate_generation_receipt(row, config_sha)
             append("generation_receipts", row); complete_call(trace, stage, "generation_receipts", row)
-            generation_lookup[lookup_key] = row; counters[stage + "_generation_completed"] += 1
+            guard_admission_max_tokens = max(guard_admission_max_tokens, row["guard_input_tokens"])
+            counters[stage + "_generation_completed"] += 1
             if stage != "repair_query":
                 runner._validate_generation(value, stage, evidence)
                 if not value.parsed_text: failclosed["empty_" + stage + "_retained"] += 1
             elif value.parser_fallback: failclosed["native_repair_parser_fallback_retained"] += 1
-            return value
+            return value, row
 
         current_dataset = None; data = None
         start_index = completed_traces if partial is None else partial["index"]
@@ -556,7 +591,8 @@ def main() -> int:
             if dataset != current_dataset:
                 data = loader.restore_dataset(dataset, native, backend); current_dataset = dataset
             question = data["questions"][sample_id]; e0 = loader.original_evidence(trace, data, native)
-            a0 = generate(trace, question, e0, "a0"); query = generate(trace, question, e0, "repair_query")
+            a0, a0_row = generate(trace, question, e0, "a0")
+            query, query_row = generate(trace, question, e0, "repair_query")
             trace_key = (dataset, retriever, sample_id)
             if trace_key in repair_lookup:
                 repair = repair_lookup[trace_key]
@@ -591,9 +627,10 @@ def main() -> int:
                     "replaced_document_id": e0[4].document_id, "replacement_position_zero_based": 4,
                     "requested_depth": 50, "repair_retrieval_calls": 1, "pool_sha256": data["binding"]["pool_sha256"],
                     "fail_closed_reason": None}
+                validate_repair_receipt(repair, trace)
                 append("repair_bindings", repair); complete_call(trace, "repair_retrieval", "repair_bindings", repair)
-                repair_lookup[trace_key] = repair; counters["repair_retrieval_completed"] += 1
-            a1 = generate(trace, question, e1, "a1")
+                counters["repair_retrieval_completed"] += 1
+            a1, a1_row = generate(trace, question, e1, "a1")
             branch = {"dataset": dataset, "retriever": retriever, "sample_id": sample_id, "question": question,
                 "a0": a0.parsed_text, "a1": a1.parsed_text, "evidence0": [row.text for row in e0], "evidence1": [row.text for row in e1]}
             require(set(branch) == loader.BRANCH_FIELDS, "canonical branch schema")
@@ -602,21 +639,24 @@ def main() -> int:
                 "e1": [row.as_private_dict() for row in e1], "question_sha256": text_sha(question),
                 "canonical_row_sha256": object_sha(branch), "runtime_config_sha256": config_sha,
                 "repair_binding_row_sha256": object_sha(repair), "pool_sha256": data["binding"]["pool_sha256"]}
+            validate_completed_trace_rows([trace], {"generation_receipts": [a0_row, query_row, a1_row],
+                "repair_bindings": [repair], "branch_provenance": [provenance], "canonical_branches": [branch]}, config_sha)
             if trace_key not in provenance_lookup:
-                append("branch_provenance", provenance); provenance_lookup[trace_key] = provenance
+                append("branch_provenance", provenance)
             else: require(provenance_lookup[trace_key] == provenance, "resumed provenance mismatch")
             if trace_key not in branch_lookup:
-                append("canonical_branches", branch); branch_lookup[trace_key] = branch
+                append("canonical_branches", branch)
             else: require(branch_lookup[trace_key] == branch, "resumed canonical branch mismatch")
+            generation_lookup.clear(); repair_lookup.clear(); provenance_lookup.clear(); branch_lookup.clear()
             completed_traces += 1
             if completed_traces % 10 == 0:
                 print(json.dumps({"stage": "phi_development", "mode": args.mode, "completed_traces": completed_traces,
                     "expected_traces": expected}, sort_keys=True), flush=True)
-        ledger_rows = {name: stream.rows for name, stream in streams.items()}
-        validate_call_events(events.rows, ledger_rows)
-        completed_traces, partial = validate_resume_prefix(selected, ledger_rows)
-        validate_completed_trace_rows(selected, ledger_rows, config_sha)
-        require(completed_traces == expected and partial is None, "complete development trace prefix")
+        require(completed_traces == expected and row_counts == collections.Counter({
+            "generation_receipts": expected * 3, "repair_bindings": expected,
+            "branch_provenance": expected, "canonical_branches": expected}), "complete streamed ledger counts")
+        require(events.paired and events.completed_count == expected * 4 and events.ledger.row_count == expected * 8,
+                "complete durable call-event counts")
         require(all(counters[stage + "_generation_completed"] == expected for stage in ("a0", "repair_query", "a1")),
                 "complete Phi generation counts")
         dense_expected = sum(row["retriever"] in {"dense", "hybrid"} for row in selected)
@@ -635,8 +675,8 @@ def main() -> int:
             question_clusters=len({(row["dataset"], row["sample_id"]) for row in selected}),
             stratum_counts={f"{dataset}/{retriever}": sum((row["dataset"], row["retriever"]) == (dataset, retriever) for row in selected)
                 for dataset in ("hotpotqa", "2wikimultihopqa", "musique") for retriever in ("bm25", "dense", "hybrid")},
-            counters=dict(counters), fail_closed_counts=dict(failclosed), guard_admission_count=len(ledger_rows["generation_receipts"]),
-            guard_admission_max_tokens=max(row["guard_input_tokens"] for row in ledger_rows["generation_receipts"]),
+            counters=dict(counters), fail_closed_counts=dict(failclosed), guard_admission_count=row_counts["generation_receipts"],
+            guard_admission_max_tokens=guard_admission_max_tokens,
             replay_exact_match=True if args.mode == "replay" else None, runtime_config_sha256=config_sha,
             executable_freeze=record(freeze_path), artifacts=[record(output / filename) for filename in (*LEDGER_FILES.values(), "call_events.jsonl")],
             generation_failure_count=0, repair_failure_count=0, source_inputs_unchanged=True)

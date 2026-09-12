@@ -90,8 +90,8 @@ class GuardedGenerationTokenizer:
 class DurableJsonl:
     """Append canonical rows durably while retaining an exact validated prefix."""
 
-    def __init__(self, path: Path, *, resume: bool):
-        self.path = Path(path); self.rows = []
+    def __init__(self, path: Path, *, resume: bool, retain_rows: bool = True):
+        self.path = Path(path); self.rows = []; self.retain_rows = retain_rows; self.row_count = 0
         if self.path.exists():
             require(resume, f"existing journal requires resume: {self.path.name}")
             with self.path.open("rb") as stream:
@@ -99,13 +99,18 @@ class DurableJsonl:
                     require(raw.endswith(b"\n"), f"partial journal line: {self.path.name}")
                     row = json.loads(raw)
                     require(raw == canonical(row) + b"\n", f"noncanonical journal row: {self.path.name}")
-                    self.rows.append(row)
+                    self.row_count += 1
+                    if self.retain_rows: self.rows.append(row)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.stream = self.path.open("ab" if self.path.exists() else "xb")
 
     def append(self, row: dict) -> None:
         payload = canonical(row) + b"\n"
-        self.stream.write(payload); self.stream.flush(); os.fsync(self.stream.fileno()); self.rows.append(row)
+        self.stream.write(payload); self.stream.flush(); os.fsync(self.stream.fileno()); self.row_count += 1
+        if self.retain_rows: self.rows.append(row)
+
+    def release_rows(self) -> None:
+        self.rows.clear(); self.retain_rows = False
 
     def close(self) -> None:
         if not self.stream.closed:
@@ -121,10 +126,13 @@ class DurableCallEvents:
     the call.
     """
 
-    def __init__(self, path: Path, *, resume: bool):
-        self.ledger = DurableJsonl(path, resume=resume)
+    def __init__(self, path: Path, *, resume: bool, retain_rows: bool = True):
+        require(not resume or retain_rows, "resume must retain rows until prefix validation")
+        self.ledger = DurableJsonl(path, resume=resume, retain_rows=retain_rows)
+        self.pending_intent = None
         try:
             self.completed = self._validate(self.ledger.rows)
+            self.completed_count = len(self.completed)
         except Exception:
             self.ledger.close()
             raise
@@ -153,18 +161,33 @@ class DurableCallEvents:
     def rows(self) -> list[dict]:
         return self.ledger.rows
 
+    @property
+    def paired(self) -> bool:
+        return self.pending_intent is None and self.ledger.row_count % 2 == 0
+
     def intent(self, row: dict) -> None:
-        require(len(self.ledger.rows) % 2 == 0, "previous call intent remains unpaired")
-        require(row.get("event") == "intent", "durable call intent schema")
-        self.ledger.append(row)
+        require(self.pending_intent is None and self.ledger.row_count % 2 == 0, "previous call intent remains unpaired")
+        require(row.get("event") == "intent" and type(row.get("event_id")) is str and row["event_id"] and
+                row.get("operation") in {"a0", "repair_query", "repair_retrieval", "a1"}, "durable call intent schema")
+        self.ledger.append(row); self.pending_intent = row
 
     def completion(self, row: dict) -> None:
-        require(len(self.ledger.rows) % 2 == 1, "call completion without intent")
-        intent = self.ledger.rows[-1]
+        require(self.pending_intent is not None and self.ledger.row_count % 2 == 1, "call completion without intent")
+        intent = self.pending_intent
         require(row.get("event") == "completion" and row.get("event_id") == intent.get("event_id") and
-                row.get("operation") == intent.get("operation"), "durable call completion schema")
+                row.get("operation") == intent.get("operation") and
+                row.get("ledger") in {"generation_receipts", "repair_bindings"} and
+                re.fullmatch(r"[0-9a-f]{64}", str(row.get("ledger_row_sha256", ""))) is not None,
+                "durable call completion schema")
         self.ledger.append(row)
-        self.completed = self._validate(self.ledger.rows)
+        self.completed_count += 1
+        if self.ledger.retain_rows:
+            self.completed[intent["event_id"]] = {"intent": intent, "completion": row}
+        self.pending_intent = None
+
+    def release_history(self) -> None:
+        require(self.pending_intent is None, "cannot release unpaired call intent")
+        self.completed.clear(); self.ledger.release_rows()
 
     def close(self) -> None:
         self.ledger.close()
