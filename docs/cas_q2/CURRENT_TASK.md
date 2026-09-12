@@ -43,11 +43,12 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
 - [C1](EMPIRICAL_C1_ACCEPTANCE.md) and [C2](EMPIRICAL_C2_ACCEPTANCE.md) accepted
   native pools and 18,000 original retrieval traces. C2 saved-array validation
   does not constitute another encoder forward/replay.
-- C4, D and cost controllers are implemented and CPU-accepted:
+- C4, D and cost controllers were implemented and CPU-accepted:
   [C4 stages](EMPIRICAL_C4_STAGE_ENGINEERING_ACCEPTANCE.md),
   [D engineering](EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md), and
-  [cost engineering](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md). Actual fresh
-  scoring, prelabel sealing, cost reconciliation and D execution remain pending.
+  [cost engineering](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md). Actual C4 and
+  the [shared-inference cost audit](EMPIRICAL_COST_ACCEPTANCE.md) are now
+  independently accepted. The four D executions remain pending.
   Earlier full engineering run: 151 tests, 149 pass, two Windows capability skips.
 - The original 2,821-file data/source package passed full
   [directory relocation](ROA_REPLAY_RELEASE_ACCEPTANCE.md). Five authenticated
@@ -105,12 +106,18 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    pass 1,740,102 integrated checks and rehash 17,465 executable inputs plus
    30,912 environment files. Preserve the initial final-audit Jinja-count
    assertion failure. C4 frozen prelabel is accepted.
-4. Only complete C4 prelabel acceptance permits the
+4. Complete C4 prelabel acceptance permitted the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
    independent outcome validation, frozen analysis and full independent analysis
    validation. Use the [decode-boundary refinement](EMPIRICAL_D_DECODE_BOUNDARY_REFINEMENT.md).
-   Fresh Gold reads remain zero now; do not inspect labels or answer quality early.
+   The [actual cost reconciliation](EMPIRICAL_COST_ACCEPTANCE.md) is accepted
+   with explicit missing measurements. It independently closes 54,000 canonical
+   and 540 replay receipts, the shared C2/C3/C4 call graph and zero Gold/model
+   work in the audit. Preserve both failed cost attempts and do not rerun cost.
+   Execute D selected-reference mapping next; this is the first fresh Gold
+   boundary. Do not inspect labels or answer quality before its independent
+   outcome validation passes.
 5. Review actual results against the fixed claim/endpoint/statistical design.
    Preserve null/negative findings and both historical failures. Do not tune on
    fresh outcomes or promote a winning slice to confirmation. The old
@@ -255,8 +262,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the frozen cost reconciliation and four D processes in their
-contract order, preserving the first fresh-outcome boundary and all raw results.
+Next: execute the four D processes in their contract order, preserving the first
+fresh-outcome boundary and all raw results.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The first cost invocation failed before creating a scientific namespace because
@@ -268,8 +275,10 @@ failed external controller and do not alter any C4 manifest.
 The first V2-bound cost attempt then exposed one exact missing authenticated
 metadata input: the existing C2 retrieval GPU-preflight report. The
 [cost input addition](EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md) pins its exact
-477,790-byte hash as a cost-only binding control; the scientific cost namespace
-is still absent and Gold remains zero. Preserve both failed external attempts.
+477,790-byte hash as a cost-only binding control. The third cost attempt and
+separate [client audit](EMPIRICAL_COST_ACCEPTANCE.md) now pass; its accepted
+namespace is sealed, Gold remains zero, and D mapping is authorized. Preserve
+both failed external attempts and do not repeat cost.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original
 definitions/hashes intact and disclose each IO adaptation.

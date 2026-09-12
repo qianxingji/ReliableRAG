@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T01:14:10.919788+00:00",
+  "as_of_utc": "2026-09-12T03:30:00+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -172,7 +172,7 @@
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
     "empirical_route_decision": "C3_AND_COMPLETE_C4_FROZEN_PRELABEL_ACCEPTED; COST_AND_D_AUTHORIZED",
-    "confirmation_freeze_scope": "C1/C2/C3/C4 acquisition and prelabel complete and sealed; cost and D actual execution pending",
+    "confirmation_freeze_scope": "C1/C2/C3/C4 acquisition, prelabel and shared-inference cost complete and sealed; D actual execution pending",
     "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
@@ -234,7 +234,7 @@
     "cost_engineering_manifest": "304ba81f0cf28a64ea8fb03b8412cce2e85e419d4adef33d5cce75b98553d252",
     "cost_engineering_status": "PASS_CPU_COST_ENGINEERING_ONLY",
     "cost_engineering_acceptance": "docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md",
-    "actual_fresh_cost_audit_run": false,
+    "actual_fresh_cost_audit_run": true,
     "gbv_component_fidelity_review": "docs/cas_q2/GBV_SOURCE_FIDELITY_REVIEW.md",
     "canonical_manifest_sha256": "4df45c4c68d5961198ab7ecf2857a19efb0d15e1990aad9a3a7dc85b627415c4",
     "canonical_completed_traces": 18000,
@@ -293,7 +293,14 @@
     "stage_C4_complete_client_audit_manifest_sha256": "1f1cea8b6f8e41ab4f20e6334568a8e69ff9303e462e9c56147d5891dac4f616",
     "stage_D_and_cost_authorized": true,
     "cost_first_attempt_status": "FAIL_PRE_SCIENTIFIC_C4_V1_PATH_MISMATCH",
-    "cost_v2_bound_attempt_status": "FAIL_PRE_SCIENTIFIC_MISSING_C2_PREFLIGHT_METADATA_BINDING"
+    "cost_v2_bound_attempt_status": "FAIL_PRE_SCIENTIFIC_MISSING_C2_PREFLIGHT_METADATA_BINDING",
+    "cost_v3_bound_attempt_status": "PASS_ACCEPTED_PRELABEL_COST_RECONCILIATION_WITH_LIMITS",
+    "cost_scientific_manifest_sha256": "eeffcdc151670acb2985834eb37903d78a7284c4f22bb7a5755b2fc632371819",
+    "cost_external_run_manifest_sha256": "e19437292802609ea751b3565c31c15cc13f4167b0f8e062e8aefe96757cc612",
+    "cost_client_audit_manifest_sha256": "a723d2a948bd9c42c74d47381c4ca485e7a875cbf5b5f2e566a92002999ea42a",
+    "cost_acceptance": "docs/cas_q2/EMPIRICAL_COST_ACCEPTANCE.md",
+    "cost_results": "docs/cas_q2/EMPIRICAL_COST_RESULTS.json",
+    "stage_D_mapping_authorized": true
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",
@@ -1035,5 +1042,31 @@
     "other_decode_permissions_added": false,
     "cost_retry_authorized_after_commit": true,
     "contract": "docs/cas_q2/EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md"
+  },
+  "empirical_inference_cost": {
+    "status": "ACCEPTED_PRELABEL_INFERENCE_COST_WITH_LIMITS",
+    "cas_q2_status": "NOT READY",
+    "scientific_manifest_sha256": "eeffcdc151670acb2985834eb37903d78a7284c4f22bb7a5755b2fc632371819",
+    "external_run_manifest_sha256": "e19437292802609ea751b3565c31c15cc13f4167b0f8e062e8aefe96757cc612",
+    "client_audit_manifest_sha256": "a723d2a948bd9c42c74d47381c4ca485e7a875cbf5b5f2e566a92002999ea42a",
+    "canonical_generation_receipts": 54000,
+    "bounded_replay_generation_receipts": 540,
+    "canonical_prompt_tokens": 51901556,
+    "canonical_qwen_forward_calls": 826362,
+    "c2_logical_retrievals": 18000,
+    "c3_logical_repair_retrievals": 18000,
+    "c4_saved_likelihood_forwards": 16932,
+    "c4_saved_nli_forwards": 8534,
+    "executable_inputs_rehashed": 18306,
+    "environment_files_rehashed": 30912,
+    "scientific_fits": 0,
+    "new_inference_calls": 0,
+    "fresh_gold_values": 0,
+    "raw_or_parsed_answer_strings_decoded": 0,
+    "standalone_policy_latency_measured": false,
+    "uniform_end_to_end_or_flops_measured": false,
+    "downstream_D_authorized": true,
+    "acceptance": "docs/cas_q2/EMPIRICAL_COST_ACCEPTANCE.md",
+    "results": "docs/cas_q2/EMPIRICAL_COST_RESULTS.json"
   }
 }

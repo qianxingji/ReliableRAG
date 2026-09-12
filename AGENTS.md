@@ -50,8 +50,12 @@ The complete C4 independent prelabel validator and Astra xhigh client final
 authenticity audit are accepted in C4_COMPLETE_PRELABEL_ACCEPTANCE.md. They pass
 1,740,102 integrated checks and rehash 17,465 executable inputs plus 30,912
 environment files. Preserve the initial final-audit Jinja-count assertion
-failure. The frozen cost auditor and four D processes are now authorized in
-their contract order; fresh Gold remains unread until the specified D boundary.
+failure. The receipt-only shared-inference cost reconciliation and separate
+client audit are now accepted in EMPIRICAL_COST_ACCEPTANCE.md. They scan every
+canonical and replay scalar receipt, sample all token-array cell types, and
+rehash 18,306 inputs plus 30,912 environment files. No Gold, fit or inference
+occurs. The four D processes are now authorized in contract order; the selected-
+reference mapping is the first fresh Gold boundary.
 The first cost invocation failed before its scientific namespace because the
 frozen outcome prerequisite helper resolved the preserved C4 V1 preflight path.
 Use the five-test accepted prospective binding in
@@ -62,7 +66,8 @@ The first V2-bound cost attempt also failed before its scientific namespace: the
 unchanged cost code explicitly decodes the C2 retrieval GPU-preflight metadata,
 but that one file was absent from its authenticated graph. Follow
 EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md and add only its exact hash-bound existing
-metadata file as a cost config control. Preserve both external failures.
+metadata file as a cost config control. Preserve both external failures. The
+third attempt passed and is sealed; do not repeat the cost process or audit.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
