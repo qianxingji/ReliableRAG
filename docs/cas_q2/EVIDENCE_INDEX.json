@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T00:59:07.961200+00:00",
+  "as_of_utc": "2026-09-12T01:07:38.841738+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -173,7 +173,7 @@
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
     "empirical_route_decision": "C3_AND_COMPLETE_C4_FROZEN_PRELABEL_ACCEPTED; COST_AND_D_AUTHORIZED",
     "confirmation_freeze_scope": "C1/C2/C3/C4 acquisition and prelabel complete and sealed; cost and D actual execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/C4_COMPLETE_PRELABEL_ACCEPTANCE.md",
+    "latest_stage_acceptance": "docs/cas_q2/POSTLABEL_C4_V2_PATH_BINDING.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -203,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/C4_COMPLETE_PRELABEL_ACCEPTANCE.md",
+    "latest_execution_snapshot": "docs/cas_q2/POSTLABEL_C4_V2_PATH_BINDING.md",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -291,7 +291,8 @@
     "stage_C4_complete_independent_executed": true,
     "stage_C4_complete_scientific_manifest_sha256": "046009231ff834f667f469386c9617f121c4341d39310dbeddf86d5bfedf97b2",
     "stage_C4_complete_client_audit_manifest_sha256": "1f1cea8b6f8e41ab4f20e6334568a8e69ff9303e462e9c56147d5891dac4f616",
-    "stage_D_and_cost_authorized": true
+    "stage_D_and_cost_authorized": true,
+    "cost_first_attempt_status": "FAIL_PRE_SCIENTIFIC_C4_V1_PATH_MISMATCH"
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",
@@ -1003,5 +1004,22 @@
     "downstream_cost_and_D_authorized": true,
     "acceptance": "docs/cas_q2/C4_COMPLETE_PRELABEL_ACCEPTANCE.md",
     "results": "docs/cas_q2/C4_COMPLETE_PRELABEL_RESULTS.json"
+  },
+  "postlabel_c4_v2_path_binding": {
+    "status": "PASS_POSTLABEL_C4_V2_PATH_BINDING_ENGINEERING",
+    "preserved_cost_prelaunch_failure_manifest_sha256": "f49f8c76e8e6c9ca8158f9824484a721b80eae4616c5e17cf5e8df3e0dee0120",
+    "failure_scientific_namespace_created": false,
+    "failure_fresh_gold_values": 0,
+    "tests": 5,
+    "tests_passed": 5,
+    "only_changed_stage_path": "gpu_preflight",
+    "preserved_v1_manifest_sha256": "c03555a4a3562be34345bd79b35abb11c8b6bb913a4c812e24837cfb8c88f3b6",
+    "accepted_v2_manifest_sha256": "1aabac381c8a5e5381f46729f49e9afcaae915c1fa84cd375141486e513b530a",
+    "accepted_prelabel_manifest_sha256": "046009231ff834f667f469386c9617f121c4341d39310dbeddf86d5bfedf97b2",
+    "target_sources_modified": false,
+    "old_manifests_modified": false,
+    "cost_retry_authorized_after_commit": true,
+    "contract": "docs/cas_q2/POSTLABEL_C4_V2_PATH_BINDING.md",
+    "results": "docs/cas_q2/POSTLABEL_C4_V2_PATH_BINDING_RESULTS.json"
   }
 }

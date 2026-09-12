@@ -52,6 +52,12 @@ authenticity audit are accepted in C4_COMPLETE_PRELABEL_ACCEPTANCE.md. They pass
 environment files. Preserve the initial final-audit Jinja-count assertion
 failure. The frozen cost auditor and four D processes are now authorized in
 their contract order; fresh Gold remains unread until the specified D boundary.
+The first cost invocation failed before its scientific namespace because the
+frozen outcome prerequisite helper resolved the preserved C4 V1 preflight path.
+Use the five-test accepted prospective binding in
+POSTLABEL_C4_V2_PATH_BINDING.md for cost and all D stages. It changes only that
+path in memory to the accepted V2 namespace and freezes its own config/control
+bytes. Preserve the failed external cost controller.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.

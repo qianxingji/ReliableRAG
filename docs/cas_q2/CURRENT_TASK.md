@@ -259,6 +259,12 @@ Next: execute the frozen cost reconciliation and four D processes in their
 contract order, preserving the first fresh-outcome boundary and all raw results.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
+The first cost invocation failed before creating a scientific namespace because
+the frozen D prerequisite helper still resolved the preserved C4 V1 preflight
+path. The prospective [postlabel V2 binding](POSTLABEL_C4_V2_PATH_BINDING.md)
+changes only that in-memory path to the accepted V2 namespace and passes five
+fail-closed tests. Use it for the cost retry and every D process; preserve the
+failed external controller and do not alter any C4 manifest.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original
 definitions/hashes intact and disclose each IO adaptation.
