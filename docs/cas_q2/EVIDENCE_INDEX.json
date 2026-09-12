@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T08:07:15+00:00",
+  "as_of_utc": "2026-09-12T08:26:46+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -1187,10 +1187,28 @@
     "development_runtime_v1_gold_reads": 0,
     "development_runtime_v1_scientific_fit_calls": 0,
     "development_runtime_v1_preserved_no_resume_or_reuse": true,
+    "development_runtime_v2_failure_acceptance": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V2_FAILURE_ACCEPTANCE.md",
+    "development_runtime_v2_status": "FAIL_PRE_SCIENTIFIC_PLATFORM_PROBE_BOUNDARY",
+    "development_runtime_v2_namespace": "outputs/cas_q2/phi_reader_development_runtime_v2",
+    "development_runtime_v2_source_commit": "fffa0953ec40e0c80bb0042687a495252145ee58",
+    "development_runtime_v2_manifest_sha256": "cb25a8c17d782d041c0d4c736fcfdefad3f03194d129f678ee1db38cc4efa682",
+    "development_runtime_v2_completed_traces": 0,
+    "development_runtime_v2_model_loads_inferred": {
+      "bge": 1,
+      "phi_reader": 1,
+      "nli": 0
+    },
+    "development_runtime_v2_model_load_inference": "INFERRED_NOT_RECEIPT_FIELD: fixed control flow and traceback place the platform failure after both ensure_loaded calls; checkpoint-loading log and CUDA peaks corroborate",
+    "development_runtime_v2_model_calls": 0,
+    "development_runtime_v2_gold_reads": 0,
+    "development_runtime_v2_scientific_fit_calls": 0,
+    "development_runtime_v2_peak_allocated_cuda_bytes": 7868907520,
+    "development_runtime_v2_peak_reserved_cuda_bytes": 7881097216,
+    "development_runtime_v2_preserved_no_resume_or_reuse": true,
     "prospective_runtime_namespaces": {
-      "canonical": "phi_reader_development_runtime_v2",
-      "replay": "phi_reader_development_runtime_replay_v2",
-      "validation": "phi_reader_development_runtime_validation_v2"
+      "canonical": "phi_reader_development_runtime_v3",
+      "replay": "phi_reader_development_runtime_replay_v3",
+      "validation": "phi_reader_development_runtime_validation_v3"
     }
   }
 }

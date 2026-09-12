@@ -202,11 +202,12 @@ class PhiDevelopmentRuntimeTests(unittest.TestCase):
             with self.subTest(name=bad), self.assertRaises(RuntimeError): validate_output_name(bad)
 
     def test_terminal_runtime_namespace_can_never_resume_or_be_reused(self):
-        for marker in ("BUILD_RECEIPT.json", "RUNTIME_FAILURE.json", "SHA256_MANIFEST.json"):
-            with self.subTest(marker=marker), tempfile.TemporaryDirectory() as folder:
-                output = Path(folder); (output / marker).write_text("{}\n", encoding="utf-8")
-                with self.assertRaisesRegex(RuntimeError, "immutable"):
-                    require_unsealed_runtime_namespace(output)
+        for name in ("phi_reader_development_runtime_v1", "phi_reader_development_runtime_v2"):
+            for marker in ("BUILD_RECEIPT.json", "RUNTIME_FAILURE.json", "SHA256_MANIFEST.json"):
+                with self.subTest(name=name, marker=marker), tempfile.TemporaryDirectory() as folder:
+                    output = Path(folder) / name; output.mkdir(); (output / marker).write_text("{}\n", encoding="utf-8")
+                    with self.assertRaisesRegex(RuntimeError, "immutable"):
+                        require_unsealed_runtime_namespace(output)
 
     def test_full_trace_order_and_frozen_capture_binding(self):
         traces, frozen = [], []
@@ -268,9 +269,10 @@ class PhiDevelopmentRuntimeTests(unittest.TestCase):
         main = source[source.index("def main() -> int:"):]
         ordered = [main.index(fragment) for fragment in (
             "input_paths = source_paths", "input_records =", "pins = verify_pins", "import torch", "import transformers",
-            "configure_torch(torch)", "load_original_native(original)", "boundary = install_boundary",
+            "configure_torch(torch)", "load_original_native(original)", "platform_value = platform.platform()", "boundary = install_boundary",
             "torch.cuda.mem_get_info()", "bge._ensure_loaded()", "reader._ensure_loaded()", "read_runtime_inputs(original)")]
         self.assertEqual(ordered, sorted(ordered))
+        self.assertEqual(main.count("platform.platform()"), 1)
 
     def test_manifest_allowlist_ignores_only_unsealed_pycache_and_rejects_other_extra(self):
         with tempfile.TemporaryDirectory() as folder:

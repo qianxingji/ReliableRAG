@@ -37,8 +37,8 @@ JOINT_PREFLIGHT_MANIFEST_SHA256 = "ecf17a8af6c21fe2887700993bafe53c4aa8ae3c54191
 WEIGHT_SUFFIXES = {".safetensors", ".bin", ".pt", ".pth", ".ckpt"}
 HEX64 = re.compile(r"[0-9a-f]{64}")
 EXPECTED_RUNTIME_AUDIT_BOUNDARY_START = (
-    "after authenticated source records, framework imports/configuration, and authenticated native assembly; "
-    "before model loads, CUDA device query, and runtime trace/dataset semantic reads"
+    "after authenticated source records, framework imports/configuration, authenticated native assembly, and cached platform probe; "
+    "before CUDA device query, model loads, and runtime trace/dataset semantic reads"
 )
 
 
@@ -249,6 +249,11 @@ def validate_runtime_audit_boundary(freeze: dict, receipt: dict) -> None:
             EXPECTED_RUNTIME_AUDIT_BOUNDARY_START, "runtime audit boundary binding")
 
 
+def validate_runtime_model_load_counts(receipt: dict) -> None:
+    require(receipt.get("bge_model_loads") == receipt.get("reader_model_loads") == 1 and
+            receipt.get("nli_model_loads") == 0, "runtime model load counts")
+
+
 def validate_runtime_namespace(namespace: Path, *, mode: str, expected_commit: str,
                                expected_manifest_sha256: str | None = None) -> dict:
     if expected_manifest_sha256 is not None:
@@ -294,6 +299,7 @@ def validate_runtime_namespace(namespace: Path, *, mode: str, expected_commit: s
             receipt.get("source_inputs_unchanged") is True, "runtime completion/failure receipt")
     require(receipt.get("automatic_retry_allowed") is False and
             receipt.get("execution_boundary", {}).get("denied") == [], "runtime retry/IO boundary receipt")
+    validate_runtime_model_load_counts(receipt)
     require(freeze.get("scope", "").startswith("Phi development generation only"), "runtime freeze scope")
     device = freeze.get("device_at_start")
     require(receipt.get("launch_device") == device and receipt.get("gpu_mutex") == "Local\\ReliableRAG_Phi_Development_Runtime_GPU" and

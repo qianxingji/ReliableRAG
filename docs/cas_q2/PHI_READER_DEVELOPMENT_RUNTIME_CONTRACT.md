@@ -8,11 +8,12 @@ value-blind input gates. It authorizes the fixed 4,500-question development
 runtime only. It does not authorize the 6,000-question test runtime, scientific
 head fitting, test Gold, outcome analysis or claims.
 
-The sealed failed namespace `phi_reader_development_runtime_v1` is immutable
-and may never be resumed or reused. The only prospective corrected names are
-`phi_reader_development_runtime_v2`,
-`phi_reader_development_runtime_replay_v2` and
-`phi_reader_development_runtime_validation_v2`.
+The sealed failed namespaces `phi_reader_development_runtime_v1` and
+`phi_reader_development_runtime_v2` are immutable and may never be resumed or
+reused. The only prospective corrected names are
+`phi_reader_development_runtime_v3`,
+`phi_reader_development_runtime_replay_v3` and
+`phi_reader_development_runtime_validation_v3`.
 
 ## Exact scope and inputs
 
@@ -44,13 +45,19 @@ semantics.
 Before installing the scientific IO audit, authenticate `source_paths`, every
 input record and every predecessor manifest.  Then import and configure the
 accepted torch/transformers framework and assemble the already authenticated
-native runtime definitions, without constructing or loading a model.  The
+native runtime definitions, without constructing or loading a model. Execute
+the single host `platform.platform()` probe there and cache its value. The
 runtime freeze and final receipt must record that exact audit-boundary start.
 The boundary is installed before either Phi or BGE is loaded, before the CUDA
 device-start query, and before runtime trace or dataset content is interpreted.
 Framework directory scans under the original or implementation `.venv` are
 environment operations and are allowed; all other project-directory scans
 remain limited to authenticated member parents.
+
+Initialize BGE, Phi reader and NLI model-load counters to zero. Immediately
+after each successful `_ensure_loaded()` call, record the corresponding load;
+a successful runtime requires exactly one BGE load, one Phi reader load and
+zero NLI loads. Failure receipts preserve the counts reached before failure.
 
 Wrap the exact tokenizer used by the authenticated reader so the same tensor
 batch returned to the original `_generate` method is checked before its CUDA

@@ -104,6 +104,13 @@ class ValidatorPrimitivesTests(unittest.TestCase):
                 validator.validate_runtime_audit_boundary({"audit_boundary_start": freeze_value},
                                                           {"audit_boundary_start": receipt_value})
 
+    def test_runtime_model_load_counts_pass_and_reject_tampering(self):
+        receipt = {"bge_model_loads": 1, "reader_model_loads": 1, "nli_model_loads": 0}
+        validator.validate_runtime_model_load_counts(receipt)
+        for field, value in (("bge_model_loads", 0), ("reader_model_loads", 0), ("nli_model_loads", 1)):
+            with self.subTest(field=field), self.assertRaisesRegex(RuntimeError, "model load counts"):
+                validator.validate_runtime_model_load_counts({**receipt, field: value})
+
     def test_canonical_jsonl_rejects_partial_and_noncanonical(self):
         with tempfile.TemporaryDirectory() as td:
             path = Path(td) / "rows.jsonl"; path.write_bytes(b'{"b":2,"a":1}\n')

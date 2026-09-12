@@ -43,8 +43,8 @@ LEDGER_FILES = {
 PHI_REVISION = "2fe192450127e6a83f7441aef6e3ca586c338b77"
 BGE_REVISION = "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
 RUNTIME_AUDIT_BOUNDARY_START = (
-    "after authenticated source records, framework imports/configuration, and authenticated native assembly; "
-    "before model loads, CUDA device query, and runtime trace/dataset semantic reads"
+    "after authenticated source records, framework imports/configuration, authenticated native assembly, and cached platform probe; "
+    "before CUDA device query, model loads, and runtime trace/dataset semantic reads"
 )
 PINNED_MANIFESTS = {
     "phi_input_freeze": ("outputs/cas_q2/phi_reader_input_freeze_v2/SHA256_MANIFEST.json", "17cb0c29e4d4a5b98991bbebf1368bdff0ebece6221ca163c73327bcf4bcedd9"),
@@ -384,6 +384,7 @@ def main() -> int:
         "replay_canonical_answer_fields_decoded": 0, "replay_canonical_reference_raw_lines_scanned": 0,
         "replay_canonical_reference_raw_bytes_scanned": 0,
         "original_question_retrieval_calls": 0, "document_embedding_calls": 0, "bm25_structure_rebuild_calls": 0,
+        "bge_model_loads": 0, "reader_model_loads": 0, "nli_model_loads": 0,
         "automatic_retry_allowed": False, "audit_boundary_start": RUNTIME_AUDIT_BOUNDARY_START}
     try:
         if not args.resume: output.mkdir(parents=True, exist_ok=False)
@@ -401,6 +402,7 @@ def main() -> int:
         import transformers  # noqa: F401 -- freezes the accepted framework import before the audit hook
         configure_torch(torch)
         loader, native, nodes, generation_boundary = load_original_native(original)
+        platform_value = platform.platform()
         boundary = install_boundary(repository=REPO, original=original, output=output,
             allowed_reads=input_paths, canonical_reference=canonical_output)
         if canonical_output is not None:
@@ -411,15 +413,17 @@ def main() -> int:
                     "canonical replay reference status")
         start_free, start_total = (int(value) for value in torch.cuda.mem_get_info())
         bge = native.ExactLocalBGEBackend(model_cache_dir=original / "data/models/huggingface"); bge._ensure_loaded()
+        result["bge_model_loads"] = 1
         reader = native.HFProspectiveReaderAdapter(reader="phi", model_cache_dir=original / "data/models/huggingface",
             answer_prompt_path=original / "prompts/baseline_v1.txt", repair_prompt_path=original / "prompts/repair_missing_v1.txt",
             max_answer_tokens=48, max_query_tokens=64, context_budget_characters=16_000)
         reader._ensure_loaded()
+        result["reader_model_loads"] = 1
         config = runtime_config(reader, bge, native); config_sha = object_sha(config)
         device_index = int(reader.device.index or 0); properties = torch.cuda.get_device_properties(device_index)
         device = {"index": device_index, "name": properties.name, "capability": list(torch.cuda.get_device_capability(device_index)),
             "nominal_total_bytes": int(properties.total_memory), "start_free_bytes": start_free, "start_total_bytes": start_total,
-            "torch_cuda_version": torch.version.cuda, "platform": platform.platform(),
+            "torch_cuda_version": torch.version.cuda, "platform": platform_value,
             "allocator_backend": torch.cuda.memory.get_allocator_backend(),
             "pytorch_cuda_alloc_conf": os.environ.get("PYTORCH_CUDA_ALLOC_CONF")}
         freeze = {"status": "FROZEN_BEFORE_BENCHMARK_EXECUTION", "source_commit": commit, "mode": args.mode,

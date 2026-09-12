@@ -152,9 +152,12 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
     launch [failed before scientific execution](PHI_READER_DEVELOPMENT_RUNTIME_V1_FAILURE_ACCEPTANCE.md)
     because the IO guard rejected an authenticated torch-package directory scan.
     Its exact sealed namespace records zero traces, model calls, Gold reads and
-    fits; preserve it permanently and never resume or reuse it. Correct the
-    launch boundary prospectively, then execute and independently validate only
-    the fixed V2 Phi development runtime namespaces. Do not execute the test
+    fits; preserve it permanently and never resume or reuse it. The prospective
+    V2 launch then [loaded both models but failed before scientific execution](PHI_READER_DEVELOPMENT_RUNTIME_V2_FAILURE_ACCEPTANCE.md)
+    when the sole host platform probe opened Windows `os.devnull` after the IO
+    boundary. It completed zero traces and calls. Preserve V2 permanently and
+    cache that platform probe before the boundary, then execute and independently
+    validate only the fixed V3 Phi development runtime namespaces. Do not execute the test
     benchmark, fit the ten reader-specific heads or reopen test Gold before the
     development stage is independently accepted.
 

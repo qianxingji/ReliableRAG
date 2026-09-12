@@ -35,9 +35,11 @@ preserves the zero-weight-byte-read boundary.
 
 Both the runtime executable freeze and its success receipt must contain the
 same exact audit-boundary string: `after authenticated source records, framework
-imports/configuration, and authenticated native assembly; before model loads,
-CUDA device query, and runtime trace/dataset semantic reads`.  The independent
+imports/configuration, authenticated native assembly, and cached platform probe;
+before CUDA device query, model loads, and runtime trace/dataset semantic reads`.  The independent
 validator pins that text and rejects a missing, divergent or edited copy.
+It also requires the successful receipt to report exactly one BGE model load,
+one Phi reader model load and zero NLI model loads.
 
 The validator independently checks the old 13,500-row development order and
 the fixed 180-row, 20-per-cell replay selection against the accepted input
