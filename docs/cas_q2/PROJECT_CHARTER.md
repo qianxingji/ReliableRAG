@@ -9,8 +9,13 @@ binding memory limit: the long generation witness used 93.48% of nominal GPU
 memory. The separate value-blind input freeze now also passes over all 31,500
 fixed traces, with a 3,682-token maximum against the 9,472-token guard. No Phi
 benchmark inference, new fit or Gold read has begun; development-runtime
-implementation is the next gate. See `PHI_READER_INPUT_FREEZE_ACCEPTANCE.md`
-and `PHI_READER_REPLICATION_PROTOCOL_V1.md`.
+implementation is the next gate. The exact two-model 9,472-token joint-memory
+witness is now independently authenticated and Astra xhigh accepts only a
+single-process, batch-one development run with fail-closed OOM handling. Its
+94.80% allocated peak remains an operational risk; test execution and fits are
+still closed. See `PHI_BGE_JOINT_PREFLIGHT_ACCEPTANCE.md`,
+`PHI_READER_INPUT_FREEZE_ACCEPTANCE.md` and
+`PHI_READER_REPLICATION_PROTOCOL_V1.md`.
 
 ## Goal and authority
 

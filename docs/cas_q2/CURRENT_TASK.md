@@ -143,10 +143,15 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
     [value-blind full-input freeze](PHI_READER_INPUT_FREEZE_ACCEPTANCE.md) now
     passes three-way validation over 31,500 traces / 63,000 deterministic prompts;
     maximum input is 3,682 tokens against the 9,472-token ceiling. Preserve its
-    zero-tokenization V1 allowlist failure. Implement and validate only the Phi
-    development runtime next, including the mandatory pre-CUDA dynamic `a1`
-    guard. Do not execute the test benchmark, fit the ten reader-specific heads
-    or reopen test Gold before the development stage is independently accepted.
+    zero-tokenization V1 allowlist failure. The subsequent two-model
+    [joint-memory preflight](PHI_BGE_JOINT_PREFLIGHT_ACCEPTANCE.md) is accepted
+    by Astra xhigh for one-process development execution under the binding guard
+    and fail-closed OOM controls. Its 94.80% allocated peak is an operational
+    risk; the WDDM/caching-allocator reserved counter above physical capacity is
+    preserved and is not treated as headroom. Implement, execute and independently
+    validate only the Phi development runtime next. Do not execute the test
+    benchmark, fit the ten reader-specific heads or reopen test Gold before the
+    development stage is independently accepted.
 
 The [C3 execution adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) passes 16
 original/adapted cases, 13 exact rejection reasons, nine ordinary-len cases and

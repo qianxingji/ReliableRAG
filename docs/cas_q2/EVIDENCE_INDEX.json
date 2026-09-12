@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T05:59:28+00:00",
+  "as_of_utc": "2026-09-12T06:24:32+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
   "current_candidate": null,
   "historical_candidate": "ROA-FULL",
-  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED; PHI_INPUT_FREEZE_ACCEPTED_PENDING_DEVELOPMENT_RUNTIME",
+  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED; PHI_JOINT_CAPACITY_ACCEPTED_PENDING_DEVELOPMENT_RUNTIME",
   "development_decision": "FINAL_CANDIDATE_NOT_CLEARED",
   "historical_roa_development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
   "dependence_label": "GBV_AUGMENTED_ONLY",
@@ -172,10 +172,11 @@
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
     "empirical_route_decision": "C3_AND_COMPLETE_C4_FROZEN_PRELABEL_ACCEPTED; COST_AND_D_AUTHORIZED",
-    "confirmation_freeze_scope": "Qwen D complete; Phi same-cohort reader-axis frozen before implementation; no Phi benchmark calls/fits/Gold",
-    "latest_stage_acceptance": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY.md",
+    "confirmation_freeze_scope": "Qwen D complete; Phi input and joint capacity gates accepted for development only; no Phi benchmark calls/fits/Gold",
+    "latest_stage_acceptance": "docs/cas_q2/PHI_BGE_JOINT_PREFLIGHT_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md",
-    "reader_axis_protocol": "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md"
+    "reader_axis_protocol": "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md",
+    "reader_axis_joint_capacity": "ACCEPTED_DEVELOPMENT_ONLY_ASTRA_XHIGH"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
   "empirical_replication": {
@@ -1121,7 +1122,7 @@
     "claim_review": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md"
   },
   "reader_axis_replication": {
-    "status": "INPUT_FREEZE_ACCEPTED_PENDING_DEVELOPMENT_RUNTIME",
+    "status": "JOINT_CAPACITY_ACCEPTED_PENDING_DEVELOPMENT_RUNTIME",
     "availability_review": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY.md",
     "availability_results": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY_RESULTS.json",
     "protocol": "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md",
@@ -1138,7 +1139,7 @@
     "new_scientific_fit_calls": 0,
     "phi_test_gold_reads": 0,
     "preserved_availability_failure": "client outputs/phi_reader_axis_availability_v1",
-    "next_gate": "PHI_DEVELOPMENT_RUNTIME_IMPLEMENTATION_AND_VALIDATION",
+    "next_gate": "PHI_DEVELOPMENT_RUNTIME_IMPLEMENTATION_EXECUTION_AND_INDEPENDENT_VALIDATION",
     "preflight_acceptance": "docs/cas_q2/PHI_READER_PREFLIGHT_ACCEPTANCE.md",
     "preflight_results": "docs/cas_q2/PHI_READER_PREFLIGHT_RESULTS.json",
     "producer_manifest_sha256": "cfebd83ce688479af922e884ea0df6034af6e32fc2175c3fd3b5e69266e58d30",
@@ -1160,6 +1161,21 @@
     "deterministic_prompt_tokenizations": 63000,
     "maximum_deterministic_input_tokens": 3682,
     "admission_ceiling_tokens": 9472,
-    "development_runtime_implementation_authorized": true
+    "development_runtime_implementation_authorized": true,
+    "joint_preflight_contract": "docs/cas_q2/PHI_BGE_JOINT_PREFLIGHT_CONTRACT.md",
+    "joint_preflight_validation_contract": "docs/cas_q2/PHI_BGE_JOINT_PREFLIGHT_VALIDATION_CONTRACT.md",
+    "joint_preflight_acceptance": "docs/cas_q2/PHI_BGE_JOINT_PREFLIGHT_ACCEPTANCE.md",
+    "joint_preflight_results": "docs/cas_q2/PHI_BGE_JOINT_PREFLIGHT_RESULTS.json",
+    "joint_preflight_preserved_v1_manifest_sha256": "692c75ac0a625bc3c5aec37562b0be5e73832d7b315df399b044a1b9600464c1",
+    "joint_preflight_producer_manifest_sha256": "ecf17a8af6c21fe2887700993bafe53c4aa8ae3c5419112737049db5c91ef2bf",
+    "joint_preflight_validator_manifest_sha256": "931391743a6ce4c64164973801eeffde0476545552c79d6b150458cd1b7d417d",
+    "joint_preflight_client_audit_manifest_sha256": "b82298a9f1a6df5c49305be12c5fff23fb2064ef1922fd78dd66d7dc51116163",
+    "joint_preflight_peak_allocated_cuda_bytes": 16213824000,
+    "joint_preflight_peak_reserved_cuda_bytes": 19203620864,
+    "joint_preflight_nominal_cuda_total_bytes": 17102864384,
+    "joint_preflight_allocated_fraction": 0.9480180416543728,
+    "joint_preflight_reserved_counter_is_physical_headroom": false,
+    "development_runtime_execution_authorized": true,
+    "binding_runtime_mode": "ONE_PROCESS_ONE_PHI_ONE_BGE_BF16_BATCH_ONE_FAIL_CLOSED"
   }
 }

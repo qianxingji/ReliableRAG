@@ -7,8 +7,13 @@ fixed traces; the maximum is 3,682 tokens against the binding 9,472-token
 ceiling, with no context truncation. Dynamic repaired-answer prompts must pass
 the committed guard before CUDA/model access. Five Phi-matched policy heads
 remain planned; the seven historical upstream estimators remain byte-fixed.
-Development-runtime implementation is authorized next, while test benchmark
-execution, scientific fits and test Gold remain closed. See
+The joint Phi/BGE 9,472-token stress witness is independently authenticated;
+Astra xhigh accepts one-process, batch-one development execution under the
+dynamic guard and fail-closed OOM controls. Its allocated peak is 94.80% of
+nominal device memory, so this is a bounded engineering admission rather than
+scientific evidence. Development-runtime implementation/execution is authorized
+next, while test benchmark execution, scientific fits and test Gold remain
+closed. See PHI_BGE_JOINT_PREFLIGHT_ACCEPTANCE.md,
 PHI_READER_INPUT_FREEZE_ACCEPTANCE.md and PHI_READER_REPLICATION_PROTOCOL_V1.md.
 
 2026-09-12 fresh empirical result update: the complete 18,000-trace fixed study,
