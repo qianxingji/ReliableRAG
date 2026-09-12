@@ -130,6 +130,16 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    fresh outcomes or promote a winning slice to confirmation. The old
    [CONFIRMATION_DESIGN.md](CONFIRMATION_DESIGN.md) remains a historical draft,
    not an executable confirmation protocol or final-model authorization.
+   This review is complete in [P0_3_FRESH_RESULT_DECISION.md](P0_3_FRESH_RESULT_DECISION.md):
+   ROA-FULL is rejected and only fusion versus GBV_ONLY_R passes jointly.
+6. The read-only [reader-axis audit](P0_3_READER_AXIS_AVAILABILITY.md) and
+   [frozen Phi protocol](PHI_READER_REPLICATION_PROTOCOL_V1.md) now govern P0-3.
+   Exact remaining ID counts are 105 / 5,276 / 15,838, so the fixed independent
+   axis is Phi-3.5-mini-instruct on the same 6,000-question cohort. Implement and
+   independently validate one invented-only Phi compatibility preflight. Until
+   it passes, do not call Phi on benchmark data, fit the ten reader-specific
+   heads or reopen test Gold. Preserve the V1 read-only audit failure and use
+   only the accepted V2 audit manifest.
 
 The [C3 execution adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) passes 16
 original/adapted cases, 13 exact rejection reasons, nine ordinary-len cases and

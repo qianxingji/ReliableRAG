@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T04:45:00+00:00",
+  "as_of_utc": "2026-09-12T05:04:50+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
   "current_candidate": null,
   "historical_candidate": "ROA-FULL",
-  "scientific_scope": "V3_2_DEVELOPMENT_ONLY",
+  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED; PHI_READER_AXIS_FROZEN_PREIMPLEMENTATION",
   "development_decision": "FINAL_CANDIDATE_NOT_CLEARED",
   "historical_roa_development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
   "dependence_label": "GBV_AUGMENTED_ONLY",
@@ -172,9 +172,10 @@
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
     "empirical_route_decision": "C3_AND_COMPLETE_C4_FROZEN_PRELABEL_ACCEPTED; COST_AND_D_AUTHORIZED",
-    "confirmation_freeze_scope": "C1/C2/C3/C4 acquisition, prelabel and shared-inference cost complete and sealed; D actual execution pending",
-    "latest_stage_acceptance": "docs/cas_q2/EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md",
-    "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
+    "confirmation_freeze_scope": "Qwen D complete; Phi same-cohort reader-axis frozen before implementation; no Phi benchmark calls/fits/Gold",
+    "latest_stage_acceptance": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY.md",
+    "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md",
+    "reader_axis_protocol": "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
   "empirical_replication": {
@@ -1118,5 +1119,25 @@
     "acceptance": "docs/cas_q2/EMPIRICAL_D_ACCEPTANCE.md",
     "results": "docs/cas_q2/EMPIRICAL_D_RESULTS.json",
     "claim_review": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md"
+  },
+  "reader_axis_replication": {
+    "status": "FROZEN_PENDING_INVENTED_COMPATIBILITY_PREFLIGHT",
+    "availability_review": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY.md",
+    "availability_results": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY_RESULTS.json",
+    "protocol": "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md",
+    "external_audit_manifest_sha256": "c9324f6ef3b3daf212b4482f07b262429eb2e17006f451f4ac791c28034c0d5c",
+    "reader": "microsoft/Phi-3.5-mini-instruct",
+    "reader_revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+    "same_question_groups": 6000,
+    "same_retriever_traces": 18000,
+    "new_ids_selected": 0,
+    "primary_endpoint_family": 4,
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 20260930,
+    "benchmark_phi_model_calls": 0,
+    "new_scientific_fit_calls": 0,
+    "phi_test_gold_reads": 0,
+    "preserved_availability_failure": "client outputs/phi_reader_axis_availability_v1",
+    "next_gate": "INVENTED_ONLY_PHI_COMPATIBILITY_PREFLIGHT_AND_INDEPENDENT_VALIDATION"
   }
 }

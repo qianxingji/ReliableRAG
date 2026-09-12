@@ -63,6 +63,15 @@ P0_3_FRESH_RESULT_DECISION.md rejects ROA-FULL advancement, finds joint support
 only for HGB_GBV_R over GBV_ONLY_R, and clears no novel final candidate. Do not
 repeat D or promote point-estimate rankings. Next work is an independent-axis
 availability/provenance and literature audit before a new protocol is frozen.
+That audit is now accepted in P0_3_READER_AXIS_AVAILABILITY.md. It found a
+complete pinned Phi-3.5-mini-instruct snapshot and exact remaining source counts
+of 105 / 5,276 / 15,838 after all opened HotpotQA / 2Wiki / MuSiQue IDs. The
+frozen PHI_READER_REPLICATION_PROTOCOL_V1.md therefore uses the same 6,000 IDs
+and retrieval assets as a reader-family axis, with newly generated Phi pairs and
+five reader-matched heads. Implement only its invented compatibility preflight
+next. No benchmark Phi call, new ID selection or Gold read is authorized until
+that preflight and its independent validator pass. Preserve the V1 availability
+audit's safetensors-size-semantics failure; V2 is the accepted read-only audit.
 The first cost invocation failed before its scientific namespace because the
 frozen outcome prerequisite helper resolved the preserved C4 V1 preflight path.
 Use the five-test accepted prospective binding in

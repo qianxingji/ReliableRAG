@@ -1,5 +1,14 @@
 # Current method: verifier-augmented recovery arbitration
 
+2026-09-12 P0-3 design update: a complete local Phi-3.5-mini-instruct revision
+and the exact ID inventory passed read-only audit. The next frozen study changes
+the reader family while holding the current 6,000 IDs, retrieval assets, budget,
+endpoints and fitting recipe fixed. Five Phi-matched policy heads will be fitted;
+the seven historical upstream estimators remain byte-fixed. The first executable
+gate is invented-only compatibility. No Phi benchmark inference or Gold access
+has started. See P0_3_READER_AXIS_AVAILABILITY.md and
+PHI_READER_REPLICATION_PROTOCOL_V1.md.
+
 2026-09-12 fresh empirical result update: the complete 18,000-trace fixed study,
 20,000-draw analysis and independent validator are accepted. HGB_GBV_R jointly
 improves EM and Damage versus GBV_ONLY_R, but not versus HGB_ONLY_R; ROA-FULL

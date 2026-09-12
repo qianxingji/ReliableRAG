@@ -1,0 +1,50 @@
+{
+  "status": "ACCEPTED_READ_ONLY_PHI_READER_AXIS_DESIGN_INPUT",
+  "cas_q2_status": "NOT READY",
+  "source_commit": "77028f7387f30564f606814796a3193e73bd7de9",
+  "external_audit_manifest_sha256": "c9324f6ef3b3daf212b4482f07b262429eb2e17006f451f4ac791c28034c0d5c",
+  "external_audit_sha256": "32a88c426d3c759ed54e2b4883b3891432589ca7b332bec57e335172e5b36c1b",
+  "reader_axis_decision": "PHI_3_5_MINI_SAME_6000_QUESTION_COHORT",
+  "reader": {
+    "model_id": "microsoft/Phi-3.5-mini-instruct",
+    "revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+    "files": 20,
+    "physical_bytes": 7644702484,
+    "tensor_payload_bytes": 7642159104,
+    "gpu": "NVIDIA GeForce RTX 5060 Ti, 16311 MiB, driver 596.36"
+  },
+  "opened_ids": {
+    "historical": 14100,
+    "fixed_panel": 4500,
+    "current_qwen_cohort": 6000,
+    "pairwise_overlap": 0,
+    "union": 24600
+  },
+  "remaining_ids": {
+    "hotpotqa": 105,
+    "2wikimultihopqa": 5276,
+    "musique": 15838
+  },
+  "planned_test": {
+    "question_groups": 6000,
+    "retriever_traces": 18000,
+    "new_ids_selected": 0,
+    "primary_comparisons": [
+      "HGB_GBV_R_minus_HGB_ONLY_R",
+      "HGB_GBV_R_minus_GBV_ONLY_R"
+    ],
+    "primary_endpoints": 4,
+    "familywise_alpha": 0.05,
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 20260930
+  },
+  "execution_counts": {
+    "model_loads": 0,
+    "model_forward_calls": 0,
+    "scientific_fit_calls": 0,
+    "gold_reads": 0,
+    "raw_answer_decodes": 0
+  },
+  "preserved_failure": "outputs/phi_reader_axis_availability_v1"
+}
+
