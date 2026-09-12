@@ -1,5 +1,14 @@
 # Current method: verifier-augmented recovery arbitration
 
+2026-09-13 P0-3 execution update: the V3 Phi development acquisition is a sealed
+interrupted failure. It contains 9,540 complete traces and one partial trace
+with an unpaired `a1` intent; its formal resume correctly failed closed before
+new scientific calls. V3 is excluded from all analysis. A result-blind one-time
+amendment authorizes a blank V4 full acquisition, fixed replay and independent
+validation with unchanged scientific semantics. Test calls, targets, scoring and
+fits remain closed. No independent novel method is currently accepted; Astra
+xhigh is redoing the method and novelty decision.
+
 2026-09-12 P0-3 execution update: the single invented-only Phi compatibility
 preflight and the subsequent value-blind full-input freeze are accepted. The
 freeze independently reconstructs 63,000 deterministic prompts for all 31,500

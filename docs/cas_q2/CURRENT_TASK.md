@@ -21,10 +21,11 @@ No manuscript is authorized. Do not change frozen sources, hashes, tolerances,
 actions or cohorts; version any necessary correction prospectively.
 
 Model routing follows the user's exact [policy](MODEL_ROUTING.md): formal runs,
-replay and ordinary analysis use Sol High; P0-3 research design/novelty and core
-Method/Claim reasoning use Astra High; final authenticity/fairness/claim/reviewer/
-Submission Ready audits, anomalous conflicts and major method decisions use
-Astra xhigh, then return to Sol High. Do not run every stage on Astra.
+replay and ordinary analysis use Sol High. Per the 2026-09-13 correction, P0-3
+research design/novelty and core Method/Claim reasoning use Astra xhigh, as do
+final authenticity/fairness/claim/reviewer/Submission Ready audits, anomalous
+conflicts and major method decisions. Return to Sol High afterward; do not run
+every stage on Astra.
 
 ## Actual accepted work
 
@@ -155,9 +156,13 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
     fits; preserve it permanently and never resume or reuse it. The prospective
     V2 launch then [loaded both models but failed before scientific execution](PHI_READER_DEVELOPMENT_RUNTIME_V2_FAILURE_ACCEPTANCE.md)
     when the sole host platform probe opened Windows `os.devnull` after the IO
-    boundary. It completed zero traces and calls. Preserve V2 permanently and
-    cache that platform probe before the boundary, then execute and independently
-    validate only the fixed V3 Phi development runtime namespaces. Do not execute the test
+    boundary. It completed zero traces and calls. V3 subsequently reached 9,540
+    complete traces before an external interruption left one unpaired `a1`
+    intent. Its formal resume correctly failed closed and sealed the namespace;
+    [preserve and exclude it](PHI_READER_DEVELOPMENT_RUNTIME_V3_FAILURE_ACCEPTANCE.md).
+    The result-blind [V4 one-time acquisition amendment](PHI_READER_DEVELOPMENT_RUNTIME_V4_ACQUISITION_AMENDMENT.md)
+    authorizes one blank full acquisition, fixed replay and independent
+    validation. Do not execute the test
     benchmark, fit the ten reader-specific heads or reopen test Gold before the
     development stage is independently accepted.
 
@@ -299,10 +304,11 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: audit availability/provenance and current literature for one justified
-independent replication axis, then freeze a claim-consistent protocol or stop
-that route explicitly. Do not start new model calls, fits or Gold reads before
-the Research Lead design is complete.
+Next: commit and execute the one-time blank V4 Phi development acquisition,
+fixed replay and independent validation. Separately, Astra xhigh must complete
+the independent-method design and novelty decision before any new method is
+implemented or frozen. Do not start test calls, fits or Gold reads before the
+development runtime gate passes.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The first cost invocation failed before creating a scientific namespace because

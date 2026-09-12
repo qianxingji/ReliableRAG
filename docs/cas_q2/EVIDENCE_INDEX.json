@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T08:26:46+00:00",
+  "as_of_utc": "2026-09-12T16:54:08.902419+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -1206,9 +1206,33 @@
     "development_runtime_v2_peak_reserved_cuda_bytes": 7881097216,
     "development_runtime_v2_preserved_no_resume_or_reuse": true,
     "prospective_runtime_namespaces": {
-      "canonical": "phi_reader_development_runtime_v3",
-      "replay": "phi_reader_development_runtime_replay_v3",
-      "validation": "phi_reader_development_runtime_validation_v3"
-    }
+      "canonical": "phi_reader_development_runtime_v4",
+      "replay": "phi_reader_development_runtime_replay_v4",
+      "validation": "phi_reader_development_runtime_validation_v4"
+    },
+    "development_runtime_v3_failure_acceptance": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V3_FAILURE_ACCEPTANCE.md",
+    "development_runtime_v3_acquisition_status": "FAIL_INTERRUPTED_UNPAIRED_A1_INTENT_SEALED",
+    "development_runtime_v3_namespace": "outputs/cas_q2/phi_reader_development_runtime_v3",
+    "development_runtime_v3_source_commit": "5aec9dd95df83bba04d762b90f9cb3da218e38fd",
+    "development_runtime_v3_manifest_sha256": "be4339f85e1691cd9582a711405b10c7b5899bea60db8d6a47a90ffc68a081cd",
+    "development_runtime_v3_failure_receipt_sha256": "03dd84467c965636242b96605393b7d31c4ca02e9da2fba3860f2269b10875f1",
+    "development_runtime_v3_interruption_snapshot_sha256": "ae59c168136ac1cec0ff6a46d20fde069a5dbeb73be1820941477f57293df677",
+    "development_runtime_v3_sealed_failure_audit_sha256": "a07e515db3c94379d6be5d529f13bde6ca126b2b1b39749e1d4f23e375981bdc",
+    "development_runtime_v3_complete_traces": 9540,
+    "development_runtime_v3_completed_generation_receipts": 28622,
+    "development_runtime_v3_completed_repair_retrievals": 9541,
+    "development_runtime_v3_unpaired_call": {
+      "position": 9540,
+      "dataset": "musique",
+      "retriever": "bm25",
+      "sample_id": "3hop1__161080_158722_35358",
+      "operation": "a1",
+      "execution_status": "UNKNOWN"
+    },
+    "development_runtime_v3_prefix_full_semantic_validation_passed": false,
+    "development_runtime_v3_preserved_no_resume_reuse_or_analysis": true,
+    "development_runtime_v4_acquisition_amendment": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_ACQUISITION_AMENDMENT.md",
+    "development_runtime_v4_authorized_attempts": 1,
+    "development_runtime_v4_results_available": false
   }
 }

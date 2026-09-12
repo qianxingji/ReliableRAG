@@ -76,9 +76,13 @@ memory. The value-blind full-input freeze and independent/client validation now
 pass in PHI_READER_INPUT_FREEZE_ACCEPTANCE.md: 31,500 fixed traces, 63,000
 deterministic prompts, maximum 3,682 tokens against the 9,472-token guard, zero
 model/Gold/answer access. Preserve its zero-tokenization V1 allowlist failure.
-Implement and independently validate only the Phi development runtime next,
-including the dynamic `a1` pre-CUDA guard. No test benchmark Phi call, new ID
-selection, scientific fit or test Gold read is authorized before that gate.
+The V3 Phi development acquisition is now an immutable interrupted failure with
+9,540 complete traces, one partial trace through repair retrieval and one
+unpaired `a1` intent. Its formal resume correctly failed closed; preserve V3 and
+never reuse its rows. Follow the committed V4 one-time acquisition amendment,
+then independently validate only the blank V4 runtime and fixed replay. No test
+benchmark Phi call, new ID selection, scientific fit or test Gold read is
+authorized before that gate.
 Preserve the V1 availability audit's safetensors-size-semantics failure; V2 is
 the accepted read-only audit.
 The first cost invocation failed before its scientific namespace because the
@@ -262,9 +266,10 @@ and `EVIDENCE_INDEX.json` in that directory before choosing work.
   argument; Codex implements reviewed designs. Per the user's 2026-09-11 update,
   formal experiments, numerical replay, routine engineering and ordinary result
   analysis default to Sol High (`gpt-5.6-sol`, `high`; routine code/tests may use
-  Medium). P0-3 research design/novelty and core Method/Claim argument use Astra
-  High. Final authenticity/fairness/claim/reviewer/Submission Ready audits,
-  anomalous-result conflicts and major method decisions use Astra xhigh
+  Medium). Per the user's 2026-09-13 correction, P0-3 research design/novelty
+  and core Method/Claim argument also use Astra xhigh. Final authenticity/
+  fairness/claim/reviewer/Submission Ready audits, anomalous-result conflicts
+  and major method decisions use Astra xhigh
   (`gpt-6-astra`, `xhigh`), then return to Sol High. This replaces the earlier
   routine Astra assignment; see `docs/cas_q2/MODEL_ROUTING.md` for the full table.
 - Historical candidate: ROA-FULL, originally development-supported and

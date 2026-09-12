@@ -116,6 +116,8 @@ def source_paths(original: Path, canonical_reference: Path | None) -> list[Path]
         "scripts/phi_reader_preflight_common.py",
         "tests/test_phi_reader_development_runtime.py",
         "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_CONTRACT.md",
+        "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V3_FAILURE_ACCEPTANCE.md",
+        "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_ACQUISITION_AMENDMENT.md",
         "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md",
         "docs/cas_q2/PHI_BGE_JOINT_PREFLIGHT_ACCEPTANCE.md",
         "docs/cas_q2/PHI_READER_INPUT_FREEZE_ACCEPTANCE.md",
