@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T03:30:00+00:00",
+  "as_of_utc": "2026-09-12T04:18:00+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -229,7 +229,12 @@
     "stage_D_engineering_manifest": "9461d2d4dd54c6935eb9dac949b381c6bd3489857b8b4a6ddbb1e2864e34e0c8",
     "stage_D_engineering_status": "PASS_CPU_D_ENGINEERING_ONLY",
     "stage_D_inventory_manifest": "13a9e14d8f58c737dd1aef2f8556bb9bf1a6d81a86acdd910acdeecde9732ef2",
-    "stage_D_actual_mapping_run": false,
+    "stage_D_actual_mapping_run": true,
+    "stage_D_actual_mapping_manifest_sha256": "34dfcd2e5e43e20a1dd7eeb84d81a110dbac8bb65cd00aea4582dceb1b5bc23d",
+    "stage_D_outcome_validation_run": true,
+    "stage_D_outcome_validation_manifest_sha256": "e0f3321c88d1561ab3daa281280713fcd65c820672bd392e036e5f5df39c1953",
+    "stage_D_outcome_client_audit_manifest_sha256": "68c5eac62225f10244e32d97d8168193854bcc6aedfc97eecc53601dd26ca595",
+    "stage_D_frozen_analysis_authorized": true,
     "stage_D_actual_analysis_run": false,
     "cost_engineering_manifest": "304ba81f0cf28a64ea8fb03b8412cce2e85e419d4adef33d5cce75b98553d252",
     "cost_engineering_status": "PASS_CPU_COST_ENGINEERING_ONLY",
@@ -1068,5 +1073,23 @@
     "downstream_D_authorized": true,
     "acceptance": "docs/cas_q2/EMPIRICAL_COST_ACCEPTANCE.md",
     "results": "docs/cas_q2/EMPIRICAL_COST_RESULTS.json"
+  },
+  "empirical_selected_outcomes": {
+    "status": "ACCEPTED_INDEPENDENT_SELECTED_OUTCOMES",
+    "cas_q2_status": "NOT READY",
+    "mapping_manifest_sha256": "34dfcd2e5e43e20a1dd7eeb84d81a110dbac8bb65cd00aea4582dceb1b5bc23d",
+    "outcome_validation_manifest_sha256": "e0f3321c88d1561ab3daa281280713fcd65c820672bd392e036e5f5df39c1953",
+    "client_audit_manifest_sha256": "68c5eac62225f10244e32d97d8168193854bcc6aedfc97eecc53601dd26ca595",
+    "numeric_ledger_sha256": "e8ad8addee644bdd1ef2f620895f1ba1abf32ac0568d514872ed6776e7059408",
+    "selected_reference_binding_sha256": "535727faaba3578cbeaaf6b15441ec032e621e36f9db64c5b2918c6dd264247b",
+    "selected_labels_materialized_per_process": 6000,
+    "numeric_outcome_rows": 18000,
+    "metric_values_independently_checked": 72000,
+    "all_numeric_outcomes_match": true,
+    "method_inputs_decoded": 0,
+    "quality_analysis_started": false,
+    "downstream_frozen_analysis_authorized": true,
+    "acceptance": "docs/cas_q2/EMPIRICAL_OUTCOME_ACCEPTANCE.md",
+    "results": "docs/cas_q2/EMPIRICAL_OUTCOME_RESULTS.json"
   }
 }

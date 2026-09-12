@@ -54,8 +54,10 @@ failure. The receipt-only shared-inference cost reconciliation and separate
 client audit are now accepted in EMPIRICAL_COST_ACCEPTANCE.md. They scan every
 canonical and replay scalar receipt, sample all token-array cell types, and
 rehash 18,306 inputs plus 30,912 environment files. No Gold, fit or inference
-occurs. The four D processes are now authorized in contract order; the selected-
-reference mapping is the first fresh Gold boundary.
+occurs. The first fresh-Gold mapping and independent outcome validator are now
+accepted in EMPIRICAL_OUTCOME_ACCEPTANCE.md: both materialize only the 6,000
+selected labels, the validator recomputes all 72,000 metrics, and no method input
+is decoded. The frozen analysis and its complete independent validator are next.
 The first cost invocation failed before its scientific namespace because the
 frozen outcome prerequisite helper resolved the preserved C4 V1 preflight path.
 Use the five-test accepted prospective binding in
@@ -214,10 +216,11 @@ no final novel-method candidate is cleared. Five fixed policies, 6,000 new IDs
 and accepted C1/C2 inputs define the empirical design. Total scientific fits: 185 (including seven historical reproduction fits).
 C3 canonical (18,000) and original fixed neural replay (180) finished; their
 processes exited successfully. The full independent V1/V2 attempts failed as above.
-C3 is complete and accepted. Execute actual C4 GPU preflight, then the
-base/GbV/policies stages and full independent prelabel validation. Only complete
-C4 acceptance permits the implemented cost auditor and four real D processes.
-Fresh Gold reads remain zero. The earlier full engineering run: 151 tests, with
+C3/C4 and the accepted cost reconciliation are complete. D mapping and its
+independent outcome validation are complete; each process has materialized the
+same 6,000 selected Gold labels, and no unselected reference or method input is
+decoded. Execute only the frozen analysis and its independent validator next.
+The earlier full engineering run: 151 tests, with
 149 pass and two Windows capability skips; that suite was not repeated here.
 
 Next independent work: prospectively verify BGE and predecessor execution bindings; later add completed-stage output dependencies

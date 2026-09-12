@@ -48,7 +48,8 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
   [D engineering](EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md), and
   [cost engineering](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md). Actual C4 and
   the [shared-inference cost audit](EMPIRICAL_COST_ACCEPTANCE.md) are now
-  independently accepted. The four D executions remain pending.
+  independently accepted. D mapping and independent outcome validation are now
+  accepted; frozen analysis and its independent validator remain pending.
   Earlier full engineering run: 151 tests, 149 pass, two Windows capability skips.
 - The original 2,821-file data/source package passed full
   [directory relocation](ROA_REPLAY_RELEASE_ACCEPTANCE.md). Five authenticated
@@ -115,9 +116,12 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    with explicit missing measurements. It independently closes 54,000 canonical
    and 540 replay receipts, the shared C2/C3/C4 call graph and zero Gold/model
    work in the audit. Preserve both failed cost attempts and do not rerun cost.
-   Execute D selected-reference mapping next; this is the first fresh Gold
-   boundary. Do not inspect labels or answer quality before its independent
-   outcome validation passes.
+   D selected-reference mapping and its independent validator now pass. Each
+   process materializes the same 6,000 selected labels; the validator recomputes
+   all 72,000 EM/F1 scalar values and the [client audit](EMPIRICAL_OUTCOME_ACCEPTANCE.md)
+   rehashes 18,304 inputs plus 30,912 environment files. Execute the frozen
+   analysis next, then its complete independent validator. Preserve the method-
+   blind mapping/validation namespaces and do not reread raw references in analysis.
 5. Review actual results against the fixed claim/endpoint/statistical design.
    Preserve null/negative findings and both historical failures. Do not tune on
    fresh outcomes or promote a winning slice to confirmation. The old
@@ -262,8 +266,8 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the four D processes in their contract order, preserving the first
-fresh-outcome boundary and all raw results.
+Next: execute the frozen analysis and its independent validator, preserving all
+raw numeric results and bootstrap draws.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The first cost invocation failed before creating a scientific namespace because
@@ -277,8 +281,9 @@ metadata input: the existing C2 retrieval GPU-preflight report. The
 [cost input addition](EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md) pins its exact
 477,790-byte hash as a cost-only binding control. The third cost attempt and
 separate [client audit](EMPIRICAL_COST_ACCEPTANCE.md) now pass; its accepted
-namespace is sealed, Gold remains zero, and D mapping is authorized. Preserve
-both failed external attempts and do not repeat cost.
+namespace is sealed. D mapping and independent outcome validation are now
+[accepted](EMPIRICAL_OUTCOME_ACCEPTANCE.md). Preserve both failed cost attempts,
+the completed method-blind D stages and do not repeat them.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original
 definitions/hashes intact and disclose each IO adaptation.
