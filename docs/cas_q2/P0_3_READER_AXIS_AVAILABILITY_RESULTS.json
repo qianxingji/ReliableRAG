@@ -11,6 +11,16 @@
     "files": 20,
     "physical_bytes": 7644702484,
     "tensor_payload_bytes": 7642159104,
+    "weight_shards": {
+      "model-00001-of-00002.safetensors": {
+        "size_bytes": 4972489328,
+        "sha256": "c5214cdb995ed3dd716add8d9efbfe016b76bb2f1c4c1e6c1c6a95497d7a8837"
+      },
+      "model-00002-of-00002.safetensors": {
+        "size_bytes": 2669692552,
+        "sha256": "41246eed2b75b66526339c5d32d6f7acdefe0bd24180f97c74303f4656877344"
+      }
+    },
     "gpu": "NVIDIA GeForce RTX 5060 Ti, 16311 MiB, driver 596.36"
   },
   "opened_ids": {
@@ -47,4 +57,3 @@
   },
   "preserved_failure": "outputs/phi_reader_axis_availability_v1"
 }
-
