@@ -265,6 +265,11 @@ path. The prospective [postlabel V2 binding](POSTLABEL_C4_V2_PATH_BINDING.md)
 changes only that in-memory path to the accepted V2 namespace and passes five
 fail-closed tests. Use it for the cost retry and every D process; preserve the
 failed external controller and do not alter any C4 manifest.
+The first V2-bound cost attempt then exposed one exact missing authenticated
+metadata input: the existing C2 retrieval GPU-preflight report. The
+[cost input addition](EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md) pins its exact
+477,790-byte hash as a cost-only binding control; the scientific cost namespace
+is still absent and Gold remains zero. Preserve both failed external attempts.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original
 definitions/hashes intact and disclose each IO adaptation.

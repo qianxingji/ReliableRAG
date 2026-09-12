@@ -58,6 +58,11 @@ Use the five-test accepted prospective binding in
 POSTLABEL_C4_V2_PATH_BINDING.md for cost and all D stages. It changes only that
 path in memory to the accepted V2 namespace and freezes its own config/control
 bytes. Preserve the failed external cost controller.
+The first V2-bound cost attempt also failed before its scientific namespace: the
+unchanged cost code explicitly decodes the C2 retrieval GPU-preflight metadata,
+but that one file was absent from its authenticated graph. Follow
+EMPIRICAL_COST_INPUT_GRAPH_ADDITION.md and add only its exact hash-bound existing
+metadata file as a cost config control. Preserve both external failures.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.
