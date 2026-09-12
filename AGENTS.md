@@ -72,10 +72,13 @@ five reader-matched heads. The unique invented-only Phi compatibility producer,
 tokenizer-only validator and external client audit are now accepted in
 PHI_READER_PREFLIGHT_ACCEPTANCE.md. Preserve the failed V1 validator and never
 repeat the GPU producer. Its long generation witness used 93.48% of nominal GPU
-memory. Next build and independently accept a value-blind full-input and
-implementation freeze that proves all planned prompts are at most the accepted
-9,472-token witness and binds sequential execution. No benchmark Phi call, new
-ID selection, scientific fit or test Gold read is authorized before that gate.
+memory. The value-blind full-input freeze and independent/client validation now
+pass in PHI_READER_INPUT_FREEZE_ACCEPTANCE.md: 31,500 fixed traces, 63,000
+deterministic prompts, maximum 3,682 tokens against the 9,472-token guard, zero
+model/Gold/answer access. Preserve its zero-tokenization V1 allowlist failure.
+Implement and independently validate only the Phi development runtime next,
+including the dynamic `a1` pre-CUDA guard. No test benchmark Phi call, new ID
+selection, scientific fit or test Gold read is authorized before that gate.
 Preserve the V1 availability audit's safetensors-size-semantics failure; V2 is
 the accepted read-only audit.
 The first cost invocation failed before its scientific namespace because the

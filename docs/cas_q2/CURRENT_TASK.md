@@ -139,11 +139,14 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
     invented-only producer and independent validator are now
     [accepted with a binding memory limit](PHI_READER_PREFLIGHT_ACCEPTANCE.md).
     Preserve the failed V1 validator and never repeat the producer. Its long
-    generation used 93.48% of nominal GPU memory. Next commit and independently
-    accept a value-blind full-input/implementation freeze that proves all planned
-    prompts are at most the accepted 9,472-token witness and binds sequential
-    execution. Until that gate passes, do not call Phi on benchmark data, fit the
-    ten reader-specific heads or reopen test Gold.
+    generation used 93.48% of nominal GPU memory. The subsequent
+    [value-blind full-input freeze](PHI_READER_INPUT_FREEZE_ACCEPTANCE.md) now
+    passes three-way validation over 31,500 traces / 63,000 deterministic prompts;
+    maximum input is 3,682 tokens against the 9,472-token ceiling. Preserve its
+    zero-tokenization V1 allowlist failure. Implement and validate only the Phi
+    development runtime next, including the mandatory pre-CUDA dynamic `a1`
+    guard. Do not execute the test benchmark, fit the ten reader-specific heads
+    or reopen test Gold before the development stage is independently accepted.
 
 The [C3 execution adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) passes 16
 original/adapted cases, 13 exact rejection reasons, nine ordinary-len cases and

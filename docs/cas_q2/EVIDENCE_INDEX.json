@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T05:29:34+00:00",
+  "as_of_utc": "2026-09-12T05:59:28+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
   "current_candidate": null,
   "historical_candidate": "ROA-FULL",
-  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED; PHI_PREFLIGHT_ACCEPTED_PENDING_VALUE_BLIND_INPUT_FREEZE",
+  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED; PHI_INPUT_FREEZE_ACCEPTED_PENDING_DEVELOPMENT_RUNTIME",
   "development_decision": "FINAL_CANDIDATE_NOT_CLEARED",
   "historical_roa_development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
   "dependence_label": "GBV_AUGMENTED_ONLY",
@@ -1121,7 +1121,7 @@
     "claim_review": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md"
   },
   "reader_axis_replication": {
-    "status": "PREFLIGHT_ACCEPTED_PENDING_VALUE_BLIND_INPUT_AND_IMPLEMENTATION_FREEZE",
+    "status": "INPUT_FREEZE_ACCEPTED_PENDING_DEVELOPMENT_RUNTIME",
     "availability_review": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY.md",
     "availability_results": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY_RESULTS.json",
     "protocol": "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md",
@@ -1138,7 +1138,7 @@
     "new_scientific_fit_calls": 0,
     "phi_test_gold_reads": 0,
     "preserved_availability_failure": "client outputs/phi_reader_axis_availability_v1",
-    "next_gate": "VALUE_BLIND_FULL_INPUT_AND_IMPLEMENTATION_FREEZE",
+    "next_gate": "PHI_DEVELOPMENT_RUNTIME_IMPLEMENTATION_AND_VALIDATION",
     "preflight_acceptance": "docs/cas_q2/PHI_READER_PREFLIGHT_ACCEPTANCE.md",
     "preflight_results": "docs/cas_q2/PHI_READER_PREFLIGHT_RESULTS.json",
     "producer_manifest_sha256": "cfebd83ce688479af922e884ea0df6034af6e32fc2175c3fd3b5e69266e58d30",
@@ -1148,6 +1148,18 @@
     "preflight_generation_peak_allocated_cuda_bytes": 15987338240,
     "preflight_peak_fraction_of_nominal_total": 0.9347504056886456,
     "maximum_authorized_pretokenized_generation_input_tokens": 9472,
-    "benchmark_execution_authorized": false
+    "benchmark_execution_authorized": false,
+    "input_freeze_contract": "docs/cas_q2/PHI_READER_INPUT_FREEZE_CONTRACT.md",
+    "input_freeze_amendment": "docs/cas_q2/PHI_READER_INPUT_FREEZE_V2_AMENDMENT.md",
+    "input_freeze_acceptance": "docs/cas_q2/PHI_READER_INPUT_FREEZE_ACCEPTANCE.md",
+    "input_freeze_results": "docs/cas_q2/PHI_READER_INPUT_FREEZE_RESULTS.json",
+    "preserved_input_freeze_v1_manifest_sha256": "c244000cb83b33d08f8a37419ee5c7aa6617f80311610d69706b3975e75dd2a9",
+    "input_freeze_producer_manifest_sha256": "17cb0c29e4d4a5b98991bbebf1368bdff0ebece6221ca163c73327bcf4bcedd9",
+    "input_freeze_validator_manifest_sha256": "3d0488e18ff5433abc721230763aa82d57452a13a66322040904392a1ff0ccd0",
+    "input_freeze_client_audit_manifest_sha256": "74f3c9026d340d4582a78348d9448a618742c8bf59128558234601bbc9b4e312",
+    "deterministic_prompt_tokenizations": 63000,
+    "maximum_deterministic_input_tokens": 3682,
+    "admission_ceiling_tokens": 9472,
+    "development_runtime_implementation_authorized": true
   }
 }

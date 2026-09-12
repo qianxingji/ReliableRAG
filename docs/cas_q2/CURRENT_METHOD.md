@@ -1,15 +1,15 @@
 # Current method: verifier-augmented recovery arbitration
 
 2026-09-12 P0-3 execution update: the single invented-only Phi compatibility
-producer, tokenizer-only validator and external client audit pass. The long
-generation witness used 15,987,338,240 allocated CUDA bytes, 93.48% of the
-reported device total, so benchmark execution remains closed pending a separate
-value-blind full-input and implementation freeze. That gate must prove every
-planned prompt stays at or below the accepted 9,472-token witness and bind
-single-item execution before any benchmark model call. Five Phi-matched policy
-heads remain planned; the seven historical upstream estimators remain byte-fixed.
-No Phi benchmark inference, scientific fit or test Gold read has started. See
-PHI_READER_PREFLIGHT_ACCEPTANCE.md and PHI_READER_REPLICATION_PROTOCOL_V1.md.
+preflight and the subsequent value-blind full-input freeze are accepted. The
+freeze independently reconstructs 63,000 deterministic prompts for all 31,500
+fixed traces; the maximum is 3,682 tokens against the binding 9,472-token
+ceiling, with no context truncation. Dynamic repaired-answer prompts must pass
+the committed guard before CUDA/model access. Five Phi-matched policy heads
+remain planned; the seven historical upstream estimators remain byte-fixed.
+Development-runtime implementation is authorized next, while test benchmark
+execution, scientific fits and test Gold remain closed. See
+PHI_READER_INPUT_FREEZE_ACCEPTANCE.md and PHI_READER_REPLICATION_PROTOCOL_V1.md.
 
 2026-09-12 fresh empirical result update: the complete 18,000-trace fixed study,
 20,000-draw analysis and independent validator are accepted. HGB_GBV_R jointly

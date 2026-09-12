@@ -6,9 +6,11 @@ clears no novel candidate. A read-only availability/literature audit froze one
 Phi-3.5-mini-instruct replication on the same 6,000-question cohort. Its unique
 invented-only compatibility producer and independent validation now pass with a
 binding memory limit: the long generation witness used 93.48% of nominal GPU
-memory. No Phi benchmark inference, new fit or Gold read has begun. A separate
-value-blind full-input/implementation freeze is required next; see
-`PHI_READER_PREFLIGHT_ACCEPTANCE.md` and `PHI_READER_REPLICATION_PROTOCOL_V1.md`.
+memory. The separate value-blind input freeze now also passes over all 31,500
+fixed traces, with a 3,682-token maximum against the 9,472-token guard. No Phi
+benchmark inference, new fit or Gold read has begun; development-runtime
+implementation is the next gate. See `PHI_READER_INPUT_FREEZE_ACCEPTANCE.md`
+and `PHI_READER_REPLICATION_PROTOCOL_V1.md`.
 
 ## Goal and authority
 
