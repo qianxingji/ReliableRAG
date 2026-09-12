@@ -46,9 +46,12 @@ pairs close; 17,435 executable inputs and 30,912 environment files rehash
 unchanged. Preserve the initial audit-controller environment failure. The one
 fixed CPU policies stage and separate all-action/saved-head replay are accepted
 in C4_POLICIES_ACCEPTANCE.md. Preserve its initial audit assembly failure too.
-The complete C4 independent prelabel validator is now authorized through
-`run_roa_empirical_scoring_bound_v3` with the exact runtime, V2 preflight, base,
-GbV and policies manifests.
+The complete C4 independent prelabel validator and Astra xhigh client final
+authenticity audit are accepted in C4_COMPLETE_PRELABEL_ACCEPTANCE.md. They pass
+1,740,102 integrated checks and rehash 17,465 executable inputs plus 30,912
+environment files. Preserve the initial final-audit Jinja-count assertion
+failure. The frozen cost auditor and four D processes are now authorized in
+their contract order; fresh Gold remains unread until the specified D boundary.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.

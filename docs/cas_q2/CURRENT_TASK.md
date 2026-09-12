@@ -100,7 +100,11 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    error `1.27675647831893e-15`. Its initial audit-controller assembly failure
    is preserved. Execute the one complete C4 independent prelabel validator
    through `run_roa_empirical_scoring_bound_v3` with the exact accepted runtime,
-   V2 preflight, base, GbV and policies manifests.
+   V2 preflight, base, GbV and policies manifests. That complete validator and
+   the Astra xhigh client [final audit](C4_COMPLETE_PRELABEL_ACCEPTANCE.md) now
+   pass 1,740,102 integrated checks and rehash 17,465 executable inputs plus
+   30,912 environment files. Preserve the initial final-audit Jinja-count
+   assertion failure. C4 frozen prelabel is accepted.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -251,9 +255,9 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the single complete C4 independent prelabel validator and audit
-its final sealed report. Continue only through the exact accepted predecessor
-chain. C3's final
+Next: execute the frozen cost reconciliation and four D processes in their
+contract order, preserving the first fresh-outcome boundary and all raw results.
+Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original
