@@ -2,11 +2,13 @@
 Effective 2026-09-10, from the user's explicit project-goal update.
 
 2026-09-12 reader-axis update: the fixed Qwen empirical study is complete but
-clears no novel candidate. A read-only availability/literature audit has frozen
-one Phi-3.5-mini-instruct replication on the same 6,000-question cohort. This is
-a reader robustness test of the empirical fusion procedure, not a new-method
-confirmation. No Phi benchmark inference, new fit or Gold read has begun; see
-`P0_3_READER_AXIS_AVAILABILITY.md` and `PHI_READER_REPLICATION_PROTOCOL_V1.md`.
+clears no novel candidate. A read-only availability/literature audit froze one
+Phi-3.5-mini-instruct replication on the same 6,000-question cohort. Its unique
+invented-only compatibility producer and independent validation now pass with a
+binding memory limit: the long generation witness used 93.48% of nominal GPU
+memory. No Phi benchmark inference, new fit or Gold read has begun. A separate
+value-blind full-input/implementation freeze is required next; see
+`PHI_READER_PREFLIGHT_ACCEPTANCE.md` and `PHI_READER_REPLICATION_PROTOCOL_V1.md`.
 
 ## Goal and authority
 

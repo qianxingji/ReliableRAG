@@ -132,14 +132,18 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    not an executable confirmation protocol or final-model authorization.
    This review is complete in [P0_3_FRESH_RESULT_DECISION.md](P0_3_FRESH_RESULT_DECISION.md):
    ROA-FULL is rejected and only fusion versus GBV_ONLY_R passes jointly.
-6. The read-only [reader-axis audit](P0_3_READER_AXIS_AVAILABILITY.md) and
-   [frozen Phi protocol](PHI_READER_REPLICATION_PROTOCOL_V1.md) now govern P0-3.
-   Exact remaining ID counts are 105 / 5,276 / 15,838, so the fixed independent
-   axis is Phi-3.5-mini-instruct on the same 6,000-question cohort. Implement and
-   independently validate one invented-only Phi compatibility preflight. Until
-   it passes, do not call Phi on benchmark data, fit the ten reader-specific
-   heads or reopen test Gold. Preserve the V1 read-only audit failure and use
-   only the accepted V2 audit manifest.
+ 6. The read-only [reader-axis audit](P0_3_READER_AXIS_AVAILABILITY.md) and
+    [frozen Phi protocol](PHI_READER_REPLICATION_PROTOCOL_V1.md) now govern P0-3.
+    Exact remaining ID counts are 105 / 5,276 / 15,838, so the fixed independent
+    axis is Phi-3.5-mini-instruct on the same 6,000-question cohort. The single
+    invented-only producer and independent validator are now
+    [accepted with a binding memory limit](PHI_READER_PREFLIGHT_ACCEPTANCE.md).
+    Preserve the failed V1 validator and never repeat the producer. Its long
+    generation used 93.48% of nominal GPU memory. Next commit and independently
+    accept a value-blind full-input/implementation freeze that proves all planned
+    prompts are at most the accepted 9,472-token witness and binds sequential
+    execution. Until that gate passes, do not call Phi on benchmark data, fit the
+    ten reader-specific heads or reopen test Gold.
 
 The [C3 execution adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) passes 16
 original/adapted cases, 13 exact rejection reasons, nine ordinary-len cases and
@@ -315,4 +319,5 @@ institutional category rule and target journal are user-undecided and do not
 block experimental work. Every major stage reports NOT READY until the complete
 submission requirements are actually proven, with rejection risks, missing
 evidence and P0/P1/P2 priorities. The principal risks remain unestablished
-contribution, incomplete fresh empirical results and historical training gaps.
+contribution, reader-dependent empirical support, the tight Phi GPU-memory
+margin and historical training gaps.

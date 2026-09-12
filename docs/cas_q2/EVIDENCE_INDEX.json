@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T05:04:50+00:00",
+  "as_of_utc": "2026-09-12T05:29:34+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
   "current_candidate": null,
   "historical_candidate": "ROA-FULL",
-  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED; PHI_READER_AXIS_FROZEN_PREIMPLEMENTATION",
+  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED; PHI_PREFLIGHT_ACCEPTED_PENDING_VALUE_BLIND_INPUT_FREEZE",
   "development_decision": "FINAL_CANDIDATE_NOT_CLEARED",
   "historical_roa_development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
   "dependence_label": "GBV_AUGMENTED_ONLY",
@@ -1121,7 +1121,7 @@
     "claim_review": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md"
   },
   "reader_axis_replication": {
-    "status": "FROZEN_PENDING_INVENTED_COMPATIBILITY_PREFLIGHT",
+    "status": "PREFLIGHT_ACCEPTED_PENDING_VALUE_BLIND_INPUT_AND_IMPLEMENTATION_FREEZE",
     "availability_review": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY.md",
     "availability_results": "docs/cas_q2/P0_3_READER_AXIS_AVAILABILITY_RESULTS.json",
     "protocol": "docs/cas_q2/PHI_READER_REPLICATION_PROTOCOL_V1.md",
@@ -1138,6 +1138,16 @@
     "new_scientific_fit_calls": 0,
     "phi_test_gold_reads": 0,
     "preserved_availability_failure": "client outputs/phi_reader_axis_availability_v1",
-    "next_gate": "INVENTED_ONLY_PHI_COMPATIBILITY_PREFLIGHT_AND_INDEPENDENT_VALIDATION"
+    "next_gate": "VALUE_BLIND_FULL_INPUT_AND_IMPLEMENTATION_FREEZE",
+    "preflight_acceptance": "docs/cas_q2/PHI_READER_PREFLIGHT_ACCEPTANCE.md",
+    "preflight_results": "docs/cas_q2/PHI_READER_PREFLIGHT_RESULTS.json",
+    "producer_manifest_sha256": "cfebd83ce688479af922e884ea0df6034af6e32fc2175c3fd3b5e69266e58d30",
+    "preserved_failed_validator_manifest_sha256": "35cf75ee5a8d0ef1efb00b9d560fa8e455a1873d20d202cad93f1752acf15269",
+    "validator_manifest_sha256": "ef11925bb631e47c22fd47ba0579edf138e708b4a1ee78bbe4527cb1f7fe291a",
+    "client_audit_manifest_sha256": "dc5d0a25bcac891552ac2ab4cc333c4a7e39e25f1faa655d0575550f4358afba",
+    "preflight_generation_peak_allocated_cuda_bytes": 15987338240,
+    "preflight_peak_fraction_of_nominal_total": 0.9347504056886456,
+    "maximum_authorized_pretokenized_generation_input_tokens": 9472,
+    "benchmark_execution_authorized": false
   }
 }
