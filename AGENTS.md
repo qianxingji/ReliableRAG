@@ -43,9 +43,12 @@ base receipt and scientific output remain unchanged. The single full GbV stage
 and independent saved-logit/token/softmax/branch audit are accepted in
 C4_GBV_SCORING_ACCEPTANCE.md. All 18,000 traces, 8,534 NLI forwards and 42,946
 pairs close; 17,435 executable inputs and 30,912 environment files rehash
-unchanged. Preserve the initial audit-controller environment failure. One fixed
-CPU policies stage is now authorized through `run_roa_empirical_scoring_bound_v3`
-with the exact accepted runtime, V2 preflight, base and GbV manifests.
+unchanged. Preserve the initial audit-controller environment failure. The one
+fixed CPU policies stage and separate all-action/saved-head replay are accepted
+in C4_POLICIES_ACCEPTANCE.md. Preserve its initial audit assembly failure too.
+The complete C4 independent prelabel validator is now authorized through
+`run_roa_empirical_scoring_bound_v3` with the exact runtime, V2 preflight, base,
+GbV and policies manifests.
 Keep the earlier pre-config import failure and its module-launch amendment too.
 
 Latest C3 validation binding: C3_VALIDATION_BINDING_ACCEPTANCE.md and RESULTS.json.

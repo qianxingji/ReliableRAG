@@ -94,9 +94,13 @@ Astra xhigh, then return to Sol High. Do not run every stage on Astra.
    8,534 saved NLI forwards and 42,946 pairs pass the independent token/logit/
    softmax/branch audit, with 17,435 executable inputs and 30,912 environment
    files rehashed unchanged. The initial system-Python audit-controller failure
-   is preserved. Execute one fixed CPU policies stage through
-   `run_roa_empirical_scoring_bound_v3` with the exact runtime, V2 preflight,
-   base and GbV predecessor manifests, then audit it separately.
+   is preserved. The single fixed CPU [policies stage](C4_POLICIES_ACCEPTANCE.md)
+   is also accepted: an independent replay checks all saved-head scores, global
+   rankings, 900-member policy sets and 18,000 action rows with maximum numeric
+   error `1.27675647831893e-15`. Its initial audit-controller assembly failure
+   is preserved. Execute the one complete C4 independent prelabel validator
+   through `run_roa_empirical_scoring_bound_v3` with the exact accepted runtime,
+   V2 preflight, base, GbV and policies manifests.
 4. Only complete C4 prelabel acceptance permits the
    [cost auditor](EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) and four separate
    [D processes](EMPIRICAL_D_EXECUTION_CONTRACT.md): selected-reference mapping,
@@ -247,10 +251,9 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: execute the single fixed CPU C4 policies stage with raw logs, then
-independently audit all 18,000 action rows and the global 900-action cap before
-the complete C4 independent prelabel validator. Continue only through the exact
-accepted predecessor chain. C3's final
+Next: execute the single complete C4 independent prelabel validator and audit
+its final sealed report. Continue only through the exact accepted predecessor
+chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The static graph still proves declared byte delivery only; complete relocated
 neural/pipeline validation remains later reproducibility work. Keep all original

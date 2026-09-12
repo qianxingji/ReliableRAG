@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of_utc": "2026-09-12T00:20:15.483715+00:00",
+  "as_of_utc": "2026-09-12T00:33:58.467174+00:00",
   "cas_q2_status": "NOT READY",
   "repository": "qianxingji/ReliableRAG",
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
@@ -171,9 +171,9 @@
     "confirmation_frozen": true,
     "empirical_route_review": "docs/cas_q2/EMPIRICAL_ROUTE_REVIEW.md",
     "cost_and_precision_results": "docs/cas_q2/COST_AND_PRECISION_RESULTS.json",
-    "empirical_route_decision": "C3_ACCEPTED; C4_V1_PREFLIGHT_FAILED_PRESERVED; C4_V2_GPU_PREFLIGHT_ACCEPTED; BASE_AND_GBV_ACCEPTED; POLICIES_AUTHORIZED",
-    "confirmation_freeze_scope": "C1/C2/C3 and C4 base/GbV complete and sealed; C4 policies/independent validation and D analysis pending",
-    "latest_stage_acceptance": "docs/cas_q2/C4_GBV_SCORING_ACCEPTANCE.md",
+    "empirical_route_decision": "C3_ACCEPTED; C4_BASE_GBV_POLICIES_ACCEPTED; COMPLETE_C4_INDEPENDENT_AUTHORIZED",
+    "confirmation_freeze_scope": "C1/C2/C3 and C4 base/GbV/policies complete and sealed; C4 independent validation and D analysis pending",
+    "latest_stage_acceptance": "docs/cas_q2/C4_POLICIES_ACCEPTANCE.md",
     "latest_runtime_inventory_review": "docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md"
   },
   "deployment_model_scope": "Five separately fitted fixed empirical comparison policies; no cleared novel-method recommendation or fresh quality evidence",
@@ -203,7 +203,7 @@
     "stage_C4_scoring_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
     "stage_C4_asset_inventory_status": "PASS_AVAILABILITY_ONLY",
     "stage_C4_asset_inventory_manifest": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
-    "latest_execution_snapshot": "docs/cas_q2/C4_GBV_SCORING_ACCEPTANCE.md",
+    "latest_execution_snapshot": "docs/cas_q2/C4_POLICIES_ACCEPTANCE.md",
     "stage_C4_cpu_acceptance": "docs/cas_q2/EMPIRICAL_C4_CPU_ACCEPTANCE.md",
     "stage_C4_cpu_results": "docs/cas_q2/EMPIRICAL_C4_CPU_RESULTS.json",
     "stage_C4_cpu_status": "PASS_INVENTED_COMPATIBILITY_ONLY",
@@ -283,7 +283,11 @@
     "stage_C4_gbv_scientific_manifest_sha256": "0316b48996435da3f6e9ea20ffa329780c5bf0181af7706e113fd0b4a4de085c",
     "stage_C4_gbv_client_audit_manifest_sha256": "549bfcc82a78d9b75aa18fb2c297310c8d1e257f8310b456b1eaa060372cbfd3",
     "stage_C4_policies_authorized": true,
-    "stage_C4_policies_executed": false
+    "stage_C4_policies_executed": true,
+    "stage_C4_policies_accepted": true,
+    "stage_C4_policies_scientific_manifest_sha256": "2ad0d8a6112690ffb096af848cd8c7d50824aa08e9c20483be9f4c7530b146ed",
+    "stage_C4_policies_client_audit_manifest_sha256": "ec5d86d3a95b37f26fcc6bd5e5ce8ef36d1b32e4c1edb025722fc7ed2cb89d35",
+    "stage_C4_complete_independent_authorized": true
   },
   "journal_scope": {
     "status": "UNDECIDED_USER_CONFIRMED",
@@ -925,5 +929,41 @@
     "policies_authorized": true,
     "acceptance": "docs/cas_q2/C4_GBV_SCORING_ACCEPTANCE.md",
     "results": "docs/cas_q2/C4_GBV_SCORING_RESULTS.json"
+  },
+  "c4_policies": {
+    "status": "ACCEPTED_C4_POLICIES_SAVED_HEAD_AND_ACTION_REPLAY",
+    "scientific_manifest_sha256": "2ad0d8a6112690ffb096af848cd8c7d50824aa08e9c20483be9f4c7530b146ed",
+    "external_run_manifest_sha256": "520c7423c818eb8e57e10ea665846b89adae33ac8caace553243dea251aaf4b2",
+    "binding_config_sha256": "cec258a8c9d378b4ad4948cd510431b83acc8a452d94dd8ff24e98c7919453df",
+    "client_audit_manifest_sha256": "ec5d86d3a95b37f26fcc6bd5e5ce8ef36d1b32e4c1edb025722fc7ed2cb89d35",
+    "preserved_failed_audit_manifest_sha256": "041debcc66a00524f71861f90968493276d5751de903aa55131b69e715287593",
+    "source_commit": "db96260e0cc0ece53b68457cc77b5b5e44a9c96f",
+    "traces": 18000,
+    "common_eligible_traces": 4267,
+    "global_denominator": 18000,
+    "cap": 900,
+    "replacement_counts": {
+      "Keep": 0,
+      "HGB": 900,
+      "GbV": 900,
+      "ROA-FULL": 900,
+      "ROA-NOGBV": 900,
+      "HGB_GBV_R": 900,
+      "HGB_ONLY_R": 900,
+      "GBV_ONLY_R": 900,
+      "V2": 900
+    },
+    "numeric_checks": 392564,
+    "maximum_numeric_error": 1.27675647831893e-15,
+    "inputs_rehashed": 17454,
+    "environment_files_rehashed": 30912,
+    "neural_model_loads": 0,
+    "neural_forward_calls": 0,
+    "scientific_fits": 0,
+    "fresh_gold_values": 0,
+    "hgb_predict_proba_shared_dependency": true,
+    "full_independent_c4_authorized": true,
+    "acceptance": "docs/cas_q2/C4_POLICIES_ACCEPTANCE.md",
+    "results": "docs/cas_q2/C4_POLICIES_RESULTS.json"
   }
 }
