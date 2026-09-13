@@ -82,8 +82,12 @@ fairness, reviewer and Submission Ready audits.
    no tracked private data and refreshes the root README, but a top-level project
    license, journal-specific anonymity mode, frozen export allowlist and clean
    round-trip package remain required.
-8. **P0-H:** Select a target journal and verify the applicable CAS Q3 year, ISSN,
-   official scope/article type, major/minor category and institutional rule.
+8. **P0-H -- OFFICIAL SCOPE AUDITED; CAS RULE PENDING:** The
+   [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
+   Computing first for empirical editorial fit and Journal of Intelligent
+   Information Systems first for stable subject identity. No journal is certified
+   until the applicable CAS year/category and institutional title/ISSN rule are
+   supplied.
 9. **P0-I:** Obtain explicit manuscript authorization, complete the manuscript
    package, then run Astra xhigh final fairness, Claim, simulated-reviewer and
    Submission Ready audits.
