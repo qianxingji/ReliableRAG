@@ -304,14 +304,14 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: preserve the terminal Phi P0-1 failure and review the paper route under
-that failed reader gate and the already established absence of a cleared novel
-candidate. No automatic Phi or Mistral execution is authorized. A new research
-design must decide whether the publishable object is a bounded empirical audit,
-whether a new independent method can be justified without result-driven search,
-and whether the Mistral P1 extension is worth its measured cost. Freeze any such
-route prospectively before implementation; test calls, fits and Gold reads remain
-closed meanwhile.
+Next: preserve the terminal Phi P0-1 failure and follow the
+[Astra xhigh post-failure governance decision](POST_PHI_FAILURE_RESEARCH_GOVERNANCE.md).
+It rejects Phi continuation, direct Mistral execution and renewed method search.
+The only allowed next deliverable is
+an external `MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md` covering
+G0--G8 and a separate GO/STOP review. This document-only stage may use accepted
+records and public aggregate facts; it may not download assets, run tokenizer or
+models, fit, score, select new IDs, read Gold or modify scientific code.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The first cost invocation failed before creating a scientific namespace because

@@ -14,6 +14,11 @@ The independently reconsidered prospective third-reader choice is fixed as
 It is a conditional P1 reader-breadth extension, not a new method or independent
 question-population replication, and no Mistral execution is authorized. See
 [the selection decision](THIRD_READER_SELECTION_DECISION.md).
+The subsequent [Astra xhigh governance decision](POST_PHI_FAILURE_RESEARCH_GOVERNANCE.md)
+confirms that the former Phi-dependent submission route has stopped. The sole
+next stage is a bounded, result-blind external protocol draft plus GO/STOP review
+for a possible Mistral empirical extension. It does not reopen new-method search
+or authorize engineering or scientific execution.
 
 2026-09-13 P0-3 execution update: the V3 Phi development acquisition is a sealed
 interrupted failure. It contains 9,540 complete traces and one partial trace

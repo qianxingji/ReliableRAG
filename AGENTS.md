@@ -24,7 +24,11 @@ create V5, change the tolerance, fit/score Phi, read test Gold or execute a new
 reader. The conditional third-reader choice is exact Mistral-7B-Instruct-v0.3 at
 revision c170c708c41dac9275d15a8fff4eca08d52bab71; it is P1 evidence breadth,
 not a method contribution, and remains unexecuted pending a new committed
-prospective governance decision. Read THIRD_READER_SELECTION_DECISION.md.
+prospective governance decision. The Astra xhigh
+POST_PHI_FAILURE_RESEARCH_GOVERNANCE.md decision now permits only one bounded,
+result-blind, external document-stage Mistral empirical-extension protocol and
+GO/STOP audit. It does not authorize asset acquisition, tokenizer/model work,
+fits, benchmark execution or Gold. Read THIRD_READER_SELECTION_DECISION.md.
 
 Latest C3 status: **ACCEPTED_COMPLETE_CURRENT_C3_V3_2**. The unique full
 V3.2 launch completed 18,000 canonical and 180 actual replay traces. The Astra

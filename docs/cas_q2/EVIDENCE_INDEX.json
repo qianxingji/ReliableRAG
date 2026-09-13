@@ -8,6 +8,16 @@
   "historical_candidate": "ROA-FULL",
   "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED_NO_NOVEL_CANDIDATE; PHI_V4_RUNTIME_AND_REPLAY_COMPLETE_BUT_P0_1_AUTHENTICITY_FAILED; MISTRAL_THIRD_READER_SELECTED_CONDITIONALLY_NOT_AUTHORIZED",
   "development_decision": "FINAL_CANDIDATE_NOT_CLEARED",
+  "post_phi_failure_governance": {
+    "decision": "docs/cas_q2/POST_PHI_FAILURE_RESEARCH_GOVERNANCE.md",
+    "external_receipt_sha256": "3db67d216583c6a719ea5dffda9dc7b516d4f805b7d8ebc1951eff8b0091c95d",
+    "status": "DESIGN_ONLY_BOUNDED_EMPIRICAL_REASSESSMENT",
+    "phi_continuation_authorized": false,
+    "automatic_mistral_execution_authorized": false,
+    "new_method_search_authorized": false,
+    "next_deliverable": "EXTERNAL_MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT_AND_GO_STOP_REVIEW",
+    "scientific_execution_authorized": false
+  },
   "historical_roa_development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
   "dependence_label": "GBV_AUGMENTED_ONLY",
   "final_deployment_model_fitted": true,
