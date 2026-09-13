@@ -19,6 +19,11 @@ The [P0-C method/fairness account](P0_C_METHOD_FAIRNESS_ACCOUNT.md) is the
 reviewer-readable execution and supervision authority.
 The [P0-D statistical verification](P0_D_STATISTICAL_STATEMENT_VERIFICATION.md)
 is the authority for units, interval roles, multiplicity and the joint rule.
+The [P0-E disclosure boundary](P0_E_PROVENANCE_CONTAMINATION_ADAPTATION_FAILURE_DISCLOSURES.md)
+is mandatory for provenance, contamination, GbV adaptation and failed-reader
+reporting.
+The [P0-F cost table](P0_F_CLAIM_SCOPED_COST_TABLE.md) is the only allowed
+workload/cost authority and prohibits standalone speed or 5%-compute Claims.
 
 For each already generated original/repaired answer pair `(a0, a1)`, a policy
 chooses Keep or Repair under a fixed 5% full-batch action allocation. The study

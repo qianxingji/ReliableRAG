@@ -69,10 +69,14 @@ fairness, reviewer and Submission Ready audits.
    binds every unit, interval role, multiplicity rule, joint gate and grouped
    top-K bootstrap description to the accepted aggregate analysis and its prior
    independent full-draw validation.
-5. **P0-E:** Freeze provenance, contamination, adaptation and failure disclosures,
-   including missing original fit receipts and the Phi/Mistral terminal records.
-6. **P0-F:** Prepare the claim-scoped cost table and explicitly retain missing
-   canonical peaks, standalone latency, unified end-to-end latency and FLOPs.
+5. **P0-E -- CLOSED:** The
+   [frozen disclosure boundary](P0_E_PROVENANCE_CONTAMINATION_ADAPTATION_FAILURE_DISCLOSURES.md)
+   records data/cohort provenance, exact contamination limits, GbV adaptation,
+   missing original fit evidence and the Phi/Mistral terminal exclusions.
+6. **P0-F -- CLOSED WITH MEASUREMENT LIMITS:** The
+   [claim-scoped cost table](P0_F_CLAIM_SCOPED_COST_TABLE.md) reports the shared
+   workload, non-additive timers and saved C4 peaks while retaining every missing
+   standalone, canonical peak, end-to-end and FLOP measurement.
 7. **P0-G:** Audit the reviewer-facing code/data/model/reproduction package,
    licensing, anonymization, personal paths and the exact limits of neural replay.
 8. **P0-H:** Select a target journal and verify the applicable CAS Q3 year, ISSN,

@@ -25,6 +25,10 @@
   "p0_d_verifier": "scripts/verify_cas_q3_claim_statistics.py",
   "p0_d_verifier_sha256": "5cab1545abd0648165aa2102790447165d06b4a6787275639643a12c82ca02d4",
   "p0_d_decision": "PASS_CAS_Q3_STATISTICAL_STATEMENT_VERIFICATION",
+  "p0_e_disclosure_boundary": "docs/cas_q3/P0_E_PROVENANCE_CONTAMINATION_ADAPTATION_FAILURE_DISCLOSURES.md",
+  "p0_e_decision": "PASS_FROZEN_Q3_DISCLOSURE_BOUNDARY",
+  "p0_f_claim_scoped_cost_table": "docs/cas_q3/P0_F_CLAIM_SCOPED_COST_TABLE.md",
+  "p0_f_decision": "PASS_SHARED_STUDY_COST_WITH_EXPLICIT_MISSING_DEPLOYMENT_MEASUREMENTS",
   "historical_evidence_index": "docs/cas_q2/EVIDENCE_INDEX.json",
   "active_worktree": "E:/paper/ReliableRAG-cas-q2-p0-1",
   "active_branch": "work/cas-q2-p0-1",
@@ -67,8 +71,6 @@
     }
   },
   "missing_p0": [
-    "P0_E_provenance_contamination_adaptation_and_failure_disclosures",
-    "P0_F_claim_scoped_cost_table",
     "P0_G_reviewer_facing_release_license_and_anonymization_audit",
     "P0_H_verified_target_journal_and_applicable_cas_q3_rule",
     "P0_I_manuscript_authorization_package_and_final_astra_xhigh_audits"
@@ -77,7 +79,9 @@
     "P0_A_direct_neighbor_literature_and_contribution_audit",
     "P0_B_complete_result_and_claim_map",
     "P0_C_reviewer_readable_method_and_fairness_account",
-    "P0_D_statistical_statement_verification"
+    "P0_D_statistical_statement_verification",
+    "P0_E_provenance_contamination_adaptation_and_failure_disclosures",
+    "P0_F_claim_scoped_cost_table"
   ],
   "known_limitations": [
     "seven_original_per_estimator_fit_time_id_matrix_receipts_missing",
