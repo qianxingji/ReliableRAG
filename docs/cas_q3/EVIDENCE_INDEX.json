@@ -192,5 +192,14 @@
   ],
   "p1_b_cost_failure_register": "docs/cas_q3/REVIEWER_COST_FAILURE_REGISTER.md",
   "p1_b_cost_failure_register_sha256": "195344e69f834fad4b9085f2ef917a3ece0a5debf60024126225c29f5dcb2f91",
-  "p1_b_decision": "PASS_COMPLETE_REVIEWER_COST_AND_MATERIAL_FAILURE_REGISTER_WITH_MEASUREMENT_LIMITS"
+  "p1_b_decision": "PASS_COMPLETE_REVIEWER_COST_AND_MATERIAL_FAILURE_REGISTER_WITH_MEASUREMENT_LIMITS",
+  "p0_g_license_decision_packet": "docs/cas_q3/P0_G_PROJECT_LICENSE_DECISION_PACKET.md",
+  "p0_g_license_decision_packet_sha256": "4f0400687e586616e1a9e03cd72a7d9996496e68cb90b9808ff76d87ac1def58",
+  "p0_g_license_recommendation": "Apache-2.0_for_project_authored_code_and_documentation_pending_owner_confirmation",
+  "p0_g_owner_decision_required": [
+    "selected_option",
+    "exact_legal_copyright_holder",
+    "copyright_year_or_range",
+    "institutional_notice_or_review_requirement"
+  ]
 }

@@ -83,7 +83,11 @@ fairness, reviewer and Submission Ready audits.
    share one archive hash; the independent validator passes 100 checks and the
    extracted verifier passes 129 checks. The candidate is withheld until the
    owner selects a top-level project license and P0-H certifies the target
-   journal's data/code policy.
+   journal's data/code policy. The
+   [license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md) recommends
+   Apache-2.0 for project-authored code/docs and reduces the remaining owner
+   input to the exact option, legal holder/year and institutional NOTICE/review
+   requirement; it does not itself authorize release.
 8. **P0-H -- OFFICIAL SCOPE AND SUBMISSION REQUIREMENTS AUDITED; CAS RULE
    PENDING:** The
    [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
