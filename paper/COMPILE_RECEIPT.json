@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_COMPILED_PDF_MECHANICAL_VERIFICATION_WITH_DISCLOSED_FONT_AND_LONGTABLE_NOTICES",
+  "engine": "MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01",
+  "artifacts": {
+    "output/pdf/manuscript.pdf": {
+      "sha256": "c9150d15ae9023160c07437735333754a897a3331450d1e57388eed7703aa641",
+      "pages": 11,
+      "page_size": "612 x 792 pts (letter)",
+      "pdf_version": "1.5",
+      "font_rows": 17,
+      "nonembedded_fonts": [
+        "Helvetica",
+        "Helvetica-Bold"
+      ],
+      "type3_fonts": [
+        "F127"
+      ]
+    },
+    "output/pdf/supplement.pdf": {
+      "sha256": "fcf134c7695f9c706db376996856240e4980332ef5b4843a7d2095f6c4788d61",
+      "pages": 3,
+      "page_size": "612 x 792 pts (letter)",
+      "pdf_version": "1.5",
+      "font_rows": 10,
+      "nonembedded_fonts": [],
+      "type3_fonts": []
+    }
+  },
+  "logs": {
+    "output/pdf/manuscript.log": {
+      "sha256": "b6f5232891128c3be4327afd7b79c60446599db1b0ab562fe2e8ad929b9b0e82",
+      "fatal_errors": 0,
+      "undefined_citations_or_references": 0,
+      "overfull_or_underfull_boxes": 0,
+      "known_nonfatal_infinite_glue_notice": false
+    },
+    "output/pdf/supplement.log": {
+      "sha256": "67a7875570018f0f70e6cca77ab54a5c56f65d62bbf598f9acbe26cce1fa033f",
+      "fatal_errors": 0,
+      "undefined_citations_or_references": 0,
+      "overfull_or_underfull_boxes": 0,
+      "known_nonfatal_infinite_glue_notice": true
+    }
+  },
+  "text_checks": {
+    "manuscript_has_title": true,
+    "manuscript_has_references": true,
+    "supplement_has_fixed_action_table": true,
+    "unresolved_markers": 0
+  },
+  "visual_review": {
+    "status": "PASS_BY_PROJECT_LEAD_2026-09-13",
+    "main_pages_reviewed": 11,
+    "supplement_pages_reviewed": 3,
+    "defects_observed": 0
+  },
+  "disclosures": [
+    "MiKTeX reports its installation has not yet checked for updates; this is outside the LaTeX logs.",
+    "Supplement log retains one nonfatal longtable infinite-glue page-split notice; rendered content is complete.",
+    "The two included vector figures use unembedded PDF Base-14 Helvetica/Helvetica-Bold fonts; target-journal PDF-profile compliance remains to be checked after journal selection.",
+    "The main PDF also contains one embedded Type 3 font, F127; target-journal Type 3 font rules remain to be checked after journal selection."
+  ]
+}

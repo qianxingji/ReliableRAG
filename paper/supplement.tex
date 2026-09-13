@@ -1,0 +1,51 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{booktabs,longtable,graphicx,microtype}
+\usepackage[hidelinks]{hyperref}
+\raggedbottom
+\title{Supplementary Material: Supervision-Matched Selection of Paired RAG Repairs}
+\author{Anonymous authors}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Fixed-action sensitivity}
+The primary analysis reallocates the global top-$K$ actions within every question-cluster bootstrap draw. The following pre-specified sensitivity holds the observed action memberships fixed while reusing the same 20,000 draws and six-endpoint multiplicity adjustment.
+
+\begin{table}[h]
+\centering
+\caption{Fixed-action sensitivity. Values are percentage points.}
+\resizebox{\textwidth}{!}{\input{tables/fixed_action_sensitivity.tex}}
+\end{table}
+
+\section{Dataset breakdown}
+The cells below describe the one global allocation after partitioning by dataset. Each cell contains 6,000 traces. Actions, Recovery, Damage, and Net are counts; the EM/F1 differences from that cell's Keep baseline are percentage points with the cell denominator. The cells do not reallocate 900 actions within each dataset and support no subgroup inference.
+\input{tables/dataset_breakdown.tex}
+
+\section{Retriever breakdown}
+The cells below describe the same global allocation after partitioning by retriever. Each cell contains 6,000 traces. Counts and percentage-point differences have the same meaning as above, using the retriever-cell denominator. These cells support no retriever-specific superiority claim.
+\input{tables/retriever_breakdown.tex}
+
+\section{Policy construction details}
+All five supervised heads use 3,600 fit questions and 900 disjoint calibration questions, with three retriever siblings retained within a question group. Numeric imputation and standardization use fit data only. Missing-value indicators and one-hot retriever indicators are unscaled. The base classifiers and Platt calibrators use fixed logistic-regression settings and are never refit after fresh outcomes are opened. Raw HGB, raw GbV, and V2 are included for descriptive context but are not supervision-matched attribution controls.
+
+\section{Answer metrics}
+Normalization lowercases text, removes ASCII punctuation and the English articles \texttt{a}, \texttt{an}, and \texttt{the}, and collapses whitespace. EM is one if the normalized prediction equals any allowed reference. Token F1 uses multiset token overlap and takes the maximum over allowed references. Unequal answers involving \texttt{yes}, \texttt{no}, or \texttt{noanswer} receive zero F1; an empty token sequence scores one only against another empty sequence. The method-blind independent metric implementation applies these same conventions. No new reference evaluation is performed for manuscript preparation.
+
+\section{Data and historical-development scope}
+The evaluation source frames are HotpotQA validation, 2WikiMultiHopQA development, and MuSiQue training. The last label describes the public benchmark split, not membership in the current selector's fit set. A prospectively fixed hash order selected 2,000 questions per dataset after excluding the recorded 18,600-question union; the result is a deterministic frame-scoped cohort, not a probability sample or semantic-decontamination certificate.
+
+The seven historical upstream estimators have reconstructed membership of 601 fit traces / 518 question groups within a 7,200-trace / 4,800-question historical development universe. Those 4,800 groups and the 3,000 earlier V2 questions belong to the exclusion union and have zero recorded dataset/ID overlap with the current five-head development cohort. Only the five current heads share the 4,500-question, 3,600-fit / 900-calibration recipe. Upstream learning histories are part of the fixed signal dependency, so matched current heads do not imply equal total historical label budgets for every signal.
+
+\section{Provenance and stopped extensions}
+Saved estimator bytes, reconstructed historical membership, numerical replay, pre-label scoring witnesses, action memberships, outcome mapping, aggregate analysis, and independent validators are preserved under hashes. Seven original per-estimator fit-time ID/matrix receipts, an independent original-fit witness, and an independently recovered earlier pin for the complete historical training manifest are unavailable. These disclosures do not exclude unknown unlogged activity. The Qwen/BGE replay covers a prospectively selected 180 of 18,000 traces; downstream saved neural witnesses are fully checked, but this is not a second complete neural-forward run.
+
+A Phi reader extension acquired artifacts but failed its fixed semantic validation because 6,573 of 9,120 BF16 query vectors exceeded the $10^{-3}$ tolerance, with maximum deviation 0.0041683525. It was excluded before policy fitting and fresh effect analysis. A Mistral extension stopped at protocol review before engineering or model execution. Neither is a failed reader-effect experiment, and neither supports a robustness claim.
+
+\section{Workload disclosure}
+Stage timers cover distinct receipt boundaries and must not be summed: C2 1,096.562 s; C3 45,216.887 s; base scoring 5,337.573 s; GbV scoring 3,523.022 s; allocation 157.658 s. Separate saved C4 peaks of 8,153,970,176 and 2,956,706,304 bytes are also non-additive. The bounded replay separately contains 540 generation receipts, 518,966 prompt tokens, and 8,441 generated tokens/forwards. It is a reproduction witness, not an independent workload estimate. Standalone policy and per-generation latency, a uniform end-to-end timer, canonical C2/C3 peaks, a simultaneous whole-system peak, C2/C3 BGE token totals, generation input-token touches per autoregressive forward, FLOPs, and energy were not measured. Missing values are not zero; prompt or output-token totals are not FLOP estimates.
+
+\section{Reproduction boundary}
+The anonymous aggregate candidate permits deterministic checking of published numbers, interval signs, joint decisions, and file hashes. It excludes raw benchmark text, model weights, local paths, per-example outcomes, and private immutable ledgers. This supports aggregate reporting verification. It does not yet support public end-to-end regeneration of retrieval, answers, neural scores, or upstream training.
+
+\end{document}

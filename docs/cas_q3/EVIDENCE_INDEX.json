@@ -81,7 +81,7 @@
   "missing_p0": [
     "P0_G_owner_selected_project_license_and_target_journal_release_policy",
     "P0_H_verified_target_journal_and_applicable_cas_q3_rule",
-    "P0_I_explicit_drafting_authorization_complete_manuscript_package_and_final_astra_xhigh_audits"
+    "P0_I_author_identity_declarations_and_target_specific_submission_package"
   ],
   "completed_p0": [
     "P0_A_direct_neighbor_literature_and_contribution_audit",
@@ -101,7 +101,7 @@
     "target_journal_partition_year_category_and_institution_rule_pending"
   ],
   "scientific_execution_authorized": false,
-  "manuscript_authorized": false,
+  "manuscript_authorized": true,
   "p0_g_release_candidate_receipt": "docs/cas_q3/P0_G_AGGREGATE_RELEASE_CANDIDATE_RESULTS.json",
   "p0_g_release_candidate_receipt_sha256": "344f159fa61180af12f0b4cc14a07813c6bca753dd53f79dd246691092c457e5",
   "p0_g_release_candidate_failure_v1": "docs/cas_q3/P0_G_AGGREGATE_RELEASE_CANDIDATE_FAILURE_V1.md",
@@ -121,5 +121,58 @@
   "p0_h_submission_requirements_decision": "PASS_OFFICIAL_SUBMISSION_REQUIREMENTS_MATRIX_ONLY_CAS_QUALIFICATION_PENDING",
   "p0_i_manuscript_preflight": "docs/cas_q3/P0_I_MANUSCRIPT_PREFLIGHT.md",
   "p0_i_manuscript_preflight_sha256": "916a784e9b9201ab4c299214fa5870c12b2aa5f9bca1531ae2956abaa373798e",
-  "p0_i_decision": "PASS_PREFLIGHT_READY_TO_DRAFT_ON_EXPLICIT_AUTHORIZATION_MANUSCRIPT_NOT_STARTED"
+  "p0_i_decision": "PASS_SOURCE_AND_COMPILED_ARTIFACT_WITH_OWNER_LICENSE_CAS_BLOCKERS",
+  "p0_i_manuscript_authorization": "docs/cas_q3/P0_I_MANUSCRIPT_AUTHORIZATION.md",
+  "p0_i_manuscript_authorization_sha256": "aaed08ed6d70a8b0451e12afb852f5aacdb325ecd8ede2a5e39b251029c80beb",
+  "p0_i_manuscript_build_status": "docs/cas_q3/P0_I_MANUSCRIPT_BUILD_STATUS.md",
+  "p0_i_manuscript_build_status_sha256": "d513b30e928e7b710c2e9b5b529e555ac53e965405c7e3a846d3b3936a547d83",
+  "p0_i_manuscript_main": "paper/manuscript.tex",
+  "p0_i_manuscript_main_sha256": "cc948aa6955517060d0ab9c034baa9a6f2595db3f1bdf4218126611590d86d68",
+  "p0_i_manuscript_supplement": "paper/supplement.tex",
+  "p0_i_manuscript_supplement_sha256": "d7f58b3697a92362eee2cb35b4c935e6a420995e8d71d596eef4f1903d994c83",
+  "p0_i_manuscript_bibliography": "paper/references.bib",
+  "p0_i_manuscript_bibliography_sha256": "caa1ba0653f050c03445e1b100efb635dd17f813239e5a47822afc276247978e",
+  "p0_i_asset_receipt": "paper/ASSET_RECEIPT.json",
+  "p0_i_asset_receipt_sha256": "0d3590ffcd25a92a81c2ae638f87a3ded3141574bca80377b179d9f57df5d228",
+  "p0_i_manuscript_verification": "paper/MANUSCRIPT_VERIFICATION.json",
+  "p0_i_manuscript_verification_sha256": "d065d3599efef5680bcb1cc701bb62489a866fe953859fc0e70d817e2bb76eb6",
+  "p0_i_asset_builder": "scripts/build_cas_q3_manuscript_assets.py",
+  "p0_i_asset_builder_sha256": "7c3689812a026ff511d7c45542a7bf62a661e277b6aa235f2fe417573e0dab63",
+  "p0_i_manuscript_verifier": "scripts/verify_cas_q3_manuscript.py",
+  "p0_i_manuscript_verifier_sha256": "91628fd2008fcf92e2163bc6235a613d51b8659baa326bb8d26f9bbc7727d906",
+  "p0_i_astra_xhigh_manuscript_audit": "docs/cas_q3/P0_I_ASTRA_XHIGH_MANUSCRIPT_AUDIT.md",
+  "p0_i_astra_xhigh_manuscript_audit_sha256": "f91b72f6ba8827cfd650a31091d28d837e78fbf1e0903532b86edcda22dc5152",
+  "p0_i_compiled_artifact_acceptance": "docs/cas_q3/P0_I_COMPILED_ARTIFACT_ACCEPTANCE.md",
+  "p0_i_compiled_artifact_acceptance_sha256": "453444aa802665ec99ac7d7170cc26aa7a32b694953ee67a080f319e1efc4e5b",
+  "p0_i_compile_receipt": "paper/COMPILE_RECEIPT.json",
+  "p0_i_compile_receipt_sha256": "5736b6c9bf266dd8595bcf12ce7d2c1c7148a976ce306a0aa954e6aefa0b50ee",
+  "p0_i_pdf_builder": "paper/build_pdfs.ps1",
+  "p0_i_pdf_builder_sha256": "d1289ef78cecef64d7c80c63e4e737c727ea052997c058a1dd8acffdb3c96ae3",
+  "p0_i_compiled_pdf_verifier": "scripts/verify_cas_q3_compiled_pdfs.py",
+  "p0_i_compiled_pdf_verifier_sha256": "fd88d77491a28b51348792e446b1597efd3e4df326e2e2c43418edea44cfd83d",
+  "p0_i_main_pdf": "output/pdf/manuscript.pdf",
+  "p0_i_main_pdf_sha256": "c9150d15ae9023160c07437735333754a897a3331450d1e57388eed7703aa641",
+  "p0_i_supplement_pdf": "output/pdf/supplement.pdf",
+  "p0_i_supplement_pdf_sha256": "fcf134c7695f9c706db376996856240e4980332ef5b4843a7d2095f6c4788d61",
+  "p0_i_static_check_count": 126,
+  "p0_i_compiled_main_pages": 11,
+  "p0_i_compiled_supplement_pages": 3,
+  "p0_i_final_astra_compiled_rebind": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND.md",
+  "p0_i_final_astra_compiled_rebind_sha256": "d6b3dab290122b992cce1615a9025e55e7aef2c78b88cbaffbe6013c76b3d131",
+  "p0_i_build_resolution_validation": {
+    "local_miktex_fallback": "PASS",
+    "explicit_PATH": "PASS",
+    "post_rebuild_visual_pixel_identity_pages": 14
+  },
+  "p0_i_font_disclosures": {
+    "unembedded_base14": [
+      "Helvetica",
+      "Helvetica-Bold"
+    ],
+    "embedded_type3": [
+      "F127"
+    ]
+  },
+  "p0_i_astra_engineering_addendum": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md",
+  "p0_i_astra_engineering_addendum_sha256": "878021bb621c7690328cf4e40a7cbfdc2b97d19bb04bbb7c3835b7bd49d8ce8b"
 }

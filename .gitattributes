@@ -1,1 +1,3 @@
 src/arbitration/roa_original/*.py -text
+*.pdf binary
+output/pdf/*.log binary

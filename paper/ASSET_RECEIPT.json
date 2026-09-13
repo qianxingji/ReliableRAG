@@ -1,0 +1,21 @@
+{
+  "decision": "PASS_AGGREGATE_ONLY_MANUSCRIPT_ASSET_BUILD",
+  "gold_or_answer_text_read": false,
+  "model_forwards": 0,
+  "outputs": {
+    "paper/figures/paired_pipeline.pdf": "807bb54a83c341fec81d887571a932b04925b2a77f77badf5f46748eef3cd4a2",
+    "paper/figures/recovery_damage.pdf": "915395bc073f9ba7292d9f64154bda58838308d6479e5fc5a1985adaf51ce0b7",
+    "paper/tables/dataset_breakdown.tex": "b61022af5d361ecff8e9a28e68370fca97d09c8a8d0756b3f4b5687f1f7c38d2",
+    "paper/tables/fixed_action_sensitivity.tex": "9b396f2847d764f0cbd97281e2d884f22f09d57858b1702dc0da9f6100841b82",
+    "paper/tables/main_results.tex": "91b9d38e454d2941453d63665ae279504c57af7918d38e3842c4f09a912161eb",
+    "paper/tables/primary_comparisons.tex": "de8825610c9073449ed257132795bb1ee0d9d6c4a831abe8f86fa5a52e7e0ed6",
+    "paper/tables/retriever_breakdown.tex": "5c4e05ee6777ce1094b54d3d07a9bc839f4890e66459f027b1c9dff9aefcde3e",
+    "paper/tables/study_design.tex": "4b26c42716fdfcc29fdc762bd099ff48de970b9b5cbb3f5577a246df740198e9"
+  },
+  "schema_version": 1,
+  "scientific_fits": 0,
+  "sources": {
+    "outputs/cas_q2/empirical_analysis_v1/INTERVALS.json": "6d454afeec7c125c0cc4d182556af6db214a867aa4f62f7a6fbd1e6e22b09331",
+    "outputs/cas_q2/empirical_analysis_v1/POINT_ESTIMATES.json": "b03ddad8fa35f582a63403c029942104c3f5da1a961110edc2a62f09871f4d3b"
+  }
+}

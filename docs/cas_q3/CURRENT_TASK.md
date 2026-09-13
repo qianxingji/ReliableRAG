@@ -93,12 +93,25 @@ fairness, reviewer and Submission Ready audits.
    freezes each candidate's current article, length, file, review, declaration
    and data-policy constraints. No journal is certified until the applicable CAS
    year/category and institutional title/ISSN rule are supplied.
-9. **P0-I -- PREFLIGHT COMPLETE; DRAFTING NOT AUTHORIZED:** The
+9. **P0-I -- SOURCE AND COMPILED DRAFT ACCEPTED / EXTERNAL INPUTS OPEN:** The
    [manuscript preflight](P0_I_MANUSCRIPT_PREFLIGHT.md) freezes journal render
    profiles, the evidence-to-section map, table/figure sources, forbidden Claims,
-   author inputs and final audit gates. Obtain explicit manuscript authorization,
-   complete the manuscript package, then run Astra xhigh final fairness, Claim,
-   simulated-reviewer and Submission Ready audits.
+   author inputs and final audit gates. The user's direct “继续” reply after the
+   authorization blocker is recorded in the
+   [authorization record](P0_I_MANUSCRIPT_AUTHORIZATION.md). The main manuscript,
+   supplement, bibliography, generated tables/figures, title-page template and
+   cover-letter template now exist under `paper/`; the independent static
+   verifier passes 126 checks. MiKTeX produced an 11-page main PDF and 3-page
+   supplement; mechanical log checks and project-lead review of all pages pass
+   with the disclosed figure-font and nonfatal supplement `longtable` notices.
+   See the [build status](P0_I_MANUSCRIPT_BUILD_STATUS.md) and
+   [compiled-artifact acceptance](P0_I_COMPILED_ARTIFACT_ACCEPTANCE.md). The
+   Astra xhigh source-level fairness, Claim and simulated-reviewer audit and its
+   [compiled-artifact rebind](P0_I_ASTRA_XHIGH_COMPILED_REBIND.md) passed within
+   blockers. The subsequent build-path repair was independently reaffirmed in
+   the [engineering addendum](P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md),
+   including 14/14 pixel-identical rebuilt pages. Final Submission Ready remains
+   blocked by author inputs, license and the certified CAS Q3 journal rule.
 
 ## P1: material competitiveness improvements
 

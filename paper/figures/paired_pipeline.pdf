@@ -1,0 +1,65 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 720 300] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 1751 >>
+stream
+0.93 0.96 0.99 rg 0.18 0.34 0.52 RG 25 195 125 48 re B
+BT /F2 10 Tf 0 0 0 rg 33 224 Td (Retrieve top-5) Tj ET
+BT /F1 8 Tf 0 0 0 rg 33 207 Td (q -> E0) Tj ET
+0.93 0.96 0.99 rg 0.18 0.34 0.52 RG 220 195 140 48 re B
+BT /F2 10 Tf 0 0 0 rg 228 224 Td (Generate a0) Tj ET
+BT /F1 8 Tf 0 0 0 rg 228 207 Td (inputs: q + E0) Tj ET
+0.93 0.96 0.99 rg 0.18 0.34 0.52 RG 220 120 140 48 re B
+BT /F2 10 Tf 0 0 0 rg 228 149 Td (Generate repair query) Tj ET
+BT /F1 8 Tf 0 0 0 rg 228 132 Td (inputs: q + E0) Tj ET
+0.93 0.96 0.99 rg 0.18 0.34 0.52 RG 415 120 125 48 re B
+BT /F2 10 Tf 0 0 0 rg 423 149 Td (Retrieve / replace) Tj ET
+BT /F1 8 Tf 0 0 0 rg 423 132 Td (depth 50 / rank 5 -> E1) Tj ET
+0.93 0.96 0.99 rg 0.18 0.34 0.52 RG 585 120 110 48 re B
+BT /F2 10 Tf 0 0 0 rg 593 149 Td (Generate a1) Tj ET
+BT /F1 8 Tf 0 0 0 rg 593 132 Td (inputs: q + E1) Tj ET
+0.18 0.34 0.52 RG 1.4 w 150 219 m 218 219 l S
+0.18 0.34 0.52 RG 1.4 w 88 195 m 88 144 l S
+0.18 0.34 0.52 RG 1.4 w 88 144 m 218 144 l S
+0.18 0.34 0.52 RG 1.4 w 360 144 m 413 144 l S
+0.18 0.34 0.52 RG 1.4 w 540 144 m 583 144 l S
+BT /F1 9 Tf 0 0 0 rg 26 99 Td (a0 is not an input to the repair query.) Tj ET
+0.97 0.95 0.88 rg 0.55 0.42 0.12 RG 240 35 455 55 re B
+BT /F2 10 Tf 0 0 0 rg 260 68 Td (Precompute label-free scores for fixed \(a0, a1\)) Tj ET
+BT /F1 10 Tf 0 0 0 rg 260 49 Td (Each switching policy selects K=900 traces; Keep selects zero.) Tj ET
+0.35 0.35 0.35 RG 1.1 w 290 195 m 385 180 l S
+0.35 0.35 0.35 RG 1.1 w 385 180 m 385 91 l S
+0.35 0.35 0.35 RG 1.1 w 640 120 m 640 91 l S
+BT /F2 13 Tf 0 0 0 rg 25 269 Td (Shared candidate acquisition occurs before every policy decision) Tj ET
+BT /F1 9 Tf 0 0 0 rg 25 18 Td (Gold references are opened only after all policy action memberships are sealed.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000002059 00000 n 
+0000002129 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2204
+%%EOF
