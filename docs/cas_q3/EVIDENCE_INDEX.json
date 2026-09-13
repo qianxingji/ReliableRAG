@@ -81,7 +81,7 @@
   "missing_p0": [
     "P0_G_owner_selected_project_license_and_target_journal_release_policy",
     "P0_H_verified_target_journal_and_applicable_cas_q3_rule",
-    "P0_I_manuscript_authorization_package_and_final_astra_xhigh_audits"
+    "P0_I_explicit_drafting_authorization_complete_manuscript_package_and_final_astra_xhigh_audits"
   ],
   "completed_p0": [
     "P0_A_direct_neighbor_literature_and_contribution_audit",
@@ -115,5 +115,11 @@
   "p0_g_candidate_manifest_sha256": "6c8ca3a4d0a9d70ade6a09b7194337390ee74ab1f46c79d862e918418a341a1c",
   "p0_g_candidate_scope": "anonymous_aggregate_reporting_verification_only",
   "p0_g_distribution_authorized": false,
-  "p0_g_project_license": "PENDING_OWNER_SELECTION"
+  "p0_g_project_license": "PENDING_OWNER_SELECTION",
+  "p0_h_submission_requirements_matrix": "docs/cas_q3/P0_H_SUBMISSION_REQUIREMENTS_MATRIX.md",
+  "p0_h_submission_requirements_matrix_sha256": "8a5dc5ed1cf8b8ac5694f2c024dd31831964c2659d5fb659c055dda2376ecbf8",
+  "p0_h_submission_requirements_decision": "PASS_OFFICIAL_SUBMISSION_REQUIREMENTS_MATRIX_ONLY_CAS_QUALIFICATION_PENDING",
+  "p0_i_manuscript_preflight": "docs/cas_q3/P0_I_MANUSCRIPT_PREFLIGHT.md",
+  "p0_i_manuscript_preflight_sha256": "916a784e9b9201ab4c299214fa5870c12b2aa5f9bca1531ae2956abaa373798e",
+  "p0_i_decision": "PASS_PREFLIGHT_READY_TO_DRAFT_ON_EXPLICIT_AUTHORIZATION_MANUSCRIPT_NOT_STARTED"
 }

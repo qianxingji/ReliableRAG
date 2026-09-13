@@ -84,15 +84,21 @@ fairness, reviewer and Submission Ready audits.
    extracted verifier passes 129 checks. The candidate is withheld until the
    owner selects a top-level project license and P0-H certifies the target
    journal's data/code policy.
-8. **P0-H -- OFFICIAL SCOPE AUDITED; CAS RULE PENDING:** The
+8. **P0-H -- OFFICIAL SCOPE AND SUBMISSION REQUIREMENTS AUDITED; CAS RULE
+   PENDING:** The
    [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
    Computing first for empirical editorial fit and Journal of Intelligent
-   Information Systems first for stable subject identity. No journal is certified
-   until the applicable CAS year/category and institutional title/ISSN rule are
-   supplied.
-9. **P0-I:** Obtain explicit manuscript authorization, complete the manuscript
-   package, then run Astra xhigh final fairness, Claim, simulated-reviewer and
-   Submission Ready audits.
+   Information Systems first for stable subject identity. The
+   [submission-requirements matrix](P0_H_SUBMISSION_REQUIREMENTS_MATRIX.md)
+   freezes each candidate's current article, length, file, review, declaration
+   and data-policy constraints. No journal is certified until the applicable CAS
+   year/category and institutional title/ISSN rule are supplied.
+9. **P0-I -- PREFLIGHT COMPLETE; DRAFTING NOT AUTHORIZED:** The
+   [manuscript preflight](P0_I_MANUSCRIPT_PREFLIGHT.md) freezes journal render
+   profiles, the evidence-to-section map, table/figure sources, forbidden Claims,
+   author inputs and final audit gates. Obtain explicit manuscript authorization,
+   complete the manuscript package, then run Astra xhigh final fairness, Claim,
+   simulated-reviewer and Submission Ready audits.
 
 ## P1: material competitiveness improvements
 

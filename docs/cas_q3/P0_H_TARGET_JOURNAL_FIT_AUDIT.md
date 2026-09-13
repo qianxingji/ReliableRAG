@@ -9,6 +9,13 @@ official CAS platform exposes the journal records only after login in this
 session. JCR quartiles, impact factors and third-party partition lists are not
 substitutes.
 
+The separate
+[submission-requirements matrix](P0_H_SUBMISSION_REQUIREMENTS_MATRIX.md) now
+freezes the candidates' article types, file/length constraints, review identity,
+declarations and data-policy requirements from current official publisher pages.
+That closes the document-format research portion of P0-H, not CAS qualification
+or journal selection.
+
 ## Required qualification record
 
 A final P0-H PASS requires one row with all fields completed:
@@ -144,9 +151,9 @@ CAS continuity problem as Discover Computing.
 
 The unresolved items are precise: CAS edition/year; major versus minor category;
 institutional treatment of title/ISSN changes; the official Tier-3 record for a
-current ISSN; APC acceptability if applicable; and the selected journal's final
-review-artifact policy. Once those are supplied, the final qualification can be
-completed without new scientific computation.
+current ISSN; APC acceptability if applicable; and confirmation of the selected
+journal row in the live submission workflow. Once those are supplied, the final
+qualification can be completed without new scientific computation.
 
 **CAS Q3 STATUS: NOT READY.** P0-H is not closed. The current provisional leader
 is Discover Computing conditional on CAS qualification; Journal of Intelligent

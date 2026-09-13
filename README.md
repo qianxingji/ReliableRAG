@@ -66,6 +66,8 @@ Start with:
 - [Provenance, contamination, adaptation and failure disclosures](docs/cas_q3/P0_E_PROVENANCE_CONTAMINATION_ADAPTATION_FAILURE_DISCLOSURES.md)
 - [Claim-scoped cost table](docs/cas_q3/P0_F_CLAIM_SCOPED_COST_TABLE.md)
 - [Reviewer release, license and anonymization audit](docs/cas_q3/P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md)
+- [Candidate-journal submission requirements](docs/cas_q3/P0_H_SUBMISSION_REQUIREMENTS_MATRIX.md)
+- [Manuscript preflight and evidence map](docs/cas_q3/P0_I_MANUSCRIPT_PREFLIGHT.md)
 
 The full `docs/cas_q2/` tree is retained as historical execution and acceptance
 evidence. Its old target/status and next-step language is superseded by the Q3
