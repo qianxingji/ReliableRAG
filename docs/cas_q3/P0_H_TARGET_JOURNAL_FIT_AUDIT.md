@@ -65,6 +65,12 @@ title/ISSN transition is a serious partition risk: an old ranking for
 *Information Retrieval Journal* cannot be transferred to *Discover Computing*
 without an explicit institutional ruling.
 
+The 2026-09-14 [APC addendum](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md) verifies
+the current official alternatives as GBP 1,040, USD 1,520, or EUR 1,140 plus
+applicable taxes, with the acceptance-date price governing. Institutional
+agreements, funder support and waiver/discount routes may apply, but none is
+confirmed without the responsible author's institution and retained evidence.
+
 ### 2. Journal of Intelligent Information Systems — strongest stable subject identity
 
 - Confirmed ISSN-L `0925-9902`; print `0925-9902`, online `1573-7675` in the

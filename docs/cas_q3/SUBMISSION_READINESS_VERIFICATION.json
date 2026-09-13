@@ -42,7 +42,7 @@
         "institution-recognized CAS edition/year and category rule",
         "verified current journal title and ISSNs under that rule",
         "title/ISSN-change and recognition-date treatment",
-        "final target journal and any APC acceptance"
+        "final target journal and owner-confirmed payer, agreement, waiver or no-mandatory-APC route"
       ]
     },
     {
@@ -63,8 +63,8 @@
     "missing_field_count": 1,
     "validation_error_count": 0
   },
-  "verified_repository_hashes": 65,
-  "checks": 158,
+  "verified_repository_hashes": 67,
+  "checks": 165,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

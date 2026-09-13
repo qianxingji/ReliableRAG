@@ -17,7 +17,9 @@ The current machine decision is
   release requirement, target-journal release policy and a newly validated
   licensed archive.
 - P0-H remains open for the institution-recognized CAS edition/category/title/
-  ISSN/date rule and the final target journal.
+  ISSN/date rule, final target journal and owner-confirmed publication-charge
+  route. The current Discover Computing price/date-rule lookup is complete;
+  payer, institutional coverage or a waiver remains unconfirmed.
 - P0-I remains open for real author/declaration facts, target-specific source
   and PDF conversion, and the final GPT-6 Astra xhigh audit.
 - P1-A through P1-D are closed. P2 remains frozen under the Qwen-only route.

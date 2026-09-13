@@ -123,6 +123,11 @@ fairness, reviewer and Submission Ready audits.
    records the exact fields needed for a one-step selection and the remaining
    target-profile gaps for all four candidates. The consolidated local intake
    checks field completeness but cannot authenticate the institutional record.
+   The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
+   closes the current-price lookup: the official page lists GBP 1,040, USD
+   1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
+   price. Only the owner's payer/agreement/confirmed-waiver decision remains;
+   an unconfirmed waiver is not treated as funding evidence.
 9. **P0-I -- SOURCE AND COMPILED DRAFT ACCEPTED / EXTERNAL INPUTS OPEN:** The
    [manuscript preflight](P0_I_MANUSCRIPT_PREFLIGHT.md) freezes journal render
    profiles, the evidence-to-section map, table/figure sources, forbidden Claims,

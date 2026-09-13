@@ -40,6 +40,7 @@ def complete_fixture() -> dict:
         "institutional_verifier_or_office": "Research Office",
         "verification_date": "2026-09-13",
         "publication_charge_route": "ACCEPTED",
+        "publication_charge_evidence_or_acknowledgement": "Current official charge reviewed and payer retained privately",
         "data_code_policy_summary": "Aggregate package permitted",
         "data_code_policy_source_url": "https://example.org/policy",
     }

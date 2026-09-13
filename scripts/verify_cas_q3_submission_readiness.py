@@ -108,6 +108,14 @@ def main() -> int:
         "provisional target conversion preserves scientific content",
         checks,
     )
+    apc = json.loads((ROOT / evidence["p0_h_discover_computing_apc_audit_receipt"]).read_text(encoding="utf-8"))
+    require(
+        apc["decision"] == "PASS_OFFICIAL_DISCOVER_COMPUTING_APC_FACTS_OWNER_ACCEPTANCE_PENDING",
+        "official Discover Computing current APC facts are recorded",
+        checks,
+    )
+    require(apc["owner_publication_charge_route_selected"] is False, "owner publication-charge route remains open", checks)
+    require(apc["submission_authorized"] is False, "APC audit does not authorize submission", checks)
 
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 4, "P1-A through P1-D are closed", checks)
@@ -146,7 +154,7 @@ def main() -> int:
                 "institution-recognized CAS edition/year and category rule",
                 "verified current journal title and ISSNs under that rule",
                 "title/ISSN-change and recognition-date treatment",
-                "final target journal and any APC acceptance",
+                "final target journal and owner-confirmed payer, agreement, waiver or no-mandatory-APC route",
             ],
         },
         {

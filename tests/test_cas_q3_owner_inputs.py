@@ -54,6 +54,7 @@ class OwnerInputsTests(unittest.TestCase):
             "institutional_verifier_or_office": "Research Office",
             "verification_date": "2026-09-13",
             "publication_charge_route": "ACCEPTED",
+            "publication_charge_evidence_or_acknowledgement": "Current official charge reviewed and payer retained privately",
             "data_code_policy_summary": "Aggregate package permitted",
             "data_code_policy_source_url": "https://example.org/policy",
         }
@@ -109,6 +110,15 @@ class OwnerInputsTests(unittest.TestCase):
         self.assertFalse(result["independent_cas_authority_verified"])
         self.assertFalse(result["distribution_authorized"])
         self.assertFalse(result["submission_authorized"])
+
+    def test_charge_route_without_evidence_or_acknowledgement_cannot_pass(self):
+        value = copy.deepcopy(self.template)
+        value["target_journal"]["publication_charge_route"] = "ACCEPTED"
+        result = validate(value)
+        self.assertIn(
+            "target_journal.publication_charge_evidence_or_acknowledgement",
+            result["missing_field_paths"],
+        )
 
     def test_false_author_approval_cannot_pass(self):
         value = copy.deepcopy(self.template)

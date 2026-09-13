@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "453a0e24ed44d4d05bd0425101a0b5b581091a9a067d950f7e2bb20b68159a23",
+      "sha256": "e74a9f713f4866207bb648b00c193946a5d06fd28e83105877ee4d8886724be5",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -67,6 +67,16 @@
       "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT.json",
       "required_marker": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
       "sha256": "9733beafa5be4cfc648ae805c2565c1e89812f9fe329054cb1ffe6e56ab3270a"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_DISCOVER_COMPUTING_APC_AUDIT.json",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_COMPUTING_APC_FACTS_OWNER_ACCEPTANCE_PENDING",
+      "sha256": "842013173c7a8f9c79c03051b08a06754877f2aaa69250e5f7416cfda30daa27"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_DISCOVER_COMPUTING_APC_AUDIT.md",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_COMPUTING_APC_FACTS_OWNER_ACCEPTANCE_PENDING",
+      "sha256": "d2457bbada724410de86d945d66fa3a13f5d5249c2774c9c1889cae0630f0fc3"
     },
     {
       "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.md",

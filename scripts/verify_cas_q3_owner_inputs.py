@@ -121,6 +121,7 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
         "retained_authority_path_or_url",
         "institutional_verifier_or_office",
         "verification_date",
+        "publication_charge_evidence_or_acknowledgement",
         "data_code_policy_summary",
         "data_code_policy_source_url",
     ):

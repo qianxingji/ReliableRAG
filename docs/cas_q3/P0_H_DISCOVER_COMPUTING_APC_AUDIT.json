@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_OFFICIAL_DISCOVER_COMPUTING_APC_FACTS_OWNER_ACCEPTANCE_PENDING",
+  "cas_q3_status": "NOT_READY",
+  "target_journal": "Discover Computing",
+  "official_source_checked_local_date": "2026-09-14",
+  "official_source_url": "https://link.springer.com/journal/10791/how-to-publish-with-us",
+  "publishing_model": "FULLY_OPEN_ACCESS",
+  "apc_applies_after_acceptance": true,
+  "price_determined_at": "ARTICLE_ACCEPTANCE_DATE",
+  "current_prices": [
+    {
+      "amount": 1040.0,
+      "currency": "GBP"
+    },
+    {
+      "amount": 1520.0,
+      "currency": "USD"
+    },
+    {
+      "amount": 1140.0,
+      "currency": "EUR"
+    }
+  ],
+  "vat_or_local_taxes_may_apply": true,
+  "institutional_open_access_agreement_may_cover_charge": true,
+  "institution_or_funder_support_may_be_available": true,
+  "lowest_income_country_waivers_or_discounts_available": true,
+  "other_financial_need_requests_considered_case_by_case": true,
+  "discretionary_request_deadline": "POINT_OF_MANUSCRIPT_SUBMISSION",
+  "owner_publication_charge_route_selected": false,
+  "institutional_agreement_checked": false,
+  "waiver_confirmed": false,
+  "submission_authorized": false,
+  "distribution_authorized": false,
+  "limitations": [
+    "The official page states that the acceptance-date price governs, so these current prices are not a future quote.",
+    "VAT or local taxes may change the payable total.",
+    "Institutional agreement eligibility cannot be checked without the responsible author's institution.",
+    "A discretionary waiver or discount is not confirmed by the existence of a case-by-case policy.",
+    "The APC record does not establish CAS Q3 qualification or final journal selection."
+  ],
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

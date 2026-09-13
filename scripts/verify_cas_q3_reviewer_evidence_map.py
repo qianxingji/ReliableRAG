@@ -89,6 +89,28 @@ def main() -> int:
     checks.equal(discover["artifacts"]["source_zip_nested_members"], [], "Discover source archive is flat")
     checks.equal(discover["artifacts"]["pdf_nonembedded_font_rows"], [], "Discover fonts are embedded")
     checks.equal(discover["source_protection"]["scientific_prose_or_numbers_changed"], False, "Discover conversion preserves scientific content")
+    apc = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_DISCOVER_COMPUTING_APC_AUDIT.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        apc["decision"],
+        "PASS_OFFICIAL_DISCOVER_COMPUTING_APC_FACTS_OWNER_ACCEPTANCE_PENDING",
+        "Discover APC audit decision",
+    )
+    checks.equal(
+        apc["current_prices"],
+        [
+            {"amount": 1040.0, "currency": "GBP"},
+            {"amount": 1520.0, "currency": "USD"},
+            {"amount": 1140.0, "currency": "EUR"},
+        ],
+        "Discover current APC alternatives",
+    )
+    checks.equal(apc["price_determined_at"], "ARTICLE_ACCEPTANCE_DATE", "Discover APC date rule")
+    checks.equal(apc["vat_or_local_taxes_may_apply"], True, "Discover APC tax boundary")
+    checks.equal(apc["owner_publication_charge_route_selected"], False, "Discover payer route remains open")
+    checks.equal(apc["waiver_confirmed"], False, "Discover waiver remains unconfirmed")
+    checks.equal(apc["submission_authorized"], False, "APC audit does not authorize submission")
 
     release = evidence["aggregate_release_candidate"]
     archive = Path(release["local_archive"])

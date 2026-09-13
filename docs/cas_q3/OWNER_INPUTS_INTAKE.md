@@ -72,7 +72,13 @@ major or minor category basis, category name, current title and ISSNs, Q3
 result, title/ISSN-change treatment, recognition-date rule and a retained
 authority. `verified_tier` must be `Q3`; JCR quartiles do not satisfy this
 field. `publication_charge_route` accepts `ACCEPTED`, `WAIVER_CONFIRMED`, or
-`NO_MANDATORY_APC`.
+`NO_MANDATORY_APC`. The adjacent
+`publication_charge_evidence_or_acknowledgement` field must identify the
+retained current price/date-rule acknowledgement and payer or funding route,
+the confirmed waiver/agreement evidence, or the official no-mandatory-APC
+source. For Discover Computing, the 2026-09-14 official-page snapshot is
+recorded in `P0_H_DISCOVER_COMPUTING_APC_AUDIT.md`; its listed prices are not a
+future quote because the publisher applies the acceptance-date price.
 
 The CRediT map may use an empty list only for a role that did not occur, but
 every named contributor must be an author in `authors_in_order`. At least one

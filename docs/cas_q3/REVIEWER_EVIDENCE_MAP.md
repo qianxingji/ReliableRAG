@@ -37,6 +37,11 @@ consolidates the executed workload, every missing deployment measurement, the
 three primary comparison outcomes, terminal reader routes and material
 fail-closed engineering chronology.
 
+The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
+records the official 2026-09-14 current prices, acceptance-date price rule,
+tax boundary and funding/waiver routes. It leaves payer acceptance,
+institutional coverage and any waiver unconfirmed.
+
 ## Reviewer sequence
 
 1. Read the abstract, Sections 3--7 and the complete nine-policy table in the
@@ -91,7 +96,9 @@ fail-closed engineering chronology.
 
 - **P0:** owner-selected project license and release policy; real author and
   declaration fields; certified journal title/ISSN and applicable institutional
-  CAS Q3 year/category rule; target-specific source/PDF conversion.
+  CAS Q3 year/category rule; owner-confirmed publication-charge route;
+  target-specific source/PDF conversion. The provisional Discover current-price
+  lookup is complete, but no payer, agreement or waiver is confirmed.
 - **P1:** insert the certified journal's data/code statement, rebuild the
   allowlisted archive under the selected license, and rerun deterministic and
   independent package validation.
