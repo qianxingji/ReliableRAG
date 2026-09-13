@@ -11,8 +11,10 @@ rule still require a named journal.
 **CAS Q3 STATUS: NOT READY.** The Qwen scientific core and P0-A through P0-F are
 closed. P0-G now has a deterministic anonymous aggregate candidate and clean
 round-trip proof, but distribution remains withheld pending a project license
-and final journal policy. Target-journal certification and the manuscript/final
-independent audits remain open.
+and final journal policy. The anonymous source and compiled manuscript passed
+the final Astra xhigh scientific/Claim review. Target-journal certification,
+author declarations, project licensing and target-specific formatting remain
+open.
 
 ## Current scientific object
 
@@ -59,6 +61,7 @@ Start with:
 - [Current task and gates](docs/cas_q3/CURRENT_TASK.md)
 - [Current method and Claim boundary](docs/cas_q3/CURRENT_METHOD.md)
 - [Evidence index](docs/cas_q3/EVIDENCE_INDEX.json)
+- [Reviewer evidence map and reproduction entry points](docs/cas_q3/REVIEWER_EVIDENCE_MAP.md)
 - [Direct-neighbor literature audit](docs/cas_q3/P0_A_DIRECT_NEIGHBOR_LITERATURE_AUDIT.md)
 - [Complete result and Claim map](docs/cas_q3/P0_B_RESULT_CLAIM_MAP.md)
 - [Method and fairness account](docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md)
@@ -81,6 +84,7 @@ per-question outcomes, actions or bootstrap multiplicities.
 
 ```powershell
 python scripts/verify_cas_q3_claim_statistics.py
+python scripts/verify_cas_q3_reviewer_evidence_map.py
 python -m unittest tests.test_empirical_analysis
 ```
 
@@ -113,7 +117,8 @@ audited before release; the Git repository itself is not yet that package.
   engineering. Neither supplies effect or robustness evidence.
 - Standalone policy latency, canonical C2/C3 accelerator peaks, uniform
   end-to-end latency and FLOPs were not measured.
-- A top-level project license and an anonymized reviewer export remain pending.
+- The anonymous aggregate export is validated but withheld until a top-level
+  project license and target-journal release policy are selected.
 
 See [AGENTS.md](AGENTS.md) for repository working rules. Historical task cards
 are evidence records rather than current execution instructions.

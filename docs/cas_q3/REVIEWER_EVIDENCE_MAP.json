@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES",
+  "cas_q3_status": "NOT_READY",
+  "distribution_authorized": false,
+  "scope": "reviewer navigation and artifact authentication; no scientific recomputation",
+  "repository_evidence": [
+    {
+      "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
+      "sha256": "55f88fff381c5d10a883134a617d22620884267f12e55e099d259257a9fe02e9",
+      "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "sha256": "cc948aa6955517060d0ab9c034baa9a6f2595db3f1bdf4218126611590d86d68",
+      "required_marker": "The same joint rule does not pass against the HGB-only policy"
+    },
+    {
+      "path": "paper/supplement.tex",
+      "sha256": "d7f58b3697a92362eee2cb35b4c935e6a420995e8d71d596eef4f1903d994c83",
+      "required_marker": "A Mistral extension stopped at protocol review before engineering or model execution."
+    },
+    {
+      "path": "output/pdf/manuscript.pdf",
+      "sha256": "c9150d15ae9023160c07437735333754a897a3331450d1e57388eed7703aa641"
+    },
+    {
+      "path": "output/pdf/supplement.pdf",
+      "sha256": "fcf134c7695f9c706db376996856240e4980332ef5b4843a7d2095f6c4788d61"
+    },
+    {
+      "path": "paper/COMPILE_RECEIPT.json",
+      "sha256": "5736b6c9bf266dd8595bcf12ce7d2c1c7148a976ce306a0aa954e6aefa0b50ee",
+      "required_marker": "PASS_COMPILED_PDF_MECHANICAL_VERIFICATION_WITH_DISCLOSED_FONT_AND_LONGTABLE_NOTICES"
+    },
+    {
+      "path": "paper/MANUSCRIPT_VERIFICATION.json",
+      "sha256": "d065d3599efef5680bcb1cc701bb62489a866fe953859fc0e70d817e2bb76eb6",
+      "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND.md",
+      "sha256": "d6b3dab290122b992cce1615a9025e55e7aef2c78b88cbaffbe6013c76b3d131",
+      "required_marker": "PASS_SOURCE_AND_COMPILED_ARTIFACT_WITH_OWNER_LICENSE_CAS_BLOCKERS"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md",
+      "sha256": "878021bb621c7690328cf4e40a7cbfdc2b97d19bb04bbb7c3835b7bd49d8ce8b",
+      "required_marker": "PASS_SOURCE_AND_COMPILED_ARTIFACT_WITH_OWNER_LICENSE_CAS_BLOCKERS"
+    },
+    {
+      "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",
+      "sha256": "117e9a8fe31bd8cd7c051ebbddf58554234dbbcfc3291019c1a40366e1d31d73",
+      "required_marker": "PASS_REVIEWER_READABLE_METHOD_AND_FAIRNESS_ACCOUNT"
+    },
+    {
+      "path": "docs/cas_q3/P0_D_STATISTICAL_STATEMENT_VERIFICATION.md",
+      "sha256": "6963b21a0f075ca10595227b3f9c4f714210bf95b9f9dae2ca18b28688436e4a",
+      "required_marker": "PASS_CAS_Q3_STATISTICAL_STATEMENT_VERIFICATION"
+    },
+    {
+      "path": "docs/cas_q3/P0_F_CLAIM_SCOPED_COST_TABLE.md",
+      "sha256": "ad093212333d65a938382221bc10733800617cf5719c625e1229561c56fcfe14",
+      "required_marker": "PASS_SHARED_STUDY_COST_WITH_EXPLICIT_MISSING_DEPLOYMENT_MEASUREMENTS"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md",
+      "sha256": "cd3ecadc34afa0d677a9a10efde2f42f6d1c3f7c8d95cc091e23cb887c533b38",
+      "required_marker": "PARTIAL_PASS_P0_G_ANONYMOUS_AGGREGATE_CANDIDATE_VALIDATED_RELEASE_WITHHELD"
+    },
+    {
+      "path": "docs/cas_q2/P0_1_CLIENT_ACCEPTANCE.md",
+      "sha256": "42c93e4d8cca396066547f412d2680bf053cb78b04a0b656f9f8c464e975ac72",
+      "required_marker": "ACCEPTED_FOR_BOUNDED_DEVELOPMENT_CONTROLS"
+    },
+    {
+      "path": "docs/cas_q2/ROA_REPLAY_RELEASE_ACCEPTANCE.md",
+      "sha256": "7096bbc69cb0174734773ab4e70de1c8796e9f323bef00da100f364d4810ebec",
+      "required_marker": "same-host relocation accepted"
+    },
+    {
+      "path": "docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md",
+      "sha256": "24dadc83ed95bafcd2e9a0ae992edc972125874fe14dab4c792938bff7d1e0c2",
+      "required_marker": "Fresh numerical-library installation and full replay accepted"
+    },
+    {
+      "path": "docs/cas_q2/EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md",
+      "sha256": "b01c8c5620237ddb0c6c91c0ece8f3270221cef78c155c88937d5087adb33929",
+      "required_marker": "Client Lead acceptance: reader acquisition execution"
+    },
+    {
+      "path": "docs/cas_q2/EMPIRICAL_D_ACCEPTANCE.md",
+      "sha256": "839989e744c74df5deb5b54a2cba8f4bf75e9ef11470d38901efd1ef29f30e85",
+      "required_marker": "ACCEPTED COMPUTATIONALLY"
+    },
+    {
+      "path": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md",
+      "sha256": "7e3c450b83e373b5ab8e60cbc35a3342d9efbaf41e6c84885f512e95ebda8870",
+      "required_marker": "NO NOVEL FINAL CANDIDATE CLEARED"
+    },
+    {
+      "path": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md",
+      "sha256": "ebf7a49010e0752fa3a52bba3099fe5429bab6cd47e4faf779c86e1fd29a26b3",
+      "required_marker": "FAIL_P0_1_PHI_DEVELOPMENT_AUTHENTICITY"
+    },
+    {
+      "path": "docs/cas_q2/MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md",
+      "sha256": "2fbef9e52ad2ed7dd32c708f8d3ed46cb5069259175e780a12ce39d00b36bf4a",
+      "required_marker": "STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING"
+    },
+    {
+      "path": "docs/cas_q3/REVIEWER_COST_FAILURE_REGISTER.md",
+      "sha256": "195344e69f834fad4b9085f2ef917a3ece0a5debf60024126225c29f5dcb2f91",
+      "required_marker": "PASS_COMPLETE_REVIEWER_COST_AND_MATERIAL_FAILURE_REGISTER_WITH_MEASUREMENT_LIMITS"
+    }
+  ],
+  "aggregate_release_candidate": {
+    "local_archive": "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-e/paired_rag_repair_aggregate_candidate.zip",
+    "archive_sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
+    "manifest_sha256": "6c8ca3a4d0a9d70ade6a09b7194337390ee74ab1f46c79d862e918418a341a1c",
+    "archive_members": 10,
+    "validator_checks": 100,
+    "roundtrip_reporting_checks": 129,
+    "distribution_authorized": false,
+    "project_license": "PENDING_OWNER_SELECTION"
+  },
+  "private_transport": {
+    "static_delivery_receipt": "docs/cas_q2/STATIC_DELIVERY_RESULTS.json",
+    "static_archive_sha256": "b80bbe91fee02dbdc9b360cebf29385948f9fa81c62fc1564bb4c0bc0214efe5",
+    "pretrained_archive_sha256": "741b30828503c481cbdc712295c9ab12f52a1c3de183c17bc572a11436762fa9",
+    "evidence_companion_sha256": "cda1095b983f63ad37d174ee9458ee86de05b7210de34555c6341a988c56e41b",
+    "roa_replay_receipt": "docs/cas_q2/ROA_REPLAY_RELEASE_RESULTS.json",
+    "roa_archive_sha256": "052219db01230c5a5ea0031cfdde56e6ae23f14c2bda63097c75c21b3e9f17a2",
+    "uploaded": false,
+    "another_host_or_os_verified": false,
+    "full_public_pipeline_reproduction": false
+  },
+  "scientific_boundaries": {
+    "only_joint_positive": "HGB_GBV_R_minus_GBV_ONLY_R",
+    "hgb_only_joint_advantage": false,
+    "roa_full_advancement": false,
+    "novel_top_level_method": false,
+    "accepted_readers": [
+      "QWEN"
+    ],
+    "historical_fit_time_receipts_complete": false,
+    "standalone_deployment_cost_measured": false
+  },
+  "missing_external_gates": [
+    "owner_selected_project_license_and_release_policy",
+    "author_identity_and_declarations",
+    "certified_target_journal_and_institutional_CAS_Q3_rule",
+    "target_journal_specific_format_and_font_profile"
+  ]
+}

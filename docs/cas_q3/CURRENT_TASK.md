@@ -115,15 +115,25 @@ fairness, reviewer and Submission Ready audits.
 
 ## P1: material competitiveness improvements
 
-- Consolidate the release index and offline reproduction runbooks into a concise
-  reviewer-facing map without changing sealed artifacts.
-- Prepare complete cost and failure tables, including missing standalone policy
-  latency, absent canonical peak memory and the distinction between 5% actions
-  and full candidate-acquisition cost.
-- Present negative results and Phi/Mistral termination chronology clearly enough
-  that status labels cannot be mistaken for effect evidence.
-- Prepare dataset/retriever breakdowns only where already frozen as secondary;
-  do not promote a favorable subgroup.
+- **P1-A -- CLOSED:** The
+  [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
+  through the compiled paper, anonymous aggregate package, private forensic
+  scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
+  authenticates 22 repository records plus the withheld archive and passes 120
+  checks without scientific payload reads, fits or model forwards.
+- **P1-B -- CLOSED:** The
+  [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
+  consolidates executed workload, non-additive timers and peaks, every missing
+  deployment measurement, the distinction between 5% actions and full
+  candidate-acquisition cost, primary negative results, stopped reader routes
+  and material fail-closed engineering corrections.
+- **P1-C -- CLOSED:** The manuscript, supplement and reviewer register retain
+  ROA/HGB-only non-passes, the terminal Phi validation failure and the Mistral
+  pre-engineering stop with explicit separation between technical status and
+  scientific effect evidence.
+- **P1-D -- CLOSED:** Frozen dataset and retriever breakdowns are present only
+  in the supplement, use their 6,000-trace cell denominators, and are explicitly
+  descriptive with no subgroup superiority Claim.
 
 ## P2: optional and currently closed
 

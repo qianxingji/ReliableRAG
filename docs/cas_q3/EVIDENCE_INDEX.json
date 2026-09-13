@@ -174,5 +174,23 @@
     ]
   },
   "p0_i_astra_engineering_addendum": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md",
-  "p0_i_astra_engineering_addendum_sha256": "878021bb621c7690328cf4e40a7cbfdc2b97d19bb04bbb7c3835b7bd49d8ce8b"
+  "p0_i_astra_engineering_addendum_sha256": "878021bb621c7690328cf4e40a7cbfdc2b97d19bb04bbb7c3835b7bd49d8ce8b",
+  "p1_a_reviewer_evidence_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
+  "p1_a_reviewer_evidence_map_sha256": "55f88fff381c5d10a883134a617d22620884267f12e55e099d259257a9fe02e9",
+  "p1_a_machine_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.json",
+  "p1_a_machine_map_sha256": "5fb5f14571b6a2912c4495fde6cbfd770f88b9a41222356ea46f9caeb7db9aad",
+  "p1_a_verifier": "scripts/verify_cas_q3_reviewer_evidence_map.py",
+  "p1_a_verifier_sha256": "7117d687580ecbf11d1052e2fab2377aa3701fec1eef316352bbbcb2e32cfde9",
+  "p1_a_verification_receipt": "docs/cas_q3/REVIEWER_EVIDENCE_MAP_VERIFICATION.json",
+  "p1_a_verification_receipt_sha256": "9c088a0bdc52163fb7238783129092707ea2d93f6aa3b2cb34c13d744974fa6e",
+  "p1_a_decision": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES",
+  "completed_p1": [
+    "P1_A_reviewer_evidence_map_and_reproduction_entry_points",
+    "P1_B_cost_and_material_failure_register",
+    "P1_C_negative_result_and_reader_termination_status_separation",
+    "P1_D_secondary_dataset_and_retriever_breakdown_boundary"
+  ],
+  "p1_b_cost_failure_register": "docs/cas_q3/REVIEWER_COST_FAILURE_REGISTER.md",
+  "p1_b_cost_failure_register_sha256": "195344e69f834fad4b9085f2ef917a3ece0a5debf60024126225c29f5dcb2f91",
+  "p1_b_decision": "PASS_COMPLETE_REVIEWER_COST_AND_MATERIAL_FAILURE_REGISTER_WITH_MEASUREMENT_LIMITS"
 }
