@@ -48,6 +48,13 @@ acceptance and the newer abstract-compression acceptance. The mechanical
 verifier no longer asserts that it performed a visual review; the versioned
 acceptance record carries that human inspection evidence.
 
+The [length verification](P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json) records a
+reproducible Poppler/PDF token proxy: 3,898 tokens before the References heading
+and 4,596 in the complete PDF. It is explicitly not a publisher word count. It
+shows a JIS-specific below-average-length risk because that journal publishes a
+5,000--7,500-word average, but it does not convert an average into a hard
+minimum or justify padding the manuscript.
+
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches
 have been exercised successfully in the takeover environment.

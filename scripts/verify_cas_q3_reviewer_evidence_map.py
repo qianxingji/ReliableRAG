@@ -67,6 +67,12 @@ def main() -> int:
     checks.equal(static_receipt["check_count"], 126, "static manuscript checks")
     checks.equal(static_receipt["abstract_word_count"], 142, "cross-profile abstract words")
     checks.equal(static_receipt["bibliography_entries"], 22, "bibliography entries")
+    length_receipt = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json").read_text(encoding="utf-8")
+    )
+    checks.equal(length_receipt["pdf_tokens_before_references"], 3898, "pre-reference PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_full_document"], 4596, "full PDF token proxy")
+    checks.equal(length_receipt["publisher_word_count_claimed"], False, "proxy is not a publisher word count")
 
     release = evidence["aggregate_release_candidate"]
     archive = Path(release["local_archive"])

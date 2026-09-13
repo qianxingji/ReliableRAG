@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "5391f541474062b0a7414920798d55acd2e494ecd89e26232ce19ebe0d2e1c82",
+      "sha256": "33f0162da6a8bf354b69ae4fdfed32db4bb77ac03310b09425609714eb77cc5b",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -57,6 +57,11 @@
       "path": "docs/cas_q3/P0_I_ABSTRACT_COMPRESSION_ACCEPTANCE.md",
       "sha256": "03d4c406ba71380e770f82f3a40891582c6ebe6a44d511af02ba255d9f254e0d",
       "required_marker": "PASS_142_WORD_CROSS_PROFILE_ABSTRACT_AND_REBUILT_DRAFT_WITH_FINAL_ASTRA_AND_EXTERNAL_GATES_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
+      "sha256": "421a3cbea032876b1ab81faf580de3cb562020eb37c6e8507dcf68c3b3a05bb6",
+      "required_marker": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE"
     },
     {
       "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",

@@ -166,6 +166,9 @@ privacy-preserving local JSON route for those facts without committing them.
    negative Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
    font and complete project-lead visual review; the mechanical verifier no
    longer self-asserts a human inspection.
+   A separate reproducible PDF-length proxy records 3,898 tokens before
+   References and 4,596 overall. This is below JIS's published average, not a
+   formal minimum failure; no text will be added merely to inflate length.
 
 ## P1: material competitiveness improvements
 

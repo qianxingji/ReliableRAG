@@ -22,7 +22,7 @@ submission.
 | Other declarations | Funding mandatory; competing interests and authorship supplied through Snapp; ethics if applicable | Author contributions and competing interests through submission interface; other standard declarations | Separate title page holds authors, affiliations, acknowledgements, conflict, funding, ethics and data availability | Conflict, funding, data availability and ethics statements required; AI-use disclosure in acknowledgements if applicable |
 | Figures/tables | May be uploaded with supplement/related files | Count toward 25-page limit | Count and word total requested at submission | Embedded in initial PDF; separate editable files after acceptance |
 | Access/fee structure | Fully open access; APC/funding decision required | Hybrid/Open Choice optional | Subscription route states no submission/publication fee; optional paid OA | Current fee/funding terms require final author check |
-| Current package fit | Compiled journal-neutral source exists and its 142-word abstract is below 250; conversion must raise 11 pt text to at least 12 pt, use numeric citations and retain embedded vector fonts; project license remains pending | Current 11-page main plus 3-page supplement is below 25 pages before template conversion; use `smallcondensed`, flatten upload files and recheck the final combined count | Anonymous main, separate title-page template and 142-word abstract meet the generic anonymity/abstract gates; Sage style and scope confirmation remain | Anonymous source and availability wording exist; current-title conversion and declarations remain, with a material novelty-fit risk |
+| Current package fit | Compiled journal-neutral source exists and its 142-word abstract is below 250; conversion must raise 11 pt text to at least 12 pt, use numeric citations and retain embedded vector fonts; project license remains pending | Current 11-page main plus 3-page supplement is below 25 pages before template conversion; use `smallcondensed`, flatten upload files and recheck the final combined count | Anonymous main, separate title-page template and 142-word abstract meet the generic anonymity/abstract gates. A reproducible PDF proxy counts 3,898 tokens before References and 4,596 overall, below the published 5,000--7,500 average but not a stated hard minimum; Sage style, exact submission count and scope confirmation remain | Anonymous source and availability wording exist; current-title conversion and declarations remain, with a material novelty-fit risk |
 
 Official sources:
 
@@ -83,6 +83,9 @@ the target journal's repository/link timing is confirmed.
   declaration to the title page.
 - Use the required Sage Vancouver reference style and keep the abstract within
   150 words.
+- The current reproducible PDF proxy is below the published average paper
+  length. If JIS is selected, obtain the submission-system word count and add
+  only scientifically useful detail; do not pad the paper to manufacture fit.
 
 ### Natural Language Processing
 

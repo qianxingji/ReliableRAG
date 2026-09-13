@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE",
+  "manuscript_pdf_sha256": "dfd1dfe3c1cb53bd1d1972463606f986906c76cff0bc172e98097d2e4d0d2612",
+  "count_method": "Poppler pdftotext -layout plus documented regex tokenization",
+  "pdf_tokens_before_references": 3898,
+  "pdf_tokens_full_document": 4596,
+  "static_abstract_word_count": 142,
+  "journal_of_information_science_official_average_words": [
+    5000,
+    7500
+  ],
+  "journal_of_information_science_official_average_printed_pages": [
+    8,
+    12
+  ],
+  "journal_of_information_science_current_risk": "CURRENT_PROXY_BELOW_PUBLISHED_AVERAGE_NOT_A_FORMAL_MINIMUM_FAILURE",
+  "publisher_word_count_claimed": false,
+  "texcount_used": false,
+  "limitations": [
+    "This is a reproducible PDF-text token proxy, not the journal submission system's official word count.",
+    "The PDF proxy includes visible titles, captions, tables and page text before References.",
+    "The full-document proxy includes the reference list.",
+    "The official 5,000-7,500 wording describes average paper length, not a stated hard minimum."
+  ],
+  "official_requirement_url": "https://journals.sagepub.com/author-instructions/jis",
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "cas_q3_status": "NOT_READY"
+}
