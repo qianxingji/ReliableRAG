@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "decision": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS",
-  "check_count": 126,
+  "check_count": 129,
   "abstract_word_count": 142,
   "bibliography_entries": 22,
   "checks": [
@@ -118,6 +118,9 @@
     "abstract bounds method novelty",
     "single-reader limitation is explicit",
     "license-dependent release boundary is explicit",
+    "data and code availability section is explicit",
+    "persistent code archive gap is explicit",
+    "aggregate versus neural reproduction boundary is explicit",
     "missing deployment measurements are explicit",
     "prohibited assertion absent: we propose (?:a )?novel",
     "prohibited assertion absent: state[- ]of[- ]the[- ]art",

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "decision": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES",
-  "checks": 175,
-  "repository_records": 31,
+  "checks": 195,
+  "repository_records": 34,
   "aggregate_archive_sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
   "aggregate_distribution_authorized": false,
   "scientific_payloads_read": false,

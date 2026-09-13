@@ -116,6 +116,22 @@ def main() -> int:
     )
     require(apc["owner_publication_charge_route_selected"] is False, "owner publication-charge route remains open", checks)
     require(apc["submission_authorized"] is False, "APC audit does not authorize submission", checks)
+    data_code = json.loads((ROOT / evidence["p0_g_discover_data_code_policy_audit_receipt"]).read_text(encoding="utf-8"))
+    require(
+        data_code["decision"] == "PASS_OFFICIAL_DISCOVER_DATA_CODE_POLICY_MAPPED_IMPLEMENTATION_GATES_OPEN",
+        "official Discover data/code policy is mapped",
+        checks,
+    )
+    require(
+        data_code["current_project_evidence"]["top_level_project_license_present"] is False,
+        "policy mapping retains the missing project-license gate",
+        checks,
+    )
+    require(
+        data_code["current_project_evidence"]["persistent_archive_doi_or_unique_identifier_exists"] is False,
+        "policy mapping retains the missing persistent-archive gate",
+        checks,
+    )
 
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 4, "P1-A through P1-D are closed", checks)
@@ -144,6 +160,8 @@ def main() -> int:
                 "exact legal copyright holder and year/range",
                 "institutional NOTICE or release-review decision",
                 "selected journal data/code release policy",
+                "license-bearing latest code link and immutable archive DOI or unique identifier",
+                "journal-approved review access for restricted evidence",
                 "new licensed release archive and independent validation",
             ],
         },

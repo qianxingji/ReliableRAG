@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_OFFICIAL_DISCOVER_DATA_CODE_POLICY_MAPPED_IMPLEMENTATION_GATES_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "target_journal": "Discover Computing",
+  "final_target_selected": false,
+  "official_source_checked_local_date": "2026-09-14",
+  "official_source_url": "https://link.springer.com/brands/discover/policies",
+  "official_policy": {
+    "data_availability_statement_required": true,
+    "supporting_datasets_strongly_encouraged": true,
+    "community_norm_deposition_expected": true,
+    "new_custom_code_available_for_editor_reviewer_testing": true,
+    "code_availability_statement_required_when_appropriate": true,
+    "latest_code_link_expected": true,
+    "archived_code_link_expected": true,
+    "archive_doi_or_unique_identifier_expected": true,
+    "zenodo_recommended_for_github": true,
+    "open_data_restrictions_must_be_explained": true,
+    "restricted_third_party_data_available_for_review_under_legal_terms": true
+  },
+  "current_project_evidence": {
+    "anonymous_aggregate_candidate_validated": true,
+    "aggregate_candidate_distribution_authorized": false,
+    "aggregate_candidate_verifies_full_neural_pipeline": false,
+    "versioned_repository_exists": true,
+    "top_level_project_license_present": false,
+    "license_bearing_persistent_code_archive_exists": false,
+    "persistent_archive_doi_or_unique_identifier_exists": false,
+    "journal_approved_private_review_channel_confirmed": false,
+    "full_public_end_to_end_reproduction_claimed": false
+  },
+  "closure_requirements_if_selected": [
+    "owner-selected project license and legal holder/year",
+    "institutional release approval or explicit not-required record",
+    "license-bearing latest-code location",
+    "immutable archived code version with DOI or other unique identifier",
+    "journal-compliant data and code availability statements with access terms",
+    "review access to restricted third-party or private evidence under legal terms",
+    "fresh aggregate archive build and independent validation under the selected release policy"
+  ],
+  "submission_authorized": false,
+  "distribution_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

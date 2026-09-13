@@ -32,6 +32,8 @@
         "exact legal copyright holder and year/range",
         "institutional NOTICE or release-review decision",
         "selected journal data/code release policy",
+        "license-bearing latest code link and immutable archive DOI or unique identifier",
+        "journal-approved review access for restricted evidence",
         "new licensed release archive and independent validation"
       ]
     },
@@ -63,8 +65,8 @@
     "missing_field_count": 1,
     "validation_error_count": 0
   },
-  "verified_repository_hashes": 67,
-  "checks": 165,
+  "verified_repository_hashes": 70,
+  "checks": 174,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

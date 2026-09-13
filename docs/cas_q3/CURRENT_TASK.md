@@ -110,6 +110,11 @@ fairness, reviewer and Submission Ready audits.
    input to the exact option, legal holder/year and institutional NOTICE/review
    requirement; it does not itself authorize release. These facts now have a
    private machine-validated intake path shared with P0-H/I.
+   The [provisional Discover data/code policy audit](P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.md)
+   now fixes that candidate's official statement, code-testing and persistent-
+   archive requirements. It confirms that the aggregate ZIP alone is
+   insufficient for final code availability; license-bearing latest and
+   immutable archive links plus a permitted review channel remain required.
 8. **P0-H -- OFFICIAL SCOPE AND SUBMISSION REQUIREMENTS AUDITED; CAS RULE
    PENDING:** The
    [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
@@ -136,7 +141,7 @@ fairness, reviewer and Submission Ready audits.
    [authorization record](P0_I_MANUSCRIPT_AUTHORIZATION.md). The main manuscript,
    supplement, bibliography, generated tables/figures, title-page template and
    cover-letter template now exist under `paper/`; the independent static
-   verifier passes 126 checks. MiKTeX produced an 11-page main PDF and 3-page
+   verifier passes 129 checks. MiKTeX produced an 11-page main PDF and 3-page
    supplement; mechanical log checks and project-lead review of all pages pass.
    The subsequent [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md)
    replaces the unembedded Base-14 figure fonts and isolated Type 3 marker; both
@@ -171,8 +176,8 @@ privacy-preserving local JSON route for those facts without committing them.
    negative Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
    font and complete project-lead visual review; the mechanical verifier no
    longer self-asserts a human inspection.
-   A separate reproducible PDF-length proxy records 3,898 tokens before
-   References and 4,596 overall. This is below JIS's published average, not a
+   A separate reproducible PDF-length proxy records 3,948 tokens before
+   References and 4,646 overall. This is below JIS's published average, not a
    formal minimum failure; no text will be added merely to inflate length.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
@@ -180,6 +185,10 @@ privacy-preserving local JSON route for those facts without committing them.
    prose or numbers. It is explicitly not a selected-journal or submission
    artifact; author, funding, APC, license, institutional CAS and final Astra
    gates remain open.
+   The data-and-code statement now explicitly separates the versioned code,
+   missing license-bearing persistent archive, restricted private review route
+   and aggregate-versus-neural reproduction boundary. The rebuilt neutral and
+   12 pt provisional artifacts passed mechanical and complete visual review.
 
 ## P1: material competitiveness improvements
 

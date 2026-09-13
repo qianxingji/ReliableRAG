@@ -22,7 +22,7 @@ a deployment-cost reduction.
 
 | Lane | Reviewer entry point | What it proves | What it does not prove |
 |---|---|---|---|
-| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json`, `P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json`, `P0_I_DISCOVER_COMPUTING_PREFLIGHT.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 142-word abstract meets both inspected candidate ceilings. A reproducible PDF-text proxy counts 3,898 tokens before References and 4,596 in the full document. A provisional Discover Computing dry run also compiles a flat 12 pt source profile to 12 font-clean pages without scientific-content changes. | A publisher word count, final journal-specific formatting, final Astra artifact rebind, authorship, licensing or CAS status. The current draft is below JIS's published 5,000--7,500-word average, which is a fit risk rather than a stated hard-minimum failure. The provisional Discover profile does not apply the final Springer template or authorize submission. |
+| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json`, `P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json`, `P0_I_DISCOVER_COMPUTING_PREFLIGHT.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 142-word abstract meets both inspected candidate ceilings. A reproducible PDF-text proxy counts 3,948 tokens before References and 4,646 in the full document. A provisional Discover Computing dry run also compiles a flat 12 pt source profile to 12 font-clean pages without scientific-content changes. The data/code statement exposes the missing license-bearing persistent archive and bounded review channel. | A publisher word count, final journal-specific formatting, final Astra artifact rebind, authorship, licensing or CAS status. The current draft is below JIS's published 5,000--7,500-word average, which is a fit risk rather than a stated hard-minimum failure. The provisional Discover profile does not apply the final Springer template or authorize submission. |
 | 2. Anonymous aggregate check | Withheld archive `paired_rag_repair_aggregate_candidate.zip`; SHA-256 `b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d` | Nine-policy arithmetic, sealed aggregate hashes, primary directions and the frozen 20,000-draw reporting description; clean anonymous allowlist and round trip. | Bootstrap recomputation, per-question inspection, model rerun, refit or public redistribution. |
 | 3. Private forensic reproduction | `P0_1_CLIENT_ACCEPTANCE.md`, `ROA_REPLAY_RELEASE_ACCEPTANCE.md`, `ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md`, `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`, `EMPIRICAL_D_ACCEPTANCE.md` | Saved-parameter numerical replay, source/data relocation on the same Windows host, clean numerical-library replay, full Qwen acquisition/replay acceptance and final aggregate analysis acceptance within their recorded scopes. | Original training-event reconstruction, another-host/OS reproduction, full public end-to-end execution or elimination of contamination. |
 | 4. Negative and stopped routes | `P0_3_FRESH_RESULT_DECISION.md`, `PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md`, `MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md` | The non-advancement of ROA, terminal Phi semantic validation failure and Mistral stop before engineering are retained rather than converted into positive evidence. | A second-reader effect, method novelty or permission to restart reader/method search. |
@@ -42,6 +42,12 @@ records the official 2026-09-14 current prices, acceptance-date price rule,
 tax boundary and funding/waiver routes. It leaves payer acceptance,
 institutional coverage and any waiver unconfirmed.
 
+The [Discover data/code policy audit](P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.md)
+shows that the validated aggregate ZIP supports reporting verification but does
+not replace reviewer-testable project code, a latest-code link, or a persistent
+archived version. The manuscript states this boundary; license, archive and
+review-channel implementation remain open.
+
 ## Reviewer sequence
 
 1. Read the abstract, Sections 3--7 and the complete nine-policy table in the
@@ -59,14 +65,15 @@ institutional coverage and any waiver unconfirmed.
    python scripts/verify_cas_q3_reviewer_evidence_map.py
    ```
 
-   Expected results are 126 static manuscript checks including a 150-word
+   Expected results are 129 static manuscript checks including a 150-word
    abstract ceiling, a compiled mechanical and font PASS, an explicitly
-   non-publisher length proxy of 3,898 pre-reference and 4,596 full-document
+   non-publisher length proxy of 3,948 pre-reference and 4,646 full-document
    tokens, a non-submittable 12 pt Discover Computing technical-profile PASS,
    and a reviewer-map PASS. The latest complete visual review is
    separate from the mechanical verifier and is documented in
    `P0_I_ABSTRACT_COMPRESSION_ACCEPTANCE.md` and
-   `P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.md`.
+   `P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.md`. The later data/code
+   statement rebuild is recorded in `P0_I_DATA_CODE_STATEMENT_ACCEPTANCE.md`.
 4. If the owner and journal later authorize the aggregate ZIP, verify it from
    an isolated extraction using:
 

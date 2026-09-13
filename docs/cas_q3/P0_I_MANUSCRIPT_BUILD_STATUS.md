@@ -20,7 +20,7 @@ outcome, bootstrap draw or model file. The two figures were rendered with
 Poppler at 144 dpi and visually inspected; an initial label-overlap defect in
 the recovery/damage figure was corrected before acceptance.
 
-The independent manuscript verifier passes 126 checks, including exact
+The independent manuscript verifier passes 129 checks, including exact
 aggregate-to-table comparisons for all nine overall rows and all 54 dataset and
 retriever rows, primary interval cells, bibliography keys, Claim boundaries and
 anonymity. The journal-neutral abstract has been compressed from 204 to 142
@@ -49,8 +49,8 @@ verifier no longer asserts that it performed a visual review; the versioned
 acceptance record carries that human inspection evidence.
 
 The [length verification](P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json) records a
-reproducible Poppler/PDF token proxy: 3,898 tokens before the References heading
-and 4,596 in the complete PDF. It is explicitly not a publisher word count. It
+reproducible Poppler/PDF token proxy: 3,948 tokens before the References heading
+and 4,646 in the complete PDF. It is explicitly not a publisher word count. It
 shows a JIS-specific below-average-length risk because that journal publishes a
 5,000--7,500-word average, but it does not convert an average into a hard
 minimum or justify padding the manuscript.
@@ -59,10 +59,18 @@ The [Discover Computing preflight](P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.
 is a non-submittable engineering dry run for the provisional editorial-fit
 lead. It changes only the class size to 12 pt and five asset paths, emits a flat
 eight-member source ZIP, and compiles a font-clean 12-page PDF. The journal-
-neutral source and accepted PDFs remain byte unchanged. The generic `article`
+neutral source is not modified by the conversion operation. The generic `article`
 class is not represented as the final Springer Nature template, and the
 single-anonymous author/declaration surface remains blocked on responsible-
 author input.
+
+The [data/code statement acceptance](P0_I_DATA_CODE_STATEMENT_ACCEPTANCE.md)
+records the later policy-driven source revision and complete rebuild. It adds
+no scientific result or Claim: it exposes the missing license-bearing DOI
+archive, separates latest and immutable code links, restricts private evidence
+to a journal-approved channel, and rejects an end-to-end public neural
+reproduction interpretation. The current 11-page neutral and 12-page
+provisional profiles are mechanically clean and visually accepted.
 
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches

@@ -7,12 +7,12 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "e74a9f713f4866207bb648b00c193946a5d06fd28e83105877ee4d8886724be5",
+      "sha256": "307e917e846ed127b14d5c80939673c81bc1bbea7f851c91319b1891eaa2c70e",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
       "path": "paper/manuscript.tex",
-      "sha256": "383e96f7f5500d6ea6b2e307e5fbd0cb1453562aea0c973e046bcfedc1777551",
+      "sha256": "cfd9724b57789c69e36f061adc4637df559412222bfe7ceadd8abf868ed6b837",
       "required_marker": "The same joint rule does not pass against the HGB-only policy"
     },
     {
@@ -22,20 +22,20 @@
     },
     {
       "path": "output/pdf/manuscript.pdf",
-      "sha256": "dfd1dfe3c1cb53bd1d1972463606f986906c76cff0bc172e98097d2e4d0d2612"
+      "sha256": "b1798bb2fa1ba2fba323f9dfffe0205e9163067bf7bc519a16af43054f839835"
     },
     {
       "path": "output/pdf/supplement.pdf",
-      "sha256": "bf3a08cf10eb046697cb421e29be9a2f6998ee04238f693f727c548869eff5f7"
+      "sha256": "4499283483f4efdb50e062482b1d0652f2fa7a3656789f1b0417c60cce7c190e"
     },
     {
       "path": "paper/COMPILE_RECEIPT.json",
-      "sha256": "f6bb5352929994eeb7811287d31d8c0215c6e6fb3991ef70f3fa7a2dea1ab83e",
+      "sha256": "a4e39606d3dc8891507d80a244bd46178792c8aaa4a622ddf2bb5c4ef7da85e2",
       "required_marker": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE"
     },
     {
       "path": "paper/MANUSCRIPT_VERIFICATION.json",
-      "sha256": "ef83fbd010cd23e3be3051ef8343e3643e56998c304fcacfc69062e2ca8835af",
+      "sha256": "8a93a3ac67ed4e519c454ac576d89a4faafda0acaca93a85b90bfcaddfad29c1",
       "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
     },
     {
@@ -60,13 +60,13 @@
     },
     {
       "path": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
-      "sha256": "421a3cbea032876b1ab81faf580de3cb562020eb37c6e8507dcf68c3b3a05bb6",
+      "sha256": "c36e4f7efd80449cab832860c20a506457f7061d68517d8bae31f4e9352d1ec3",
       "required_marker": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE"
     },
     {
       "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT.json",
       "required_marker": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
-      "sha256": "9733beafa5be4cfc648ae805c2565c1e89812f9fe329054cb1ffe6e56ab3270a"
+      "sha256": "c72d89d16089bb4e9c6aece30e638ea811584f5465f5ee650bf5cd9d469ceb46"
     },
     {
       "path": "docs/cas_q3/P0_H_DISCOVER_COMPUTING_APC_AUDIT.json",
@@ -85,11 +85,11 @@
     },
     {
       "path": "output/target_profiles/discover_computing_preflight/manuscript_12pt_preflight.pdf",
-      "sha256": "04439280236d833922a2269d7b3a5a401ed7b889838282562f2808289c9126ae"
+      "sha256": "c19df5f8a9eca8bcee6329427219aa426be17bbc6ea9aaccde266b3d17eba098"
     },
     {
       "path": "output/target_profiles/discover_computing_preflight/discover_computing_source_preflight.zip",
-      "sha256": "f19998de8cb21886def941b6d0e415abe2f40253b53275d4a237baa53846b567"
+      "sha256": "df77a41a3a222c18d32a96507f0b91fa55694c8a9bdedcfcfccdf1dad551271d"
     },
     {
       "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",
@@ -110,6 +110,21 @@
       "path": "docs/cas_q3/P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md",
       "sha256": "cd3ecadc34afa0d677a9a10efde2f42f6d1c3f7c8d95cc091e23cb887c533b38",
       "required_marker": "PARTIAL_PASS_P0_G_ANONYMOUS_AGGREGATE_CANDIDATE_VALIDATED_RELEASE_WITHHELD"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.json",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_DATA_CODE_POLICY_MAPPED_IMPLEMENTATION_GATES_OPEN",
+      "sha256": "28aa423dad743d509d63336e438691a89b68a4f9246da5289516725da6542753"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.md",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_DATA_CODE_POLICY_MAPPED_IMPLEMENTATION_GATES_OPEN",
+      "sha256": "69dfeba540370022bbadf1ea38aa60a3545fcad50e37d412d6d5a6476a6c94ae"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DATA_CODE_STATEMENT_ACCEPTANCE.md",
+      "required_marker": "PASS_DATA_CODE_POLICY_BOUNDARY_AND_REBUILT_ARTIFACT_EXTERNAL_GATES_OPEN",
+      "sha256": "59f64d89bb01e30fa9018b49baa85e0665328b3c10a18785e01e57bd257b6bc4"
     },
     {
       "path": "docs/cas_q2/P0_1_CLIENT_ACCEPTANCE.md",

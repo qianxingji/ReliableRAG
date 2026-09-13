@@ -64,14 +64,14 @@ def main() -> int:
         "mechanical verifier does not self-certify visual review",
     )
     static_receipt = json.loads((ROOT / "paper" / "MANUSCRIPT_VERIFICATION.json").read_text(encoding="utf-8"))
-    checks.equal(static_receipt["check_count"], 126, "static manuscript checks")
+    checks.equal(static_receipt["check_count"], 129, "static manuscript checks")
     checks.equal(static_receipt["abstract_word_count"], 142, "cross-profile abstract words")
     checks.equal(static_receipt["bibliography_entries"], 22, "bibliography entries")
     length_receipt = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json").read_text(encoding="utf-8")
     )
-    checks.equal(length_receipt["pdf_tokens_before_references"], 3898, "pre-reference PDF token proxy")
-    checks.equal(length_receipt["pdf_tokens_full_document"], 4596, "full PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_before_references"], 3948, "pre-reference PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_full_document"], 4646, "full PDF token proxy")
     checks.equal(length_receipt["publisher_word_count_claimed"], False, "proxy is not a publisher word count")
     discover = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_DISCOVER_COMPUTING_PREFLIGHT.json").read_text(encoding="utf-8")
@@ -111,6 +111,21 @@ def main() -> int:
     checks.equal(apc["owner_publication_charge_route_selected"], False, "Discover payer route remains open")
     checks.equal(apc["waiver_confirmed"], False, "Discover waiver remains unconfirmed")
     checks.equal(apc["submission_authorized"], False, "APC audit does not authorize submission")
+    data_code = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        data_code["decision"],
+        "PASS_OFFICIAL_DISCOVER_DATA_CODE_POLICY_MAPPED_IMPLEMENTATION_GATES_OPEN",
+        "Discover data/code policy decision",
+    )
+    checks.equal(data_code["final_target_selected"], False, "Discover policy mapping is provisional")
+    checks.equal(data_code["official_policy"]["data_availability_statement_required"], True, "Discover data statement requirement")
+    checks.equal(data_code["official_policy"]["new_custom_code_available_for_editor_reviewer_testing"], True, "Discover code testing requirement")
+    checks.equal(data_code["official_policy"]["archive_doi_or_unique_identifier_expected"], True, "Discover persistent archive expectation")
+    checks.equal(data_code["current_project_evidence"]["top_level_project_license_present"], False, "project license gap remains")
+    checks.equal(data_code["current_project_evidence"]["persistent_archive_doi_or_unique_identifier_exists"], False, "persistent code archive gap remains")
+    checks.equal(data_code["distribution_authorized"], False, "policy audit does not authorize distribution")
 
     release = evidence["aggregate_release_candidate"]
     archive = Path(release["local_archive"])

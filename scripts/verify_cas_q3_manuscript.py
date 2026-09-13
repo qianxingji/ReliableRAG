@@ -104,6 +104,9 @@ def main() -> int:
     require("rather than a new selector architecture" in lower, "abstract bounds method novelty", checks)
     require("one 3b-parameter qwen reader" in lower, "single-reader limitation is explicit", checks)
     require("public distribution is withheld" in lower, "license-dependent release boundary is explicit", checks)
+    require("data and code availability" in lower, "data and code availability section is explicit", checks)
+    require("no license-bearing archive" in lower, "persistent code archive gap is explicit", checks)
+    require("not end-to-end public neural reproduction" in lower, "aggregate versus neural reproduction boundary is explicit", checks)
     require("were not measured" in lower, "missing deployment measurements are explicit", checks)
 
     prohibited_assertions = [

@@ -31,7 +31,7 @@
     "unresolved_markers": 0
   },
   "source_protection": {
-    "journal_neutral_source_sha256_before_and_after": "383e96f7f5500d6ea6b2e307e5fbd0cb1453562aea0c973e046bcfedc1777551",
+    "journal_neutral_source_sha256_before_and_after": "cfd9724b57789c69e36f061adc4637df559412222bfe7ceadd8abf868ed6b837",
     "allowed_transformation_count": 6,
     "allowed_transformations": [
       {
@@ -69,13 +69,13 @@
   },
   "artifacts": {
     "pdf": "output/target_profiles/discover_computing_preflight/manuscript_12pt_preflight.pdf",
-    "pdf_sha256": "04439280236d833922a2269d7b3a5a401ed7b889838282562f2808289c9126ae",
+    "pdf_sha256": "c19df5f8a9eca8bcee6329427219aa426be17bbc6ea9aaccde266b3d17eba098",
     "pdf_pages": 12,
     "pdf_font_rows": 18,
     "pdf_nonembedded_font_rows": [],
     "pdf_type3_font_rows": [],
     "source_zip": "output/target_profiles/discover_computing_preflight/discover_computing_source_preflight.zip",
-    "source_zip_sha256": "f19998de8cb21886def941b6d0e415abe2f40253b53275d4a237baa53846b567",
+    "source_zip_sha256": "df77a41a3a222c18d32a96507f0b91fa55694c8a9bdedcfcfccdf1dad551271d",
     "source_zip_members": [
       "Fig1.pdf",
       "Fig2.pdf",
@@ -88,7 +88,7 @@
     ],
     "source_zip_nested_members": [],
     "unchanged_journal_neutral_supplement": "output/pdf/supplement.pdf",
-    "unchanged_journal_neutral_supplement_sha256": "bf3a08cf10eb046697cb421e29be9a2f6998ee04238f693f727c548869eff5f7"
+    "unchanged_journal_neutral_supplement_sha256": "4499283483f4efdb50e062482b1d0652f2fa7a3656789f1b0417c60cce7c190e"
   },
   "open_external_or_final_gates": [
     "responsible-author identities, affiliations and corresponding-author details",

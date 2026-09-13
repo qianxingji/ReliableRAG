@@ -14,8 +14,10 @@ The current machine decision is
 
 - P0-A through P0-F are closed within their stated limits.
 - P0-G remains open for the owner license, legal holder/year, institutional
-  release requirement, target-journal release policy and a newly validated
-  licensed archive.
+  release requirement, final selected-journal release policy, reviewer access,
+  license-bearing latest and persistent archived code links, and a newly
+  validated licensed archive. The provisional Discover policy mapping is
+  complete but does not implement these release gates.
 - P0-H remains open for the institution-recognized CAS edition/category/title/
   ISSN/date rule, final target journal and owner-confirmed publication-charge
   route. The current Discover Computing price/date-rule lookup is complete;

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE",
-  "manuscript_pdf_sha256": "dfd1dfe3c1cb53bd1d1972463606f986906c76cff0bc172e98097d2e4d0d2612",
+  "manuscript_pdf_sha256": "b1798bb2fa1ba2fba323f9dfffe0205e9163067bf7bc519a16af43054f839835",
   "count_method": "Poppler pdftotext -layout plus documented regex tokenization",
-  "pdf_tokens_before_references": 3898,
-  "pdf_tokens_full_document": 4596,
+  "pdf_tokens_before_references": 3948,
+  "pdf_tokens_full_document": 4646,
   "static_abstract_word_count": 142,
   "journal_of_information_science_official_average_words": [
     5000,
