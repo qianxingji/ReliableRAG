@@ -74,4 +74,27 @@ retry. Test generation, scientific fitting, action scoring, Gold access and the
 Mistral reader remain closed until the corrected validation, external gates and
 Astra xhigh P0-1 authenticity audit all pass.
 
+## Preserved pre-namespace launch-guard failure
+
+The first attempt to invoke the corrected validator stopped before creating the
+authorized namespace or reading a scientific ledger. Its new validator-commit
+guard accidentally applied the 64-character file-digest pattern to a 40-character
+Git commit. The guard therefore rejected the correctly pinned commit
+`0db11d8bd356c26935bd37f862df9db44585bb3f`. This was an external launch failure,
+not a corrected-validation result, and did not consume the single authorized
+semantic validation. Its evidence remains immutable:
+
+| Evidence | Bytes | SHA-256 |
+|---|---:|---|
+| V1 corrected launch metadata | 2,867 | `a1ebc8c83849f4f9cf2bd6a582c19ed07ee5f9a3211dd07d938a3f88bf44e7dc` |
+| V1 corrected gate output | 1,497 | `ef08a76c8b257113a6dddab2334b2621677af1e7b1786d9671e314322259ea1c` |
+| V1 corrected stdout | 0 | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
+| V1 corrected stderr | 931 | `efc84a08b29f80d2af9634824998ed42eb7206fffc86a5591b5d4af3c071160a` |
+
+The prospective fix introduces separate exact patterns for a 40-character Git
+commit and a 64-character SHA-256 digest, with a regression test covering both
+accepted lengths and both cross-length rejections. A V2 external launcher may
+target the still-absent `phi_reader_development_runtime_validation_v4_corrigendum_v1`
+namespace after this amended corrigendum and guard are committed and pinned.
+
 **CAS Q2 STATUS: NOT READY.**

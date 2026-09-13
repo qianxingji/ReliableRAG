@@ -37,6 +37,7 @@ JOINT_PREFLIGHT_MANIFEST_SHA256 = "ecf17a8af6c21fe2887700993bafe53c4aa8ae3c54191
 VALIDATION_CORRIGENDUM_PATH = REPO / "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_VALIDATION_V4_FAILURE_CORRIGENDUM.md"
 WEIGHT_SUFFIXES = {".safetensors", ".bin", ".pt", ".pth", ".ckpt"}
 HEX64 = re.compile(r"[0-9a-f]{64}")
+COMMIT_HEX40 = re.compile(r"[0-9a-f]{40}")
 EXPECTED_RUNTIME_AUDIT_BOUNDARY_START = (
     "after authenticated source records, framework imports/configuration, authenticated native assembly, and cached platform probe; "
     "before CUDA device query, model loads, and runtime trace/dataset semantic reads"
@@ -934,7 +935,7 @@ def main() -> int:
     output = (OUTPUT_PARENT / args.validation_output_name).resolve(); require(output.parent == OUTPUT_PARENT.resolve() and not output.exists(), "single-use validation namespace")
     require(not subprocess.check_output(["git", "status", "--porcelain"], cwd=REPO, text=True).strip(), "commit validator before execution")
     validator_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
-    require(args.expected_validator_commit == validator_commit and HEX64.fullmatch(validator_commit) is not None,
+    require(args.expected_validator_commit == validator_commit and COMMIT_HEX40.fullmatch(validator_commit) is not None,
             "validator source commit does not match prospective correction pin")
     for key, value in {"HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1", "HF_HUB_DISABLE_TELEMETRY": "1",
                        "TOKENIZERS_PARALLELISM": "false", "PYTHONDONTWRITEBYTECODE": "1"}.items():

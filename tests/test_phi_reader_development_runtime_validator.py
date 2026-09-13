@@ -69,6 +69,12 @@ def generation_row(stage="a0"):
 
 
 class ValidatorPrimitivesTests(unittest.TestCase):
+    def test_git_commit_and_file_digest_patterns_are_distinct(self):
+        self.assertIsNotNone(validator.COMMIT_HEX40.fullmatch("a" * 40))
+        self.assertIsNone(validator.COMMIT_HEX40.fullmatch("a" * 64))
+        self.assertIsNotNone(validator.HEX64.fullmatch("a" * 64))
+        self.assertIsNone(validator.HEX64.fullmatch("a" * 40))
+
     def test_validator_has_no_forbidden_runtime_import(self):
         source = Path(validator.__file__).read_text(encoding="utf-8")
         tree = ast.parse(source)
