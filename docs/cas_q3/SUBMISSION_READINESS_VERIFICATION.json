@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "decision": "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES",
+  "cas_q3_status": "NOT_READY",
+  "submission_ready": false,
+  "closed_p0": [
+    "P0-A",
+    "P0-B",
+    "P0-C",
+    "P0-D",
+    "P0-E",
+    "P0-F"
+  ],
+  "open_p0": [
+    "P0-G",
+    "P0-H",
+    "P0-I"
+  ],
+  "closed_p1": [
+    "P1-A",
+    "P1-B",
+    "P1-C",
+    "P1-D"
+  ],
+  "p2_status": "FROZEN_NO_NEW_EXPERIMENTS_OR_METHOD_SEARCH",
+  "blockers": [
+    {
+      "gate": "P0-G",
+      "status": "OPEN",
+      "missing": [
+        "owner-selected project license",
+        "exact legal copyright holder and year/range",
+        "institutional NOTICE or release-review decision",
+        "selected journal data/code release policy",
+        "new licensed release archive and independent validation"
+      ]
+    },
+    {
+      "gate": "P0-H",
+      "status": "OPEN",
+      "missing": [
+        "institution-recognized CAS edition/year and category rule",
+        "verified current journal title and ISSNs under that rule",
+        "title/ISSN-change and recognition-date treatment",
+        "final target journal and any APC acceptance"
+      ]
+    },
+    {
+      "gate": "P0-I",
+      "status": "OPEN",
+      "missing": [
+        "real authorship, affiliations and corresponding-author fields",
+        "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
+        "originality, exclusive-submission and all-author approval",
+        "target-specific source/PDF/package conversion and verification",
+        "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit"
+      ]
+    }
+  ],
+  "verified_repository_hashes": 42,
+  "checks": 107,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

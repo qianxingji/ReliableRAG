@@ -2,6 +2,13 @@
 
 **CAS Q3 STATUS: NOT READY.**
 
+The machine-readable
+[submission-readiness gate](SUBMISSION_READINESS_GATE.md) independently verifies
+the frozen scientific boundary and repository hashes, then fails closed while
+P0-G, P0-H and P0-I remain open. Its current decision is
+`FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES`; it reads
+no scientific payload, performs no fit and executes no model forward.
+
 Latest route decision: the independent GPT-6 Astra xhigh
 [target-transition audit](TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md) sets the unique
 recommendation
