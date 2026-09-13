@@ -209,6 +209,7 @@ class ValidatorPrimitivesTests(unittest.TestCase):
     def test_render_preserves_all_headers_and_reports_truncation(self):
         rows = evidence(); rows[0]["text"] = "z" * 1000
         rendered, metadata = validator.render_evidence(rows, budget=300)
+        self.assertEqual(metadata["text"], rendered)
         self.assertEqual(metadata["ordered_passed_document_ids"], [f"d{i}" for i in range(1, 6)])
         self.assertTrue(metadata["context_truncated"])
         self.assertTrue(all(identifier in rendered for identifier in metadata["ordered_passed_document_ids"]))
@@ -355,6 +356,14 @@ class EventAndPromptTests(unittest.TestCase):
         row = generation_row("a1"); row["input_token_ids"][0] += 1
         trace = {"dataset": "hotpotqa", "retriever": "bm25", "sample_id": "s", "position": 0}
         with self.assertRaisesRegex(RuntimeError, "prompt/token"):
+            validator.validate_generation(row, trace=trace, frozen={}, provenance={"e0": evidence("e"), "e1": evidence()},
+                branch={"question": "Who?"}, tokenizer=FakeTokenizer(),
+                templates={"answer": "Q={question}\nE={evidence}", "repair_query": ""}, config_sha="a" * 64)
+
+    def test_generation_rejects_dynamic_a1_render_text_tamper(self):
+        row = generation_row("a1"); row["render"]["text"] += " tampered"
+        trace = {"dataset": "hotpotqa", "retriever": "bm25", "sample_id": "s", "position": 0}
+        with self.assertRaisesRegex(RuntimeError, "render/guard"):
             validator.validate_generation(row, trace=trace, frozen={}, provenance={"e0": evidence("e"), "e1": evidence()},
                 branch={"question": "Who?"}, tokenizer=FakeTokenizer(),
                 templates={"answer": "Q={question}\nE={evidence}", "repair_query": ""}, config_sha="a" * 64)

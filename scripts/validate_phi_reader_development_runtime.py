@@ -34,6 +34,7 @@ PHI_REVISION = "2fe192450127e6a83f7441aef6e3ca586c338b77"
 BGE_REVISION = "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
 INPUT_FREEZE_MANIFEST_SHA256 = "17cb0c29e4d4a5b98991bbebf1368bdff0ebece6221ca163c73327bcf4bcedd9"
 JOINT_PREFLIGHT_MANIFEST_SHA256 = "ecf17a8af6c21fe2887700993bafe53c4aa8ae3c5419112737049db5c91ef2bf"
+VALIDATION_CORRIGENDUM_PATH = REPO / "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_VALIDATION_V4_FAILURE_CORRIGENDUM.md"
 WEIGHT_SUFFIXES = {".safetensors", ".bin", ".pt", ".pth", ".ckpt"}
 HEX64 = re.compile(r"[0-9a-f]{64}")
 EXPECTED_RUNTIME_AUDIT_BOUNDARY_START = (
@@ -393,7 +394,7 @@ def render_evidence(evidence: list[dict], budget: int = 16_000) -> tuple[str, di
         chunks.append(separator + header + included); flags.append(len(included) < len(body))
     rendered = "".join(chunks)
     require(len(rendered) <= budget and all(identifier in rendered for identifier in identifiers), "evidence render identity")
-    return rendered, {"context_truncated": any(flags), "context_budget_characters": budget,
+    return rendered, {"text": rendered, "context_truncated": any(flags), "context_budget_characters": budget,
         "ordered_passed_document_ids": identifiers, "per_document_truncated": flags}
 
 
@@ -923,6 +924,7 @@ def main() -> int:
     parser.add_argument("--replay-output-name", required=True)
     parser.add_argument("--validation-output-name", required=True)
     parser.add_argument("--expected-runtime-commit", required=True)
+    parser.add_argument("--expected-validator-commit", required=True)
     parser.add_argument("--canonical-manifest-sha256", required=True)
     parser.add_argument("--replay-manifest-sha256", required=True)
     args = parser.parse_args()
@@ -932,13 +934,15 @@ def main() -> int:
     output = (OUTPUT_PARENT / args.validation_output_name).resolve(); require(output.parent == OUTPUT_PARENT.resolve() and not output.exists(), "single-use validation namespace")
     require(not subprocess.check_output(["git", "status", "--porcelain"], cwd=REPO, text=True).strip(), "commit validator before execution")
     validator_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
-    require(args.expected_runtime_commit == validator_commit, "runtime and validator source commit must match")
+    require(args.expected_validator_commit == validator_commit and HEX64.fullmatch(validator_commit) is not None,
+            "validator source commit does not match prospective correction pin")
     for key, value in {"HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1", "HF_HUB_DISABLE_TELEMETRY": "1",
                        "TOKENIZERS_PARALLELISM": "false", "PYTHONDONTWRITEBYTECODE": "1"}.items():
         os.environ[key] = value
     output.mkdir(parents=True, exist_ok=False)
     configure_validator_environment(output)
     result = {"status": "FAIL", "cas_q2_status": "NOT READY", "validator_source_commit": validator_commit,
+        "expected_validator_source_commit": args.expected_validator_commit,
         "expected_runtime_source_commit": args.expected_runtime_commit, "gold_reads": 0, "scientific_fit_calls": 0,
         "historical_qwen_answer_strings_read": 0, "reader_model_loads": 0, "bge_model_loads": 0,
         "nli_model_loads": 0, "model_forward_calls": 0, "model_weight_bytes_read": 0, "tokenizer_loads": 0,
@@ -972,7 +976,9 @@ def main() -> int:
         snapshot = original / f"data/models/huggingface/models--microsoft--Phi-3.5-mini-instruct/snapshots/{PHI_REVISION}"
         allowed = set(canonical_run["members"] + replay_run["members"] + input_members + joint_members +
                       [Path(row["path"]) for row in canonical_run["freeze"]["inputs"] if not is_weight(Path(row["path"]))] +
-                      [trace_path, replay_path, *prompt_paths.values(), Path(__file__), REPO / "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_VALIDATION_CONTRACT.md"])
+                      [trace_path, replay_path, *prompt_paths.values(), Path(__file__),
+                       REPO / "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_VALIDATION_CONTRACT.md",
+                       VALIDATION_CORRIGENDUM_PATH])
         validation_input_records = [record(path) for path in sorted(allowed) if Path(path).is_file() and not is_weight(Path(path))]
         # Importing Transformers imports torch, whose Windows platform probe
         # may launch `cmd /c ver`.  Import code before the scientific audit;
@@ -1021,12 +1027,14 @@ def main() -> int:
             replay_input_record_audit=replay_input_audit, model_snapshot_audit=model_snapshot_audit, execution_boundary=boundary,
             dense_vector_provenance_limitation="BGE output identity cannot be recomputed without a prohibited BGE forward; saved vectors are shape/finiteness checked and their complete retrieval consequences are independently recomputed.")
         freeze = {"status": "FROZEN_INDEPENDENT_VALIDATION", "validator_source_commit": validator_commit,
+            "expected_validator_source_commit": args.expected_validator_commit,
             "runtime_source_commit": args.expected_runtime_commit, "canonical_output_name": args.canonical_output_name,
             "replay_output_name": args.replay_output_name, "validation_output_name": args.validation_output_name,
             "canonical_manifest_sha256": args.canonical_manifest_sha256,
             "replay_manifest_sha256": args.replay_manifest_sha256,
             "runtime_config_sha256": canonical_run["runtime_config_sha256"],
             "audit_boundary_start": result["audit_boundary_start"],
+            "validator_corrigendum": record(VALIDATION_CORRIGENDUM_PATH),
             "inputs": validation_input_records,
             "weight_input_records": [row for row in canonical_run["freeze"]["inputs"] if is_weight(Path(row["path"]))],
             "weight_record_policy": "No weight file opened; records bound to accepted joint-preflight input records and current file sizes.",
