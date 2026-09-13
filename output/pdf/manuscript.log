@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.13)  13 SEP 2026 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.9.13)  13 SEP 2026 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,12 +501,12 @@ Package caption Info: End \AtBeginDocument code.
 
 {C:/Users/qianx/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (tables/
 study_design.tex)
-<figures/paired_pipeline.pdf, id=136, 722.7pt x 301.125pt>
+<figures/paired_pipeline.pdf, id=137, 722.7pt x 301.125pt>
 File: figures/paired_pipeline.pdf Graphic file (type pdf)
 <use figures/paired_pipeline.pdf>
 Package pdftex.def Info: figures/paired_pipeline.pdf  used on input line 63.
 (pdftex.def)             Requested size: 469.75502pt x 195.73352pt.
- [3] [4 <./figures/paired_pipeline.pdf>] (tables/main_results.tex)
+ [3 <./figures/paired_pipeline.pdf>] [4] (tables/main_results.tex)
 <figures/recovery_damage.pdf, id=163, 722.7pt x 471.7625pt>
 File: figures/recovery_damage.pdf Graphic file (type pdf)
 <use figures/recovery_damage.pdf>
@@ -524,13 +524,13 @@ Package rerunfilecheck Info: File `manuscript.out' has not changed.
 (rerunfilecheck)             Checksum: BA84E028B099D8B4D81F7F51BD741649;2472.
  ) 
 Here is how much of TeX's memory you used:
- 14138 strings out of 467871
- 227855 string characters out of 5418376
+ 14132 strings out of 467871
+ 227805 string characters out of 5418376
  697690 words of memory out of 5000000
  42629 multiletter control sequences out of 15000+600000
- 640720 words of font info for 156 fonts, out of 8000000 for 9000
+ 640567 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1474b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,1100b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/qianx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/qianx/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/qianx/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -546,7 +546,7 @@ ianx/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 /cm/cmti10.pfb><C:/Users/qianx/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb>
 Output written on E:\paper\ReliableRAG-cas-q2-p0-1\output\pdf\manuscript.pdf (1
-1 pages, 366044 bytes).
+1 pages, 365605 bytes).
 PDF statistics:
  299 PDF objects out of 1000 (max. 8388607)
  65 named destinations out of 1000 (max. 500000)

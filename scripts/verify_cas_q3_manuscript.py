@@ -43,7 +43,7 @@ def main() -> int:
     abstract = re.search(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", manuscript, re.S)
     require(abstract is not None, "abstract exists", checks)
     abstract_words = len(re.findall(r"[A-Za-z0-9][A-Za-z0-9.+%-]*", abstract.group(1)))
-    require(abstract_words <= 250, "abstract is at most 250 words", checks)
+    require(abstract_words <= 150, "abstract is at most 150 words", checks)
 
     bib_keys = set(re.findall(r"^@\w+\{([^,]+),", bib, re.M))
     cited: set[str] = set()

@@ -23,9 +23,11 @@ python scripts\verify_cas_q3_compiled_pdfs.py
 ```
 
 MiKTeX produced an 11-page main PDF and 3-page supplement under `output/pdf/`.
-The static verifier passes 126 checks; the compiled verifier passes its log,
+The abstract is 142 words and therefore meets both the inspected 250-word and
+150-word candidate limits. The static verifier passes 126 checks; the compiled verifier passes its log,
 page, text and font checks. Both PDFs have zero nonembedded and zero Type 3
-fonts; all 14 font-clean pages passed project-lead visual review. The earlier
+fonts. Visual review is recorded separately from the mechanical verifier; all
+14 pages of the 142-word-abstract rebuild passed project-lead review. The earlier
 Astra xhigh review remains bound to the pre-font-correction artifact, so the
 final target-specific package still requires a fresh Astra xhigh rebind. See
 `COMPILE_RECEIPT.json` and the P0-I records under `docs/cas_q3/` for exact

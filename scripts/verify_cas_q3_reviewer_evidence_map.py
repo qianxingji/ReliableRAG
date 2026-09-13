@@ -58,8 +58,14 @@ def main() -> int:
     checks.equal(compile_receipt["artifacts"]["output/pdf/manuscript.pdf"]["pages"], 11, "main pages")
     checks.equal(compile_receipt["artifacts"]["output/pdf/supplement.pdf"]["pages"], 3, "supplement pages")
     checks.equal(compile_receipt["text_checks"]["unresolved_markers"], 0, "compiled unresolved markers")
+    checks.equal(
+        compile_receipt["visual_review"]["status"],
+        "NOT_PERFORMED_BY_MECHANICAL_VERIFIER_SEE_VERSIONED_ACCEPTANCE_RECORD",
+        "mechanical verifier does not self-certify visual review",
+    )
     static_receipt = json.loads((ROOT / "paper" / "MANUSCRIPT_VERIFICATION.json").read_text(encoding="utf-8"))
     checks.equal(static_receipt["check_count"], 126, "static manuscript checks")
+    checks.equal(static_receipt["abstract_word_count"], 142, "cross-profile abstract words")
     checks.equal(static_receipt["bibliography_entries"], 22, "bibliography entries")
 
     release = evidence["aggregate_release_candidate"]

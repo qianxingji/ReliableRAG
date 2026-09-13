@@ -7,12 +7,12 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "f9c302404b23fe9c59b52844e641f12f66d52ef98b4935ac98cb43fba523276c",
+      "sha256": "5391f541474062b0a7414920798d55acd2e494ecd89e26232ce19ebe0d2e1c82",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
       "path": "paper/manuscript.tex",
-      "sha256": "11b989c6bdde63253cef84e14cfa657c3996943840bc4ed730f4ce863f165856",
+      "sha256": "383e96f7f5500d6ea6b2e307e5fbd0cb1453562aea0c973e046bcfedc1777551",
       "required_marker": "The same joint rule does not pass against the HGB-only policy"
     },
     {
@@ -22,20 +22,20 @@
     },
     {
       "path": "output/pdf/manuscript.pdf",
-      "sha256": "851eea05278b64793e5814a48de8df6cf2529acdcf27df5072d8ae5f9999e025"
+      "sha256": "dfd1dfe3c1cb53bd1d1972463606f986906c76cff0bc172e98097d2e4d0d2612"
     },
     {
       "path": "output/pdf/supplement.pdf",
-      "sha256": "b50a3bed4d7165c62f2cfeac06bd934a1b8ea9f997774d35f083ce5c04cd3812"
+      "sha256": "bf3a08cf10eb046697cb421e29be9a2f6998ee04238f693f727c548869eff5f7"
     },
     {
       "path": "paper/COMPILE_RECEIPT.json",
-      "sha256": "d97e673392b3ce6abe8f08dd70231b8b4af6b067b845f4d8026846b1e2fccc1a",
+      "sha256": "f6bb5352929994eeb7811287d31d8c0215c6e6fb3991ef70f3fa7a2dea1ab83e",
       "required_marker": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE"
     },
     {
       "path": "paper/MANUSCRIPT_VERIFICATION.json",
-      "sha256": "c0e2d75f1e4ac5172c1bf3ff3742a101fee6ed83586f0eaffba09d62c7e65b0a",
+      "sha256": "ef83fbd010cd23e3be3051ef8343e3643e56998c304fcacfc69062e2ca8835af",
       "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
     },
     {
@@ -52,6 +52,11 @@
       "path": "docs/cas_q3/P0_I_FONT_EMBEDDING_CORRIGENDUM.md",
       "sha256": "3e2947d21794c403f80c785a9a10186392d7200bffdab8d71755239644911f44",
       "required_marker": "PASS FONT-CLEAN JOURNAL-NEUTRAL REBUILD"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_ABSTRACT_COMPRESSION_ACCEPTANCE.md",
+      "sha256": "03d4c406ba71380e770f82f3a40891582c6ebe6a44d511af02ba255d9f254e0d",
+      "required_marker": "PASS_142_WORD_CROSS_PROFILE_ABSTRACT_AND_REBUILT_DRAFT_WITH_FINAL_ASTRA_AND_EXTERNAL_GATES_OPEN"
     },
     {
       "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",

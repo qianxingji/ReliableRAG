@@ -22,7 +22,7 @@ a deployment-cost reduction.
 
 | Lane | Reviewer entry point | What it proves | What it does not prove |
 |---|---|---|---|
-| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. | Journal-specific formatting, final Astra artifact rebind, authorship, licensing or CAS status. |
+| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 142-word abstract meets both inspected candidate ceilings. | Journal-specific formatting, final Astra artifact rebind, authorship, licensing or CAS status. |
 | 2. Anonymous aggregate check | Withheld archive `paired_rag_repair_aggregate_candidate.zip`; SHA-256 `b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d` | Nine-policy arithmetic, sealed aggregate hashes, primary directions and the frozen 20,000-draw reporting description; clean anonymous allowlist and round trip. | Bootstrap recomputation, per-question inspection, model rerun, refit or public redistribution. |
 | 3. Private forensic reproduction | `P0_1_CLIENT_ACCEPTANCE.md`, `ROA_REPLAY_RELEASE_ACCEPTANCE.md`, `ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md`, `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`, `EMPIRICAL_D_ACCEPTANCE.md` | Saved-parameter numerical replay, source/data relocation on the same Windows host, clean numerical-library replay, full Qwen acquisition/replay acceptance and final aggregate analysis acceptance within their recorded scopes. | Original training-event reconstruction, another-host/OS reproduction, full public end-to-end execution or elimination of contamination. |
 | 4. Negative and stopped routes | `P0_3_FRESH_RESULT_DECISION.md`, `PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md`, `MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md` | The non-advancement of ROA, terminal Phi semantic validation failure and Mistral stop before engineering are retained rather than converted into positive evidence. | A second-reader effect, method novelty or permission to restart reader/method search. |
@@ -52,9 +52,11 @@ fail-closed engineering chronology.
    python scripts/verify_cas_q3_reviewer_evidence_map.py
    ```
 
-   Expected results are 126 static manuscript checks, a compiled mechanical and
-   font PASS, and a reviewer-map PASS. The font-clean rebuild is documented in
-   `P0_I_FONT_EMBEDDING_CORRIGENDUM.md`.
+   Expected results are 126 static manuscript checks including a 150-word
+   abstract ceiling, a compiled mechanical and font PASS, and a reviewer-map
+   PASS. The latest complete visual review is separate from the mechanical
+   verifier and is documented in
+   `P0_I_ABSTRACT_COMPRESSION_ACCEPTANCE.md`.
 4. If the owner and journal later authorize the aggregate ZIP, verify it from
    an isolated extraction using:
 

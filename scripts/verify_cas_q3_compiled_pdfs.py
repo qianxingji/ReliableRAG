@@ -112,15 +112,16 @@ def main() -> int:
             "unresolved_markers": 0,
         },
         "visual_review": {
-            "status": "PASS_BY_PROJECT_LEAD_2026-09-13_FONT_CLEAN_REBUILD",
-            "main_pages_reviewed": 11,
-            "supplement_pages_reviewed": 3,
-            "defects_observed": 0,
+            "status": "NOT_PERFORMED_BY_MECHANICAL_VERIFIER_SEE_VERSIONED_ACCEPTANCE_RECORD",
+            "main_pages_reviewed": 0,
+            "supplement_pages_reviewed": 0,
+            "defects_observed": None,
         },
         "disclosures": [
             "MiKTeX reports its installation has not yet checked for updates; this is outside the LaTeX logs.",
             "Supplement log retains one nonfatal longtable infinite-glue page-split notice; rendered content is complete.",
             "Both compiled PDFs now contain zero nonembedded fonts and zero Type 3 fonts.",
+            "Visual inspection is a separate project-lead action and is not inferred by this verifier.",
             "Final target-journal PDF-profile compliance remains to be checked after journal selection.",
         ],
     }

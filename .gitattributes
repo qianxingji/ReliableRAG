@@ -5,5 +5,11 @@ output/pdf/*.log binary
 /.gitignore text eol=lf
 /docs/cas_q3/*.md text eol=lf
 /docs/cas_q3/*.json text eol=lf
+/paper/*.bib text eol=lf
+/paper/*.json text eol=lf
+/paper/*.md text eol=lf
+/paper/*.ps1 text eol=lf
+/paper/*.tex text eol=lf
+/paper/*.txt text eol=lf
 /scripts/*cas_q3*.py text eol=lf
 /tests/test_cas_q3*.py text eol=lf

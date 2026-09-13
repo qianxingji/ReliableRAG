@@ -2,6 +2,12 @@
 
 **CAS Q3 STATUS: NOT READY.**
 
+The user's 2026-09-13 steering is to continue this work as a **conditional CAS
+Q3 empirical study**. This authorizes target-neutral editorial and packaging
+work within the accepted Qwen evidence. It does not reopen reader/method
+experiments, relax authenticity or fairness, or imply that a CAS Q3 journal has
+already been certified.
+
 The machine-readable
 [submission-readiness gate](SUBMISSION_READINESS_GATE.md) independently verifies
 the frozen scientific boundary and repository hashes, then fails closed while
@@ -155,6 +161,11 @@ privacy-preserving local JSON route for those facts without committing them.
    declarations source and cover-letter draft. It refuses incomplete inputs,
    does not overwrite a prior directory and emits only a redacted build receipt;
    generated drafts remain unverified and submission-unauthorized.
+   The journal-neutral abstract is now 142 words, closing the inspected 150-
+   and 250-word candidate limits while preserving the frozen positive and
+   negative Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
+   font and complete project-lead visual review; the mechanical verifier no
+   longer self-asserts a human inspection.
 
 ## P1: material competitiveness improvements
 

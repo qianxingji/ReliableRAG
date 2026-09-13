@@ -23,7 +23,11 @@ the recovery/damage figure was corrected before acceptance.
 The independent manuscript verifier passes 126 checks, including exact
 aggregate-to-table comparisons for all nine overall rows and all 54 dataset and
 retriever rows, primary interval cells, bibliography keys, Claim boundaries and
-anonymity. MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01 compiled the main
+anonymity. The journal-neutral abstract has been compressed from 204 to 142
+words while retaining the positive comparison, both negative decisions,
+adjusted ranges, within-reader boundary and non-novelty statement. This closes
+the inspected 150-word and 250-word candidate limits before target conversion.
+MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01 compiled the main
 manuscript through BibTeX and the supplement. The final artifacts are an
 11-page main PDF and a 3-page supplement. Their logs contain no fatal error,
 undefined citation/reference or overfull/underfull box. Project-lead review of
@@ -39,7 +43,10 @@ page-split notice; its rendered content is complete. Target-journal PDF-profile
 compliance remains a journal-selection task. MiKTeX also reports that the
 installation has not yet checked for package updates outside the LaTeX logs.
 Exact hashes, page counts and disclosures are bound in
-`paper/COMPILE_RECEIPT.json` and the compiled-artifact acceptance.
+`paper/COMPILE_RECEIPT.json`, the historical font-clean compiled-artifact
+acceptance and the newer abstract-compression acceptance. The mechanical
+verifier no longer asserts that it performed a visual review; the versioned
+acceptance record carries that human inspection evidence.
 
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches

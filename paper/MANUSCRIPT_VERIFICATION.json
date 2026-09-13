@@ -2,7 +2,7 @@
   "schema_version": 1,
   "decision": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS",
   "check_count": 126,
-  "abstract_word_count": 204,
+  "abstract_word_count": 142,
   "bibliography_entries": 22,
   "checks": [
     "asset receipt passes",
@@ -19,7 +19,7 @@
     "asset hash matches: paper/tables/retriever_breakdown.tex",
     "asset hash matches: paper/tables/study_design.tex",
     "abstract exists",
-    "abstract is at most 250 words",
+    "abstract is at most 150 words",
     "manuscript contains citations",
     "all citation keys resolve",
     "all bibliography records are used",
