@@ -1,0 +1,48 @@
+{
+  "action_allocation": {
+    "fraction": 0.05,
+    "global_k": 900,
+    "reallocated_each_primary_draw": true
+  },
+  "bootstrap": {
+    "adjusted_quantiles": [
+      0.004166666666666667,
+      0.9958333333333333
+    ],
+    "draws": 20000,
+    "fixed_action_role": "secondary_sensitivity_same_draws",
+    "primary_family_endpoints": 6,
+    "seed": 20260926,
+    "unit": "dataset-stratified question cluster with three retriever siblings"
+  },
+  "checks": 129,
+  "population": {
+    "dataset_strata": 3,
+    "question_groups": 6000,
+    "traces": 18000
+  },
+  "primary_joint_results": [
+    {
+      "joint_favorable": false,
+      "left": "ROA-FULL",
+      "right": "HGB_GBV_R"
+    },
+    {
+      "joint_favorable": false,
+      "left": "HGB_GBV_R",
+      "right": "HGB_ONLY_R"
+    },
+    {
+      "joint_favorable": true,
+      "left": "HGB_GBV_R",
+      "right": "GBV_ONLY_R"
+    }
+  ],
+  "scope": "sealed aggregate reporting verification; no raw-outcome or bootstrap recomputation",
+  "sealed_inputs_sha256": {
+    "INTERVALS.json": "6d454afeec7c125c0cc4d182556af6db214a867aa4f62f7a6fbd1e6e22b09331",
+    "POINT_ESTIMATES.json": "b03ddad8fa35f582a63403c029942104c3f5da1a961110edc2a62f09871f4d3b",
+    "SHA256_MANIFEST.json": "498b83e75538032de3711bd6ce190eac049631d8393c875744d83aa0318097f6"
+  },
+  "status": "PASS_CAS_Q3_STATISTICAL_STATEMENT_VERIFICATION"
+}

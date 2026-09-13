@@ -10,9 +10,19 @@ Accuracy and Damage**
 and Action Budgets` was the earlier Q2 working title. Freeze the final title only
 after the evidence--Claim and direct-neighbor literature gate passes.
 
+The [P0-A direct-neighbor audit](P0_A_DIRECT_NEIGHBOR_LITERATURE_AUDIT.md)
+rejects method novelty and accepts the bounded empirical gap. The
+[P0-B result/Claim map](P0_B_RESULT_CLAIM_MAP.md) is the numeric reporting
+authority. Both are closed by the independent
+[Astra xhigh recheck](P0_A_P0_B_ASTRA_XHIGH_RECHECK.md).
+The [P0-C method/fairness account](P0_C_METHOD_FAIRNESS_ACCOUNT.md) is the
+reviewer-readable execution and supervision authority.
+The [P0-D statistical verification](P0_D_STATISTICAL_STATEMENT_VERIFICATION.md)
+is the authority for units, interval roles, multiplicity and the joint rule.
+
 For each already generated original/repaired answer pair `(a0, a1)`, a policy
 chooses Keep or Repair under a fixed 5% full-batch action allocation. The study
-measures full-population normalized EM, token F1, Rescue, Damage, Neutral and
+measures full-population normalized EM, token F1, Recovery, Damage, Neutral and
 cost. All supervised comparison heads use the same development fit/calibration
 roles, candidates, eligibility, action budget and canonical tie rule.
 

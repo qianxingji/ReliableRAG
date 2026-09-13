@@ -50,17 +50,25 @@ fairness, reviewer and Submission Ready audits.
 
 ## P0: required before credible Q3 submission
 
-1. **P0-A:** Complete a direct-neighbor literature/contribution audit against the
-   final empirical question using primary papers and official sources.
-2. **P0-B:** Build a complete result/Claim map containing the original six-endpoint
-   family, all nine policy context, frozen secondary tables and every negative
-   finding, each bound to accepted evidence.
-3. **P0-C:** Produce the reviewer-readable method/fairness account: exact model,
-   candidate/pool/retrieval roles, development/test identities, five heads, seven
-   upstream estimators, eligibility, missing values, K=900, ties and Gold order.
-4. **P0-D:** Independently verify every planned statistical statement, unit,
-   interval, multiplicity rule and grouped top-K bootstrap description against
-   the accepted analysis.
+1. **P0-A -- CLOSED:** The
+   [direct-neighbor audit](P0_A_DIRECT_NEIGHBOR_LITERATURE_AUDIT.md) rejects a
+   method-novelty Claim and now states the full gain-prediction overlap and exact
+   comparison-dependent empirical boundary.
+2. **P0-B -- CLOSED:** The
+   [complete result/Claim map](P0_B_RESULT_CLAIM_MAP.md) binds all nine policies,
+   the original six-endpoint family, fixed-action sensitivity, secondary-table
+   rules and negative findings to the accepted Qwen evidence. Both gates are
+   closed by the [independent Astra xhigh recheck](P0_A_P0_B_ASTRA_XHIGH_RECHECK.md).
+3. **P0-C -- CLOSED:** The
+   [method/fairness account](P0_C_METHOD_FAIRNESS_ACCOUNT.md) fixes the exact
+   model, candidate/pool/retrieval roles, development/test identities, five
+   heads, seven upstream estimators, eligibility, missing values, K=900, ties
+   and Gold order.
+4. **P0-D -- CLOSED:** The
+   [statistical statement verification](P0_D_STATISTICAL_STATEMENT_VERIFICATION.md)
+   binds every unit, interval role, multiplicity rule, joint gate and grouped
+   top-K bootstrap description to the accepted aggregate analysis and its prior
+   independent full-draw validation.
 5. **P0-E:** Freeze provenance, contamination, adaptation and failure disclosures,
    including missing original fit receipts and the Phi/Mistral terminal records.
 6. **P0-F:** Prepare the claim-scoped cost table and explicitly retain missing
