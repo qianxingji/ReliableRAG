@@ -4,6 +4,7 @@ __pycache__/
 venv/
 .env
 docs/cas_q3/OWNER_INPUTS.local.json
+output/private_submission/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

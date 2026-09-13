@@ -150,7 +150,11 @@ fairness, reviewer and Submission Ready audits.
    none is guessed. Its 19-check verifier also compiles the placeholder title
    page successfully as a 2-page PDF, closing the template-syntax gate while
    retaining every factual field as pending. The consolidated intake adds a
-   privacy-preserving local JSON route for those facts without committing them.
+privacy-preserving local JSON route for those facts without committing them.
+   A separate local builder can then produce an ignored title page,
+   declarations source and cover-letter draft. It refuses incomplete inputs,
+   does not overwrite a prior directory and emits only a redacted build receipt;
+   generated drafts remain unverified and submission-unauthorized.
 
 ## P1: material competitiveness improvements
 

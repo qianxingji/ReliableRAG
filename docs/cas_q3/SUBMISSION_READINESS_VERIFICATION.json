@@ -63,8 +63,8 @@
     "missing_field_count": 1,
     "validation_error_count": 0
   },
-  "verified_repository_hashes": 52,
-  "checks": 128,
+  "verified_repository_hashes": 54,
+  "checks": 132,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

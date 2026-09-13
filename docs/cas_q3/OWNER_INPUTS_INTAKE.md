@@ -23,6 +23,19 @@ The verifier prints only field paths, counts and a decision. It never echoes
 names, email addresses, postal addresses, declaration text or other supplied
 values, and it writes no receipt containing those values.
 
+After the local intake passes, generate a new versioned private draft directory:
+
+```text
+python scripts/build_cas_q3_private_submission_packet.py --input docs/cas_q3/OWNER_INPUTS.local.json --output output/private_submission/v1
+```
+
+The output tree is ignored by Git because its title page, declarations and
+cover-letter draft contain personal facts. The builder refuses incomplete
+inputs and an existing output directory. Its console/JSON receipt contains only
+file hashes and author/affiliation counts, and always records that independent
+CAS authority, target formatting, release and submission authorization remain
+open.
+
 `null` means unanswered. Use an explicit factual value when the answer is
 negative: for example, `NONE` for no acknowledgement, `NONE_DISCLOSED` for no
 overlapping work, or `NONE_NOT_SUPPLIED` for an author ORCID. Every author entry
@@ -76,6 +89,6 @@ A complete local file produces
 That result means only that the factual intake is structurally complete. The
 project lead must still verify the retained CAS authority and journal policy,
 implement the authorized license/release decision, populate the manuscript and
-submission forms, build the target-specific artifacts, and obtain the final
-artifact-bound GPT-6 Astra xhigh audit. Until those records pass, the top-level
-readiness gate must remain fail-closed.
+submission forms from the private drafts, build the target-specific artifacts,
+and obtain the final artifact-bound GPT-6 Astra xhigh audit. Until those records
+pass, the top-level readiness gate must remain fail-closed.
