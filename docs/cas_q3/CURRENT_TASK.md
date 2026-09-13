@@ -115,6 +115,12 @@ fairness, reviewer and Submission Ready audits.
    archive requirements. It confirms that the aggregate ZIP alone is
    insufficient for final code availability; license-bearing latest and
    immutable archive links plus a permitted review channel remain required.
+   The [third-party terms recheck](P0_G_THIRD_PARTY_TERMS_RECHECK.md) also
+   corrects the release-source description of the non-`-c` DeBERTa checkpoint:
+   its model card labels the foundation model MIT but retains a mixed,
+   partly non-commercial training-data warning. Existing aggregate ZIPs remain
+   immutable withheld arithmetic witnesses and must be rebuilt from the
+   corrected notice before any owner-authorized distribution.
 8. **P0-H -- OFFICIAL SCOPE AND SUBMISSION REQUIREMENTS AUDITED; CAS RULE
    PENDING:** The
    [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
@@ -196,7 +202,7 @@ privacy-preserving local JSON route for those facts without committing them.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 23 repository records plus the withheld archive and passes 124
+  authenticates 37 repository records plus the withheld archive and passes 217
   checks without scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

@@ -126,6 +126,24 @@ def main() -> int:
     checks.equal(data_code["current_project_evidence"]["top_level_project_license_present"], False, "project license gap remains")
     checks.equal(data_code["current_project_evidence"]["persistent_archive_doi_or_unique_identifier_exists"], False, "persistent code archive gap remains")
     checks.equal(data_code["distribution_authorized"], False, "policy audit does not authorize distribution")
+    third_party = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_G_THIRD_PARTY_TERMS_RECHECK.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        third_party["decision"],
+        "PASS_THIRD_PARTY_TERMS_RECHECK_RELEASE_SOURCE_CORRECTED_CURRENT_ARCHIVE_WITHHELD",
+        "third-party terms recheck decision",
+    )
+    checks.equal(third_party["legal_advice_claimed"], False, "terms recheck is not legal advice")
+    checks.equal(third_party["distribution_authorized"], False, "terms recheck does not authorize distribution")
+    checks.equal(third_party["current_archive"]["release_ready"], False, "current archive is not release ready")
+    checks.equal(third_party["current_archive"]["preserved"], True, "current arithmetic witness remains preserved")
+    checks.equal(third_party["source_correction"]["future_archive_rebuild_required"], True, "corrected notice requires a future rebuild")
+    notices_path = ROOT / third_party["source_correction"]["path"]
+    checks.equal(digest(notices_path), third_party["source_correction"]["corrected_source_sha256"], "corrected notice hash")
+    notices = notices_path.read_text(encoding="utf-8")
+    checks.true("including non-commercial licenses" in notices, "DeBERTa training-data caveat retained")
+    checks.true("Do not reduce the training-data caveat" in notices, "unconditional MIT summary is prohibited")
 
     release = evidence["aggregate_release_candidate"]
     archive = Path(release["local_archive"])
@@ -155,6 +173,7 @@ def main() -> int:
         "does not pass against `HGB_ONLY_R`",
         "does not establish advancement",
         "does not authorize distribution",
+        "arithmetic witness rather than a release-ready artifact",
         "CAS Q3 STATUS: NOT READY",
     ):
         checks.true(phrase in normalized_manuscript, f"map boundary phrase: {phrase}")

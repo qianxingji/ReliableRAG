@@ -132,6 +132,16 @@ def main() -> int:
         "policy mapping retains the missing persistent-archive gate",
         checks,
     )
+    third_party = json.loads((ROOT / evidence["p0_g_third_party_terms_recheck_receipt"]).read_text(encoding="utf-8"))
+    require(
+        third_party["decision"]
+        == "PASS_THIRD_PARTY_TERMS_RECHECK_RELEASE_SOURCE_CORRECTED_CURRENT_ARCHIVE_WITHHELD",
+        "third-party terms recheck is bound",
+        checks,
+    )
+    require(third_party["distribution_authorized"] is False, "third-party recheck preserves distribution block", checks)
+    require(third_party["current_archive"]["release_ready"] is False, "current aggregate archive remains non-release-ready", checks)
+    require(third_party["source_correction"]["future_archive_rebuild_required"] is True, "corrected notice requires a future archive", checks)
 
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 4, "P1-A through P1-D are closed", checks)
@@ -162,6 +172,8 @@ def main() -> int:
                 "selected journal data/code release policy",
                 "license-bearing latest code link and immutable archive DOI or unique identifier",
                 "journal-approved review access for restricted evidence",
+                "owner/institutional review of Qwen research-license compatibility for the intended release",
+                "owner/institutional review of the non-c DeBERTa training-data terms for the intended release",
                 "new licensed release archive and independent validation",
             ],
         },

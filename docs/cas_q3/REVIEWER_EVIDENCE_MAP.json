@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "307e917e846ed127b14d5c80939673c81bc1bbea7f851c91319b1891eaa2c70e",
+      "sha256": "cd3f647c3a3e694741293622ae5f0e953e3db29e585a93748e9fcac96727c6cf",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -170,6 +170,21 @@
       "path": "docs/cas_q3/REVIEWER_COST_FAILURE_REGISTER.md",
       "sha256": "195344e69f834fad4b9085f2ef917a3ece0a5debf60024126225c29f5dcb2f91",
       "required_marker": "PASS_COMPLETE_REVIEWER_COST_AND_MATERIAL_FAILURE_REGISTER_WITH_MEASUREMENT_LIMITS"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_THIRD_PARTY_TERMS_RECHECK.json",
+      "required_marker": "PASS_THIRD_PARTY_TERMS_RECHECK_RELEASE_SOURCE_CORRECTED_CURRENT_ARCHIVE_WITHHELD",
+      "sha256": "ede4090593e0e5733f15fa3b3bbd728f041084a041fd70497e65c07386d25e21"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_THIRD_PARTY_TERMS_RECHECK.md",
+      "required_marker": "PASS_THIRD_PARTY_TERMS_RECHECK_RELEASE_SOURCE_CORRECTED_CURRENT_ARCHIVE_WITHHELD",
+      "sha256": "03ac60f8f9d90e00aa923df675b2fde2b2b55aa7376731852bcba21e1d0efd98"
+    },
+    {
+      "path": "release/cas_q3_aggregate/THIRD_PARTY_NOTICES.md",
+      "required_marker": "including non-commercial licenses",
+      "sha256": "7186c75204c5289455fbbb38b60f5196c1a6e797827aa1a39b5e6703f6885c01"
     }
   ],
   "aggregate_release_candidate": {

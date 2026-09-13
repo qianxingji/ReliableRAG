@@ -18,8 +18,8 @@ the upstream project or license record inspected for release planning.
 | Exact study asset | Upstream declaration | Release action |
 |---|---|---|
 | [Qwen/Qwen2.5-3B-Instruct@aa8e725](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/aa8e72537993ba99e69dfaafa59ed015b17504d1/LICENSE) | Qwen Research License Agreement; non-commercial research/evaluation grant with separate redistribution conditions | Exclude all weights, tokenizer/config payloads and answer text. Retain exact model/revision attribution. A future weight package would need the upstream agreement and required notice and is outside the current release. |
-| [BAAI/bge-base-en-v1.5@a5beb1e](https://huggingface.co/BAAI/bge-base-en-v1.5) | MIT | Exclude weights and tokenizer payloads; retain exact model/revision attribution and upstream link. |
-| [MoritzLaurer/deberta-v3-large-zeroshot-v2.0@5a4338a](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0) | MIT | Exclude weights and tokenizer payloads; retain exact model/revision attribution and upstream link. |
+| [BAAI/bge-base-en-v1.5@a5beb1e](https://huggingface.co/BAAI/bge-base-en-v1.5/tree/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a) | The upstream model card declares MIT and says the released model can be used commercially | Exclude weights and tokenizer payloads; retain exact model/revision attribution and upstream link. |
+| [MoritzLaurer/deberta-v3-large-zeroshot-v2.0@5a4338a](https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0/tree/5a4338ab2151dc8db04ad53b42b6153382bf4f99) | The upstream model card labels the foundation model MIT but warns that this non-`-c` checkpoint was trained on data with varying licenses, including non-commercial licenses, and that legal views differ on downstream effect | Exclude weights and tokenizer payloads; retain exact model/revision attribution and upstream link. Do not reduce the training-data caveat to an unconditional MIT redistribution statement; require owner/institutional review before any broader release or commercial reuse. |
 
 ## Principal pinned software
 

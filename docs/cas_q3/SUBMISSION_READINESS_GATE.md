@@ -17,7 +17,10 @@ The current machine decision is
   release requirement, final selected-journal release policy, reviewer access,
   license-bearing latest and persistent archived code links, and a newly
   validated licensed archive. The provisional Discover policy mapping is
-  complete but does not implement these release gates.
+  complete but does not implement these release gates. The upstream-terms
+  recheck preserves the Qwen research-license and non-`-c` DeBERTa
+  training-data caveats; owner/institutional review for the intended release
+  remains open.
 - P0-H remains open for the institution-recognized CAS edition/category/title/
   ISSN/date rule, final target journal and owner-confirmed publication-charge
   route. The current Discover Computing price/date-rule lookup is complete;

@@ -23,7 +23,7 @@ a deployment-cost reduction.
 | Lane | Reviewer entry point | What it proves | What it does not prove |
 |---|---|---|---|
 | 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json`, `P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json`, `P0_I_DISCOVER_COMPUTING_PREFLIGHT.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 142-word abstract meets both inspected candidate ceilings. A reproducible PDF-text proxy counts 3,948 tokens before References and 4,646 in the full document. A provisional Discover Computing dry run also compiles a flat 12 pt source profile to 12 font-clean pages without scientific-content changes. The data/code statement exposes the missing license-bearing persistent archive and bounded review channel. | A publisher word count, final journal-specific formatting, final Astra artifact rebind, authorship, licensing or CAS status. The current draft is below JIS's published 5,000--7,500-word average, which is a fit risk rather than a stated hard-minimum failure. The provisional Discover profile does not apply the final Springer template or authorize submission. |
-| 2. Anonymous aggregate check | Withheld archive `paired_rag_repair_aggregate_candidate.zip`; SHA-256 `b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d` | Nine-policy arithmetic, sealed aggregate hashes, primary directions and the frozen 20,000-draw reporting description; clean anonymous allowlist and round trip. | Bootstrap recomputation, per-question inspection, model rerun, refit or public redistribution. |
+| 2. Anonymous aggregate check | Withheld archive `paired_rag_repair_aggregate_candidate.zip`; SHA-256 `b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d` | Nine-policy arithmetic, sealed aggregate hashes, primary directions and the frozen 20,000-draw reporting description; clean anonymous allowlist and round trip. | Bootstrap recomputation, per-question inspection, model rerun, refit or public redistribution. Its notice predates the DeBERTa training-data caveat correction, so this immutable ZIP is an arithmetic witness rather than a release-ready artifact. |
 | 3. Private forensic reproduction | `P0_1_CLIENT_ACCEPTANCE.md`, `ROA_REPLAY_RELEASE_ACCEPTANCE.md`, `ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md`, `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`, `EMPIRICAL_D_ACCEPTANCE.md` | Saved-parameter numerical replay, source/data relocation on the same Windows host, clean numerical-library replay, full Qwen acquisition/replay acceptance and final aggregate analysis acceptance within their recorded scopes. | Original training-event reconstruction, another-host/OS reproduction, full public end-to-end execution or elimination of contamination. |
 | 4. Negative and stopped routes | `P0_3_FRESH_RESULT_DECISION.md`, `PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md`, `MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md` | The non-advancement of ROA, terminal Phi semantic validation failure and Mistral stop before engineering are retained rather than converted into positive evidence. | A second-reader effect, method novelty or permission to restart reader/method search. |
 
@@ -47,6 +47,12 @@ shows that the validated aggregate ZIP supports reporting verification but does
 not replace reviewer-testable project code, a latest-code link, or a persistent
 archived version. The manuscript states this boundary; license, archive and
 review-channel implementation remain open.
+
+The [third-party terms recheck](P0_G_THIRD_PARTY_TERMS_RECHECK.md) records the
+Qwen research-license boundary and the non-`-c` DeBERTa checkpoint's mixed
+training-data-license warning. The corrected tracked notice is for the next
+owner-authorized archive. The current pinned ZIP remains unchanged and
+distribution-prohibited.
 
 ## Reviewer sequence
 
