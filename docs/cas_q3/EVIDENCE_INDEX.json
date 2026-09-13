@@ -34,7 +34,7 @@
   "p0_g_release_audit_receipt_sha256": "f14f303441fdca483cf0844239f2c2560c1e308fe3fc7fb432d0ff16640c36ba",
   "p0_g_decision": "PARTIAL_PASS_P0_G_ANONYMOUS_AGGREGATE_CANDIDATE_VALIDATED_RELEASE_WITHHELD",
   "p0_h_target_journal_fit_audit": "docs/cas_q3/P0_H_TARGET_JOURNAL_FIT_AUDIT.md",
-  "p0_h_decision": "PENDING_CAS_RULE_NO_JOURNAL_CERTIFIED",
+  "p0_h_decision": "PENDING_OWNER_AND_INSTITUTION_NO_JOURNAL_CERTIFIED",
   "p0_h_provisional_scientific_fit_lead": "Discover Computing",
   "p0_h_provisional_stable_identity_lead": "Journal of Intelligent Information Systems",
   "historical_evidence_index": "docs/cas_q2/EVIDENCE_INDEX.json",
@@ -117,7 +117,7 @@
   "p0_g_distribution_authorized": false,
   "p0_g_project_license": "PENDING_OWNER_SELECTION",
   "p0_h_submission_requirements_matrix": "docs/cas_q3/P0_H_SUBMISSION_REQUIREMENTS_MATRIX.md",
-  "p0_h_submission_requirements_matrix_sha256": "8a5dc5ed1cf8b8ac5694f2c024dd31831964c2659d5fb659c055dda2376ecbf8",
+  "p0_h_submission_requirements_matrix_sha256": "cc56217e923ce6fc6c82fd8f4c6c9f65e4af55d31fb0e9eda2c8f0f07d13602b",
   "p0_h_submission_requirements_decision": "PASS_OFFICIAL_SUBMISSION_REQUIREMENTS_MATRIX_ONLY_CAS_QUALIFICATION_PENDING",
   "p0_i_manuscript_preflight": "docs/cas_q3/P0_I_MANUSCRIPT_PREFLIGHT.md",
   "p0_i_manuscript_preflight_sha256": "916a784e9b9201ab4c299214fa5870c12b2aa5f9bca1531ae2956abaa373798e",
@@ -201,5 +201,18 @@
     "exact_legal_copyright_holder",
     "copyright_year_or_range",
     "institutional_notice_or_review_requirement"
+  ],
+  "p0_h_target_journal_decision_packet": "docs/cas_q3/P0_H_TARGET_JOURNAL_DECISION_PACKET.md",
+  "p0_h_target_journal_decision_packet_sha256": "e043563a99d435ac520952888988ae8fe6308062a54b157877aa21a90c8b5eac",
+  "p0_h_owner_institution_fields_required": [
+    "recognized_cas_edition_year",
+    "major_or_minor_category",
+    "current_title_and_issns",
+    "tier_under_exact_rule",
+    "title_issn_change_treatment",
+    "recognition_date_rule",
+    "retained_authority",
+    "apc_acceptance",
+    "final_selected_journal"
   ]
 }

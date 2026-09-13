@@ -22,7 +22,7 @@ submission.
 | Other declarations | Funding mandatory; competing interests and authorship supplied through Snapp; ethics if applicable | Author contributions and competing interests through submission interface; other standard declarations | Separate title page holds authors, affiliations, acknowledgements, conflict, funding, ethics and data availability | Conflict, funding, data availability and ethics statements required; AI-use disclosure in acknowledgements if applicable |
 | Figures/tables | May be uploaded with supplement/related files | Count toward 25-page limit | Count and word total requested at submission | Embedded in initial PDF; separate editable files after acceptance |
 | Access/fee structure | Fully open access; APC/funding decision required | Hybrid/Open Choice optional | Subscription route states no submission/publication fee; optional paid OA | Current fee/funding terms require final author check |
-| Current package fit | Anonymous aggregate candidate is stricter than required; project license still pending | Aggregate candidate supports a bounded Data Availability Statement; 25-page layout is binding | Candidate satisfies artifact anonymity, but manuscript/title-page split remains to be built | Candidate is anonymity-safe and supports the required availability statement |
+| Current package fit | Compiled journal-neutral source exists and 204-word abstract is below 250; conversion must raise 11 pt text to at least 12 pt, use numeric citations and embed vector fonts; project license remains pending | Current 11-page main plus 3-page supplement is below 25 pages before template conversion; use `smallcondensed`, flatten upload files and recheck the final combined count | Anonymous main and separate title-page template exist; abstract must be reduced from 204 to at most 150 words and Sage style applied | Anonymous source and availability wording exist; current-title conversion and declarations remain, with a material novelty-fit risk |
 
 Official sources:
 
@@ -34,7 +34,8 @@ Official sources:
 
 ## One package architecture that covers all four candidates
 
-Prepare source material once, then render a journal-specific surface:
+The journal-neutral source material now exists. Render a journal-specific
+surface from it using the following architecture:
 
 1. a self-contained LaTeX manuscript source with all figures and tables;
 2. a separable title page containing authors, affiliations, funding,
@@ -58,6 +59,8 @@ the target journal's repository/link timing is confirmed.
 - Verify that the current title and ISSNs, rather than predecessor-title
   records, are recognized as CAS Tier 3 by the user's institution.
 - Confirm APC amount, waiver/agreement coverage and author acceptance.
+- Raise body text from the current 11 pt to the official minimum 12 pt, convert
+  citations to numeric form and embed every vector-figure font.
 - Supply author list, affiliations, contributions, funding and competing
   interests for the non-anonymous submission.
 
@@ -68,6 +71,9 @@ the target journal's repository/link timing is confirmed.
   packaging; the inspected guideline did not state one journal-specific mode.
 - Typeset the complete paper within 25 pages including references, figures and
   tables.
+- Use the required/recommended Springer source profile recorded on the current
+  page: `smallcondensed`, numeric citations, editable source, PDF, and no upload
+  subfolders.
 
 ### Journal of Information Science
 

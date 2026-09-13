@@ -96,7 +96,10 @@ fairness, reviewer and Submission Ready audits.
    [submission-requirements matrix](P0_H_SUBMISSION_REQUIREMENTS_MATRIX.md)
    freezes each candidate's current article, length, file, review, declaration
    and data-policy constraints. No journal is certified until the applicable CAS
-   year/category and institutional title/ISSN rule are supplied.
+   year/category and institutional title/ISSN rule are supplied. The refreshed
+   [owner/institution decision packet](P0_H_TARGET_JOURNAL_DECISION_PACKET.md)
+   records the exact fields needed for a one-step selection and the remaining
+   target-profile gaps for all four candidates.
 9. **P0-I -- SOURCE AND COMPILED DRAFT ACCEPTED / EXTERNAL INPUTS OPEN:** The
    [manuscript preflight](P0_I_MANUSCRIPT_PREFLIGHT.md) freezes journal render
    profiles, the evidence-to-section map, table/figure sources, forbidden Claims,
