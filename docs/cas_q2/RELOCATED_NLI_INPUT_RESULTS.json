@@ -1,0 +1,136 @@
+{
+  "status": "PASS_HISTORICAL_NLI_COUNTS_AND_NEW_INPUT_WITNESSES_ONLY",
+  "cas_q2_status": "NOT READY",
+  "source_commit": "be3aea2b0d348163bf9cb030bceea33da49f911d",
+  "config_sha256": "5acf9ad9f1aa5a0094fad3a9c049b45c0789893f8b559bd8b09dcb9959237dc4",
+  "producer": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_nli_input_v1\\PRODUCER_RESULT.json",
+    "sha256": "f03b2a3261d02b7ac27f73895270bab36128aa9cb5d9876d0723c6e83d27d8e0",
+    "size_bytes": 1382111
+  },
+  "independent": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_nli_input_v1\\INDEPENDENT_RESULT.json",
+    "sha256": "175aa56f612256033fd9a7c4337497384eaca365ee08e1ccfe5178bf8c2bed7d",
+    "size_bytes": 1380582
+  },
+  "preparation": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_nli_input_v1\\NLI_PREPARATION_PRIVATE.jsonl",
+    "sha256": "a727ba9fb4a408c55b4c2f6e665ef98fcd8080c559536a30ca931ebc1245238d",
+    "size_bytes": 83543379
+  },
+  "original_used_inputs_unchanged": 13,
+  "restored_used_inputs_unchanged": 13,
+  "new_environment_files_unchanged": 21267,
+  "control_files_unchanged": 11,
+  "traces": 13500,
+  "question_groups": 4500,
+  "new_prepared_branches": 6404,
+  "original_premises": 32020,
+  "prepared_chunk_pairs": 32174,
+  "prepared_batches": 6404,
+  "historical_count_comparisons": 81000,
+  "input_tokens": 4844364,
+  "exact_new_token_mask_type_scalar_comparisons": 22799715,
+  "counts": {
+    "scored": 3202,
+    "normalized_answers_equal": 10296,
+    "a1_empty": 2
+  },
+  "scientific_fits": 0,
+  "neural_forwards": 0,
+  "pretrained_model_loads": 0,
+  "historical_gold_values": 0,
+  "fresh_gold_values": 0,
+  "old_project_content_reads_in_children": 0,
+  "historical_token_ids_available": false,
+  "old_neural_scores_replayed": false,
+  "new_witnesses_not_historical": true,
+  "current_empirical_pipeline_replay": false,
+  "independent_tokenizer_implementation": false,
+  "expected_native_length_probe_warnings": 2,
+  "private_artifacts_uploaded": false,
+  "finished_utc": "2026-09-11T13:32:26.805309+00:00",
+  "snapshot_utc": "2026-09-11T13:47:00.434574+00:00",
+  "acceptance_manifest": "8abd5abcbef882a841c9656989d4b54b92a0c4b9526db6599a4321826c9dc9db",
+  "original_producer_ast_records": 13,
+  "original_independent_ast_records": 4,
+  "strata": {
+    "2wikimultihopqa/bm25": 1500,
+    "2wikimultihopqa/dense": 1500,
+    "2wikimultihopqa/hybrid": 1500,
+    "hotpotqa/bm25": 1500,
+    "hotpotqa/dense": 1500,
+    "hotpotqa/hybrid": 1500,
+    "musique/bm25": 1500,
+    "musique/dense": 1500,
+    "musique/hybrid": 1500
+  },
+  "tokenizer": {
+    "model_id": "MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
+    "revision": "5a4338ab2151dc8db04ad53b42b6153382bf4f99",
+    "class_name": "DebertaV2Tokenizer",
+    "physical_snapshot": "E:\\paper\\ReliableRAG-static-roots-v1\\original\\outputs\\published_baseline_gbv_nli_v1\\infrastructure\\model_snapshot",
+    "use_fast": false,
+    "local_files_only": true,
+    "trust_remote_code": false,
+    "model_max_length": 512,
+    "entailment_index": 0,
+    "vocab_size": 128001,
+    "versions": {
+      "sentencepiece": "0.2.1",
+      "torch": "2.7.1+cu128",
+      "transformers": "4.53.2"
+    },
+    "core_paths": {
+      "torch": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\torch\\__init__.py",
+      "transformers": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\transformers\\__init__.py",
+      "sentencepiece": "E:\\paper\\ReliableRAG-neural-targets-v1\\sentencepiece\\sentencepiece\\__init__.py",
+      "sentencepiece._sentencepiece": "E:\\paper\\ReliableRAG-neural-targets-v1\\sentencepiece\\sentencepiece\\_sentencepiece.cp310-win_amd64.pyd"
+    },
+    "sentencepiece_native_binary_sha256": "b458ad3635e7a0262c5b0955d873cc6b4c35b2b5303c69367c59ce93d50af6d9",
+    "warning_source": {
+      "path": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\transformers\\tokenization_utils_base.py",
+      "sha256": "e237219800bd4bc629fd62d57f44a3da21fdacc3f5d76932da25511d90ff21a0",
+      "size_bytes": 207164
+    }
+  },
+  "tokenizer_vocabulary_sha256": "ab56a3b798f9e22958e07b304f35e8091bb2e00958713e41dda1baf8148f9014",
+  "fixture_cases_per_process": 4,
+  "unexpected_guard_events": 0,
+  "scientific_fit_total": 178,
+  "established_engineering_suite_repeated": false,
+  "another_host_or_OS_tested": false,
+  "evidence_kit": {
+    "filename": "RELOCATED_NLI_INPUT_V1_EVIDENCE_PRIVATE.zip",
+    "sha256": "375634f48254a7beb7fa081e96be729b42b86e74c7a11e37a734e67fbb425137",
+    "size_bytes": 11693933,
+    "members": 32,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "external_dependencies": [
+    "Accepted static restoration and its two archives",
+    "Accepted neural package environment and SentencePiece target",
+    "Current Windows and CPython base"
+  ],
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_canonical_pid": 55688,
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 13897,
+    "generation_receipts.jsonl": 41692,
+    "repair_bindings.jsonl": 13897,
+    "branch_provenance.jsonl": 13897
+  },
+  "live_process_creation_time": "2026-09-11T12:02:54.8331660+08:00",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "snapshot_scope": "Non-atomic sequential newline byte counts; no current empirical answer/score/Gold decode",
+  "pending": [
+    "C3 completion/fixed replay/acceptance",
+    "Actual C4/full prelabel",
+    "Cost and four D processes",
+    "Contribution review",
+    "BGE and predecessor execution bindings",
+    "Completed-stage closure/full relocated neural replay",
+    "Seven original fit-time receipts"
+  ]
+}

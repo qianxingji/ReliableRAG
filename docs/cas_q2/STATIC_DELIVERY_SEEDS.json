@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "seeds": [
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_fixed_panel_v1/SHA256_MANIFEST.json",
+      "sha256": "4579e712f5ad513d7a9ca1229809432f766c05d5d9033b9053563c076629a619",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 1800
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_fresh_cohort_v1/SHA256_MANIFEST.json",
+      "sha256": "6070c63b9cbf3277ef328d059dcaabc98480ba2bb60503b66ad2faa5e816b62a",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 1150
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_projection_preflight_v1/SHA256_MANIFEST.json",
+      "sha256": "289a19f1ff3f8ec7fea2b835f2e19b4c5d2afc5d56cf2b96d9f7c81629e17c35",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 680
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_candidate_pool_v2/SHA256_MANIFEST.json",
+      "sha256": "4b654f0d12eaf6a9bc08e4522932cffb3fea1845eb9bbcfb2d7c2fab3b87ab98",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 2328
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_retrieval_gpu_preflight_v1/SHA256_MANIFEST.json",
+      "sha256": "3861f34c6add005baa1889d36679b740c90677d0fbbbc04ea85ab8b5cc6a2b3d",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 343
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_retrieval_v1/SHA256_MANIFEST.json",
+      "sha256": "81b9c7163adf669a828bd2ef772e14fecbda727cf596bced45856a1e699a354d",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 5119
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_runtime_native_tests_v1/SHA256_MANIFEST.json",
+      "sha256": "cf861b1a90c3725e04878bc49892d609a27b12a1ba64fab9d6d712fe69e01410",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 494
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_runtime_preparation_v1/SHA256_MANIFEST.json",
+      "sha256": "7ecc9c22d3a400fcafdf51a4d5ce09adbbb7e30d5bef180d046ead70ba2bb258",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 691
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_runtime_gpu_preflight_v1/SHA256_MANIFEST.json",
+      "sha256": "050efac3a47c4c5cc8a9ffb82284dc8a60b8b480cf4561e6aa8788db504ab5f8",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 343
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_scoring_stage_engineering_v1/SHA256_MANIFEST.json",
+      "sha256": "4164666e8ad38360a3980393cd569a00476c4a196dc601db8a896aa37477017e",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 815
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_outcome_input_audit_v1/SHA256_MANIFEST.json",
+      "sha256": "13a9e14d8f58c737dd1aef2f8556bb9bf1a6d81a86acdd910acdeecde9732ef2",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 348
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_outcome_engineering_v1/SHA256_MANIFEST.json",
+      "sha256": "9461d2d4dd54c6935eb9dac949b381c6bd3489857b8b4a6ddbb1e2864e34e0c8",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 648
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_cost_engineering_v1/SHA256_MANIFEST.json",
+      "sha256": "304ba81f0cf28a64ea8fb03b8412cce2e85e419d4adef33d5cce75b98553d252",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 648
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_acquisition_input_audit_v1/SHA256_MANIFEST.json",
+      "sha256": "6e441f8f9fef2b000ba2b39dcfd7b40f74dd4f779568d885584bb7da10b7d518",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 189
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_scoring_input_audit_v1/SHA256_MANIFEST.json",
+      "sha256": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 185
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/supervision_matched_controls_v1/SHA256_MANIFEST.json",
+      "sha256": "80b65e2139e2e39909d8005465082b255d9c8494fc0861bfb866bce6a06adc01",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 35568
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/hgb_only_attribution_v1/SHA256_MANIFEST.json",
+      "sha256": "cec3d2c2f085225c3995792a7839f6acbec6fac8b75edd8463ac18b9e2a75a8e",
+      "authority": "Existing accepted stage/controls manifest",
+      "size_bytes": 24805
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_candidate_pool_v1/EXECUTION_MANIFEST.json",
+      "sha256": "b3a151ff113747716f82db7c9a24d25d20850c9d89596c322f8c4ede90f8e240",
+      "authority": "Preserved failed v1, pin in EMPIRICAL_C1_RESULTS.json",
+      "size_bytes": 177
+    },
+    {
+      "root": "original",
+      "path": "outputs/daa_v3_development/recovery_only_isolation_v1/SHA256_MANIFEST.json",
+      "sha256": "0921b3b15be2a58b7863911e60cd4ce10cb2b063055dda9823508c3ab2e6a8d6",
+      "authority": "Accepted original ROA seal",
+      "size_bytes": 51417
+    },
+    {
+      "root": "task",
+      "path": "outputs/p0_1_upstream_v2/UPSTREAM_PROVENANCE.json",
+      "sha256": "d368dc747ec8dbc6d2208e97e7bd2da8ecbebf1dcdda080f02d2317661c1ad47",
+      "authority": "Accepted original upstream report",
+      "size_bytes": 40227
+    },
+    {
+      "root": "engineering",
+      "path": "outputs/cas_q2/empirical_runtime_v1/EXECUTABLE_FREEZE.json",
+      "sha256": "fd66af7907964b3eafd8cbc7d1f5ef30fbeefa1820c1df48c346bb5a5ec76514",
+      "authority": "New byte observation of static active-C3 launch metadata; not a completed-stage seal",
+      "size_bytes": 40105
+    }
+  ],
+  "scope": "Declared static metadata graph only; live C3 ledgers excluded"
+}

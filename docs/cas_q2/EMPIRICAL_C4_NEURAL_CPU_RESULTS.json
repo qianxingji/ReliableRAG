@@ -1,0 +1,35 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T05:51:24.455706+00:00",
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_source_commit": "cc304ee37ba589cff42b936c6e1fd0a692618864",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 2628,
+    "generation_receipts.jsonl": 7886,
+    "repair_bindings.jsonl": 2629,
+    "branch_provenance.jsonl": 2628
+  },
+  "count_scope": "Sequential byte newline counts, not atomic; no generated answer text decoded or assessed",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "engineering_source_commit": "b754f657b5f70448b5837364cdb0bd233f7b3f01",
+  "engineering_manifest": "cc322f1456cfe6c3c3190c98c5b03f305c2d4846cd6062bb68417bae47efcfbf",
+  "tests_run": 101,
+  "tests_passed": 99,
+  "windows_capability_skips": 2,
+  "new_witness_tests": 10,
+  "new_model_config_cache_tests": 3,
+  "frozen_input_files_unchanged": 226,
+  "observed_neural_test_scope": "CPU fake logits with original native scorer methods; no pretrained neural model loaded or GPU inference executed",
+  "independent_softmax_absolute_bound": 9.5367431640625e-07,
+  "head_replay_tolerance_unchanged": 1e-10,
+  "common_masks_actions_and_observed_neural_aggregates_require_exact_checks": true,
+  "fresh_branch_rows_read_by_scoring": 0,
+  "fresh_gold_values_materialized": 0,
+  "scientific_fit_total": 178,
+  "pending": [
+    "C3 canonical completion, fixed 180-trace replay and independent acceptance",
+    "Protected C4 GPU preflight and full stage executors, including SentencePiece/HF setup",
+    "Complete file-level independent validation and prelabel seal before Gold mapping",
+    "Frozen empirical analysis and contribution assessment; original training receipts and CAS qualification remain incomplete"
+  ]
+}

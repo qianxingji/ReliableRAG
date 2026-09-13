@@ -1,0 +1,76 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T08:23:57.579969+00:00",
+  "source_commit": "73f8158c2570e77998d944fac6e5bc9afe4fe6eb",
+  "release_status": "PASS_SAME_HOST_SOURCE_AND_DATA_RELOCATION",
+  "release_manifest": "77cb08f879595c9da47aff52c9ed6531453ab961ee330f3d13d1b814ab537c73",
+  "relocation_manifest": "4f0acd5432dd4b4e37ad4246c75b7168f188f05e7d9bbe583da4c95977f99299",
+  "release_data_files": 2821,
+  "release_data_bytes": 344547677,
+  "accepted_parent_records_matched": 2601,
+  "primary": {
+    "status": "PASS",
+    "contexts": 28,
+    "models": 56,
+    "prediction_rows": 38424,
+    "max_logit_error": 0.0,
+    "max_probability_error": 0.0,
+    "max_metric_error": 0.0,
+    "action_membership_differences": 0
+  },
+  "independent": {
+    "checks": 2744203,
+    "max_numeric_error": 0.0
+  },
+  "relocation_input_files_unchanged": 6755,
+  "blocked_old_data_reads": 0,
+  "permitted_runtime_read_paths": {
+    "primary": 708,
+    "independent": 290
+  },
+  "engineering_manifest": "4b29382b94bee2b8c1de3ba6232fb424bb4e809d6fdf1ab65196c327475335c2",
+  "tests_run": 151,
+  "tests_passed": 149,
+  "windows_capability_skips": 2,
+  "engineering_inputs_unchanged": 1087,
+  "rejected_v1_package_preserved": true,
+  "line_ending_preflight_failure_preserved": true,
+  "original_scientific_source_and_replay_wrapper_byte_identical": true,
+  "artifact_verifier_git_LF_worktree_CRLF_explicitly_disclosed": true,
+  "scientific_fit_total": 178,
+  "new_scientific_fit_calls": 0,
+  "fresh_gold_values_materialized": 0,
+  "clean_environment_tested": false,
+  "other_host_or_OS_tested": false,
+  "private_review_archive": {
+    "filename": "ROA_REPLAY_RELEASE_V2_PRIVATE.zip",
+    "sha256": "052219db01230c5a5ea0031cfdde56e6ae23f14c2bda63097c75c21b3e9f17a2",
+    "size_bytes": 55259271,
+    "files": 51,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 6355,
+    "generation_receipts.jsonl": 19065,
+    "repair_bindings.jsonl": 6355,
+    "branch_provenance.jsonl": 6355
+  },
+  "snapshot_scope": "Sequential non-atomic newline byte counts; no answer/scoring/Gold content decoded",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "limits": [
+    "Uses current Windows host and existing original .venv runtime",
+    "Python audit events, not OS sandbox",
+    "Saved-parameter replay only; no original training reconstruction",
+    "Fresh empirical pipeline release and historical fit-time receipts remain unresolved"
+  ],
+  "pending": [
+    "Complete C3 canonical/fixed replay/independent acceptance",
+    "Execute and accept C4 prelabel",
+    "Execute accepted-prelabel cost audit and four D stages",
+    "Review empirical contribution",
+    "Full empirical release and clean environment reconstruction",
+    "Resolve or disclose historical provenance limits"
+  ]
+}

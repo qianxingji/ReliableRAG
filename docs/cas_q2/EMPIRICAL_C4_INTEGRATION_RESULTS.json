@@ -1,0 +1,46 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T05:22:09.255029+00:00",
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_source_commit": "cc304ee37ba589cff42b936c6e1fd0a692618864",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 1903,
+    "generation_receipts.jsonl": 5710,
+    "repair_bindings.jsonl": 1903,
+    "branch_provenance.jsonl": 1903
+  },
+  "count_scope": "Sequential byte newline counts; not atomic; no generated answer text decoded or assessed",
+  "runtime_frozen_source_config_files_rechecked_unchanged": 41,
+  "scoring_integration_status": "PASS_SAVED_SCORING_INTEGRATION_INVENTED_ONLY",
+  "scoring_integration_source_commit": "d67abf27414d9efaa8c08703683447b532934383",
+  "scoring_integration_manifest": "e1020b95bde5079517dfb94a37c073aaa55be746fff730aeffb66d9945c3e4a4",
+  "invented_traces": 36,
+  "invented_native_eligible": 18,
+  "invented_common_eligible": 17,
+  "numeric_checks": 1637,
+  "maximum_numeric_error": 4.440892098500626e-16,
+  "unchanged_numeric_tolerance": 1e-10,
+  "roundtrip_independent_equal": true,
+  "real_saved_upstream_estimators": 7,
+  "saved_v2_ensemble_bundles": 1,
+  "fixed_parameter_heads": 5,
+  "neural_model_loads": 0,
+  "neural_forwards": 0,
+  "fresh_branch_rows_read_by_scoring": 0,
+  "fresh_gold_values_materialized": 0,
+  "scientific_fit_total": 178,
+  "engineering_tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "run": 88,
+    "passed": 86,
+    "windows_capability_skips": 2,
+    "exit_code": 0
+  },
+  "limitations": [
+    "Invented static semantic/likelihood/NLI fixtures; real saved downstream estimators only.",
+    "HGB probability replay shares the saved sklearn tree estimator.",
+    "Full neural executors, neural witness validation and actual scoring GPU preflights remain pending.",
+    "Canonical generation, bounded replay and independent C3 acceptance remain incomplete.",
+    "Historical contribution failures and original fit-time receipt gaps remain; CAS journal qualification is undecided."
+  ]
+}

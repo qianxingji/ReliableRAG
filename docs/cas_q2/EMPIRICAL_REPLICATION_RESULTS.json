@@ -1,0 +1,250 @@
+{
+  "as_of_utc": "2026-09-11T02:11:47.394527+00:00",
+  "cas_q2_status": "NOT READY",
+  "research_scope": "Fixed-policy empirical attribution/tradeoff replication; no new algorithm or passed historical advancement gate",
+  "scientific_protocol_commit": "0c18a9c",
+  "panel_execution_commit": "a91d91e",
+  "cohort_execution_commit": "8bf2da8",
+  "projection_preflight_commit": "5bfc137",
+  "new_scientific_fits": 10,
+  "takeover_total_scientific_fits": 178,
+  "new_inference_calls": 0,
+  "fresh_outcomes_read": 0,
+  "fresh_runtime_questions_projected": 0,
+  "stages": {
+    "empirical_fixed_panel_v1": {
+      "manifest_sha256": "4579e712f5ad513d7a9ca1229809432f766c05d5d9033b9053563c076629a619",
+      "payload_files": 11,
+      "private_bundle_sha256": "4b1d1d57da142dbe8e2a4398f5f1ae7845ba7863bb7d0b43a3c09e525da68aa9",
+      "private_bundle_size_bytes": 670132,
+      "archive_roundtrip": "PASS",
+      "uploaded": false
+    },
+    "empirical_fresh_cohort_v1": {
+      "manifest_sha256": "6070c63b9cbf3277ef328d059dcaabc98480ba2bb60503b66ad2faa5e816b62a",
+      "payload_files": 7,
+      "private_bundle_sha256": "9611dee2cda0b0779b7a3d5a08fb166c2719109868073807ba246bde81b99a02",
+      "private_bundle_size_bytes": 64871,
+      "archive_roundtrip": "PASS",
+      "uploaded": false
+    },
+    "empirical_projection_preflight_v1": {
+      "manifest_sha256": "289a19f1ff3f8ec7fea2b835f2e19b4c5d2afc5d56cf2b96d9f7c81629e17c35",
+      "payload_files": 4,
+      "private_bundle_sha256": "714ef59326098f18d5af956f3268846058f078d9e002e37947a2d1779e98b18f",
+      "private_bundle_size_bytes": 8588,
+      "archive_roundtrip": "PASS",
+      "uploaded": false
+    }
+  },
+  "panel_validation": {
+    "status": "PASS_FIXED_EMPIRICAL_PANEL_REPLAY",
+    "scientific_fit_calls": 0,
+    "new_inference_calls": 0,
+    "cas_q2_status": "NOT READY",
+    "checks": 57388,
+    "max_numeric_error": 0.0,
+    "probe_prediction_rows": 16010,
+    "no_executor_or_fitter_import": true,
+    "model_bundles": 5,
+    "scientific_fit_calls_verified": 10,
+    "total_takeover_scientific_fit_calls": 178,
+    "fit_questions": 3600,
+    "calibration_questions": 900,
+    "all_probe_predictions_replayed": true,
+    "probe_is_held_out": false,
+    "quality_metrics_computed": false,
+    "final_novel_method_candidate_cleared": false,
+    "fresh_ids_allowed_under_protocol_stage_B": true
+  },
+  "panel_split": {
+    "fit": {
+      "N_all": 10800,
+      "N_groups": 3600,
+      "keys_sha256": "d71ba26d76912cbf459fba5d5ead1a5fb8fa168f9ef8f8a05e0959744ce4508a",
+      "N_eligible": 2572
+    },
+    "cal": {
+      "N_all": 2700,
+      "N_groups": 900,
+      "keys_sha256": "eee2b3bd0cbd8903c471d916900e080dce994f5d84417554e4604fb793df660d",
+      "N_eligible": 630
+    },
+    "probe": {
+      "N_all": 13500,
+      "N_groups": 4500,
+      "keys_sha256": "846772ea91ac2a9247c76167140e01be16276e1ad8c438199c50c477f5f5ada0",
+      "N_eligible": 3202
+    }
+  },
+  "cohort_validation": {
+    "status": "PASS_ID_ONLY_EMPIRICAL_COHORT",
+    "cas_q2_status": "NOT READY",
+    "scientific_fit_calls": 0,
+    "new_inference_calls": 0,
+    "fresh_outcomes_read": 0,
+    "checks": 111,
+    "no_selector_import": true,
+    "selected_questions": 6000,
+    "expected_traces": 18000,
+    "excluded_questions": 18600,
+    "overlap_with_known_exclusions": 0,
+    "exact_order_reconstruction": true,
+    "precision_planning_reconciled": true,
+    "novel_method_candidate_cleared": false,
+    "stage_C_engineering_freeze_required": true,
+    "limitations": "ID-level known-use exclusion only; not text/semantic deduplication, pretraining decontamination or random-probability sampling"
+  },
+  "cohort_inventory": {
+    "hotpotqa": {
+      "source": 7405,
+      "available": 2105,
+      "selected": 2000
+    },
+    "2wikimultihopqa": {
+      "source": 12576,
+      "available": 7276,
+      "selected": 2000
+    },
+    "musique": {
+      "source": 19938,
+      "available": 17838,
+      "selected": 2000
+    }
+  },
+  "precision_planning": {
+    "questions": 6000,
+    "z_bonferroni_six": 2.638257273476751,
+    "comparisons": {
+      "ROA-FULL_minus_HGB_GBV_R": {
+        "em_gain": {
+          "development_sds_pp": [
+            0.07165671614978482,
+            0.0752216802575475,
+            0.07418152388755693,
+            0.07311547212443038,
+            0.07809481243387839
+          ],
+          "worst_sd_pp": 0.07809481243387839,
+          "projected_sd_pp": 0.06763209147151952,
+          "approximate_halfwidth_pp": {
+            "multiplier_1": 0.17843085724518132,
+            "multiplier_1_5": 0.26764628586777195
+          }
+        },
+        "damage_rate": {
+          "development_sds_pp": [
+            0.030286716552427095,
+            0.025979642137794724,
+            0.02968584494548138,
+            0.028818687813638805,
+            0.02697767509846402
+          ],
+          "worst_sd_pp": 0.030286716552427095,
+          "projected_sd_pp": 0.026229065931620516,
+          "approximate_halfwidth_pp": {
+            "multiplier_1": 0.06919902397059907,
+            "multiplier_1_5": 0.10379853595589861
+          }
+        }
+      },
+      "HGB_GBV_R_minus_HGB_ONLY_R": {
+        "em_gain": {
+          "development_sds_pp": [
+            0.10458756345156081,
+            0.1015647733644039,
+            0.09880278228754907,
+            0.10117453604635479,
+            0.10249281483900352
+          ],
+          "worst_sd_pp": 0.10458756345156081,
+          "projected_sd_pp": 0.09057548686896855,
+          "approximate_halfwidth_pp": {
+            "multiplier_1": 0.2389614370307542,
+            "multiplier_1_5": 0.3584421555461313
+          }
+        },
+        "damage_rate": {
+          "development_sds_pp": [
+            0.039336803597886605,
+            0.036020007152206435,
+            0.03514667098038149,
+            0.03676907325193282,
+            0.03541345299507429
+          ],
+          "worst_sd_pp": 0.039336803597886605,
+          "projected_sd_pp": 0.0340666712194489,
+          "approximate_halfwidth_pp": {
+            "multiplier_1": 0.08987664312785217,
+            "multiplier_1_5": 0.13481496469177826
+          }
+        }
+      },
+      "HGB_GBV_R_minus_GBV_ONLY_R": {
+        "em_gain": {
+          "development_sds_pp": [
+            0.08583406455303573,
+            0.08291647489846588,
+            0.08659008070238117,
+            0.0832810759306884,
+            0.08579197298048687
+          ],
+          "worst_sd_pp": 0.08659008070238117,
+          "projected_sd_pp": 0.07498920960400678,
+          "approximate_halfwidth_pp": {
+            "multiplier_1": 0.1978408276700435,
+            "multiplier_1_5": 0.2967612415050652
+          }
+        },
+        "damage_rate": {
+          "development_sds_pp": [
+            0.0366865702089788,
+            0.034528645130061784,
+            0.03711401760325547,
+            0.035678986466610225,
+            0.03660592832812643
+          ],
+          "worst_sd_pp": 0.03711401760325547,
+          "projected_sd_pp": 0.03214168208092208,
+          "approximate_halfwidth_pp": {
+            "multiplier_1": 0.08479802653177003,
+            "multiplier_1_5": 0.12719703979765504
+          }
+        }
+      }
+    },
+    "interpretation": "Normal approximation and variance-inflation sensitivity only; not achieved precision, final-model power or a guaranteed effect",
+    "sample_size_reason": "Largest balanced multiple of 100 below authenticated 2105-question Hotpot availability; one bounded study, no significance-driven enlargement"
+  },
+  "sample_size_correction": "The original largest-multiple-of-100 rationale was wrong: 2100 is below 2105. Keep the prospectively fixed 2000 per dataset and unchanged IDs; see EMPIRICAL_SAMPLE_SIZE_CORRIGENDUM.md. Original frozen prose is retained.",
+  "projection_preflight": {
+    "status": "PASS_VALUE_BLIND_PROJECTION_PREFLIGHT_ONLY",
+    "censuses": {
+      "2wikimultihopqa": {
+        "status": "PASS",
+        "row_count": 12576,
+        "unclassified_key_paths": []
+      },
+      "musique": {
+        "status": "PASS",
+        "row_count": 19938,
+        "unclassified_key_paths": []
+      }
+    },
+    "synthetic_forbidden_scalar_attempts_blocked": 1,
+    "actual_forbidden_scalar_attempts": 0,
+    "sources_unchanged": true,
+    "remaining": "Complete stage C pool adapter/independent validator and its input freeze, then retrieval/runtime/scoring adapters; inference/outcome mapping not started"
+  },
+  "engineering_tests": {
+    "run": 31,
+    "passed": 29,
+    "skipped": 2,
+    "scientific_fit_calls": 0,
+    "skips": [
+      "Windows symlink privilege",
+      "case-insensitive filesystem alias"
+    ]
+  },
+  "next_work": "Stage C gold-free runtime projection/pool adapter and independent validation, then retrieval/candidate generation/frozen scores and prelabel seals; stage D outcomes only after acceptance."
+}

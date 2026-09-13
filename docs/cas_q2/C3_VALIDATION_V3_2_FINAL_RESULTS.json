@@ -1,0 +1,39 @@
+{
+  "status": "ACCEPTED_COMPLETE_CURRENT_C3_V3_2",
+  "cas_q2_status": "NOT READY",
+  "c3_accepted": true,
+  "c4_authorized": true,
+  "source_commit": "682f6696b9057f1e9f9588979f5ca4911de213f7",
+  "source_task_manifest_sha256": "42185690f01047f79371fe85dca49616ac8bf4e73db2d2d6ba5eb327f93f7a80",
+  "source_task_manifest_entries": 70,
+  "client_audit_manifest_sha256": "bfc4921074be0dbba5fe647f9664b949a645b6f37bb14ddb477f6ba01affa7b5",
+  "private_archive_sha256": "277f524d3ca2203ce7c41dd2af9c093fe0077a4c44bc177ff420645b2a106474",
+  "private_archive_members_reopened": 71,
+  "prior_client_audit_controller_failure_manifest_sha256": "61a54dba43ffb8ca8fc0ee629668ab2fa65b42315b59443a307ca9b40683426f",
+  "runtime_manifest_sha256": "dc2905224798b07302db8950f68db228de1faff9042c44dbaee7111ba107878f",
+  "runtime_manifest_entries_rehashed": 82,
+  "independent_validation_sha256": "58500b1d9002ec9af9a8077349e4a70c8584321cca06db005211602aecfa6395",
+  "original_result_before_binding_sha256_reconstructed": "22210f4a7c33077ecc9084532f306bc8c5304bb0f9c53c4b2f1d9c9fbf7f7c29",
+  "canonical_traces": 18000,
+  "replay_traces": 180,
+  "generation_checks": 54540,
+  "generated_ids_checked": 834803,
+  "complete_vocabulary_rechecks": 38,
+  "canonical_signatures_recomputed": 18000,
+  "replay_signatures_recomputed": 180,
+  "exact_replay_signatures": true,
+  "environment_inventory_files_rehashed": 30912,
+  "controls_reverified": 66,
+  "model_forward_calls": 0,
+  "scientific_fit_calls": 0,
+  "fresh_gold_values_materialized": 0,
+  "actual_c4_gpu_preflight_prerequisite_gate": {
+    "passed": true,
+    "returned_paths": 204
+  },
+  "limitations": [
+    "This is saved-field validation and bounded replay, not answer-quality evaluation.",
+    "Historical acquisition thread count remains unrecorded; V2 remains failed.",
+    "C4 scoring, cost reconciliation, D analysis and contribution decisions remain pending."
+  ]
+}

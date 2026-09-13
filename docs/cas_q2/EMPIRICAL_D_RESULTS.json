@@ -1,0 +1,41 @@
+{
+  "status": "ACCEPTED_COMPLETE_FROZEN_EMPIRICAL_D",
+  "cas_q2_status": "NOT READY",
+  "source_commit": "97406e92f477a9bba2f413c4b1bbf7201afb1cd0",
+  "analysis_manifest_sha256": "498b83e75538032de3711bd6ce190eac049631d8393c875744d83aa0318097f6",
+  "analysis_validation_manifest_sha256": "f9b38dd518f10be2cf22533dc0216fe15afa7f58f4fb3bbd3cde0735d59f7e36",
+  "client_audit_manifest_sha256": "27a0274add337fe12e51478e3e39fcbc934dd8271f6d8da13e059afe0527099f",
+  "point_estimates_sha256": "b03ddad8fa35f582a63403c029942104c3f5da1a961110edc2a62f09871f4d3b",
+  "intervals_sha256": "6d454afeec7c125c0cc4d182556af6db214a867aa4f62f7a6fbd1e6e22b09331",
+  "weights_sha256": "2839a77841f9dea83a68d1b4604bac8b67eafdf22360b229733d481359ea9650",
+  "draw_receipts_sha256": "440bb3964335f49b56bfb68bab10e63ccd012ec34e540f3fdacf86687ff3221f",
+  "bootstrap_seed": 20260926,
+  "validated_draws": 20000,
+  "bootstrap_weight_bytes": 240000000,
+  "producer_independent_checks": 2973210,
+  "client_draw_receipt_checks": 560000,
+  "unique_executable_inputs_rehashed": 18327,
+  "environment_files_rehashed": 30912,
+  "overall": {
+    "Keep": {"em_rate": 0.17988888888888888, "token_f1": 0.22720665118734132},
+    "HGB": {"delta_em_pp": 1.8555555555555556, "delta_f1_pp": 2.4386019320185977, "damage_rate_pp": 0.17777777777777778, "net": 334},
+    "GbV": {"delta_em_pp": 1.6277777777777778, "delta_f1_pp": 2.172153168610071, "damage_rate_pp": 0.1388888888888889, "net": 293},
+    "ROA-FULL": {"delta_em_pp": 1.9388888888888889, "delta_f1_pp": 2.5781481173147816, "damage_rate_pp": 0.12222222222222222, "net": 349},
+    "ROA-NOGBV": {"delta_em_pp": 1.761111111111111, "delta_f1_pp": 2.3114822831489468, "damage_rate_pp": 0.2111111111111111, "net": 317},
+    "HGB_GBV_R": {"delta_em_pp": 1.8944444444444444, "delta_f1_pp": 2.557381009513362, "damage_rate_pp": 0.06111111111111111, "net": 341},
+    "HGB_ONLY_R": {"delta_em_pp": 1.8388888888888888, "delta_f1_pp": 2.4116603338230003, "damage_rate_pp": 0.14444444444444443, "net": 331},
+    "GBV_ONLY_R": {"delta_em_pp": 1.6611111111111112, "delta_f1_pp": 2.213749966873537, "damage_rate_pp": 0.13333333333333333, "net": 299},
+    "V2": {"delta_em_pp": 1.85, "delta_f1_pp": 2.450560858894192, "damage_rate_pp": 0.15555555555555556, "net": 333}
+  },
+  "primary_reallocated": [
+    {"left": "ROA-FULL", "right": "HGB_GBV_R", "em_difference_pp": 0.044444444444444446, "em_adjusted_range_pp": [-0.13333333333333333, 0.2037268518518532], "damage_rate_difference_pp": 0.06111111111111111, "damage_adjusted_range_pp": [0.0, 0.1277777777777778], "joint_favorable": false},
+    {"left": "HGB_GBV_R", "right": "HGB_ONLY_R", "em_difference_pp": 0.05555555555555555, "em_adjusted_range_pp": [-0.15555555555555556, 0.31666666666666665], "damage_rate_difference_pp": -0.08333333333333333, "damage_adjusted_range_pp": [-0.18333333333333335, -0.005555555555555556], "joint_favorable": false},
+    {"left": "HGB_GBV_R", "right": "GBV_ONLY_R", "em_difference_pp": 0.23333333333333334, "em_adjusted_range_pp": [0.07222222222222223, 0.43333333333333335], "damage_rate_difference_pp": -0.07222222222222222, "damage_adjusted_range_pp": [-0.14444444444444446, -0.02777777777777778], "joint_favorable": true}
+  ],
+  "action_modifications": 0,
+  "scientific_fits": 0,
+  "model_forward_calls": 0,
+  "raw_reference_strings_materialized_in_analysis": 0,
+  "acceptance": "docs/cas_q2/EMPIRICAL_D_ACCEPTANCE.md",
+  "claim_review": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md"
+}

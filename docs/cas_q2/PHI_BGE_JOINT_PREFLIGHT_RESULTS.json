@@ -1,0 +1,58 @@
+{
+  "status": "ACCEPTED_FOR_SINGLE_PROCESS_PHI_DEVELOPMENT_RUNTIME_ONLY",
+  "cas_q2_status": "NOT READY",
+  "review_model_class": "Astra xhigh",
+  "development_runtime_execution_authorized": true,
+  "test_benchmark_execution_authorized": false,
+  "reader_specific_fit_authorized": false,
+  "test_gold_authorized": false,
+  "producer_source_commit": "4f9eb32b73d73675e2dec3eedabd3d7728d8ee6a",
+  "producer_manifest_sha256": "ecf17a8af6c21fe2887700993bafe53c4aa8ae3c5419112737049db5c91ef2bf",
+  "preserved_v1_source_commit": "f70bcd296a1dfeebeffcdc77ca531e3b7e9205c4",
+  "preserved_v1_manifest_sha256": "692c75ac0a625bc3c5aec37562b0be5e73832d7b315df399b044a1b9600464c1",
+  "validator_source_commit": "4a8cb721d55c063d56d43aa1f868b32e4d5b17fb",
+  "validator_manifest_sha256": "931391743a6ce4c64164973801eeffde0476545552c79d6b150458cd1b7d417d",
+  "validator_checks": 89,
+  "client_audit_manifest_sha256": "b82298a9f1a6df5c49305be12c5fff23fb2064ef1922fd78dd66d7dc51116163",
+  "client_audit_sha256": "d08541acf0d92eca99839ac9cee156c05fe73ff36ee6e81c2ed5c758b627011d",
+  "runtime": {
+    "torch": "2.7.1+cu128",
+    "cuda_runtime": "12.8",
+    "allocator_backend": "native",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "driver": "596.36",
+    "driver_model": "WDDM",
+    "model_loads": 2,
+    "phi_logical_generations": 2,
+    "phi_forward_calls": 49,
+    "bge_forward_calls": 1,
+    "peak_allocated_cuda_bytes": 16213824000,
+    "peak_reserved_cuda_bytes": 19203620864,
+    "nominal_cuda_total_bytes": 17102864384,
+    "allocated_fraction": 0.9480180416543728,
+    "allocated_headroom_bytes": 889040384,
+    "reserved_counter_is_physical_headroom": false
+  },
+  "admissions": [
+    {"stage": "repair_query", "input_tokens": 353, "position": 0},
+    {"stage": "a1", "input_tokens": 9472, "position": 0}
+  ],
+  "execution_counts": {
+    "benchmark_rows_read": 0,
+    "generation_calls_on_benchmark": 0,
+    "gold_reads": 0,
+    "existing_answer_strings_read": 0,
+    "scientific_fit_calls": 0
+  },
+  "binding_controls": {
+    "processes": 1,
+    "batch_size": 1,
+    "phi_instances": 1,
+    "bge_instances": 1,
+    "maximum_generation_input_tokens": 9472,
+    "dynamic_guard_before_cuda": true,
+    "concurrent_gpu_workload_permitted": false,
+    "oom_policy": "SEAL_FAILURE_AND_STOP_WITHOUT_CONFIG_CHANGE"
+  },
+  "next_gate": "PHI_DEVELOPMENT_RUNTIME_IMPLEMENTATION_EXECUTION_AND_INDEPENDENT_VALIDATION"
+}

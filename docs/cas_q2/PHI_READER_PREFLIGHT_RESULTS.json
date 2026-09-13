@@ -1,0 +1,46 @@
+{
+  "status": "ACCEPTED_PHI_READER_PREFLIGHT_WITH_MEMORY_LIMIT",
+  "cas_q2_status": "NOT READY",
+  "benchmark_execution_authorized": false,
+  "producer_source_commit": "b9680dba8845d7ad077acd884ff8b5166536b009",
+  "validator_source_commit": "fe50810e5b7b85d32245a846d5045f757cf3d249",
+  "reader": "microsoft/Phi-3.5-mini-instruct",
+  "reader_revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+  "producer_manifest_sha256": "cfebd83ce688479af922e884ea0df6034af6e32fc2175c3fd3b5e69266e58d30",
+  "preserved_failed_validator_manifest_sha256": "35cf75ee5a8d0ef1efb00b9d560fa8e455a1873d20d202cad93f1752acf15269",
+  "validator_manifest_sha256": "ef11925bb631e47c22fd47ba0579edf138e708b4a1ee78bbe4527cb1f7fe291a",
+  "client_audit_manifest_sha256": "dc5d0a25bcac891552ac2ab4cc333c4a7e39e25f1faa655d0575550f4358afba",
+  "client_audit_sha256": "37b50e125fb8709342a5352768696f73f0019798d3a7ba5ae8752128092d4a62",
+  "producer": {
+    "elapsed_seconds": 39.0453,
+    "sequential_model_loads": 2,
+    "logical_generations": 4,
+    "generation_forward_calls": 55,
+    "likelihood_forward_calls": 2,
+    "likelihood_cache_hits": 1,
+    "exact_repeated_greedy_generation": true,
+    "long_generation_input_tokens": 9472,
+    "long_generation_context_truncated": true,
+    "long_likelihood_input_tokens": 8192,
+    "long_likelihood_truncated": true,
+    "generation_peak_allocated_cuda_bytes": 15987338240,
+    "likelihood_peak_allocated_cuda_bytes": 8417582080
+  },
+  "memory_limit": {
+    "nominal_gpu_total_bytes": 17103323136,
+    "nominal_unallocated_headroom_bytes": 1115984896,
+    "generation_peak_fraction_of_nominal_total": 0.9347504056886456,
+    "maximum_authorized_pretokenized_generation_input_tokens": 9472,
+    "batch_size": 1,
+    "concurrent_model_instances": 1
+  },
+  "independent_validator_checks": 111,
+  "execution_counts": {
+    "benchmark_rows_read": 0,
+    "gold_reads": 0,
+    "scientific_fit_calls": 0,
+    "client_audit_model_forward_calls": 0
+  },
+  "next_gate": "VALUE_BLIND_FULL_INPUT_AND_IMPLEMENTATION_FREEZE",
+  "scope": "Invented-only Phi adapter and scorer compatibility with a binding memory limit; no benchmark or scientific-result evidence."
+}

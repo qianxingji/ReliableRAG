@@ -1,0 +1,147 @@
+{
+  "status": "REVIEWED_LITERAL_BYTE_FAILURE_WITH_EXACT_NUMERICAL_MATCH",
+  "cas_q2_status": "NOT READY",
+  "literal_byte_gate_passed": false,
+  "model_byte_matches": 6,
+  "models": 7,
+  "score_comparisons": 10773,
+  "producer_score_comparisons": 10773,
+  "maximum_score_error": 0,
+  "training_matrix_scalar_values": 140033,
+  "selected_ast_records_rechecked": 45,
+  "new_fit_attempts": 7,
+  "new_fit_completions": 7,
+  "total_fit_attempts": 185,
+  "total_fit_completions": 185,
+  "hgb_state_difference": {
+    "path": "state/state/values/2/values/1/values/model/state/values/2/values/_bin_mapper/state/values/2/values/n_threads",
+    "kind": "VALUE",
+    "original": 6,
+    "new": 1
+  },
+  "hgb_byte_difference_offset": 4820,
+  "hgb_size_bytes": 639652,
+  "arrays_observed_per_model": 4856,
+  "objects_observed_per_model": 312,
+  "visited_values_per_model": 136341,
+  "all_array_buffer_hashes_and_named_fields_equal": true,
+  "interpretation": "Only saved bin-mapper thread count differs (6 versus 1); the original strict byte gate remains failed.",
+  "official_installed_source_records": [
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\sklearn\\ensemble\\_hist_gradient_boosting\\binning.py",
+      "sha256": "aaa754ed204f152e5fbcb794a08ec24d43c201401560d69b47ea4be4b9b68ece",
+      "size_bytes": 14258
+    },
+    {
+      "path": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\sklearn\\ensemble\\_hist_gradient_boosting\\gradient_boosting.py",
+      "sha256": "03dddbd3939f30d5bf39ceaeae75911e5db5ee5fc2270516584d384c8e8c7a83",
+      "size_bytes": 99514
+    }
+  ],
+  "original_fit_time_receipts_recovered": false,
+  "prior_failure_manifest": "e85024fc8e697cf9f69220d90c85a944027f14a9cef3c7624f463ff75981cc84",
+  "diagnostic_manifest": "b1330d58e74e7d2d1376644bce33987b6e588ab741f0ecf0319b75653a451084",
+  "diagnostic_failures": [
+    "f8b86d183976451f6e8e5dd7a8ad61bf719cb8b01bd84bdf5821df1b45b612e6",
+    "e609b4aa3a8c223ce3cc5010999b7eeff09704e59fa5743a26df795475a098af",
+    "86caecb042a2bfa6f604bf099129f40fd71d6d1bf9607b15b111379033a9e96c"
+  ],
+  "snapshot_utc": "2026-09-11T14:20:02.551649+00:00",
+  "training_execution_status": "FAIL",
+  "independent_training_status": "FAIL_SEVEN_MODEL_REPLAY_MISMATCH",
+  "training_execution_freeze_sha256": "d6cdcc6ee8073da42aef84b675dd0f377d212395581595a7e2e359682eafb9cb",
+  "training_implementation_commit": "3160704747f22dee349de7cfdff302d173d058fc",
+  "model_comparisons": {
+    "state_symmetric_logistic": {
+      "original_sha256": "0adde50ca869a216edb4a2b4a7898e5b60a9f148ec279a0c4b757d1c439fd0bf",
+      "new_sha256": "0adde50ca869a216edb4a2b4a7898e5b60a9f148ec279a0c4b757d1c439fd0bf",
+      "byte_identical": true,
+      "score_checks": 1539,
+      "max_score_error": 0.0,
+      "max_producer_score_error": 0.0
+    },
+    "no_cross_state": {
+      "original_sha256": "5ca5fc84e5b58e44b9271282e8629af3c3d8a579bc51bf536ce65abd3a78a64b",
+      "new_sha256": "5ca5fc84e5b58e44b9271282e8629af3c3d8a579bc51bf536ce65abd3a78a64b",
+      "byte_identical": true,
+      "score_checks": 1539,
+      "max_score_error": 0.0,
+      "max_producer_score_error": 0.0
+    },
+    "no_B": {
+      "original_sha256": "8c9dd6cccb5081e12f67ac21efc7d268635cee0a279f3dd48c9e5f7ca4980e11",
+      "new_sha256": "8c9dd6cccb5081e12f67ac21efc7d268635cee0a279f3dd48c9e5f7ca4980e11",
+      "byte_identical": true,
+      "score_checks": 1539,
+      "max_score_error": 0.0,
+      "max_producer_score_error": 0.0
+    },
+    "no_evidence_change": {
+      "original_sha256": "bd225da486eeab63bfa64c2f50a2d85910a1042bfe6c2314066ac7f5d0757336",
+      "new_sha256": "bd225da486eeab63bfa64c2f50a2d85910a1042bfe6c2314066ac7f5d0757336",
+      "byte_identical": true,
+      "score_checks": 1539,
+      "max_score_error": 0.0,
+      "max_producer_score_error": 0.0
+    },
+    "no_answer_form": {
+      "original_sha256": "cc6cb1ba307ade2440a4423c268641077217eac6b7490c28a0f258ca3cea53dd",
+      "new_sha256": "cc6cb1ba307ade2440a4423c268641077217eac6b7490c28a0f258ca3cea53dd",
+      "byte_identical": true,
+      "score_checks": 1539,
+      "max_score_error": 0.0,
+      "max_producer_score_error": 0.0
+    },
+    "state_symmetric_hgb": {
+      "original_sha256": "9245170f855435b5603b04013bd4fbab79a75d2761853a012ab9f3259600bf6e",
+      "new_sha256": "88b75fd0c63eacea9f118453fc4b2f81c118b29a54dda7234f011605129f1545",
+      "byte_identical": false,
+      "score_checks": 1539,
+      "max_score_error": 0.0,
+      "max_producer_score_error": 0.0
+    },
+    "ordinary_compact_logistic": {
+      "original_sha256": "761dc0238f4da181a5693da881b914134ca7603269f6fee21d66a32539d01242",
+      "new_sha256": "761dc0238f4da181a5693da881b914134ca7603269f6fee21d66a32539d01242",
+      "byte_identical": true,
+      "score_checks": 1539,
+      "max_score_error": 0.0,
+      "max_producer_score_error": 0.0
+    }
+  },
+  "original_used_inputs_unchanged": 13,
+  "restored_used_inputs_unchanged": 13,
+  "new_environment_files_unchanged": 21267,
+  "training_control_files_unchanged": 8,
+  "historical_fit_time_receipts_still_missing": 7,
+  "earlier_independent_whole_training_manifest_pin_recovered": false,
+  "original_upstream_models_replaced": false,
+  "private_artifacts_uploaded": false,
+  "evidence_kit": {
+    "filename": "HISTORICAL_TRAINING_V1_EVIDENCE_PRIVATE.zip",
+    "sha256": "4236b5ff16383ae1ed46c4a7bca21cc546e111b17bfc5d25d2e22cd7ce504bed",
+    "size_bytes": 4497558,
+    "members": 107,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "external_dependencies": [
+    "Accepted restored static source/config/original models",
+    "Accepted numerical packages in new neural environment",
+    "Current Windows/CPython"
+  ],
+  "live_canonical_pid": 55688,
+  "live_process_creation_time": "2026-09-11T12:02:54.8331660+08:00",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 14684,
+    "generation_receipts.jsonl": 44053,
+    "repair_bindings.jsonl": 14684,
+    "branch_provenance.jsonl": 14684
+  },
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "snapshot_scope": "Non-atomic newline byte counts only; no current empirical answer, score or Gold decode",
+  "fresh_gold_values": 0,
+  "another_host_or_OS_tested": false,
+  "established_engineering_suite_repeated": false
+}
