@@ -1,24 +1,19 @@
 {
   "schema_version": 1,
-  "decision": "PASS_COMPILED_PDF_MECHANICAL_VERIFICATION_WITH_DISCLOSED_FONT_AND_LONGTABLE_NOTICES",
+  "decision": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE",
   "engine": "MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01",
   "artifacts": {
     "output/pdf/manuscript.pdf": {
-      "sha256": "c9150d15ae9023160c07437735333754a897a3331450d1e57388eed7703aa641",
+      "sha256": "851eea05278b64793e5814a48de8df6cf2529acdcf27df5072d8ae5f9999e025",
       "pages": 11,
       "page_size": "612 x 792 pts (letter)",
       "pdf_version": "1.5",
-      "font_rows": 17,
-      "nonembedded_fonts": [
-        "Helvetica",
-        "Helvetica-Bold"
-      ],
-      "type3_fonts": [
-        "F127"
-      ]
+      "font_rows": 16,
+      "nonembedded_fonts": [],
+      "type3_fonts": []
     },
     "output/pdf/supplement.pdf": {
-      "sha256": "fcf134c7695f9c706db376996856240e4980332ef5b4843a7d2095f6c4788d61",
+      "sha256": "b50a3bed4d7165c62f2cfeac06bd934a1b8ea9f997774d35f083ce5c04cd3812",
       "pages": 3,
       "page_size": "612 x 792 pts (letter)",
       "pdf_version": "1.5",
@@ -29,14 +24,14 @@
   },
   "logs": {
     "output/pdf/manuscript.log": {
-      "sha256": "b6f5232891128c3be4327afd7b79c60446599db1b0ab562fe2e8ad929b9b0e82",
+      "sha256": "39b91409c930354fc6938e448f2a28a9444039ff4d075b21ddf76986d38180d4",
       "fatal_errors": 0,
       "undefined_citations_or_references": 0,
       "overfull_or_underfull_boxes": 0,
       "known_nonfatal_infinite_glue_notice": false
     },
     "output/pdf/supplement.log": {
-      "sha256": "67a7875570018f0f70e6cca77ab54a5c56f65d62bbf598f9acbe26cce1fa033f",
+      "sha256": "e2a72c1773a318cfa240cfb3fa8c91da337dc0ad4ebfda26db1e5f6f392c8a73",
       "fatal_errors": 0,
       "undefined_citations_or_references": 0,
       "overfull_or_underfull_boxes": 0,
@@ -50,7 +45,7 @@
     "unresolved_markers": 0
   },
   "visual_review": {
-    "status": "PASS_BY_PROJECT_LEAD_2026-09-13",
+    "status": "PASS_BY_PROJECT_LEAD_2026-09-13_FONT_CLEAN_REBUILD",
     "main_pages_reviewed": 11,
     "supplement_pages_reviewed": 3,
     "defects_observed": 0
@@ -58,7 +53,7 @@
   "disclosures": [
     "MiKTeX reports its installation has not yet checked for updates; this is outside the LaTeX logs.",
     "Supplement log retains one nonfatal longtable infinite-glue page-split notice; rendered content is complete.",
-    "The two included vector figures use unembedded PDF Base-14 Helvetica/Helvetica-Bold fonts; target-journal PDF-profile compliance remains to be checked after journal selection.",
-    "The main PDF also contains one embedded Type 3 font, F127; target-journal Type 3 font rules remain to be checked after journal selection."
+    "Both compiled PDFs now contain zero nonembedded fonts and zero Type 3 fonts.",
+    "Final target-journal PDF-profile compliance remains to be checked after journal selection."
   ]
 }

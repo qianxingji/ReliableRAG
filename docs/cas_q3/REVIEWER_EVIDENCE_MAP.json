@@ -7,12 +7,12 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "55f88fff381c5d10a883134a617d22620884267f12e55e099d259257a9fe02e9",
+      "sha256": "f9c302404b23fe9c59b52844e641f12f66d52ef98b4935ac98cb43fba523276c",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
       "path": "paper/manuscript.tex",
-      "sha256": "cc948aa6955517060d0ab9c034baa9a6f2595db3f1bdf4218126611590d86d68",
+      "sha256": "11b989c6bdde63253cef84e14cfa657c3996943840bc4ed730f4ce863f165856",
       "required_marker": "The same joint rule does not pass against the HGB-only policy"
     },
     {
@@ -22,20 +22,20 @@
     },
     {
       "path": "output/pdf/manuscript.pdf",
-      "sha256": "c9150d15ae9023160c07437735333754a897a3331450d1e57388eed7703aa641"
+      "sha256": "851eea05278b64793e5814a48de8df6cf2529acdcf27df5072d8ae5f9999e025"
     },
     {
       "path": "output/pdf/supplement.pdf",
-      "sha256": "fcf134c7695f9c706db376996856240e4980332ef5b4843a7d2095f6c4788d61"
+      "sha256": "b50a3bed4d7165c62f2cfeac06bd934a1b8ea9f997774d35f083ce5c04cd3812"
     },
     {
       "path": "paper/COMPILE_RECEIPT.json",
-      "sha256": "5736b6c9bf266dd8595bcf12ce7d2c1c7148a976ce306a0aa954e6aefa0b50ee",
-      "required_marker": "PASS_COMPILED_PDF_MECHANICAL_VERIFICATION_WITH_DISCLOSED_FONT_AND_LONGTABLE_NOTICES"
+      "sha256": "d97e673392b3ce6abe8f08dd70231b8b4af6b067b845f4d8026846b1e2fccc1a",
+      "required_marker": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE"
     },
     {
       "path": "paper/MANUSCRIPT_VERIFICATION.json",
-      "sha256": "d065d3599efef5680bcb1cc701bb62489a866fe953859fc0e70d817e2bb76eb6",
+      "sha256": "c0e2d75f1e4ac5172c1bf3ff3742a101fee6ed83586f0eaffba09d62c7e65b0a",
       "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
     },
     {
@@ -47,6 +47,11 @@
       "path": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md",
       "sha256": "878021bb621c7690328cf4e40a7cbfdc2b97d19bb04bbb7c3835b7bd49d8ce8b",
       "required_marker": "PASS_SOURCE_AND_COMPILED_ARTIFACT_WITH_OWNER_LICENSE_CAS_BLOCKERS"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_FONT_EMBEDDING_CORRIGENDUM.md",
+      "sha256": "3e2947d21794c403f80c785a9a10186392d7200bffdab8d71755239644911f44",
+      "required_marker": "PASS FONT-CLEAN JOURNAL-NEUTRAL REBUILD"
     },
     {
       "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",

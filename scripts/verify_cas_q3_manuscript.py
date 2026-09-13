@@ -121,7 +121,11 @@ def main() -> int:
 
     for rel in ("figures/paired_pipeline.pdf", "figures/recovery_damage.pdf"):
         payload = (PAPER / rel).read_bytes()
-        require(payload.startswith(b"%PDF-1.4") and b"%%EOF" in payload[-32:], f"PDF structure present: {rel}", checks)
+        require(
+            re.match(rb"%PDF-1\.[0-9]", payload) is not None and b"%%EOF" in payload[-64:],
+            f"PDF structure present: {rel}",
+            checks,
+        )
 
     result = {
         "schema_version": 1,
@@ -135,7 +139,7 @@ def main() -> int:
             "author_declarations_pending",
             "project_license_pending",
             "CAS_Q3_journal_qualification_pending",
-            "final_Astra_xhigh_compiled_artifact_rebind_recorded_separately",
+            "final_Astra_xhigh_rebind_pending_after_target_specific_conversion",
         ],
     }
     out = PAPER / "MANUSCRIPT_VERIFICATION.json"

@@ -11,12 +11,21 @@ import argparse
 import hashlib
 import json
 import math
+import tempfile
 from pathlib import Path
 from typing import Iterable
+
+import reportlab
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfgen.canvas import Canvas
 
 
 POINT_SHA256 = "b03ddad8fa35f582a63403c029942104c3f5da1a961110edc2a62f09871f4d3b"
 INTERVAL_SHA256 = "6d454afeec7c125c0cc4d182556af6db214a867aa4f62f7a6fbd1e6e22b09331"
+REPORTLAB_VERSION = "4.4.9"
+VERA_SHA256 = "c4c45690b345435b2cba52ecabe275f05e49b389b39fe68ad03afbb551288d3d"
+VERA_BOLD_SHA256 = "cc037385e4d55bfde89b13e03091ee93bf40c0c52ddd391ff031ab276f13b8e9"
 POLICIES = (
     "Keep", "HGB", "GbV", "ROA-FULL", "ROA-NOGBV", "HGB_GBV_R",
     "HGB_ONLY_R", "GBV_ONLY_R", "V2",
@@ -146,59 +155,78 @@ def breakdown(points: dict, dimension: str) -> str:
     ])
 
 
-def esc(text: str) -> str:
-    return text.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
-
-
 class Pdf:
-    """Tiny deterministic one-page vector PDF writer using built-in Helvetica."""
+    """Deterministic one-page vector PDF writer with embedded Vera fonts."""
+
+    regular_name = "ReliableRAGVera"
+    bold_name = "ReliableRAGVeraBold"
+    registered = False
 
     def __init__(self, width: int, height: int):
         self.width, self.height = width, height
-        self.ops: list[str] = []
+        self.ops: list[tuple] = []
 
     def line(self, x1, y1, x2, y2, width=1, rgb=(0, 0, 0)):
-        self.ops.append(f"{rgb[0]} {rgb[1]} {rgb[2]} RG {width} w {x1} {y1} m {x2} {y2} l S")
+        self.ops.append(("line", x1, y1, x2, y2, width, rgb))
 
     def rect(self, x, y, w, h, fill=(1, 1, 1), stroke=(0, 0, 0)):
-        self.ops.append(f"{fill[0]} {fill[1]} {fill[2]} rg {stroke[0]} {stroke[1]} {stroke[2]} RG {x} {y} {w} {h} re B")
+        self.ops.append(("rect", x, y, w, h, fill, stroke))
 
     def text(self, x, y, value, size=10, bold=False, rgb=(0, 0, 0)):
-        font = "F2" if bold else "F1"
-        self.ops.append(f"BT /{font} {size} Tf {rgb[0]} {rgb[1]} {rgb[2]} rg {x} {y} Td ({esc(value)}) Tj ET")
+        self.ops.append(("text", x, y, value, size, bold, rgb))
 
     def circle(self, x, y, r, fill=(0.2, 0.4, 0.7)):
-        k = 0.55228475 * r
-        self.ops.append(
-            f"{fill[0]} {fill[1]} {fill[2]} rg {x+r} {y} m "
-            f"{x+r} {y+k} {x+k} {y+r} {x} {y+r} c "
-            f"{x-k} {y+r} {x-r} {y+k} {x-r} {y} c "
-            f"{x-r} {y-k} {x-k} {y-r} {x} {y-r} c "
-            f"{x+k} {y-r} {x+r} {y-k} {x+r} {y} c f"
-        )
+        self.ops.append(("circle", x, y, r, fill))
+
+    @classmethod
+    def register_fonts(cls) -> tuple[Path, Path]:
+        font_dir = Path(reportlab.__file__).resolve().parent / "fonts"
+        regular = font_dir / "Vera.ttf"
+        bold = font_dir / "VeraBd.ttf"
+        if reportlab.Version != REPORTLAB_VERSION:
+            raise RuntimeError(f"ReportLab version mismatch: {reportlab.Version} != {REPORTLAB_VERSION}")
+        if sha256(regular) != VERA_SHA256 or sha256(bold) != VERA_BOLD_SHA256:
+            raise RuntimeError("ReportLab Vera font hash mismatch")
+        if not cls.registered:
+            pdfmetrics.registerFont(TTFont(cls.regular_name, str(regular)))
+            pdfmetrics.registerFont(TTFont(cls.bold_name, str(bold)))
+            cls.registered = True
+        return regular, bold
 
     def save(self, path: Path):
-        stream = ("\n".join(self.ops) + "\n").encode("latin-1")
-        objects = [
-            b"<< /Type /Catalog /Pages 2 0 R >>",
-            b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
-            f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 {self.width} {self.height}] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>".encode(),
-            b"<< /Length " + str(len(stream)).encode() + b" >>\nstream\n" + stream + b"endstream",
-            b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
-            b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>",
-        ]
-        out = bytearray(b"%PDF-1.4\n%\xe2\xe3\xcf\xd3\n")
-        offsets = [0]
-        for i, obj in enumerate(objects, 1):
-            offsets.append(len(out))
-            out += f"{i} 0 obj\n".encode() + obj + b"\nendobj\n"
-        xref = len(out)
-        out += f"xref\n0 {len(objects)+1}\n0000000000 65535 f \n".encode()
-        for off in offsets[1:]:
-            out += f"{off:010d} 00000 n \n".encode()
-        out += f"trailer\n<< /Size {len(objects)+1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n".encode()
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(out)
+        self.register_fonts()
+        canvas = Canvas(
+            str(path),
+            pagesize=(self.width, self.height),
+            invariant=1,
+            pageCompression=0,
+            initialFontName=self.regular_name,
+        )
+        for op in self.ops:
+            if op[0] == "line":
+                _, x1, y1, x2, y2, width, rgb = op
+                canvas.setStrokeColorRGB(*rgb)
+                canvas.setLineWidth(width)
+                canvas.line(x1, y1, x2, y2)
+            elif op[0] == "rect":
+                _, x, y, w, h, fill, stroke = op
+                canvas.setFillColorRGB(*fill)
+                canvas.setStrokeColorRGB(*stroke)
+                canvas.rect(x, y, w, h, stroke=1, fill=1)
+            elif op[0] == "text":
+                _, x, y, value, size, bold, rgb = op
+                canvas.setFillColorRGB(*rgb)
+                canvas.setFont(self.bold_name if bold else self.regular_name, size)
+                canvas.drawString(x, y, value)
+            elif op[0] == "circle":
+                _, x, y, r, fill = op
+                canvas.setFillColorRGB(*fill)
+                canvas.circle(x, y, r, stroke=0, fill=1)
+            else:
+                raise RuntimeError(f"unknown PDF operation: {op[0]}")
+        canvas.showPage()
+        canvas.save()
 
 
 def pipeline_figure(path: Path) -> None:
@@ -274,6 +302,20 @@ def scatter_figure(points: dict, path: Path) -> None:
     p.save(path)
 
 
+def deterministic_pdf(path: Path, render) -> None:
+    """Render twice in isolated directories and publish only byte-identical output."""
+    with tempfile.TemporaryDirectory(prefix="cas_q3_figure_") as temporary:
+        base = Path(temporary)
+        first = base / "first.pdf"
+        second = base / "second.pdf"
+        render(first)
+        render(second)
+        if first.read_bytes() != second.read_bytes():
+            raise RuntimeError(f"nondeterministic vector PDF render: {path.name}")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(first.read_bytes())
+
+
 def build(root: Path) -> dict:
     source = root / "outputs" / "cas_q2" / "empirical_analysis_v1"
     points = load_json(source / "POINT_ESTIMATES.json", POINT_SHA256)
@@ -292,8 +334,14 @@ def build(root: Path) -> dict:
     write(paper / "tables" / "fixed_action_sensitivity.tex", comparison_rows(intervals, "fixed_action"))
     write(paper / "tables" / "dataset_breakdown.tex", breakdown(points, "dataset"))
     write(paper / "tables" / "retriever_breakdown.tex", breakdown(points, "retriever"))
-    pipeline_figure(paper / "figures" / "paired_pipeline.pdf")
-    scatter_figure(points, paper / "figures" / "recovery_damage.pdf")
+    deterministic_pdf(
+        paper / "figures" / "paired_pipeline.pdf",
+        pipeline_figure,
+    )
+    deterministic_pdf(
+        paper / "figures" / "recovery_damage.pdf",
+        lambda path: scatter_figure(points, path),
+    )
 
     outputs = [
         paper / "tables" / "study_design.tex",
@@ -315,6 +363,16 @@ def build(root: Path) -> dict:
         "scientific_fits": 0,
         "model_forwards": 0,
         "gold_or_answer_text_read": False,
+        "vector_pdf_renderer": {
+            "engine": f"ReportLab {REPORTLAB_VERSION}",
+            "regular_font": "Bitstream Vera",
+            "regular_font_sha256": VERA_SHA256,
+            "bold_font": "Bitstream Vera Bold",
+            "bold_font_sha256": VERA_BOLD_SHA256,
+            "font_embedding": "subset_embedded_true_type",
+            "deterministic_pdf_mode": True,
+            "two_build_byte_identity_required": True,
+        },
         "outputs": {str(p.relative_to(root)).replace("\\", "/"): sha256(p) for p in outputs},
     }
     write(paper / "ASSET_RECEIPT.json", json.dumps(receipt, indent=2, sort_keys=True))

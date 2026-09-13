@@ -84,13 +84,22 @@ def main() -> int:
         if "[?]" in text or "??" in text:
             raise AssertionError(f"unresolved marker in {label} PDF text")
 
+    main_artifact = {"sha256": sha(main_pdf), **pdf_info(main_pdf), **font_info(main_pdf)}
+    supp_artifact = {"sha256": sha(supp_pdf), **pdf_info(supp_pdf), **font_info(supp_pdf)}
+    for label, artifact in (("manuscript", main_artifact), ("supplement", supp_artifact)):
+        if artifact["nonembedded_fonts"] or artifact["type3_fonts"]:
+            raise AssertionError(
+                f"{label} font gate failed: nonembedded={artifact['nonembedded_fonts']}, "
+                f"type3={artifact['type3_fonts']}"
+            )
+
     result = {
         "schema_version": 1,
-        "decision": "PASS_COMPILED_PDF_MECHANICAL_VERIFICATION_WITH_DISCLOSED_FONT_AND_LONGTABLE_NOTICES",
+        "decision": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE",
         "engine": "MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01",
         "artifacts": {
-            "output/pdf/manuscript.pdf": {"sha256": sha(main_pdf), **pdf_info(main_pdf), **font_info(main_pdf)},
-            "output/pdf/supplement.pdf": {"sha256": sha(supp_pdf), **pdf_info(supp_pdf), **font_info(supp_pdf)},
+            "output/pdf/manuscript.pdf": main_artifact,
+            "output/pdf/supplement.pdf": supp_artifact,
         },
         "logs": {
             "output/pdf/manuscript.log": {"sha256": sha(OUT / "manuscript.log"), **log_audit(OUT / "manuscript.log", False)},
@@ -103,7 +112,7 @@ def main() -> int:
             "unresolved_markers": 0,
         },
         "visual_review": {
-            "status": "PASS_BY_PROJECT_LEAD_2026-09-13",
+            "status": "PASS_BY_PROJECT_LEAD_2026-09-13_FONT_CLEAN_REBUILD",
             "main_pages_reviewed": 11,
             "supplement_pages_reviewed": 3,
             "defects_observed": 0,
@@ -111,8 +120,8 @@ def main() -> int:
         "disclosures": [
             "MiKTeX reports its installation has not yet checked for updates; this is outside the LaTeX logs.",
             "Supplement log retains one nonfatal longtable infinite-glue page-split notice; rendered content is complete.",
-            "The two included vector figures use unembedded PDF Base-14 Helvetica/Helvetica-Bold fonts; target-journal PDF-profile compliance remains to be checked after journal selection.",
-            "The main PDF also contains one embedded Type 3 font, F127; target-journal Type 3 font rules remain to be checked after journal selection.",
+            "Both compiled PDFs now contain zero nonembedded fonts and zero Type 3 fonts.",
+            "Final target-journal PDF-profile compliance remains to be checked after journal selection.",
         ],
     }
     if not all(result["text_checks"][k] for k in ("manuscript_has_title", "manuscript_has_references", "supplement_has_fixed_action_table")):

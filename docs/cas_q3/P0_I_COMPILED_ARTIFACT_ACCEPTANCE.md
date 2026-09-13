@@ -3,7 +3,7 @@
 Signed date: 2026-09-13 (Asia/Shanghai). Reviewer: client-side Research Project
 Lead.
 
-**DECISION: PASS_COMPILED_DRAFT_MECHANICAL_AND_VISUAL_CHECKS_WITH_DISCLOSED_NOTICES**
+**DECISION: PASS_FONT_CLEAN_COMPILED_DRAFT_MECHANICAL_AND_VISUAL_CHECKS_WITH_LONGTABLE_NOTICE**
 
 **CAS Q3 STATUS: NOT READY.** This accepts the anonymous compiled draft as a
 reviewable artifact. It does not certify target-journal PDF compliance, CAS Q3
@@ -17,8 +17,8 @@ The supplement used two `pdflatex` passes.
 
 | Artifact | Pages | SHA-256 |
 |---|---:|---|
-| `output/pdf/manuscript.pdf` | 11 | `c9150d15ae9023160c07437735333754a897a3331450d1e57388eed7703aa641` |
-| `output/pdf/supplement.pdf` | 3 | `fcf134c7695f9c706db376996856240e4980332ef5b4843a7d2095f6c4788d61` |
+| `output/pdf/manuscript.pdf` | 11 | `851eea05278b64793e5814a48de8df6cf2529acdcf27df5072d8ae5f9999e025` |
+| `output/pdf/supplement.pdf` | 3 | `b50a3bed4d7165c62f2cfeac06bd934a1b8ea9f997774d35f083ce5c04cd3812` |
 
 Both are PDF 1.5, letter size. The exact engine, page, font, PDF and log results
 are machine-recorded in `paper/COMPILE_RECEIPT.json`.
@@ -31,19 +31,18 @@ supplement pages were rendered and inspected. Tables, figures, references,
 equations and page boundaries were legible; no clipping, overlap, blank page or
 missing text was observed.
 
-After the executable-resolution repair, all 14 pages were rendered again at
-108 dpi. Every page PNG was byte-identical to the page inspected independently
-by the Astra xhigh reviewer before the repair, confirming that the rebuild
-changed no visible page content.
+The font-clean build was rendered at 120 dpi. All 14 pages were inspected with
+no clipping, overlap, blank page, missing glyph or unreadable figure label.
+Relative to the earlier accepted build, main pages 4 and 7 change only at the
+item marker and regenerated figures; the other nine main pages and all three
+supplement pages are pixel-identical.
 
-The supplement log retains one nonfatal `longtable` infinite-glue page-split
-notice. Its rendered table is complete. The main PDF has two unembedded
-Base-14 fonts, Helvetica and Helvetica-Bold, originating in the two vector
-figures. The main PDF also contains one embedded Type 3 font (`F127`); other
-TeX Computer Modern fonts are embedded. The supplement has no unembedded or
-Type 3 fonts. These are disclosed formatting issues to resolve against the
-selected journal's PDF profile. MiKTeX reports that this installation has not
-yet checked for updates outside the LaTeX logs.
+Both compiled PDFs now contain zero nonembedded fonts and zero Type 3 fonts.
+The two figures use subset-embedded Bitstream Vera TrueType fonts rendered by
+the pinned ReportLab 4.4.9 dependency. The supplement log retains one nonfatal
+`longtable` infinite-glue page-split notice, and its rendered table is complete.
+MiKTeX reports that this installation has not yet checked for updates outside
+the LaTeX logs.
 
 The build script's executable resolver has been tested through both the local
 MiKTeX fallback and an explicit `PATH` entry. Both branches completed the full
@@ -60,5 +59,6 @@ Remaining P0 blockers are the owner-selected project license and journal release
 policy; verified title/ISSN plus the applicable institutional CAS Q3
 year/category rule; real author, affiliation, contribution, funding, conflict,
 ethics, acknowledgement and writing-assistance declarations; target-specific
-formatting. The Astra xhigh compiled-artifact rebind and post-repair engineering
-addendum are complete and retain these external blockers.
+formatting. The earlier Astra xhigh compiled-artifact rebind and engineering
+addendum remain bound to the pre-font-correction artifact. A fresh final Astra
+xhigh artifact rebind remains required after the target-specific conversion.

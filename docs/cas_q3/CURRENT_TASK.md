@@ -116,16 +116,22 @@ fairness, reviewer and Submission Ready audits.
    supplement, bibliography, generated tables/figures, title-page template and
    cover-letter template now exist under `paper/`; the independent static
    verifier passes 126 checks. MiKTeX produced an 11-page main PDF and 3-page
-   supplement; mechanical log checks and project-lead review of all pages pass
-   with the disclosed figure-font and nonfatal supplement `longtable` notices.
+   supplement; mechanical log checks and project-lead review of all pages pass.
+   The subsequent [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md)
+   replaces the unembedded Base-14 figure fonts and isolated Type 3 marker; both
+   PDFs now have zero nonembedded and zero Type 3 fonts. The supplement retains
+   its disclosed nonfatal `longtable` notice.
    See the [build status](P0_I_MANUSCRIPT_BUILD_STATUS.md) and
    [compiled-artifact acceptance](P0_I_COMPILED_ARTIFACT_ACCEPTANCE.md). The
    Astra xhigh source-level fairness, Claim and simulated-reviewer audit and its
    [compiled-artifact rebind](P0_I_ASTRA_XHIGH_COMPILED_REBIND.md) passed within
    blockers. The subsequent build-path repair was independently reaffirmed in
    the [engineering addendum](P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md),
-   including 14/14 pixel-identical rebuilt pages. Final Submission Ready remains
-   blocked by author inputs, license and the certified CAS Q3 journal rule. The
+   including 14/14 pixel-identical rebuilt pages for that historical artifact.
+   The font-clean rebuild changes only main pages 4 and 7 and passed fresh
+   project-lead review; it awaits the final Astra xhigh rebind after journal
+   conversion. Final Submission Ready remains blocked by author inputs, license
+   and the certified CAS Q3 journal rule. The
    [author/declaration intake](P0_I_AUTHOR_DECLARATION_INTAKE.md) now reduces the
    remaining author surface to explicit identity, CRediT, funding, interests,
    ethics, acknowledgements, AI-assistance, originality and approval fields;
@@ -139,7 +145,7 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 22 repository records plus the withheld archive and passes 120
+  authenticates 23 repository records plus the withheld archive and passes 124
   checks without scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

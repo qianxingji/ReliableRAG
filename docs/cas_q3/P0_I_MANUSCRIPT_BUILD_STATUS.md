@@ -29,15 +29,17 @@ manuscript through BibTeX and the supplement. The final artifacts are an
 undefined citation/reference or overfull/underfull box. Project-lead review of
 all 14 rendered pages found no clipping, overlap or missing content.
 
-The supplement log retains one nonfatal `longtable` infinite-glue page-split
-notice; rendered content is complete. The two vector figures use unembedded
-PDF Base-14 Helvetica/Helvetica-Bold fonts, and the main PDF contains one
-embedded Type 3 font (`F127`). Target-journal PDF-profile and font compliance
-therefore remain a journal-selection task. MiKTeX also reports that
-the installation has not yet checked for package updates; this notice is
-outside the LaTeX logs. Exact hashes, page counts and disclosures are bound in
-`paper/COMPILE_RECEIPT.json` and
-`docs/cas_q3/P0_I_COMPILED_ARTIFACT_ACCEPTANCE.md`.
+The [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md) replaces
+the unembedded Base-14 figure fonts with deterministic, hash-pinned,
+subset-embedded Bitstream Vera TrueType fonts and replaces the isolated Type 3
+item marker. Both compiled PDFs now contain zero nonembedded fonts and zero
+Type 3 fonts. All 14 pages were rendered again at 120 dpi and passed visual
+review. The supplement log retains one nonfatal `longtable` infinite-glue
+page-split notice; its rendered content is complete. Target-journal PDF-profile
+compliance remains a journal-selection task. MiKTeX also reports that the
+installation has not yet checked for package updates outside the LaTeX logs.
+Exact hashes, page counts and disclosures are bound in
+`paper/COMPILE_RECEIPT.json` and the compiled-artifact acceptance.
 
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches
@@ -49,7 +51,9 @@ scientific rejection risks remain the single accepted reader, lack of a new
 algorithm, no joint advantage over HGB-only, missing original fit-time evidence
 and unmeasured standalone deployment cost.
 
-**CAS Q3 STATUS: NOT READY.** The source-level audit, compiled-artifact rebind
-and post-repair engineering addendum all passed under Astra xhigh within the
-stated blockers. Owner inputs, license selection and journal/CAS Q3
-certification remain required before Submission Ready.
+**CAS Q3 STATUS: NOT READY.** The earlier source-level and compiled-artifact
+audits remain historical authority for their exact artifacts. The font-clean
+rebuild passed project-lead mechanical and visual checks; it requires the
+planned final Astra xhigh artifact rebind after journal conversion. Owner
+inputs, license selection and journal/CAS Q3 certification also remain required
+before Submission Ready.
