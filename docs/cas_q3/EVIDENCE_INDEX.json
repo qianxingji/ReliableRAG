@@ -247,7 +247,7 @@
   "submission_readiness_tests": "tests/test_cas_q3_submission_readiness.py",
   "submission_readiness_tests_sha256": "d128a01612dde5678b7b13e5bcd0106554a132444d331398840e9e70b8ef7acf",
   "submission_readiness_verification": "docs/cas_q3/SUBMISSION_READINESS_VERIFICATION.json",
-  "submission_readiness_verification_sha256": "b55e515f1f81d0ea720732a04384535cf847d175b9eef1a91c33b2f6283b5d67",
+  "submission_readiness_verification_sha256": "aafa4229e4849214ddabcc37baf11f5159dae7d5a264a4f45e50ded82fbf3e98",
   "submission_readiness_decision": "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES",
   "current_task_sha256": "21c5e5bb9d39e161a3b7b40c79444a13194d03d2a10ef50460bbafc861185110",
   "owner_inputs_intake": "docs/cas_q3/OWNER_INPUTS_INTAKE.md",
@@ -259,9 +259,11 @@
   "owner_inputs_tests": "tests/test_cas_q3_owner_inputs.py",
   "owner_inputs_tests_sha256": "5ee314458bf8f6b0771fc46e488ab69a05bfa7c9fc6c59ad81e03368383d70af",
   "owner_inputs_gitignore": ".gitignore",
-  "owner_inputs_gitignore_sha256": "6e768ab9a7e28e6101df07dce58e3303cb60a1798b220a2e0a027210ed88343b",
+  "owner_inputs_gitignore_sha256": "47b4ddb34696554068a733e0e677b952057fcf2dfbec0d5a71595f527088cded",
   "owner_inputs_local_path": "docs/cas_q3/OWNER_INPUTS.local.json",
   "owner_inputs_local_status": "MISSING_EXPECTED_PENDING_RESPONSIBLE_OWNER",
   "owner_inputs_current_decision": "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
-  "owner_inputs_privacy_boundary": "LOCAL_FILE_GIT_IGNORED_VERIFIER_EMITS_PATHS_AND_COUNTS_ONLY"
+  "owner_inputs_privacy_boundary": "LOCAL_FILE_GIT_IGNORED_VERIFIER_EMITS_PATHS_AND_COUNTS_ONLY",
+  "cas_q3_line_ending_policy": ".gitattributes",
+  "cas_q3_line_ending_policy_sha256": "45fb875958295680cd06989b7458336adffe9c918670843da8edf2271ac21077"
 }

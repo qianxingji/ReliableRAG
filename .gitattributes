@@ -1,3 +1,9 @@
 src/arbitration/roa_original/*.py -text
 *.pdf binary
 output/pdf/*.log binary
+/.gitattributes text eol=lf
+/.gitignore text eol=lf
+/docs/cas_q3/*.md text eol=lf
+/docs/cas_q3/*.json text eol=lf
+/scripts/*cas_q3*.py text eol=lf
+/tests/test_cas_q3*.py text eol=lf
