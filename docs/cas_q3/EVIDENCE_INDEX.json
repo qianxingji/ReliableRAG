@@ -32,7 +32,7 @@
   "p0_g_release_audit": "docs/cas_q3/P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md",
   "p0_g_release_audit_receipt": "docs/cas_q3/P0_G_RELEASE_AUDIT.json",
   "p0_g_release_audit_receipt_sha256": "f14f303441fdca483cf0844239f2c2560c1e308fe3fc7fb432d0ff16640c36ba",
-  "p0_g_decision": "REVISE_P0_G_RELEASE_NOT_READY",
+  "p0_g_decision": "PARTIAL_PASS_P0_G_ANONYMOUS_AGGREGATE_CANDIDATE_VALIDATED_RELEASE_WITHHELD",
   "p0_h_target_journal_fit_audit": "docs/cas_q3/P0_H_TARGET_JOURNAL_FIT_AUDIT.md",
   "p0_h_decision": "PENDING_CAS_RULE_NO_JOURNAL_CERTIFIED",
   "p0_h_provisional_scientific_fit_lead": "Discover Computing",
@@ -79,7 +79,7 @@
     }
   },
   "missing_p0": [
-    "P0_G_reviewer_facing_release_license_and_anonymization_audit",
+    "P0_G_owner_selected_project_license_and_target_journal_release_policy",
     "P0_H_verified_target_journal_and_applicable_cas_q3_rule",
     "P0_I_manuscript_authorization_package_and_final_astra_xhigh_audits"
   ],
@@ -101,5 +101,19 @@
     "target_journal_partition_year_category_and_institution_rule_pending"
   ],
   "scientific_execution_authorized": false,
-  "manuscript_authorized": false
+  "manuscript_authorized": false,
+  "p0_g_release_candidate_receipt": "docs/cas_q3/P0_G_AGGREGATE_RELEASE_CANDIDATE_RESULTS.json",
+  "p0_g_release_candidate_receipt_sha256": "344f159fa61180af12f0b4cc14a07813c6bca753dd53f79dd246691092c457e5",
+  "p0_g_release_candidate_failure_v1": "docs/cas_q3/P0_G_AGGREGATE_RELEASE_CANDIDATE_FAILURE_V1.md",
+  "p0_g_release_builder": "scripts/package_cas_q3_aggregate_release.py",
+  "p0_g_release_builder_sha256": "03797ea580edc4be569856fdf5ce109fd00c92a724bf65830072426d81c7d3b5",
+  "p0_g_release_validator": "scripts/validate_cas_q3_aggregate_release.py",
+  "p0_g_release_validator_sha256": "e227ac44ee6a9061743514297f4b1b3124f95741b6c214a313d456717cf6ea72",
+  "p0_g_release_tests": "tests/test_cas_q3_aggregate_release.py",
+  "p0_g_release_tests_sha256": "c1f285149fa535d10643653f52b34369cfae416d669d426ef2bc64c86f4aed61",
+  "p0_g_candidate_archive_sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
+  "p0_g_candidate_manifest_sha256": "6c8ca3a4d0a9d70ade6a09b7194337390ee74ab1f46c79d862e918418a341a1c",
+  "p0_g_candidate_scope": "anonymous_aggregate_reporting_verification_only",
+  "p0_g_distribution_authorized": false,
+  "p0_g_project_license": "PENDING_OWNER_SELECTION"
 }

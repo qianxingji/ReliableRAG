@@ -77,11 +77,13 @@ fairness, reviewer and Submission Ready audits.
    [claim-scoped cost table](P0_F_CLAIM_SCOPED_COST_TABLE.md) reports the shared
    workload, non-additive timers and saved C4 peaks while retaining every missing
    standalone, canonical peak, end-to-end and FLOP measurement.
-7. **P0-G -- REVISE / OPEN:** The
-   [release audit](P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md) confirms
-   no tracked private data and refreshes the root README, but a top-level project
-   license, journal-specific anonymity mode, frozen export allowlist and clean
-   round-trip package remain required.
+7. **P0-G -- PARTIAL PASS / OPEN:** The
+   [release audit](P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md) now
+   freezes a nine-member anonymous aggregate allowlist. Two deterministic builds
+   share one archive hash; the independent validator passes 100 checks and the
+   extracted verifier passes 129 checks. The candidate is withheld until the
+   owner selects a top-level project license and P0-H certifies the target
+   journal's data/code policy.
 8. **P0-H -- OFFICIAL SCOPE AUDITED; CAS RULE PENDING:** The
    [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
    Computing first for empirical editorial fit and Journal of Intelligent

@@ -9,7 +9,9 @@ JCR quartiles. The applicable CAS year, category and institutional recognition
 rule still require a named journal.
 
 **CAS Q3 STATUS: NOT READY.** The Qwen scientific core and P0-A through P0-F are
-closed. Reviewer-facing release, target-journal fit and the manuscript/final
+closed. P0-G now has a deterministic anonymous aggregate candidate and clean
+round-trip proof, but distribution remains withheld pending a project license
+and final journal policy. Target-journal certification and the manuscript/final
 independent audits remain open.
 
 ## Current scientific object
@@ -63,6 +65,7 @@ Start with:
 - [Statistical statement verification](docs/cas_q3/P0_D_STATISTICAL_STATEMENT_VERIFICATION.md)
 - [Provenance, contamination, adaptation and failure disclosures](docs/cas_q3/P0_E_PROVENANCE_CONTAMINATION_ADAPTATION_FAILURE_DISCLOSURES.md)
 - [Claim-scoped cost table](docs/cas_q3/P0_F_CLAIM_SCOPED_COST_TABLE.md)
+- [Reviewer release, license and anonymization audit](docs/cas_q3/P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md)
 
 The full `docs/cas_q2/` tree is retained as historical execution and acceptance
 evidence. Its old target/status and next-step language is superseded by the Q3
