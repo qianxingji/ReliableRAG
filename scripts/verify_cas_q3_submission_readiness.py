@@ -92,6 +92,23 @@ def main() -> int:
     for key, value in expected_p0.items():
         require(evidence.get(key) == value, f"{key} is closed with its exact bounded decision", checks)
 
+    discover = json.loads(
+        (ROOT / evidence["p0_i_discover_computing_preflight"]).read_text(encoding="utf-8")
+    )
+    require(
+        discover["decision"]
+        == "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
+        "provisional Discover Computing technical preflight passes in bounded scope",
+        checks,
+    )
+    require(discover["final_target_selected"] is False, "Discover Computing is not final-selected", checks)
+    require(discover["submission_authorized"] is False, "provisional target profile is not submission-authorized", checks)
+    require(
+        discover["source_protection"]["scientific_prose_or_numbers_changed"] is False,
+        "provisional target conversion preserves scientific content",
+        checks,
+    )
+
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 4, "P1-A through P1-D are closed", checks)
 

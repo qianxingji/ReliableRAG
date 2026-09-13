@@ -55,6 +55,15 @@ shows a JIS-specific below-average-length risk because that journal publishes a
 5,000--7,500-word average, but it does not convert an average into a hard
 minimum or justify padding the manuscript.
 
+The [Discover Computing preflight](P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.md)
+is a non-submittable engineering dry run for the provisional editorial-fit
+lead. It changes only the class size to 12 pt and five asset paths, emits a flat
+eight-member source ZIP, and compiles a font-clean 12-page PDF. The journal-
+neutral source and accepted PDFs remain byte unchanged. The generic `article`
+class is not represented as the final Springer Nature template, and the
+single-anonymous author/declaration surface remains blocked on responsible-
+author input.
+
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches
 have been exercised successfully in the takeover environment.

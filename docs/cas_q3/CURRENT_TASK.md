@@ -169,6 +169,12 @@ privacy-preserving local JSON route for those facts without committing them.
    A separate reproducible PDF-length proxy records 3,898 tokens before
    References and 4,596 overall. This is below JIS's published average, not a
    formal minimum failure; no text will be added merely to inflate length.
+   A provisional Discover Computing technical profile now also proves that the
+   accepted source can be changed to 12 pt, flattened into a top-level LaTeX
+   ZIP and compiled to a font-clean 12-page PDF without changing scientific
+   prose or numbers. It is explicitly not a selected-journal or submission
+   artifact; author, funding, APC, license, institutional CAS and final Astra
+   gates remain open.
 
 ## P1: material competitiveness improvements
 

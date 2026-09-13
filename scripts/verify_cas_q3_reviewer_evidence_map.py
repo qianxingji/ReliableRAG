@@ -73,6 +73,22 @@ def main() -> int:
     checks.equal(length_receipt["pdf_tokens_before_references"], 3898, "pre-reference PDF token proxy")
     checks.equal(length_receipt["pdf_tokens_full_document"], 4596, "full PDF token proxy")
     checks.equal(length_receipt["publisher_word_count_claimed"], False, "proxy is not a publisher word count")
+    discover = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_DISCOVER_COMPUTING_PREFLIGHT.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        discover["decision"],
+        "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
+        "Discover technical preflight decision",
+    )
+    checks.equal(discover["cas_q3_status"], "NOT_READY", "Discover preflight retains CAS Q3 status")
+    checks.equal(discover["submission_authorized"], False, "Discover preflight is not submittable")
+    checks.equal(discover["final_target_selected"], False, "Discover is not final-selected")
+    checks.equal(discover["profile"]["main_text_pt"], 12, "Discover preflight text size")
+    checks.equal(discover["artifacts"]["pdf_pages"], 12, "Discover preflight pages")
+    checks.equal(discover["artifacts"]["source_zip_nested_members"], [], "Discover source archive is flat")
+    checks.equal(discover["artifacts"]["pdf_nonembedded_font_rows"], [], "Discover fonts are embedded")
+    checks.equal(discover["source_protection"]["scientific_prose_or_numbers_changed"], False, "Discover conversion preserves scientific content")
 
     release = evidence["aggregate_release_candidate"]
     archive = Path(release["local_archive"])

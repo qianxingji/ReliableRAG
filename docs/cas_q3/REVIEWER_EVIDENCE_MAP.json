@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "33f0162da6a8bf354b69ae4fdfed32db4bb77ac03310b09425609714eb77cc5b",
+      "sha256": "453a0e24ed44d4d05bd0425101a0b5b581091a9a067d950f7e2bb20b68159a23",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -62,6 +62,24 @@
       "path": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
       "sha256": "421a3cbea032876b1ab81faf580de3cb562020eb37c6e8507dcf68c3b3a05bb6",
       "required_marker": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT.json",
+      "required_marker": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
+      "sha256": "9733beafa5be4cfc648ae805c2565c1e89812f9fe329054cb1ffe6e56ab3270a"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.md",
+      "required_marker": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
+      "sha256": "c4b56850a9ec891fe5380f081d4c46546f504ee17cb5bfbb0c5d7376e49fbc0f"
+    },
+    {
+      "path": "output/target_profiles/discover_computing_preflight/manuscript_12pt_preflight.pdf",
+      "sha256": "04439280236d833922a2269d7b3a5a401ed7b889838282562f2808289c9126ae"
+    },
+    {
+      "path": "output/target_profiles/discover_computing_preflight/discover_computing_source_preflight.zip",
+      "sha256": "f19998de8cb21886def941b6d0e415abe2f40253b53275d4a237baa53846b567"
     },
     {
       "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",

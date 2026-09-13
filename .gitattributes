@@ -1,5 +1,6 @@
 src/arbitration/roa_original/*.py -text
 *.pdf binary
+*.zip binary
 output/pdf/*.log binary
 /.gitattributes text eol=lf
 /.gitignore text eol=lf
