@@ -120,7 +120,9 @@ fairness, reviewer and Submission Ready audits.
    The subsequent [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md)
    replaces the unembedded Base-14 figure fonts and isolated Type 3 marker; both
    PDFs now have zero nonembedded and zero Type 3 fonts. The supplement retains
-   its disclosed nonfatal `longtable` notice.
+   its disclosed nonfatal `longtable` notice; the
+   [upstream triage](P0_I_LONGTABLE_NOTICE_TRIAGE.md) binds it to the installed
+   2025-10-13 v4.24 package and requires a final target-environment recheck.
    See the [build status](P0_I_MANUSCRIPT_BUILD_STATUS.md) and
    [compiled-artifact acceptance](P0_I_COMPILED_ARTIFACT_ACCEPTANCE.md). The
    Astra xhigh source-level fairness, Claim and simulated-reviewer audit and its

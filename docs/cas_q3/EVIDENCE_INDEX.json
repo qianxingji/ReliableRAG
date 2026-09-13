@@ -172,6 +172,8 @@
   },
   "p0_i_font_embedding_corrigendum": "docs/cas_q3/P0_I_FONT_EMBEDDING_CORRIGENDUM.md",
   "p0_i_font_embedding_corrigendum_sha256": "3e2947d21794c403f80c785a9a10186392d7200bffdab8d71755239644911f44",
+  "p0_i_longtable_notice_triage": "docs/cas_q3/P0_I_LONGTABLE_NOTICE_TRIAGE.md",
+  "p0_i_longtable_notice_triage_sha256": "a4bb5f460ea602e380ee0fc3ac8fcb76d1897bd1896d47ebbdd29ce041c6ab65",
   "p0_i_paper_requirements": "paper/requirements.txt",
   "p0_i_paper_requirements_sha256": "054e7483ed0899a13425d3ff89d0ae162290c88989825c77d22174ceb36f33f1",
   "p0_i_current_astra_artifact_rebind_status": "PENDING_AFTER_TARGET_SPECIFIC_CONVERSION",
@@ -245,6 +247,6 @@
   "submission_readiness_tests": "tests/test_cas_q3_submission_readiness.py",
   "submission_readiness_tests_sha256": "c3382bb0909330fcd219772fd192872aee5f4717c8473bd6196325b12a595c9b",
   "submission_readiness_verification": "docs/cas_q3/SUBMISSION_READINESS_VERIFICATION.json",
-  "submission_readiness_verification_sha256": "3c9c2cdaa731b6ffbe8924694c254b5c113f6472c8f2b328644465aeab4f91e5",
+  "submission_readiness_verification_sha256": "eb28c6c6da0ced31577698fa2012139c5952cca07b4eb5f12cbb0c3867980c5a",
   "submission_readiness_decision": "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES"
 }
