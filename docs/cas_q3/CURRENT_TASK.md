@@ -118,7 +118,13 @@ fairness, reviewer and Submission Ready audits.
    blockers. The subsequent build-path repair was independently reaffirmed in
    the [engineering addendum](P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md),
    including 14/14 pixel-identical rebuilt pages. Final Submission Ready remains
-   blocked by author inputs, license and the certified CAS Q3 journal rule.
+   blocked by author inputs, license and the certified CAS Q3 journal rule. The
+   [author/declaration intake](P0_I_AUTHOR_DECLARATION_INTAKE.md) now reduces the
+   remaining author surface to explicit identity, CRediT, funding, interests,
+   ethics, acknowledgements, AI-assistance, originality and approval fields;
+   none is guessed. Its 19-check verifier also compiles the placeholder title
+   page successfully as a 2-page PDF, closing the template-syntax gate while
+   retaining every factual field as pending.
 
 ## P1: material competitiveness improvements
 
