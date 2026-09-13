@@ -1,13 +1,28 @@
 # Current method: verifier-augmented recovery arbitration
 
+2026-09-13 terminal Phi update: V4 canonical acquisition and fixed replay
+completed, but the original and unique corrected semantic validators both
+terminated in failure. Independent Astra xhigh therefore signed
+`FAIL_P0_1_PHI_DEVELOPMENT_AUTHENTICITY`; the post-hoc forensic continuation
+cannot replace a frozen-validator PASS. Phi V4 is not eligible for fitting,
+scoring or scientific claims. Preserve every V1--V4 namespace and see
+[the terminal acceptance](PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md).
+No automatic V5, tolerance change or further Phi execution is authorized.
+
+The independently reconsidered prospective third-reader choice is fixed as
+`mistralai/Mistral-7B-Instruct-v0.3@c170c708c41dac9275d15a8fff4eca08d52bab71`.
+It is a conditional P1 reader-breadth extension, not a new method or independent
+question-population replication, and no Mistral execution is authorized. See
+[the selection decision](THIRD_READER_SELECTION_DECISION.md).
+
 2026-09-13 P0-3 execution update: the V3 Phi development acquisition is a sealed
 interrupted failure. It contains 9,540 complete traces and one partial trace
 with an unpaired `a1` intent; its formal resume correctly failed closed before
 new scientific calls. V3 is excluded from all analysis. A result-blind one-time
 amendment authorizes a blank V4 full acquisition, fixed replay and independent
 validation with unchanged scientific semantics. Test calls, targets, scoring and
-fits remain closed. No independent novel method is currently accepted; Astra
-xhigh is redoing the method and novelty decision.
+fits remain closed. No independent novel method is currently accepted; the Astra
+xhigh method review did not clear a new top-level candidate.
 
 2026-09-12 P0-3 execution update: the single invented-only Phi compatibility
 preflight and the subsequent value-blind full-input freeze are accepted. The

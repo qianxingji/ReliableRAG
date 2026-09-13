@@ -1,4 +1,4 @@
-# Current task: complete the frozen empirical replication
+# Current task: preserve the terminal Phi failure and govern the next research route
 
 **CAS Q2 STATUS: NOT READY.** This file consolidates the active handoff after
 independent numerical replay, neural-package/CPU acceptance and the separate
@@ -8,6 +8,14 @@ the reviewed seven-fit byte failure, complete HGB state diagnosis and full
 historical source-reference/outcome replay. Prior checkpoint prose is
 preserved in Git history through cb9600b and the linked stage records. It is not
 an instruction to repeat completed experiments or implemented components.
+
+Latest terminal gate: the V4 Phi canonical acquisition and fixed replay
+completed, but both the original and unique corrected semantic validators
+terminated in failure. The independent GPT-6 Astra xhigh authenticity audit
+signed **`FAIL_P0_1_PHI_DEVELOPMENT_AUTHENTICITY`**. Accept the positive runtime,
+replay and forensic evidence only within the explicit limits in
+[the V4 terminal acceptance](PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md).
+Do not treat the post-hoc forensic continuation as a frozen-validator PASS.
 
 ## Authority and preserved state
 
@@ -133,38 +141,30 @@ every stage on Astra.
    not an executable confirmation protocol or final-model authorization.
    This review is complete in [P0_3_FRESH_RESULT_DECISION.md](P0_3_FRESH_RESULT_DECISION.md):
    ROA-FULL is rejected and only fusion versus GBV_ONLY_R passes jointly.
- 6. The read-only [reader-axis audit](P0_3_READER_AXIS_AVAILABILITY.md) and
-    [frozen Phi protocol](PHI_READER_REPLICATION_PROTOCOL_V1.md) now govern P0-3.
-    Exact remaining ID counts are 105 / 5,276 / 15,838, so the fixed independent
-    axis is Phi-3.5-mini-instruct on the same 6,000-question cohort. The single
-    invented-only producer and independent validator are now
-    [accepted with a binding memory limit](PHI_READER_PREFLIGHT_ACCEPTANCE.md).
-    Preserve the failed V1 validator and never repeat the producer. Its long
-    generation used 93.48% of nominal GPU memory. The subsequent
-    [value-blind full-input freeze](PHI_READER_INPUT_FREEZE_ACCEPTANCE.md) now
-    passes three-way validation over 31,500 traces / 63,000 deterministic prompts;
-    maximum input is 3,682 tokens against the 9,472-token ceiling. Preserve its
-    zero-tokenization V1 allowlist failure. The subsequent two-model
-    [joint-memory preflight](PHI_BGE_JOINT_PREFLIGHT_ACCEPTANCE.md) is accepted
-    by Astra xhigh for one-process development execution under the binding guard
-    and fail-closed OOM controls. Its 94.80% allocated peak is an operational
-    risk; the WDDM/caching-allocator reserved counter above physical capacity is
-    preserved and is not treated as headroom. The first formal canonical V1
-    launch [failed before scientific execution](PHI_READER_DEVELOPMENT_RUNTIME_V1_FAILURE_ACCEPTANCE.md)
-    because the IO guard rejected an authenticated torch-package directory scan.
-    Its exact sealed namespace records zero traces, model calls, Gold reads and
-    fits; preserve it permanently and never resume or reuse it. The prospective
-    V2 launch then [loaded both models but failed before scientific execution](PHI_READER_DEVELOPMENT_RUNTIME_V2_FAILURE_ACCEPTANCE.md)
-    when the sole host platform probe opened Windows `os.devnull` after the IO
-    boundary. It completed zero traces and calls. V3 subsequently reached 9,540
-    complete traces before an external interruption left one unpaired `a1`
-    intent. Its formal resume correctly failed closed and sealed the namespace;
-    [preserve and exclude it](PHI_READER_DEVELOPMENT_RUNTIME_V3_FAILURE_ACCEPTANCE.md).
-    The result-blind [V4 one-time acquisition amendment](PHI_READER_DEVELOPMENT_RUNTIME_V4_ACQUISITION_AMENDMENT.md)
-    authorizes one blank full acquisition, fixed replay and independent
-    validation. Do not execute the test
-    benchmark, fit the ten reader-specific heads or reopen test Gold before the
-    development stage is independently accepted.
+6. The read-only [reader-axis audit](P0_3_READER_AXIS_AVAILABILITY.md) and
+   [frozen Phi protocol](PHI_READER_REPLICATION_PROTOCOL_V1.md) selected
+   Phi-3.5-mini-instruct on the same 6,000-question cohort. Invented compatibility,
+   value-blind input freeze and joint-memory preflight were accepted only as
+   development prerequisites. Preserve their failures and tight GPU-memory
+   limits. V1 and V2 produced no complete scientific traces; V3 is an interrupted
+   9,540-trace failure with one unpaired `a1` intent and is excluded permanently.
+   V4 then completed 13,500 canonical traces and a 180-trace exact replay. Its
+   original validator failed because the independent render omitted `text`; the
+   sole corrected semantic validator failed because 6,573/9,120 saved BF16 query
+   vectors exceeded the frozen `1e-3` norm tolerance. All were within `5e-3`, but
+   that post-outcome observation cannot change the contract. Astra xhigh signed
+   [the terminal failure](PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md).
+   Do not repeat canonical/replay, run another validator, create V5, change the
+   threshold, fit Phi heads, score policies, map Gold or use Phi rows in claims.
+7. The prospectively selected third reader is exact
+   `mistralai/Mistral-7B-Instruct-v0.3@c170c708c41dac9275d15a8fff4eca08d52bab71`.
+   [The Astra High selection decision](THIRD_READER_SELECTION_DECISION.md) treats
+   it only as a conditional P1 reader-breadth extension. Its 13.50-GiB BF16
+   weights cannot be assumed to fit safely beside BGE on this device; static
+   three-layer CPU-offload prediction is not a runtime PASS. Do not download or
+   execute Mistral until a new governance decision and one committed prospective
+   protocol close the asset, placement, tokenizer, length, throughput, replay and
+   independent-validation gates.
 
 The [C3 execution adapter](C3_VALIDATION_BINDING_ACCEPTANCE.md) passes 16
 original/adapted cases, 13 exact rejection reasons, nine ordinary-len cases and
@@ -304,11 +304,14 @@ written. This is historical outcome replay, not current D execution, unchanged
 full CLI or full neural replay. No new fits or current empirical payload/Gold
 access occurs; total fits remain 185. Do not repeat the accepted gate.
 
-Next: commit and execute the one-time blank V4 Phi development acquisition,
-fixed replay and independent validation. Separately, Astra xhigh must complete
-the independent-method design and novelty decision before any new method is
-implemented or frozen. Do not start test calls, fits or Gold reads before the
-development runtime gate passes.
+Next: preserve the terminal Phi P0-1 failure and review the paper route under
+that failed reader gate and the already established absence of a cleared novel
+candidate. No automatic Phi or Mistral execution is authorized. A new research
+design must decide whether the publishable object is a bounded empirical audit,
+whether a new independent method can be justified without result-driven search,
+and whether the Mistral P1 extension is worth its measured cost. Freeze any such
+route prospectively before implementation; test calls, fits and Gold reads remain
+closed meanwhile.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The first cost invocation failed before creating a scientific namespace because
@@ -341,5 +344,5 @@ institutional category rule and target journal are user-undecided and do not
 block experimental work. Every major stage reports NOT READY until the complete
 submission requirements are actually proven, with rejection risks, missing
 evidence and P0/P1/P2 priorities. The principal risks remain unestablished
-contribution, reader-dependent empirical support, the tight Phi GPU-memory
-margin and historical training gaps.
+contribution, the failed Phi semantic-validation gate, reader-dependent empirical
+support, unmeasured Mistral feasibility and historical training gaps.

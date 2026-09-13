@@ -10,7 +10,21 @@ Target: a submission-ready paper competitive for CAS Journal Ranking Q2
 2026-09-10 goal update supersedes the earlier Q1/CCF target.
 This repository is for experimental research code only. Do NOT write the paper manuscript unless explicitly requested.
 
-## Current execution entry point (2026-09-12)
+## Current execution entry point (2026-09-13)
+
+Latest terminal Phi status: **FAIL_P0_1_PHI_DEVELOPMENT_AUTHENTICITY**. V4
+canonical acquisition completed 13,500 traces and its fixed 180-trace replay is
+exact, but the original and unique corrected semantic validators both terminated
+in failure. The corrected run found 6,573/9,120 BF16 query vectors outside the
+frozen 1e-3 norm tolerance. Post-hoc forensic reconstruction cannot replace the
+missing frozen-validator PASS. Read
+PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md. Preserve V1--V4 and all
+validator/auditor failures. Do not repeat canonical/replay, run another validator,
+create V5, change the tolerance, fit/score Phi, read test Gold or execute a new
+reader. The conditional third-reader choice is exact Mistral-7B-Instruct-v0.3 at
+revision c170c708c41dac9275d15a8fff4eca08d52bab71; it is P1 evidence breadth,
+not a method contribution, and remains unexecuted pending a new committed
+prospective governance decision. Read THIRD_READER_SELECTION_DECISION.md.
 
 Latest C3 status: **ACCEPTED_COMPLETE_CURRENT_C3_V3_2**. The unique full
 V3.2 launch completed 18,000 canonical and 180 actual replay traces. The Astra
