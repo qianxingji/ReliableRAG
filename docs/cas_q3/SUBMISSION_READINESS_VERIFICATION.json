@@ -57,8 +57,14 @@
       ]
     }
   ],
-  "verified_repository_hashes": 45,
-  "checks": 113,
+  "owner_input_intake": {
+    "decision": "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
+    "complete": false,
+    "missing_field_count": 1,
+    "validation_error_count": 0
+  },
+  "verified_repository_hashes": 51,
+  "checks": 126,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

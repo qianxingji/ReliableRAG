@@ -3,6 +3,7 @@ __pycache__/
 .venv/
 venv/
 .env
+docs/cas_q3/OWNER_INPUTS.local.json
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/

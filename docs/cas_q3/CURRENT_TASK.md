@@ -9,6 +9,14 @@ P0-G, P0-H and P0-I remain open. Its current decision is
 `FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES`; it reads
 no scientific payload, performs no fit and executes no model forward.
 
+The remaining owner, institution and author fields are now consolidated in the
+[private owner-input intake](OWNER_INPUTS_INTAKE.md). The tracked JSON template
+contains no identities; its `.local.json` copy is ignored by Git, and the
+verifier never echoes supplied values. Completing that file is an input-stage
+advance only: CAS authority, journal policy, license/release implementation,
+target artifacts and the final Astra xhigh audit still require independent
+evidence.
+
 Latest route decision: the independent GPT-6 Astra xhigh
 [target-transition audit](TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md) sets the unique
 recommendation
@@ -94,7 +102,8 @@ fairness, reviewer and Submission Ready audits.
    [license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md) recommends
    Apache-2.0 for project-authored code/docs and reduces the remaining owner
    input to the exact option, legal holder/year and institutional NOTICE/review
-   requirement; it does not itself authorize release.
+   requirement; it does not itself authorize release. These facts now have a
+   private machine-validated intake path shared with P0-H/I.
 8. **P0-H -- OFFICIAL SCOPE AND SUBMISSION REQUIREMENTS AUDITED; CAS RULE
    PENDING:** The
    [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
@@ -106,7 +115,8 @@ fairness, reviewer and Submission Ready audits.
    year/category and institutional title/ISSN rule are supplied. The refreshed
    [owner/institution decision packet](P0_H_TARGET_JOURNAL_DECISION_PACKET.md)
    records the exact fields needed for a one-step selection and the remaining
-   target-profile gaps for all four candidates.
+   target-profile gaps for all four candidates. The consolidated local intake
+   checks field completeness but cannot authenticate the institutional record.
 9. **P0-I -- SOURCE AND COMPILED DRAFT ACCEPTED / EXTERNAL INPUTS OPEN:** The
    [manuscript preflight](P0_I_MANUSCRIPT_PREFLIGHT.md) freezes journal render
    profiles, the evidence-to-section map, table/figure sources, forbidden Claims,
@@ -139,7 +149,8 @@ fairness, reviewer and Submission Ready audits.
    ethics, acknowledgements, AI-assistance, originality and approval fields;
    none is guessed. Its 19-check verifier also compiles the placeholder title
    page successfully as a 2-page PDF, closing the template-syntax gate while
-   retaining every factual field as pending.
+   retaining every factual field as pending. The consolidated intake adds a
+   privacy-preserving local JSON route for those facts without committing them.
 
 ## P1: material competitiveness improvements
 

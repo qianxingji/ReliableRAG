@@ -22,6 +22,13 @@ The current machine decision is
   and PDF conversion, and the final GPT-6 Astra xhigh audit.
 - P1-A through P1-D are closed. P2 remains frozen under the Qwen-only route.
 
+The [consolidated owner-input intake](OWNER_INPUTS_INTAKE.md) provides one
+ignored local JSON file for the P0-G/H/I facts. Its verifier emits field paths
+and counts only; it never prints supplied personal values. A complete intake is
+still self-attested and therefore advances only to independent CAS-authority,
+journal-policy, license/release and artifact verification. It cannot set
+`submission_ready=true`.
+
 ## Promotion rule
 
 Do not edit the current failure receipt to create a pass. After the responsible

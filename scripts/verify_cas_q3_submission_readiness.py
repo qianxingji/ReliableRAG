@@ -7,10 +7,13 @@ import hashlib
 import json
 from pathlib import Path
 
+from verify_cas_q3_owner_inputs import validate as validate_owner_inputs
+
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "docs" / "cas_q3" / "EVIDENCE_INDEX.json"
 RECEIPT = ROOT / "docs" / "cas_q3" / "SUBMISSION_READINESS_VERIFICATION.json"
+OWNER_INPUTS_LOCAL = ROOT / "docs" / "cas_q3" / "OWNER_INPUTS.local.json"
 
 
 def sha(path: Path) -> str:
@@ -21,6 +24,33 @@ def require(condition: bool, message: str, checks: list[str]) -> None:
     if not condition:
         raise AssertionError(message)
     checks.append(message)
+
+
+def owner_input_state() -> dict[str, object]:
+    """Return only non-sensitive intake status; never echo supplied values."""
+    if not OWNER_INPUTS_LOCAL.is_file():
+        return {
+            "decision": "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
+            "complete": False,
+            "missing_field_count": 1,
+            "validation_error_count": 0,
+        }
+    try:
+        data = json.loads(OWNER_INPUTS_LOCAL.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {
+            "decision": "FAIL_CLOSED_OWNER_INPUT_JSON_UNREADABLE",
+            "complete": False,
+            "missing_field_count": 0,
+            "validation_error_count": 1,
+        }
+    result = validate_owner_inputs(data)
+    return {
+        "decision": result["decision"],
+        "complete": result["complete"],
+        "missing_field_count": len(result["missing_field_paths"]),
+        "validation_error_count": len(result["validation_error_paths"]),
+    }
 
 
 def main() -> int:
@@ -118,6 +148,17 @@ def main() -> int:
     require(evidence["p0_g_project_license"] == "PENDING_OWNER_SELECTION", "P0-G license remains pending", checks)
     require(evidence["p0_h_decision"] == "PENDING_OWNER_AND_INSTITUTION_NO_JOURNAL_CERTIFIED", "P0-H remains uncertified", checks)
     require(evidence["p0_i_author_inputs_status"] == "PENDING_RESPONSIBLE_AUTHOR_NO_FACTS_GUESSED", "P0-I author facts remain pending", checks)
+    intake = owner_input_state()
+    require(
+        intake["decision"] in {
+            "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
+            "FAIL_CLOSED_OWNER_INPUT_JSON_UNREADABLE",
+            "FAIL_CLOSED_OWNER_INPUTS_INCOMPLETE_OR_INVALID",
+            "PASS_OWNER_INPUTS_COMPLETE_PENDING_INDEPENDENT_EVIDENCE_AND_ARTIFACT_GATES",
+        },
+        "local owner-input state is recognized without exposing supplied values",
+        checks,
+    )
     require(
         evidence["missing_p0"] == [
             "P0_G_owner_selected_project_license_and_target_journal_release_policy",
@@ -138,6 +179,7 @@ def main() -> int:
         "closed_p1": ["P1-A", "P1-B", "P1-C", "P1-D"],
         "p2_status": "FROZEN_NO_NEW_EXPERIMENTS_OR_METHOD_SEARCH",
         "blockers": blockers,
+        "owner_input_intake": intake,
         "verified_repository_hashes": len(verified_hashes),
         "checks": len(checks),
         "scientific_payloads_read": False,

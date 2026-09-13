@@ -31,6 +31,15 @@ class SubmissionReadinessGateTests(unittest.TestCase):
         )
         self.assertFalse(result["submission_ready"])
         self.assertEqual(result["open_p0"], ["P0-G", "P0-H", "P0-I"])
+        self.assertEqual(
+            result["owner_input_intake"],
+            {
+                "decision": "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
+                "complete": False,
+                "missing_field_count": 1,
+                "validation_error_count": 0,
+            },
+        )
         self.assertFalse(result["scientific_payloads_read"])
         self.assertEqual(result["model_forwards"], 0)
         self.assertEqual(result["scientific_fits"], 0)

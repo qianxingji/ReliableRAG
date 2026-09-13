@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "project_license": {
+    "selected_option": null,
+    "legal_copyright_holder": null,
+    "copyright_year_or_range": null,
+    "holder_may_license_project_authored_material": null,
+    "institutional_release_review_required": null,
+    "release_review_status": null,
+    "notice_or_review_evidence": null
+  },
+  "target_journal": {
+    "selected_journal": null,
+    "current_title": null,
+    "print_issn": null,
+    "online_issn": null,
+    "institution_recognized_cas_edition_year": null,
+    "category_basis": null,
+    "category_name": null,
+    "verified_tier": null,
+    "title_issn_change_treatment": null,
+    "recognition_date_rule": null,
+    "retained_authority_path_or_url": null,
+    "institutional_verifier_or_office": null,
+    "verification_date": null,
+    "publication_charge_route": null,
+    "data_code_policy_summary": null,
+    "data_code_policy_source_url": null
+  },
+  "authorship": {
+    "authors_in_order": [],
+    "affiliations": [],
+    "corresponding_author_name": null,
+    "corresponding_author_email": null,
+    "corresponding_author_postal_address": null,
+    "credit_role_mapping": {
+      "Conceptualization": [],
+      "Methodology": [],
+      "Software": [],
+      "Validation": [],
+      "Formal analysis": [],
+      "Investigation": [],
+      "Data curation": [],
+      "Writing - original draft": [],
+      "Writing - review and editing": [],
+      "Visualization": [],
+      "Supervision": [],
+      "Project administration": [],
+      "Funding acquisition": []
+    }
+  },
+  "declarations": {
+    "funding_statement": null,
+    "competing_interests_statement": null,
+    "ethics_statement_or_approval": null,
+    "acknowledgements": null,
+    "ai_assistance_statement": "Generative AI tools (OpenAI ChatGPT/Codex) were used under author supervision for research-project coordination, code and evidence review, manuscript drafting, formatting, and language revision. The authors independently checked the underlying saved results, references, analyses, and final text and take full responsibility for the work. The tools were not listed as authors.",
+    "ai_assistance_statement_approved": null,
+    "ai_tool_version_and_use_dates": null,
+    "originality_confirmed": null,
+    "exclusive_submission_confirmed": null,
+    "all_authors_approved_final_manuscript_and_order": null,
+    "overlapping_work_or_preprint_disclosure": null,
+    "institutional_manuscript_approval_required": null,
+    "institutional_manuscript_approval_status": null,
+    "institutional_manuscript_approval_evidence": null
+  }
+}
