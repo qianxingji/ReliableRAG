@@ -1,82 +1,114 @@
 # ReliableRAG
 
-Research on selective adoption of repaired RAG answers. Current target:
-**CAS Journal Ranking Q2 Submission Ready**, on one RTX 5060 Ti 16 GB.
-CAS Q2 is not JCR Q2. Scientific integrity, fairness and reproducibility remain mandatory.
+ReliableRAG studies whether a fixed repaired RAG answer should replace the
+original answer. The current paper is a controlled empirical study of accuracy
+and damage under supervision-matched selection.
 
-**CAS Q2 STATUS: NOT READY**
+**Target: CAS Journal Ranking Q3 Submission Ready.** CAS ranking is distinct from
+JCR quartiles. The applicable CAS year, category and institutional recognition
+rule still require a named journal.
 
-Original ROA saved-parameter replay and all three supervised controls are complete.
-Both historical method-advancement rules failed; no novel-method candidate is
-cleared. A frozen empirical replication now has five fitted comparison policies
-and 6,000 new question IDs. Native generation and fixed neural replay completed.
-The first full validator failed on missing helper constants. After the separate
-V2 correction, full validation failed on a dense component score. The accepted
-complete census finds 12-thread current-native-default arithmetic exact on every
-saved repair field and 507 one-thread score-only rows with no ranking/replacement
-change. A prospective V3 validation contract is now frozen. Fresh
-scoring, outcome analysis and contribution assessment remain outstanding.
+**CAS Q3 STATUS: NOT READY.** The Qwen scientific core and P0-A through P0-F are
+closed. Reviewer-facing release, target-journal fit and the manuscript/final
+independent audits remain open.
 
-## Continue here
+## Current scientific object
 
-1. Read [AGENTS.md](AGENTS.md) and [CURRENT_TASK.md](docs/cas_q2/CURRENT_TASK.md).
-2. Preserve completed C3 canonical/fixed replay and both full-validation
-   failures. Follow the [V2 anomaly audit](docs/cas_q2/C3_VALIDATION_V2_FAILURE_REVIEW.md)
-   [complete census audit](docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md) and
-   [prospective V3 contract](docs/cas_q2/C3_VALIDATION_V3_CONTRACT.md). Implement
-   its fixture gate before the single authorized V3 validation.
-3. Execute the already implemented C4 scoring/prelabel stages; only their complete
-   acceptance permits the four separate D outcome/analysis stages. Follow exact
-   manifest arguments and the [frozen empirical protocol](docs/cas_q2/EMPIRICAL_REPLICATION_PROTOCOL_V1.md).
+For each fixed original/repaired answer pair `(a0,a1)`, a policy chooses Keep or
+Repair after both candidates and all scores have been acquired. The accepted
+study contains:
 
-Latest validation review: the [complete arithmetic census and Astra xhigh audit](docs/cas_q2/C3_REPAIR_ARITHMETIC_CENSUS_AUDIT.md) cover all 18,180 canonical/replay rows and 1,818,000 component entries per mode. One global current native-default OpenBLAS 12-thread run matches every saved field; one-thread has 507 score-only rows, no membership/order or replacement change. The 7,075 cross-mode score-vector differences are arithmetic sensitivity, while only 507 reach saved entries. Historical acquisition threads remain unrecorded and V2 remains failed. The [V3 contract](docs/cas_q2/C3_VALIDATION_V3_CONTRACT.md) freezes the sole next validation path; C3 and C4 remain unaccepted.
+- `Qwen/Qwen2.5-3B-Instruct` at revision
+  `aa8e72537993ba99e69dfaafa59ed015b17504d1`;
+- 6,000 question groups and 18,000 BM25/dense/hybrid traces from HotpotQA,
+  2WikiMultiHopQA and MuSiQue;
+- three fixed dataset-specific bounded candidate pools;
+- one global action allocation of `K=900` traces;
+- nine policies, including five supervision-matched fitted heads; and
+- 20,000 dataset-stratified question-cluster bootstrap draws.
 
-Latest outcome replay: [full historical source/reference mapping](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_ACCEPTANCE.md) reconstructs all 13,500 rows for 4,500 old questions, disjoint from the 6,000 current IDs. New/original numeric ledgers are byte-exact; separate reference rereading and independent metric formulas check 108,000 values. Actual new PyArrow native bindings, selected-cell limits, all unchanged inputs and full evidence are in the [results](docs/cas_q2/HISTORICAL_OUTCOME_REPLAY_RESULTS.json). No current Gold is opened. Current C3 full validation requires the V2 correction above.
+The focal policy `HGB_GBV_R` is an ordinary two-input calibrated logistic head.
+HGB is an upstream signal and comparator. GbV is a project-specific paired
+adaptation of Generate but Verify Post-Answering NLI. The project does not claim
+a new selector architecture or a novel top-level algorithm.
 
-Earlier training review: [seven original final fits](docs/cas_q2/HISTORICAL_TRAINING_REPLAY_REVIEW.md) reconstruct the same 601 training rows and all 140,033 matrix values; 10,773 original/new scores match exactly. Six model files are byte-exact. The frozen seven-model byte gate remains failed: complete read-only diagnosis finds only the HGB bin-mapper thread field, 6 versus 1, a one-byte difference. All attempts and three diagnostic failures remain in the [results/private evidence kit](docs/cas_q2/HISTORICAL_TRAINING_REPLAY_RESULTS.json). No model/expected hash was changed or replaced. Total actual fits: 185. Original fit-time receipts remain missing.
+## Accepted result boundary
 
-Earlier NLI preparation: [client acceptance](docs/cas_q2/RELOCATED_NLI_INPUT_ACCEPTANCE.md) passes 81,000 historical count/reason/eligibility checks across all 13,500 rows. The 32,174 new chunk pairs and 6,404 batches match original execution counts; an independent process compares all 22,799,715 new token/mask/type scalars. Actual SentencePiece target ownership, expected probe warnings and unchanged inputs are recorded in the [results/private kit](docs/cas_q2/RELOCATED_NLI_INPUT_RESULTS.json). These are new input witnesses; historical token arrays and neural probability replay remain unavailable/unverified.
+The primary family contains three ordered comparisons, each with EM and Damage
+endpoints. Adjusted ranges use the frozen six-endpoint family and reallocate the
+global top-K within each bootstrap draw.
 
-Earlier tokenizer replay: [full historical Qwen input/decoder validation](docs/cas_q2/RELOCATED_QWEN_TOKENIZER_ACCEPTANCE.md) passes all 41,040 receipts, 39,750,420 input tokens and 410,400 exact field comparisons. The separate validator also verifies all 180 fixed replay signatures; 21 original/restored inputs and 21,267 environment files remain unchanged. The explicit constant-cardinality binding, v1 failure and all diagnostics are disclosed in the [results/private kit](docs/cas_q2/RELOCATED_QWEN_TOKENIZER_RESULTS.json). This does not establish neural or fresh-pipeline replay.
+| Ordered comparison | EM difference, pp | Damage difference, pp | Joint rule |
+|---|---:|---:|---|
+| ROA-FULL - HGB_GBV_R | +0.0444 `[-0.1333,+0.2037]` | +0.0611 `[+0.0000,+0.1278]` | Not met |
+| HGB_GBV_R - HGB_ONLY_R | +0.0556 `[-0.1556,+0.3167]` | -0.0833 `[-0.1833,-0.0056]` | Not met |
+| HGB_GBV_R - GBV_ONLY_R | +0.2333 `[+0.0722,+0.4333]` | -0.0722 `[-0.1444,-0.0278]` | Met |
 
-Earlier full historical CPU replay: [full historical feature and saved-score path in restored roots](docs/cas_q2/RELOCATED_HISTORICAL_SCORING_ACCEPTANCE.md) passes all 13,500 historical rows and 3,202 feature pairs. The independent validator checks 240,150 numeric values with zero error and all HGB/V2 actions match. The 69 original/restored inputs and 21,267 environment files remain unchanged. This uses archived neural quantities and original saved estimators; actual neural/fresh-pipeline replay remains pending. [Results and private evidence kit](docs/cas_q2/RELOCATED_HISTORICAL_SCORING_RESULTS.json) also preserve the diagnosed Windows metadata discrepancy.
+The supported positive statement is limited to HGB_GBV_R versus GBV_ONLY_R on
+this fixed Qwen cohort. The result does not establish joint improvement over
+HGB_ONLY_R, advancement of ROA-FULL, reader transfer, unseen-domain transfer,
+faithfulness improvement, a risk guarantee or deployment speedup.
 
-Earlier static delivery: [declared dependency graph and actual restoration](docs/cas_q2/STATIC_DELIVERY_ACCEPTANCE.md) pass for 17,617 files / 21,118 edges, with zero issues. All 11,840,356,271 bytes were restored into three new roots and rechecked against unchanged originals. A new private package supplies 17,595 files; the existing asset archive supplies 22 external members. Use the [results](docs/cas_q2/STATIC_DELIVERY_RESULTS.json) and [offline runbook](docs/cas_q2/STATIC_DELIVERY_OFFLINE_RUNBOOK.md). This is declared static byte delivery; complete relocated execution remains pending.
+## Evidence map
 
-Earlier asset delivery: [22 fixed pretrained files packaged and independently restored](docs/cas_q2/PRETRAINED_ASSET_DELIVERY_ACCEPTANCE.md), with every byte bound to the prior audits. The private model archive contains 7,494,996,533 payload bytes; its small evidence companion supplies exact controls and freeze metadata. No model inference was run. Use the [offline restoration runbook](docs/cas_q2/PRETRAINED_ASSET_OFFLINE_RUNBOOK.md).
+Start with:
 
-Earlier native delivery gate: [two-root native source assembly](docs/cas_q2/EMPIRICAL_DELIVERY_ASSEMBLY_ACCEPTANCE.md), with 80 prior AST records and 21 explicit Path bindings matching in each root. Thirteen path tests pass; three failed attempts remain preserved. This does not establish full pipeline replay.
+- [Q3 project charter](docs/cas_q3/PROJECT_CHARTER.md)
+- [Current task and gates](docs/cas_q3/CURRENT_TASK.md)
+- [Current method and Claim boundary](docs/cas_q3/CURRENT_METHOD.md)
+- [Evidence index](docs/cas_q3/EVIDENCE_INDEX.json)
+- [Direct-neighbor literature audit](docs/cas_q3/P0_A_DIRECT_NEIGHBOR_LITERATURE_AUDIT.md)
+- [Complete result and Claim map](docs/cas_q3/P0_B_RESULT_CLAIM_MAP.md)
+- [Method and fairness account](docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md)
+- [Statistical statement verification](docs/cas_q3/P0_D_STATISTICAL_STATEMENT_VERIFICATION.md)
+- [Provenance, contamination, adaptation and failure disclosures](docs/cas_q3/P0_E_PROVENANCE_CONTAMINATION_ADAPTATION_FAILURE_DISCLOSURES.md)
+- [Claim-scoped cost table](docs/cas_q3/P0_F_CLAIM_SCOPED_COST_TABLE.md)
 
-Latest environment acceptance: [offline neural packages and CPU smoke](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md).
-The earlier [independent numerical replay](docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md) remains accepted.
-The private 2,821-file source/data release now passes full saved-parameter replay
-with freshly installed, hash-locked numerical packages and zero error. The
-current Windows host and CPython base are reused; full neural-pipeline and
-another-host reproduction remain unverified. An [offline runbook](docs/cas_q2/ROA_OFFLINE_CPU_REPLAY_RUNBOOK.md)
-and [package hash lock](requirements/roa-replay-win-cp310.lock) are available.
-The [current neural inventory](docs/cas_q2/NEURAL_RUNTIME_INVENTORY_REVIEW.md)
-covers 35 distributions and 22 model assets; all 30,912 checked inputs are
-unchanged. A real NumPy RECORD discrepancy remains explicitly reported. All
-35 exact official wheels are now acquired and role-specific hash locks are in
-`requirements/`. Their [offline installation and CPU smoke](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_ACCEPTANCE.md)
-now pass in a separate environment, with all new and old package files unchanged.
-CUDA execution, pretrained replay and full pipeline delivery remain unverified.
-[Current results](docs/cas_q2/NEURAL_CLEAN_ENVIRONMENT_RESULTS.json) retain the first
-smoke failure, corrected acceptance and complete offline package-kit hash. Private data and archives are excluded from Git. The earlier full engineering run had 151 tests,
-149 passing and two existing Windows capability skips; it was not repeated for
-the separate 13-test path/assembly gate. Implemented
-[D evaluation](docs/cas_q2/EMPIRICAL_D_ENGINEERING_ACCEPTANCE.md) and
-[cost auditing](docs/cas_q2/EMPIRICAL_COST_ENGINEERING_ACCEPTANCE.md) still await
-their actual prelabel gates; engineering tests do not establish fresh quality.
+The full `docs/cas_q2/` tree is retained as historical execution and acceptance
+evidence. Its old target/status and next-step language is superseded by the Q3
+authority tree; scientific receipts and failures remain unchanged.
 
-- [Project charter](docs/cas_q2/PROJECT_CHARTER.md)
-- [Current method](docs/cas_q2/CURRENT_METHOD.md)
-- [Evidence index](docs/cas_q2/EVIDENCE_INDEX.json)
-- [Reproducibility gaps](docs/cas_q2/REPRODUCIBILITY_GAPS.md)
-- [Rechecked development summary and limitations](docs/cas_q2/REPORT_RECHECK.md)
-- [本地 Codex 执行与回传任务卡](docs/cas_q2/LOCAL_CODEX_HANDOFF_ZH.md)
-- [Method and baseline position](docs/cas_q2/METHOD_AND_BASELINE_POSITION.md)
-- [GbV component and paired-adaptation boundaries](docs/cas_q2/GBV_SOURCE_FIDELITY_REVIEW.md)
-- [Historical confirmation draft, not executable](docs/cas_q2/CONFIRMATION_DESIGN.md)
+## Recheck the frozen reporting layer
 
-Historical protocols are retained. `CODEX_TASK_PHASE0.md` is not the current starting task.
+The aggregate-only verifier reads three sealed empirical-analysis files and the
+frozen analysis source. It does not read Gold, references, answer payloads,
+per-question outcomes, actions or bootstrap multiplicities.
+
+```powershell
+python scripts/verify_cas_q3_claim_statistics.py
+python -m unittest tests.test_empirical_analysis
+```
+
+The verifier checks exact input hashes, nine-policy arithmetic, units,
+comparison points, interval roles, multiplicity metadata, endpoint direction and
+the strict joint rule. The earlier full independent D validator separately
+checked all 20,000 draws and explicit-copy allocations; see
+[empirical D acceptance](docs/cas_q2/EMPIRICAL_D_ACCEPTANCE.md).
+
+## Data, models and private evidence
+
+Raw benchmark material, answer payloads, model assets, private evidence kits and
+large scientific outputs are intentionally excluded from Git. The repository
+tracks only `.gitkeep` placeholders under `data/` and `outputs/`. Existing
+private delivery/runbook evidence remains local and hash-bound.
+
+Exact pretrained revisions and dependency locks are documented in the evidence
+tree and `requirements/`. Benchmark use and model redistribution remain subject
+to their upstream terms. A public or double-blind reviewer package must be
+audited before release; the Git repository itself is not yet that package.
+
+## Known limits
+
+- One accepted reader condition.
+- No novel top-level method and no joint advantage over HGB_ONLY_R.
+- Seven original upstream estimators lack their original per-estimator fit-time
+  ID/matrix receipts and an independent original-fit witness.
+- Recorded ID exclusion is not semantic or pretraining decontamination.
+- Phi failed its frozen semantic validation gate; Mistral stopped before
+  engineering. Neither supplies effect or robustness evidence.
+- Standalone policy latency, canonical C2/C3 accelerator peaks, uniform
+  end-to-end latency and FLOPs were not measured.
+- A top-level project license and an anonymized reviewer export remain pending.
+
+See [AGENTS.md](AGENTS.md) for repository working rules. Historical task cards
+are evidence records rather than current execution instructions.

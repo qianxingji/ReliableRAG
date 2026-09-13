@@ -77,8 +77,11 @@ fairness, reviewer and Submission Ready audits.
    [claim-scoped cost table](P0_F_CLAIM_SCOPED_COST_TABLE.md) reports the shared
    workload, non-additive timers and saved C4 peaks while retaining every missing
    standalone, canonical peak, end-to-end and FLOP measurement.
-7. **P0-G:** Audit the reviewer-facing code/data/model/reproduction package,
-   licensing, anonymization, personal paths and the exact limits of neural replay.
+7. **P0-G -- REVISE / OPEN:** The
+   [release audit](P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md) confirms
+   no tracked private data and refreshes the root README, but a top-level project
+   license, journal-specific anonymity mode, frozen export allowlist and clean
+   round-trip package remain required.
 8. **P0-H:** Select a target journal and verify the applicable CAS Q3 year, ISSN,
    official scope/article type, major/minor category and institutional rule.
 9. **P0-I:** Obtain explicit manuscript authorization, complete the manuscript
