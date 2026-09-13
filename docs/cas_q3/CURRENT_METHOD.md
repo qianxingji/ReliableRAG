@@ -1,0 +1,46 @@
+# Current method and claim boundary
+
+The current paper object is an empirical audit with the Astra xhigh recommended
+working title:
+
+**Supervision-Matched Selection of Paired RAG Repairs: An Empirical Study of
+Accuracy and Damage**
+
+`Repair or Preserve? A Supervision-Matched Audit of Paired RAG Repair under Harm
+and Action Budgets` was the earlier Q2 working title. Freeze the final title only
+after the evidence--Claim and direct-neighbor literature gate passes.
+
+For each already generated original/repaired answer pair `(a0, a1)`, a policy
+chooses Keep or Repair under a fixed 5% full-batch action allocation. The study
+measures full-population normalized EM, token F1, Rescue, Damage, Neutral and
+cost. All supervised comparison heads use the same development fit/calibration
+roles, candidates, eligibility, action budget and canonical tie rule.
+
+HGB_GBV_R is the focal empirical fusion policy. HGB is an upstream signal and
+comparator. Neither is an independently established new algorithm. The strongest
+primary attribution comparisons are:
+
+- HGB_GBV_R minus HGB_ONLY_R: the conditional increment from adding GbV to HGB;
+- HGB_GBV_R minus GBV_ONLY_R: the conditional increment from adding HGB to GbV.
+
+On the accepted Qwen study, only the second comparison passes the frozen joint
+EM/Damage rule. The first does not. ROA-FULL does not improve on HGB_GBV_R under
+its advancement rule and remains rejected. The supportable finding is therefore
+comparison-dependent signal value and a harm/cost boundary, not universal fusion
+superiority or a novel top-level method.
+
+The evidence covers the named Qwen reader, HotpotQA, 2WikiMultiHopQA and MuSiQue,
+the fixed BM25/dense/hybrid retrieval conditions, the frozen candidate generation
+and scoring implementation, and the selected 6,000-question cohort. It does not
+establish broad reader transfer, independent population replication, a formal
+risk guarantee, zero-shot system transfer or complete historical training
+provenance.
+
+Phi scientific use is closed by
+`../cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md`. Mistral
+engineering is closed by
+`../cas_q2/MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md`. These
+failures and unexecuted plans are reported as limitations and do not enter the
+Qwen effect estimates.
+
+**CAS Q3 STATUS: NOT READY.**

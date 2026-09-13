@@ -5,9 +5,10 @@ This repository implements experiments for a research project on:
 
 **Runtime Paired Evidence Interventions for Reliable RAG under Retrieval-State Lock-In.**
 
-Target: a submission-ready paper competitive for CAS Journal Ranking Q2
-(Chinese Academy of Sciences journal partition, not JCR Q2). The user's
-2026-09-10 goal update supersedes the earlier Q1/CCF target.
+Target: a submission-ready paper competitive for CAS Journal Ranking Q3
+(Chinese Academy of Sciences journal partition, not JCR Q3). The user's
+2026-09-13 target transition supersedes the earlier Q2 and Q1/CCF targets without
+lowering experimental authenticity, fairness or reproducibility requirements.
 This repository is for experimental research code only. Do NOT write the paper manuscript unless explicitly requested.
 
 ## Current execution entry point (2026-09-13)
@@ -34,7 +35,12 @@ MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md and the independent
 Astra High review signed **STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING** in
 MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md. Do not close its U3--U7
 gaps by implementation, run the invented preflight, substitute a reader, or
-restart method search. The current CAS Q2 experimental extension is stopped.
+restart method search. The former CAS Q2 experimental extension is stopped. The
+active CAS Q3 route uses the accepted Qwen study as its bounded empirical core;
+the Astra xhigh route is
+`PROCEED_Q3_QWEN_ONLY_EVIDENCE_AND_JOURNAL_FIT_GATE_NO_NEW_EXPERIMENTS`.
+Read `docs/cas_q3/PROJECT_CHARTER.md`, `docs/cas_q3/TARGET_TRANSITION.md` and
+`docs/cas_q3/TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md`.
 
 Latest C3 status: **ACCEPTED_COMPLETE_CURRENT_C3_V3_2**. The unique full
 V3.2 launch completed 18,000 canonical and 180 actual replay traces. The Astra
@@ -279,12 +285,14 @@ and execute full relocated neural/pipeline replay. Declared static delivery,
 native assembly and full historical CPU scoring are accepted, but
 C4 root/package-path checks and absolute predecessor bindings remain constraints;
 do not silently modify frozen loaders or reacquire the completed C3 data.
-Historical fit-time receipts and fresh result/contribution remain missing.
-CAS Q2 STATUS: NOT READY. CURRENT_TASK.md is the consolidated active handoff;
-linked immutable records and Git history preserve earlier checkpoints.
+Historical fit-time receipts and final contribution/journal-scope acceptance
+remain missing. CAS Q3 STATUS: NOT READY. The `docs/cas_q3` files are the active
+target handoff; linked `docs/cas_q2` records and Git history preserve the full
+earlier audit chain.
 
-Read `docs/cas_q2/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
-and `EVIDENCE_INDEX.json` in that directory before choosing work.
+Read `docs/cas_q3/CURRENT_TASK.md`, `PROJECT_CHARTER.md`, `CURRENT_METHOD.md`,
+and `EVIDENCE_INDEX.json` in that directory before choosing work. Follow their
+links into `docs/cas_q2` for immutable historical evidence.
 
 - Work is Research Project Lead; ChatGPT owns research design and scientific
   argument; Codex implements reviewed designs. Per the user's 2026-09-11 update,
@@ -306,8 +314,8 @@ and `EVIDENCE_INDEX.json` in that directory before choosing work.
   and neither means submission readiness.
 - Core algorithms, feature/model searches and confirmatory protocols require a
   concrete Research Lead design before implementation; do not optimize for a win.
-- End each important stage with `CAS Q2 STATUS: NOT READY` or
-  `CAS Q2 STATUS: SUBMISSION READY`. If not ready, report rejection risks, missing
+- End each important stage with `CAS Q3 STATUS: NOT READY` or
+  `CAS Q3 STATUS: SUBMISSION READY`. If not ready, report rejection risks, missing
   evidence, method/baseline/experiment/argument problems and P0/P1/P2 priorities.
 
 The research-question/component/phase sections below preserve the original

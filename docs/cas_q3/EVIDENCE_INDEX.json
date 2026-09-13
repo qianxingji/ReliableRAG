@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "as_of_local_date": "2026-09-13",
+  "cas_q3_status": "NOT READY",
+  "target_transition": "docs/cas_q3/TARGET_TRANSITION.md",
+  "target_transition_astra_xhigh_audit": "docs/cas_q3/TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md",
+  "target_transition_external_receipt_sha256": "9d75c003ed9ea28206b7c75f376f188be98e93a9ecbe1b91eea68b1395925977",
+  "route_decision": "PROCEED_Q3_QWEN_ONLY_EVIDENCE_AND_JOURNAL_FIT_GATE_NO_NEW_EXPERIMENTS",
+  "project_charter": "docs/cas_q3/PROJECT_CHARTER.md",
+  "current_task": "docs/cas_q3/CURRENT_TASK.md",
+  "current_method": "docs/cas_q3/CURRENT_METHOD.md",
+  "historical_evidence_index": "docs/cas_q2/EVIDENCE_INDEX.json",
+  "active_worktree": "E:/paper/ReliableRAG-cas-q2-p0-1",
+  "active_branch": "work/cas-q2-p0-1",
+  "original_workspace": "E:/paper/ReliableRAG",
+  "current_candidate": null,
+  "paper_object": "SUPERVISION_MATCHED_EMPIRICAL_AUDIT_OF_PAIRED_RAG_REPAIR_UNDER_HARM_AND_ACTION_BUDGETS",
+  "accepted_reader_conditions": [
+    "QWEN"
+  ],
+  "primary_policy": "HGB_GBV_R",
+  "primary_findings": {
+    "HGB_GBV_R_minus_GBV_ONLY_R_joint_em_damage": "PASS",
+    "HGB_GBV_R_minus_HGB_ONLY_R_joint_em_damage": "NOT_PASS",
+    "ROA_FULL_minus_HGB_GBV_R_advancement": "REJECTED",
+    "novel_top_level_method_cleared": false
+  },
+  "accepted_evidence": {
+    "original_replay": "docs/cas_q2/P0_1_CLIENT_ACCEPTANCE.md",
+    "fair_controls": "docs/cas_q2/P0_2_CONTRIBUTION_REVIEW.md",
+    "qwen_full_analysis": "docs/cas_q2/EMPIRICAL_D_ACCEPTANCE.md",
+    "qwen_results": "docs/cas_q2/EMPIRICAL_D_RESULTS.json",
+    "fresh_result_decision": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md",
+    "cost": "docs/cas_q2/EMPIRICAL_COST_ACCEPTANCE.md",
+    "release": "docs/cas_q2/STATIC_DELIVERY_ACCEPTANCE.md"
+  },
+  "terminal_exclusions": {
+    "phi": {
+      "decision": "FAIL_P0_1_PHI_DEVELOPMENT_AUTHENTICITY",
+      "record": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md",
+      "scientific_effect_use": false
+    },
+    "mistral": {
+      "decision": "STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING",
+      "record": "docs/cas_q2/MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md",
+      "model_execution_occurred": false
+    },
+    "new_method_search": {
+      "authorized": false,
+      "cleared_method_count": 0
+    }
+  },
+  "missing_p0": [
+    "P0_A_direct_neighbor_literature_and_contribution_audit",
+    "P0_B_complete_result_and_claim_map",
+    "P0_C_reviewer_readable_method_and_fairness_account",
+    "P0_D_statistical_statement_verification",
+    "P0_E_provenance_contamination_adaptation_and_failure_disclosures",
+    "P0_F_claim_scoped_cost_table",
+    "P0_G_reviewer_facing_release_license_and_anonymization_audit",
+    "P0_H_verified_target_journal_and_applicable_cas_q3_rule",
+    "P0_I_manuscript_authorization_package_and_final_astra_xhigh_audits"
+  ],
+  "known_limitations": [
+    "seven_original_per_estimator_fit_time_id_matrix_receipts_missing",
+    "independent_original_fit_witness_missing",
+    "single_accepted_reader_condition",
+    "no_joint_advantage_over_hgb_only_r",
+    "no_novel_top_level_method",
+    "standalone_policy_latency_and_canonical_peak_memory_missing",
+    "target_journal_partition_year_category_and_institution_rule_pending"
+  ],
+  "scientific_execution_authorized": false,
+  "manuscript_authorized": false
+}
