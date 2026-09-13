@@ -6,7 +6,7 @@
   "reference_protocol_commit": "cd06659739810f9d0ff5dcd0e646264a26de3109",
   "current_candidate": null,
   "historical_candidate": "ROA-FULL",
-  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED_NO_NOVEL_CANDIDATE; PHI_V4_RUNTIME_AND_REPLAY_COMPLETE_BUT_P0_1_AUTHENTICITY_FAILED; MISTRAL_THIRD_READER_SELECTED_CONDITIONALLY_NOT_AUTHORIZED",
+  "scientific_scope": "QWEN_EMPIRICAL_D_ACCEPTED_NO_NOVEL_CANDIDATE; PHI_V4_RUNTIME_AND_REPLAY_COMPLETE_BUT_P0_1_AUTHENTICITY_FAILED; MISTRAL_EXTENSION_STOPPED_BEFORE_ENGINEERING",
   "development_decision": "FINAL_CANDIDATE_NOT_CLEARED",
   "post_phi_failure_governance": {
     "decision": "docs/cas_q2/POST_PHI_FAILURE_RESEARCH_GOVERNANCE.md",
@@ -15,8 +15,23 @@
     "phi_continuation_authorized": false,
     "automatic_mistral_execution_authorized": false,
     "new_method_search_authorized": false,
-    "next_deliverable": "EXTERNAL_MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT_AND_GO_STOP_REVIEW",
-    "scientific_execution_authorized": false
+    "next_deliverable": "NONE_EXPERIMENTAL_CURRENT_CAS_Q2_EXTENSION_STOPPED",
+    "scientific_execution_authorized": false,
+    "document_stage_completed": true,
+    "document_stage_draft": "docs/cas_q2/MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md",
+    "document_stage_draft_external_sha256": "787b6a3992988d31dccbc2a4c75561c51f498e1e555797cb5721096d336d70cf",
+    "go_stop_review": "docs/cas_q2/MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md",
+    "go_stop_review_external_sha256": "4efaf1725d6ed80ba85548dd507513aed1ffd5f511247cc0b4063ad64da79481",
+    "go_stop_decision": "STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING",
+    "invented_only_preflight_authorized": false,
+    "cas_q2_experimental_extension_status": "STOPPED_BEFORE_MISTRAL_ENGINEERING",
+    "blocking_unresolved": [
+      "U3_exact_cpu_execution_tokenizer_schema_fixture_contract",
+      "U4_logit_or_summary_witness_and_storage_bound",
+      "U5_host_disk_wall_clock_resource_caps",
+      "U6_numerical_error_and_acceptance_tolerance_contract",
+      "U7_minimum_practical_effect_and_maximum_interval_half_width"
+    ]
   },
   "historical_roa_development_decision": "ROA_FULL_SUPPORTED_FOR_FINAL_CANDIDATE",
   "dependence_label": "GBV_AUGMENTED_ONLY",
@@ -1274,7 +1289,7 @@
     "phi_v5_or_validator_retry_authorized": false
   },
   "third_reader_selection": {
-    "status": "CONDITIONALLY_SELECTED_NOT_AUTHORIZED_FOR_EXECUTION",
+    "status": "SELECTED_BUT_EXTENSION_STOPPED_BEFORE_ENGINEERING",
     "decision": "docs/cas_q2/THIRD_READER_SELECTION_DECISION.md",
     "astra_high_reselection_receipt_sha256": "7d760913231ab248f4ad759692f390d11e0719d66739189835f1082febbbf1ba",
     "reader": "mistralai/Mistral-7B-Instruct-v0.3",

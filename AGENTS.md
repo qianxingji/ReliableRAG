@@ -29,6 +29,12 @@ POST_PHI_FAILURE_RESEARCH_GOVERNANCE.md decision now permits only one bounded,
 result-blind, external document-stage Mistral empirical-extension protocol and
 GO/STOP audit. It does not authorize asset acquisition, tokenizer/model work,
 fits, benchmark execution or Gold. Read THIRD_READER_SELECTION_DECISION.md.
+That document stage is now terminal: the Astra xhigh draft is preserved in
+MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md and the independent
+Astra High review signed **STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING** in
+MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md. Do not close its U3--U7
+gaps by implementation, run the invented preflight, substitute a reader, or
+restart method search. The current CAS Q2 experimental extension is stopped.
 
 Latest C3 status: **ACCEPTED_COMPLETE_CURRENT_C3_V3_2**. The unique full
 V3.2 launch completed 18,000 canonical and 180 actual replay traces. The Astra

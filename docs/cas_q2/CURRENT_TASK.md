@@ -312,6 +312,17 @@ an external `MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md` covering
 G0--G8 and a separate GO/STOP review. This document-only stage may use accepted
 records and public aggregate facts; it may not download assets, run tokenizer or
 models, fit, score, select new IDs, read Gold or modify scientific code.
+That one document stage has now completed. The protocol draft is preserved in
+[MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md](MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md),
+and its independent Astra High
+[review](MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md) signed
+**`STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING`**. U3--U7 remain blocking: no
+scientifically justified minimum effect/maximum half-width, hard host/disk/time
+budget, exact CPU execution and tokenizer/schema contract, numerical-error model,
+or fixed logits/summary witness and storage bound. Per the prospective rule,
+these cannot be chosen during implementation. The current CAS Q2 experiment
+extension is closed before engineering; preserve the Qwen study, all Phi failures,
+the rejected Mistral draft and review. Do not substitute another reader or method.
 Continue only through the exact accepted predecessor chain. C3's final
 runtime/validation namespace is sealed and must not be reacquired or modified.
 The first cost invocation failed before creating a scientific namespace because

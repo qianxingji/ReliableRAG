@@ -19,6 +19,13 @@ confirms that the former Phi-dependent submission route has stopped. The sole
 next stage is a bounded, result-blind external protocol draft plus GO/STOP review
 for a possible Mistral empirical extension. It does not reopen new-method search
 or authorize engineering or scientific execution.
+The draft is preserved in
+[MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md](MISTRAL_EMPIRICAL_EXTENSION_RESEARCH_PROTOCOL_V1_DRAFT.md).
+Its independent Astra High
+[GO/STOP review](MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md) signed
+`STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING`: value/precision thresholds, resource
+caps, exact CPU placement/schema, numerical-error contract and witness/storage
+choice remain unresolved. No Mistral preflight or engineering may start.
 
 2026-09-13 P0-3 execution update: the V3 Phi development acquisition is a sealed
 interrupted failure. It contains 9,540 complete traces and one partial trace
