@@ -72,7 +72,7 @@ distribution-prohibited.
    python scripts/verify_cas_q3_reviewer_evidence_map.py
    ```
 
-   Expected results are a 49-check public-surface PASS, a 37-check committed
+   Expected results are a 49-check public-surface PASS, a 38-check committed
    Applied Intelligence modern-preflight PASS and 138 private-input
    static manuscript checks, a compiled mechanical and font PASS, an explicitly
    non-publisher length proxy of 3,978 pre-reference and 4,676 full-document

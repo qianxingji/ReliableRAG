@@ -255,7 +255,7 @@ fairness, reviewer and Submission Ready audits.
   descriptive with no subgroup superiority Claim.
 - **P1-E -- CLOSED IN PUBLIC-REPORTING SCOPE:** The
   [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
-  failure, the corrected 49-check committed-surface verifier and the 37-check
+  failure, the corrected 49-check committed-surface verifier and the 38-check
   committed Applied Intelligence modern-preflight verifier. GitHub push and
   pull-request runs both pass on commit `cd11cbf`. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly

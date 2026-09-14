@@ -78,7 +78,7 @@ def main() -> int:
         checks,
     )
     require(receipt["source_protection"]["scientific_prose_or_numbers_changed"] is False, "scientific source preserved", checks)
-    require(receipt["source_protection"]["allowed_transformation_count"] == 11, "bounded transformation count", checks)
+    require(receipt["source_protection"]["allowed_transformation_count"] == 13, "bounded transformation count", checks)
     require(receipt["compile_checks"]["fatal_errors"] == 0, "no fatal compile errors", checks)
     require(receipt["compile_checks"]["undefined_citations_or_references"] == 0, "no unresolved citations", checks)
     require(receipt["compile_checks"]["overfull_boxes"] == 0, "no overfull boxes", checks)
@@ -123,6 +123,7 @@ def main() -> int:
         require("sn-jnl.cls" not in members and "sn-basic.bst" not in members, "template files are not redistributed", checks)
         manuscript = bundle.read("manuscript.tex").decode("utf-8")
     require(r"\documentclass[pdflatex,sn-basic,Numbered]{sn-jnl}" in manuscript, "authored source targets sn-jnl", checks)
+    require("enumitem" not in manuscript and r"\setlist" not in manuscript, "production-avoid list package removed", checks)
     require("The same joint rule does not pass against the HGB-only policy" in manuscript, "negative Claim retained", checks)
     require("not a new selector architecture" in manuscript, "novelty boundary retained", checks)
     require(

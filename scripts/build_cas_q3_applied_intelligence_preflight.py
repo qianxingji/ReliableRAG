@@ -89,8 +89,7 @@ def transformed_source(source: str) -> tuple[str, list[dict[str, str]]]:
     modern_preamble = (
         r"\documentclass[pdflatex,sn-basic,Numbered]{sn-jnl}" + "\n"
         r"\usepackage{amsmath,booktabs,longtable,graphicx,microtype}" + "\n"
-        r"\usepackage{xurl}" + "\n"
-        r"\usepackage{enumitem}"
+        r"\usepackage{xurl}"
     )
     if source.count(neutral_preamble) != 1:
         raise AssertionError("expected exactly one journal-neutral preamble")
@@ -100,6 +99,31 @@ def transformed_source(source: str) -> tuple[str, list[dict[str, str]]]:
             "from": "journal-neutral article preamble",
             "to": "official modern sn-jnl / sn-basic Numbered preamble",
             "scope": "class, bibliography and package compatibility only",
+        }
+    )
+
+    compact_lists = r"\setlist[enumerate]{nosep}" + "\n" + r"\setlist[itemize]{nosep,label=$-$}" + "\n"
+    if source.count(compact_lists) != 1:
+        raise AssertionError("expected exactly one enumitem list-format block")
+    source = source.replace(compact_lists, "")
+    changes.append(
+        {
+            "from": "enumitem compact-list overrides",
+            "to": "standard sn-jnl list presentation",
+            "scope": "publisher production compatibility only",
+        }
+    )
+
+    itemize_start = r"\begin{itemize}"
+    target_itemize_start = itemize_start + r"\renewcommand{\labelitemi}{$-$}"
+    if source.count(itemize_start) != 1:
+        raise AssertionError("expected exactly one itemize environment")
+    source = source.replace(itemize_start, target_itemize_start)
+    changes.append(
+        {
+            "from": "default itemize marker",
+            "to": "local standard-command dash marker",
+            "scope": "font embedding compatibility only",
         }
     )
 
@@ -300,7 +324,13 @@ def build(template_zip: Path) -> dict[str, object]:
             nested_members = [name for name in source_members if "/" in name or "\\" in name]
 
     if nonembedded or type3 or nested_members:
-        raise AssertionError("modern target preflight failed font or flat authored-source checks")
+        raise AssertionError(
+            {
+                "nonembedded_font_rows": nonembedded,
+                "type3_font_rows": type3,
+                "nested_source_members": nested_members,
+            }
+        )
 
     result = {
         "schema_version": 1,
@@ -314,6 +344,7 @@ def build(template_zip: Path) -> dict[str, object]:
         "official_sources": [
             "https://link.springer.com/journal/10489/submission-guidelines",
             "https://www.springernature.com/gp/authors/campaigns/latex-author-support",
+            "https://support.springernature.com/en/support/solutions/articles/6000081241-templates-and-style-files-for-journal-article-preparation",
             OFFICIAL_TEMPLATE_URL,
         ],
         "template_dependency": {

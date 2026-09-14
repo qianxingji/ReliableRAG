@@ -207,7 +207,7 @@ def main() -> int:
         "PASS_COMMITTED_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_WITH_TEMPLATE_EQUIVALENCE_OPEN",
         "committed Applied Intelligence preflight verification",
     )
-    checks.equal(applied_verification["checks"], 37, "Applied Intelligence preflight verification checks")
+    checks.equal(applied_verification["checks"], 38, "Applied Intelligence preflight verification checks")
 
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (

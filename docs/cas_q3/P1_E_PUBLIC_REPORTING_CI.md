@@ -30,7 +30,7 @@ The Ubuntu job performs the following operations:
 - inspect the committed main and supplement PDFs for page count, text markers,
   embedded fonts, Type 3 fonts and build-log failures;
 - rerun the documented Poppler text-length proxy;
-- verify the committed 12-page Applied Intelligence modern `sn-jnl` preflight,
+- run the 38-check verifier for the committed 12-page Applied Intelligence modern `sn-jnl` preflight,
   its font state, Claim boundaries and flat eight-member authored-source ZIP;
 - run the owner-input privacy/fail-closed, manuscript-length and target-preflight
   transformation tests; and

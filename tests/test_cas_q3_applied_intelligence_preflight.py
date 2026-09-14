@@ -16,11 +16,13 @@ class AppliedIntelligencePreflightTests(unittest.TestCase):
         self.assertIn(r"\abstract{Retrieval repair can recover", converted)
         self.assertIn(r"\keywords{retrieval-augmented generation, answer verification", converted)
         self.assertNotIn(r"\bibliographystyle{plainnat}", converted)
+        self.assertNotIn("enumitem", converted)
+        self.assertNotIn(r"\setlist", converted)
         self.assertNotIn("figures/", converted)
         self.assertNotIn("tables/", converted)
         self.assertIn("The same joint rule does not pass against the HGB-only policy", converted)
         self.assertIn("not a new selector architecture", converted)
-        self.assertEqual(len(changes), 11)
+        self.assertEqual(len(changes), 13)
 
     def test_transform_rejects_noncanonical_source(self):
         source = SOURCE.read_text(encoding="utf-8").replace(

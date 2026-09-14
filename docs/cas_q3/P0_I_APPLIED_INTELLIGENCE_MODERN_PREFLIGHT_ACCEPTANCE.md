@@ -32,7 +32,7 @@ publisher-approved dependency.
 
 The transformation changes only class/package syntax, anonymous placeholder
 front matter, abstract/keyword syntax, bibliography presentation, five flat
-asset paths, and two target-layout settings. It retains the complete scientific
+asset paths, standard-list presentation, and two target-layout settings. It retains the complete scientific
 prose and numbers and leaves the journal-neutral source byte-identical.
 
 The source uses `sn-jnl` with `pdflatex`, `sn-basic` and `Numbered`. The 155-word
@@ -44,12 +44,13 @@ visible defect was found.
 
 | Artifact | Pages/members | SHA-256 |
 |---|---:|---|
-| `output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf` | 12 pages | `0bcb10f47a1a81d4ec08dafc130bfe7f97d2bc01d224ab129953e0be7cb9e26b` |
-| `output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip` | 8 flat authored members | `fb2bd5ed0e3e5cf6668ffedebc1c4bcb79296deccf71b6c76ee49278c5b0984e` |
+| `output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf` | 12 pages | `e9c114ae496c2bf3c46c970b69adb4950f733e8ae3610934335ad774db935eef` |
+| `output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip` | 8 flat authored members | `3f8db53d94fb27a9aa960f2867a31c23a270079659e897dc648d096d5c3120f8` |
 
 ## Visual review
 
-All 12 PDF pages were rendered at 110 dpi and reviewed. The title, anonymous
+All 12 final PDF pages were rendered at 110 dpi and reviewed after replacing
+the target-only `enumitem` dependency with standard list commands. The title, anonymous
 placeholder front matter, abstract, keywords, body, both figures, all tables,
 declarations placeholder and all 22 references are present and legible. No
 clipping, overlap, blank or orphan page, missing glyph, unreadable label or
