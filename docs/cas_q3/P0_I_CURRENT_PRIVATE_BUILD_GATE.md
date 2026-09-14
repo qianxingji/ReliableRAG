@@ -10,12 +10,13 @@ counts. It does not serialize any name, email, address, declaration text or
 private-input hash.
 
 The current local file is not byte-equivalent to the tracked empty template.
-The responsible author has now supplied the department, formal author name and
-active corresponding-author email; the author-list name was synchronized with
-the corresponding-author field inside the ignored file. None of those values is
-serialized here. Validation remains fail-closed at 16 missing fields and zero
-validation errors. A tripwire transport object was supplied deliberately. The
-builder returned its exact incomplete-owner-input error before calling the tripwire,
+The responsible author has now supplied two input batches, including identity,
+contact, CRediT and declaration fields. Explicit false or pending decisions,
+an undated AI-tool entry and a label-only competing-interests entry remain open.
+None of the supplied values is serialized here. Validation remains fail-closed
+at 9 missing fields and zero validation errors. A tripwire transport object was
+supplied deliberately. The builder returned its exact incomplete-owner-input
+error before calling the tripwire,
 and the candidate output directory was never created. Therefore no anonymous
 transport bytes, private target source, compiled identity-bearing PDF or cover
 letter were read or produced by this check.

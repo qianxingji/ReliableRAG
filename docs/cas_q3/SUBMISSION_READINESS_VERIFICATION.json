@@ -52,8 +52,9 @@
       "gate": "P0-I",
       "status": "OPEN",
       "missing": [
-        "truthful per-author contribution coverage, funding, interests, ethics and AI-assistance declarations",
-        "originality, exclusive-submission and all-author approval",
+        "approved AI-assistance wording with a versioned and date-bounded tool record",
+        "substantive competing-interests wording and all-author final-manuscript/order approval",
+        "institutional manuscript-approval requirement and retained evidence",
         "author-populated final target package",
         "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit"
       ]
@@ -67,7 +68,7 @@
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
   "verified_repository_hashes": 166,
-  "checks": 579,
+  "checks": 580,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

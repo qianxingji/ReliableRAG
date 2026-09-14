@@ -27,7 +27,7 @@ The ignored local closure workspace is now operational. The preparer preserved
 the existing owner-input bytes, created empty institutional CAS and release
 placeholders from the tracked templates, and created both private-evidence
 directories. All three files are readable by the unified verifier, which still
-fails closed: owner inputs have 16 missing fields and zero errors, the CAS
+fails closed: owner inputs have 9 missing fields and zero errors, the CAS
 placeholder has 22 missing fields and zero errors, and the release placeholder
 has 22 missing fields plus five expected empty-placeholder conflicts. No
 institutional evidence bytes were read, and placeholders are not received
@@ -264,8 +264,9 @@ fairness, reviewer and Submission Ready audits.
    personal contact fields were later supplied directly by the owner and remain
    only in the Git-ignored input. An official Applied Intelligence
    requirement audit has corrected the hard gate from the historical 30-field
-   snapshot to a 19-field intermediate snapshot; the direct owner update then
-   reduced the live state to 16 real missing fields and zero validation errors.
+   snapshot to a 19-field intermediate snapshot; the first direct owner update
+   reduced it to 16, and the second response plus fail-closed content review
+   leaves 9 real missing fields and zero validation errors.
    Optional ORCID, a separate corresponding-author postal address and acknowledgements
    are no longer treated as mandatory, while truthful CRediT coverage remains
    required. Correspondence, CRediT,
@@ -275,7 +276,7 @@ fairness, reviewer and Submission Ready audits.
    now runs the owner, institutional-CAS and institutional-release validators in
    one command and checks their title, ISSN, edition, tier, recognition-rule,
    license, holder/year and review-state agreement. Its current local result is
-   fail-closed: 16 owner fields remain missing and the two institutional input
+   fail-closed: 9 owner fields remain missing and the two institutional input
    files are empty template placeholders. Even a future structural pass leaves
    the client content, author-artifact and final Astra xhigh audits open.
    A separate local builder can then produce an ignored title page,
@@ -326,10 +327,12 @@ fairness, reviewer and Submission Ready audits.
    historical receipt is intentionally unchanged. The later
    [official-requirement correction](P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.md)
    reduced the then-current hard gate to 19 real missing fields. The subsequent
-   direct owner update resolved three of those paths and synchronized the
-   author-list name, leaving 16 missing fields, so no real identity-bearing
-   target package has been generated.
-   The current 16 missing paths are rendered into a
+   first direct owner update resolved three of those paths and synchronized the
+   author-list name. A second response supplied CRediT and several declarations,
+   but explicit `false`/`PENDING` states, an undated AI-tool entry and a label-only
+   competing-interests entry remain open; 9 fields are still missing, so no real
+   identity-bearing target package has been generated.
+   The current 9 missing paths are rendered into a
    [privacy-safe responsible-author one-reply packet](P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md).
    Its generator and regression test prove that already supplied local names,
    email addresses, postal details and declaration text are not serialized into
@@ -337,7 +340,7 @@ fairness, reviewer and Submission Ready audits.
    it does not complete any declaration or authorize submission.
    The [current private build-gate verification](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
    also exercises the real Git-ignored owner input. It confirms that the file is
-   no longer the empty template while proving that its 16-field failure occurs
+   no longer the empty template while proving that its 9-field failure occurs
    before transport access or output creation. No identity-bearing target
    artifact was created.
    A provisional Discover Computing technical profile now also proves that the

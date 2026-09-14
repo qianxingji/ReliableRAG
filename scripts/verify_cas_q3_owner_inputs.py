@@ -35,6 +35,13 @@ def nonempty(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
+def unresolved_text(value: Any) -> bool:
+    """Treat explicit pending placeholders as unanswered owner facts."""
+    if not nonempty(value):
+        return True
+    return bool(re.search(r"\bpending(?:[_\s-]|$)|\bpendin\b", value, flags=re.IGNORECASE))
+
+
 def require_object(value: Any, path: str, errors: list[str]) -> dict[str, Any]:
     if not isinstance(value, dict):
         errors.append(f"{path}: must be an object")
@@ -91,6 +98,8 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
         errors.append("project_license.selected_option: unsupported option")
     for key in ("legal_copyright_holder", "copyright_year_or_range", "notice_or_review_evidence"):
         require_text(license_data, key, "project_license", missing)
+    if unresolved_text(license_data.get("legal_copyright_holder")):
+        missing.append("project_license.legal_copyright_holder")
     if license_data.get("holder_may_license_project_authored_material") is not True:
         missing.append("project_license.holder_may_license_project_authored_material=true")
     review_required = license_data.get("institutional_release_review_required")
@@ -115,6 +124,8 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
         "data_code_policy_source_url",
     ):
         require_text(journal, key, "target_journal", missing)
+    if unresolved_text(journal.get("institution_recognized_cas_edition_year")):
+        missing.append("target_journal.institution_recognized_cas_edition_year")
     if not (nonempty(journal.get("print_issn")) or nonempty(journal.get("online_issn"))):
         missing.append("target_journal.print_issn_or_online_issn")
     if journal.get("category_basis") not in {"MAJOR", "MINOR"}:
@@ -197,6 +208,16 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
         "overlapping_work_or_preprint_disclosure",
     ):
         require_text(declarations, key, "declarations", missing)
+    competing = declarations.get("competing_interests_statement")
+    if nonempty(competing) and re.fullmatch(
+        r"competing\s+interests\s+statement[.。:]?",
+        competing.strip(),
+        flags=re.IGNORECASE,
+    ):
+        missing.append("declarations.competing_interests_statement")
+    ai_tools = declarations.get("ai_tool_version_and_use_dates")
+    if nonempty(ai_tools) and not re.search(r"\b20\d{2}\b", ai_tools):
+        missing.append("declarations.ai_tool_version_and_use_dates")
     for key in (
         "ai_assistance_statement_approved",
         "originality_confirmed",
@@ -212,6 +233,8 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
     if isinstance(manuscript_approval_required, bool) and declarations.get("institutional_manuscript_approval_status") != expected_manuscript_status:
         errors.append(f"declarations.institutional_manuscript_approval_status: must be {expected_manuscript_status}")
     require_text(declarations, "institutional_manuscript_approval_evidence", "declarations", missing)
+    if unresolved_text(declarations.get("institutional_manuscript_approval_evidence")):
+        missing.append("declarations.institutional_manuscript_approval_evidence")
 
     missing = sorted(set(missing))
     errors = sorted(set(errors))

@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "5e25de5e7f3d81c8aa5dde5616d009979218ce48820c63d8cebe4e89bae23dc1",
+      "sha256": "9001d05970131e2ea3c4c6e7ab93d40b1624c26669f0930c6be88d485f8afb18",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -411,12 +411,12 @@
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "ea2065a5f1b4f1055e9c57d26669e6154808c04edfb5e7be175ea3b55b909068"
+      "sha256": "6baa3cb4ff300a7bca0abf3b6d6c758fe02db949b14ce7835d84b0cbc992fca6"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "4ec18ba8797222e93023ae73000d465fa3570aaa4a8140bc22ae315c34495c09"
+      "sha256": "654d2649b3d68328c90b8dcd1a9250969e3d720e1222908248a82ae21fd5f8ee"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
@@ -596,12 +596,12 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json",
-      "sha256": "00db820fef7447b28fd52463c87b9304dc2c3831e60df1c72b3512f4dbd7650d",
+      "sha256": "2f8b6b412513f792ac984f9fa4587e2f601052eac0b84aab56d54d5aa22a24e8",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md",
-      "sha256": "9dbfcf6a95573c7b92a0c0f1286bcfd7beb08ad201934aa9090a5100a415ebc4",
+      "sha256": "fd7f4034f3b6526a6bd02eb93bebc4a8f5c992bb8ba1b5b5c4ee7f683a229cde",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
@@ -616,7 +616,7 @@
     },
     {
       "path": "tests/test_cas_q3_external_closure_inputs.py",
-      "sha256": "5e82df8f522b7d2502ee848997f9a7101e05fa8f466a421f04c14f2080deb99e"
+      "sha256": "64601fd7aceb0e451df23a3f08d2f8ba611b6836625072f0ed952414cc38042d"
     },
     {
       "path": "scripts/prepare_cas_q3_private_closure_workspace.py",
@@ -630,12 +630,12 @@
     {
       "path": "docs/cas_q3/P0_I_CURRENT_PRIVATE_BUILD_GATE.md",
       "required_marker": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
-      "sha256": "41d14a93152e8549a79452620dc8831e1d650523a204151893c951c0fdb729a5"
+      "sha256": "36c28a0ebf3ff0a195ea7d521239c57eeae154bb5ef34d069635bbbc4e071799"
     },
     {
       "path": "docs/cas_q3/P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json",
       "required_marker": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
-      "sha256": "2524cdb619bfe876da5f00c8400232968d5860f98bc579ddc5c3098ab4fd92b3"
+      "sha256": "7de14587e11676e19da329a9b0544a381d8b49d94ae3826a6c190bbe4525dc26"
     },
     {
       "path": "scripts/verify_cas_q3_current_private_build_gate.py",

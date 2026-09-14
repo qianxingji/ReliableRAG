@@ -42,7 +42,7 @@
         "institutional_release_record": "READ"
       },
       "owner_inputs": {
-        "missing_field_count": 16,
+        "missing_field_count": 9,
         "validation_error_count": 0
       },
       "institutional_cas_record": {

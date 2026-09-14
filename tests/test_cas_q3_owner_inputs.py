@@ -129,6 +129,26 @@ class OwnerInputsTests(unittest.TestCase):
             result["missing_field_paths"],
         )
 
+    def test_pending_and_label_only_owner_text_cannot_manufacture_completion(self):
+        value = copy.deepcopy(self.template)
+        value["project_license"]["legal_copyright_holder"] = "PENDING_LEGAL_CONFIRMATION"
+        value["target_journal"]["institution_recognized_cas_edition_year"] = (
+            "2025 upgraded edition — institutional confirmation pending"
+        )
+        value["declarations"]["competing_interests_statement"] = "Competing interests statement。"
+        value["declarations"]["ai_tool_version_and_use_dates"] = "gpt,codex"
+        value["declarations"]["institutional_manuscript_approval_evidence"] = "PENDING_VERIFICATION"
+        result = validate(value)
+        for path in (
+            "project_license.legal_copyright_holder",
+            "target_journal.institution_recognized_cas_edition_year",
+            "declarations.competing_interests_statement",
+            "declarations.ai_tool_version_and_use_dates",
+            "declarations.institutional_manuscript_approval_evidence",
+        ):
+            with self.subTest(path=path):
+                self.assertIn(path, result["missing_field_paths"])
+
     def test_optional_orcid_postal_address_and_acknowledgements_do_not_block(self):
         value = copy.deepcopy(self.template)
         value["authorship"]["authors_in_order"] = [

@@ -31,8 +31,9 @@ script prints paths and state labels only; it printed no private values.
 
 The unified verifier can now read all three files, but the two newly created
 files are placeholders, not institutional records. After the responsible
-author supplied the department, formal author name and active corresponding
-email, the owner input remains at 16 missing fields and zero validation errors;
+author supplied two successive input batches, the owner input remains at 9
+missing fields and zero validation errors. Explicit false or pending decisions,
+an undated AI-tool entry and a label-only competing-interests entry stay open;
 no supplied value is emitted in this record. The CAS placeholder has 22 missing
 fields and zero validation errors. The release placeholder has 22 missing fields
 and five expected fail-closed placeholder conflicts. No institutional evidence
