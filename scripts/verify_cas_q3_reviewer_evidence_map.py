@@ -393,6 +393,50 @@ def main() -> int:
     checks.equal(hbut_secondary["p0_h_closed"], False, "secondary evidence does not close P0-H")
     checks.equal(hbut_secondary["submission_authorized"], False, "secondary evidence does not authorize submission")
 
+    public_corroboration = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        public_corroboration["decision"],
+        "PARTIAL_PASS_PUBLIC_2025_MAJOR_Q3_CORROBORATION_INSTITUTIONAL_RECORD_STILL_REQUIRED",
+        "public target corroboration bounded decision",
+    )
+    checks.equal(
+        public_corroboration["bounded_interpretation"]["public_sources_support_2025_major_category_q3"],
+        True,
+        "public evidence supports 2025 major Q3",
+    )
+    checks.equal(
+        public_corroboration["bounded_interpretation"]["public_sources_support_2025_minor_category_q4"],
+        True,
+        "public evidence distinguishes minor Q4",
+    )
+    checks.equal(
+        public_corroboration["bounded_interpretation"]["shufe_single_q4_label_proved_to_be_minor_category"],
+        False,
+        "ambiguous condensed Q4 label is not reclassified",
+    )
+    checks.equal(
+        public_corroboration["bounded_interpretation"]["hbut_current_title_issn_record_retained"],
+        False,
+        "public corroboration does not replace HBUT record",
+    )
+    checks.equal(public_corroboration["bounded_interpretation"]["p0_h_closed"], False, "public corroboration does not close P0-H")
+    corroboration_receipt = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        corroboration_receipt["decision"],
+        "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION",
+        "public corroboration verifier decision",
+    )
+    checks.equal(corroboration_receipt["checks"], 39, "public corroboration verifier checks")
+    checks.equal(corroboration_receipt["institution_recognized_record_retained"], False, "institutional record remains open")
+
     cas_record_intake = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.json").read_text(
             encoding="utf-8"
@@ -530,6 +574,7 @@ def main() -> int:
         "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
         "python scripts/verify_cas_q3_template_route_resolution.py",
         "python scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py",
+        "python scripts/verify_cas_q3_applied_intelligence_public_corroboration.py",
         "python scripts/verify_cas_q3_institutional_cas_record.py --check-template",
         "python scripts/verify_cas_q3_institutional_release_record.py --check-template",
         "python scripts/verify_cas_q3_license_state.py",

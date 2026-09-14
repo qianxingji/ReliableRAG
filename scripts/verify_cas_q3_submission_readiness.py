@@ -418,6 +418,54 @@ def main() -> int:
     require(hbut_secondary["central_policy_attachment_access"]["contents_inferred"] is False, "CAPTCHA-gated contents are not inferred", checks)
     require(hbut_secondary["p0_h_closed"] is False, "secondary evidence does not close P0-H", checks)
 
+    public_corroboration = json.loads(
+        (ROOT / evidence["p0_h_applied_intelligence_2025_public_corroboration"]).read_text(
+            encoding="utf-8"
+        )
+    )
+    require(
+        public_corroboration["decision"]
+        == "PARTIAL_PASS_PUBLIC_2025_MAJOR_Q3_CORROBORATION_INSTITUTIONAL_RECORD_STILL_REQUIRED",
+        "public 2025 target corroboration is bounded",
+        checks,
+    )
+    require(
+        public_corroboration["owner_rule"]["category_basis"] == "MAJOR"
+        and public_corroboration["owner_rule"]["category_name"] == "Computer Science",
+        "public corroboration uses the owner's major-category rule",
+        checks,
+    )
+    require(
+        public_corroboration["bounded_interpretation"]["public_sources_support_2025_major_category_q3"] is True,
+        "public sources support the 2025 major-Q3 interpretation",
+        checks,
+    )
+    require(
+        public_corroboration["bounded_interpretation"]["shufe_single_q4_label_proved_to_be_minor_category"] is False,
+        "ambiguous Q4 source is not overinterpreted",
+        checks,
+    )
+    require(
+        public_corroboration["bounded_interpretation"]["institution_recognized_edition_year_confirmed"] is False
+        and public_corroboration["bounded_interpretation"]["hbut_current_title_issn_record_retained"] is False,
+        "public corroboration leaves the HBUT authority gates open",
+        checks,
+    )
+    require(public_corroboration["bounded_interpretation"]["p0_h_closed"] is False, "public corroboration does not close P0-H", checks)
+    corroboration_receipt = json.loads(
+        (ROOT / evidence["p0_h_applied_intelligence_2025_public_corroboration_verification"]).read_text(
+            encoding="utf-8"
+        )
+    )
+    require(
+        corroboration_receipt["decision"]
+        == "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION",
+        "public corroboration verifier passes",
+        checks,
+    )
+    require(corroboration_receipt["checks"] == 39, "public corroboration verifier runs 39 checks", checks)
+    require(corroboration_receipt["institution_recognized_record_retained"] is False, "public verifier retains institutional gap", checks)
+
     private_builder = json.loads(
         (ROOT / evidence["p0_i_applied_intelligence_private_submission_builder_results"]).read_text(
             encoding="utf-8"

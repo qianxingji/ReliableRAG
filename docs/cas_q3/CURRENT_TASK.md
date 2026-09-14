@@ -190,6 +190,15 @@ fairness, reviewer and Submission Ready audits.
    publicly lists the 2025 upgraded data as available and supports title/ISSN
    search, but detailed records require institutional or authenticated access;
    no Applied Intelligence record was retrieved or inferred.
+   A [public corroboration audit](P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.md)
+   separately records that two public detail sources label the 2025 upgraded
+   edition Computer Science major category Q3 and Artificial Intelligence minor
+   category Q4. An official other-university faculty-page search excerpt also
+   labels a 2025 Applied Intelligence item major-category Q3, but direct fetch
+   returned HTTP 412 and the edition was not authenticated. A separate university
+   library navigation page exposes an unlabeled Q4 value, so the category ambiguity
+   is retained. This supports the target's plausibility under the owner's major-
+   category rule but does not replace the HBUT-recognized record or close P0-H.
    A fail-closed [private institutional-record intake](P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.md)
    now fixes the future record bytes by SHA-256 and checks the edition, current
    title, both ISSNs, major category, Q1/Q2/Q3 target tier, recognition-date and

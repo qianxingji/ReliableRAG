@@ -43,6 +43,10 @@ fail-closed engineering chronology.
 The [Applied Intelligence target audit](P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md)
 records the owner's selection, official current title/ISSNs, hybrid publication
 route and no-mandatory-APC subscription choice. The
+[public 2025 corroboration audit](P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.md)
+records public support for Computer Science major-category Q3 and Artificial
+Intelligence minor-category Q4 while retaining one condensed Q4 ambiguity and
+the missing HBUT-recognized record. The
 [HBUT affiliation-address audit](P0_I_HBUT_AFFILIATION_ADDRESS_ACCEPTANCE.md)
 independently confirms Wuhan and postcode 430068 from official university
 pages while leaving the author department and personal correspondence fields
@@ -138,7 +142,8 @@ does not authorize distribution.
   while exact `smallcondensed` style equivalence remains unproved. A private,
   hash-bound CAS record intake and a separate release-record intake are prepared,
   but neither record has been received and their content still requires separate
-  client audits.
+  client audits. Public corroboration supports the 2025 major-category Q3
+  interpretation but cannot certify the institution-recognized edition or record.
 - **P1:** insert the certified journal's final data/code statement and bind the
   authorized archive plus journal-approved evidence-review route.
 - **P2:** new readers, methods, seeds, budgets and benchmarks remain closed.

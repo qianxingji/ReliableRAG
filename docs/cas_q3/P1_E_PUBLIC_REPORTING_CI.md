@@ -56,6 +56,8 @@ The Ubuntu job performs the following operations:
 - rerun the documented Poppler text-length proxy;
 - run the 38-check verifier for the committed 12-page Applied Intelligence modern `sn-jnl` preflight,
   its font state, Claim boundaries and flat eight-member authored-source ZIP;
+- verify the bounded public 2025 Applied Intelligence major-Q3 corroboration
+  record while retaining its non-authoritative and institutional-access limits;
 - run the owner-input privacy/fail-closed, manuscript-length, target-preflight
   transformation, institutional-CAS-record intake, institutional-release-record
   intake, complete-source transport and private target-builder safety tests;

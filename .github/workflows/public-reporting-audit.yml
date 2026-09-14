@@ -39,6 +39,7 @@ jobs:
           python scripts/verify_cas_q3_applied_intelligence_preflight.py
           python scripts/verify_cas_q3_template_route_resolution.py
           python scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py
+          python scripts/verify_cas_q3_applied_intelligence_public_corroboration.py
           python scripts/verify_cas_q3_institutional_cas_record.py --check-template
           python scripts/verify_cas_q3_institutional_release_record.py --check-template
           python scripts/verify_cas_q3_license_state.py

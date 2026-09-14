@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "307d969c36023bb6beb49ded1e8bf0395a2a70fa2af65966c6722bfd38e4e3a5",
+      "sha256": "3a6c5b3d4a497c4003c51ad529d6b9c2c7cc0b06e37ea56220b92423bb1cf5dc",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -285,12 +285,12 @@
     },
     {
       "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-      "sha256": "9f54d4cdb02fb4152e477eb760e2f674381564bd2a57b25883a296354d5adfbd",
+      "sha256": "6fd228cf603a4850b3a5c5d204402202c8dd94365a491bd5ae73770fc4d09e0f",
       "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "a63319a29ad30a10ffde6e85ffaf280ad9b81fb109d7dfd28a35d941cd35a7a0",
+      "sha256": "a59942c2961dee3bde91e65ec3aa3796b100ae8289b3b86567e1bb971867d35f",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -573,6 +573,26 @@
     {
       "path": "tests/test_cas_q3_institutional_release_record.py",
       "sha256": "042d1a24c725423a0b71c50ddc80d872d8b226da234a7c95fd32ccf599d2729c"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.json",
+      "sha256": "209dd14a7cc2506b7da95d1e19a775b48d66356ce67eabce7dbc84301bede979",
+      "required_marker": "PARTIAL_PASS_PUBLIC_2025_MAJOR_Q3_CORROBORATION_INSTITUTIONAL_RECORD_STILL_REQUIRED"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.md",
+      "sha256": "fac5b9588db52f3371f567aca5dd877263b1bb7f2f7fcf88c14a2b339bb5fc6c",
+      "required_marker": "PARTIAL_PASS_PUBLIC_2025_MAJOR_Q3_CORROBORATION_INSTITUTIONAL_RECORD_STILL_REQUIRED"
+    },
+    {
+      "path": "scripts/verify_cas_q3_applied_intelligence_public_corroboration.py",
+      "sha256": "6e70077f1f7d15d9700cb1a9d152b78000075c8f5f3285c6cdeca254b2f14f97",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION.json",
+      "sha256": "099ae49eac9bf64e04002747f2c52a5640bf7140a66d825840526d53d3ef3b6d",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION"
     }
   ],
   "aggregate_release_candidate": {

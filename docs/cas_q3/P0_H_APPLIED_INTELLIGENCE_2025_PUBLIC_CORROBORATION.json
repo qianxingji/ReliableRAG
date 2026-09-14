@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_PUBLIC_2025_MAJOR_Q3_CORROBORATION_INSTITUTIONAL_RECORD_STILL_REQUIRED",
+  "audit_date": "2026-09-14",
+  "cas_q3_status": "NOT_READY",
+  "target_identity": {
+    "journal_title": "Applied Intelligence",
+    "print_issn": "0924-669X",
+    "electronic_issn": "1573-7497"
+  },
+  "owner_rule": {
+    "edition_family": "CAS Journal Ranking upgraded edition",
+    "category_basis": "MAJOR",
+    "category_name": "Computer Science",
+    "qualifying_tiers": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ],
+    "institution_final_authority": "Hubei University of Technology research administration"
+  },
+  "sources": {
+    "official_cas_landing": {
+      "url": "https://www.fenqubiao.com/landing.html",
+      "source_role": "AUTHORITATIVE_PLATFORM_AVAILABILITY_ONLY",
+      "observed_2025_upgraded_edition_listed": true,
+      "journal_record_publicly_retrieved": false,
+      "detailed_record_requires_authenticated_or_institutional_access": true
+    },
+    "xihua_university_faculty_page": {
+      "url": "https://teacher.xhu.edu.cn/jsj/zls/list.psp",
+      "source_role": "OFFICIAL_OTHER_UNIVERSITY_PUBLICATION_PAGE_SECONDARY_CORROBORATION",
+      "search_index_excerpt_observed": true,
+      "direct_fetch_status": 412,
+      "excerpt_binds_print_issn": true,
+      "excerpt_labels_2025_applied_intelligence_item_major_q3": true,
+      "edition_year_explicitly_authenticated": false,
+      "accepted_as_hbut_institutional_record": false
+    },
+    "shufe_library_navigation": {
+      "url": "https://academicnewsletter.sufe.edu.cn/node/615_1336",
+      "source_role": "OFFICIAL_OTHER_UNIVERSITY_LIBRARY_NAVIGATION_SECONDARY_SOURCE",
+      "direct_page_observed": true,
+      "single_cas_label": "Q4",
+      "major_minor_category_context_explicit": false,
+      "treated_as_unresolved_category_ambiguity": true,
+      "accepted_as_hbut_institutional_record": false
+    },
+    "public_detail_pages": [
+      {
+        "url": "https://www.fabiao.com.cn/sci/0924669x/",
+        "source_role": "NONAUTHORITATIVE_PUBLIC_CORROBORATION",
+        "edition": "2025 March upgraded edition",
+        "major_category": "Computer Science",
+        "major_tier": "Q3",
+        "minor_category": "Computer Science, Artificial Intelligence",
+        "minor_tier": "Q4"
+      },
+      {
+        "url": "https://www.iikx.com/sci/technology/10395.html",
+        "source_role": "NONAUTHORITATIVE_PUBLIC_CORROBORATION",
+        "edition": "2025 March upgraded edition",
+        "major_category": "Computer Science",
+        "major_tier": "Q3",
+        "minor_category": "Computer Science, Artificial Intelligence",
+        "minor_tier": "Q4"
+      }
+    ]
+  },
+  "bounded_interpretation": {
+    "public_sources_support_2025_major_category_q3": true,
+    "public_sources_support_2025_minor_category_q4": true,
+    "shufe_single_q4_label_proved_to_be_minor_category": false,
+    "institution_recognized_edition_year_confirmed": false,
+    "hbut_current_title_issn_record_retained": false,
+    "p0_h_closed": false
+  },
+  "required_closure_evidence": [
+    "institution-recognized edition/year",
+    "retained Applied Intelligence record binding current title and both ISSNs",
+    "Computer Science major-category tier under the recognized edition",
+    "institutional treatment of title or ISSN changes",
+    "separate client content audit of the retained record"
+  ],
+  "submission_authorized": false
+}
