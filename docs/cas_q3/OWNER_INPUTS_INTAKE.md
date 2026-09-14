@@ -95,10 +95,10 @@ status must be `APPROVED` and the evidence field must identify the retained
 record before a public release can proceed. Otherwise use `NOT_REQUIRED`.
 
 The journal block requires the institution-recognized CAS edition/year, exact
-major or minor category basis, category name, current title and ISSNs, Q3
-result, title/ISSN-change treatment, recognition-date rule and a retained
-authority. `verified_tier` must be `Q3`; JCR quartiles do not satisfy this
-field. `publication_charge_route` accepts `ACCEPTED`, `WAIVER_CONFIRMED`, or
+major or minor category basis, category name, current title and ISSNs, Q3-or-
+better result, title/ISSN-change treatment, recognition-date rule and a retained
+authority. `verified_tier` accepts `Q1`, `Q2`, or `Q3`; JCR quartiles do not
+satisfy this field. `publication_charge_route` accepts `ACCEPTED`, `WAIVER_CONFIRMED`, or
 `NO_MANDATORY_APC`. The adjacent
 `publication_charge_evidence_or_acknowledgement` field must identify the
 retained current price/date-rule acknowledgement and payer or funding route,

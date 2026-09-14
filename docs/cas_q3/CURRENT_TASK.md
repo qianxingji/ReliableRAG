@@ -182,6 +182,12 @@ fairness, reviewer and Submission Ready audits.
    publicly lists the 2025 upgraded data as available and supports title/ISSN
    search, but detailed records require institutional or authenticated access;
    no Applied Intelligence record was retrieved or inferred.
+   A fail-closed [private institutional-record intake](P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.md)
+   now fixes the future record bytes by SHA-256 and checks the edition, current
+   title, both ISSNs, major category, Q1/Q2/Q3 target tier, recognition-date and
+   title-change fields without committing the record or local metadata. It
+   cannot certify its own transcription: a separate client visual/content audit
+   remains mandatory, and no institutional record has yet been received.
    The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
    closes the current-price lookup: the official page lists GBP 1,040, USD
    1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
@@ -311,9 +317,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 106 repository records plus preserved withheld archive
+  authenticates 111 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 720 checks, without
+  package in 759 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -332,8 +338,9 @@ fairness, reviewer and Submission Ready audits.
   [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
   failure, the corrected 49-check committed-surface verifier and the 38-check
   committed Applied Intelligence modern-preflight verifier. GitHub push and
-  pull-request runs pass through the current owner-gate correction and portable
-  LaTeX-lookup repair; the latest accepted head is `53c9e3d`. The exposed
+  pull-request runs pass through the current owner-gate correction, portable
+  LaTeX-lookup repair, official-template route and authoritative CAS-platform
+  boundary; the latest retained successful head is `79d6f65`. The exposed
   Ubuntu `LOCALAPPDATA` failure and its successful repair are retained in the
   CI acceptance record. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly

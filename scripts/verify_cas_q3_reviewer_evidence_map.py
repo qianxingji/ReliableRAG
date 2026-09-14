@@ -353,6 +353,29 @@ def main() -> int:
     checks.equal(hbut_secondary["p0_h_closed"], False, "secondary evidence does not close P0-H")
     checks.equal(hbut_secondary["submission_authorized"], False, "secondary evidence does not authorize submission")
 
+    cas_record_intake = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        cas_record_intake["decision"],
+        "PASS_PRIVATE_RECORD_INTAKE_PATH_PREPARED_AUTHORITY_CONTENT_STILL_MISSING",
+        "institutional CAS record intake decision",
+    )
+    checks.equal(cas_record_intake["target_identity"]["journal_title"], "Applied Intelligence", "record intake journal")
+    checks.equal(cas_record_intake["target_identity"]["print_issn"], "0924-669X", "record intake print ISSN")
+    checks.equal(cas_record_intake["target_identity"]["electronic_issn"], "1573-7497", "record intake electronic ISSN")
+    checks.equal(cas_record_intake["target_identity"]["category_basis"], "MAJOR", "record intake major category")
+    checks.equal(cas_record_intake["target_identity"]["qualifying_tiers"], ["Q1", "Q2", "Q3"], "record intake Q3-or-better tiers")
+    checks.equal(cas_record_intake["privacy_boundary"]["local_metadata_git_ignored"], True, "record metadata ignored")
+    checks.equal(cas_record_intake["privacy_boundary"]["private_evidence_directory_git_ignored"], True, "record bytes ignored")
+    checks.equal(cas_record_intake["current_state"]["institutional_record_received"], False, "record remains missing")
+    checks.equal(cas_record_intake["current_state"]["content_independently_certified"], False, "record content is not self-certified")
+    checks.equal(cas_record_intake["current_state"]["independent_client_content_audit_required"], True, "record client audit remains required")
+    checks.equal(cas_record_intake["current_state"]["p0_h_closed"], False, "record intake does not close P0-H")
+    checks.equal(cas_record_intake["submission_authorized"], False, "record intake does not authorize submission")
+
     private_builder = json.loads(
         (
             ROOT
@@ -467,7 +490,9 @@ def main() -> int:
         "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
         "python scripts/verify_cas_q3_template_route_resolution.py",
         "python scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py",
+        "python scripts/verify_cas_q3_institutional_cas_record.py --check-template",
         "python scripts/verify_cas_q3_license_state.py",
+        "tests.test_cas_q3_institutional_cas_record",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
@@ -486,6 +511,12 @@ def main() -> int:
         checks.true(forbidden not in workflow, f"private-input command excluded from public CI: {forbidden}")
     ci_acceptance = (ROOT / "docs" / "cas_q3" / "P1_E_PUBLIC_REPORTING_CI.md").read_text(encoding="utf-8")
     for run_id in (
+        "34814508417",
+        "34814511106",
+        "34814218658",
+        "34814221769",
+        "34813538336",
+        "34813542720",
         "34812422447",
         "34812424983",
         "34812220477",

@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "5de8afb252c025a44f3e1f9a33465325d68c43237b052f45a17821b1956de576",
+      "sha256": "c6b21ec5ed3e519942cbd7bff4dff397c0376a10f7adf293b440ea800a454828",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -285,12 +285,12 @@
     },
     {
       "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-      "sha256": "e7ca51aec6c32155d94fa572679133d762647a7de5c47ba6870c7a49d9b89cac",
+      "sha256": "475dc83dd2b28db605c2f24179226bef666dff09c68099aeacc92bd7e1f01e75",
       "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "44a0543d6d1638ab2c3a3fb1a53b549938d26437c09e71705b781ce5b5077c77",
+      "sha256": "0748ae99846be96a13403c503c08a2d8c3a9978ca34acb37e397bec3c9fed8a1",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -527,6 +527,29 @@
       "path": "docs/cas_q3/P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE_VERIFICATION.json",
       "required_marker": "PASS_BOUNDED_HBUT_CAS_EDITION_SECONDARY_EVIDENCE_VERIFICATION",
       "sha256": "b90e34fca14bab3adfac2916279c1abdfe763ff2201c16594c827d42b1ffc664"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.json",
+      "sha256": "fdc633d2360db879938c28e09c44f169e2e8cc2d8d13f5596aa73cd65b1dad47",
+      "required_marker": "PASS_PRIVATE_RECORD_INTAKE_PATH_PREPARED_AUTHORITY_CONTENT_STILL_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.md",
+      "sha256": "5bdfe33749c7e4789a47406ef9b496290422742de2807c414f7d9d92722ef7df",
+      "required_marker": "PASS_PRIVATE_RECORD_INTAKE_PATH_PREPARED_AUTHORITY_CONTENT_STILL_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/INSTITUTIONAL_CAS_RECORD_TEMPLATE.json",
+      "sha256": "2051a626419568ad2f88cb91e9eb6a78ad1d6807e40a9204ac5eeb26c00f4d89"
+    },
+    {
+      "path": "scripts/verify_cas_q3_institutional_cas_record.py",
+      "sha256": "26c044b96e63491faed020f5a1ed083415987c3ea6ef808d46828dd8de64aafe",
+      "required_marker": "PASS_PRIVATE_INSTITUTIONAL_CAS_RECORD_INTEGRITY_PREFLIGHT_PENDING_CLIENT_CONTENT_AUDIT"
+    },
+    {
+      "path": "tests/test_cas_q3_institutional_cas_record.py",
+      "sha256": "170f10e4411b74a54a19026a50b24f11f4f0f79a811fb973a7c4ba785ceb2002"
     }
   ],
   "aggregate_release_candidate": {
@@ -624,7 +647,11 @@
     "candidate_year_confirmed_university_wide": false,
     "authoritative_2025_upgraded_data_available": true,
     "authoritative_platform_requires_authenticated_access": true,
-    "applied_intelligence_2025_record_retrieved": false
+    "applied_intelligence_2025_record_retrieved": false,
+    "institutional_record_intake_prepared": true,
+    "institutional_record_received": false,
+    "institutional_record_content_independently_certified": false,
+    "institutional_record_client_audit_required": true
   },
   "project_license": "Apache-2.0",
   "licensed_aggregate_release_candidate_v2": {

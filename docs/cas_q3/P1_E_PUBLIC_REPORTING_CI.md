@@ -57,8 +57,9 @@ The Ubuntu job performs the following operations:
 - run the 38-check verifier for the committed 12-page Applied Intelligence modern `sn-jnl` preflight,
   its font state, Claim boundaries and flat eight-member authored-source ZIP;
 - run the owner-input privacy/fail-closed, manuscript-length, target-preflight
-  transformation, complete-source transport and private target-builder safety
-  tests; these tests use temporary synthetic values and do not require or
+  transformation, institutional-CAS-record intake, complete-source transport
+  and private target-builder safety tests; these tests use temporary synthetic
+  values and do not require or
   publish the private target ZIP, identity-bearing output or official publisher
   package; and
 - require the top-level submission gate to exit with code 2 and retain
@@ -84,6 +85,24 @@ and pull-request run
 [34812424983](https://github.com/qianxingji/ReliableRAG/actions/runs/34812424983)
 then completed successfully. This failure and repair changed no paper result,
 model execution or scientific fit.
+
+Subsequent public-evidence continuity is retained through commit
+`79d6f65b4ca4e679d313db4197011264b0d06b88`. The official-template route commit
+`13c3247b3d8b8cf4778ed23162a7036ef07948d4` passed push run
+[34813538336](https://github.com/qianxingji/ReliableRAG/actions/runs/34813538336)
+and pull-request run
+[34813542720](https://github.com/qianxingji/ReliableRAG/actions/runs/34813542720).
+The HBUT evidence refinement at
+`347c7b06e9d421e430dad2ef500be203eae5686c` passed push run
+[34814218658](https://github.com/qianxingji/ReliableRAG/actions/runs/34814218658)
+and pull-request run
+[34814221769](https://github.com/qianxingji/ReliableRAG/actions/runs/34814221769).
+The authoritative 2025 CAS-platform boundary at
+`79d6f65b4ca4e679d313db4197011264b0d06b88` passed push run
+[34814508417](https://github.com/qianxingji/ReliableRAG/actions/runs/34814508417)
+and pull-request run
+[34814511106](https://github.com/qianxingji/ReliableRAG/actions/runs/34814511106).
+Each run completed successfully on 2026-09-14 and retained `NOT READY`.
 
 ## Supply-chain and permission boundary
 

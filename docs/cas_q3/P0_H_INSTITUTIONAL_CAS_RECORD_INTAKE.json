@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_PRIVATE_RECORD_INTAKE_PATH_PREPARED_AUTHORITY_CONTENT_STILL_MISSING",
+  "cas_q3_status": "NOT_READY",
+  "template_path": "docs/cas_q3/INSTITUTIONAL_CAS_RECORD_TEMPLATE.json",
+  "local_metadata_path": "docs/cas_q3/INSTITUTIONAL_CAS_RECORD.local.json",
+  "private_evidence_directory": "evidence/private/institutional_cas_record/",
+  "verifier_path": "scripts/verify_cas_q3_institutional_cas_record.py",
+  "test_path": "tests/test_cas_q3_institutional_cas_record.py",
+  "accepted_evidence_kinds": [
+    "AUTHENTICATED_CAS_PLATFORM_SCREENSHOT",
+    "AUTHENTICATED_CAS_PLATFORM_EXPORT",
+    "INSTITUTIONAL_EMAIL",
+    "INSTITUTIONAL_LETTER",
+    "INSTITUTIONAL_RESEARCH_SYSTEM_RECORD"
+  ],
+  "target_identity": {
+    "journal_title": "Applied Intelligence",
+    "print_issn": "0924-669X",
+    "electronic_issn": "1573-7497",
+    "category_basis": "MAJOR",
+    "category_name": "Computer Science",
+    "qualifying_tiers": [
+      "Q1",
+      "Q2",
+      "Q3"
+    ]
+  },
+  "privacy_boundary": {
+    "local_metadata_git_ignored": true,
+    "private_evidence_directory_git_ignored": true,
+    "private_values_emitted": false
+  },
+  "current_state": {
+    "institutional_record_received": false,
+    "evidence_bytes_read": 0,
+    "content_independently_certified": false,
+    "independent_client_content_audit_required": true,
+    "p0_h_closed": false
+  },
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "submission_authorized": false
+}

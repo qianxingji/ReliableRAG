@@ -125,10 +125,12 @@ distribution-prohibited.
 
 - **P0:** legal copyright holder/year and institutional release review; complete
   author and declaration fields; institution-recognized CAS edition/year and a
-  retained current Applied Intelligence title/ISSN Tier-3 record; final
+  retained current Applied Intelligence title/ISSN Q3-or-better record; final
   author-populated source/PDF package; final release authorization and
   persistent identifier. The current publisher template route is accepted,
-  while exact `smallcondensed` style equivalence remains unproved.
+  while exact `smallcondensed` style equivalence remains unproved. A private,
+  hash-bound institutional-record intake is prepared, but no record has been
+  received and its content still requires a separate client audit.
 - **P1:** insert the certified journal's final data/code statement and bind the
   authorized archive plus journal-approved evidence-review route.
 - **P2:** new readers, methods, seeds, budgets and benchmarks remain closed.

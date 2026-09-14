@@ -495,6 +495,57 @@ def main() -> int:
     require(reply_receipt["personal_values_emitted"] is False, "owner reply packet emits no personal values", checks)
     require(reply_receipt["submission_authorized"] is False, "owner reply packet does not authorize submission", checks)
 
+    cas_record_intake = json.loads(
+        (ROOT / evidence["p0_h_institutional_cas_record_intake"]).read_text(encoding="utf-8")
+    )
+    require(
+        cas_record_intake["decision"]
+        == "PASS_PRIVATE_RECORD_INTAKE_PATH_PREPARED_AUTHORITY_CONTENT_STILL_MISSING",
+        "institutional CAS record intake is prepared",
+        checks,
+    )
+    require(
+        cas_record_intake["target_identity"]["journal_title"] == "Applied Intelligence",
+        "institutional record intake binds the selected journal",
+        checks,
+    )
+    require(
+        cas_record_intake["target_identity"]["print_issn"] == "0924-669X"
+        and cas_record_intake["target_identity"]["electronic_issn"] == "1573-7497",
+        "institutional record intake binds both current ISSNs",
+        checks,
+    )
+    require(
+        cas_record_intake["target_identity"]["category_basis"] == "MAJOR"
+        and cas_record_intake["target_identity"]["category_name"] == "Computer Science",
+        "institutional record intake binds the Computer Science major category",
+        checks,
+    )
+    require(
+        cas_record_intake["target_identity"]["qualifying_tiers"] == ["Q1", "Q2", "Q3"],
+        "institutional record intake accepts Q3 or better",
+        checks,
+    )
+    require(
+        cas_record_intake["privacy_boundary"]["local_metadata_git_ignored"] is True
+        and cas_record_intake["privacy_boundary"]["private_evidence_directory_git_ignored"] is True,
+        "institutional record intake keeps local evidence outside Git",
+        checks,
+    )
+    require(
+        cas_record_intake["current_state"]["institutional_record_received"] is False,
+        "institutional record remains missing",
+        checks,
+    )
+    require(
+        cas_record_intake["current_state"]["content_independently_certified"] is False
+        and cas_record_intake["current_state"]["independent_client_content_audit_required"] is True,
+        "institutional record content audit remains open",
+        checks,
+    )
+    require(cas_record_intake["current_state"]["p0_h_closed"] is False, "record intake does not close P0-H", checks)
+    require(cas_record_intake["submission_authorized"] is False, "record intake does not authorize submission", checks)
+
     correction = json.loads(
         (ROOT / evidence["p0_i_required_owner_fields_correction"]).read_text(encoding="utf-8")
     )

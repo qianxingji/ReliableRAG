@@ -119,8 +119,8 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
         missing.append("target_journal.print_issn_or_online_issn")
     if journal.get("category_basis") not in {"MAJOR", "MINOR"}:
         missing.append("target_journal.category_basis=MAJOR_or_MINOR")
-    if journal.get("verified_tier") != "Q3":
-        missing.append("target_journal.verified_tier=Q3")
+    if journal.get("verified_tier") not in {"Q1", "Q2", "Q3"}:
+        missing.append("target_journal.verified_tier=Q1_Q2_or_Q3")
     if journal.get("publication_charge_route") not in PUBLICATION_CHARGE_ROUTES:
         missing.append("target_journal.publication_charge_route")
 

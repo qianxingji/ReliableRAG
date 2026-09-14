@@ -25,7 +25,7 @@ class OwnerInputsTests(unittest.TestCase):
         self.assertEqual(result["decision"], "FAIL_CLOSED_OWNER_INPUTS_INCOMPLETE_OR_INVALID")
         self.assertFalse(result["complete"])
         self.assertIn("project_license.selected_option", result["missing_field_paths"])
-        self.assertIn("target_journal.verified_tier=Q3", result["missing_field_paths"])
+        self.assertIn("target_journal.verified_tier=Q1_Q2_or_Q3", result["missing_field_paths"])
         self.assertFalse(result["personal_values_emitted"])
 
     def test_complete_synthetic_input_passes_only_to_independent_gates(self):
@@ -154,6 +154,17 @@ class OwnerInputsTests(unittest.TestCase):
         ]
         result = validate(value)
         self.assertIn("authorship.authors_in_order[0].credit_role_assignment", result["missing_field_paths"])
+
+    def test_q1_and_q2_satisfy_q3_or_better_owner_target(self):
+        for tier in ("Q1", "Q2"):
+            with self.subTest(tier=tier):
+                value = copy.deepcopy(self.template)
+                value["target_journal"]["verified_tier"] = tier
+                result = validate(value)
+                self.assertNotIn(
+                    "target_journal.verified_tier=Q1_Q2_or_Q3",
+                    result["missing_field_paths"],
+                )
 
 
 if __name__ == "__main__":
