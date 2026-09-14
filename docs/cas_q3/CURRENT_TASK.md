@@ -67,6 +67,10 @@ fairness, reviewer and Submission Ready audits.
   byte-identical copy of the complete historical `mars_full` manifest, but no
   external record independently certifies that archive's timestamp; see
   `P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.md`.
+  A later [bounded receipt census](P0_E_ORIGINAL_FIT_RECEIPT_CENSUS.md) scanned
+  55,373 files, 1,770 metadata candidates and 37 ZIPs. It found only the seven
+  original model hashes and their seven static-delivery copies, with no third
+  independent copy or original fit-time ID/matrix receipt.
 - All three supervised controls and five fixed empirical policies are complete.
   The actual takeover fit count is 185.
 - The 6,000-question Qwen study, 18,000 retrieval traces, generation/replay,
@@ -112,6 +116,10 @@ fairness, reviewer and Submission Ready audits.
    boundary without changing the P0-E decision. The final
    [Astra xhigh authenticity audit](P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_ASTRA_XHIGH_AUDIT.md)
    accepts that bounded byte claim and retains every timestamp/original-fit gap.
+   The subsequent [accessible-root census](P0_E_ORIGINAL_FIT_RECEIPT_CENSUS.md)
+   performs a model-hash, bounded metadata and ZIP-member search over four
+   historical roots. Its zero-candidate result strengthens the search record but
+   cannot prove absence outside those roots or replace the missing receipts.
 6. **P0-F -- CLOSED WITH MEASUREMENT LIMITS:** The
    [claim-scoped cost table](P0_F_CLAIM_SCOPED_COST_TABLE.md) reports the shared
    workload, non-additive timers and saved C4 peaks while retaining every missing
@@ -376,9 +384,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 131 repository records plus preserved withheld archive
+  authenticates 137 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 912 checks, without
+  package in 963 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

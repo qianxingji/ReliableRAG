@@ -711,6 +711,7 @@ def main() -> int:
         "tests.test_cas_q3_external_closure_inputs",
         "tests.test_cas_q3_private_closure_workspace",
         "tests.test_cas_q3_current_private_build_gate",
+        "tests.test_cas_q3_original_fit_receipt_census",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
@@ -779,6 +780,26 @@ def main() -> int:
         False,
         "bounded verifier does not claim an exhaustive historical-content search",
     )
+    receipt_census = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_E_ORIGINAL_FIT_RECEIPT_CENSUS.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        receipt_census["decision"],
+        "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY",
+        "bounded original-fit receipt census decision",
+    )
+    checks.equal(receipt_census["counts"]["filesystem_files_scanned"], 55373, "receipt census file count")
+    checks.equal(receipt_census["counts"]["candidate_text_files_scanned"], 1770, "receipt census metadata count")
+    checks.equal(receipt_census["counts"]["zip_archives_scanned"], 37, "receipt census ZIP count")
+    checks.equal(receipt_census["counts"]["exact_original_model_hash_copies"], 14, "receipt census exact model copies")
+    checks.equal(receipt_census["counts"]["candidate_files_with_receipt_markers_and_model_identity"], 0, "no filesystem receipt candidate")
+    checks.equal(receipt_census["counts"]["candidate_archive_members_with_receipt_markers_and_model_identity"], 0, "no archive receipt candidate")
+    checks.equal(receipt_census["counts"]["scan_errors"], 0, "receipt census scan errors")
+    checks.equal(sorted(receipt_census["exact_models_by_root"]), ["original_workspace", "static_original"], "only original and static-copy model sets found")
+    checks.equal(receipt_census["interpretation"]["third_independent_model_copy_found"], False, "no third independent model copy")
+    checks.equal(receipt_census["interpretation"]["independent_original_fit_witness_recovered"], False, "receipt census recovers no independent fit witness")
+    checks.equal(receipt_census["interpretation"]["absence_outside_scanned_roots_proved"], False, "receipt census remains bounded")
+    checks.equal(receipt_census["operations"]["scientific_fits"], 0, "receipt census performs no fit")
 
     release = evidence["aggregate_release_candidate"]
     archive = Path(release["local_archive"])

@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "2e65d58a6e12c8260708bd7324c94cc3db063770150f3a88dc161f2b8a71d44b",
+      "sha256": "a1c158f5e7d8b1988c8bef0b8247e1a5b78e3819414b53b50a86047c14e105da",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "b0d0abb993593f84cb253e5c723e3ca1752eec5df662285a26cf4fb367732e84",
+      "sha256": "ee9563dbc963ae2acde0db15323d1e465ac3c975016bedcfb835790b36690572",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -655,6 +655,25 @@
       "path": "docs/cas_q3/P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.md",
       "sha256": "bd7e291305ab3973c6d9fd860d72200270184469d95763e8fdb769ccb33bbd93",
       "required_marker": "PARTIAL_PASS_OWNER_2025_MAJOR_Q3_ASSERTION_RECEIVED_DECLARED_EVIDENCE_PATH_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_ORIGINAL_FIT_RECEIPT_CENSUS.json",
+      "sha256": "57c83bb6741f983b9a403e4eed6500138767f93d573a89939285d6f32373e596",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_ORIGINAL_FIT_RECEIPT_CENSUS.md",
+      "sha256": "e9c8369c400c61238dd6d367d0404c1950519b7bc281d81d348e5fbc82786244",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "scripts/audit_cas_q3_original_fit_receipt_census.py",
+      "sha256": "ccfa3292b7e3b62272c6a2fc03009c4db8a0feb75b48c7fae30058f9e0333f68",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "tests/test_cas_q3_original_fit_receipt_census.py",
+      "sha256": "9df31da8086c6df72f704bf515bc8593a198abbc62db5781ea494e3ee4e7fe82"
     }
   ],
   "aggregate_release_candidate": {

@@ -146,6 +146,55 @@ def main() -> int:
     )
     require(manifest_verification["scientific_payloads_read"] is False, "historical manifest verification reads no scientific payload", checks)
 
+    receipt_census = json.loads(
+        (ROOT / evidence["p0_e_original_fit_receipt_census"]).read_text(encoding="utf-8")
+    )
+    require(
+        receipt_census["decision"] == "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY",
+        "bounded original-fit receipt census is recorded",
+        checks,
+    )
+    require(
+        receipt_census["counts"]
+        == {
+            "filesystem_files_scanned": 55373,
+            "candidate_text_files_scanned": 1770,
+            "zip_archives_scanned": 37,
+            "exact_original_model_hash_copies": 14,
+            "candidate_files_with_receipt_markers_and_model_identity": 0,
+            "candidate_archive_members_with_receipt_markers_and_model_identity": 0,
+            "scan_errors": 0,
+        },
+        "bounded receipt census counts are exact",
+        checks,
+    )
+    require(
+        sorted(receipt_census["exact_models_by_root"]) == ["original_workspace", "static_original"]
+        and all(len(models) == 7 for models in receipt_census["exact_models_by_root"].values()),
+        "only the original model set and its static-delivery copy are present",
+        checks,
+    )
+    require(
+        receipt_census["interpretation"]["third_independent_model_copy_found"] is False
+        and receipt_census["interpretation"]["independent_original_fit_witness_recovered"] is False
+        and receipt_census["interpretation"]["p0_1_authenticity_gap_closed"] is False,
+        "receipt census does not close original-fit authenticity",
+        checks,
+    )
+    require(
+        receipt_census["interpretation"]["absence_outside_scanned_roots_proved"] is False
+        and receipt_census["interpretation"]["filesystem_or_zip_timestamps_are_independent_certification"] is False,
+        "receipt census preserves scope and timestamp limits",
+        checks,
+    )
+    require(
+        receipt_census["operations"]["model_deserialization"] is False
+        and receipt_census["operations"]["model_forwards"] == 0
+        and receipt_census["operations"]["scientific_fits"] == 0,
+        "receipt census performs no model execution",
+        checks,
+    )
+
     discover = json.loads(
         (ROOT / evidence["p0_i_discover_computing_preflight"]).read_text(encoding="utf-8")
     )
