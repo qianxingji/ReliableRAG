@@ -1118,6 +1118,56 @@ def main() -> int:
         checks,
     )
 
+    pdf_page_coverage = json.loads(
+        (ROOT / evidence["p0_ghi_pdf_page_text_coverage"]).read_text(encoding="utf-8")
+    )
+    require(
+        pdf_page_coverage["decision"]
+        == "PASS_BOUNDED_UNIQUE_PDF_PAGE_TEXT_COVERAGE_NO_LOW_TEXT_PAGES",
+        "unique-PDF page-text coverage passes",
+        checks,
+    )
+    require(
+        pdf_page_coverage["ordinary_pdf_occurrences"] == 100
+        and pdf_page_coverage["direct_zip_pdf_occurrences"] == 138
+        and pdf_page_coverage["nested_zip_pdf_occurrences"] == 32
+        and pdf_page_coverage["total_pdf_occurrences"] == 270
+        and pdf_page_coverage["unique_pdf_hashes"] == 35,
+        "PDF occurrence and deduplication coverage is pinned",
+        checks,
+    )
+    require(
+        pdf_page_coverage["nested_archives_seen"] == 4
+        and pdf_page_coverage["nested_archives_materialized"] == 4
+        and pdf_page_coverage["total_unique_pdf_pages"] == 446
+        and pdf_page_coverage["pages_with_raster_images"] == 15,
+        "unique PDF page and raster-image coverage is pinned",
+        checks,
+    )
+    require(
+        pdf_page_coverage["zero_text_page_count"] == 0
+        and pdf_page_coverage["fewer_than_20_nonwhitespace_text_page_count"] == 0
+        and pdf_page_coverage["skipped_pdf_occurrences"] == 0
+        and pdf_page_coverage["skipped_nested_archives"] == 0
+        and pdf_page_coverage["scan_error_count"] == 0,
+        "page-level PDF audit retains no low-text page, skip or error",
+        checks,
+    )
+    require(
+        pdf_page_coverage["bounded_interpretation"]["all_unique_pdf_pages_have_at_least_20_nonwhitespace_extracted_text_bytes"] is True
+        and pdf_page_coverage["bounded_interpretation"]["wholly_textless_raster_pages_detected"] is False,
+        "known PDF pages all retain usable extracted text",
+        checks,
+    )
+    require(
+        pdf_page_coverage["bounded_interpretation"]["text_inside_raster_images_ocr_performed"] is False
+        and pdf_page_coverage["bounded_interpretation"]["text_inside_images_on_text_bearing_pages_excluded"] is True
+        and pdf_page_coverage["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False
+        and pdf_page_coverage["submission_authorized"] is False,
+        "page-level PDF result remains bounded and non-authorizing",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

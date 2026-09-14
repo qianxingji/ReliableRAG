@@ -126,7 +126,12 @@ magic was then covered by the
 465,460 files expose only 39 ZIP and 100 PDF strict signatures, each with its
 expected extension; no ZIP is OOXML/ODF and no RTF/OLE signature exists. Three
 loose `%PDF-` occurrences are retained as JavaScript/TypeScript source literals,
-not hidden documents. Unknown formats and page-image OCR remain outside scope.
+not hidden documents. The later
+[unique-PDF page-text audit](P0_GHI_PDF_PAGE_TEXT_COVERAGE.md) deduplicates all
+270 PDF occurrences to the same 35 hashes and verifies at least 20 non-
+whitespace extracted-text bytes on every one of 446 pages. Fifteen pages contain
+raster-image objects but none is textless or low-text. OCR of image-internal
+text on otherwise text-bearing pages and unknown formats remain outside scope.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -209,6 +214,10 @@ artifact or close P0-I.
    It must return 39 correctly named ZIPs, 100 correctly named PDFs, no
    OOXML/ODF/RTF/OLE container, mismatch or error, while retaining the three
    loose source-code `%PDF-` false positives.
+   Run `python scripts/audit_cas_q3_pdf_page_text_coverage.py` with the same
+   roots to repeat the unique-PDF page pass. It must reduce 270 occurrences to
+   35 hashes and verify all 446 pages, including 15 pages with raster-image
+   objects, with zero textless/low-text page, skip or parser error.
 
 ## Claim-to-evidence routing
 

@@ -449,6 +449,33 @@ def main() -> int:
     checks.equal(ordinary_magic["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "ordinary magic audit does not claim global absence")
     checks.equal(ordinary_magic["submission_authorized"], False, "ordinary magic audit does not authorize submission")
 
+    pdf_page_coverage = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_PDF_PAGE_TEXT_COVERAGE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        pdf_page_coverage["decision"],
+        "PASS_BOUNDED_UNIQUE_PDF_PAGE_TEXT_COVERAGE_NO_LOW_TEXT_PAGES",
+        "unique-PDF page-text coverage decision",
+    )
+    checks.equal(pdf_page_coverage["ordinary_pdf_occurrences"], 100, "page-audit ordinary PDF occurrences")
+    checks.equal(pdf_page_coverage["direct_zip_pdf_occurrences"], 138, "page-audit direct ZIP PDF occurrences")
+    checks.equal(pdf_page_coverage["nested_zip_pdf_occurrences"], 32, "page-audit nested ZIP PDF occurrences")
+    checks.equal(pdf_page_coverage["total_pdf_occurrences"], 270, "page-audit total PDF occurrences")
+    checks.equal(pdf_page_coverage["unique_pdf_hashes"], 35, "page-audit unique PDF hashes")
+    checks.equal(pdf_page_coverage["nested_archives_materialized"], 4, "page-audit nested archives")
+    checks.equal(pdf_page_coverage["total_unique_pdf_pages"], 446, "unique PDF pages inspected")
+    checks.equal(pdf_page_coverage["pages_with_raster_images"], 15, "PDF pages with raster images")
+    checks.equal(pdf_page_coverage["zero_text_page_count"], 0, "zero-text PDF pages")
+    checks.equal(pdf_page_coverage["fewer_than_20_nonwhitespace_text_page_count"], 0, "low-text PDF pages")
+    checks.equal(pdf_page_coverage["skipped_pdf_occurrences"], 0, "page-audit PDF skips")
+    checks.equal(pdf_page_coverage["skipped_nested_archives"], 0, "page-audit nested archive skips")
+    checks.equal(pdf_page_coverage["scan_error_count"], 0, "page-audit parser errors")
+    checks.equal(pdf_page_coverage["bounded_interpretation"]["text_inside_raster_images_ocr_performed"], False, "page audit does not claim image OCR")
+    checks.equal(pdf_page_coverage["bounded_interpretation"]["text_inside_images_on_text_bearing_pages_excluded"], True, "image-internal text exclusion retained")
+    checks.equal(pdf_page_coverage["submission_authorized"], False, "page audit does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )

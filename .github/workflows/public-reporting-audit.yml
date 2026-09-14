@@ -64,6 +64,7 @@ jobs:
             tests.test_cas_q3_document_container_inventory \
             tests.test_cas_q3_recursive_archive_closure_evidence \
             tests.test_cas_q3_ordinary_document_magic \
+            tests.test_cas_q3_pdf_page_text_coverage \
             tests.test_cas_q3_owner_reply_packet \
             tests.test_cas_q3_private_submission_packet \
             tests.test_cas_q3_manuscript_length \

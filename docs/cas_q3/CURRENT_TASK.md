@@ -67,8 +67,13 @@ and 631,242,643 leading bytes. It found only 39 ZIPs named `.zip` and 100 PDFs
 named `.pdf`, no OOXML/ODF package in the ZIPs, no RTF/OLE header, no mismatch
 and no error. Three loose `%PDF-` matches were retained as source-code literals
 in two `.js` and one `.ts` file rather than misclassified as hidden PDFs.
-Unknown binary formats, page-image OCR and locations outside the roots remain
-open boundaries.
+The page-level follow-up then deduplicated all 270 ordinary, direct-ZIP and
+nested-ZIP PDF occurrences to the same 35 hashes and inspected all 446 pages.
+Every page has at least 20 non-whitespace extracted-text bytes; 15 pages contain
+raster-image objects but none is textless or low-text. This rules out wholly
+textless scanned pages among the known PDFs. Text inside images on otherwise
+text-bearing pages was not OCRed. Unknown binary formats and locations outside
+the roots remain open boundaries.
 
 Latest route decision: the independent GPT-6 Astra xhigh
 [target-transition audit](TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md) sets the unique
@@ -424,9 +429,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 165 repository records plus preserved withheld archive
+  authenticates 169 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,185 checks, without
+  package in 1,218 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
