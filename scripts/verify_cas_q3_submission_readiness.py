@@ -352,6 +352,21 @@ def main() -> int:
         checks,
     )
 
+    hbut_affiliation = json.loads(
+        (ROOT / evidence["p0_i_hbut_affiliation_address_verification"]).read_text(encoding="utf-8")
+    )
+    require(
+        hbut_affiliation["decision"]
+        == "PASS_OFFICIAL_HBUT_INSTITUTION_CITY_POSTCODE_VERIFIED_DEPARTMENT_PENDING",
+        "official HBUT affiliation-address verification is bound",
+        checks,
+    )
+    require(hbut_affiliation["institution"] == "Hubei University of Technology", "HBUT institution name", checks)
+    require(hbut_affiliation["verified_affiliation_fields"]["city"] == "Wuhan", "HBUT city", checks)
+    require(hbut_affiliation["verified_affiliation_fields"]["postal_code"] == "430068", "HBUT postal code", checks)
+    require(hbut_affiliation["department_verified"] is False, "author department remains uninferred", checks)
+    require(hbut_affiliation["personal_values_emitted"] is False, "affiliation audit emits no personal values", checks)
+
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
 
@@ -415,7 +430,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_32_MISSING_ZERO_VALIDATION_ERRORS",
+        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_30_MISSING_ZERO_VALIDATION_ERRORS",
         "P0-I records partial owner facts without treating them as complete",
         checks,
     )

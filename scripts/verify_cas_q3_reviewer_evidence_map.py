@@ -273,6 +273,22 @@ def main() -> int:
         "stale Discover Computing lead removed from current packet",
     )
 
+    hbut_affiliation = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_HBUT_AFFILIATION_ADDRESS_VERIFICATION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        hbut_affiliation["decision"],
+        "PASS_OFFICIAL_HBUT_INSTITUTION_CITY_POSTCODE_VERIFIED_DEPARTMENT_PENDING",
+        "HBUT affiliation-address bounded decision",
+    )
+    checks.equal(hbut_affiliation["institution"], "Hubei University of Technology", "HBUT institution")
+    checks.equal(hbut_affiliation["verified_affiliation_fields"]["city"], "Wuhan", "HBUT city")
+    checks.equal(hbut_affiliation["verified_affiliation_fields"]["postal_code"], "430068", "HBUT postal code")
+    checks.equal(hbut_affiliation["department_verified"], False, "HBUT department remains pending")
+    checks.equal(hbut_affiliation["personal_values_emitted"], False, "HBUT audit personal-value boundary")
+
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (
         "permissions:\n  contents: read",

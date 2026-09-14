@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "13136aa92ccc285348d6c4e8c4e0de4cd29b0336e72d84d8b96ca8f4c5071a65",
+      "sha256": "447cad30b84e95b2e1cbbd948b1b8585147f5357166ba8bcc0d07d720b433b24",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -377,6 +377,16 @@
       "path": "docs/cas_q3/P0_H_TARGET_JOURNAL_DECISION_PACKET.md",
       "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_INSTITUTIONAL_CAS_RECORD_PENDING",
       "sha256": "9a6841b70a34dd9a484f9f0ebba29d7ecd8bfd6d669c381f134dc2529ca0ad87"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_HBUT_AFFILIATION_ADDRESS_VERIFICATION.json",
+      "required_marker": "PASS_OFFICIAL_HBUT_INSTITUTION_CITY_POSTCODE_VERIFIED_DEPARTMENT_PENDING",
+      "sha256": "1306ec83c209614c46d3593c9f41f9e030d217856f82dc83b1d1e06f3748af45"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_HBUT_AFFILIATION_ADDRESS_ACCEPTANCE.md",
+      "required_marker": "PASS_OFFICIAL_HBUT_INSTITUTION_CITY_POSTCODE_VERIFIED_DEPARTMENT_PENDING",
+      "sha256": "74c727fe643e550df9a1330504c45b1876920f0348a2d0712367cdbe3bd4daea"
     }
   ],
   "aggregate_release_candidate": {

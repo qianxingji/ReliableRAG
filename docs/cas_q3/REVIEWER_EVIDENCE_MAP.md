@@ -43,6 +43,10 @@ fail-closed engineering chronology.
 The [Applied Intelligence target audit](P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md)
 records the owner's selection, official current title/ISSNs, hybrid publication
 route and no-mandatory-APC subscription choice. The
+[HBUT affiliation-address audit](P0_I_HBUT_AFFILIATION_ADDRESS_ACCEPTANCE.md)
+independently confirms Wuhan and postcode 430068 from official university
+pages while leaving the author department and personal correspondence fields
+pending. The
 [data/code policy audit](P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.md)
 maps the mandatory Data Availability Statement and conditional-access boundary.
 The Apache-2.0 license is present and a corrected candidate is independently

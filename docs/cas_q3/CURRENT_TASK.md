@@ -195,10 +195,13 @@ fairness, reviewer and Submission Ready audits.
    retaining every factual field as pending. The consolidated intake adds a
    privacy-preserving local JSON route for those facts without committing them.
    The owner has now supplied one author name, first affiliation, target journal,
-   publication route, project-license choice and CAS category rule. The local
-   verifier reports 32 remaining fields and zero validation errors; correspondence,
-   CRediT, declarations, legal holder/year, institutional review and CAS-edition
-   facts are not inferred.
+   publication route, project-license choice and CAS category rule. The
+   [official HBUT address verification](P0_I_HBUT_AFFILIATION_ADDRESS_ACCEPTANCE.md)
+   independently supplies Wuhan and postcode 430068 without inferring a
+   department or personal contact detail. The local verifier now reports 30
+   remaining fields and zero validation errors; correspondence, CRediT,
+   declarations, legal holder/year, institutional review and CAS-edition facts
+   are not inferred.
    A separate local builder can then produce an ignored title page,
    declarations source and cover-letter draft. It refuses incomplete inputs,
    does not overwrite a prior directory and emits only a redacted build receipt;
@@ -252,8 +255,8 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 75 repository records plus preserved withheld archive
-  generations and the private target transport in the recorded checks, without
+  authenticates 78 repository records plus preserved withheld archive
+  generations and the private target transport in 499 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
