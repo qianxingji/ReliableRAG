@@ -187,6 +187,18 @@ zero files or members under the listed Office, OpenDocument, RTF and MSG
 extensions, and zero inventory errors. Missing, incorrect or unknown extensions
 remain outside the inventory, and this result closes no P0 gate.
 
+The first-level nested-archive census at
+`eaccb7e828956b3535153863d307175220afe4ae` passed push run
+[34865788136](https://github.com/qianxingji/ReliableRAG/actions/runs/34865788136)
+and pull-request run
+[34865794285](https://github.com/qianxingji/ReliableRAG/actions/runs/34865794285).
+The 93-test suite verifies nested-archive discovery, marker detection, strict
+header mismatches, deeper-archive rejection and size-cap refusal. The committed
+host receipt covers all four ZIP-valued members, 301 direct members, 234 text
+members and 32 PDF occurrences, with no candidate, skip, deeper archive or
+error. CI authenticates the committed receipt and synthetic boundaries only;
+it does not possess the three external Windows roots.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`

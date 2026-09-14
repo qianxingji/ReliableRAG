@@ -440,7 +440,7 @@ fairness, reviewer and Submission Ready audits.
   committed Applied Intelligence modern-preflight verifier. GitHub push and
   pull-request runs pass through the current owner-gate correction, portable
   LaTeX-lookup repair, official-template route and authoritative CAS-platform
-  boundary; the latest retained successful functional head is `bb4127b`. The
+  boundary; the latest retained successful functional head is `eaccb7e`. The
   exposed Ubuntu `LOCALAPPDATA` and absolute-`/tmp` traversal failures and their
   successful repairs are retained in the CI acceptance record. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
