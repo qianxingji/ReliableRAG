@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "a1c158f5e7d8b1988c8bef0b8247e1a5b78e3819414b53b50a86047c14e105da",
+      "sha256": "da6195a39dc17dd792451133009b7efafd35f649d5428aa8cc06a15eee335326",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "60deb46befd4cbc4f42fc7759b6ba63956108833cf8f1547726b2e9713e55f63",
+      "sha256": "687922af05cd08e9c86ce72e2b1a43175d6fc7819cb5d454dc6dc31bd4ae100f",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -693,6 +693,26 @@
       "path": "tests/test_cas_q3_institutional_manuscript_approval_record.py",
       "sha256": "c6e56d27879c751e296d9b4ba8edfbf9cb51bdd206cb20b93e416cb6368caf94",
       "required_marker": "test_manuscript_hash_substitution_is_rejected"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.json",
+      "sha256": "63c6422ae403a6a985af6160e601b707ba20b462ded6497669095c25c944c4d1",
+      "required_marker": "REVIEW_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_CANDIDATES_OR_ERRORS"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.md",
+      "sha256": "5e9131cbe3427bc468861a741efe035eff3b594e8e1386e726a378df88b6e3d7",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE"
+    },
+    {
+      "path": "scripts/audit_cas_q3_external_closure_evidence_census.py",
+      "sha256": "edba995231d83f1d1c4e6b10a6cf663fcb97fea7b6930a05044986611f5976a1",
+      "required_marker": "Bounded read-only census for pre-existing external-closure evidence"
+    },
+    {
+      "path": "tests/test_cas_q3_external_closure_evidence_census.py",
+      "sha256": "cf659a0917ff40dd7d693a6798ada21a2b9addd5aa3696bf0e2b6272acaa153f",
+      "required_marker": "test_zip_member_candidate_is_detected_without_extraction"
     }
   ],
   "aggregate_release_candidate": {

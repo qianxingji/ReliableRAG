@@ -82,14 +82,25 @@ does not authorize distribution.
 
 The [unified private external-closure preflight](P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md)
 checks cross-record agreement for the target, CAS rule, license, holder/year and
-institutional review state. Its public CI scope verifies only the three empty
+institutional review state. Its public CI scope verifies only the four empty
 templates, the idempotent no-overwrite workspace preparer and synthetic privacy
 behavior. The preparer preserved the owner-input bytes and created two
 Git-ignored empty institutional placeholders plus their evidence directories.
-The current unified result remains fail-closed at 6/22/22 missing fields for
-the owner/CAS/release components; placeholders are not received records. A
+The later manuscript-approval integration adds a third institutional
+placeholder and a manuscript-evidence directory. The current unified result
+remains fail-closed at 6/22/22/17 missing fields for the
+owner/CAS/release/manuscript-approval components; placeholders are not received
+records. A
 future complete structural result
 still cannot close P0-G/H/I without content, artifact and final Astra audits.
+
+The [accessible external-evidence census](P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.md)
+read 454,115 bounded ordinary text files and 1,448 bounded text members across
+39 ZIPs in the original workspace, preserved private historical root and old
+repository ZIP. Its three broad-marker candidates were historical experiment
+reports whose partition language referred to data or evaluation partitions.
+No institutional record was recovered. The result does not cover oversized or
+unsupported formats, prove absence outside those roots, or close any P0 gate.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -148,6 +159,11 @@ artifact or close P0-I.
    Its current expected result is 55,373 files, 1,770 metadata candidates,
    37 ZIPs, 14 exact model copies and zero receipt candidates. A public checkout
    lacks those external roots and cannot reproduce this host-local census.
+   The separate external-closure evidence census can be repeated with
+   `python scripts/audit_cas_q3_external_closure_evidence_census.py` and the
+   three retained root arguments. Its current raw result requires triage because
+   it retains three broad-marker candidates; the acceptance record documents
+   why each is an experimental partition false positive.
 
 ## Claim-to-evidence routing
 

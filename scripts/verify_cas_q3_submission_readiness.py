@@ -847,6 +847,49 @@ def main() -> int:
     require(external_closure_verification["templates"] == 4, "four private templates are covered", checks)
     require(external_closure_verification["submission_authorized"] is False, "template check does not authorize submission", checks)
 
+    external_evidence_census = json.loads(
+        (ROOT / evidence["p0_ghi_accessible_external_evidence_census"]).read_text(encoding="utf-8")
+    )
+    require(
+        external_evidence_census["decision"]
+        == "REVIEW_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_CANDIDATES_OR_ERRORS",
+        "raw external-evidence census preserves triage requirement",
+        checks,
+    )
+    require(
+        external_evidence_census["ordinary_text_files_scanned"] == 454115
+        and external_evidence_census["zip_archives_scanned"] == 39
+        and external_evidence_census["zip_text_members_scanned"] == 1448,
+        "external-evidence census coverage is pinned",
+        checks,
+    )
+    require(
+        external_evidence_census["candidate_match_count"] == 3
+        and external_evidence_census["scan_error_count"] == 0,
+        "external-evidence census retains three triaged candidates and zero errors",
+        checks,
+    )
+    require(
+        external_evidence_census["bounded_interpretation"]["institutional_record_recovered"] is False
+        and external_evidence_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False,
+        "external-evidence census remains a bounded negative result",
+        checks,
+    )
+    require(
+        external_evidence_census["submission_authorized"] is False,
+        "external-evidence census does not authorize submission",
+        checks,
+    )
+    external_evidence_triage = (
+        ROOT / evidence["p0_ghi_accessible_external_evidence_census_acceptance"]
+    ).read_text(encoding="utf-8")
+    require(
+        "PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE"
+        in external_evidence_triage,
+        "external-evidence candidate triage is retained",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

@@ -306,6 +306,25 @@ def main() -> int:
     checks.equal(external_closure_verification["templates"], 4, "four closure templates verified")
     checks.equal(external_closure_verification["submission_authorized"], False, "template verification does not authorize submission")
 
+    external_evidence_census = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(external_evidence_census["decision"], "REVIEW_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_CANDIDATES_OR_ERRORS", "raw external-evidence census retains candidate review state")
+    checks.equal(external_evidence_census["ordinary_text_files_scanned"], 454115, "bounded ordinary text files scanned")
+    checks.equal(external_evidence_census["zip_archives_scanned"], 39, "bounded ZIP archives scanned")
+    checks.equal(external_evidence_census["zip_text_members_scanned"], 1448, "bounded ZIP text members scanned")
+    checks.equal(external_evidence_census["candidate_match_count"], 3, "three broad-marker candidates retained")
+    checks.equal(external_evidence_census["scan_error_count"], 0, "external-evidence census read errors")
+    checks.equal(external_evidence_census["bounded_interpretation"]["institutional_record_recovered"], False, "census recovers no institutional record")
+    checks.equal(external_evidence_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "census does not claim global absence")
+    checks.equal(external_evidence_census["archives_extracted"], False, "census extracts no archives")
+    checks.equal(external_evidence_census["submission_authorized"], False, "census does not authorize submission")
+    external_evidence_triage = (ROOT / "docs" / "cas_q3" / "P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.md").read_text(encoding="utf-8")
+    checks.true("PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE" in external_evidence_triage, "external-evidence candidate triage decision")
+    checks.true("experimental data, fit/calibration/test" in external_evidence_triage, "external-evidence false-positive boundary")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )
@@ -730,6 +749,7 @@ def main() -> int:
         "tests.test_cas_q3_private_closure_workspace",
         "tests.test_cas_q3_current_private_build_gate",
         "tests.test_cas_q3_original_fit_receipt_census",
+        "tests.test_cas_q3_external_closure_evidence_census",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",

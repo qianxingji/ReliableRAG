@@ -38,6 +38,14 @@ placeholder has 17 missing fields plus two expected conflicts. No institutional
 evidence or manuscript bytes were read, and placeholders are not received
 institutional records.
 
+A read-only accessible-evidence census scanned the original workspace, the
+preserved private historical root and the old repository ZIP. It read 454,115
+bounded ordinary text files and 1,448 bounded text members across 39 ZIPs.
+Three broad-marker candidates were historical experiment reports in which
+“分区” meant data or training partitions. No HBUT CAS, manuscript-approval or
+code-release record was recovered. Oversized and unsupported formats remain
+outside this negative result's scope.
+
 Latest route decision: the independent GPT-6 Astra xhigh
 [target-transition audit](TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md) sets the unique
 recommendation
@@ -392,9 +400,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 141 repository records plus preserved withheld archive
+  authenticates 145 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 987 checks, without
+  package in 1,016 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
