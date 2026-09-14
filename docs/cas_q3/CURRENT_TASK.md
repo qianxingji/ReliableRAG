@@ -238,7 +238,7 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 60 repository records plus the withheld archive and passes 360
+  authenticates 60 repository records plus the withheld archive and passes 362
   checks without scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -255,8 +255,9 @@ fairness, reviewer and Submission Ready audits.
   descriptive with no subgroup superiority Claim.
 - **P1-E -- CLOSED IN PUBLIC-REPORTING SCOPE:** The
   [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
-  failure and the corrected 49-check committed-surface verifier. GitHub push and
-  pull-request runs both pass on commit `6364ff2`. Private aggregate/statistical,
+  failure, the corrected 49-check committed-surface verifier and the 37-check
+  committed Applied Intelligence modern-preflight verifier. GitHub push and
+  pull-request runs both pass on commit `cd11cbf`. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
   outside this CI.
 

@@ -228,7 +228,14 @@ def main() -> int:
     ):
         checks.true(forbidden not in workflow, f"private-input command excluded from public CI: {forbidden}")
     ci_acceptance = (ROOT / "docs" / "cas_q3" / "P1_E_PUBLIC_REPORTING_CI.md").read_text(encoding="utf-8")
-    for run_id in ("34801833707", "34801836852", "34801428340", "34801428452"):
+    for run_id in (
+        "34804142574",
+        "34804144674",
+        "34801833707",
+        "34801836852",
+        "34801428340",
+        "34801428452",
+    ):
         checks.true(run_id in ci_acceptance, f"public CI run retained: {run_id}")
 
     manifest_recovery = json.loads(

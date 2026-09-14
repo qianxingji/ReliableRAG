@@ -3,11 +3,15 @@
 Decision: **PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED**.
 
 Remote acceptance: **CLOSED** on commit
-`6364ff212745ac5e6c2ef5f1c285fa330acb32f0`. Both the
-[push run](https://github.com/qianxingji/ReliableRAG/actions/runs/34801833707)
+`cd11cbf46f6b759eb102e1c5a44d201c082e366d`. Both the
+[push run](https://github.com/qianxingji/ReliableRAG/actions/runs/34804142574)
 and the
-[pull-request run](https://github.com/qianxingji/ReliableRAG/actions/runs/34801836852)
+[pull-request run](https://github.com/qianxingji/ReliableRAG/actions/runs/34804144674)
 completed successfully on 2026-09-14.
+The first corrected public-surface acceptance also remains retained in push run
+[34801833707](https://github.com/qianxingji/ReliableRAG/actions/runs/34801833707)
+and pull-request run
+[34801836852](https://github.com/qianxingji/ReliableRAG/actions/runs/34801836852).
 
 **CAS Q3 STATUS: NOT READY.** The workflow
 `.github/workflows/public-reporting-audit.yml` gives the draft PR a portable,
@@ -26,7 +30,10 @@ The Ubuntu job performs the following operations:
 - inspect the committed main and supplement PDFs for page count, text markers,
   embedded fonts, Type 3 fonts and build-log failures;
 - rerun the documented Poppler text-length proxy;
-- run the owner-input privacy/fail-closed tests and manuscript-length tests; and
+- verify the committed 12-page Applied Intelligence modern `sn-jnl` preflight,
+  its font state, Claim boundaries and flat eight-member authored-source ZIP;
+- run the owner-input privacy/fail-closed, manuscript-length and target-preflight
+  transformation tests; and
 - require the top-level submission gate to exit with code 2 and retain
   `submission_ready=false`, zero fits, zero model forwards and no scientific
   payload reads.
@@ -50,7 +57,7 @@ or pretrained archives, historical ZIP recovery source, model weights, raw
 question/answer ledgers or selected Gold. It therefore does not run or claim:
 
 - the 129-check aggregate statistical-statement verifier, aggregate-package
-  rebuild/tests or the 135-check full manuscript verifier, all of which require
+  rebuild/tests or the 138-check full manuscript verifier, all of which require
   ignored aggregate inputs;
 - the 30-check same-host historical-manifest archive verifier;
 - reviewer-map verification that requires the withheld aggregate archive;
@@ -73,4 +80,6 @@ and
 [34801428452](https://github.com/qianxingji/ReliableRAG/actions/runs/34801428452).
 The correction did not copy, download or publish those private inputs; it added
 a separate 49-check verifier for the committed public surface. P1-E is closed
-only for this bounded public-reporting scope.
+only for this bounded public-reporting scope. The later target-preflight check
+authenticates committed technical artifacts; it does not download a publisher
+template or resolve the journal-page `smallcondensed` discrepancy.
