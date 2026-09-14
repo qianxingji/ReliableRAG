@@ -55,7 +55,6 @@
         "truthful per-author contribution coverage, funding, interests, ethics and AI-assistance declarations",
         "originality, exclusive-submission and all-author approval",
         "author-populated final target package",
-        "retained publisher or Editorial Manager acceptance of the modern sn-jnl route, or a working journal-specific legacy package",
         "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit"
       ]
     }
@@ -67,8 +66,8 @@
     "validation_error_count": 0
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
-  "verified_repository_hashes": 133,
-  "checks": 412,
+  "verified_repository_hashes": 137,
+  "checks": 429,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

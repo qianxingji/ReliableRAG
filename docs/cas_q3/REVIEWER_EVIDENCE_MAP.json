@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "5d48cb0e6db27b18c6daaf2bc09e09b0772c5dc01971f4b17472cc175b5d934e",
+      "sha256": "5de8afb252c025a44f3e1f9a33465325d68c43237b052f45a17821b1956de576",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -270,7 +270,7 @@
     },
     {
       "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.json",
-      "sha256": "a81897e9ac6f0e4658c8219f2794317f0dc2095e73b16d3bea9499d893e5cd7e",
+      "sha256": "459be1bc6af3f247e9d0733822c2c473e6dad362f23251bd782c1fae1355ab6e",
       "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "20d42a24129a2ee8e67f7a15f15ebd9c10f03a8cb8f2487d9e7bb7f9e7f80503",
+      "sha256": "5fb68451938e77fb8c68fa0b7f5b732286e84b8fb8c65a61abd34da562fa2bd2",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -487,6 +487,26 @@
       "path": "docs/cas_q3/P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.md",
       "required_marker": "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
       "sha256": "8338abdd77933670b4e0a38a4419c3bc48655fe4a31ac45a8ef9aeac7cd986f2"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.json",
+      "required_marker": "PASS_OFFICIAL_PUBLISHER_ACCEPTS_CURRENT_SN_JNL_SUBMISSION_ROUTE_SMALLCONDENSED_STYLE_EQUIVALENCE_UNPROVED",
+      "sha256": "6dc4ca4550cda504e630a339e2ba87e4ea49e7e75c53f9eb248e73ffc37c0d30"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md",
+      "required_marker": "PASS_OFFICIAL_PUBLISHER_ACCEPTS_CURRENT_SN_JNL_SUBMISSION_ROUTE_SMALLCONDENSED_STYLE_EQUIVALENCE_UNPROVED",
+      "sha256": "690fc8882c2fca186818825d078fc091a6dac8a1a487084c78fe3e765bf441d7"
+    },
+    {
+      "path": "scripts/verify_cas_q3_template_route_resolution.py",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION",
+      "sha256": "0a95b3fa35a6b7f145ad272f0b5de81db453e4949fe958cd2b686e7f48a9c3ef"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION.json",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION",
+      "sha256": "c3ce106fb7b43764e0ab437fbedd7c1e8db5385aeb5fba8a72803e85fca86a5d"
     }
   ],
   "aggregate_release_candidate": {
@@ -532,7 +552,9 @@
     "validator_checks_each": 56,
     "smallcondensed_equivalence_proved": false,
     "submission_authorized": false,
-    "distribution_authorized": false
+    "distribution_authorized": false,
+    "publisher_current_sn_jnl_route_accepted": true,
+    "pre_submission_template_route_gate_closed": true
   },
   "applied_intelligence_private_submission_synthetic_candidate": {
     "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260914-b",
@@ -567,8 +589,8 @@
     "legal_copyright_holder_year_and_institutional_release_review",
     "complete_author_identity_contributions_and_declarations",
     "institution_recognized_cas_edition_year_and_retained_applied_intelligence_record",
-    "applied_intelligence_author_populated_package_template_acceptance_and_final_astra_xhigh_audit",
-    "final_release_authorization_persistent_identifier_and_private_review_route"
+    "final_release_authorization_persistent_identifier_and_private_review_route",
+    "applied_intelligence_author_populated_package_and_final_astra_xhigh_audit"
   ],
   "selected_target": {
     "journal": "Applied Intelligence",

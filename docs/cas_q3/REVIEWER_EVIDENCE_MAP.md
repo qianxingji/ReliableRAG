@@ -6,7 +6,7 @@ Decision: **PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES.**
 the manuscript, aggregate verification, private reproducibility evidence and
 preserved failures. It does not authorize distribution of the aggregate ZIP or
 replace the missing release review, author declarations, author-populated
-Applied Intelligence package, publisher template-path acceptance or
+Applied Intelligence package or
 institutional CAS Q3 qualification.
 
 ## Scientific statement under review
@@ -23,7 +23,7 @@ a deployment-cost reduction.
 
 | Lane | Reviewer entry point | What it proves | What it does not prove |
 |---|---|---|---|
-| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json`, `P0_I_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md`, `P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 155-word abstract and five keywords meet Applied Intelligence's inspected count rules. A reproducible PDF-text proxy counts 3,994 tokens before References and 4,691 in the full document. The selected-target modern `sn-jnl` preflight compiles to 12 font-clean pages with numeric citations and flat authored sources. Two private complete-source transports add the exact authenticated class/style, rebuild byte-identically and clean-compile to the same reviewed PDF. | A publisher word count, proof that modern `sn-jnl` equals the `smallcondensed` profile named on the journal page, a final author-populated package, final Astra artifact rebind, release authorization or CAS status. |
+| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json`, `P0_I_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md`, `P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 155-word abstract and five keywords meet Applied Intelligence's inspected count rules. A reproducible PDF-text proxy counts 3,994 tokens before References and 4,691 in the full document. The selected-target modern `sn-jnl` preflight compiles to 12 font-clean pages with numeric citations and flat authored sources. Two private complete-source transports add the exact authenticated class/style, rebuild byte-identically and clean-compile to the same reviewed PDF. Official journal and publisher guidance accepts this current template as a submission route. | A publisher word count, proof that modern `sn-jnl` equals the `smallcondensed` profile named on the journal page, an observed Editorial Manager compile, a final author-populated package, final Astra artifact rebind, release authorization or CAS status. |
 | 2. Anonymous aggregate check | Preserved V1 witness SHA-256 `b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d`; corrected Apache-aware V2 candidate SHA-256 `4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8` | The V1 archive preserves the historical arithmetic witness. The V2 archive adds the exact Apache-2.0 text, restricts that license to two project-authored scripts, uses the corrected third-party notice, rebuilds byte-identically twice, passes 125 package checks per build and passes the extracted 129-check reporting verifier. | Bootstrap recomputation, per-question inspection, model rerun, refit, legal approval or public redistribution. Neither archive has a DOI or distribution authorization. |
 | 3. Private forensic reproduction | `P0_1_CLIENT_ACCEPTANCE.md`, `ROA_REPLAY_RELEASE_ACCEPTANCE.md`, `ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md`, `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`, `EMPIRICAL_D_ACCEPTANCE.md` | Saved-parameter numerical replay, source/data relocation on the same Windows host, clean numerical-library replay, full Qwen acquisition/replay acceptance and final aggregate analysis acceptance within their recorded scopes. | Original training-event reconstruction, another-host/OS reproduction, full public end-to-end execution or elimination of contamination. |
 | 4. Negative and stopped routes | `P0_3_FRESH_RESULT_DECISION.md`, `PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md`, `MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md` | The non-advancement of ROA, terminal Phi semantic validation failure and Mistral stop before engineering are retained rather than converted into positive evidence. | A second-reader effect, method novelty or permission to restart reader/method search. |
@@ -126,8 +126,9 @@ distribution-prohibited.
 - **P0:** legal copyright holder/year and institutional release review; complete
   author and declaration fields; institution-recognized CAS edition/year and a
   retained current Applied Intelligence title/ISSN Tier-3 record; final
-  author-populated source/PDF package and retained publisher acceptance of the
-  modern template path; final release authorization and persistent identifier.
+  author-populated source/PDF package; final release authorization and
+  persistent identifier. The current publisher template route is accepted,
+  while exact `smallcondensed` style equivalence remains unproved.
 - **P1:** insert the certified journal's final data/code statement and bind the
   authorized archive plus journal-approved evidence-review route.
 - **P2:** new readers, methods, seeds, budgets and benchmarks remain closed.

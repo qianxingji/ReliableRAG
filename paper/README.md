@@ -36,14 +36,16 @@ hashes and the retained nonfatal supplement `longtable` notice.
 
 The selected-target engineering preflight also compiles the same scientific
 source with the authenticated December 2024 Springer Nature `sn-jnl` package to
-a font-clean 12-page PDF and a flat eight-member authored-source ZIP. This does
-not close the unresolved difference between that current package and the
+a font-clean 12-page PDF and a flat eight-member authored-source ZIP. Official
+journal and publisher guidance accepts the current template as a submission
+route. This does not prove style equivalence between that package and the
 `smallcondensed` profile still named on the Applied Intelligence journal page.
 A separate private transport combines those eight authored files with the
 exact authenticated `sn-jnl.cls` and `sn-basic.bst`; two builds are byte-
 identical and independently clean-compile to the already visually accepted
 12-page PDF. See
-`docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md`.
+`docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md` and
+`docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md`.
 The transport remains anonymous, untracked, and submission-unauthorized.
 
 After every private owner/institution field is validated, the fail-closed
@@ -51,8 +53,8 @@ After every private owner/institution field is validated, the fail-closed
 generate the author-populated flat source ZIP, compiled PDF and cover letter in
 a new ignored directory. Its synthetic end-to-end acceptance is recorded in
 `docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_ACCEPTANCE.md`.
-A successful private build still requires author review, publisher template-
-path acceptance and the final Astra xhigh audit before submission.
+A successful private build still requires author review and the final Astra
+xhigh audit before submission.
 
 The main manuscript is anonymous and remains in a journal-neutral class.
 `title_page_template.tex` and

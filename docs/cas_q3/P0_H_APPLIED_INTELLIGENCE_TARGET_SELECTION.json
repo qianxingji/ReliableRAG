@@ -57,9 +57,11 @@
     "modern_sn_jnl_preflight_built": true,
     "modern_sn_jnl_preflight_verified": true,
     "smallcondensed_equivalence_proved": false,
-    "applied_intelligence_template_built": false,
-    "target_specific_pdf_verified": false,
-    "submission_authorized": false
+    "applied_intelligence_template_built": true,
+    "target_specific_pdf_verified": true,
+    "submission_authorized": false,
+    "publisher_current_sn_jnl_route_accepted": true,
+    "pre_submission_template_route_gate_closed": true
   },
   "scientific_fit": "CONDITIONAL_BROAD_SCOPE_HIGH_ORIGINALITY_RISK",
   "primary_rejection_risks": [

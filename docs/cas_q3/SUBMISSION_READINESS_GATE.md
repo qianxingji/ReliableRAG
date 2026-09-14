@@ -28,9 +28,11 @@ The current machine decision is
 - P0-I has a deterministic private complete-source transport using the
   authenticated current Springer Nature class/style; both independent builds
   clean-compile to the exact visually accepted 12-page PDF. It remains open for
-  real author/declaration facts, an author-populated final package, retained
-  publisher acceptance of the modern-template path or a working journal-
-  specific legacy package, and the final GPT-6 Astra xhigh audit.
+  real author/declaration facts, an author-populated final package and the final
+  GPT-6 Astra xhigh audit. The official publisher and journal guidance now
+  establish the current `sn-jnl` package as an accepted submission route. Exact
+  style equivalence to the unavailable legacy `smallcondensed` profile remains
+  unproved and disclosed, but is no longer treated as a separate route blocker.
   The fail-closed private target builder has completed a 13-page synthetic
   end-to-end test, so no additional manual source-splicing step is required
   after the remaining real inputs pass. This synthetic result is not a real

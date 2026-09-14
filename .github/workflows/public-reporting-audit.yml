@@ -37,6 +37,7 @@ jobs:
           python scripts/verify_cas_q3_compiled_pdfs.py
           python scripts/audit_cas_q3_manuscript_length.py
           python scripts/verify_cas_q3_applied_intelligence_preflight.py
+          python scripts/verify_cas_q3_template_route_resolution.py
           python scripts/verify_cas_q3_license_state.py
 
       - name: Run portable reporting and privacy tests

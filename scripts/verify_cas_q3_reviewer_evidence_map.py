@@ -166,6 +166,10 @@ def main() -> int:
     checks.equal(target["current_package"]["keyword_requirement_met"], True, "target profile keyword requirement")
     checks.equal(target["current_package"]["modern_sn_jnl_preflight_built"], True, "modern target preflight built")
     checks.equal(target["current_package"]["modern_sn_jnl_preflight_verified"], True, "modern target preflight verified")
+    checks.equal(target["current_package"]["publisher_current_sn_jnl_route_accepted"], True, "publisher accepts current template route")
+    checks.equal(target["current_package"]["pre_submission_template_route_gate_closed"], True, "pre-submission template route gate closed")
+    checks.equal(target["current_package"]["applied_intelligence_template_built"], True, "current target template built")
+    checks.equal(target["current_package"]["target_specific_pdf_verified"], True, "current target PDF verified")
     checks.equal(target["current_package"]["smallcondensed_equivalence_proved"], False, "template equivalence remains open")
     checks.equal(target["owner_cas_rule"]["independent_institutional_record_retained"], False, "institutional CAS record remains open")
     checks.equal(target["submission_authorized"], False, "target audit does not authorize submission")
@@ -347,6 +351,36 @@ def main() -> int:
     checks.equal(private_builder["synthetic_private_build"]["visual_defects"], 0, "synthetic private visual defects")
     checks.equal(private_builder["submission_authorized"], False, "synthetic build does not authorize submission")
 
+    route_resolution = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        route_resolution["decision"],
+        "PASS_OFFICIAL_PUBLISHER_ACCEPTS_CURRENT_SN_JNL_SUBMISSION_ROUTE_SMALLCONDENSED_STYLE_EQUIVALENCE_UNPROVED",
+        "template-route resolution decision",
+    )
+    checks.equal(
+        route_resolution["resolution"]["publisher_acceptance_of_current_sn_jnl_submission_route_proved"],
+        True,
+        "publisher accepts current template route",
+    )
+    checks.equal(
+        route_resolution["resolution"]["journal_specific_smallcondensed_style_equivalence_proved"],
+        False,
+        "smallcondensed equivalence remains unproved",
+    )
+    checks.equal(route_resolution["resolution"]["pre_submission_template_route_gate_closed"], True, "template route gate closed")
+    checks.equal(route_resolution["resolution"]["submission_system_compile_observed"], False, "Editorial Manager compile not claimed")
+    checks.equal(route_resolution["resolution"]["author_populated_package_built"], False, "real author package not claimed")
+    checks.equal(route_resolution["authenticated_current_route"]["validator_checks_each"], 56, "route transport checks")
+    checks.equal(route_resolution["authenticated_current_route"]["clean_compile_pages"], 12, "route compiled pages")
+    checks.equal(route_resolution["scientific_payloads_read"], False, "route audit reads no scientific payload")
+    checks.equal(route_resolution["model_forwards"], 0, "route audit model forwards")
+    checks.equal(route_resolution["scientific_fits"], 0, "route audit scientific fits")
+    checks.equal(route_resolution["submission_authorized"], False, "route audit does not authorize submission")
+
     license_state = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_G_LICENSE_STATE_VERIFICATION.json").read_text(encoding="utf-8")
     )
@@ -403,6 +437,7 @@ def main() -> int:
         "actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
         "python scripts/verify_cas_q3_public_reporting_surface.py",
         "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
+        "python scripts/verify_cas_q3_template_route_resolution.py",
         "python scripts/verify_cas_q3_license_state.py",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",

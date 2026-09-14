@@ -208,7 +208,8 @@ fairness, reviewer and Submission Ready audits.
    release inputs and the certified CAS Q3 journal record. The
    [author/declaration intake](P0_I_AUTHOR_DECLARATION_INTAKE.md) now reduces the
    remaining author surface to explicit identity, CRediT, funding, interests,
-   ethics, acknowledgements, AI-assistance, originality and approval fields;
+   ethics, acknowledgements if applicable, AI-assistance, originality and
+   approval fields;
    none is guessed. Its 19-check verifier also compiles the placeholder title
    page successfully as a 2-page PDF, closing the template-syntax gate while
    retaining every factual field as pending. The consolidated intake adds a
@@ -257,6 +258,13 @@ fairness, reviewer and Submission Ready audits.
    the current package contains no such profile, so journal-specific
    equivalence remains open. The private transport is anonymous and neither
    submission- nor distribution-authorized.
+   The later [official template-route resolution](P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md)
+   closes the narrower pre-submission route question: Applied Intelligence
+   itself encourages the current Springer Nature template, and publisher
+   support states that template may be used for any Springer Nature journal.
+   The unavailable legacy `smallcondensed` profile is still not claimed to be
+   style-equivalent. No Editorial Manager compile or author-populated upload is
+   inferred.
    The subsequent [private target-builder acceptance](P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_ACCEPTANCE.md)
    implements the remaining mechanical path from a complete owner-input file
    to an author-populated flat source ZIP, compiled PDF and cover letter. A
@@ -294,9 +302,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 98 repository records plus preserved withheld archive
+  authenticates 102 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 652 checks, without
+  package in 685 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

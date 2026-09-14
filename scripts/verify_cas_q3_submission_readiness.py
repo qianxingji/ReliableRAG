@@ -417,6 +417,34 @@ def main() -> int:
     require(private_builder["final_astra_xhigh_audit_complete"] is False, "final Astra audit remains open", checks)
     require(private_builder["submission_authorized"] is False, "synthetic builder does not authorize submission", checks)
 
+    route_resolution = json.loads(
+        (ROOT / evidence["p0_i_applied_intelligence_template_route_resolution"]).read_text(
+            encoding="utf-8"
+        )
+    )
+    require(
+        route_resolution["decision"]
+        == "PASS_OFFICIAL_PUBLISHER_ACCEPTS_CURRENT_SN_JNL_SUBMISSION_ROUTE_SMALLCONDENSED_STYLE_EQUIVALENCE_UNPROVED",
+        "official publisher template-route resolution is bound",
+        checks,
+    )
+    require(
+        route_resolution["resolution"]["publisher_acceptance_of_current_sn_jnl_submission_route_proved"] is True,
+        "publisher accepts current sn-jnl submission route",
+        checks,
+    )
+    require(
+        route_resolution["resolution"]["journal_specific_smallcondensed_style_equivalence_proved"] is False,
+        "smallcondensed style equivalence is not overclaimed",
+        checks,
+    )
+    require(route_resolution["resolution"]["pre_submission_template_route_gate_closed"] is True, "pre-submission template route is closed", checks)
+    require(route_resolution["resolution"]["submission_system_compile_observed"] is False, "submission-system compile remains unobserved", checks)
+    require(route_resolution["resolution"]["author_populated_package_built"] is False, "author-populated package remains open", checks)
+    require(route_resolution["scientific_payloads_read"] is False, "template-route audit reads no scientific payload", checks)
+    require(route_resolution["model_forwards"] == 0 and route_resolution["scientific_fits"] == 0, "template-route audit executes no model work", checks)
+    require(route_resolution["submission_authorized"] is False, "template-route audit does not authorize submission", checks)
+
     license_state = json.loads((ROOT / evidence["p0_g_license_state_verification"]).read_text(encoding="utf-8"))
     require(license_state["decision"] == "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN", "current license state is bound", checks)
     require(license_state["checks"] == 26, "license-state verifier count", checks)
@@ -508,7 +536,6 @@ def main() -> int:
                 "truthful per-author contribution coverage, funding, interests, ethics and AI-assistance declarations",
                 "originality, exclusive-submission and all-author approval",
                 "author-populated final target package",
-                "retained publisher or Editorial Manager acceptance of the modern sn-jnl route, or a working journal-specific legacy package",
                 "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit",
             ],
         },
