@@ -236,7 +236,7 @@
     "orcid_if_available"
   ],
   "p0_i_author_intake_verifier": "scripts/verify_cas_q3_author_intake.py",
-  "p0_i_author_intake_verifier_sha256": "92f91d00ce862b3c5c55bf683a4767165ef4f0f9201844576aa0ea6cf3a2b409",
+  "p0_i_author_intake_verifier_sha256": "ac8f8ceca40168384878437ce02b2839713dafa0bb8350a86667d9ffa89fe06a",
   "p0_i_author_intake_verification": "docs/cas_q3/P0_I_AUTHOR_INTAKE_VERIFICATION.json",
   "p0_i_author_intake_verification_sha256": "9f77dcac841782420da3d420c0b6652df87198f44d2a5ef75abd871ca5ccf055",
   "p0_i_author_intake_decision": "PASS_AUTHOR_INTAKE_STRUCTURE_AND_PLACEHOLDER_TITLE_PAGE_COMPILE_AUTHOR_FACTS_PENDING",
@@ -269,7 +269,7 @@
   "private_submission_builder": "scripts/build_cas_q3_private_submission_packet.py",
   "private_submission_builder_sha256": "3a362a81dfd763969ddafe72b682ee4d116d92d0c7365ab673420e8bad25b3ed",
   "private_submission_tests": "tests/test_cas_q3_private_submission_packet.py",
-  "private_submission_tests_sha256": "3067a3a0037851eadeb4c8b0d0c15388f4223b1726b7dd3d089ffc32734c5c1a",
+  "private_submission_tests_sha256": "8e55bcff1fa68f969a6fa5f1936a1ada9701eee5d25a441fe962a882f5cfabe8",
   "private_submission_current_decision": "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
   "private_submission_output": "output/private_submission/<version>",
   "private_submission_output_tracked": false,

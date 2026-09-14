@@ -8,6 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from unittest import mock
 
 from scripts.build_cas_q3_private_submission_packet import build, tex
 from scripts.verify_cas_q3_author_intake import executable
@@ -81,6 +82,12 @@ def complete_fixture() -> dict:
 
 
 class PrivateSubmissionPacketTests(unittest.TestCase):
+    def test_executable_lookup_is_portable_without_windows_localappdata(self):
+        with mock.patch("scripts.verify_cas_q3_author_intake.shutil.which", return_value=None):
+            with mock.patch.dict("scripts.verify_cas_q3_author_intake.os.environ", {}, clear=True):
+                with self.assertRaisesRegex(RuntimeError, "missing executable: pdflatex"):
+                    executable("pdflatex")
+
     def test_tex_escapes_identity_metacharacters(self):
         self.assertEqual(
             tex("A_#%&$~^{}" + chr(92)),

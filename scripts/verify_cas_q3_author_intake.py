@@ -27,9 +27,11 @@ def executable(name: str) -> str:
     found = shutil.which(name)
     if found:
         return found
-    local = Path(os.environ["LOCALAPPDATA"]) / "Programs" / "MiKTeX" / "miktex" / "bin" / "x64" / f"{name}.exe"
-    if local.is_file():
-        return str(local)
+    local_app_data = os.environ.get("LOCALAPPDATA")
+    if local_app_data:
+        local = Path(local_app_data) / "Programs" / "MiKTeX" / "miktex" / "bin" / "x64" / f"{name}.exe"
+        if local.is_file():
+            return str(local)
     raise RuntimeError(f"missing executable: {name}")
 
 
