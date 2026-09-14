@@ -31,17 +31,15 @@ jobs:
       - name: Install PDF inspection tools
         run: sudo apt-get update && sudo apt-get install --yes poppler-utils
 
-      - name: Verify sealed aggregate reporting and compiled artifacts
+      - name: Verify committed public reporting and compiled artifacts
         run: |
-          python scripts/verify_cas_q3_claim_statistics.py
-          python scripts/verify_cas_q3_manuscript.py
+          python scripts/verify_cas_q3_public_reporting_surface.py
           python scripts/verify_cas_q3_compiled_pdfs.py
           python scripts/audit_cas_q3_manuscript_length.py
 
       - name: Run portable reporting and privacy tests
         run: |
           python -m unittest \
-            tests.test_cas_q3_aggregate_release \
             tests.test_cas_q3_owner_inputs \
             tests.test_cas_q3_manuscript_length
 

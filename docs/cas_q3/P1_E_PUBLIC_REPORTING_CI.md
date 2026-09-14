@@ -11,15 +11,15 @@ not an end-to-end scientific reproduction workflow.
 
 The Ubuntu job performs the following operations:
 
-- authenticate the sealed aggregate point estimates, intervals and reporting
-  statements without reading per-question outcomes or bootstrap draws;
-- verify all nine manuscript rows, primary comparisons, citations, anonymity
-  and the frozen positive/negative Claim boundary;
+- verify hashes for all eight committed table/figure assets against the tracked
+  aggregate-only asset receipt, while checking the two private aggregate hashes
+  as declarations rather than reading or authenticating the ignored files;
+- verify citations, anonymity and the frozen positive/negative Claim boundary
+  across the committed manuscript and public claim summary;
 - inspect the committed main and supplement PDFs for page count, text markers,
   embedded fonts, Type 3 fonts and build-log failures;
 - rerun the documented Poppler text-length proxy;
-- run the deterministic aggregate-package tests, owner-input privacy/fail-closed
-  tests and manuscript-length tests; and
+- run the owner-input privacy/fail-closed tests and manuscript-length tests; and
 - require the top-level submission gate to exit with code 2 and retain
   `submission_ready=false`, zero fits, zero model forwards and no scientific
   payload reads.
@@ -42,6 +42,9 @@ The public runner does not possess the original dirty workspace, private static
 or pretrained archives, historical ZIP recovery source, model weights, raw
 question/answer ledgers or selected Gold. It therefore does not run or claim:
 
+- the 129-check aggregate statistical-statement verifier, aggregate-package
+  rebuild/tests or the 135-check full manuscript verifier, all of which require
+  ignored aggregate inputs;
 - the 30-check same-host historical-manifest archive verifier;
 - reviewer-map verification that requires the withheld aggregate archive;
 - original saved-parameter or historical-training replay;
