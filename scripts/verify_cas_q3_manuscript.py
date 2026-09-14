@@ -108,6 +108,14 @@ def main() -> int:
     require("no license-bearing archive" in lower, "persistent code archive gap is explicit", checks)
     require("not end-to-end public neural reproduction" in lower, "aggregate versus neural reproduction boundary is explicit", checks)
     require("were not measured" in lower, "missing deployment measurements are explicit", checks)
+    require("byte-identical copy of the complete historical training manifest" in lower, "recovered historical manifest byte copy is explicit", checks)
+    require("no external record independently certifies its timestamp" in lower, "historical archive timestamp limit is explicit", checks)
+    require("original per-estimator fit-time id/matrix receipts" in lower, "original per-estimator fit receipts remain missing", checks)
+    require("an independent original-fit witness remain missing" in lower, "independent original-fit witness remains missing", checks)
+
+    supplement_lower = supplement.lower()
+    require("timestamp has no independent external certification" in supplement_lower, "supplement preserves historical timestamp boundary", checks)
+    require("seven original per-estimator fit-time id/matrix receipts" in supplement_lower, "supplement preserves seven-receipt gap", checks)
 
     prohibited_assertions = [
         r"we propose (?:a )?novel", r"state[- ]of[- ]the[- ]art", r"reader[- ]agnostic",

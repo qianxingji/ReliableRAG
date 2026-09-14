@@ -7,35 +7,35 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "cd3f647c3a3e694741293622ae5f0e953e3db29e585a93748e9fcac96727c6cf",
+      "sha256": "661ab5f8c74f0105ea74259f8703e03730db7a60cfd08323c715bb40555e6d0e",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
       "path": "paper/manuscript.tex",
-      "sha256": "cfd9724b57789c69e36f061adc4637df559412222bfe7ceadd8abf868ed6b837",
+      "sha256": "c8b7c0ca833f1fb5d46a184a1065ea3d7d24daae897942a54c9096eed6c6a3f9",
       "required_marker": "The same joint rule does not pass against the HGB-only policy"
     },
     {
       "path": "paper/supplement.tex",
-      "sha256": "d7f58b3697a92362eee2cb35b4c935e6a420995e8d71d596eef4f1903d994c83",
+      "sha256": "97d2eececeeee84c4d2c5052e1fbd981c41fdda3f9d00ba827c2781f4700a47f",
       "required_marker": "A Mistral extension stopped at protocol review before engineering or model execution."
     },
     {
       "path": "output/pdf/manuscript.pdf",
-      "sha256": "b1798bb2fa1ba2fba323f9dfffe0205e9163067bf7bc519a16af43054f839835"
+      "sha256": "4a41765e0e2f96a6625fe5b351efc413a9758d0a57d207be3dd0cf9b12f821af"
     },
     {
       "path": "output/pdf/supplement.pdf",
-      "sha256": "4499283483f4efdb50e062482b1d0652f2fa7a3656789f1b0417c60cce7c190e"
+      "sha256": "8af66654eac26f14b0a1c7b00281aefbb900fe075b00621ee96c982217683775"
     },
     {
       "path": "paper/COMPILE_RECEIPT.json",
-      "sha256": "a4e39606d3dc8891507d80a244bd46178792c8aaa4a622ddf2bb5c4ef7da85e2",
+      "sha256": "c5d2868012488f3a9ce8e33dbc82db37915787c904986417baf09537b264c5fe",
       "required_marker": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE"
     },
     {
       "path": "paper/MANUSCRIPT_VERIFICATION.json",
-      "sha256": "8a93a3ac67ed4e519c454ac576d89a4faafda0acaca93a85b90bfcaddfad29c1",
+      "sha256": "4638899398464f4863c6e38cfd9fc6e941f26d562c870a1b80ae13b85b9fc622",
       "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
     },
     {
@@ -60,13 +60,13 @@
     },
     {
       "path": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
-      "sha256": "c36e4f7efd80449cab832860c20a506457f7061d68517d8bae31f4e9352d1ec3",
+      "sha256": "bb8159a7fa424ce67a31dbafccd51df70fbfd1e4448d8145e47eed555e5e8b15",
       "required_marker": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE"
     },
     {
       "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT.json",
       "required_marker": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
-      "sha256": "c72d89d16089bb4e9c6aece30e638ea811584f5465f5ee650bf5cd9d469ceb46"
+      "sha256": "c473b4321429f42f871bd26c8b486b24b3a0e9d5da92010b71decab1bf6f6260"
     },
     {
       "path": "docs/cas_q3/P0_H_DISCOVER_COMPUTING_APC_AUDIT.json",
@@ -85,11 +85,11 @@
     },
     {
       "path": "output/target_profiles/discover_computing_preflight/manuscript_12pt_preflight.pdf",
-      "sha256": "c19df5f8a9eca8bcee6329427219aa426be17bbc6ea9aaccde266b3d17eba098"
+      "sha256": "4211f946e1b5ce7469c1e8cf8244eafdf592712a3faec0c8c26f538d7a7e38dd"
     },
     {
       "path": "output/target_profiles/discover_computing_preflight/discover_computing_source_preflight.zip",
-      "sha256": "df77a41a3a222c18d32a96507f0b91fa55694c8a9bdedcfcfccdf1dad551271d"
+      "sha256": "9ab31054895987e4acc218e50e5b033254b318508f937264249a12ce0868c0e2"
     },
     {
       "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",
@@ -185,6 +185,36 @@
       "path": "release/cas_q3_aggregate/THIRD_PARTY_NOTICES.md",
       "required_marker": "including non-commercial licenses",
       "sha256": "7186c75204c5289455fbbb38b60f5196c1a6e797827aa1a39b5e6703f6885c01"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.md",
+      "required_marker": "PARTIAL_PASS_LOCALLY_PRESERVED_MARS_MANIFEST_BYTE_COPY_RECOVERED_NO_INDEPENDENT_TIMESTAMP_OR_FIT_RECEIPTS",
+      "sha256": "991b4aa707b6ed2e75a582e4def7da581525d57b4c44450527c8a87f55d270e1"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.json",
+      "required_marker": "PARTIAL_PASS_LOCALLY_PRESERVED_MARS_MANIFEST_BYTE_COPY_RECOVERED_NO_INDEPENDENT_TIMESTAMP_OR_FIT_RECEIPTS",
+      "sha256": "8c8e69d32074509d16906b46b0526f94a456d8d90d53372bf960b931748309ae"
+    },
+    {
+      "path": "scripts/verify_cas_q3_historical_manifest_archive_recovery.py",
+      "required_marker": "PASS_BOUNDED_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION",
+      "sha256": "b5ff80d428c5cd73b029f63eaa2e91208075ecd38dbf056a2938d83b447c4718"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION.json",
+      "required_marker": "PASS_BOUNDED_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION",
+      "sha256": "eb1630d7d4249f799d1d6dbfbee77f57b0a2646f71221aeaddd4a080630acddc"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_HISTORICAL_MANIFEST_DISCLOSURE_REBUILD_ACCEPTANCE.md",
+      "required_marker": "PASS_HISTORICAL_MANIFEST_DISCLOSURE_REBUILD_FINAL_ASTRA_AND_EXTERNAL_GATES_OPEN",
+      "sha256": "31bae607db447440d2a5f77f51418295e4a77560461a008bc43bb44be39f173d"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_ASTRA_XHIGH_AUDIT.md",
+      "required_marker": "PASS_ASTRA_XHIGH_BYTE_AUTHENTICITY_WITH_TIMESTAMP_AND_ORIGINAL_FIT_GAPS_RETAINED",
+      "sha256": "f89b8ed908b4ad9d133b379f37300fb9690cfd850865b8d38b4880c8669a62b5"
     }
   ],
   "aggregate_release_candidate": {
@@ -217,7 +247,9 @@
       "QWEN"
     ],
     "historical_fit_time_receipts_complete": false,
-    "standalone_deployment_cost_measured": false
+    "standalone_deployment_cost_measured": false,
+    "historical_manifest_locally_preserved_dated_named_package_byte_copy_recovered": true,
+    "historical_manifest_independent_timestamp_certified": false
   },
   "missing_external_gates": [
     "owner_selected_project_license_and_release_policy",

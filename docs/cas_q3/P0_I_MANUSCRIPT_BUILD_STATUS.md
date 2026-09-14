@@ -20,7 +20,7 @@ outcome, bootstrap draw or model file. The two figures were rendered with
 Poppler at 144 dpi and visually inspected; an initial label-overlap defect in
 the recovery/damage figure was corrected before acceptance.
 
-The independent manuscript verifier passes 129 checks, including exact
+The independent manuscript verifier passes 135 checks, including exact
 aggregate-to-table comparisons for all nine overall rows and all 54 dataset and
 retriever rows, primary interval cells, bibliography keys, Claim boundaries and
 anonymity. The journal-neutral abstract has been compressed from 204 to 142
@@ -31,7 +31,9 @@ MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01 compiled the main
 manuscript through BibTeX and the supplement. The final artifacts are an
 11-page main PDF and a 3-page supplement. Their logs contain no fatal error,
 undefined citation/reference or overfull/underfull box. Project-lead review of
-all 14 rendered pages found no clipping, overlap or missing content.
+all 14 rendered pages found no clipping, overlap or missing content. The later
+historical-manifest disclosure rebuild retained the same 11/3-page layout and
+passed another complete visual review.
 
 The [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md) replaces
 the unembedded Base-14 figure fonts with deterministic, hash-pinned,
@@ -49,8 +51,8 @@ verifier no longer asserts that it performed a visual review; the versioned
 acceptance record carries that human inspection evidence.
 
 The [length verification](P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json) records a
-reproducible Poppler/PDF token proxy: 3,948 tokens before the References heading
-and 4,646 in the complete PDF. It is explicitly not a publisher word count. It
+reproducible Poppler/PDF token proxy: 3,951 tokens before the References heading
+and 4,649 in the complete PDF. It is explicitly not a publisher word count. It
 shows a JIS-specific below-average-length risk because that journal publishes a
 5,000--7,500-word average, but it does not convert an average into a hard
 minimum or justify padding the manuscript.
@@ -71,6 +73,11 @@ archive, separates latest and immutable code links, restricts private evidence
 to a journal-approved channel, and rejects an end-to-end public neural
 reproduction interpretation. The current 11-page neutral and 12-page
 provisional profiles are mechanically clean and visually accepted.
+
+The [historical-manifest disclosure rebuild](P0_I_HISTORICAL_MANIFEST_DISCLOSURE_REBUILD_ACCEPTANCE.md)
+records the latest source, PDF, preflight and visual checks. It acknowledges the
+recovered byte copy while preserving the missing independent timestamp and
+fit-event evidence.
 
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches

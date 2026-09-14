@@ -92,6 +92,52 @@ def main() -> int:
     for key, value in expected_p0.items():
         require(evidence.get(key) == value, f"{key} is closed with its exact bounded decision", checks)
 
+    manifest_recovery = json.loads(
+        (ROOT / evidence["p0_e_historical_manifest_archive_recovery_receipt"]).read_text(encoding="utf-8")
+    )
+    require(
+        manifest_recovery["decision"]
+        == "PARTIAL_PASS_LOCALLY_PRESERVED_MARS_MANIFEST_BYTE_COPY_RECOVERED_NO_INDEPENDENT_TIMESTAMP_OR_FIT_RECEIPTS",
+        "historical manifest recovery keeps its bounded partial-pass decision",
+        checks,
+    )
+    require(
+        manifest_recovery["current_manifest"]["byte_identical_to_embedded_manifest"] is True,
+        "locally preserved dated/named package manifest is byte-identical to the current copy",
+        checks,
+    )
+    require(
+        manifest_recovery["evidence_interpretation"]["independent_pre_roa_timestamp_proved"] is False,
+        "historical manifest recovery does not claim an independent timestamp",
+        checks,
+    )
+    require(
+        manifest_recovery["evidence_interpretation"]["independent_original_fit_witness_recovered"] is False,
+        "historical manifest recovery does not claim an original-fit witness",
+        checks,
+    )
+    manifest_verification = json.loads(
+        (ROOT / evidence["p0_e_historical_manifest_archive_recovery_verification"]).read_text(encoding="utf-8")
+    )
+    require(
+        manifest_verification["decision"] == "PASS_BOUNDED_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION",
+        "historical manifest recovery verifier passes",
+        checks,
+    )
+    require(manifest_verification["checks"] == 30, "historical manifest recovery verifier runs 30 checks", checks)
+    require(
+        manifest_recovery["evidence_interpretation"]["seven_per_estimator_fit_time_id_receipts_recovered"] is False
+        and manifest_recovery["evidence_interpretation"]["seven_per_estimator_fit_time_matrix_receipts_recovered"] is False,
+        "historical fit receipts remain missing",
+        checks,
+    )
+    require(
+        manifest_verification["full_historical_content_search_reperformed"] is False,
+        "bounded verifier does not claim an exhaustive historical-content search",
+        checks,
+    )
+    require(manifest_verification["scientific_payloads_read"] is False, "historical manifest verification reads no scientific payload", checks)
+
     discover = json.loads(
         (ROOT / evidence["p0_i_discover_computing_preflight"]).read_text(encoding="utf-8")
     )

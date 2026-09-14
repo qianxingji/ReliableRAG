@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "decision": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS",
-  "check_count": 129,
+  "check_count": 135,
   "abstract_word_count": 142,
   "bibliography_entries": 22,
   "checks": [
@@ -122,6 +122,12 @@
     "persistent code archive gap is explicit",
     "aggregate versus neural reproduction boundary is explicit",
     "missing deployment measurements are explicit",
+    "recovered historical manifest byte copy is explicit",
+    "historical archive timestamp limit is explicit",
+    "original per-estimator fit receipts remain missing",
+    "independent original-fit witness remains missing",
+    "supplement preserves historical timestamp boundary",
+    "supplement preserves seven-receipt gap",
     "prohibited assertion absent: we propose (?:a )?novel",
     "prohibited assertion absent: state[- ]of[- ]the[- ]art",
     "prohibited assertion absent: reader[- ]agnostic",

@@ -54,13 +54,19 @@ source reconstruct 601 fit traces / 518 question groups within a 7,200-trace /
 union and have zero recorded ID overlap with the current five-head development
 questions. V2 used 3,000 earlier questions, also with zero recorded overlap.
 
+One locally preserved pre-ROA-named package contains a complete
+`mars_full/manifest.json` whose 77,147 bytes are identical to the current copy.
+Its internal checksum list pins that member, but no external record pins the
+archive or independently certifies its timestamp. See
+`P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.md`.
+
 The following evidence is missing and must remain explicit:
 
 - one original fit-time ID receipt and one original fit-time matrix receipt for
   each of the seven historical estimators;
 - an independent witness of the original historical fit execution;
-- an independently recovered earlier pin for the complete old `mars_full`
-  manifest; and
+- independent timestamp certification for the recovered complete old
+  `mars_full` manifest copy; and
 - evidence ruling out unknown unlogged activity or pretraining overlap.
 
 Saved-parameter replay and independent arithmetic reproduce the preserved
@@ -126,8 +132,9 @@ The main paper or supplement must state:
 3. recorded-ID exclusion scope and absence of semantic/pretraining
    decontamination;
 4. supervision matching only among the five current heads;
-5. all seven missing historical fit-time ID/matrix receipts, missing independent
-   original-fit witness and missing earlier whole-manifest pin;
+5. all seven missing historical fit-time ID/matrix receipts, the missing
+   independent original-fit witness, and the recovered whole-manifest copy's
+   lack of independent timestamp certification;
 6. saved-parameter replay scope versus original-training replay;
 7. GbV's project-specific paired adaptation and correctness-only outcomes;
 8. pre-outcome action sealing and its authenticated-graph scope;
@@ -147,4 +154,5 @@ Primary authorities: `../cas_q2/P0_1_CLIENT_ACCEPTANCE.md`,
 `../cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md`, and
 `../cas_q2/MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md`.
 
-**CAS Q3 STATUS: NOT READY.** P0-E is closed. P0-F through P0-I remain.
+**CAS Q3 STATUS: NOT READY.** P0-E is closed. P0-G through P0-I remain open;
+P0-F is closed with measurement limits.

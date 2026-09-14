@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_LOCALLY_PRESERVED_MARS_MANIFEST_BYTE_COPY_RECOVERED_NO_INDEPENDENT_TIMESTAMP_OR_FIT_RECEIPTS",
+  "cas_q3_status": "NOT_READY",
+  "audit_date": "2026-09-14",
+  "scope": "read-only recovery and authentication of one packaged mars_full manifest copy; no scientific payload replay",
+  "source_archive": {
+    "path": "E:/paper/ReliableRAG/JKSUCIS_R2_ChatGPT_Web_20260831.zip",
+    "sha256": "4f9fab4d2bdf0d57dbc807ab9494b3b0868230f8d7ff025950fe8d422b055b5e",
+    "bytes": 1993908,
+    "members": 79,
+    "filesystem_last_write_utc": "2026-08-31T07:52:46",
+    "filesystem_time_treated_as_independent_certification": false
+  },
+  "embedded_manifest": {
+    "member": "JKSUCIS_R2_ChatGPT_Web_20260831/evidence/mars_full/manifest.json",
+    "sha256": "5924851c30b18785cb1e2bf6893c74cdc819d3549748760bd44b4ebf7ab4e753",
+    "bytes": 77147,
+    "zip_member_timestamp": "2026-08-30T02:12:24",
+    "zip_member_timestamp_treated_as_independent_certification": false,
+    "phase": "mars_rag_full_method_experiment",
+    "code_version": "mars-rag-full-v1",
+    "declared_file_count": 363,
+    "parsed_file_records": 363
+  },
+  "current_manifest": {
+    "path": "E:/paper/ReliableRAG/outputs/mars_full/manifest.json",
+    "sha256": "5924851c30b18785cb1e2bf6893c74cdc819d3549748760bd44b4ebf7ab4e753",
+    "bytes": 77147,
+    "byte_identical_to_embedded_manifest": true
+  },
+  "internal_archive_pin": {
+    "member": "JKSUCIS_R2_ChatGPT_Web_20260831/MANIFEST_SHA256.txt",
+    "sha256": "bc48d1ebb212cd5a60e034e3cd2bda9dbff220f16e90862f95dfc7f933f4bd80",
+    "listed_manifest_bytes": 77147,
+    "listed_manifest_sha256": "5924851c30b18785cb1e2bf6893c74cdc819d3549748760bd44b4ebf7ab4e753",
+    "pin_is_internal_to_same_archive": true
+  },
+  "search_evidence": {
+    "relevant_zip_archives_scanned": 36,
+    "archives_with_embedded_mars_full_manifest": 1,
+    "git_history_candidate_receipt_or_mars_manifest_paths": 0,
+    "git_history_nearby_spec_paths": [
+      "docs/cas_q2/ROA_MANIFEST_SPEC.json"
+    ],
+    "unreachable_git_objects": {
+      "total": 35,
+      "blobs": 19,
+      "commits": 4,
+      "trees": 12,
+      "recovered_original_fit_receipts": 0,
+      "recovered_external_archive_pins": 0
+    },
+    "external_record_pinning_archive_name_or_sha256_found": false
+  },
+  "evidence_interpretation": {
+    "locally_preserved_dated_named_package_byte_copy_recovered": true,
+    "complete_manifest_content_matches_current_copy": true,
+    "independent_pre_roa_timestamp_proved": false,
+    "original_training_event_authenticated_by_this_archive": false,
+    "seven_per_estimator_fit_time_id_receipts_recovered": false,
+    "seven_per_estimator_fit_time_matrix_receipts_recovered": false,
+    "independent_original_fit_witness_recovered": false,
+    "unknown_unlogged_activity_ruled_out": false
+  },
+  "verification_scope": {
+    "machine_reverified": [
+      "archive_hash_size_and_member_count",
+      "embedded_manifest_hash_size_and_363_records",
+      "internal_checksum_line",
+      "byte_identity_with_current_manifest",
+      "bounded_zip_filename_scan",
+      "git_unreachable_object_counts"
+    ],
+    "not_machine_reverified": [
+      "exhaustive_historical_content_search",
+      "absence_of_every_possible_fit_receipt_or_external_pin",
+      "independent_timestamp_certification",
+      "original_training_event_authentication"
+    ]
+  },
+  "operations": {
+    "scientific_payloads_decoded": false,
+    "model_forwards": 0,
+    "scientific_fits": 0,
+    "gold_or_answer_text_read": false,
+    "sealed_source_files_modified": 0
+  }
+}

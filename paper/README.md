@@ -24,7 +24,7 @@ python scripts\verify_cas_q3_compiled_pdfs.py
 
 MiKTeX produced an 11-page main PDF and 3-page supplement under `output/pdf/`.
 The abstract is 142 words and therefore meets both the inspected 250-word and
-150-word candidate limits. The static verifier passes 129 checks; the compiled verifier passes its log,
+150-word candidate limits. The static verifier passes 135 checks; the compiled verifier passes its log,
 page, text and font checks. Both PDFs have zero nonembedded and zero Type 3
 fonts. Visual review is recorded separately from the mechanical verifier; all
 14 pages of the 142-word-abstract rebuild passed project-lead review. The earlier

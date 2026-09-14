@@ -64,14 +64,14 @@ def main() -> int:
         "mechanical verifier does not self-certify visual review",
     )
     static_receipt = json.loads((ROOT / "paper" / "MANUSCRIPT_VERIFICATION.json").read_text(encoding="utf-8"))
-    checks.equal(static_receipt["check_count"], 129, "static manuscript checks")
+    checks.equal(static_receipt["check_count"], 135, "static manuscript checks")
     checks.equal(static_receipt["abstract_word_count"], 142, "cross-profile abstract words")
     checks.equal(static_receipt["bibliography_entries"], 22, "bibliography entries")
     length_receipt = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json").read_text(encoding="utf-8")
     )
-    checks.equal(length_receipt["pdf_tokens_before_references"], 3948, "pre-reference PDF token proxy")
-    checks.equal(length_receipt["pdf_tokens_full_document"], 4646, "full PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_before_references"], 3951, "pre-reference PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_full_document"], 4649, "full PDF token proxy")
     checks.equal(length_receipt["publisher_word_count_claimed"], False, "proxy is not a publisher word count")
     discover = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_DISCOVER_COMPUTING_PREFLIGHT.json").read_text(encoding="utf-8")
@@ -145,6 +145,28 @@ def main() -> int:
     checks.true("including non-commercial licenses" in notices, "DeBERTa training-data caveat retained")
     checks.true("Do not reduce the training-data caveat" in notices, "unconditional MIT summary is prohibited")
 
+    manifest_recovery = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        manifest_recovery["decision"],
+        "PARTIAL_PASS_LOCALLY_PRESERVED_MARS_MANIFEST_BYTE_COPY_RECOVERED_NO_INDEPENDENT_TIMESTAMP_OR_FIT_RECEIPTS",
+        "historical manifest recovery decision",
+    )
+    checks.equal(manifest_recovery["current_manifest"]["byte_identical_to_embedded_manifest"], True, "historical manifest byte identity")
+    checks.equal(manifest_recovery["evidence_interpretation"]["independent_pre_roa_timestamp_proved"], False, "historical timestamp is not overclaimed")
+    checks.equal(manifest_recovery["evidence_interpretation"]["independent_original_fit_witness_recovered"], False, "independent original-fit witness remains missing")
+    manifest_verification = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION.json").read_text(encoding="utf-8")
+    )
+    checks.equal(manifest_verification["decision"], "PASS_BOUNDED_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION", "historical manifest verifier passes")
+    checks.equal(manifest_verification["checks"], 30, "historical manifest verifier check count")
+    checks.equal(
+        manifest_verification["full_historical_content_search_reperformed"],
+        False,
+        "bounded verifier does not claim an exhaustive historical-content search",
+    )
+
     release = evidence["aggregate_release_candidate"]
     archive = Path(release["local_archive"])
     checks.true(archive.is_file(), "withheld aggregate archive exists locally")
@@ -174,6 +196,8 @@ def main() -> int:
         "does not establish advancement",
         "does not authorize distribution",
         "arithmetic witness rather than a release-ready artifact",
+        "An independently certified timestamp, original-fit authentication",
+        "Five evidence lanes",
         "CAS Q3 STATUS: NOT READY",
     ):
         checks.true(phrase in normalized_manuscript, f"map boundary phrase: {phrase}")

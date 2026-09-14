@@ -53,7 +53,10 @@ fairness, reviewer and Submission Ready audits.
 - Original saved-parameter numerical replay and source audit are accepted within
   the provenance limits in `../cas_q2/P0_1_CLIENT_ACCEPTANCE.md`. Seven original
   per-estimator fit-time ID/matrix receipts and an independent original-fit
-  witness remain missing.
+  witness remain missing. A preserved pre-ROA-named archive now supplies a
+  byte-identical copy of the complete historical `mars_full` manifest, but no
+  external record independently certifies that archive's timestamp; see
+  `P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.md`.
 - All three supervised controls and five fixed empirical policies are complete.
   The actual takeover fit count is 185.
 - The 6,000-question Qwen study, 18,000 retrieval traces, generation/replay,
@@ -93,7 +96,12 @@ fairness, reviewer and Submission Ready audits.
 5. **P0-E -- CLOSED:** The
    [frozen disclosure boundary](P0_E_PROVENANCE_CONTAMINATION_ADAPTATION_FAILURE_DISCLOSURES.md)
    records data/cohort provenance, exact contamination limits, GbV adaptation,
-   missing original fit evidence and the Phi/Mistral terminal exclusions.
+   missing original fit evidence and the Phi/Mistral terminal exclusions. Its
+   [manifest-recovery addendum](P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.md)
+   records the byte-identical packaged copy and the unresolved independent-time
+   boundary without changing the P0-E decision. The final
+   [Astra xhigh authenticity audit](P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_ASTRA_XHIGH_AUDIT.md)
+   accepts that bounded byte claim and retains every timestamp/original-fit gap.
 6. **P0-F -- CLOSED WITH MEASUREMENT LIMITS:** The
    [claim-scoped cost table](P0_F_CLAIM_SCOPED_COST_TABLE.md) reports the shared
    workload, non-additive timers and saved C4 peaks while retaining every missing
@@ -147,7 +155,7 @@ fairness, reviewer and Submission Ready audits.
    [authorization record](P0_I_MANUSCRIPT_AUTHORIZATION.md). The main manuscript,
    supplement, bibliography, generated tables/figures, title-page template and
    cover-letter template now exist under `paper/`; the independent static
-   verifier passes 129 checks. MiKTeX produced an 11-page main PDF and 3-page
+   verifier passes 135 checks. MiKTeX produced an 11-page main PDF and 3-page
    supplement; mechanical log checks and project-lead review of all pages pass.
    The subsequent [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md)
    replaces the unembedded Base-14 figure fonts and isolated Type 3 marker; both
@@ -182,8 +190,8 @@ privacy-preserving local JSON route for those facts without committing them.
    negative Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
    font and complete project-lead visual review; the mechanical verifier no
    longer self-asserts a human inspection.
-   A separate reproducible PDF-length proxy records 3,948 tokens before
-   References and 4,646 overall. This is below JIS's published average, not a
+   A separate reproducible PDF-length proxy records 3,951 tokens before
+   References and 4,649 overall. This is below JIS's published average, not a
    formal minimum failure; no text will be added merely to inflate length.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
@@ -195,6 +203,9 @@ privacy-preserving local JSON route for those facts without committing them.
    missing license-bearing persistent archive, restricted private review route
    and aggregate-versus-neural reproduction boundary. The rebuilt neutral and
    12 pt provisional artifacts passed mechanical and complete visual review.
+   The later historical-manifest disclosure rebuild also passed: the paper now
+   records the byte-identical packaged manifest copy while retaining the lack
+   of independent timestamp certification and all missing original-fit evidence.
 
 ## P1: material competitiveness improvements
 
@@ -202,7 +213,7 @@ privacy-preserving local JSON route for those facts without committing them.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 37 repository records plus the withheld archive and passes 217
+  authenticates 43 repository records plus the withheld archive and passes 250
   checks without scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
