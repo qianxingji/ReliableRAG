@@ -264,7 +264,7 @@
   "owner_inputs_current_decision": "FAIL_CLOSED_OWNER_INPUTS_INCOMPLETE_OR_INVALID",
   "owner_inputs_privacy_boundary": "LOCAL_FILE_GIT_IGNORED_VERIFIER_EMITS_PATHS_AND_COUNTS_ONLY",
   "cas_q3_line_ending_policy": ".gitattributes",
-  "cas_q3_line_ending_policy_sha256": "7835aeb3f509b94cc1c2188c2ac0faf114337b8489d0e7c3a01a3c696d9d3c89",
+  "cas_q3_line_ending_policy_sha256": "eab22d7b1e100e9181888d1d86b686cd2b190b253d49c181de36c3b4a07ef769",
   "private_submission_builder": "scripts/build_cas_q3_private_submission_packet.py",
   "private_submission_builder_sha256": "10494ee46d17ebcdc55f418f054b5e09bc92db64b81b5a927e95afab78d9f103",
   "private_submission_tests": "tests/test_cas_q3_private_submission_packet.py",
