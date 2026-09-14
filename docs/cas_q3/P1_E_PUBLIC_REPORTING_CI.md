@@ -160,6 +160,15 @@ Both execute the 83-test portable suite and retain the fail-closed submission
 gate. CI verifies the committed zero-candidate receipt and parser boundary with
 synthetic PDF inputs; the 238 external PDFs remain a host-local read-only scan.
 
+The deduplicated PDF structure and attachment hardening at
+`140fadb6d09ec51645604dede6688dbdd971636f` passed push run
+[34860901978](https://github.com/qianxingji/ReliableRAG/actions/runs/34860901978)
+and pull-request run
+[34860908583](https://github.com/qianxingji/ReliableRAG/actions/runs/34860908583).
+The 84-test suite verifies fail-closed low-text and attachment cases. The
+committed host receipt records 35 unique PDF hashes with usable text layers,
+35 completed attachment inventories and zero attachment.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
