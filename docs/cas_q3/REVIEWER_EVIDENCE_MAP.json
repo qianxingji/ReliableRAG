@@ -427,6 +427,16 @@
       "path": "tests/test_cas_q3_owner_reply_packet.py",
       "required_marker": "OwnerReplyPacketTests",
       "sha256": "e72a9b38cf901c2661340da438c261153de9787f93870157f1be9a4e8bb03238"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
+      "sha256": "6df0dba8bc67f9ede968bf534d01ef78bbbe5c9c6281e9e2caeeba387259df76"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_ACCEPTANCE.md",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
+      "sha256": "efcd0d893ca9c729a6a0e400d6670ef1a52f391f1cdd0e596f2c16c726748dc8"
     }
   ],
   "aggregate_release_candidate": {

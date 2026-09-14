@@ -289,6 +289,23 @@ def main() -> int:
     checks.equal(hbut_affiliation["department_verified"], False, "HBUT department remains pending")
     checks.equal(hbut_affiliation["personal_values_emitted"], False, "HBUT audit personal-value boundary")
 
+    hbut_cas = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_HBUT_CAS_POLICY_VERIFICATION.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        hbut_cas["decision"],
+        "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
+        "HBUT CAS policy decision",
+    )
+    checks.equal(hbut_cas["verified_scope"]["institution_uses_cas_upgraded_basis_for_sci_ssci"], True, "HBUT upgraded CAS basis")
+    checks.equal(hbut_cas["verified_scope"]["hbut_first_affiliation_requirement"], True, "HBUT first-affiliation requirement")
+    checks.equal(hbut_cas["verified_scope"]["institutional_review_route_identified"], True, "HBUT review route")
+    checks.equal(hbut_cas["verified_scope"]["institution_recognized_cas_edition_year"], None, "HBUT CAS edition remains open")
+    checks.equal(hbut_cas["verified_scope"]["applied_intelligence_current_title_issns_major_category_q3_record_retained"], False, "Applied Intelligence institutional record remains open")
+    checks.equal(hbut_cas["attachment_access"]["attachment_contents_inspected"], False, "CAPTCHA-gated attachments not inferred")
+    checks.equal(hbut_cas["p0_h_closed"], False, "P0-H remains open")
+    checks.equal(hbut_cas["submission_authorized"], False, "HBUT policy evidence does not authorize submission")
+
     private_builder = json.loads(
         (
             ROOT

@@ -154,6 +154,13 @@ fairness, reviewer and Submission Ready audits.
    result. Earlier four-journal comparisons remain historical. The consolidated
    local intake checks field completeness but cannot authenticate the
    institutional record.
+   A later [official HBUT policy verification](P0_H_HBUT_CAS_POLICY_ACCEPTANCE.md)
+   confirms that the university publicly uses the upgraded CAS basis for SCI
+   and SSCI recognition, requires HBUT as first affiliation for reported papers,
+   and assigns natural-science paper recognition review to a named office. The
+   applicable edition/year and a retained Applied Intelligence current-title,
+   ISSN and Computer Science major-category Q3-or-above record remain missing,
+   so P0-H is still open.
    The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
    closes the current-price lookup: the official page lists GBP 1,040, USD
    1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
@@ -267,9 +274,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 86 repository records plus preserved withheld archive
+  authenticates 88 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 563 checks, without
+  package in 580 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

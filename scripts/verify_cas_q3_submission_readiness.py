@@ -367,6 +367,22 @@ def main() -> int:
     require(hbut_affiliation["department_verified"] is False, "author department remains uninferred", checks)
     require(hbut_affiliation["personal_values_emitted"] is False, "affiliation audit emits no personal values", checks)
 
+    hbut_cas = json.loads((ROOT / evidence["p0_h_hbut_cas_policy_verification"]).read_text(encoding="utf-8"))
+    require(
+        hbut_cas["decision"]
+        == "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
+        "official HBUT CAS policy boundary is bound",
+        checks,
+    )
+    require(hbut_cas["verified_scope"]["institution_uses_cas_upgraded_basis_for_sci_ssci"] is True, "HBUT uses upgraded CAS basis", checks)
+    require(hbut_cas["verified_scope"]["hbut_first_affiliation_requirement"] is True, "HBUT first affiliation is required", checks)
+    require(hbut_cas["verified_scope"]["institutional_review_route_identified"] is True, "HBUT review route is identified", checks)
+    require(hbut_cas["verified_scope"]["institution_recognized_cas_edition_year"] is None, "HBUT CAS edition/year remains open", checks)
+    require(hbut_cas["verified_scope"]["applied_intelligence_current_title_issns_major_category_q3_record_retained"] is False, "Applied Intelligence institutional CAS record remains open", checks)
+    require(hbut_cas["attachment_access"]["attachment_contents_inspected"] is False, "CAPTCHA-gated policy attachments were not inferred", checks)
+    require(hbut_cas["p0_h_closed"] is False, "official HBUT policy evidence does not close P0-H", checks)
+    require(hbut_cas["submission_authorized"] is False, "official HBUT policy evidence does not authorize submission", checks)
+
     private_builder = json.loads(
         (ROOT / evidence["p0_i_applied_intelligence_private_submission_builder_results"]).read_text(
             encoding="utf-8"

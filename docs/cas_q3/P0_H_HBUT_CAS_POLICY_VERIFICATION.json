@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
+  "cas_q3_status": "NOT_READY",
+  "verification_date": "2026-09-14",
+  "official_sources": [
+    {
+      "url": "https://kjcy.hbut.edu.cn/info/1054/8295.htm",
+      "title": "关于开展2025年度教师科研工作量考核的通知",
+      "issuer": "湖北工业大学科学技术发展研究院",
+      "published_date": "2025-12-10",
+      "verified_observations": [
+        "SCI和SSCI分区依据中科院升级版",
+        "填报论文需以湖北工业大学为第一署名单位",
+        "科研成果由学院先行审核",
+        "自科类论文认定联系人电话为59750139"
+      ]
+    },
+    {
+      "url": "https://kjcy.hbut.edu.cn/bflm/jgsz/nsjg.htm",
+      "title": "内设机构",
+      "issuer": "湖北工业大学科学技术发展研究院",
+      "verified_observations": [
+        "自然科学纵向项目与成果管理办公室负责自科类论文的统计、分析和审核认定",
+        "学校科学技术发展研究院总机为027-59750149"
+      ]
+    }
+  ],
+  "attachment_access": {
+    "policy_notice_names_two_attachments": true,
+    "attachment_download_requires_captcha": true,
+    "attachment_contents_inspected": false,
+    "attachment_contents_claimed": false
+  },
+  "verified_scope": {
+    "institution_uses_cas_upgraded_basis_for_sci_ssci": true,
+    "hbut_first_affiliation_requirement": true,
+    "institutional_review_route_identified": true,
+    "institution_recognized_cas_edition_year": null,
+    "applied_intelligence_current_title_issns_major_category_q3_record_retained": false,
+    "title_issn_change_treatment_verified": false
+  },
+  "institutional_action": {
+    "responsible_office": "湖北工业大学科学技术发展研究院自然科学纵向项目与成果管理办公室",
+    "request": "确认采用的中科院期刊分区表升级版年份，并留存 Applied Intelligence 当前刊名及 ISSN 在计算机科学大类三区及以上的记录和刊名/ISSN变更处理口径"
+  },
+  "p0_h_closed": false,
+  "submission_authorized": false
+}
