@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "78ca0c5692d1d11d6a97e17ccacfd6b6b4571a381808aa3006aad4930225bdcb",
+      "sha256": "2472aacf60313ee2ad7c703aeef54035978f6d4f14e5a24a3a8567d4bb179954",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "99f6ff923146d071e9c21de9a8c17fd08bb66733ed5baa2a5f311c260235fd6f",
+      "sha256": "aa768b4cc158ea86f5bdeecc9281e887e4a15260fbd911c0bb335c23ba281020",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -701,7 +701,7 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.md",
-      "sha256": "582eee3fddd1f35548f62b1d17921b10e5130e142a9ad1204660e312773a8446",
+      "sha256": "081b9469016d640f319a40deabe0eba4fc47440b31576bb399681b07bfec9599",
       "required_marker": "PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE"
     },
     {
@@ -733,6 +733,26 @@
       "path": "tests/test_cas_q3_oversized_external_closure_evidence.py",
       "sha256": "b9972823d889ba7dd60e3ec569514f10f02ee549a662abe35322d6ee62bd3fee",
       "required_marker": "test_marker_crossing_stream_chunk_boundary_is_detected"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.json",
+      "sha256": "05964f986b4bba897fd8a8e96d8ce81bd852d3265e53ee94e677ea3efd98871d",
+      "required_marker": "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.md",
+      "sha256": "beb4f1e2c93344cf834ba41fed9a18abbda8562c9e9f15c9d6ae189fb7872cbf",
+      "required_marker": "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "scripts/audit_cas_q3_pdf_external_closure_evidence.py",
+      "sha256": "286b5d56c8c8081091cbfb322290379adc1c40ba870d0739a8956812993c819a",
+      "required_marker": "Extract searchable PDF text for a bounded external-closure census"
+    },
+    {
+      "path": "tests/test_cas_q3_pdf_external_closure_evidence.py",
+      "sha256": "8990b95b47477e3568c199d719830689cffa41823a0156b324ec1421d88a7251",
+      "required_marker": "test_zip_pdf_member_is_read_without_archive_extraction"
     }
   ],
   "aggregate_release_candidate": {

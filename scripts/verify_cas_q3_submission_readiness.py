@@ -927,6 +927,45 @@ def main() -> int:
         checks,
     )
 
+    pdf_census = json.loads(
+        (ROOT / evidence["p0_ghi_pdf_external_evidence_census"]).read_text(encoding="utf-8")
+    )
+    require(
+        pdf_census["decision"]
+        == "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES",
+        "PDF external-evidence census passes without candidates",
+        checks,
+    )
+    require(
+        pdf_census["ordinary_pdfs_extracted"] == 100
+        and pdf_census["ordinary_pdf_bytes_processed"] == 20267890
+        and pdf_census["zip_pdf_members_extracted"] == 138
+        and pdf_census["zip_pdf_member_bytes_processed"] == 22448146
+        and pdf_census["extracted_text_bytes_scanned"] == 3448238,
+        "PDF external-evidence coverage is pinned",
+        checks,
+    )
+    require(
+        pdf_census["ordinary_pdfs_skipped"] == 0
+        and pdf_census["zip_pdf_members_skipped"] == 0
+        and pdf_census["candidate_match_count"] == 0
+        and pdf_census["scan_error_count"] == 0,
+        "PDF external-evidence census retains zero skips, candidates and errors",
+        checks,
+    )
+    require(
+        pdf_census["bounded_interpretation"]["pdf_image_ocr_performed"] is False
+        and pdf_census["bounded_interpretation"]["embedded_attachments_scanned"] is False
+        and pdf_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False,
+        "PDF external-evidence result remains text-layer bounded",
+        checks,
+    )
+    require(
+        pdf_census["submission_authorized"] is False,
+        "PDF external-evidence census does not authorize submission",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

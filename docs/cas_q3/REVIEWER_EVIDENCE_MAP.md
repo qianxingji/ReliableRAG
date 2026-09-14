@@ -106,6 +106,10 @@ The subsequent
 covers all 26 oversized ordinary text files and 12 oversized ZIP text members,
 1,489,169,218 bytes in total, with zero candidate, skip or error. Unsupported
 binary formats and locations outside the roots remain unproved.
+The later [PDF census](P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.md) extracts all 100
+ordinary PDFs and 138 PDF members in the ZIPs, searching 3,448,238 text bytes
+with zero candidate, skip or error. Page-image OCR, embedded attachments, other
+binary formats and locations outside the roots remain unproved.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -173,6 +177,9 @@ artifact or close P0-I.
    with the same roots to cover the files excluded only by the primary pass's
    5,000,000-byte threshold. The accepted extension streams all 38 such items
    without extraction and returns zero candidate, skip or error.
+   Run `python scripts/audit_cas_q3_pdf_external_closure_evidence.py` with the
+   same roots to repeat the separate text-layer PDF pass. Its scope is
+   `pdftotext` extraction and excludes page-image OCR and attachments.
 
 ## Claim-to-evidence routing
 

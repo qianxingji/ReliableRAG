@@ -39,3 +39,9 @@ A subsequent, separately versioned
 covered all 26 oversized ordinary text files and all 12 oversized ZIP text
 members with zero candidate, skip or error. This original receipt remains the
 unaltered record of the first bounded pass.
+
+A further [PDF text-layer census](P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.md)
+extracted all 100 ordinary PDFs and all 138 PDF members in the scanned ZIPs,
+again with zero candidate, skip or error. OCR, embedded attachments, other
+binary formats and locations outside the roots remain outside the combined
+negative result.

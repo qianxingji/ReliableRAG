@@ -343,6 +343,25 @@ def main() -> int:
     checks.equal(oversized_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "oversized census does not claim global absence")
     checks.equal(oversized_census["submission_authorized"], False, "oversized census does not authorize submission")
 
+    pdf_census = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(pdf_census["decision"], "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES", "PDF external-evidence census decision")
+    checks.equal(pdf_census["ordinary_pdfs_extracted"], 100, "ordinary PDFs text-extracted")
+    checks.equal(pdf_census["ordinary_pdf_bytes_processed"], 20267890, "ordinary PDF bytes processed")
+    checks.equal(pdf_census["zip_pdf_members_extracted"], 138, "ZIP PDF members text-extracted")
+    checks.equal(pdf_census["zip_pdf_member_bytes_processed"], 22448146, "ZIP PDF member bytes processed")
+    checks.equal(pdf_census["extracted_text_bytes_scanned"], 3448238, "PDF extracted text bytes searched")
+    checks.equal(pdf_census["ordinary_pdfs_skipped"], 0, "ordinary PDF skips")
+    checks.equal(pdf_census["zip_pdf_members_skipped"], 0, "ZIP PDF member skips")
+    checks.equal(pdf_census["candidate_match_count"], 0, "PDF external-evidence candidates")
+    checks.equal(pdf_census["scan_error_count"], 0, "PDF external-evidence scan errors")
+    checks.equal(pdf_census["bounded_interpretation"]["pdf_image_ocr_performed"], False, "PDF census does not claim image OCR")
+    checks.equal(pdf_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "PDF census does not claim global absence")
+    checks.equal(pdf_census["submission_authorized"], False, "PDF census does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )
@@ -769,6 +788,7 @@ def main() -> int:
         "tests.test_cas_q3_original_fit_receipt_census",
         "tests.test_cas_q3_external_closure_evidence_census",
         "tests.test_cas_q3_oversized_external_closure_evidence",
+        "tests.test_cas_q3_pdf_external_closure_evidence",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
