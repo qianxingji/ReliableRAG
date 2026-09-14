@@ -151,6 +151,15 @@ Submission Ready gate. The runner verifies the committed receipt and streaming
 implementation with synthetic files; it does not possess or rescan the three
 external Windows evidence roots.
 
+The PDF text-layer census at
+`512b3ee40624abf8c19785a607c641e67e0585a5` passed push run
+[34859398928](https://github.com/qianxingji/ReliableRAG/actions/runs/34859398928)
+and pull-request run
+[34859404889](https://github.com/qianxingji/ReliableRAG/actions/runs/34859404889).
+Both execute the 83-test portable suite and retain the fail-closed submission
+gate. CI verifies the committed zero-candidate receipt and parser boundary with
+synthetic PDF inputs; the 238 external PDFs remain a host-local read-only scan.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
