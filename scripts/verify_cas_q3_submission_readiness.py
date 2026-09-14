@@ -392,6 +392,40 @@ def main() -> int:
     require(hbut_request["request_sent"] is False, "HBUT institutional request remains unsent", checks)
     require(hbut_request["institutional_response_received"] is False, "HBUT institutional response remains pending", checks)
     require(hbut_request["institutional_response_retained"] is False, "HBUT institutional response is not fabricated", checks)
+    require(
+        hbut_request["public_corroboration_context"]["public_2025_major_category_q3_supported"] is True
+        and hbut_request["public_corroboration_context"]["public_2025_minor_category_q4_supported"] is True,
+        "institutional request gives the major-Q3/minor-Q4 public context",
+        checks,
+    )
+    require(
+        hbut_request["public_corroboration_context"]["accepted_as_hbut_record"] is False,
+        "institutional request does not elevate public corroboration",
+        checks,
+    )
+    require(
+        hbut_request["central_notice_attachments"]["count"] == 2
+        and hbut_request["central_notice_attachments"]["download_requires_captcha"] is True,
+        "institutional request retains the two-attachment CAPTCHA boundary",
+        checks,
+    )
+    require(
+        hbut_request["central_notice_attachments"]["contents_inspected"] is False
+        and hbut_request["central_notice_attachments"]["contents_inferred"] is False,
+        "institutional request does not infer unread attachment contents",
+        checks,
+    )
+    require(
+        hbut_request["private_response_import"]["unified_preflight_command"]
+        == "python scripts/verify_cas_q3_external_closure_inputs.py",
+        "institutional response is routed into the unified private preflight",
+        checks,
+    )
+    require(
+        hbut_request["private_response_import"]["client_content_audit_required_after_structural_pass"] is True,
+        "institutional response still requires client content audit",
+        checks,
+    )
     require(hbut_request["p0_g_closed"] is False and hbut_request["p0_h_closed"] is False and hbut_request["p0_i_closed"] is False, "request does not close P0 gates", checks)
     require(hbut_request["submission_authorized"] is False, "request does not authorize submission", checks)
 

@@ -9,6 +9,18 @@
     "https://kjcy.hbut.edu.cn/bflm/jgsz/nsjg.htm",
     "https://lxy.hbut.edu.cn/info/1112/3890.htm"
   ],
+  "public_corroboration_context": {
+    "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.json",
+    "public_2025_major_category_q3_supported": true,
+    "public_2025_minor_category_q4_supported": true,
+    "accepted_as_hbut_record": false
+  },
+  "central_notice_attachments": {
+    "count": 2,
+    "download_requires_captcha": true,
+    "contents_inspected": false,
+    "contents_inferred": false
+  },
   "requested_evidence": {
     "institution_recognized_cas_edition_year": true,
     "applied_intelligence_current_title_and_issns": true,
@@ -23,6 +35,13 @@
     "college_previous_publication_year_rule_applies_university_wide": true,
     "candidate_2025_report_if_published_2026": true,
     "official_cas_platform_screenshot_or_export": true
+  },
+  "private_response_import": {
+    "owner_input": "docs/cas_q3/OWNER_INPUTS.local.json",
+    "cas_record_input": "docs/cas_q3/INSTITUTIONAL_CAS_RECORD.local.json",
+    "release_record_input": "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json",
+    "unified_preflight_command": "python scripts/verify_cas_q3_external_closure_inputs.py",
+    "client_content_audit_required_after_structural_pass": true
   },
   "request_sent": false,
   "institutional_response_received": false,
