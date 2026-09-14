@@ -13,6 +13,15 @@ The first corrected public-surface acceptance also remains retained in push run
 and pull-request run
 [34801836852](https://github.com/qianxingji/ReliableRAG/actions/runs/34801836852).
 
+The Apache-aware aggregate V2 and rebuilt Applied Intelligence disclosure were
+accepted on commit `e81c278636f4eebf0f68ad23f460eae7d74893b2` by push run
+[34806104442](https://github.com/qianxingji/ReliableRAG/actions/runs/34806104442)
+and pull-request run
+[34806106663](https://github.com/qianxingji/ReliableRAG/actions/runs/34806106663).
+Both completed successfully on 2026-09-14. The workflow authenticates the
+committed public reporting surface and fail-closed release wording; the
+withheld V2 archive and its private-input tests remain outside the runner.
+
 **CAS Q3 STATUS: NOT READY.** The workflow
 `.github/workflows/public-reporting-audit.yml` gives the draft PR a portable,
 reviewer-visible check over committed aggregate and manuscript artifacts. It is
@@ -56,9 +65,9 @@ The public runner does not possess the original dirty workspace, private static
 or pretrained archives, historical ZIP recovery source, model weights, raw
 question/answer ledgers or selected Gold. It therefore does not run or claim:
 
-- the 129-check aggregate statistical-statement verifier, aggregate-package
-  rebuild/tests or the 138-check full manuscript verifier, all of which require
-  ignored aggregate inputs;
+- the 129-check aggregate statistical-statement verifier, either aggregate-
+  package rebuild/test suite or the 139-check full manuscript verifier, all of
+  which require ignored aggregate inputs;
 - the 30-check same-host historical-manifest archive verifier;
 - reviewer-map verification that requires the withheld aggregate archive;
 - original saved-parameter or historical-training replay;

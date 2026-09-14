@@ -241,7 +241,7 @@ fairness, reviewer and Submission Ready audits.
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
   authenticates 70 repository records plus both preserved withheld archive
-  generations and passes 424 checks without scientific payload reads, fits or
+  generations and passes 426 checks without scientific payload reads, fits or
   model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -260,7 +260,7 @@ fairness, reviewer and Submission Ready audits.
   [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
   failure, the corrected 49-check committed-surface verifier and the 38-check
   committed Applied Intelligence modern-preflight verifier. GitHub push and
-  pull-request runs both pass through commit `20e099e`. Private aggregate/statistical,
+  pull-request runs both pass through commit `e81c278`. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
   outside this CI.
 
