@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "decision": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS",
-  "check_count": 135,
-  "abstract_word_count": 142,
+  "check_count": 138,
+  "abstract_word_count": 155,
   "bibliography_entries": 22,
   "checks": [
     "asset receipt passes",
@@ -19,7 +19,9 @@
     "asset hash matches: paper/tables/retriever_breakdown.tex",
     "asset hash matches: paper/tables/study_design.tex",
     "abstract exists",
-    "abstract is at most 150 words",
+    "abstract meets Applied Intelligence 150-250 word range",
+    "Applied Intelligence keywords exist",
+    "Applied Intelligence has 4-6 keywords",
     "manuscript contains citations",
     "all citation keys resolve",
     "all bibliography records are used",
@@ -117,7 +119,8 @@
     "abstract states failed ROA advancement",
     "abstract bounds method novelty",
     "single-reader limitation is explicit",
-    "license-dependent release boundary is explicit",
+    "release-review boundary is explicit",
+    "project-code license is explicit",
     "data and code availability section is explicit",
     "persistent code archive gap is explicit",
     "aggregate versus neural reproduction boundary is explicit",
@@ -144,7 +147,7 @@
   "limitations": [
     "compiled_PDF_mechanical_and_visual_checks_are_recorded_separately",
     "author_declarations_pending",
-    "project_license_pending",
+    "license_holder_year_and_release_review_pending",
     "CAS_Q3_journal_qualification_pending",
     "final_Astra_xhigh_rebind_pending_after_target_specific_conversion"
   ]

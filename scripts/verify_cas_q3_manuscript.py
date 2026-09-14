@@ -43,7 +43,11 @@ def main() -> int:
     abstract = re.search(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", manuscript, re.S)
     require(abstract is not None, "abstract exists", checks)
     abstract_words = len(re.findall(r"[A-Za-z0-9][A-Za-z0-9.+%-]*", abstract.group(1)))
-    require(abstract_words <= 150, "abstract is at most 150 words", checks)
+    require(150 <= abstract_words <= 250, "abstract meets Applied Intelligence 150-250 word range", checks)
+    keyword_match = re.search(r"\\textbf\{Keywords:\}\s*(.+)", manuscript)
+    require(keyword_match is not None, "Applied Intelligence keywords exist", checks)
+    keywords = [item.strip() for item in keyword_match.group(1).split(";")]
+    require(4 <= len(keywords) <= 6 and all(keywords), "Applied Intelligence has 4-6 keywords", checks)
 
     bib_keys = set(re.findall(r"^@\w+\{([^,]+),", bib, re.M))
     cited: set[str] = set()
@@ -103,7 +107,8 @@ def main() -> int:
     require("does not advance over the two-signal policy" in lower, "abstract states failed ROA advancement", checks)
     require("rather than a new selector architecture" in lower, "abstract bounds method novelty", checks)
     require("one 3b-parameter qwen reader" in lower, "single-reader limitation is explicit", checks)
-    require("public distribution is withheld" in lower, "license-dependent release boundary is explicit", checks)
+    require("public distribution remains withheld" in lower, "release-review boundary is explicit", checks)
+    require("apache license 2.0 is present for project-authored code" in lower, "project-code license is explicit", checks)
     require("data and code availability" in lower, "data and code availability section is explicit", checks)
     require("no license-bearing archive" in lower, "persistent code archive gap is explicit", checks)
     require("not end-to-end public neural reproduction" in lower, "aggregate versus neural reproduction boundary is explicit", checks)
@@ -148,7 +153,7 @@ def main() -> int:
         "limitations": [
             "compiled_PDF_mechanical_and_visual_checks_are_recorded_separately",
             "author_declarations_pending",
-            "project_license_pending",
+            "license_holder_year_and_release_review_pending",
             "CAS_Q3_journal_qualification_pending",
             "final_Astra_xhigh_rebind_pending_after_target_specific_conversion",
         ],

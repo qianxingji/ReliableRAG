@@ -50,8 +50,10 @@
     "substantive_llm_use_documentation_required": true
   },
   "current_package": {
-    "journal_neutral_abstract_words": 142,
-    "abstract_requirement_met": false,
+    "journal_neutral_abstract_words": 155,
+    "abstract_requirement_met": true,
+    "journal_neutral_keyword_count": 5,
+    "keyword_requirement_met": true,
     "applied_intelligence_template_built": false,
     "target_specific_pdf_verified": false,
     "submission_authorized": false

@@ -64,14 +64,16 @@ def main() -> int:
         "mechanical verifier does not self-certify visual review",
     )
     static_receipt = json.loads((ROOT / "paper" / "MANUSCRIPT_VERIFICATION.json").read_text(encoding="utf-8"))
-    checks.equal(static_receipt["check_count"], 135, "static manuscript checks")
-    checks.equal(static_receipt["abstract_word_count"], 142, "cross-profile abstract words")
+    checks.equal(static_receipt["check_count"], 138, "static manuscript checks")
+    checks.equal(static_receipt["abstract_word_count"], 155, "Applied Intelligence abstract words")
     checks.equal(static_receipt["bibliography_entries"], 22, "bibliography entries")
     length_receipt = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json").read_text(encoding="utf-8")
     )
-    checks.equal(length_receipt["pdf_tokens_before_references"], 3951, "pre-reference PDF token proxy")
-    checks.equal(length_receipt["pdf_tokens_full_document"], 4649, "full PDF token proxy")
+    checks.equal(length_receipt["decision"], "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE", "length audit decision")
+    checks.equal(length_receipt["pdf_tokens_before_references"], 3978, "pre-reference PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_full_document"], 4676, "full PDF token proxy")
+    checks.equal(length_receipt["applied_intelligence_abstract_requirement_met"], True, "Applied Intelligence abstract range")
     checks.equal(length_receipt["publisher_word_count_claimed"], False, "proxy is not a publisher word count")
     discover = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_DISCOVER_COMPUTING_PREFLIGHT.json").read_text(encoding="utf-8")
@@ -158,6 +160,10 @@ def main() -> int:
     checks.equal(target["journal"]["electronic_issn"], "1573-7497", "Applied Intelligence electronic ISSN")
     checks.equal(target["publication_route"]["owner_selected"], "SUBSCRIPTION_NON_OPEN_ACCESS", "subscription route")
     checks.equal(target["publication_route"]["mandatory_apc_under_selected_route"], False, "subscription route has no mandatory APC")
+    checks.equal(target["current_package"]["journal_neutral_abstract_words"], 155, "target profile abstract count")
+    checks.equal(target["current_package"]["abstract_requirement_met"], True, "target profile abstract requirement")
+    checks.equal(target["current_package"]["journal_neutral_keyword_count"], 5, "target profile keyword count")
+    checks.equal(target["current_package"]["keyword_requirement_met"], True, "target profile keyword requirement")
     checks.equal(target["owner_cas_rule"]["independent_institutional_record_retained"], False, "institutional CAS record remains open")
     checks.equal(target["submission_authorized"], False, "target audit does not authorize submission")
     applied_policy = json.loads(

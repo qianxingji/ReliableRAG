@@ -4,7 +4,7 @@
   "engine": "MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01",
   "artifacts": {
     "output/pdf/manuscript.pdf": {
-      "sha256": "4a41765e0e2f96a6625fe5b351efc413a9758d0a57d207be3dd0cf9b12f821af",
+      "sha256": "5e014ea551a086150edc453d6877585256019664977c994ce427e65c3ebdd5d8",
       "pages": 11,
       "page_size": "612 x 792 pts (letter)",
       "pdf_version": "1.5",
@@ -13,7 +13,7 @@
       "type3_fonts": []
     },
     "output/pdf/supplement.pdf": {
-      "sha256": "8af66654eac26f14b0a1c7b00281aefbb900fe075b00621ee96c982217683775",
+      "sha256": "c7486289ee67443786ce9ffe755169621a728b237f4c31de7ded771603e072d2",
       "pages": 3,
       "page_size": "612 x 792 pts (letter)",
       "pdf_version": "1.5",
@@ -24,14 +24,14 @@
   },
   "logs": {
     "output/pdf/manuscript.log": {
-      "sha256": "79ea4ca856618e1d0ea8b5b354e891242686928c4a3fa233357b3129ebe89e6a",
+      "sha256": "6d15484c17ea6e7f886fb22419e7af6fee004dfd29e3ba2aa18b68bda08f3de2",
       "fatal_errors": 0,
       "undefined_citations_or_references": 0,
       "overfull_or_underfull_boxes": 0,
       "known_nonfatal_infinite_glue_notice": false
     },
     "output/pdf/supplement.log": {
-      "sha256": "e1f43bb66b7be6b200211082d69161a6defecc508731e75f8b490b033c6341bf",
+      "sha256": "6cdf1e42e0a06d262588c20b7c650569af75e7a55c80d7593a407654e8e0bba5",
       "fatal_errors": 0,
       "undefined_citations_or_references": 0,
       "overfull_or_underfull_boxes": 0,

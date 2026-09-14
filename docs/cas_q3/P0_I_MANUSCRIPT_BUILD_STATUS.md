@@ -20,13 +20,13 @@ outcome, bootstrap draw or model file. The two figures were rendered with
 Poppler at 144 dpi and visually inspected; an initial label-overlap defect in
 the recovery/damage figure was corrected before acceptance.
 
-The independent manuscript verifier passes 135 checks, including exact
+The independent manuscript verifier now passes 138 checks, including exact
 aggregate-to-table comparisons for all nine overall rows and all 54 dataset and
-retriever rows, primary interval cells, bibliography keys, Claim boundaries and
-anonymity. The journal-neutral abstract has been compressed from 204 to 142
-words while retaining the positive comparison, both negative decisions,
-adjusted ranges, within-reader boundary and non-novelty statement. This closes
-the inspected 150-word and 250-word candidate limits before target conversion.
+retriever rows, primary interval cells, bibliography keys, Claim boundaries,
+anonymity, and the Applied Intelligence abstract and keyword ranges. The
+journal-neutral abstract is 155 words and has five keywords while retaining the
+positive comparison, both negative decisions, adjusted ranges, within-reader
+boundary and non-novelty statement.
 MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01 compiled the main
 manuscript through BibTeX and the supplement. The final artifacts are an
 11-page main PDF and a 3-page supplement. Their logs contain no fatal error,
@@ -51,11 +51,10 @@ verifier no longer asserts that it performed a visual review; the versioned
 acceptance record carries that human inspection evidence.
 
 The [length verification](P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json) records a
-reproducible Poppler/PDF token proxy: 3,951 tokens before the References heading
-and 4,649 in the complete PDF. It is explicitly not a publisher word count. It
-shows a JIS-specific below-average-length risk because that journal publishes a
-5,000--7,500-word average, but it does not convert an average into a hard
-minimum or justify padding the manuscript.
+reproducible Poppler/PDF token proxy: 3,978 tokens before the References heading
+and 4,676 in the complete PDF. It is explicitly not a publisher word count.
+The inspected Applied Intelligence guidance states no general full-manuscript
+word limit, so these counts are descriptive and do not justify padding.
 
 The [Discover Computing preflight](P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.md)
 is a non-submittable engineering dry run for the provisional editorial-fit
@@ -75,16 +74,21 @@ reproduction interpretation. The current 11-page neutral and 12-page
 provisional profiles are mechanically clean and visually accepted.
 
 The [historical-manifest disclosure rebuild](P0_I_HISTORICAL_MANIFEST_DISCLOSURE_REBUILD_ACCEPTANCE.md)
-records the latest source, PDF, preflight and visual checks. It acknowledges the
+records its exact historical source, PDF, preflight and visual checks. It acknowledges the
 recovered byte copy while preserving the missing independent timestamp and
 fit-event evidence.
+
+The [Applied Intelligence abstract and keyword acceptance](P0_I_APPLIED_INTELLIGENCE_ABSTRACT_KEYWORD_ACCEPTANCE.md)
+binds the current 155-word, five-keyword journal-neutral source and its 11+3
+page rebuild. Target-template conversion and a new Astra xhigh artifact-bound
+audit remain open.
 
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches
 have been exercised successfully in the takeover environment.
 
-Author identities/declarations, project-license selection and the applicable
-institutional CAS Q3 journal rule remain owner/institution inputs. The main
+Complete author identities/declarations, legal holder/year and release review,
+and the applicable institutional CAS Q3 record remain owner/institution inputs. The main
 scientific rejection risks remain the single accepted reader, lack of a new
 algorithm, no joint advantage over HGB-only, missing original fit-time evidence
 and unmeasured standalone deployment cost.

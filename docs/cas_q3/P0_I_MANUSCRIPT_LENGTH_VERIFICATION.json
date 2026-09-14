@@ -1,29 +1,25 @@
 {
   "schema_version": 1,
-  "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE",
-  "manuscript_pdf_sha256": "4a41765e0e2f96a6625fe5b351efc413a9758d0a57d207be3dd0cf9b12f821af",
+  "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE",
+  "manuscript_pdf_sha256": "5e014ea551a086150edc453d6877585256019664977c994ce427e65c3ebdd5d8",
   "count_method": "Poppler pdftotext -layout plus documented regex tokenization",
-  "pdf_tokens_before_references": 3951,
-  "pdf_tokens_full_document": 4649,
-  "static_abstract_word_count": 142,
-  "journal_of_information_science_official_average_words": [
-    5000,
-    7500
+  "pdf_tokens_before_references": 3978,
+  "pdf_tokens_full_document": 4676,
+  "static_abstract_word_count": 155,
+  "applied_intelligence_abstract_word_range": [
+    150,
+    250
   ],
-  "journal_of_information_science_official_average_printed_pages": [
-    8,
-    12
-  ],
-  "journal_of_information_science_current_risk": "CURRENT_PROXY_BELOW_PUBLISHED_AVERAGE_NOT_A_FORMAL_MINIMUM_FAILURE",
+  "applied_intelligence_abstract_requirement_met": true,
   "publisher_word_count_claimed": false,
   "texcount_used": false,
   "limitations": [
     "This is a reproducible PDF-text token proxy, not the journal submission system's official word count.",
     "The PDF proxy includes visible titles, captions, tables and page text before References.",
     "The full-document proxy includes the reference list.",
-    "The official 5,000-7,500 wording describes average paper length, not a stated hard minimum."
+    "Applied Intelligence's inspected guidelines specify the abstract range but no general full-manuscript word limit."
   ],
-  "official_requirement_url": "https://journals.sagepub.com/author-instructions/jis",
+  "official_requirement_url": "https://link.springer.com/journal/10489/submission-guidelines",
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0,

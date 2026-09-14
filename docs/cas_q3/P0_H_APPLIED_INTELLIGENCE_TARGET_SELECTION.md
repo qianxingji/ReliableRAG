@@ -66,9 +66,9 @@ Mistral and rejected ROA results remain part of the record.
 
 The current submission guidelines require or state:
 
-- a 150--250 word abstract; the current journal-neutral abstract has 142 words
-  and therefore needs a content-preserving extension;
-- four to six keywords;
+- a 150--250 word abstract; the journal-neutral source now has 155 words and
+  passes this range without changing the Claim boundary;
+- four to six keywords; the journal-neutral source now lists five;
 - LaTeX using the Springer macro package and `smallcondensed` option, with all
   editable source files and a PDF;
 - no subfolders in the uploaded LaTeX package;

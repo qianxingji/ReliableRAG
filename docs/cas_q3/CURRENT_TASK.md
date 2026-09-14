@@ -165,7 +165,7 @@ fairness, reviewer and Submission Ready audits.
    [authorization record](P0_I_MANUSCRIPT_AUTHORIZATION.md). The main manuscript,
    supplement, bibliography, generated tables/figures, title-page template and
    cover-letter template now exist under `paper/`; the independent static
-   verifier passes 135 checks. MiKTeX produced an 11-page main PDF and 3-page
+   verifier now passes 138 checks. MiKTeX produced an 11-page main PDF and 3-page
    supplement; mechanical log checks and project-lead review of all pages pass.
    The subsequent [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md)
    replaces the unembedded Base-14 figure fonts and isolated Type 3 marker; both
@@ -200,14 +200,18 @@ fairness, reviewer and Submission Ready audits.
    declarations source and cover-letter draft. It refuses incomplete inputs,
    does not overwrite a prior directory and emits only a redacted build receipt;
    generated drafts remain unverified and submission-unauthorized.
-   The journal-neutral abstract is 142 words. It passed the former maximum-only
-   profiles but is below Applied Intelligence's 150-word minimum and must be
-   extended without changing the Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
+   The journal-neutral abstract is now 155 words and has five keywords, meeting
+   Applied Intelligence's inspected count requirements without changing the
+   Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
    font and complete project-lead visual review; the mechanical verifier no
    longer self-asserts a human inspection.
-   A separate reproducible PDF-length proxy records 3,951 tokens before
-   References and 4,649 overall. This is below JIS's published average, not a
-   formal minimum failure; no text will be added merely to inflate length.
+   A separate reproducible PDF-length proxy records 3,978 tokens before
+   References and 4,676 overall. Applied Intelligence's inspected guidelines
+   specify no general full-manuscript word limit; these are reproducible proxy
+   counts rather than publisher counts.
+   The [Applied Intelligence abstract and keyword acceptance](P0_I_APPLIED_INTELLIGENCE_ABSTRACT_KEYWORD_ACCEPTANCE.md)
+   binds that edit, both current PDFs and the complete 14-page visual review
+   while retaining the target-template and final Astra gates.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific
@@ -228,7 +232,7 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 51 repository records plus the withheld archive and passes 307
+  authenticates 52 repository records plus the withheld archive and passes 317
   checks without scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

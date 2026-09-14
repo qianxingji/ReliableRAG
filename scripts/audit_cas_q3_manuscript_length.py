@@ -47,30 +47,29 @@ def audit() -> dict[str, object]:
     static = json.loads(STATIC_RECEIPT.read_text(encoding="utf-8"))
     pre_reference = token_count(text_before_references(text))
     full = token_count(text)
-    if static["abstract_word_count"] > 150:
-        raise AssertionError("abstract exceeds the inspected 150-word ceiling")
+    if not 150 <= static["abstract_word_count"] <= 250:
+        raise AssertionError("abstract is outside the Applied Intelligence 150-250 word range")
     if pre_reference >= full:
         raise AssertionError("reference split did not reduce the full PDF count")
     return {
         "schema_version": 1,
-        "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_JIS_BELOW_AVERAGE_DISCLOSURE",
+        "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE",
         "manuscript_pdf_sha256": sha256(PDF),
         "count_method": "Poppler pdftotext -layout plus documented regex tokenization",
         "pdf_tokens_before_references": pre_reference,
         "pdf_tokens_full_document": full,
         "static_abstract_word_count": static["abstract_word_count"],
-        "journal_of_information_science_official_average_words": [5000, 7500],
-        "journal_of_information_science_official_average_printed_pages": [8, 12],
-        "journal_of_information_science_current_risk": "CURRENT_PROXY_BELOW_PUBLISHED_AVERAGE_NOT_A_FORMAL_MINIMUM_FAILURE",
+        "applied_intelligence_abstract_word_range": [150, 250],
+        "applied_intelligence_abstract_requirement_met": True,
         "publisher_word_count_claimed": False,
         "texcount_used": False,
         "limitations": [
             "This is a reproducible PDF-text token proxy, not the journal submission system's official word count.",
             "The PDF proxy includes visible titles, captions, tables and page text before References.",
             "The full-document proxy includes the reference list.",
-            "The official 5,000-7,500 wording describes average paper length, not a stated hard minimum.",
+            "Applied Intelligence's inspected guidelines specify the abstract range but no general full-manuscript word limit.",
         ],
-        "official_requirement_url": "https://journals.sagepub.com/author-instructions/jis",
+        "official_requirement_url": "https://link.springer.com/journal/10489/submission-guidelines",
         "scientific_payloads_read": False,
         "model_forwards": 0,
         "scientific_fits": 0,
