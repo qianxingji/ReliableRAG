@@ -5,7 +5,8 @@
   "component_inputs": [
     "docs/cas_q3/OWNER_INPUTS.local.json",
     "docs/cas_q3/INSTITUTIONAL_CAS_RECORD.local.json",
-    "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json"
+    "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json",
+    "docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json"
   ],
   "cross_checks": [
     "target title and both ISSNs",
@@ -14,7 +15,9 @@
     "recognition-date and title/ISSN-change rules",
     "Apache-2.0 project-code selection",
     "legal copyright holder and year/range",
-    "holder licensing authority and institutional review state"
+    "holder licensing authority and institutional release-review state",
+    "institutional manuscript-approval requirement and status",
+    "institutional manuscript-approval target journal and exact manuscript digest"
   ],
   "privacy_boundary": {
     "private_inputs_git_ignored": true,
@@ -28,18 +31,22 @@
     "owner_input_hash_unchanged": true,
     "institutional_cas_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
     "institutional_release_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
+    "institutional_manuscript_approval_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
     "institutional_cas_evidence_directory_status": "CREATED_EMPTY",
     "institutional_release_evidence_directory_status": "CREATED_EMPTY",
+    "institutional_manuscript_approval_evidence_directory_status": "CREATED_EMPTY",
     "placeholder_files_are_institutional_records": false,
     "institutional_record_received": false,
     "institutional_release_record_received": false,
+    "institutional_manuscript_approval_record_received": false,
     "validation": {
       "decision": "FAIL_CLOSED_PRIVATE_EXTERNAL_CLOSURE_INPUTS_INCOMPLETE_INVALID_OR_INCONSISTENT",
       "exit_code": 2,
       "input_file_states": {
         "owner_inputs": "READ",
         "institutional_cas_record": "READ",
-        "institutional_release_record": "READ"
+        "institutional_release_record": "READ",
+        "institutional_manuscript_approval_record": "READ"
       },
       "owner_inputs": {
         "missing_field_count": 6,
@@ -54,6 +61,12 @@
         "missing_field_count": 22,
         "validation_error_count": 5,
         "evidence_bytes_read": 0
+      },
+      "institutional_manuscript_approval_record": {
+        "missing_field_count": 17,
+        "validation_error_count": 2,
+        "evidence_bytes_read": 0,
+        "manuscript_bytes_read": 0
       },
       "cross_consistency_error_count": 0
     },

@@ -75,8 +75,8 @@ def complete_owner() -> dict:
             "exclusive_submission_confirmed": True,
             "all_authors_approved_final_manuscript_and_order": True,
             "overlapping_work_or_preprint_disclosure": "Synthetic disclosure",
-            "institutional_manuscript_approval_required": False,
-            "institutional_manuscript_approval_status": "NOT_REQUIRED",
+            "institutional_manuscript_approval_required": True,
+            "institutional_manuscript_approval_status": "APPROVED",
             "institutional_manuscript_approval_evidence": "Synthetic retained evidence",
         }
     )
@@ -161,16 +161,50 @@ def complete_release(evidence_path: Path) -> dict:
     }
 
 
+def complete_manuscript_approval(evidence_path: Path, manuscript_path: Path) -> dict:
+    evidence = b"synthetic institutional manuscript approval\n"
+    manuscript = b"synthetic approved manuscript\n"
+    evidence_path.write_bytes(evidence)
+    manuscript_path.write_bytes(manuscript)
+    return {
+        "schema_version": 1,
+        "evidence": {
+            "file": "evidence/private/institutional_manuscript_approval/example.pdf",
+            "sha256": hashlib.sha256(evidence).hexdigest(),
+            "kind": "SUPERVISOR_AND_SCHOOL_APPROVAL_BUNDLE",
+            "issuing_office": "Synthetic Research Office",
+            "obtained_date": "2026-09-14",
+            "authenticated_or_institution_issued": True,
+        },
+        "approval_decision": {
+            "institutional_manuscript_approval_required": True,
+            "institutional_manuscript_approval_status": "APPROVED",
+            "approved_manuscript_file": "output/private_submission/manuscript.pdf",
+            "approved_manuscript_sha256": hashlib.sha256(manuscript).hexdigest(),
+            "target_journal": "Applied Intelligence",
+            "approval_date": "2026-09-14",
+            "conditions_or_none": "NONE",
+        },
+        "manual_review": {
+            "reviewer_role": "Synthetic responsible author",
+            "review_date": "2026-09-14",
+            "record_visually_inspected": True,
+            "metadata_matches_record": True,
+            "approved_manuscript_digest_recomputed": True,
+        },
+    }
+
+
 class ExternalClosureInputsTests(unittest.TestCase):
     def test_all_templates_remain_public_placeholders(self):
         result = template_check()
         self.assertEqual(result["decision"], "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY")
-        self.assertEqual(result["templates"], 3)
+        self.assertEqual(result["templates"], 4)
         self.assertFalse(result["complete"])
         self.assertFalse(result["private_values_emitted"])
 
     def test_missing_inputs_fail_closed_without_private_values(self):
-        result = evaluate(None, None, None)
+        result = evaluate(None, None, None, None)
         self.assertFalse(result["complete"])
         self.assertEqual(
             result["decision"],
@@ -183,12 +217,17 @@ class ExternalClosureInputsTests(unittest.TestCase):
             root = Path(directory)
             cas_path = root / "cas.pdf"
             release_path = root / "release.pdf"
+            approval_path = root / "approval.pdf"
+            manuscript_path = root / "manuscript.pdf"
             result = evaluate(
                 complete_owner(),
                 complete_cas(cas_path),
                 complete_release(release_path),
+                complete_manuscript_approval(approval_path, manuscript_path),
                 cas_evidence_override=cas_path,
                 release_evidence_override=release_path,
+                manuscript_approval_evidence_override=approval_path,
+                approved_manuscript_override=manuscript_path,
             )
         self.assertTrue(result["complete"])
         self.assertEqual(
@@ -213,12 +252,17 @@ class ExternalClosureInputsTests(unittest.TestCase):
             owner["target_journal"]["verified_tier"] = "Q2"
             cas_path = root / "cas.pdf"
             release_path = root / "release.pdf"
+            approval_path = root / "approval.pdf"
+            manuscript_path = root / "manuscript.pdf"
             result = evaluate(
                 owner,
                 complete_cas(cas_path),
                 complete_release(release_path),
+                complete_manuscript_approval(approval_path, manuscript_path),
                 cas_evidence_override=cas_path,
                 release_evidence_override=release_path,
+                manuscript_approval_evidence_override=approval_path,
+                approved_manuscript_override=manuscript_path,
             )
         self.assertFalse(result["complete"])
         self.assertIn("owner/cas.tier", result["cross_consistency_error_paths"])
@@ -232,8 +276,11 @@ class ExternalClosureInputsTests(unittest.TestCase):
                 complete_owner(),
                 complete_cas(root / "cas.pdf"),
                 release,
+                complete_manuscript_approval(root / "approval.pdf", root / "manuscript.pdf"),
                 cas_evidence_override=root / "cas.pdf",
                 release_evidence_override=root / "release.pdf",
+                manuscript_approval_evidence_override=root / "approval.pdf",
+                approved_manuscript_override=root / "manuscript.pdf",
             )
         self.assertFalse(result["complete"])
         self.assertIn("owner/release.legal_copyright_holder", result["cross_consistency_error_paths"])

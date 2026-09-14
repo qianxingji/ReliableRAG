@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "decision": "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY",
-  "templates": 3,
+  "templates": 4,
   "complete": false,
   "private_values_emitted": false,
   "submission_authorized": false,

@@ -255,8 +255,8 @@ def main() -> int:
         "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN",
         "unified external-closure preflight decision",
     )
-    checks.equal(len(external_closure["component_inputs"]), 3, "three private closure inputs")
-    checks.equal(len(external_closure["cross_checks"]), 7, "external cross-record checks documented")
+    checks.equal(len(external_closure["component_inputs"]), 4, "four private closure inputs")
+    checks.equal(len(external_closure["cross_checks"]), 9, "external cross-record checks documented")
     checks.equal(external_closure["privacy_boundary"]["private_inputs_git_ignored"], True, "private closure inputs ignored")
     checks.equal(external_closure["privacy_boundary"]["private_values_emitted"], False, "external closure emits no private values")
     checks.equal(external_closure["strongest_result_closes_p0_g"], False, "structural pass does not close P0-G")
@@ -277,12 +277,20 @@ def main() -> int:
         False,
         "institutional release record remains pending",
     )
+    checks.equal(
+        local_closure["institutional_manuscript_approval_record_received"],
+        False,
+        "institutional manuscript-approval record remains pending",
+    )
     local_validation = local_closure["validation"]
     checks.equal(local_validation["exit_code"], 2, "current local closure remains fail-closed")
     checks.equal(local_validation["owner_inputs"]["missing_field_count"], 6, "current owner missing fields")
     checks.equal(local_validation["institutional_cas_record"]["missing_field_count"], 22, "CAS placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["missing_field_count"], 22, "release placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["validation_error_count"], 5, "release placeholder conflicts")
+    checks.equal(local_validation["institutional_manuscript_approval_record"]["missing_field_count"], 17, "manuscript-approval placeholder missing fields")
+    checks.equal(local_validation["institutional_manuscript_approval_record"]["validation_error_count"], 2, "manuscript-approval placeholder conflicts")
+    checks.equal(local_validation["institutional_manuscript_approval_record"]["manuscript_bytes_read"], 0, "no approved manuscript bytes read")
     checks.equal(local_validation["cross_consistency_error_count"], 0, "no cross-record inconsistency inferred from placeholders")
     checks.equal(local_closure["private_values_emitted"], False, "workspace preparation emits no private values")
     external_closure_verification = json.loads(
@@ -295,7 +303,7 @@ def main() -> int:
         "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY",
         "unified closure template verification",
     )
-    checks.equal(external_closure_verification["templates"], 3, "three closure templates verified")
+    checks.equal(external_closure_verification["templates"], 4, "four closure templates verified")
     checks.equal(external_closure_verification["submission_authorized"], False, "template verification does not authorize submission")
 
     applied_preflight = json.loads(

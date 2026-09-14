@@ -29,11 +29,13 @@ placeholders from the tracked templates, and created their private-evidence
 directories. A separate institutional manuscript-approval template and
 fail-closed verifier now bind eventual approval evidence to the exact approved
 manuscript bytes; its local placeholder and evidence directory are also ignored
-by Git. The three existing unified-closure files remain readable by the unified verifier, which still
+by Git. The unified verifier now checks all four records together, including
+approval status, target journal and exact approved-manuscript digest. It still
 fails closed: owner inputs have 6 missing fields and zero errors, the CAS
-placeholder has 22 missing fields and zero errors, and the release placeholder
-has 22 missing fields plus five expected empty-placeholder conflicts. No
-institutional evidence bytes were read, and placeholders are not received
+placeholder has 22 missing fields and zero errors, the release placeholder has
+22 missing fields plus five expected conflicts, and the manuscript-approval
+placeholder has 17 missing fields plus two expected conflicts. No institutional
+evidence or manuscript bytes were read, and placeholders are not received
 institutional records.
 
 Latest route decision: the independent GPT-6 Astra xhigh
@@ -392,7 +394,7 @@ fairness, reviewer and Submission Ready audits.
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
   authenticates 141 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 978 checks, without
+  package in 982 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

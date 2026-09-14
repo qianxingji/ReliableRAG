@@ -5,10 +5,11 @@ Decision: **PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUD
 **CAS Q3 STATUS: NOT READY.**
 
 The project now has one privacy-safe command that validates the responsible-
-author input, institution-recognized CAS record and institutional release record
-together. It also checks that target title, ISSNs, edition, major-category tier,
-recognition rules, Apache-2.0 choice, legal holder/year and institutional review
-state agree across the three private records.
+author input, institution-recognized CAS record, institutional release record
+and institutional manuscript-approval record together. It checks target title,
+ISSNs, edition, major-category tier, recognition rules, Apache-2.0 choice,
+legal holder/year, release review, manuscript approval and the approved
+manuscript digest across the four private records.
 
 Run:
 
@@ -18,7 +19,7 @@ python scripts/verify_cas_q3_external_closure_inputs.py
 
 The command outputs decisions, missing/error counts and field paths only. It
 does not print names, email addresses, declarations, evidence text, holder names
-or other supplied values. The three local inputs and their evidence remain
+or other supplied values. The four local inputs and their evidence remain
 Git-ignored.
 
 ## Local workspace execution on 2026-09-14
@@ -30,7 +31,7 @@ templates. The preparer now also covers the separate institutional manuscript-
 approval placeholder and its private-evidence directory. It prints paths and
 state labels only; it prints no private values.
 
-The unified verifier can now read all three files, but the two newly created
+The unified verifier can now read all four files, but the three institutional
 files are placeholders, not institutional records. After the responsible
 author supplied a third input batch, the owner input remains at 6 missing
 fields and zero validation errors. The all-author approval and both
@@ -40,14 +41,16 @@ wording, an undated AI-tool entry, a label-only competing-interests entry and
 the two required institutional approvals stay open; no supplied value is
 emitted in this record. The CAS placeholder has 22 missing
 fields and zero validation errors. The release placeholder has 22 missing fields
-and five expected fail-closed placeholder conflicts. No institutional evidence
-bytes were read, no cross-record inconsistency was observed, and the command
+and five expected fail-closed placeholder conflicts. The manuscript-approval
+placeholder has 17 missing fields and two expected fail-closed conflicts. No
+institutional evidence or manuscript bytes were read, no cross-record
+inconsistency was observed, and the command
 returned exit code 2 with
 `FAIL_CLOSED_PRIVATE_EXTERNAL_CLOSURE_INPUTS_INCOMPLETE_INVALID_OR_INCONSISTENT`.
 P0-G, P0-H and P0-I therefore remain open.
 
 Its strongest possible decision is
 `PASS_PRIVATE_EXTERNAL_CLOSURE_INPUTS_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_ARTIFACT_AND_ASTRA_AUDITS`.
-That result does not certify the meaning or authority of either retained record.
+That result does not certify the meaning or authority of any retained record.
 Separate client content audits, the author-populated target build, explicit
 archive authorization and the final Astra xhigh audit remain mandatory.

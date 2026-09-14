@@ -596,27 +596,27 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json",
-      "sha256": "8c4297fae3aa30141f21197126da0ee3d34aa0f94b6e662c155d385bbacbd21f",
+      "sha256": "e3f48d20da6fe34ca56ff2bfe629eb3bde3cbd2789fc6f52eb1d6d24ee0fd907",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md",
-      "sha256": "073c80379cce84d7cfce69d69032d3195d8afc340cced71e90cd96da51cadf34",
+      "sha256": "ec48dd54f2f913abd248ad887d6742b7e38058b40e7d5c09fd62bdaa303e884b",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT_VERIFICATION.json",
-      "sha256": "34a14b57a89141a559689a9f5b63f8743f3a1f224c8ecb335cb266e3ad751336",
+      "sha256": "1e362d0446e378b56154db9bd565483f5932054ef0fbdba8f98de280272959cf",
       "required_marker": "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY"
     },
     {
       "path": "scripts/verify_cas_q3_external_closure_inputs.py",
-      "sha256": "1b43c555bf5fd3f6bef28c05bc9c8ad7951bfc8d9464f0f6db40e8d8d981fffc",
+      "sha256": "8f5d4fb76781246dc74de47c91ef87e93bc4b229abc8d7999b233f10a2bdbdd6",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_INPUTS_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_ARTIFACT_AND_ASTRA_AUDITS"
     },
     {
       "path": "tests/test_cas_q3_external_closure_inputs.py",
-      "sha256": "64601fd7aceb0e451df23a3f08d2f8ba611b6836625072f0ed952414cc38042d"
+      "sha256": "5b5092ef63d20aa357a0023c94f37be21cedca393b09e2678f24f8207a02cafb"
     },
     {
       "path": "scripts/prepare_cas_q3_private_closure_workspace.py",

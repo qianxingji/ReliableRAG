@@ -701,8 +701,8 @@ def main() -> int:
         "unified private external-closure preflight is prepared",
         checks,
     )
-    require(len(external_closure["component_inputs"]) == 3, "unified preflight covers all three private inputs", checks)
-    require(len(external_closure["cross_checks"]) == 7, "unified preflight documents cross-record consistency", checks)
+    require(len(external_closure["component_inputs"]) == 4, "unified preflight covers all four private inputs", checks)
+    require(len(external_closure["cross_checks"]) == 9, "unified preflight documents cross-record consistency", checks)
     require(
         external_closure["privacy_boundary"]["private_inputs_git_ignored"] is True
         and external_closure["privacy_boundary"]["private_values_emitted"] is False,
@@ -735,8 +735,9 @@ def main() -> int:
     )
     require(
         local_closure["institutional_record_received"] is False
-        and local_closure["institutional_release_record_received"] is False,
-        "institutional CAS and release records remain pending",
+        and local_closure["institutional_release_record_received"] is False
+        and local_closure["institutional_manuscript_approval_record_received"] is False,
+        "institutional CAS, release and manuscript-approval records remain pending",
         checks,
     )
     local_validation = local_closure["validation"]
@@ -758,6 +759,17 @@ def main() -> int:
         "empty institutional release placeholder is recorded exactly",
         checks,
     )
+    require(
+        local_validation["institutional_manuscript_approval_record"]
+        == {
+            "missing_field_count": 17,
+            "validation_error_count": 2,
+            "evidence_bytes_read": 0,
+            "manuscript_bytes_read": 0,
+        },
+        "empty institutional manuscript-approval placeholder is recorded exactly",
+        checks,
+    )
     require(local_validation["cross_consistency_error_count"] == 0, "placeholder run reports no cross inconsistency", checks)
     require(local_closure["private_values_emitted"] is False, "workspace preparation emits no private values", checks)
     require(
@@ -776,6 +788,8 @@ def main() -> int:
         evidence["p0_ghi_external_closure_current_cas_record_input"]
         == "READ_EMPTY_TEMPLATE_PLACEHOLDER"
         and evidence["p0_ghi_external_closure_current_release_record_input"]
+        == "READ_EMPTY_TEMPLATE_PLACEHOLDER"
+        and evidence["p0_ghi_external_closure_current_manuscript_approval_record_input"]
         == "READ_EMPTY_TEMPLATE_PLACEHOLDER",
         "institutional local files are explicitly classified as empty placeholders",
         checks,
@@ -801,6 +815,14 @@ def main() -> int:
         checks,
     )
     require(
+        evidence["p0_ghi_external_closure_current_manuscript_approval_record_missing_fields"] == 17
+        and evidence["p0_ghi_external_closure_current_manuscript_approval_record_validation_errors"] == 2
+        and evidence["p0_ghi_external_closure_current_manuscript_approval_record_evidence_bytes_read"] == 0
+        and evidence["p0_ghi_external_closure_current_manuscript_approval_record_manuscript_bytes_read"] == 0,
+        "indexed manuscript-approval placeholder state is exact",
+        checks,
+    )
+    require(
         evidence["p0_ghi_external_closure_current_cross_consistency_errors"] == 0
         and evidence["p0_ghi_external_closure_current_exit_code"] == 2,
         "indexed unified local closure remains fail-closed",
@@ -808,8 +830,9 @@ def main() -> int:
     )
     require(
         evidence["p0_ghi_external_closure_institutional_cas_record_received"] is False
-        and evidence["p0_ghi_external_closure_institutional_release_record_received"] is False,
-        "empty placeholders do not close either institutional record gate",
+        and evidence["p0_ghi_external_closure_institutional_release_record_received"] is False
+        and evidence["p0_ghi_external_closure_institutional_manuscript_approval_record_received"] is False,
+        "empty placeholders do not close any institutional record gate",
         checks,
     )
     external_closure_verification = json.loads(
@@ -821,7 +844,7 @@ def main() -> int:
         "unified external-closure templates verify",
         checks,
     )
-    require(external_closure_verification["templates"] == 3, "three private templates are covered", checks)
+    require(external_closure_verification["templates"] == 4, "four private templates are covered", checks)
     require(external_closure_verification["submission_authorized"] is False, "template check does not authorize submission", checks)
 
     reply_receipt = json.loads(
