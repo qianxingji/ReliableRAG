@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "b44a90a39e9b077bd240316bee70e5925d32187a295adb3380f3049df9f43bc7",
+      "sha256": "a0537ea781884e5ba5c8a3a5527ed15b6567d03bf1fa7614d96aeee3f847c1d2",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "5c3adddaf1576f25959c76af1ed9503d53eecdd13166b7aea0d9d6851c77bac2",
+      "sha256": "9131dc7758aa40b3cf1d0359d05ff6f7d8cb3a47a0746780d71264a45b42741e",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -793,6 +793,26 @@
       "path": "tests/test_cas_q3_recursive_archive_closure_evidence.py",
       "sha256": "290c98cf6e5855676bbd2f72930da0277b63a7165be08401b35df11c325eae85",
       "required_marker": "test_deeper_archive_fails_closed"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ORDINARY_DOCUMENT_MAGIC.json",
+      "sha256": "3f0eb28eefbd5386e8061d1b428882a763c40833130a1d0fdae2a277dd8a78db",
+      "required_marker": "PASS_BOUNDED_ORDINARY_DOCUMENT_MAGIC_MATCHES_EXTENSIONS"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ORDINARY_DOCUMENT_MAGIC.md",
+      "sha256": "513ea828731b8ae04c6f1487ad2ba45298cc2a4014907d2c8b122f27e848e896",
+      "required_marker": "PASS_BOUNDED_ORDINARY_DOCUMENT_MAGIC_MATCHES_EXTENSIONS"
+    },
+    {
+      "path": "scripts/audit_cas_q3_ordinary_document_magic.py",
+      "sha256": "1edfcd8a8a343884dfb06071b75c100bb9b6694f54e0684a40d8284c07d8c6ed",
+      "required_marker": "Detect common document containers by file header, independent of suffix"
+    },
+    {
+      "path": "tests/test_cas_q3_ordinary_document_magic.py",
+      "sha256": "d3d603c705840d5d778fd37c4344a68d55835e451930561dd47bf88a6c8a17ac",
+      "required_marker": "test_ooxml_word_stored_as_zip_fails_closed"
     }
   ],
   "aggregate_release_candidate": {

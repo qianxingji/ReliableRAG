@@ -121,7 +121,12 @@ members and confirms there is no deeper archive. Its expanded text pass covers
 all 234 recognized text members and 858,962,287 bytes; its PDF pass covers 32
 occurrences and 14 unique hashes. Both return zero candidate, skip or error,
 and the strict member-header pass finds no extension mismatch. Ordinary-file
-magic beyond the extension inventory and page-image OCR remain outside scope.
+magic was then covered by the
+[ordinary-file document-magic census](P0_GHI_ORDINARY_DOCUMENT_MAGIC.md): all
+465,460 files expose only 39 ZIP and 100 PDF strict signatures, each with its
+expected extension; no ZIP is OOXML/ODF and no RTF/OLE signature exists. Three
+loose `%PDF-` occurrences are retained as JavaScript/TypeScript source literals,
+not hidden documents. Unknown formats and page-image OCR remain outside scope.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -199,6 +204,11 @@ artifact or close P0-I.
    the same roots to repeat the exact-byte first-level nested-ZIP pass. It must
    cover four nested archives, 301 members, all 234 recognized text members and
    all 32 PDF occurrences, with no deeper archive, candidate, skip or error.
+   Run `python scripts/audit_cas_q3_ordinary_document_magic.py` with the same
+   roots to repeat strict header detection across all 465,460 ordinary files.
+   It must return 39 correctly named ZIPs, 100 correctly named PDFs, no
+   OOXML/ODF/RTF/OLE container, mismatch or error, while retaining the three
+   loose source-code `%PDF-` false positives.
 
 ## Claim-to-evidence routing
 

@@ -1073,6 +1073,51 @@ def main() -> int:
         checks,
     )
 
+    ordinary_magic = json.loads(
+        (ROOT / evidence["p0_ghi_ordinary_document_magic"]).read_text(encoding="utf-8")
+    )
+    require(
+        ordinary_magic["decision"] == "PASS_BOUNDED_ORDINARY_DOCUMENT_MAGIC_MATCHES_EXTENSIONS",
+        "ordinary-file document-magic census passes",
+        checks,
+    )
+    require(
+        ordinary_magic["roots_scanned"] == 3
+        and ordinary_magic["ordinary_files_seen"] == 465460
+        and ordinary_magic["header_bytes_per_file"] == 4096
+        and ordinary_magic["header_bytes_read"] == 631242643,
+        "ordinary-file header coverage is pinned",
+        checks,
+    )
+    require(
+        ordinary_magic["strict_magic_counts"] == {"zip": 39, "pdf": 100}
+        and ordinary_magic["strict_magic_suffix_counts"]["zip"] == {".zip": 39}
+        and ordinary_magic["strict_magic_suffix_counts"]["pdf"] == {".pdf": 100}
+        and sum(ordinary_magic["zip_document_family_counts"].values()) == 0,
+        "ordinary strict document signatures match extensions without OOXML/ODF",
+        checks,
+    )
+    require(
+        ordinary_magic["loose_pdf_marker_non_header_count"] == 3
+        and ordinary_magic["loose_pdf_marker_non_header_suffix_counts"] == {".js": 2, ".ts": 1},
+        "ordinary loose PDF markers remain identified as source-code literals",
+        checks,
+    )
+    require(
+        ordinary_magic["document_magic_suffix_mismatch_count"] == 0
+        and ordinary_magic["scan_error_count"] == 0,
+        "ordinary document-magic census retains no mismatch or error",
+        checks,
+    )
+    require(
+        ordinary_magic["bounded_interpretation"]["common_pdf_rtf_ole_zip_document_magic_covered"] is True
+        and ordinary_magic["bounded_interpretation"]["unknown_binary_formats_covered"] is False
+        and ordinary_magic["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False
+        and ordinary_magic["submission_authorized"] is False,
+        "ordinary document-magic result remains bounded and non-authorizing",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

@@ -422,6 +422,33 @@ def main() -> int:
     checks.equal(recursive_archive_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "nested archive census does not claim global absence")
     checks.equal(recursive_archive_census["submission_authorized"], False, "nested archive census does not authorize submission")
 
+    ordinary_magic = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_ORDINARY_DOCUMENT_MAGIC.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        ordinary_magic["decision"],
+        "PASS_BOUNDED_ORDINARY_DOCUMENT_MAGIC_MATCHES_EXTENSIONS",
+        "ordinary-file document-magic census decision",
+    )
+    checks.equal(ordinary_magic["roots_scanned"], 3, "ordinary document-magic roots")
+    checks.equal(ordinary_magic["ordinary_files_seen"], 465460, "ordinary files with headers inspected")
+    checks.equal(ordinary_magic["header_bytes_per_file"], 4096, "ordinary document-magic header cap")
+    checks.equal(ordinary_magic["header_bytes_read"], 631242643, "ordinary document-magic bytes read")
+    checks.equal(ordinary_magic["strict_magic_counts"], {"zip": 39, "pdf": 100}, "ordinary strict document-magic counts")
+    checks.equal(ordinary_magic["strict_magic_suffix_counts"]["zip"], {".zip": 39}, "ordinary ZIP suffix matches")
+    checks.equal(ordinary_magic["strict_magic_suffix_counts"]["pdf"], {".pdf": 100}, "ordinary PDF suffix matches")
+    checks.equal(sum(ordinary_magic["zip_document_family_counts"].values()), 0, "ordinary OOXML/ODF packages")
+    checks.equal(ordinary_magic["loose_pdf_marker_non_header_count"], 3, "loose non-header PDF markers retained")
+    checks.equal(ordinary_magic["loose_pdf_marker_non_header_suffix_counts"], {".js": 2, ".ts": 1}, "loose PDF-marker source suffixes")
+    checks.equal(ordinary_magic["document_magic_suffix_mismatch_count"], 0, "ordinary document-magic suffix mismatches")
+    checks.equal(ordinary_magic["scan_error_count"], 0, "ordinary document-magic errors")
+    checks.equal(ordinary_magic["bounded_interpretation"]["common_pdf_rtf_ole_zip_document_magic_covered"], True, "common ordinary document magic covered")
+    checks.equal(ordinary_magic["bounded_interpretation"]["unknown_binary_formats_covered"], False, "ordinary magic audit does not claim unknown formats")
+    checks.equal(ordinary_magic["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "ordinary magic audit does not claim global absence")
+    checks.equal(ordinary_magic["submission_authorized"], False, "ordinary magic audit does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )
