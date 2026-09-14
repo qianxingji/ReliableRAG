@@ -199,6 +199,17 @@ members and 32 PDF occurrences, with no candidate, skip, deeper archive or
 error. CI authenticates the committed receipt and synthetic boundaries only;
 it does not possess the three external Windows roots.
 
+The ordinary-file document-magic census at
+`4bd8e55abf429fabebfbd3564f877396e7779547` passed push run
+[34866887798](https://github.com/qianxingji/ReliableRAG/actions/runs/34866887798)
+and pull-request run
+[34866890594](https://github.com/qianxingji/ReliableRAG/actions/runs/34866890594).
+The 97-test suite verifies strict PDF/RTF/OLE signatures, OOXML/ODF ZIP-family
+classification, disguised-document rejection and source-literal false-positive
+handling. The committed host receipt covers 465,460 ordinary files and records
+no document-signature/extension mismatch or scan error. CI authenticates that
+receipt and its synthetic boundaries without rescanning the external roots.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
