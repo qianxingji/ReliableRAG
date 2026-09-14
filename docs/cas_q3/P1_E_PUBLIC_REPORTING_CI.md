@@ -169,6 +169,24 @@ The 84-test suite verifies fail-closed low-text and attachment cases. The
 committed host receipt records 35 unique PDF hashes with usable text layers,
 35 completed attachment inventories and zero attachment.
 
+The PDF-structure CI acceptance record at
+`ebde5811069b1d118abdf1d84cd8d2d3e0223901` passed push run
+[34861285829](https://github.com/qianxingji/ReliableRAG/actions/runs/34861285829)
+and pull-request run
+[34861291749](https://github.com/qianxingji/ReliableRAG/actions/runs/34861291749).
+This record-only commit changes no scanner behavior or scientific result.
+
+The common document-container inventory at
+`bb4127b76be67271e16bad4e65d1f0879e94911d` passed push run
+[34862502586](https://github.com/qianxingji/ReliableRAG/actions/runs/34862502586)
+and pull-request run
+[34862514582](https://github.com/qianxingji/ReliableRAG/actions/runs/34862514582).
+The 87-test suite verifies metadata-only ordinary-file and ZIP-member counting.
+The committed host receipt records 100 ordinary PDFs and 138 ZIP PDF members,
+zero files or members under the listed Office, OpenDocument, RTF and MSG
+extensions, and zero inventory errors. Missing, incorrect or unknown extensions
+remain outside the inventory, and this result closes no P0 gate.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
