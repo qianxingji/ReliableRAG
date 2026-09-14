@@ -104,6 +104,15 @@ and pull-request run
 [34814511106](https://github.com/qianxingji/ReliableRAG/actions/runs/34814511106).
 Each run completed successfully on 2026-09-14 and retained `NOT READY`.
 
+The private institutional release-record intake at
+`ca4196ea81df55c0b3df42ea307487a4dd6885e4` passed push run
+[34817939287](https://github.com/qianxingji/ReliableRAG/actions/runs/34817939287)
+and pull-request run
+[34817942528](https://github.com/qianxingji/ReliableRAG/actions/runs/34817942528).
+Both completed successfully on 2026-09-14. They validate the public template
+and synthetic fail-closed cases only; no private institutional evidence was
+present on the runner and distribution remained unauthorized.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
