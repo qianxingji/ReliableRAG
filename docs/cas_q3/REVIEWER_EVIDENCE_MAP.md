@@ -75,6 +75,12 @@ bytes are Git-ignored. Template and synthetic fail-closed checks run publicly,
 while a real structural pass still requires separate client content review and
 does not authorize distribution.
 
+The [unified private external-closure preflight](P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md)
+checks cross-record agreement for the target, CAS rule, license, holder/year and
+institutional review state. Its public CI scope verifies only the three empty
+templates and synthetic privacy behavior. A future complete structural result
+still cannot close P0-G/H/I without content, artifact and final Astra audits.
+
 ## Reviewer sequence
 
 1. Read the abstract, Sections 3--7 and the complete nine-policy table in the

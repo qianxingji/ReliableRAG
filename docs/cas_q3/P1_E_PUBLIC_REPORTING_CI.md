@@ -60,7 +60,8 @@ The Ubuntu job performs the following operations:
   record while retaining its non-authoritative and institutional-access limits;
 - run the owner-input privacy/fail-closed, manuscript-length, target-preflight
   transformation, institutional-CAS-record intake, institutional-release-record
-  intake, complete-source transport and private target-builder safety tests;
+  intake, unified cross-record closure preflight, complete-source transport and
+  private target-builder safety tests;
   these tests use temporary synthetic values and do not require or
   publish the private target ZIP, identity-bearing output or official publisher
   package; and

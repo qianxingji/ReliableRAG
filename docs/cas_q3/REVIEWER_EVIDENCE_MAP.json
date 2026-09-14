@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "3a6c5b3d4a497c4003c51ad529d6b9c2c7cc0b06e37ea56220b92423bb1cf5dc",
+      "sha256": "af79b20edd1e75ec0cae0c840624f2f118345c0fbdaede5923cc21c2b579acac",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -285,12 +285,12 @@
     },
     {
       "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-      "sha256": "6fd228cf603a4850b3a5c5d204402202c8dd94365a491bd5ae73770fc4d09e0f",
+      "sha256": "dc6cd21f6433694fea61d71859f6debd19711bbe1c1e6fb46bb81de9c4409910",
       "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "a59942c2961dee3bde91e65ec3aa3796b100ae8289b3b86567e1bb971867d35f",
+      "sha256": "d536571f783420f87cffd02ca60064c35e9ccc78ac3f40614c6f913c30f6af78",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -593,6 +593,30 @@
       "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION.json",
       "sha256": "099ae49eac9bf64e04002747f2c52a5640bf7140a66d825840526d53d3ef3b6d",
       "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json",
+      "sha256": "d2dcf41ef1ad49254493d0ffd2af240d4510f661778c94aeeced0d17d79ffecb",
+      "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md",
+      "sha256": "116b944810c7a7b256fa8d1c6fe75cd3849a0b1528966cb516f18ca370838533",
+      "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT_VERIFICATION.json",
+      "sha256": "34a14b57a89141a559689a9f5b63f8743f3a1f224c8ecb335cb266e3ad751336",
+      "required_marker": "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY"
+    },
+    {
+      "path": "scripts/verify_cas_q3_external_closure_inputs.py",
+      "sha256": "1b43c555bf5fd3f6bef28c05bc9c8ad7951bfc8d9464f0f6db40e8d8d981fffc",
+      "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_INPUTS_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_ARTIFACT_AND_ASTRA_AUDITS"
+    },
+    {
+      "path": "tests/test_cas_q3_external_closure_inputs.py",
+      "sha256": "5e82df8f522b7d2502ee848997f9a7101e05fa8f466a421f04c14f2080deb99e"
     }
   ],
   "aggregate_release_candidate": {

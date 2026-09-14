@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "component_inputs": [
+    "docs/cas_q3/OWNER_INPUTS.local.json",
+    "docs/cas_q3/INSTITUTIONAL_CAS_RECORD.local.json",
+    "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json"
+  ],
+  "cross_checks": [
+    "target title and both ISSNs",
+    "institution-recognized edition year",
+    "major category name and qualifying tier",
+    "recognition-date and title/ISSN-change rules",
+    "Apache-2.0 project-code selection",
+    "legal copyright holder and year/range",
+    "holder licensing authority and institutional review state"
+  ],
+  "privacy_boundary": {
+    "private_inputs_git_ignored": true,
+    "private_values_emitted": false,
+    "only_status_counts_and_field_paths_emitted": true
+  },
+  "strongest_possible_preflight_decision": "PASS_PRIVATE_EXTERNAL_CLOSURE_INPUTS_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_ARTIFACT_AND_ASTRA_AUDITS",
+  "strongest_result_closes_p0_g": false,
+  "strongest_result_closes_p0_h": false,
+  "strongest_result_closes_p0_i": false,
+  "client_content_audits_required": true,
+  "author_populated_artifact_build_required": true,
+  "final_astra_xhigh_audit_required": true,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

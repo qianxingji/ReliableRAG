@@ -245,6 +245,37 @@ def main() -> int:
     checks.equal(release_record_intake["current_state"]["p0_g_closed"], False, "release intake does not close P0-G")
     checks.equal(release_record_intake["distribution_authorized"], False, "release intake does not authorize distribution")
 
+    external_closure = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        external_closure["decision"],
+        "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN",
+        "unified external-closure preflight decision",
+    )
+    checks.equal(len(external_closure["component_inputs"]), 3, "three private closure inputs")
+    checks.equal(len(external_closure["cross_checks"]), 7, "external cross-record checks documented")
+    checks.equal(external_closure["privacy_boundary"]["private_inputs_git_ignored"], True, "private closure inputs ignored")
+    checks.equal(external_closure["privacy_boundary"]["private_values_emitted"], False, "external closure emits no private values")
+    checks.equal(external_closure["strongest_result_closes_p0_g"], False, "structural pass does not close P0-G")
+    checks.equal(external_closure["strongest_result_closes_p0_h"], False, "structural pass does not close P0-H")
+    checks.equal(external_closure["strongest_result_closes_p0_i"], False, "structural pass does not close P0-I")
+    checks.equal(external_closure["submission_authorized"], False, "unified preflight does not authorize submission")
+    external_closure_verification = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT_VERIFICATION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        external_closure_verification["decision"],
+        "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY",
+        "unified closure template verification",
+    )
+    checks.equal(external_closure_verification["templates"], 3, "three closure templates verified")
+    checks.equal(external_closure_verification["submission_authorized"], False, "template verification does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )
@@ -577,9 +608,11 @@ def main() -> int:
         "python scripts/verify_cas_q3_applied_intelligence_public_corroboration.py",
         "python scripts/verify_cas_q3_institutional_cas_record.py --check-template",
         "python scripts/verify_cas_q3_institutional_release_record.py --check-template",
+        "python scripts/verify_cas_q3_external_closure_inputs.py --check-templates",
         "python scripts/verify_cas_q3_license_state.py",
         "tests.test_cas_q3_institutional_cas_record",
         "tests.test_cas_q3_institutional_release_record",
+        "tests.test_cas_q3_external_closure_inputs",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",

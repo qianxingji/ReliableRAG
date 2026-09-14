@@ -578,6 +578,46 @@ def main() -> int:
     require(release_record_intake["current_state"]["p0_g_closed"] is False, "release intake does not close P0-G", checks)
     require(release_record_intake["distribution_authorized"] is False, "release intake does not authorize distribution", checks)
 
+    external_closure = json.loads(
+        (ROOT / evidence["p0_ghi_external_closure_preflight"]).read_text(encoding="utf-8")
+    )
+    require(
+        external_closure["decision"]
+        == "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN",
+        "unified private external-closure preflight is prepared",
+        checks,
+    )
+    require(len(external_closure["component_inputs"]) == 3, "unified preflight covers all three private inputs", checks)
+    require(len(external_closure["cross_checks"]) == 7, "unified preflight documents cross-record consistency", checks)
+    require(
+        external_closure["privacy_boundary"]["private_inputs_git_ignored"] is True
+        and external_closure["privacy_boundary"]["private_values_emitted"] is False,
+        "unified preflight preserves private input boundary",
+        checks,
+    )
+    require(
+        external_closure["strongest_result_closes_p0_g"] is False
+        and external_closure["strongest_result_closes_p0_h"] is False
+        and external_closure["strongest_result_closes_p0_i"] is False,
+        "structural external-input pass cannot close P0 gates",
+        checks,
+    )
+    require(external_closure["client_content_audits_required"] is True, "client content audits remain mandatory", checks)
+    require(external_closure["author_populated_artifact_build_required"] is True, "author-populated artifact remains mandatory", checks)
+    require(external_closure["final_astra_xhigh_audit_required"] is True, "final Astra xhigh audit remains mandatory", checks)
+    require(external_closure["submission_authorized"] is False, "unified preflight does not authorize submission", checks)
+    external_closure_verification = json.loads(
+        (ROOT / evidence["p0_ghi_external_closure_preflight_verification"]).read_text(encoding="utf-8")
+    )
+    require(
+        external_closure_verification["decision"]
+        == "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY",
+        "unified external-closure templates verify",
+        checks,
+    )
+    require(external_closure_verification["templates"] == 3, "three private templates are covered", checks)
+    require(external_closure_verification["submission_authorized"] is False, "template check does not authorize submission", checks)
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

@@ -258,6 +258,13 @@ fairness, reviewer and Submission Ready audits.
    required. Correspondence, CRediT,
    declarations, legal holder/year, institutional review and CAS-edition facts
    are not inferred.
+   A [unified private external-closure preflight](P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md)
+   now runs the owner, institutional-CAS and institutional-release validators in
+   one command and checks their title, ISSN, edition, tier, recognition-rule,
+   license, holder/year and review-state agreement. Its current local result is
+   fail-closed: 19 owner fields remain missing and the two institutional input
+   files are absent. Even a future structural pass leaves the client content,
+   author-artifact and final Astra xhigh audits open.
    A separate local builder can then produce an ignored title page,
    declarations source and cover-letter draft. It refuses incomplete inputs,
    does not overwrite a prior directory and emits only a redacted build receipt;

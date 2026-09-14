@@ -42,6 +42,7 @@ jobs:
           python scripts/verify_cas_q3_applied_intelligence_public_corroboration.py
           python scripts/verify_cas_q3_institutional_cas_record.py --check-template
           python scripts/verify_cas_q3_institutional_release_record.py --check-template
+          python scripts/verify_cas_q3_external_closure_inputs.py --check-templates
           python scripts/verify_cas_q3_license_state.py
 
       - name: Run portable reporting and privacy tests
@@ -50,6 +51,7 @@ jobs:
             tests.test_cas_q3_owner_inputs \
             tests.test_cas_q3_institutional_cas_record \
             tests.test_cas_q3_institutional_release_record \
+            tests.test_cas_q3_external_closure_inputs \
             tests.test_cas_q3_owner_reply_packet \
             tests.test_cas_q3_private_submission_packet \
             tests.test_cas_q3_manuscript_length \
