@@ -431,7 +431,12 @@ def main() -> int:
     checks.equal(hbut_request["central_notice_attachments"]["download_requires_captcha"], True, "attachment CAPTCHA boundary retained")
     checks.equal(hbut_request["central_notice_attachments"]["contents_inspected"], False, "CAPTCHA attachments remain uninspected")
     checks.equal(hbut_request["central_notice_attachments"]["contents_inferred"], False, "CAPTCHA attachment contents not inferred")
-    checks.equal(len(hbut_request["private_response_import"]) == 5, True, "request binds private import workflow")
+    checks.equal(len(hbut_request["private_response_import"]) == 6, True, "request binds private import workflow")
+    checks.equal(
+        hbut_request["private_response_import"]["manuscript_approval_record_input"],
+        "docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json",
+        "request binds manuscript-approval private input",
+    )
     checks.equal(hbut_request["private_response_import"]["unified_preflight_command"], "python scripts/verify_cas_q3_external_closure_inputs.py", "request binds unified preflight command")
     checks.equal(hbut_request["private_response_import"]["client_content_audit_required_after_structural_pass"], True, "request retains client content audit")
     checks.equal(hbut_request["p0_g_closed"], False, "request does not close P0-G")

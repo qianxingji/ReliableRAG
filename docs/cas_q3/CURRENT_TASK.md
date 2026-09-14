@@ -394,7 +394,7 @@ fairness, reviewer and Submission Ready audits.
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
   authenticates 141 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 982 checks, without
+  package in 983 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

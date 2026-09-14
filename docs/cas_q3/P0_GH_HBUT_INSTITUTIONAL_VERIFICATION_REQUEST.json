@@ -40,6 +40,7 @@
     "owner_input": "docs/cas_q3/OWNER_INPUTS.local.json",
     "cas_record_input": "docs/cas_q3/INSTITUTIONAL_CAS_RECORD.local.json",
     "release_record_input": "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json",
+    "manuscript_approval_record_input": "docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json",
     "unified_preflight_command": "python scripts/verify_cas_q3_external_closure_inputs.py",
     "client_content_audit_required_after_structural_pass": true
   },
