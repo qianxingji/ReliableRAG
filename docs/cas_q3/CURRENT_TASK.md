@@ -240,6 +240,12 @@ fairness, reviewer and Submission Ready audits.
    synthetic complete fixture passed the full build and all 13 rendered pages
    passed visual inspection. The actual local input remains fail-closed at 30
    missing fields, so no real identity-bearing target package was generated.
+   The current 30 missing paths are also rendered into a
+   [privacy-safe responsible-author one-reply packet](P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md).
+   Its generator and regression test prove that already supplied local names,
+   email addresses, postal details and declaration text are not serialized into
+   the tracked packet or receipt. The packet only reduces coordination friction;
+   it does not complete any declaration or authorize submission.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific
@@ -261,9 +267,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 82 repository records plus preserved withheld archive
+  authenticates 86 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 539 checks, without
+  package in 563 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

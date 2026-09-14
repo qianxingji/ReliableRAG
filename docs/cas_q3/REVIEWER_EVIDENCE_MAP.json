@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "4f86c3e629ab25a0aaafae1051281afae678913f384b41fb9c3569da4400ed99",
+      "sha256": "cc1d13fd5c7689d76b252c29a1b8f9dcbfb3ec2716a15109cfff25bf77130ddd",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -407,6 +407,26 @@
       "path": "tests/test_cas_q3_applied_intelligence_private_submission.py",
       "required_marker": "AppliedIntelligencePrivateSubmissionTests",
       "sha256": "e7d61adeea2481d67bfbc7d907b2b7e702c8f3a07a0c857105b116ee7e606bf0"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
+      "required_marker": "CAS Q3 STATUS: NOT READY",
+      "sha256": "edb7b021ea1123c9515441144691903baffafe16efe77636359820296441b8b4"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
+      "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
+      "sha256": "aa504eb3854f2e8918c489e14eda789ebadf41c3d91f162ce543e10b1cd96584"
+    },
+    {
+      "path": "scripts/build_cas_q3_owner_reply_packet.py",
+      "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
+      "sha256": "f75d462ae54e9650cbb951b71409113e06e588b27c6a87aae4f8652414865681"
+    },
+    {
+      "path": "tests/test_cas_q3_owner_reply_packet.py",
+      "required_marker": "OwnerReplyPacketTests",
+      "sha256": "e72a9b38cf901c2661340da438c261153de9787f93870157f1be9a4e8bb03238"
     }
   ],
   "aggregate_release_candidate": {

@@ -23,6 +23,18 @@ The verifier prints only field paths, counts and a decision. It never echoes
 names, email addresses, postal addresses, declaration text or other supplied
 values, and it writes no receipt containing those values.
 
+To convert the current missing paths into a single Chinese response form without
+publishing any already supplied values, run:
+
+```text
+python scripts/build_cas_q3_owner_reply_packet.py
+```
+
+The tracked reply packet and its verification receipt contain missing paths,
+counts and static instructions only. They must never contain values copied from
+the ignored local intake. The packet is an intake aid, not an authorization or
+an independently verified declaration.
+
 After the local intake passes, generate a new versioned private draft directory:
 
 ```text

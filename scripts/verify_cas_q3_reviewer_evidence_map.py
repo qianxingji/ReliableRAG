@@ -315,6 +315,24 @@ def main() -> int:
     checks.equal(private_builder["synthetic_private_build"]["visual_defects"], 0, "synthetic private visual defects")
     checks.equal(private_builder["submission_authorized"], False, "synthetic build does not authorize submission")
 
+    reply_receipt = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        reply_receipt["decision"],
+        "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
+        "responsible-author reply packet decision",
+    )
+    checks.equal(reply_receipt["missing_field_count"], 30, "reply packet missing-field count")
+    checks.equal(reply_receipt["validation_error_count"], 0, "reply packet validation errors")
+    checks.equal(reply_receipt["personal_values_emitted"], False, "reply packet privacy boundary")
+    checks.equal(reply_receipt["submission_authorized"], False, "reply packet does not authorize submission")
+    reply_packet = (ROOT / reply_receipt["packet_path"]).read_text(encoding="utf-8")
+    checks.equal(hashlib.sha256(reply_packet.encode("utf-8")).hexdigest(), reply_receipt["packet_sha256"], "reply packet hash")
+    checks.true("@" not in reply_packet, "tracked reply packet contains no email value")
+
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (
         "permissions:\n  contents: read",
@@ -325,6 +343,7 @@ def main() -> int:
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
+        "tests.test_cas_q3_owner_reply_packet",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",
     ):

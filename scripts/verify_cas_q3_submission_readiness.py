@@ -392,6 +392,20 @@ def main() -> int:
     require(private_builder["final_astra_xhigh_audit_complete"] is False, "final Astra audit remains open", checks)
     require(private_builder["submission_authorized"] is False, "synthetic builder does not authorize submission", checks)
 
+    reply_receipt = json.loads(
+        (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
+    )
+    require(
+        reply_receipt["decision"]
+        == "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
+        "privacy-safe owner reply packet is bound",
+        checks,
+    )
+    require(reply_receipt["missing_field_count"] == 30, "owner reply packet records 30 missing fields", checks)
+    require(reply_receipt["validation_error_count"] == 0, "owner reply packet records zero validation errors", checks)
+    require(reply_receipt["personal_values_emitted"] is False, "owner reply packet emits no personal values", checks)
+    require(reply_receipt["submission_authorized"] is False, "owner reply packet does not authorize submission", checks)
+
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
 
