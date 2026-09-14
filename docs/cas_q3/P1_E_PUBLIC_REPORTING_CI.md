@@ -21,6 +21,21 @@ and pull-request run
 Both completed successfully on 2026-09-14. The workflow authenticates the
 committed public reporting surface and fail-closed release wording; the
 withheld V2 archive and its private-input tests remain outside the runner.
+The acceptance-record follow-up commit
+`9d646fb60a92a594f26eee8d47070266539d0551` also passed push run
+[34806236165](https://github.com/qianxingji/ReliableRAG/actions/runs/34806236165)
+and pull-request run
+[34806238427](https://github.com/qianxingji/ReliableRAG/actions/runs/34806238427).
+
+The Applied Intelligence complete-source transport safety addition was
+accepted on commit `250cd5af9b24e75a06915b6dc5d107185bca868d` by push run
+[34807538106](https://github.com/qianxingji/ReliableRAG/actions/runs/34807538106)
+and pull-request run
+[34807539860](https://github.com/qianxingji/ReliableRAG/actions/runs/34807539860).
+Both completed successfully on 2026-09-14. The added portable unit tests cover
+flat-path rejection and deterministic ZIP construction with temporary
+synthetic bytes. The private transport ZIP, publisher template ZIP and
+scientific inputs remain outside the public runner.
 
 **CAS Q3 STATUS: NOT READY.** The workflow
 `.github/workflows/public-reporting-audit.yml` gives the draft PR a portable,
