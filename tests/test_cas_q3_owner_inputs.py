@@ -94,7 +94,7 @@ class OwnerInputsTests(unittest.TestCase):
                 "ethics_statement_or_approval": "Not applicable under institutional policy",
                 "acknowledgements": "NONE",
                 "ai_assistance_statement_approved": True,
-                "ai_tool_version_and_use_dates": "OpenAI ChatGPT/Codex, 2026",
+                "ai_tool_version_and_use_dates": "OpenAI ChatGPT/Codex, 2026-09-10 to 2026-09-14",
                 "originality_confirmed": True,
                 "exclusive_submission_confirmed": True,
                 "all_authors_approved_final_manuscript_and_order": True,
@@ -171,6 +171,29 @@ class OwnerInputsTests(unittest.TestCase):
             "declarations.institutional_manuscript_approval_status: must be APPROVED",
             result["validation_error_paths"],
         )
+
+    def test_ai_tool_record_requires_two_full_iso_dates(self):
+        value = copy.deepcopy(self.template)
+        value["declarations"]["ai_tool_version_and_use_dates"] = "OpenAI Codex GPT-Astra, 2026-09-14"
+        result = validate(value)
+        self.assertIn("declarations.ai_tool_version_and_use_dates", result["missing_field_paths"])
+
+    def test_ai_tool_record_rejects_invalid_or_reversed_date_ranges(self):
+        for text, expected in (
+            (
+                "OpenAI Codex GPT-Astra, 2026-02-30 to 2026-09-14",
+                "declarations.ai_tool_version_and_use_dates: dates must be valid YYYY-MM-DD values",
+            ),
+            (
+                "OpenAI Codex GPT-Astra, 2026-09-14 to 2026-09-10",
+                "declarations.ai_tool_version_and_use_dates: start date must not be after end date",
+            ),
+        ):
+            with self.subTest(text=text):
+                value = copy.deepcopy(self.template)
+                value["declarations"]["ai_tool_version_and_use_dates"] = text
+                result = validate(value)
+                self.assertIn(expected, result["validation_error_paths"])
 
     def test_optional_orcid_postal_address_and_acknowledgements_do_not_block(self):
         value = copy.deepcopy(self.template)

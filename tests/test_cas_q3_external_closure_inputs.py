@@ -70,7 +70,7 @@ def complete_owner() -> dict:
             "competing_interests_statement": "Synthetic interests statement",
             "ethics_statement_or_approval": "Synthetic ethics statement",
             "ai_assistance_statement_approved": True,
-            "ai_tool_version_and_use_dates": "Synthetic tool version 1.0 used 2026-09-14",
+            "ai_tool_version_and_use_dates": "Synthetic tool version 1.0, 2026-09-10 to 2026-09-14",
             "originality_confirmed": True,
             "exclusive_submission_confirmed": True,
             "all_authors_approved_final_manuscript_and_order": True,

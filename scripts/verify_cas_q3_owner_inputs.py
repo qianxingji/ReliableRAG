@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import date
 import json
 from pathlib import Path
 import re
@@ -224,8 +225,18 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
     ):
         missing.append("declarations.competing_interests_statement")
     ai_tools = declarations.get("ai_tool_version_and_use_dates")
-    if nonempty(ai_tools) and not re.search(r"\b20\d{2}\b", ai_tools):
-        missing.append("declarations.ai_tool_version_and_use_dates")
+    if nonempty(ai_tools):
+        date_tokens = re.findall(r"\b20\d{2}-\d{2}-\d{2}\b", ai_tools)
+        if unresolved_text(ai_tools) or len(date_tokens) < 2:
+            missing.append("declarations.ai_tool_version_and_use_dates")
+        else:
+            try:
+                start_date, end_date = (date.fromisoformat(value) for value in date_tokens[:2])
+            except ValueError:
+                errors.append("declarations.ai_tool_version_and_use_dates: dates must be valid YYYY-MM-DD values")
+            else:
+                if start_date > end_date:
+                    errors.append("declarations.ai_tool_version_and_use_dates: start date must not be after end date")
     for key in (
         "ai_assistance_statement_approved",
         "originality_confirmed",

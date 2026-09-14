@@ -616,7 +616,7 @@
     },
     {
       "path": "tests/test_cas_q3_external_closure_inputs.py",
-      "sha256": "5b5092ef63d20aa357a0023c94f37be21cedca393b09e2678f24f8207a02cafb"
+      "sha256": "d2f96af99841824dbf8bfec750dc36136ccf34bc1e06acb8ddb0667ef1c31aea"
     },
     {
       "path": "scripts/prepare_cas_q3_private_closure_workspace.py",
