@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
+  "owner_input_validation_decision": "FAIL_CLOSED_OWNER_INPUTS_INCOMPLETE_OR_INVALID",
+  "owner_inputs_complete": false,
+  "missing_field_count": 19,
+  "validation_error_count": 0,
+  "expected_missing_field_count": 19,
+  "input_matches_empty_template": false,
+  "build_error_category": "OWNER_INPUTS_INCOMPLETE_OR_INVALID",
+  "transport_access_attempted": false,
+  "output_created": false,
+  "author_populated_package_built": false,
+  "private_values_emitted": false,
+  "private_input_hash_emitted": false,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "cas_q3_status": "NOT_READY",
+  "input_scope": "LOCAL_GIT_IGNORED_OWNER_INPUT"
+}

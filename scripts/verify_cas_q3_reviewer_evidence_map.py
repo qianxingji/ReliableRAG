@@ -613,6 +613,27 @@ def main() -> int:
     checks.equal(hashlib.sha256(reply_packet.encode("utf-8")).hexdigest(), reply_receipt["packet_sha256"], "reply packet hash")
     checks.true("@" not in reply_packet, "tracked reply packet contains no email value")
 
+    current_build_gate = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        current_build_gate["decision"],
+        "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
+        "current private owner input fails before transport or output",
+    )
+    checks.equal(current_build_gate["input_scope"], "LOCAL_GIT_IGNORED_OWNER_INPUT", "current private gate input scope")
+    checks.equal(current_build_gate["input_matches_empty_template"], False, "current owner input is not empty template")
+    checks.equal(current_build_gate["missing_field_count"], 19, "current private gate missing fields")
+    checks.equal(current_build_gate["validation_error_count"], 0, "current private gate validation errors")
+    checks.equal(current_build_gate["transport_access_attempted"], False, "current private gate does not access transport")
+    checks.equal(current_build_gate["output_created"], False, "current private gate creates no output")
+    checks.equal(current_build_gate["author_populated_package_built"], False, "current private gate builds no package")
+    checks.equal(current_build_gate["private_values_emitted"], False, "current private gate emits no values")
+    checks.equal(current_build_gate["private_input_hash_emitted"], False, "current private gate emits no input hash")
+    checks.equal(current_build_gate["submission_authorized"], False, "current private gate does not authorize submission")
+
     correction = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.json").read_text(
             encoding="utf-8"
@@ -645,11 +666,13 @@ def main() -> int:
         "python scripts/verify_cas_q3_institutional_cas_record.py --check-template",
         "python scripts/verify_cas_q3_institutional_release_record.py --check-template",
         "python scripts/verify_cas_q3_external_closure_inputs.py --check-templates",
+        "python scripts/verify_cas_q3_current_private_build_gate.py --check-template",
         "python scripts/verify_cas_q3_license_state.py",
         "tests.test_cas_q3_institutional_cas_record",
         "tests.test_cas_q3_institutional_release_record",
         "tests.test_cas_q3_external_closure_inputs",
         "tests.test_cas_q3_private_closure_workspace",
+        "tests.test_cas_q3_current_private_build_gate",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",

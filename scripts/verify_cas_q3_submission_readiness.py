@@ -758,6 +758,59 @@ def main() -> int:
     require(reply_receipt["personal_values_emitted"] is False, "owner reply packet emits no personal values", checks)
     require(reply_receipt["submission_authorized"] is False, "owner reply packet does not authorize submission", checks)
 
+    current_build_gate = json.loads(
+        (ROOT / evidence["p0_i_current_private_build_gate_verification"]).read_text(encoding="utf-8")
+    )
+    require(
+        current_build_gate["decision"]
+        == "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
+        "current private owner input is rejected before transport or output",
+        checks,
+    )
+    require(
+        current_build_gate["input_scope"] == "LOCAL_GIT_IGNORED_OWNER_INPUT"
+        and current_build_gate["input_matches_empty_template"] is False,
+        "current build gate exercised the nonempty private owner input",
+        checks,
+    )
+    require(
+        current_build_gate["missing_field_count"] == 19
+        and current_build_gate["validation_error_count"] == 0,
+        "current build gate retains the exact owner-input deficit",
+        checks,
+    )
+    require(
+        current_build_gate["transport_access_attempted"] is False
+        and current_build_gate["output_created"] is False,
+        "current build gate stops before transport access and output creation",
+        checks,
+    )
+    require(
+        current_build_gate["author_populated_package_built"] is False
+        and current_build_gate["private_values_emitted"] is False
+        and current_build_gate["private_input_hash_emitted"] is False,
+        "current build gate creates no package and emits no private material",
+        checks,
+    )
+    require(current_build_gate["submission_authorized"] is False, "current build gate does not authorize submission", checks)
+    require(
+        evidence["private_submission_current_decision"]
+        == "FAIL_CLOSED_OWNER_INPUTS_INCOMPLETE_OR_INVALID",
+        "evidence index records the current real private-builder gate",
+        checks,
+    )
+    require(
+        evidence["p0_i_current_private_build_gate_missing_fields"] == 19
+        and evidence["p0_i_current_private_build_gate_validation_errors"] == 0
+        and evidence["p0_i_current_private_build_gate_input_matches_empty_template"] is False
+        and evidence["p0_i_current_private_build_gate_transport_access_attempted"] is False
+        and evidence["p0_i_current_private_build_gate_output_created"] is False
+        and evidence["p0_i_current_private_build_gate_package_built"] is False
+        and evidence["p0_i_current_private_build_gate_private_values_emitted"] is False,
+        "indexed current private-builder boundary matches its receipt",
+        checks,
+    )
+
     cas_record_intake = json.loads(
         (ROOT / evidence["p0_h_institutional_cas_record_intake"]).read_text(encoding="utf-8")
     )

@@ -330,6 +330,11 @@ fairness, reviewer and Submission Ready audits.
    email addresses, postal details and declaration text are not serialized into
    the tracked packet or receipt. The packet only reduces coordination friction;
    it does not complete any declaration or authorize submission.
+   The [current private build-gate verification](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
+   also exercises the real Git-ignored owner input. It confirms that the file is
+   no longer the empty template while proving that its 19-field failure occurs
+   before transport access or output creation. No identity-bearing target
+   artifact was created.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific
@@ -351,9 +356,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 127 repository records plus preserved withheld archive
+  authenticates 131 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 884 checks, without
+  package in 912 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

@@ -86,6 +86,13 @@ the owner/CAS/release components; placeholders are not received records. A
 future complete structural result
 still cannot close P0-G/H/I without content, artifact and final Astra audits.
 
+The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
+exercises the nonempty Git-ignored owner input without emitting any supplied
+value or hash. Its 19-field failure occurs before a tripwire transport can be
+accessed and before an output directory can be created. This authenticates the
+current fail-closed integration state; it does not create an author-populated
+artifact or close P0-I.
+
 ## Reviewer sequence
 
 1. Read the abstract, Sections 3--7 and the complete nine-policy table in the
