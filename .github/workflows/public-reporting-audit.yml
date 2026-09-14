@@ -1,0 +1,72 @@
+name: public-reporting-audit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - work/cas-q2-p0-1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-reporting-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  aggregate-reporting:
+    name: Aggregate reporting and fail-closed boundary
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the exact revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.11"
+
+      - name: Install PDF inspection tools
+        run: sudo apt-get update && sudo apt-get install --yes poppler-utils
+
+      - name: Verify sealed aggregate reporting and compiled artifacts
+        run: |
+          python scripts/verify_cas_q3_claim_statistics.py
+          python scripts/verify_cas_q3_manuscript.py
+          python scripts/verify_cas_q3_compiled_pdfs.py
+          python scripts/audit_cas_q3_manuscript_length.py
+
+      - name: Run portable reporting and privacy tests
+        run: |
+          python -m unittest \
+            tests.test_cas_q3_aggregate_release \
+            tests.test_cas_q3_owner_inputs \
+            tests.test_cas_q3_manuscript_length
+
+      - name: Require the submission gate to remain fail-closed
+        shell: bash
+        run: |
+          set +e
+          python scripts/verify_cas_q3_submission_readiness.py
+          readiness_exit=$?
+          set -e
+          test "$readiness_exit" -eq 2
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          result = json.loads(
+              Path("docs/cas_q3/SUBMISSION_READINESS_VERIFICATION.json").read_text(encoding="utf-8")
+          )
+          assert result["decision"] == "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES"
+          assert result["cas_q3_status"] == "NOT_READY"
+          assert result["submission_ready"] is False
+          assert result["scientific_payloads_read"] is False
+          assert result["model_forwards"] == 0
+          assert result["scientific_fits"] == 0
+          PY
+
+      - name: Require deterministic tracked receipts
+        run: git diff --exit-code
