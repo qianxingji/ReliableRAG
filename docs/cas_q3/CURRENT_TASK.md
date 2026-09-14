@@ -296,7 +296,7 @@ fairness, reviewer and Submission Ready audits.
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
   authenticates 98 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 648 checks, without
+  package in 652 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -315,8 +315,10 @@ fairness, reviewer and Submission Ready audits.
   [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
   failure, the corrected 49-check committed-surface verifier and the 38-check
   committed Applied Intelligence modern-preflight verifier. GitHub push and
-  pull-request runs pass through the current target-transport acceptance chain;
-  the latest accepted head is `8c61e8d`. Private aggregate/statistical,
+  pull-request runs pass through the current owner-gate correction and portable
+  LaTeX-lookup repair; the latest accepted head is `53c9e3d`. The exposed
+  Ubuntu `LOCALAPPDATA` failure and its successful repair are retained in the
+  CI acceptance record. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
   outside this CI.
 

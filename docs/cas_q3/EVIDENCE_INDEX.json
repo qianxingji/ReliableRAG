@@ -186,11 +186,11 @@
   "p1_a_reviewer_evidence_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
   "p1_a_reviewer_evidence_map_sha256": "5d48cb0e6db27b18c6daaf2bc09e09b0772c5dc01971f4b17472cc175b5d934e",
   "p1_a_machine_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.json",
-  "p1_a_machine_map_sha256": "13ad9e400902518f2c09ada86bfc6984da1d90d0f2323b99a9a4950df219e375",
+  "p1_a_machine_map_sha256": "4b60ee7566874958b0a6c0c06fe8cdbf5c55ee5768024143ef7dafbd6438aff8",
   "p1_a_verifier": "scripts/verify_cas_q3_reviewer_evidence_map.py",
-  "p1_a_verifier_sha256": "54e066754d25344f2a74548fdb3f83461055f356c5ad2c6dcd642382e087460f",
+  "p1_a_verifier_sha256": "11b9f5dacc5dda031fada7de7b94b83c8c37ba92d9fd13be63bb461eb455080a",
   "p1_a_verification_receipt": "docs/cas_q3/REVIEWER_EVIDENCE_MAP_VERIFICATION.json",
-  "p1_a_verification_receipt_sha256": "e884d86d8621b16ebd38bdcf1e4c5546e0a01c77b1feb7c579ea69e47ead9214",
+  "p1_a_verification_receipt_sha256": "434a5e6f5e9b4442abb623aae75cb4700c98e02e63e25d207f4ae68c471e9b1e",
   "p1_a_decision": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES",
   "completed_p1": [
     "P1_A_reviewer_evidence_map_and_reproduction_entry_points",
@@ -249,7 +249,7 @@
   "submission_readiness_verification": "docs/cas_q3/SUBMISSION_READINESS_VERIFICATION.json",
   "submission_readiness_verification_sha256": "acd54854c4e456417593c38609bfd14674d33f1a2d29e2567eae7efa3326a644",
   "submission_readiness_decision": "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES",
-  "current_task_sha256": "1d0926a2d3e7b3cc6a81d0ff54fab85ce6299a36176e042c880ef8d98b68481d",
+  "current_task_sha256": "2af499145621ee7f6a6c183c9e4990f9b994f78d1e2c180cab616028cc88aa86",
   "owner_inputs_intake": "docs/cas_q3/OWNER_INPUTS_INTAKE.md",
   "owner_inputs_intake_sha256": "1921cf1bcc18abe23ec15a53fa10a0b748c8302aab3fd2f9a0885135a5f7400c",
   "owner_inputs_template": "docs/cas_q3/OWNER_INPUTS_TEMPLATE.json",
@@ -282,7 +282,7 @@
   "p0_i_current_visual_review": "PASS_PROJECT_LEAD_CURRENT_11_MAIN_PLUS_3_SUPPLEMENT_AND_MODERN_TARGET_12_ALL_PAGES",
   "p0_i_compiled_verifier_visual_scope": "MECHANICAL_ONLY_VISUAL_ACCEPTANCE_SEPARATE",
   "p1_a_repository_records": 98,
-  "p1_a_check_count": 648,
+  "p1_a_check_count": 652,
   "p0_i_manuscript_length_verification": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
   "p0_i_manuscript_length_auditor": "scripts/audit_cas_q3_manuscript_length.py",
   "p0_i_manuscript_length_tests": "tests/test_cas_q3_manuscript_length.py",
@@ -372,13 +372,13 @@
   "p0_h_applied_intelligence_target_selection_receipt_sha256": "a81897e9ac6f0e4658c8219f2794317f0dc2095e73b16d3bea9499d893e5cd7e",
   "p0_h_owner_publication_charge_route": "SUBSCRIPTION_NO_MANDATORY_APC",
   "p1_e_public_reporting_ci": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-  "p1_e_public_reporting_ci_sha256": "5f806d98b599f6733b0850f906ad716198c7641166a4605d0b3fda10b1b5cba7",
+  "p1_e_public_reporting_ci_sha256": "e7ca51aec6c32155d94fa572679133d762647a7de5c47ba6870c7a49d9b89cac",
   "p1_e_workflow": ".github/workflows/public-reporting-audit.yml",
   "p1_e_workflow_sha256": "20d42a24129a2ee8e67f7a15f15ebd9c10f03a8cb8f2487d9e7bb7f9e7f80503",
   "p1_e_public_surface_verifier": "scripts/verify_cas_q3_public_reporting_surface.py",
   "p1_e_public_surface_verifier_sha256": "164c76504b89571eb32135db3eb2b1df74f13361be6dd076160489debbd1e41a",
   "p1_e_decision": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED",
-  "p1_e_accepted_commit": "250cd5af9b24e75a06915b6dc5d107185bca868d",
+  "p1_e_accepted_commit": "53c9e3deade01c1d268c4bc3169a73ac9dfab102",
   "p1_e_successful_run_ids": [
     34801833707,
     34801836852,
@@ -389,7 +389,9 @@
     34806236165,
     34806238427,
     34807538106,
-    34807539860
+    34807539860,
+    34812422447,
+    34812424983
   ],
   "p1_e_first_failure_run_ids": [
     34801428340,
@@ -545,5 +547,11 @@
   "p0_i_required_owner_fields_net_reduction": 11,
   "p0_i_required_owner_fields_validation_errors": 0,
   "p0_i_required_owner_fields_correction_sha256": "a3520e4bd83101edecc385903e1851e0ec69f53aee3c7113b39e0a6191cab1a0",
-  "p0_i_required_owner_fields_correction_acceptance_sha256": "8338abdd77933670b4e0a38a4419c3bc48655fe4a31ac45a8ef9aeac7cd986f2"
+  "p0_i_required_owner_fields_correction_acceptance_sha256": "8338abdd77933670b4e0a38a4419c3bc48655fe4a31ac45a8ef9aeac7cd986f2",
+  "p1_e_portability_failure_run_ids": [
+    34812220477,
+    34812222762
+  ],
+  "p1_e_portability_failure_cause": "WINDOWS_ONLY_LOCALAPPDATA_FALLBACK_IN_NEWLY_ADMITTED_LATEX_SAFETY_TEST",
+  "p1_e_portability_failure_scientific_effect": false
 }

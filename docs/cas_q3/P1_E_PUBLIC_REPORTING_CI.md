@@ -68,6 +68,23 @@ The Ubuntu job performs the following operations:
 The final `git diff --exit-code` check requires all regenerated tracked receipts
 to match the committed bytes.
 
+The owner-gate correction at commit
+`07ea5ce7754771177e0826df7d3fa340cac97fbb` exposed a Windows-only fallback in
+the newly admitted private-packet safety test: when `pdflatex` was absent on
+Ubuntu, executable discovery indexed the unavailable `LOCALAPPDATA` variable.
+That portable-engineering failure is retained in push run
+[34812220477](https://github.com/qianxingji/ReliableRAG/actions/runs/34812220477)
+and pull-request run
+[34812222762](https://github.com/qianxingji/ReliableRAG/actions/runs/34812222762).
+Commit `53c9e3deade01c1d268c4bc3169a73ac9dfab102` replaced the direct environment
+index with a guarded Windows fallback and added a no-`LOCALAPPDATA` regression
+test. Push run
+[34812422447](https://github.com/qianxingji/ReliableRAG/actions/runs/34812422447)
+and pull-request run
+[34812424983](https://github.com/qianxingji/ReliableRAG/actions/runs/34812424983)
+then completed successfully. This failure and repair changed no paper result,
+model execution or scientific fit.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
