@@ -471,12 +471,12 @@
     {
       "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "055f10bf38ccff22607731d08f8952654b29abc083605526e6454bbd76b1dc30"
+      "sha256": "6ccc84cc4abbe59242a6a130a7693bc53a67aad6e6bb3b2fc39b3496e14014b0"
     },
     {
       "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST.json",
       "required_marker": "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING",
-      "sha256": "e5737a9237b17ce90ad02bf733f8bcf300ede50d79797017aaa96d453e8db167"
+      "sha256": "ddc5ed16bd2fd0dd22ae00ae7f0e5220cd505f2fc3bf3edaca283b5f67473320"
     },
     {
       "path": "docs/cas_q3/P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.json",

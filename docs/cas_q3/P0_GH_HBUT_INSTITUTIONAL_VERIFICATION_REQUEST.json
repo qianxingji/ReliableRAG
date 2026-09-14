@@ -9,6 +9,22 @@
     "https://kjcy.hbut.edu.cn/bflm/jgsz/nsjg.htm",
     "https://lxy.hbut.edu.cn/info/1112/3890.htm"
   ],
+  "official_contact_route": {
+    "general_email": "kyc@mail.hbut.edu.cn",
+    "general_phone": "027-59750149",
+    "natural_science_results_office_phone": "027-59750136",
+    "technology_transfer_and_ip_office_phones": [
+      "027-59750884",
+      "027-59750139"
+    ],
+    "source_urls": [
+      "https://kjcy.hbut.edu.cn/",
+      "https://kjcy.hbut.edu.cn/bflm/jgsz/nsjg.htm"
+    ],
+    "verified_date": "2026-09-14",
+    "office_specific_email_published": false,
+    "temporary_or_unrelated_notice_email_used": false
+  },
   "public_corroboration_context": {
     "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.json",
     "public_2025_major_category_q3_supported": true,

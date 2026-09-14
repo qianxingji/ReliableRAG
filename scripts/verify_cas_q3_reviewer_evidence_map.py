@@ -431,6 +431,10 @@ def main() -> int:
     checks.equal(hbut_request["central_notice_attachments"]["download_requires_captcha"], True, "attachment CAPTCHA boundary retained")
     checks.equal(hbut_request["central_notice_attachments"]["contents_inspected"], False, "CAPTCHA attachments remain uninspected")
     checks.equal(hbut_request["central_notice_attachments"]["contents_inferred"], False, "CAPTCHA attachment contents not inferred")
+    official_contact = hbut_request["official_contact_route"]
+    checks.equal(official_contact["general_email"], "kyc@mail.hbut.edu.cn", "request uses official general email")
+    checks.equal(official_contact["natural_science_results_office_phone"], "027-59750136", "request uses natural-science results office phone")
+    checks.equal(official_contact["temporary_or_unrelated_notice_email_used"], False, "request excludes temporary notice addresses")
     checks.equal(len(hbut_request["private_response_import"]) == 6, True, "request binds private import workflow")
     checks.equal(
         hbut_request["private_response_import"]["manuscript_approval_record_input"],
@@ -445,6 +449,7 @@ def main() -> int:
     checks.equal(hbut_request["submission_authorized"], False, "request does not authorize submission")
     request_text = (ROOT / hbut_request["request_path"]).read_text(encoding="utf-8")
     checks.true("计算机科学大类3区、人工智能小类4区" in request_text, "request states public major/minor context")
+    checks.true("kyc@mail.hbut.edu.cn" in request_text, "request contains official general email")
     checks.true("python scripts/verify_cas_q3_external_closure_inputs.py" in request_text, "request contains private import command")
     checks.true("本稿不依据未读取的" in request_text, "request retains CAPTCHA non-inference boundary")
 
