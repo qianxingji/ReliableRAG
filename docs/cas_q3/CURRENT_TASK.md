@@ -234,6 +234,12 @@ fairness, reviewer and Submission Ready audits.
    the current package contains no such profile, so journal-specific
    equivalence remains open. The private transport is anonymous and neither
    submission- nor distribution-authorized.
+   The subsequent [private target-builder acceptance](P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_ACCEPTANCE.md)
+   implements the remaining mechanical path from a complete owner-input file
+   to an author-populated flat source ZIP, compiled PDF and cover letter. A
+   synthetic complete fixture passed the full build and all 13 rendered pages
+   passed visual inspection. The actual local input remains fail-closed at 30
+   missing fields, so no real identity-bearing target package was generated.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific
@@ -255,8 +261,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 78 repository records plus preserved withheld archive
-  generations and the private target transport in 499 checks, without
+  authenticates 82 repository records plus preserved withheld archive
+  generations, the private target transport and the synthetic author-populated
+  package in 539 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

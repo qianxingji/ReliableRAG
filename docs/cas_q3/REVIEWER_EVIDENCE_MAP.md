@@ -47,6 +47,11 @@ route and no-mandatory-APC subscription choice. The
 independently confirms Wuhan and postcode 430068 from official university
 pages while leaving the author department and personal correspondence fields
 pending. The
+[private target-builder acceptance](P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_ACCEPTANCE.md)
+shows with synthetic facts that a complete validated intake can generate the
+flat author-populated source ZIP, compiled PDF and cover letter without exposing
+personal values in its receipt. All 13 synthetic pages passed visual review;
+the real package remains unbuilt because the real intake is incomplete. The
 [data/code policy audit](P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.md)
 maps the mandatory Data Availability Statement and conditional-access boundary.
 The Apache-2.0 license is present and a corrected candidate is independently

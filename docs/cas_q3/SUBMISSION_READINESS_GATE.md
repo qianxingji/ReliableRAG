@@ -31,6 +31,10 @@ The current machine decision is
   real author/declaration facts, an author-populated final package, retained
   publisher acceptance of the modern-template path or a working journal-
   specific legacy package, and the final GPT-6 Astra xhigh audit.
+  The fail-closed private target builder has completed a 13-page synthetic
+  end-to-end test, so no additional manual source-splicing step is required
+  after the remaining real inputs pass. This synthetic result is not a real
+  author package or an authorization.
 - P1-A through P1-E are closed. P2 remains frozen under the Qwen-only route.
 
 The [consolidated owner-input intake](OWNER_INPUTS_INTAKE.md) provides one

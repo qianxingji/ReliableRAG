@@ -367,6 +367,31 @@ def main() -> int:
     require(hbut_affiliation["department_verified"] is False, "author department remains uninferred", checks)
     require(hbut_affiliation["personal_values_emitted"] is False, "affiliation audit emits no personal values", checks)
 
+    private_builder = json.loads(
+        (ROOT / evidence["p0_i_applied_intelligence_private_submission_builder_results"]).read_text(
+            encoding="utf-8"
+        )
+    )
+    require(
+        private_builder["decision"]
+        == "PASS_SYNTHETIC_COMPLETE_INPUT_TO_PRIVATE_APPLIED_INTELLIGENCE_PACKAGE_PIPELINE_FINAL_FACTS_AND_AUDITS_OPEN",
+        "private target-builder synthetic acceptance is bound",
+        checks,
+    )
+    require(private_builder["input_scope"]["synthetic_complete_fixture_used"] is True, "synthetic builder input", checks)
+    require(private_builder["input_scope"]["real_owner_input_used"] is False, "real owner input was not used", checks)
+    require(private_builder["input_scope"]["real_owner_input_missing_fields"] == 30, "real owner input remains incomplete", checks)
+    require(private_builder["synthetic_private_build"]["source_members"] == 10, "synthetic target source members", checks)
+    require(private_builder["synthetic_private_build"]["compiled_pages"] == 13, "synthetic target PDF pages", checks)
+    require(private_builder["synthetic_private_build"]["visual_defects"] == 0, "synthetic target visual review", checks)
+    require(
+        private_builder["fail_closed_properties"]["incomplete_input_rejected_before_transport_read"] is True,
+        "private builder rejects incomplete input before private transport access",
+        checks,
+    )
+    require(private_builder["final_astra_xhigh_audit_complete"] is False, "final Astra audit remains open", checks)
+    require(private_builder["submission_authorized"] is False, "synthetic builder does not authorize submission", checks)
+
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
 

@@ -36,6 +36,20 @@ file hashes and author/affiliation counts, and always records that independent
 CAS authority, target formatting, release and submission authorization remain
 open.
 
+For the selected Applied Intelligence route, the complete target-specific
+private builder is:
+
+```text
+python scripts/build_cas_q3_applied_intelligence_private_submission.py --input docs/cas_q3/OWNER_INPUTS.local.json --output output/private_submission/applied_intelligence_v1
+```
+
+It authenticates the private anonymous complete-source transport, injects the
+validated author/declaration facts, creates a flat ten-member source ZIP,
+compiles the author-populated PDF and writes a private cover letter plus a
+redacted receipt. The output directory must be new. A successful build remains
+submission-unauthorized until publisher-template acceptance and the final
+Astra xhigh audit pass.
+
 `null` means unanswered. Use an explicit factual value when the answer is
 negative: for example, `NONE` for no acknowledgement, `NONE_DISCLOSED` for no
 overlapping work, or `NONE_NOT_SUPPLIED` for an author ORCID. Every author entry

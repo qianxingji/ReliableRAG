@@ -289,6 +289,32 @@ def main() -> int:
     checks.equal(hbut_affiliation["department_verified"], False, "HBUT department remains pending")
     checks.equal(hbut_affiliation["personal_values_emitted"], False, "HBUT audit personal-value boundary")
 
+    private_builder = json.loads(
+        (
+            ROOT
+            / "docs"
+            / "cas_q3"
+            / "P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_RESULTS.json"
+        ).read_text(encoding="utf-8")
+    )
+    checks.equal(
+        private_builder["decision"],
+        "PASS_SYNTHETIC_COMPLETE_INPUT_TO_PRIVATE_APPLIED_INTELLIGENCE_PACKAGE_PIPELINE_FINAL_FACTS_AND_AUDITS_OPEN",
+        "private target-builder bounded decision",
+    )
+    checks.equal(private_builder["input_scope"]["synthetic_complete_fixture_used"], True, "synthetic input scope")
+    checks.equal(private_builder["input_scope"]["real_owner_input_used"], False, "real owner input excluded")
+    checks.equal(private_builder["input_scope"]["real_owner_input_missing_fields"], 30, "real owner missing fields")
+    checks.equal(
+        private_builder["authenticated_anonymous_transport"]["archive_sha256"],
+        transport_result["archive_sha256"],
+        "private builder authenticates accepted anonymous transport",
+    )
+    checks.equal(private_builder["synthetic_private_build"]["source_members"], 10, "synthetic private source members")
+    checks.equal(private_builder["synthetic_private_build"]["compiled_pages"], 13, "synthetic private compiled pages")
+    checks.equal(private_builder["synthetic_private_build"]["visual_defects"], 0, "synthetic private visual defects")
+    checks.equal(private_builder["submission_authorized"], False, "synthetic build does not authorize submission")
+
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (
         "permissions:\n  contents: read",
@@ -298,6 +324,7 @@ def main() -> int:
         "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
+        "tests.test_cas_q3_applied_intelligence_private_submission",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",
     ):
@@ -415,6 +442,34 @@ def main() -> int:
     checks.equal(target_bytes[0], target_bytes[1], "two target transport builds are byte-identical")
     checks.equal(target_transport["submission_authorized"], False, "external target transport submission gate")
     checks.equal(target_transport["distribution_authorized"], False, "external target transport distribution gate")
+
+    synthetic = evidence["applied_intelligence_private_submission_synthetic_candidate"]
+    for key in ("source_archive_sha256", "compiled_pdf_sha256", "cover_letter_sha256"):
+        checks.equal(
+            synthetic[key],
+            private_builder["synthetic_private_build"][key],
+            f"synthetic private result and map pin: {key}",
+        )
+    synthetic_root = Path(synthetic["directory"])
+    checks.true(synthetic_root.is_dir(), "synthetic private target directory exists")
+    for name_key, hash_key in (
+        ("source_archive", "source_archive_sha256"),
+        ("compiled_pdf", "compiled_pdf_sha256"),
+        ("cover_letter", "cover_letter_sha256"),
+    ):
+        artifact = synthetic_root / synthetic[name_key]
+        checks.true(artifact.is_file(), f"synthetic private artifact exists: {name_key}")
+        checks.equal(digest(artifact), synthetic[hash_key], f"synthetic private artifact pin: {name_key}")
+    private_receipt_path = synthetic_root / synthetic["receipt"]
+    checks.true(private_receipt_path.is_file(), "synthetic private receipt exists")
+    private_receipt = json.loads(private_receipt_path.read_text(encoding="utf-8"))
+    checks.equal(
+        private_receipt["decision"],
+        "PASS_PRIVATE_APPLIED_INTELLIGENCE_AUTHOR_POPULATED_CANDIDATE_FINAL_AUDITS_OPEN",
+        "synthetic private receipt decision",
+    )
+    checks.equal(private_receipt["personal_values_in_receipt"], False, "synthetic private receipt privacy")
+    checks.equal(private_receipt["submission_authorized"], False, "synthetic private receipt submission gate")
 
     static_delivery = json.loads((ROOT / evidence["private_transport"]["static_delivery_receipt"]).read_text(encoding="utf-8"))
     checks.equal(static_delivery["status"], "PASS_DECLARED_STATIC_TRANSPORT_AND_RESTORATION_ONLY", "static delivery scope")

@@ -46,6 +46,14 @@ identical and independently clean-compile to the already visually accepted
 `docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md`.
 The transport remains anonymous, untracked, and submission-unauthorized.
 
+After every private owner/institution field is validated, the fail-closed
+`scripts/build_cas_q3_applied_intelligence_private_submission.py` builder can
+generate the author-populated flat source ZIP, compiled PDF and cover letter in
+a new ignored directory. Its synthetic end-to-end acceptance is recorded in
+`docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_ACCEPTANCE.md`.
+A successful private build still requires author review, publisher template-
+path acceptance and the final Astra xhigh audit before submission.
+
 The main manuscript is anonymous and remains in a journal-neutral class.
 `title_page_template.tex` and
 `cover_letter_template.md` intentionally retain explicit author-input fields;
