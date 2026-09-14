@@ -34,6 +34,12 @@ final target-specific package still requires a fresh Astra xhigh rebind. See
 `COMPILE_RECEIPT.json` and the P0-I records under `docs/cas_q3/` for exact
 hashes and the retained nonfatal supplement `longtable` notice.
 
+The selected-target engineering preflight also compiles the same scientific
+source with the authenticated December 2024 Springer Nature `sn-jnl` package to
+a font-clean 12-page PDF and a flat eight-member authored-source ZIP. This does
+not close the unresolved difference between that current package and the
+`smallcondensed` profile still named on the Applied Intelligence journal page.
+
 The main manuscript is anonymous and remains in a journal-neutral class.
 `title_page_template.tex` and
 `cover_letter_template.md` intentionally retain explicit author-input fields;

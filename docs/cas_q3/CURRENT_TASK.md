@@ -212,6 +212,12 @@ fairness, reviewer and Submission Ready audits.
    The [Applied Intelligence abstract and keyword acceptance](P0_I_APPLIED_INTELLIGENCE_ABSTRACT_KEYWORD_ACCEPTANCE.md)
    binds that edit, both current PDFs and the complete 14-page visual review
    while retaining the target-template and final Astra gates.
+   The subsequent [modern-template preflight](P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md)
+   authenticates the December 2024 official Springer Nature package and builds
+   a clean 12-page `sn-jnl`/numeric-citation PDF plus a flat eight-member
+   authored-source ZIP. All 12 pages pass project-lead visual review. This
+   remains a partial pass because the journal page's `smallcondensed` request
+   has not been proved equivalent to the modern package.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific
@@ -232,7 +238,7 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 52 repository records plus the withheld archive and passes 317
+  authenticates 60 repository records plus the withheld archive and passes 360
   checks without scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

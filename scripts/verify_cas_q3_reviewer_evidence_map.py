@@ -164,6 +164,9 @@ def main() -> int:
     checks.equal(target["current_package"]["abstract_requirement_met"], True, "target profile abstract requirement")
     checks.equal(target["current_package"]["journal_neutral_keyword_count"], 5, "target profile keyword count")
     checks.equal(target["current_package"]["keyword_requirement_met"], True, "target profile keyword requirement")
+    checks.equal(target["current_package"]["modern_sn_jnl_preflight_built"], True, "modern target preflight built")
+    checks.equal(target["current_package"]["modern_sn_jnl_preflight_verified"], True, "modern target preflight verified")
+    checks.equal(target["current_package"]["smallcondensed_equivalence_proved"], False, "template equivalence remains open")
     checks.equal(target["owner_cas_rule"]["independent_institutional_record_retained"], False, "institutional CAS record remains open")
     checks.equal(target["submission_authorized"], False, "target audit does not authorize submission")
     applied_policy = json.loads(
@@ -178,12 +181,42 @@ def main() -> int:
     checks.equal(applied_policy["current_project"]["existing_aggregate_archive_release_ready"], False, "old archive remains withheld")
     checks.equal(applied_policy["distribution_authorized"], False, "Applied policy does not authorize distribution")
 
+    applied_preflight = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        applied_preflight["decision"],
+        "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
+        "Applied Intelligence modern preflight decision",
+    )
+    checks.equal(applied_preflight["artifacts"]["pdf_pages"], 12, "Applied Intelligence preflight pages")
+    checks.equal(applied_preflight["artifacts"]["pdf_nonembedded_font_rows"], [], "Applied Intelligence embedded fonts")
+    checks.equal(applied_preflight["artifacts"]["pdf_type3_font_rows"], [], "Applied Intelligence no Type 3 fonts")
+    checks.equal(applied_preflight["profile"]["smallcondensed_profile_used"], False, "smallcondensed not claimed")
+    checks.equal(
+        applied_preflight["source_protection"]["scientific_prose_or_numbers_changed"],
+        False,
+        "Applied Intelligence preflight preserves scientific content",
+    )
+    checks.equal(applied_preflight["submission_authorized"], False, "Applied Intelligence preflight not submittable")
+    applied_verification = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_VERIFICATION.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        applied_verification["decision"],
+        "PASS_COMMITTED_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_WITH_TEMPLATE_EQUIVALENCE_OPEN",
+        "committed Applied Intelligence preflight verification",
+    )
+    checks.equal(applied_verification["checks"], 37, "Applied Intelligence preflight verification checks")
+
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (
         "permissions:\n  contents: read",
         "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
         "actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
         "python scripts/verify_cas_q3_public_reporting_surface.py",
+        "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
+        "tests.test_cas_q3_applied_intelligence_preflight",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",
     ):

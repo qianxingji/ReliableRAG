@@ -54,7 +54,7 @@
         "complete author publishing names, department/address and corresponding-author fields",
         "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
         "originality, exclusive-submission and all-author approval",
-        "target-specific source/PDF/package conversion and verification",
+        "publisher-resolved final target package; the modern sn-jnl preflight passes but smallcondensed equivalence is open",
         "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit"
       ]
     }
@@ -66,8 +66,8 @@
     "validation_error_count": 0
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
-  "verified_repository_hashes": 89,
-  "checks": 237,
+  "verified_repository_hashes": 97,
+  "checks": 261,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

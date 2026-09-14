@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_COMMITTED_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_WITH_TEMPLATE_EQUIVALENCE_OPEN",
+  "checks": 37,
+  "pdf_pages": 12,
+  "source_members": 8,
+  "visual_review": "SEPARATE_VERSIONED_PROJECT_LEAD_ACCEPTANCE",
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "cas_q3_status": "NOT_READY"
+}

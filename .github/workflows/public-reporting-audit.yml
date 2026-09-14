@@ -36,12 +36,14 @@ jobs:
           python scripts/verify_cas_q3_public_reporting_surface.py
           python scripts/verify_cas_q3_compiled_pdfs.py
           python scripts/audit_cas_q3_manuscript_length.py
+          python scripts/verify_cas_q3_applied_intelligence_preflight.py
 
       - name: Run portable reporting and privacy tests
         run: |
           python -m unittest \
             tests.test_cas_q3_owner_inputs \
-            tests.test_cas_q3_manuscript_length
+            tests.test_cas_q3_manuscript_length \
+            tests.test_cas_q3_applied_intelligence_preflight
 
       - name: Require the submission gate to remain fail-closed
         shell: bash

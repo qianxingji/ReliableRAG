@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "target_journal": "Applied Intelligence",
+  "target_selected": true,
+  "submission_authorized": false,
+  "distribution_authorized": false,
+  "official_sources_checked_local_date": "2026-09-14",
+  "official_sources": [
+    "https://link.springer.com/journal/10489/submission-guidelines",
+    "https://www.springernature.com/gp/authors/campaigns/latex-author-support",
+    "https://cms-resources.apps.public.k8s.springernature.io/springer-cms/rest/v1/content/18782940/data/v12"
+  ],
+  "template_dependency": {
+    "official_download_sha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+    "sn_jnl_class_sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "sn_basic_bst_sha256": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c",
+    "version_label": "Version 3.1 December 2024",
+    "files_redistributed_in_repository_or_authored_source_zip": false
+  },
+  "runtime": {
+    "pdftex": "MiKTeX-pdfTeX 4.23 (MiKTeX 25.12)",
+    "latex_format": "LaTeX2e 2025-11-01",
+    "class_required_package_observed": "sttools/cuted.sty"
+  },
+  "profile": {
+    "class": "sn-jnl",
+    "class_options": [
+      "pdflatex",
+      "sn-basic",
+      "Numbered"
+    ],
+    "abstract_words": 155,
+    "keywords": 5,
+    "numeric_citations": true,
+    "flat_authored_source_archive": true,
+    "smallcondensed_requested_on_journal_page": true,
+    "smallcondensed_profile_used": false,
+    "sn_jnl_equivalent_to_journal_smallcondensed_proved": false
+  },
+  "compile_checks": {
+    "fatal_errors": 0,
+    "undefined_citations_or_references": 0,
+    "overfull_boxes": 0,
+    "underfull_boxes": 14,
+    "unresolved_markers": 0
+  },
+  "source_protection": {
+    "journal_neutral_source_sha256_before_and_after": "6ff60b8445c952a1d7434f7a27ec0ec05e93a92892666fdba0d8d5b3d30da841",
+    "allowed_transformation_count": 11,
+    "allowed_transformations": [
+      {
+        "from": "journal-neutral article preamble",
+        "to": "official modern sn-jnl / sn-basic Numbered preamble",
+        "scope": "class, bibliography and package compatibility only"
+      },
+      {
+        "from": "journal-neutral anonymous author block",
+        "to": "sn-jnl anonymous placeholder front matter",
+        "scope": "template syntax only; no identity inferred"
+      },
+      {
+        "from": "article abstract and visible keyword line",
+        "to": "sn-jnl abstract and keywords front matter",
+        "scope": "front-matter syntax only"
+      },
+      {
+        "from": "plainnat bibliography style",
+        "to": "class-selected sn-basic Numbered style",
+        "scope": "bibliography presentation only"
+      },
+      {
+        "from": "figures/paired_pipeline.pdf",
+        "to": "Fig1.pdf",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "figures/recovery_damage.pdf",
+        "to": "Fig2.pdf",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "tables/study_design.tex",
+        "to": "table_study_design.tex",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "tables/main_results.tex",
+        "to": "table_main_results.tex",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "tables/primary_comparisons.tex",
+        "to": "table_primary_comparisons.tex",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "small study-design table",
+        "to": "study-design table with target-local 5pt column padding",
+        "scope": "target-layout overflow correction only"
+      },
+      {
+        "from": "sn-basic default bibliography font",
+        "to": "small bibliography font",
+        "scope": "target-layout orphan-page correction only"
+      }
+    ],
+    "scientific_prose_or_numbers_changed": false
+  },
+  "artifacts": {
+    "pdf": "output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf",
+    "pdf_sha256": "0bcb10f47a1a81d4ec08dafc130bfe7f97d2bc01d224ab129953e0be7cb9e26b",
+    "pdf_pages": 12,
+    "pdf_font_rows": 22,
+    "pdf_nonembedded_font_rows": [],
+    "pdf_type3_font_rows": [],
+    "authored_source_zip": "output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip",
+    "authored_source_zip_sha256": "fb2bd5ed0e3e5cf6668ffedebc1c4bcb79296deccf71b6c76ee49278c5b0984e",
+    "authored_source_zip_members": [
+      "Fig1.pdf",
+      "Fig2.pdf",
+      "manuscript.bbl",
+      "manuscript.tex",
+      "references.bib",
+      "table_main_results.tex",
+      "table_primary_comparisons.tex",
+      "table_study_design.tex"
+    ],
+    "authored_source_zip_nested_members": [],
+    "template_dependency_included": false
+  },
+  "open_gates": [
+    "resolve the journal-page smallcondensed versus current sn-jnl package conflict",
+    "complete verified author, affiliation, correspondence and declaration facts",
+    "complete release review and create a corrected license-bearing archive",
+    "retain the institution-recognized current-title and ISSN CAS record",
+    "complete target-package visual inspection",
+    "complete final GPT-6 Astra xhigh artifact, fairness, Claim and reviewer audit"
+  ],
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

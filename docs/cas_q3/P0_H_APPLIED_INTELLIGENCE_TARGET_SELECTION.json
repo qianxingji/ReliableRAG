@@ -54,6 +54,9 @@
     "abstract_requirement_met": true,
     "journal_neutral_keyword_count": 5,
     "keyword_requirement_met": true,
+    "modern_sn_jnl_preflight_built": true,
+    "modern_sn_jnl_preflight_verified": true,
+    "smallcondensed_equivalence_proved": false,
     "applied_intelligence_template_built": false,
     "target_specific_pdf_verified": false,
     "submission_authorized": false

@@ -245,6 +245,35 @@ def main() -> int:
     )
     require(applied_policy["distribution_authorized"] is False, "Applied policy audit does not authorize distribution", checks)
 
+    modern_preflight = json.loads(
+        (ROOT / evidence["p0_i_applied_intelligence_modern_preflight"]).read_text(encoding="utf-8")
+    )
+    require(
+        modern_preflight["decision"]
+        == "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
+        "modern Applied Intelligence preflight is bound",
+        checks,
+    )
+    require(modern_preflight["artifacts"]["pdf_pages"] == 12, "modern Applied Intelligence PDF is complete", checks)
+    require(modern_preflight["profile"]["abstract_words"] == 155, "target preflight abstract count", checks)
+    require(modern_preflight["profile"]["keywords"] == 5, "target preflight keyword count", checks)
+    require(modern_preflight["profile"]["smallcondensed_profile_used"] is False, "smallcondensed remains unresolved", checks)
+    require(
+        modern_preflight["profile"]["sn_jnl_equivalent_to_journal_smallcondensed_proved"] is False,
+        "sn-jnl equivalence is not overclaimed",
+        checks,
+    )
+    require(modern_preflight["submission_authorized"] is False, "modern preflight does not authorize submission", checks)
+    modern_verification = json.loads(
+        (ROOT / evidence["p0_i_applied_intelligence_modern_preflight_verification"]).read_text(encoding="utf-8")
+    )
+    require(
+        modern_verification["decision"]
+        == "PASS_COMMITTED_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_WITH_TEMPLATE_EQUIVALENCE_OPEN",
+        "committed modern target preflight verifies",
+        checks,
+    )
+
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
 
@@ -293,7 +322,7 @@ def main() -> int:
                 "complete author publishing names, department/address and corresponding-author fields",
                 "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
                 "originality, exclusive-submission and all-author approval",
-                "target-specific source/PDF/package conversion and verification",
+                "publisher-resolved final target package; the modern sn-jnl preflight passes but smallcondensed equivalence is open",
                 "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit",
             ],
         },

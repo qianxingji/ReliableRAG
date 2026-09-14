@@ -90,6 +90,12 @@ Applied Intelligence supersedes the earlier provisional Discover Computing,
 JIIS, JIS and NLP ordering as the working target. Those audits remain historical
 decision evidence and are not current submission profiles.
 
+A bounded modern Springer Nature `sn-jnl` preflight now compiles to a verified
+12-page PDF. It does not prove equivalence to the `smallcondensed` profile named
+on the journal page. The final conversion must resolve that discrepancy,
+preserve the scientific content, and produce the publisher-approved editable
+source and PDF package.
+
 P0-H can close only when a retained institution-recognized record supplies the
 CAS edition/year and confirms the current title/ISSNs as Computer Science
 major-category Tier 3 or above under the stated recognition rule. P0-I then
