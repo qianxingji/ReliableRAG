@@ -41,8 +41,10 @@ The Ubuntu job performs the following operations:
 - rerun the documented Poppler text-length proxy;
 - run the 38-check verifier for the committed 12-page Applied Intelligence modern `sn-jnl` preflight,
   its font state, Claim boundaries and flat eight-member authored-source ZIP;
-- run the owner-input privacy/fail-closed, manuscript-length and target-preflight
-  transformation tests; and
+- run the owner-input privacy/fail-closed, manuscript-length, target-preflight
+  transformation and complete-source transport safety tests; the transport test
+  uses temporary synthetic files and does not require or publish the private
+  target ZIP or official publisher package; and
 - require the top-level submission gate to exit with code 2 and retain
   `submission_ready=false`, zero fits, zero model forwards and no scientific
   payload reads.

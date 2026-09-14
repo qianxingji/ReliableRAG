@@ -39,6 +39,12 @@ source with the authenticated December 2024 Springer Nature `sn-jnl` package to
 a font-clean 12-page PDF and a flat eight-member authored-source ZIP. This does
 not close the unresolved difference between that current package and the
 `smallcondensed` profile still named on the Applied Intelligence journal page.
+A separate private transport combines those eight authored files with the
+exact authenticated `sn-jnl.cls` and `sn-basic.bst`; two builds are byte-
+identical and independently clean-compile to the already visually accepted
+12-page PDF. See
+`docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md`.
+The transport remains anonymous, untracked, and submission-unauthorized.
 
 The main manuscript is anonymous and remains in a journal-neutral class.
 `title_page_template.tex` and

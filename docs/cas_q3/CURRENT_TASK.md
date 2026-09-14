@@ -219,6 +219,16 @@ fairness, reviewer and Submission Ready audits.
    authored-source ZIP. All 12 pages pass project-lead visual review. This
    remains a partial pass because the journal page's `smallcondensed` request
    has not been proved equivalent to the modern package.
+   The later [complete-source transport acceptance](P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md)
+   establishes that the current Springer Nature authoring template is an
+   officially supported working route and packages the exact authenticated
+   class/style with the eight authored files. Two private external builds are
+   byte-identical; each passes 56 independent checks and clean compilation, and
+   the resulting PDF is byte-identical to the visually accepted 12-page
+   preflight. The journal page's legacy `smallcondensed` link returns 404 and
+   the current package contains no such profile, so journal-specific
+   equivalence remains open. The private transport is anonymous and neither
+   submission- nor distribution-authorized.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific
@@ -240,9 +250,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 70 repository records plus both preserved withheld archive
-  generations and passes 426 checks without scientific payload reads, fits or
-  model forwards.
+  authenticates 75 repository records plus preserved withheld archive
+  generations and the private target transport in the recorded checks, without
+  scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
   consolidates executed workload, non-additive timers and peaks, every missing

@@ -229,6 +229,34 @@ def main() -> int:
     )
     checks.equal(applied_verification["checks"], 38, "Applied Intelligence preflight verification checks")
 
+    applied_transport = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_RESULTS.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        applied_transport["decision"],
+        "PARTIAL_PASS_OFFICIAL_SN_JNL_ALLOWED_COMPLETE_PRIVATE_TRANSPORT_VALIDATED_SMALLCONDENSED_LEGACY_CONFLICT_RETAINED",
+        "Applied Intelligence complete-source transport bounded decision",
+    )
+    transport_result = applied_transport["private_complete_source_transport"]
+    checks.equal(transport_result["deterministic_rebuild_equal"], True, "target transport rebuild equality")
+    checks.equal(transport_result["both_builds_independently_validated"], True, "both target transports validated")
+    checks.equal(transport_result["validator_checks_each"], 56, "target transport validator checks")
+    checks.equal(transport_result["clean_compile_pages"], 12, "target transport compiled pages")
+    checks.equal(
+        transport_result["clean_compile_pdf_sha256"],
+        applied_preflight["artifacts"]["pdf_sha256"],
+        "target transport recompiles to accepted preflight PDF bytes",
+    )
+    checks.equal(
+        applied_transport["official_source_findings"]["journal_specific_equivalence_from_sn_jnl_to_smallcondensed_proved"],
+        False,
+        "legacy smallcondensed discrepancy retained",
+    )
+    checks.equal(applied_transport["submission_authorized"], False, "target transport does not authorize submission")
+    checks.equal(applied_transport["distribution_authorized"], False, "target transport remains private")
+
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (
         "permissions:\n  contents: read",
@@ -237,6 +265,7 @@ def main() -> int:
         "python scripts/verify_cas_q3_public_reporting_surface.py",
         "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
         "tests.test_cas_q3_applied_intelligence_preflight",
+        "tests.test_cas_q3_applied_intelligence_transport",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",
     ):
@@ -313,6 +342,44 @@ def main() -> int:
         )
         checks.equal(manifest_json["non_code_members_not_relicensed_by_project_code_license"], True, "licensed V2 documentation boundary")
 
+    target_transport = evidence["applied_intelligence_private_transport_candidate"]
+    checks.equal(
+        target_transport["archive_sha256"],
+        transport_result["archive_sha256"],
+        "target transport result and external map archive pin",
+    )
+    checks.equal(
+        target_transport["clean_compile_pdf_sha256"],
+        transport_result["clean_compile_pdf_sha256"],
+        "target transport result and external map compiled PDF pin",
+    )
+    checks.equal(
+        target_transport["smallcondensed_equivalence_proved"],
+        False,
+        "external target transport does not overclaim legacy equivalence",
+    )
+    target_archives = [Path(target_transport["first_build"]), Path(target_transport["second_build"])]
+    target_bytes = []
+    for index, target_archive in enumerate(target_archives, start=1):
+        checks.true(target_archive.is_file(), f"target transport build {index} exists locally")
+        checks.equal(digest(target_archive), target_transport["archive_sha256"], f"target transport build {index} hash")
+        target_bytes.append(target_archive.read_bytes())
+        with zipfile.ZipFile(target_archive) as bundle:
+            checks.equal(bundle.namelist(), target_transport["archive_members"], f"target transport build {index} members")
+            checks.equal(
+                hashlib.sha256(bundle.read("sn-jnl.cls")).hexdigest(),
+                target_transport["sn_jnl_class_sha256"],
+                f"target transport build {index} class pin",
+            )
+            checks.equal(
+                hashlib.sha256(bundle.read("sn-basic.bst")).hexdigest(),
+                target_transport["sn_basic_bst_sha256"],
+                f"target transport build {index} bibliography-style pin",
+            )
+    checks.equal(target_bytes[0], target_bytes[1], "two target transport builds are byte-identical")
+    checks.equal(target_transport["submission_authorized"], False, "external target transport submission gate")
+    checks.equal(target_transport["distribution_authorized"], False, "external target transport distribution gate")
+
     static_delivery = json.loads((ROOT / evidence["private_transport"]["static_delivery_receipt"]).read_text(encoding="utf-8"))
     checks.equal(static_delivery["status"], "PASS_DECLARED_STATIC_TRANSPORT_AND_RESTORATION_ONLY", "static delivery scope")
     checks.equal(static_delivery["complete_pipeline_delivered"], False, "static delivery is not full pipeline")
@@ -357,6 +424,7 @@ def main() -> int:
         "repository_records": len(evidence["repository_evidence"]),
         "aggregate_archive_sha256": release["archive_sha256"],
         "licensed_aggregate_v2_archive_sha256": licensed["archive_sha256"],
+        "applied_intelligence_transport_archive_sha256": target_transport["archive_sha256"],
         "aggregate_distribution_authorized": False,
         "scientific_payloads_read": False,
         "model_forwards": 0,

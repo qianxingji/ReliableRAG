@@ -4,6 +4,7 @@ src/arbitration/roa_original/*.py -text
 output/pdf/*.log binary
 /.gitattributes text eol=lf
 /.gitignore text eol=lf
+/.github/workflows/*.yml text eol=lf
 /docs/cas_q3/*.md text eol=lf
 /docs/cas_q3/*.json text eol=lf
 /paper/*.bib text eol=lf

@@ -304,6 +304,35 @@ def main() -> int:
         "committed modern target preflight verifies",
         checks,
     )
+    target_transport = json.loads(
+        (ROOT / evidence["p0_i_applied_intelligence_template_transport_results"]).read_text(encoding="utf-8")
+    )
+    require(
+        target_transport["decision"]
+        == "PARTIAL_PASS_OFFICIAL_SN_JNL_ALLOWED_COMPLETE_PRIVATE_TRANSPORT_VALIDATED_SMALLCONDENSED_LEGACY_CONFLICT_RETAINED",
+        "private complete-source target transport has a bounded partial pass",
+        checks,
+    )
+    transport = target_transport["private_complete_source_transport"]
+    require(transport["deterministic_rebuild_equal"] is True, "target transport rebuilds byte-identically", checks)
+    require(transport["both_builds_independently_validated"] is True, "both target transport builds validate", checks)
+    require(transport["validator_checks_each"] == 56, "target transport validator runs 56 checks", checks)
+    require(transport["clean_compile_pages"] == 12, "target transport clean-compiles to 12 pages", checks)
+    require(
+        transport["clean_compile_pdf_sha256"] == modern_preflight["artifacts"]["pdf_sha256"],
+        "target transport clean compile matches the visually accepted PDF bytes",
+        checks,
+    )
+    require(
+        target_transport["official_source_findings"][
+            "journal_specific_equivalence_from_sn_jnl_to_smallcondensed_proved"
+        ]
+        is False,
+        "journal-specific legacy-template equivalence remains open",
+        checks,
+    )
+    require(target_transport["submission_authorized"] is False, "target transport does not authorize submission", checks)
+    require(target_transport["distribution_authorized"] is False, "target transport remains distribution-withheld", checks)
 
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
@@ -353,7 +382,8 @@ def main() -> int:
                 "complete author publishing names, department/address and corresponding-author fields",
                 "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
                 "originality, exclusive-submission and all-author approval",
-                "publisher-resolved final target package; the modern sn-jnl preflight passes but smallcondensed equivalence is open",
+                "author-populated final target package",
+                "retained publisher or Editorial Manager acceptance of the modern sn-jnl route, or a working journal-specific legacy package",
                 "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit",
             ],
         },

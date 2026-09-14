@@ -25,8 +25,12 @@ The current machine decision is
 - P0-H records Applied Intelligence and the subscription/non-OA route. It
   remains open for the institution-recognized CAS edition/category/title/ISSN/
   date rule and a retained institutional record for the current title and ISSNs.
-- P0-I remains open for real author/declaration facts, target-specific source
-  and PDF conversion, and the final GPT-6 Astra xhigh audit.
+- P0-I has a deterministic private complete-source transport using the
+  authenticated current Springer Nature class/style; both independent builds
+  clean-compile to the exact visually accepted 12-page PDF. It remains open for
+  real author/declaration facts, an author-populated final package, retained
+  publisher acceptance of the modern-template path or a working journal-
+  specific legacy package, and the final GPT-6 Astra xhigh audit.
 - P1-A through P1-E are closed. P2 remains frozen under the Qwen-only route.
 
 The [consolidated owner-input intake](OWNER_INPUTS_INTAKE.md) provides one

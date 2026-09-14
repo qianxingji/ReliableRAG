@@ -91,10 +91,17 @@ JIIS, JIS and NLP ordering as the working target. Those audits remain historical
 decision evidence and are not current submission profiles.
 
 A bounded modern Springer Nature `sn-jnl` preflight now compiles to a verified
-12-page PDF. It does not prove equivalence to the `smallcondensed` profile named
-on the journal page. The final conversion must resolve that discrepancy,
-preserve the scientific content, and produce the publisher-approved editable
-source and PDF package.
+12-page PDF. The current Springer Nature support page says that this authoring
+template may be used for any Springer Nature journal, but the journal page also
+retains a legacy `smallcondensed` instruction whose linked ZIP returned 404.
+The authenticated current package contains no `smallcondensed` profile. A
+private ten-member complete-source transport containing the exact current class
+and bibliography style now rebuilds deterministically and passes independent
+clean compilation. This proves an official modern working path, not
+journal-specific equivalence to the unavailable legacy profile. The final
+author-populated package must retain publisher or Editorial Manager acceptance
+of that path, preserve the scientific content, and include the required
+editable source and PDF.
 
 P0-H can close only when a retained institution-recognized record supplies the
 CAS edition/year and confirms the current title/ISSNs as Computer Science

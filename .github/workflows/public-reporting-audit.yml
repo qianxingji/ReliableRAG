@@ -43,7 +43,8 @@ jobs:
           python -m unittest \
             tests.test_cas_q3_owner_inputs \
             tests.test_cas_q3_manuscript_length \
-            tests.test_cas_q3_applied_intelligence_preflight
+            tests.test_cas_q3_applied_intelligence_preflight \
+            tests.test_cas_q3_applied_intelligence_transport
 
       - name: Require the submission gate to remain fail-closed
         shell: bash

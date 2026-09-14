@@ -85,6 +85,16 @@ binds the current 155-word, five-keyword journal-neutral source and its 11+3
 page rebuild. Target-template conversion and a new Astra xhigh artifact-bound
 audit remain open.
 
+The [Applied Intelligence template transport acceptance](P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md)
+now closes the missing-template-file engineering question for the anonymous
+working package. Two external private builds produced the same flat ten-member
+ZIP and each passed 56 checks plus a clean four-stage LaTeX/BibTeX compilation.
+The resulting 12-page PDF is byte-identical to the already visually accepted
+modern preflight PDF. Official guidance permits the current Springer Nature
+authoring template, but the target page's unavailable legacy `smallcondensed`
+profile remains a journal-specific discrepancy. The transport is not the final
+author-populated package and is not submission- or distribution-authorized.
+
 The PDF build script resolves TeX executables either from `PATH` or the local
 MiKTeX fallback directory as plain executable paths. Both resolution branches
 have been exercised successfully in the takeover environment.
@@ -98,6 +108,7 @@ and unmeasured standalone deployment cost.
 **CAS Q3 STATUS: NOT READY.** The earlier source-level and compiled-artifact
 audits remain historical authority for their exact artifacts. The font-clean
 rebuild passed project-lead mechanical and visual checks; it requires the
-planned final Astra xhigh artifact rebind after journal conversion. Owner
-inputs, license selection and journal/CAS Q3 certification also remain required
-before Submission Ready.
+planned final Astra xhigh artifact rebind after the author-populated target
+package is built. Owner/declaration completion, legal/release decisions,
+publisher acceptance of the modern-template path and institutional CAS Q3
+certification also remain required before Submission Ready.
