@@ -706,7 +706,7 @@
     },
     {
       "path": "scripts/audit_cas_q3_external_closure_evidence_census.py",
-      "sha256": "edba995231d83f1d1c4e6b10a6cf663fcb97fea7b6930a05044986611f5976a1",
+      "sha256": "bd6d64c1128228676eb062c7feedc706537b207ca6f8706db29cd80026c443b3",
       "required_marker": "Bounded read-only census for pre-existing external-closure evidence"
     },
     {

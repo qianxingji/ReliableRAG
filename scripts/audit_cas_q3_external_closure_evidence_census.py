@@ -33,10 +33,6 @@ def _sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def _excluded(path: Path) -> bool:
-    return any(part in EXCLUDED_PARTS or part.startswith("chrome-render-profile") for part in path.parts)
-
-
 def _files(roots: Iterable[Path]) -> Iterable[Path]:
     seen: set[Path] = set()
     for raw in roots:
@@ -57,7 +53,7 @@ def _files(roots: Iterable[Path]) -> Iterable[Path]:
         else:
             candidates = ()
         for path in candidates:
-            if path.is_file() and not _excluded(path):
+            if path.is_file():
                 resolved = path.resolve()
                 if resolved not in seen:
                     seen.add(resolved)
