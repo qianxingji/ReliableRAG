@@ -481,6 +481,55 @@ def main() -> int:
     require(license_state["third_party_institutional_review_complete"] is False, "Qwen and DeBERTa institutional review remains open", checks)
     require(license_state["distribution_authorized"] is False, "license state does not authorize distribution", checks)
 
+    release_record_intake = json.loads(
+        (ROOT / evidence["p0_g_institutional_release_record_intake"]).read_text(encoding="utf-8")
+    )
+    require(
+        release_record_intake["decision"]
+        == "PASS_PRIVATE_RELEASE_RECORD_INTAKE_PREPARED_EXTERNAL_DECISIONS_MISSING",
+        "institutional release-record intake is prepared",
+        checks,
+    )
+    require(
+        release_record_intake["bound_release_candidate"]["project_code_license"] == "Apache-2.0",
+        "release-record intake binds the owner-selected project license",
+        checks,
+    )
+    require(
+        release_record_intake["bound_release_candidate"]["aggregate_v2_sha256"]
+        == licensed_release["v2"]["archive_sha256"],
+        "release-record intake binds the exact validated V2 candidate",
+        checks,
+    )
+    require(
+        release_record_intake["bound_release_candidate"]["model_weights_in_release"] is False
+        and release_record_intake["bound_release_candidate"][
+            "benchmark_payloads_answers_or_per_question_records_in_release"
+        ]
+        is False,
+        "release-record intake preserves the no-weight and no-payload release scope",
+        checks,
+    )
+    require(
+        release_record_intake["privacy_boundary"]["local_metadata_git_ignored"] is True
+        and release_record_intake["privacy_boundary"]["private_evidence_directory_git_ignored"] is True,
+        "institutional release evidence remains outside Git",
+        checks,
+    )
+    require(
+        release_record_intake["current_state"]["release_record_received"] is False,
+        "institutional release record remains missing",
+        checks,
+    )
+    require(
+        release_record_intake["current_state"]["content_independently_certified"] is False
+        and release_record_intake["current_state"]["independent_client_content_audit_required"] is True,
+        "institutional release-record content audit remains open",
+        checks,
+    )
+    require(release_record_intake["current_state"]["p0_g_closed"] is False, "release intake does not close P0-G", checks)
+    require(release_record_intake["distribution_authorized"] is False, "release intake does not authorize distribution", checks)
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )
@@ -593,6 +642,7 @@ def main() -> int:
                 "journal-approved review access for restricted evidence",
                 "owner/institutional review of Qwen research-license compatibility for the intended release",
                 "owner/institutional review of the non-c DeBERTa training-data terms for the intended release",
+                "retained private institutional release record and separate client content audit",
                 "final authorization of the validated V2 archive or a required successor",
             ],
         },

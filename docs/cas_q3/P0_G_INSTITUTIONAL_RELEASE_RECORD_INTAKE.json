@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_PRIVATE_RELEASE_RECORD_INTAKE_PREPARED_EXTERNAL_DECISIONS_MISSING",
+  "cas_q3_status": "NOT_READY",
+  "template_path": "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD_TEMPLATE.json",
+  "local_metadata_path": "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json",
+  "private_evidence_directory": "evidence/private/institutional_release_record/",
+  "verifier_path": "scripts/verify_cas_q3_institutional_release_record.py",
+  "test_path": "tests/test_cas_q3_institutional_release_record.py",
+  "bound_release_candidate": {
+    "project_code_license": "Apache-2.0",
+    "aggregate_v2_sha256": "4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8",
+    "model_weights_in_release": false,
+    "benchmark_payloads_answers_or_per_question_records_in_release": false
+  },
+  "privacy_boundary": {
+    "local_metadata_git_ignored": true,
+    "private_evidence_directory_git_ignored": true,
+    "private_values_emitted": false
+  },
+  "current_state": {
+    "release_record_received": false,
+    "evidence_bytes_read": 0,
+    "legal_holder_confirmed": false,
+    "copyright_year_confirmed": false,
+    "institutional_release_review_complete": false,
+    "third_party_boundary_review_complete": false,
+    "content_independently_certified": false,
+    "independent_client_content_audit_required": true,
+    "explicit_owner_archive_authorization_required": true,
+    "persistent_identifier_required_after_authorization": true,
+    "p0_g_closed": false
+  },
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "distribution_authorized": false,
+  "submission_authorized": false
+}

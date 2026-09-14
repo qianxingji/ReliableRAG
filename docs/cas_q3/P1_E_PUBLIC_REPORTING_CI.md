@@ -57,9 +57,9 @@ The Ubuntu job performs the following operations:
 - run the 38-check verifier for the committed 12-page Applied Intelligence modern `sn-jnl` preflight,
   its font state, Claim boundaries and flat eight-member authored-source ZIP;
 - run the owner-input privacy/fail-closed, manuscript-length, target-preflight
-  transformation, institutional-CAS-record intake, complete-source transport
-  and private target-builder safety tests; these tests use temporary synthetic
-  values and do not require or
+  transformation, institutional-CAS-record intake, institutional-release-record
+  intake, complete-source transport and private target-builder safety tests;
+  these tests use temporary synthetic values and do not require or
   publish the private target ZIP, identity-bearing output or official publisher
   package; and
 - require the top-level submission gate to exit with code 2 and retain
@@ -129,6 +129,12 @@ question/answer ledgers or selected Gold. It therefore does not run or claim:
 - another-host restoration of private evidence;
 - original-fit authentication, contamination exclusion or reader transfer; or
 - release authorization, CAS Q3 qualification or Submission Ready status.
+
+The institutional-release-record checks authenticate only the public placeholder
+schema and fail-closed behavior with temporary synthetic evidence. The ignored
+owner/institution record and its evidence bytes are absent from the runner, so
+this CI does not interpret a legal or institutional decision and cannot authorize
+distribution.
 
 The workflow improves continuous checking of the public reporting surface only.
 Private forensic reproduction remains governed by the existing hashed runbooks

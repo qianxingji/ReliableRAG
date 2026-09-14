@@ -35,6 +35,7 @@
         "journal-approved review access for restricted evidence",
         "owner/institutional review of Qwen research-license compatibility for the intended release",
         "owner/institutional review of the non-c DeBERTa training-data terms for the intended release",
+        "retained private institutional release record and separate client content audit",
         "final authorization of the validated V2 archive or a required successor"
       ]
     },
@@ -66,8 +67,8 @@
     "validation_error_count": 0
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
-  "verified_repository_hashes": 146,
-  "checks": 474,
+  "verified_repository_hashes": 151,
+  "checks": 493,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

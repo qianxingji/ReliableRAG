@@ -139,6 +139,14 @@ fairness, reviewer and Submission Ready audits.
    license and `LICENSE_SCOPE.md`. Its 26-check verifier rejects a return to the
    stale “owner decision required” state and keeps the legal holder, year,
    institutional review, Qwen research-license and non-`-c` DeBERTa gates open.
+   A fail-closed [private institutional release-record intake](P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.md)
+   now binds any future owner/institution decision to the exact corrected V2
+   archive hash. It checks retained evidence bytes, holder/year, release-review
+   and NOTICE consistency, the no-weight/no-benchmark-payload boundary, and the
+   Qwen/DeBERTa scope decisions without committing private evidence. Its
+   structural pass still requires a separate client content audit, explicit
+   owner authorization, a persistent identifier and the journal-approved
+   restricted-review route; no release record has yet been received.
 8. **P0-H -- OWNER TARGET SELECTED / INSTITUTIONAL CAS RECORD PENDING:** The
    [Applied Intelligence target selection](P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md)
    records the owner's target, Hubei University of Technology major-category

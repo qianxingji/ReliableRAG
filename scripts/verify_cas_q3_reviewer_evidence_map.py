@@ -205,6 +205,46 @@ def main() -> int:
     checks.equal(licensed_release["license"]["non_code_members_relicensed"], False, "licensed V2 does not relicense non-code members")
     checks.equal(licensed_release["distribution_authorized"], False, "licensed V2 distribution withheld")
 
+    release_record_intake = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        release_record_intake["decision"],
+        "PASS_PRIVATE_RELEASE_RECORD_INTAKE_PREPARED_EXTERNAL_DECISIONS_MISSING",
+        "institutional release-record intake decision",
+    )
+    checks.equal(
+        release_record_intake["bound_release_candidate"]["project_code_license"],
+        "Apache-2.0",
+        "release intake binds Apache-2.0",
+    )
+    checks.equal(
+        release_record_intake["bound_release_candidate"]["aggregate_v2_sha256"],
+        licensed_release["v2"]["archive_sha256"],
+        "release intake binds exact validated V2 archive",
+    )
+    checks.equal(
+        release_record_intake["bound_release_candidate"]["model_weights_in_release"],
+        False,
+        "release intake excludes model weights",
+    )
+    checks.equal(
+        release_record_intake["bound_release_candidate"]["benchmark_payloads_answers_or_per_question_records_in_release"],
+        False,
+        "release intake excludes benchmark payloads and per-question records",
+    )
+    checks.equal(
+        release_record_intake["privacy_boundary"]["local_metadata_git_ignored"]
+        and release_record_intake["privacy_boundary"]["private_evidence_directory_git_ignored"],
+        True,
+        "release record and evidence remain outside Git",
+    )
+    checks.equal(release_record_intake["current_state"]["release_record_received"], False, "release record remains missing")
+    checks.equal(release_record_intake["current_state"]["p0_g_closed"], False, "release intake does not close P0-G")
+    checks.equal(release_record_intake["distribution_authorized"], False, "release intake does not authorize distribution")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )
@@ -491,8 +531,10 @@ def main() -> int:
         "python scripts/verify_cas_q3_template_route_resolution.py",
         "python scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py",
         "python scripts/verify_cas_q3_institutional_cas_record.py --check-template",
+        "python scripts/verify_cas_q3_institutional_release_record.py --check-template",
         "python scripts/verify_cas_q3_license_state.py",
         "tests.test_cas_q3_institutional_cas_record",
+        "tests.test_cas_q3_institutional_release_record",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",

@@ -64,6 +64,13 @@ training-data-license warning. The corrected tracked notice is incorporated in t
 candidate. The V1 witness remains unchanged, and both archives remain
 distribution-prohibited.
 
+The [private institutional release-record intake](P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.md)
+binds any later holder/year, institutional review, NOTICE and Qwen/DeBERTa scope
+decisions to the exact V2 candidate hash. Its local metadata and retained evidence
+bytes are Git-ignored. Template and synthetic fail-closed checks run publicly,
+while a real structural pass still requires separate client content review and
+does not authorize distribution.
+
 ## Reviewer sequence
 
 1. Read the abstract, Sections 3--7 and the complete nine-policy table in the
@@ -129,8 +136,9 @@ distribution-prohibited.
   author-populated source/PDF package; final release authorization and
   persistent identifier. The current publisher template route is accepted,
   while exact `smallcondensed` style equivalence remains unproved. A private,
-  hash-bound institutional-record intake is prepared, but no record has been
-  received and its content still requires a separate client audit.
+  hash-bound CAS record intake and a separate release-record intake are prepared,
+  but neither record has been received and their content still requires separate
+  client audits.
 - **P1:** insert the certified journal's final data/code statement and bind the
   authorized archive plus journal-approved evidence-review route.
 - **P2:** new readers, methods, seeds, budgets and benchmarks remain closed.

@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "c6b21ec5ed3e519942cbd7bff4dff397c0376a10f7adf293b440ea800a454828",
+      "sha256": "307d969c36023bb6beb49ded1e8bf0395a2a70fa2af65966c6722bfd38e4e3a5",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -285,12 +285,12 @@
     },
     {
       "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-      "sha256": "475dc83dd2b28db605c2f24179226bef666dff09c68099aeacc92bd7e1f01e75",
+      "sha256": "cfa1a5c956b3a275bde830b42e7f69c16d2ef56565cd508fdce3bcd0c4a86549",
       "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "0748ae99846be96a13403c503c08a2d8c3a9978ca34acb37e397bec3c9fed8a1",
+      "sha256": "a63319a29ad30a10ffde6e85ffaf280ad9b81fb109d7dfd28a35d941cd35a7a0",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -550,6 +550,29 @@
     {
       "path": "tests/test_cas_q3_institutional_cas_record.py",
       "sha256": "170f10e4411b74a54a19026a50b24f11f4f0f79a811fb973a7c4ba785ceb2002"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.json",
+      "sha256": "caaaa603f0a39588c47971b1a646ed96d79500b4f911cd38771f389fe4322a44",
+      "required_marker": "PASS_PRIVATE_RELEASE_RECORD_INTAKE_PREPARED_EXTERNAL_DECISIONS_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.md",
+      "sha256": "8e24e5229ed9173a45b539c73884a36879886750941625aa1c77492ab84aeea2",
+      "required_marker": "PASS_PRIVATE_RELEASE_RECORD_INTAKE_PREPARED_EXTERNAL_DECISIONS_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD_TEMPLATE.json",
+      "sha256": "4e77152c19a1ae4977ce090fbb6e8c470ab804a83283fbbebb8fcc8681dfb998"
+    },
+    {
+      "path": "scripts/verify_cas_q3_institutional_release_record.py",
+      "sha256": "ff154cbf9d45e4f55b8b118cda8e24d48ca7b1286606913b7efd65b6ee3a9933",
+      "required_marker": "PASS_PRIVATE_INSTITUTIONAL_RELEASE_RECORD_INTEGRITY_PREFLIGHT_PENDING_CLIENT_AND_OWNER_DECISIONS"
+    },
+    {
+      "path": "tests/test_cas_q3_institutional_release_record.py",
+      "sha256": "042d1a24c725423a0b71c50ddc80d872d8b226da234a7c95fd32ccf599d2729c"
     }
   ],
   "aggregate_release_candidate": {
