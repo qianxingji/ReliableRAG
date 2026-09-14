@@ -1010,6 +1010,69 @@ def main() -> int:
         checks,
     )
 
+    recursive_archive_census = json.loads(
+        (ROOT / evidence["p0_ghi_recursive_archive_closure_evidence"]).read_text(encoding="utf-8")
+    )
+    require(
+        recursive_archive_census["decision"]
+        == "PASS_BOUNDED_FIRST_LEVEL_NESTED_ARCHIVE_CENSUS_NO_RECOVERY",
+        "first-level nested-archive census passes without recovery",
+        checks,
+    )
+    require(
+        recursive_archive_census["top_level_zip_archives_scanned"] == 39
+        and recursive_archive_census["nested_archives_seen"] == 4
+        and recursive_archive_census["nested_archives_materialized"] == 4
+        and recursive_archive_census["nested_archive_bytes_materialized"] == 269975228,
+        "nested-archive discovery and materialization coverage is pinned",
+        checks,
+    )
+    require(
+        recursive_archive_census["nested_archives_skipped"] == 0
+        and recursive_archive_census["nested_member_count"] == 301
+        and recursive_archive_census["deeper_archives_seen"] == 0,
+        "all first-level nested archives are covered without deeper nesting",
+        checks,
+    )
+    require(
+        recursive_archive_census["text_members_seen"] == 234
+        and recursive_archive_census["text_members_scanned"] == 234
+        and recursive_archive_census["text_bytes_scanned"] == 858962287
+        and recursive_archive_census["text_members_skipped"] == 0,
+        "nested text coverage is pinned without skips",
+        checks,
+    )
+    require(
+        recursive_archive_census["text_candidate_match_count"] == 0
+        and recursive_archive_census["strict_magic_counts"] == {"pdf": 32}
+        and recursive_archive_census["strict_magic_suffix_mismatch_count"] == 0,
+        "nested text and strict-header passes retain no candidate or mismatch",
+        checks,
+    )
+    require(
+        recursive_archive_census["pdf_audit"]["zip_pdf_members_extracted"] == 32
+        and recursive_archive_census["pdf_audit"]["unique_pdf_hashes"] == 14
+        and recursive_archive_census["pdf_audit"]["extracted_text_bytes_scanned"] == 323181
+        and recursive_archive_census["pdf_audit"]["embedded_attachment_count"] == 0,
+        "nested PDF text and attachment coverage is pinned",
+        checks,
+    )
+    require(
+        recursive_archive_census["candidate_match_count"] == 0
+        and recursive_archive_census["scan_error_count"] == 0
+        and recursive_archive_census["temporary_files_removed"] is True
+        and recursive_archive_census["archive_trees_extracted"] is False,
+        "nested archive audit retains zero candidates/errors and removes temporary files",
+        checks,
+    )
+    require(
+        recursive_archive_census["bounded_interpretation"]["pdf_image_ocr_performed"] is False
+        and recursive_archive_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False
+        and recursive_archive_census["submission_authorized"] is False,
+        "nested archive result remains bounded and non-authorizing",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

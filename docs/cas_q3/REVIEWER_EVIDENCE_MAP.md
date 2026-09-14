@@ -114,6 +114,14 @@ locations outside the roots remain unproved.
 The [common document-container inventory](P0_GHI_DOCUMENT_CONTAINER_INVENTORY.md)
 finds no Word, Excel, PowerPoint, RTF, MSG or ODF extension among ordinary files
 or ZIP members. Incorrect, missing and unknown extensions remain outside scope.
+The subsequent
+[first-level nested-archive census](P0_GHI_RECURSIVE_ARCHIVE_CLOSURE_EVIDENCE.md)
+materializes all four ZIP-valued members by exact bytes, scans all 301 direct
+members and confirms there is no deeper archive. Its expanded text pass covers
+all 234 recognized text members and 858,962,287 bytes; its PDF pass covers 32
+occurrences and 14 unique hashes. Both return zero candidate, skip or error,
+and the strict member-header pass finds no extension mismatch. Ordinary-file
+magic beyond the extension inventory and page-image OCR remain outside scope.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -187,6 +195,10 @@ artifact or close P0-I.
    page-image OCR.
    Run `python scripts/audit_cas_q3_document_container_inventory.py` with the
    same roots to repeat the metadata-only common document-extension inventory.
+   Run `python scripts/audit_cas_q3_recursive_archive_closure_evidence.py` with
+   the same roots to repeat the exact-byte first-level nested-ZIP pass. It must
+   cover four nested archives, 301 members, all 234 recognized text members and
+   all 32 PDF occurrences, with no deeper archive, candidate, skip or error.
 
 ## Claim-to-evidence routing
 

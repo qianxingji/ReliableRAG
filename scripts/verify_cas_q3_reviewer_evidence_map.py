@@ -386,6 +386,42 @@ def main() -> int:
     checks.equal(document_inventory["bounded_interpretation"]["unknown_binary_formats_covered"], False, "document inventory does not claim unknown formats")
     checks.equal(document_inventory["submission_authorized"], False, "document inventory does not authorize submission")
 
+    recursive_archive_census = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_RECURSIVE_ARCHIVE_CLOSURE_EVIDENCE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        recursive_archive_census["decision"],
+        "PASS_BOUNDED_FIRST_LEVEL_NESTED_ARCHIVE_CENSUS_NO_RECOVERY",
+        "first-level nested-archive census decision",
+    )
+    checks.equal(recursive_archive_census["top_level_zip_archives_scanned"], 39, "top-level ZIPs checked for nested archives")
+    checks.equal(recursive_archive_census["nested_archives_seen"], 4, "nested ZIP archives seen")
+    checks.equal(recursive_archive_census["nested_archives_materialized"], 4, "nested ZIP archives materialized")
+    checks.equal(recursive_archive_census["nested_archive_bytes_materialized"], 269975228, "nested ZIP bytes materialized")
+    checks.equal(recursive_archive_census["nested_archives_skipped"], 0, "nested ZIP skips")
+    checks.equal(recursive_archive_census["nested_member_count"], 301, "nested archive member count")
+    checks.equal(recursive_archive_census["deeper_archives_seen"], 0, "deeper ZIP archives")
+    checks.equal(recursive_archive_census["text_members_seen"], 234, "nested text members seen")
+    checks.equal(recursive_archive_census["text_members_scanned"], 234, "nested text members scanned")
+    checks.equal(recursive_archive_census["text_bytes_scanned"], 858962287, "nested text bytes scanned")
+    checks.equal(recursive_archive_census["text_members_skipped"], 0, "nested text skips")
+    checks.equal(recursive_archive_census["text_candidate_match_count"], 0, "nested text candidates")
+    checks.equal(recursive_archive_census["strict_magic_counts"], {"pdf": 32}, "nested strict file-header counts")
+    checks.equal(recursive_archive_census["strict_magic_suffix_mismatch_count"], 0, "nested file-header extension mismatches")
+    checks.equal(recursive_archive_census["pdf_audit"]["zip_pdf_members_extracted"], 32, "nested PDFs extracted")
+    checks.equal(recursive_archive_census["pdf_audit"]["unique_pdf_hashes"], 14, "nested unique PDF hashes")
+    checks.equal(recursive_archive_census["pdf_audit"]["extracted_text_bytes_scanned"], 323181, "nested PDF text bytes searched")
+    checks.equal(recursive_archive_census["pdf_audit"]["embedded_attachment_count"], 0, "nested PDF attachments")
+    checks.equal(recursive_archive_census["candidate_match_count"], 0, "nested archive candidates")
+    checks.equal(recursive_archive_census["scan_error_count"], 0, "nested archive errors")
+    checks.equal(recursive_archive_census["temporary_files_removed"], True, "nested archive temporary files removed")
+    checks.equal(recursive_archive_census["archive_trees_extracted"], False, "nested archive trees not extracted")
+    checks.equal(recursive_archive_census["bounded_interpretation"]["pdf_image_ocr_performed"], False, "nested PDF census does not claim OCR")
+    checks.equal(recursive_archive_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "nested archive census does not claim global absence")
+    checks.equal(recursive_archive_census["submission_authorized"], False, "nested archive census does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )

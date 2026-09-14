@@ -54,7 +54,14 @@ text bytes with zero candidate, skip or error. The 238 occurrences reduce to 35
 unique hashes; all have at least 20 non-whitespace extracted-text bytes and all
 35 have zero embedded attachment under `pdfdetach`. Page-image OCR, unknown
 binary formats and locations outside the three roots remain outside these
-negative results' scope.
+negative results' scope. A recursive follow-up then materialized all four
+ZIP-valued members (269,975,228 bytes), scanned all 301 direct members and
+confirmed that none contains a deeper archive. It searched all 234 recognized
+text members and 858,962,287 bytes, plus 32 PDF occurrences representing 14
+unique hashes within the nested scope. Both passes returned zero candidate,
+skip or error; every nested PDF had usable extracted text and zero attachment.
+This closes the first-level nested-ZIP omission only. Ordinary-file magic beyond
+the extension inventory and page-image OCR remain open boundaries.
 
 Latest route decision: the independent GPT-6 Astra xhigh
 [target-transition audit](TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md) sets the unique
@@ -410,9 +417,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 157 repository records plus preserved withheld archive
+  authenticates 161 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,110 checks, without
+  package in 1,152 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

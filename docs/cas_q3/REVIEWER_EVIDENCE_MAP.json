@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "a835e10b316316bebc83540a3ab2378d54390c98f43380770867fcd4aec49d64",
+      "sha256": "b44a90a39e9b077bd240316bee70e5925d32187a295adb3380f3049df9f43bc7",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "e5c97fd7222e671ba210df4b165834aa65b05f2c5f45bae840642b7d091066dc",
+      "sha256": "5c3adddaf1576f25959c76af1ed9503d53eecdd13166b7aea0d9d6851c77bac2",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -773,6 +773,26 @@
       "path": "tests/test_cas_q3_document_container_inventory.py",
       "sha256": "8f9ae1565812d33a4fe6b95b5bbf4c3aebff7168bc456327fe52c17676537e8d",
       "required_marker": "test_zip_members_are_counted_without_extraction"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_RECURSIVE_ARCHIVE_CLOSURE_EVIDENCE.json",
+      "sha256": "e8152bba017baaa6f94ccce2d130e0b2d29855fa2e4d257d06c08bd1806b2568",
+      "required_marker": "PASS_BOUNDED_FIRST_LEVEL_NESTED_ARCHIVE_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_RECURSIVE_ARCHIVE_CLOSURE_EVIDENCE.md",
+      "sha256": "17f887347d7914071d0d03d75ba5929cced099f14f21c10c71b4a8fd64e0d7f6",
+      "required_marker": "PASS_BOUNDED_FIRST_LEVEL_NESTED_ARCHIVE_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "scripts/audit_cas_q3_recursive_archive_closure_evidence.py",
+      "sha256": "dd9aedc644b2e699c00bade3ddd738fd556260288d063f9411bedfabad2ad679",
+      "required_marker": "Audit document and text evidence inside first-level nested ZIP archives"
+    },
+    {
+      "path": "tests/test_cas_q3_recursive_archive_closure_evidence.py",
+      "sha256": "290c98cf6e5855676bbd2f72930da0277b63a7165be08401b35df11c325eae85",
+      "required_marker": "test_deeper_archive_fails_closed"
     }
   ],
   "aggregate_release_candidate": {
