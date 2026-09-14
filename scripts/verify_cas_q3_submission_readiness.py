@@ -378,6 +378,9 @@ def main() -> int:
     require(hbut_cas["verified_scope"]["hbut_first_affiliation_requirement"] is True, "HBUT first affiliation is required", checks)
     require(hbut_cas["verified_scope"]["institutional_review_route_identified"] is True, "HBUT review route is identified", checks)
     require(hbut_cas["verified_scope"]["institution_recognized_cas_edition_year"] is None, "HBUT CAS edition/year remains open", checks)
+    require(hbut_cas["verified_scope"]["college_plan_previous_publication_year_rule_observed"] is True, "HBUT college previous-year rule is retained", checks)
+    require(hbut_cas["verified_scope"]["candidate_report_year_if_formal_publication_in_2026"] == 2025, "candidate report year for 2026 publication", checks)
+    require(hbut_cas["verified_scope"]["candidate_year_rule_confirmed_university_wide"] is False, "candidate report-year rule remains centrally unconfirmed", checks)
     require(hbut_cas["verified_scope"]["applied_intelligence_current_title_issns_major_category_q3_record_retained"] is False, "Applied Intelligence institutional CAS record remains open", checks)
     require(hbut_cas["attachment_access"]["attachment_contents_inspected"] is False, "CAPTCHA-gated policy attachments were not inferred", checks)
     require(hbut_cas["p0_h_closed"] is False, "official HBUT policy evidence does not close P0-H", checks)
@@ -391,6 +394,24 @@ def main() -> int:
     require(hbut_request["institutional_response_retained"] is False, "HBUT institutional response is not fabricated", checks)
     require(hbut_request["p0_g_closed"] is False and hbut_request["p0_h_closed"] is False and hbut_request["p0_i_closed"] is False, "request does not close P0 gates", checks)
     require(hbut_request["submission_authorized"] is False, "request does not authorize submission", checks)
+
+    hbut_secondary = json.loads(
+        (ROOT / evidence["p0_h_hbut_cas_edition_secondary_evidence"]).read_text(encoding="utf-8")
+    )
+    require(
+        hbut_secondary["decision"]
+        == "PARTIAL_PASS_OFFICIAL_HBUT_COLLEGE_PREVIOUS_YEAR_CAS_RULE_FOUND_UNIVERSITY_WIDE_CONFIRMATION_PENDING",
+        "HBUT secondary edition-rule evidence is bound",
+        checks,
+    )
+    require(hbut_secondary["evidence_scope"]["previous_publication_year_rule_observed"] is True, "secondary previous-year rule is observed", checks)
+    require(hbut_secondary["evidence_scope"]["central_research_administration_policy"] is False, "secondary source is not overclaimed as central policy", checks)
+    require(hbut_secondary["evidence_scope"]["rule_proved_university_wide_for_faculty_research_recognition"] is False, "university-wide applicability remains open", checks)
+    require(hbut_secondary["candidate_interpretation_requiring_confirmation"]["if_formal_publication_year_is_2026_candidate_cas_report_year"] == 2025, "candidate report year is retained", checks)
+    require(hbut_secondary["candidate_interpretation_requiring_confirmation"]["confirmed_by_hbut_research_administration"] is False, "central year confirmation remains open", checks)
+    require(hbut_secondary["central_policy_attachment_access"]["contents_inspected"] is False, "CAPTCHA-gated central attachments remain uninspected", checks)
+    require(hbut_secondary["central_policy_attachment_access"]["contents_inferred"] is False, "CAPTCHA-gated contents are not inferred", checks)
+    require(hbut_secondary["p0_h_closed"] is False, "secondary evidence does not close P0-H", checks)
 
     private_builder = json.loads(
         (ROOT / evidence["p0_i_applied_intelligence_private_submission_builder_results"]).read_text(

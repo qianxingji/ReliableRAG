@@ -24,6 +24,15 @@
         "自然科学纵向项目与成果管理办公室负责自科类论文的统计、分析和审核认定",
         "学校科学技术发展研究院总机为027-59750149"
       ]
+    },
+    {
+      "url": "https://lxy.hbut.edu.cn/info/1112/3890.htm",
+      "title": "电子科学与技术硕士专业学位研究生培养方案",
+      "issuer": "湖北工业大学理学院",
+      "verified_observations": [
+        "科研论文分区以发表上一年度中国科学院文献情报中心（升级版）分区报告为准"
+      ],
+      "scope_boundary": "COLLEGE_GRADUATE_PROGRAMME_NOT_CENTRAL_RESEARCH_ADMINISTRATION_POLICY"
     }
   ],
   "attachment_access": {
@@ -38,7 +47,10 @@
     "institutional_review_route_identified": true,
     "institution_recognized_cas_edition_year": null,
     "applied_intelligence_current_title_issns_major_category_q3_record_retained": false,
-    "title_issn_change_treatment_verified": false
+    "title_issn_change_treatment_verified": false,
+    "college_plan_previous_publication_year_rule_observed": true,
+    "candidate_report_year_if_formal_publication_in_2026": 2025,
+    "candidate_year_rule_confirmed_university_wide": false
   },
   "institutional_action": {
     "responsible_office": "湖北工业大学科学技术发展研究院自然科学纵向项目与成果管理办公室",

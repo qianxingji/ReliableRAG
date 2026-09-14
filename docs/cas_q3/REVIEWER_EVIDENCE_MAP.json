@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "5fb68451938e77fb8c68fa0b7f5b732286e84b8fb8c65a61abd34da562fa2bd2",
+      "sha256": "44a0543d6d1638ab2c3a3fb1a53b549938d26437c09e71705b781ce5b5077c77",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -431,12 +431,12 @@
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
       "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
-      "sha256": "6df0dba8bc67f9ede968bf534d01ef78bbbe5c9c6281e9e2caeeba387259df76"
+      "sha256": "c08c5e5e1feeefad7f2801f7facdd327a26ab9694a188cf2a5e6e76ad5cdd14a"
     },
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_ACCEPTANCE.md",
       "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
-      "sha256": "efcd0d893ca9c729a6a0e400d6670ef1a52f391f1cdd0e596f2c16c726748dc8"
+      "sha256": "643a336e0f60a1030e62f6aa5d7d332aee5477156c3977fbf3190d78b1c7b722"
     },
     {
       "path": "docs/cas_q3/P0_G_PROJECT_LICENSE_DECISION_PACKET.md",
@@ -471,12 +471,12 @@
     {
       "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "306742edd29e77aa2d89fb30c81cc1421128e7fa1f37c0684ecf054f98d5b798"
+      "sha256": "afea4de5bac9fb40d02c8b41c03db458c01a73e1016b13c34e7165e9421de0a4"
     },
     {
       "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST.json",
       "required_marker": "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING",
-      "sha256": "757473daf91282b0d3f04c32d337b6e4e82e74a54d2266158ecb8055e8ac6b71"
+      "sha256": "012fc1966baabbadd228ed18aaaa0811da4b14094151dac09ad3b482b70fc326"
     },
     {
       "path": "docs/cas_q3/P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.json",
@@ -507,6 +507,26 @@
       "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION.json",
       "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION",
       "sha256": "c3ce106fb7b43764e0ab437fbedd7c1e8db5385aeb5fba8a72803e85fca86a5d"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.json",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_COLLEGE_PREVIOUS_YEAR_CAS_RULE_FOUND_UNIVERSITY_WIDE_CONFIRMATION_PENDING",
+      "sha256": "3c68a23675e7e7819492d23b236000acc31bffeb0a9c5bbd155ab3967af491ce"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.md",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_COLLEGE_PREVIOUS_YEAR_CAS_RULE_FOUND_UNIVERSITY_WIDE_CONFIRMATION_PENDING",
+      "sha256": "a0584877c4864dd92d3a00ef60eceda1052342d36d790ebf0857433ad625d149"
+    },
+    {
+      "path": "scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py",
+      "required_marker": "PASS_BOUNDED_HBUT_CAS_EDITION_SECONDARY_EVIDENCE_VERIFICATION",
+      "sha256": "ff222cb92ff674997d761831ab8884d70f7f1176946d1b62c23c8ad0b429a6e1"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE_VERIFICATION.json",
+      "required_marker": "PASS_BOUNDED_HBUT_CAS_EDITION_SECONDARY_EVIDENCE_VERIFICATION",
+      "sha256": "f960d619e5d72829f16d229d23a63541db54245044c694b63c50a454e30a37ae"
     }
   ],
   "aggregate_release_candidate": {
@@ -599,7 +619,9 @@
     "owner_selected_route": "SUBSCRIPTION_NON_OPEN_ACCESS",
     "owner_attested_cas_category": "Computer Science major-category Q3",
     "institutional_record_retained": false,
-    "submission_authorized": false
+    "submission_authorized": false,
+    "candidate_report_year_if_formal_publication_in_2026": 2025,
+    "candidate_year_confirmed_university_wide": false
   },
   "project_license": "Apache-2.0",
   "licensed_aggregate_release_candidate_v2": {

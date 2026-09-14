@@ -173,6 +173,12 @@ fairness, reviewer and Submission Ready audits.
    rules together with manuscript approval, code copyright/release and Qwen/
    DeBERTa review. It records `request_sent=false` and cannot substitute for the
    retained institutional response.
+   A later [official HBUT college-level secondary-evidence audit](P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.md)
+   finds a published School of Science rule using the upgraded CAS report from
+   the year before publication. It makes 2025 the candidate report year for a
+   2026 publication, but does not establish that this college programme rule
+   applies university-wide or that Applied Intelligence is Q3; the central
+   confirmation remains required.
    The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
    closes the current-price lookup: the official page lists GBP 1,040, USD
    1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
@@ -302,9 +308,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 102 repository records plus preserved withheld archive
+  authenticates 106 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 685 checks, without
+  package in 715 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

@@ -305,6 +305,9 @@ def main() -> int:
     checks.equal(hbut_cas["verified_scope"]["hbut_first_affiliation_requirement"], True, "HBUT first-affiliation requirement")
     checks.equal(hbut_cas["verified_scope"]["institutional_review_route_identified"], True, "HBUT review route")
     checks.equal(hbut_cas["verified_scope"]["institution_recognized_cas_edition_year"], None, "HBUT CAS edition remains open")
+    checks.equal(hbut_cas["verified_scope"]["college_plan_previous_publication_year_rule_observed"], True, "HBUT college previous-year rule observed")
+    checks.equal(hbut_cas["verified_scope"]["candidate_report_year_if_formal_publication_in_2026"], 2025, "candidate 2026-publication report year")
+    checks.equal(hbut_cas["verified_scope"]["candidate_year_rule_confirmed_university_wide"], False, "candidate year rule remains centrally unconfirmed")
     checks.equal(hbut_cas["verified_scope"]["applied_intelligence_current_title_issns_major_category_q3_record_retained"], False, "Applied Intelligence institutional record remains open")
     checks.equal(hbut_cas["attachment_access"]["attachment_contents_inspected"], False, "CAPTCHA-gated attachments not inferred")
     checks.equal(hbut_cas["p0_h_closed"], False, "P0-H remains open")
@@ -324,6 +327,26 @@ def main() -> int:
     checks.equal(hbut_request["p0_h_closed"], False, "request does not close P0-H")
     checks.equal(hbut_request["p0_i_closed"], False, "request does not close P0-I")
     checks.equal(hbut_request["submission_authorized"], False, "request does not authorize submission")
+
+    hbut_secondary = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        hbut_secondary["decision"],
+        "PARTIAL_PASS_OFFICIAL_HBUT_COLLEGE_PREVIOUS_YEAR_CAS_RULE_FOUND_UNIVERSITY_WIDE_CONFIRMATION_PENDING",
+        "HBUT secondary edition-rule decision",
+    )
+    checks.equal(hbut_secondary["evidence_scope"]["previous_publication_year_rule_observed"], True, "secondary previous-year rule")
+    checks.equal(hbut_secondary["evidence_scope"]["central_research_administration_policy"], False, "secondary evidence is not central policy")
+    checks.equal(hbut_secondary["evidence_scope"]["rule_proved_university_wide_for_faculty_research_recognition"], False, "university-wide applicability remains open")
+    checks.equal(hbut_secondary["candidate_interpretation_requiring_confirmation"]["if_formal_publication_year_is_2026_candidate_cas_report_year"], 2025, "secondary candidate report year")
+    checks.equal(hbut_secondary["candidate_interpretation_requiring_confirmation"]["confirmed_by_hbut_research_administration"], False, "central confirmation remains open")
+    checks.equal(hbut_secondary["central_policy_attachment_access"]["contents_inspected"], False, "CAPTCHA-gated contents not inspected")
+    checks.equal(hbut_secondary["central_policy_attachment_access"]["contents_inferred"], False, "CAPTCHA-gated contents not inferred")
+    checks.equal(hbut_secondary["p0_h_closed"], False, "secondary evidence does not close P0-H")
+    checks.equal(hbut_secondary["submission_authorized"], False, "secondary evidence does not authorize submission")
 
     private_builder = json.loads(
         (
@@ -438,6 +461,7 @@ def main() -> int:
         "python scripts/verify_cas_q3_public_reporting_surface.py",
         "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
         "python scripts/verify_cas_q3_template_route_resolution.py",
+        "python scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py",
         "python scripts/verify_cas_q3_license_state.py",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
