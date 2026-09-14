@@ -408,6 +408,16 @@ def main() -> int:
     require(private_builder["final_astra_xhigh_audit_complete"] is False, "final Astra audit remains open", checks)
     require(private_builder["submission_authorized"] is False, "synthetic builder does not authorize submission", checks)
 
+    license_state = json.loads((ROOT / evidence["p0_g_license_state_verification"]).read_text(encoding="utf-8"))
+    require(license_state["decision"] == "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN", "current license state is bound", checks)
+    require(license_state["checks"] == 26, "license-state verifier count", checks)
+    require(license_state["project_code_license"] == "Apache-2.0", "project-authored code license is Apache-2.0", checks)
+    require(license_state["legal_holder_confirmed"] is False, "legal copyright holder remains open", checks)
+    require(license_state["copyright_year_confirmed"] is False, "copyright year remains open", checks)
+    require(license_state["institutional_release_review_complete"] is False, "institutional release review remains open", checks)
+    require(license_state["third_party_institutional_review_complete"] is False, "Qwen and DeBERTa institutional review remains open", checks)
+    require(license_state["distribution_authorized"] is False, "license state does not authorize distribution", checks)
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

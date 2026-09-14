@@ -1,93 +1,76 @@
-# P0-G project-license decision packet
+# P0-G current project-license decision packet
 
-Status: **OWNER DECISION REQUIRED; RECOMMEND APACHE-2.0 FOR PROJECT-AUTHORED CODE AND DOCUMENTATION.**
+Status: **OWNER SELECTED APACHE-2.0 FOR PROJECT-AUTHORED CODE; HOLDER, YEAR AND INSTITUTIONAL RELEASE REVIEW PENDING.**
 
-**CAS Q3 STATUS: NOT READY.** This packet reduces the license gate to a concrete
-owner choice. It does not add a license, authorize distribution or assert that
-the project owner holds rights that have not been confirmed.
+**CAS Q3 STATUS: NOT READY.** The owner selected Apache License 2.0 for
+ReliableRAG project-authored code. The exact official license text is present
+at repository root and the corrected aggregate V2 candidate contains that same
+text. This decision does not license third-party assets, authorize public
+distribution, identify the legal copyright holder or satisfy an institutional
+release review.
 
-## Recommended option
+## Implemented state
 
-Choose **Apache License 2.0** for project-authored source code and documentation
-if the copyright holder permits an open-source release. The official license is
-published by the Apache Software Foundation at
-<https://www.apache.org/licenses/LICENSE-2.0.txt>; SPDX identifier:
-`Apache-2.0`. The official application guidance says to place the full text in
-a top-level `LICENSE` and maintain an appropriate `NOTICE` when applicable:
-<https://www.apache.org/legal/apply-license.html>.
+- Selected code license: `Apache-2.0`.
+- Root license: `LICENSE`, SHA-256
+  `cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30`.
+- Scope statement: `LICENSE_SCOPE.md`.
+- Corrected anonymous aggregate candidate: V2 archive SHA-256
+  `4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8`.
+- V2 applies Apache-2.0 only to its two project-authored verifier/statistical
+  scripts and explicitly leaves non-code members and third-party materials
+  outside that grant.
+- Public distribution: withheld.
 
-This is the preferred option for ReliableRAG because it is permissive, retains
-copyright/license notices, requires modified files to state changes, and
-contains an express patent grant and termination provisions. Those terms are
-useful for research software that may be reused or extended. They do not grant
-rights to third-party datasets, model weights or dependencies.
+The official Apache text and application guidance are maintained by the Apache
+Software Foundation:
 
-Owner inputs required before implementation:
+- <https://www.apache.org/licenses/LICENSE-2.0.txt>
+- <https://www.apache.org/legal/apply-license.html>
 
-1. exact legal copyright holder;
-2. copyright year or year range;
-3. confirmation that the holder may license all project-authored tracked code
-   and documentation; and
-4. any institutional NOTICE wording or technology-transfer review requirement.
-
-## Alternative options
-
-| Option | When it fits | Consequence for the reviewer package |
-|---|---|---|
-| Apache-2.0 — recommended | The owner wants permissive reuse with an express patent license and change notices. | Add exact official `LICENSE`, owner-specific `NOTICE`, SPDX metadata and rebuild the aggregate candidate. |
-| MIT | The owner prioritizes a shorter permissive license and accepts that it has no express patent-license section comparable to Apache-2.0. Official OSI text: <https://opensource.org/license/mit>. | Add the exact text with real year/holder, update package metadata and rebuild. |
-| No public code license yet | Institutional ownership or release approval is unresolved. | Keep the repository and aggregate ZIP distribution-withheld; arrange journal-approved confidential review access if allowed. |
-
-Copyleft licensing is not recommended as the default for this package because
-the current goal is a small reviewer-facing research release and the repository
-does not redistribute third-party source or model/data payloads. A copyleft
-choice remains possible only if the owner deliberately wants its downstream
-source-sharing conditions and confirms compatibility for every distributed
-component.
+No project-specific `NOTICE` has been invented. The legal holder, copyright
+year/range and any wording or approval required by Hubei University of
+Technology must be confirmed first.
 
 ## Fixed third-party boundary
 
-The project license would cover only material the project owner is entitled to
-license. The current aggregate candidate deliberately excludes:
+The project-code license does not cover HotpotQA, 2WikiMultiHopQA or MuSiQue
+payloads; Qwen, BGE or DeBERTa weights/tokenizers; dependency wheels; generated
+answers; per-question outcome ledgers; or private reproduction archives. None
+of those payload classes is present in the V2 aggregate candidate.
 
-- HotpotQA, 2WikiMultiHopQA and MuSiQue questions, contexts and answers;
-- Qwen, BGE and DeBERTa weights/tokenizer assets;
-- third-party wheels and copied dependency source;
-- generated answers, per-question outcomes and private reproduction archives.
+The exact Qwen2.5-3B-Instruct revision is under the Qwen Research License, which
+limits its grant to non-commercial purposes and has separate redistribution and
+notice conditions. The exact non-`-c` DeBERTa checkpoint is labelled MIT at the
+foundation-model level, but its author states that its training data include a
+mix of licenses including non-commercial terms. The project excludes both
+models' weights and retains institutional review of the intended publication
+and release boundary.
 
-The existing `release/cas_q3_aggregate/THIRD_PARTY_NOTICES.md` retains upstream
-links, exact model revisions and the action applied to each material. Adding a
-top-level license must not replace or weaken those separate terms.
+## Remaining owner and institutional record
 
-## Implementation after owner selection
+The following facts are still required and must not be guessed:
 
-After a signed owner decision, perform one prospective release-only change:
+1. exact legal copyright holder for project-authored code;
+2. copyright year or year range;
+3. whether the holder may license all code intended for release;
+4. whether institutional release review or project-specific `NOTICE` wording is
+   required, and the retained approval if so;
+5. institutional acceptance of the Qwen research-license boundary for the
+   intended academic publication and code/evidence release;
+6. institutional acceptance of the non-`-c` DeBERTa training-data caveat for
+   the same route; and
+7. final written authorization of V2 or a prospectively rebuilt successor.
 
-1. add the exact chosen license at the repository top level and any required
-   notice/metadata;
-2. replace `PENDING_OWNER_SELECTION` and `distribution_authorized=false` only
-   in a new version of the aggregate packager/manifest after target-journal
-   policy review;
-3. keep benchmark text, model assets, private ledgers and identity-bearing
-   forensic receipts excluded;
-4. build two fresh destinations and require byte-identical archive hashes;
-5. rerun the independent archive validator, extraction round trip, 129-check
-   aggregate verifier and identity/path scanners; and
-6. update the manuscript data/code statement, cover letter and evidence index.
+The historical V1 archive and its `PENDING_OWNER_SELECTION` manifest remain
+unchanged as evidence of the earlier state. They are not the current licensed
+candidate.
 
-Do not retroactively edit the currently sealed withheld archive or its receipt.
-Its `PENDING_OWNER_SELECTION` state is historical evidence of the pre-license
-gate.
+## Promotion boundary
 
-## Owner decision record to supply
-
-```text
-Selected option: Apache-2.0 / MIT / distribution withheld
-Copyright holder: <exact legal name>
-Copyright year or range: <year>
-Institutional NOTICE/review requirement: <text or none>
-```
-
-P0-G remains open until this decision and the target journal's release/data/code
-policy are both known and the newly licensed candidate passes the same
-deterministic and independent checks.
+Once the missing holder/year/review facts are supplied, the project must decide
+whether V2 can be released as built or whether a new package with an approved
+notice is required. Any successor must use a new output path, rebuild twice,
+match byte-for-byte, pass the independent archive validator and 129-check
+aggregate verifier, retain identity/path scans, and obtain a persistent archive
+identifier. Until those conditions pass, P0-G remains open.

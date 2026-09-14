@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_OWNER_SELECTED_APACHE2_ROOT_LICENSE_AND_SCOPE_BOUND_THIRD_PARTY_AND_INSTITUTIONAL_GATES_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "verification_date": "2026-09-14",
+  "historical_correction": {
+    "historical_audit": "docs/cas_q3/P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md",
+    "historical_no_root_license_statement_was_true_when_written": true,
+    "historical_audit_mutated": false,
+    "root_license_later_added_by_commit": "020f3cd",
+    "stale_current_decision_packet_replaced": true
+  },
+  "current_state": {
+    "owner_selected_project_code_license": "Apache-2.0",
+    "root_license_path": "LICENSE",
+    "root_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "license_scope_path": "LICENSE_SCOPE.md",
+    "project_specific_notice_present": false,
+    "legal_copyright_holder_confirmed": false,
+    "copyright_year_or_range_confirmed": false,
+    "institutional_release_review_resolved": false
+  },
+  "third_party_boundary": {
+    "qwen_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "qwen_license": "Qwen RESEARCH LICENSE AGREEMENT",
+    "qwen_non_commercial_grant": true,
+    "qwen_weights_in_release_candidate": false,
+    "deberta_revision": "5a4338ab2151dc8db04ad53b42b6153382bf4f99",
+    "deberta_foundation_model_label": "MIT",
+    "deberta_non_c_training_data_includes_non_commercial_terms": true,
+    "deberta_weights_in_release_candidate": false,
+    "institutional_review_complete": false
+  },
+  "licensed_v2_archive_sha256": "4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8",
+  "p0_g_closed": false,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

@@ -332,6 +332,18 @@ def main() -> int:
     checks.equal(private_builder["synthetic_private_build"]["visual_defects"], 0, "synthetic private visual defects")
     checks.equal(private_builder["submission_authorized"], False, "synthetic build does not authorize submission")
 
+    license_state = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_G_LICENSE_STATE_VERIFICATION.json").read_text(encoding="utf-8")
+    )
+    checks.equal(license_state["decision"], "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN", "current license state")
+    checks.equal(license_state["checks"], 26, "license-state verification checks")
+    checks.equal(license_state["project_code_license"], "Apache-2.0", "project-code license")
+    checks.equal(license_state["legal_holder_confirmed"], False, "legal holder remains open")
+    checks.equal(license_state["copyright_year_confirmed"], False, "copyright year remains open")
+    checks.equal(license_state["institutional_release_review_complete"], False, "institutional release review remains open")
+    checks.equal(license_state["third_party_institutional_review_complete"], False, "third-party review remains open")
+    checks.equal(license_state["distribution_authorized"], False, "license state does not authorize distribution")
+
     reply_receipt = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json").read_text(
             encoding="utf-8"
@@ -357,6 +369,7 @@ def main() -> int:
         "actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
         "python scripts/verify_cas_q3_public_reporting_surface.py",
         "python scripts/verify_cas_q3_applied_intelligence_preflight.py",
+        "python scripts/verify_cas_q3_license_state.py",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",

@@ -116,8 +116,9 @@ fairness, reviewer and Submission Ready audits.
    institutional NOTICE/review requirements, third-party release review, final
    authorization and persistent archiving of the validated corrected candidate,
    and a journal-accepted private-review route remain open. The historical
-   [license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md) records
-   the preceding decision gate. These facts have a private machine-validated
+   [current license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md)
+   records the implemented Apache choice and remaining holder/year/review
+   fields. These facts have a private machine-validated
    intake path shared with P0-H/I.
    The [Applied Intelligence data/code policy audit](P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.md)
    now governs the selected target. The earlier
@@ -133,6 +134,11 @@ fairness, reviewer and Submission Ready audits.
    remains an immutable withheld arithmetic witness.
    A corrected Apache-2.0-aware V2 candidate has now been built twice, matched
    byte-for-byte, independently validated, and remains distribution-withheld.
+   The [license-state corrigendum](P0_G_LICENSE_STATE_CORRIGENDUM.md) preserves
+   the historically accurate pre-license audit while binding the current root
+   license and `LICENSE_SCOPE.md`. Its 26-check verifier rejects a return to the
+   stale “owner decision required” state and keeps the legal holder, year,
+   institutional review, Qwen research-license and non-`-c` DeBERTa gates open.
 8. **P0-H -- OWNER TARGET SELECTED / INSTITUTIONAL CAS RECORD PENDING:** The
    [Applied Intelligence target selection](P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md)
    records the owner's target, Hubei University of Technology major-category
@@ -274,9 +280,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 88 repository records plus preserved withheld archive
+  authenticates 94 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 580 checks, without
+  package in 613 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

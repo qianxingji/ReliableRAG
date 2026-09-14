@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "cc1d13fd5c7689d76b252c29a1b8f9dcbfb3ec2716a15109cfff25bf77130ddd",
+      "sha256": "c052bff476beb5864f5f0a088f3f1c8b7a74e351fef4bbf1dab4fc2f8a8c737d",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -437,6 +437,36 @@
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_ACCEPTANCE.md",
       "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
       "sha256": "efcd0d893ca9c729a6a0e400d6670ef1a52f391f1cdd0e596f2c16c726748dc8"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_PROJECT_LICENSE_DECISION_PACKET.md",
+      "required_marker": "OWNER SELECTED APACHE-2.0",
+      "sha256": "eb76ad2aded3fcf85a18e117eb088bffaffd1f87e86ee7c6d44836025a59ce17"
+    },
+    {
+      "path": "LICENSE_SCOPE.md",
+      "required_marker": "Public distribution of the candidate remains withheld",
+      "sha256": "d8ac8c28dca05166433d911fde026ca305f0f75abf7aec25c98ac10566d5ee32"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSE_STATE_CORRIGENDUM.json",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APACHE2_ROOT_LICENSE_AND_SCOPE_BOUND_THIRD_PARTY_AND_INSTITUTIONAL_GATES_OPEN",
+      "sha256": "4f4e22d0f20d567fb3da74db20d675a527522b6dedd774c841b2cf899efc86d7"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSE_STATE_CORRIGENDUM.md",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APACHE2_ROOT_LICENSE_AND_SCOPE_BOUND_THIRD_PARTY_AND_INSTITUTIONAL_GATES_OPEN",
+      "sha256": "6e19820a06d74b6b72091e599e74a38fb0162fc614288a29cabbd5751406768a"
+    },
+    {
+      "path": "scripts/verify_cas_q3_license_state.py",
+      "required_marker": "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN",
+      "sha256": "28b5449acc4556c3aae84af2dba5d84c45f3c4f7d7c963042624e8228f5105b0"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSE_STATE_VERIFICATION.json",
+      "required_marker": "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN",
+      "sha256": "77dfb4b8bf59d0c9b5bd0bb549cc5849052a2285a49fe6d297efb2aaa034c2a0"
     }
   ],
   "aggregate_release_candidate": {
