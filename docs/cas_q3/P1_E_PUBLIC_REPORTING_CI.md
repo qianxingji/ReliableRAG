@@ -210,6 +210,17 @@ handling. The committed host receipt covers 465,460 ordinary files and records
 no document-signature/extension mismatch or scan error. CI authenticates that
 receipt and its synthetic boundaries without rescanning the external roots.
 
+The unique-PDF page-text coverage audit at
+`f6b0bdb07e788a16fa76951d871ff051b6cac8e6` passed push run
+[34868397670](https://github.com/qianxingji/ReliableRAG/actions/runs/34868397670)
+and pull-request run
+[34868404532](https://github.com/qianxingji/ReliableRAG/actions/runs/34868404532).
+The 101-test suite verifies cross-scope PDF deduplication, first-level nested-PDF
+inclusion, low-text fail-closed behavior and oversize refusal. The committed
+host receipt reduces 270 occurrences to 35 hashes and reports 446/446 pages
+above the text threshold, including 15 pages with raster images. CI does not
+rerun the three-root host scan or claim OCR of image-internal text.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
