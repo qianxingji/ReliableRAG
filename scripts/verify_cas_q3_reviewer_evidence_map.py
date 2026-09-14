@@ -123,7 +123,7 @@ def main() -> int:
     checks.equal(data_code["official_policy"]["data_availability_statement_required"], True, "Discover data statement requirement")
     checks.equal(data_code["official_policy"]["new_custom_code_available_for_editor_reviewer_testing"], True, "Discover code testing requirement")
     checks.equal(data_code["official_policy"]["archive_doi_or_unique_identifier_expected"], True, "Discover persistent archive expectation")
-    checks.equal(data_code["current_project_evidence"]["top_level_project_license_present"], False, "project license gap remains")
+    checks.equal(data_code["current_project_evidence"]["top_level_project_license_present"], False, "historical Discover audit retains pre-license state")
     checks.equal(data_code["current_project_evidence"]["persistent_archive_doi_or_unique_identifier_exists"], False, "persistent code archive gap remains")
     checks.equal(data_code["distribution_authorized"], False, "policy audit does not authorize distribution")
     third_party = json.loads(
@@ -144,6 +144,53 @@ def main() -> int:
     notices = notices_path.read_text(encoding="utf-8")
     checks.true("including non-commercial licenses" in notices, "DeBERTa training-data caveat retained")
     checks.true("Do not reduce the training-data caveat" in notices, "unconditional MIT summary is prohibited")
+
+    target = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        target["decision"],
+        "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN",
+        "Applied Intelligence target selection decision",
+    )
+    checks.equal(target["owner_selected_target"], True, "Applied Intelligence owner selection")
+    checks.equal(target["journal"]["print_issn"], "0924-669X", "Applied Intelligence print ISSN")
+    checks.equal(target["journal"]["electronic_issn"], "1573-7497", "Applied Intelligence electronic ISSN")
+    checks.equal(target["publication_route"]["owner_selected"], "SUBSCRIPTION_NON_OPEN_ACCESS", "subscription route")
+    checks.equal(target["publication_route"]["mandatory_apc_under_selected_route"], False, "subscription route has no mandatory APC")
+    checks.equal(target["owner_cas_rule"]["independent_institutional_record_retained"], False, "institutional CAS record remains open")
+    checks.equal(target["submission_authorized"], False, "target audit does not authorize submission")
+    applied_policy = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        applied_policy["decision"],
+        "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN",
+        "Applied Intelligence data/code policy decision",
+    )
+    checks.equal(applied_policy["current_project"]["top_level_license"], "Apache-2.0", "Apache-2.0 project-code license")
+    checks.equal(applied_policy["current_project"]["existing_aggregate_archive_release_ready"], False, "old archive remains withheld")
+    checks.equal(applied_policy["distribution_authorized"], False, "Applied policy does not authorize distribution")
+
+    workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
+    for phrase in (
+        "permissions:\n  contents: read",
+        "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "python scripts/verify_cas_q3_public_reporting_surface.py",
+        "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
+        "git diff --exit-code",
+    ):
+        checks.true(phrase in workflow, f"public CI boundary: {phrase}")
+    for forbidden in (
+        "python scripts/verify_cas_q3_claim_statistics.py",
+        "python scripts/verify_cas_q3_historical_manifest_archive_recovery.py",
+        "tests.test_cas_q3_aggregate_release",
+    ):
+        checks.true(forbidden not in workflow, f"private-input command excluded from public CI: {forbidden}")
+    ci_acceptance = (ROOT / "docs" / "cas_q3" / "P1_E_PUBLIC_REPORTING_CI.md").read_text(encoding="utf-8")
+    for run_id in ("34801833707", "34801836852", "34801428340", "34801428452"):
+        checks.true(run_id in ci_acceptance, f"public CI run retained: {run_id}")
 
     manifest_recovery = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.json").read_text(encoding="utf-8")
@@ -197,7 +244,7 @@ def main() -> int:
         "does not authorize distribution",
         "arithmetic witness rather than a release-ready artifact",
         "An independently certified timestamp, original-fit authentication",
-        "Five evidence lanes",
+        "Six evidence lanes",
         "CAS Q3 STATUS: NOT READY",
     ):
         checks.true(phrase in normalized_manuscript, f"map boundary phrase: {phrase}")

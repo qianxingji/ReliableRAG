@@ -20,7 +20,8 @@
     "P1-A",
     "P1-B",
     "P1-C",
-    "P1-D"
+    "P1-D",
+    "P1-E"
   ],
   "p2_status": "FROZEN_NO_NEW_EXPERIMENTS_OR_METHOD_SEARCH",
   "blockers": [
@@ -28,10 +29,8 @@
       "gate": "P0-G",
       "status": "OPEN",
       "missing": [
-        "owner-selected project license",
         "exact legal copyright holder and year/range",
         "institutional NOTICE or release-review decision",
-        "selected journal data/code release policy",
         "license-bearing latest code link and immutable archive DOI or unique identifier",
         "journal-approved review access for restricted evidence",
         "owner/institutional review of Qwen research-license compatibility for the intended release",
@@ -43,17 +42,16 @@
       "gate": "P0-H",
       "status": "OPEN",
       "missing": [
-        "institution-recognized CAS edition/year and category rule",
-        "verified current journal title and ISSNs under that rule",
-        "title/ISSN-change and recognition-date treatment",
-        "final target journal and owner-confirmed payer, agreement, waiver or no-mandatory-APC route"
+        "institution-recognized CAS edition/year",
+        "retained institutional record for current Applied Intelligence title and ISSNs under the Computer Science major-category rule",
+        "institutional title/ISSN-change treatment"
       ]
     },
     {
       "gate": "P0-I",
       "status": "OPEN",
       "missing": [
-        "real authorship, affiliations and corresponding-author fields",
+        "complete author publishing names, department/address and corresponding-author fields",
         "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
         "originality, exclusive-submission and all-author approval",
         "target-specific source/PDF/package conversion and verification",
@@ -67,8 +65,9 @@
     "missing_field_count": 1,
     "validation_error_count": 0
   },
-  "verified_repository_hashes": 80,
-  "checks": 207,
+  "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
+  "verified_repository_hashes": 88,
+  "checks": 235,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

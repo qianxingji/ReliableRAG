@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-14",
+  "decision": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "owner_selected_target": true,
+  "journal": {
+    "title": "Applied Intelligence",
+    "print_issn": "0924-669X",
+    "electronic_issn": "1573-7497",
+    "publishing_model": "HYBRID",
+    "official_journal_url": "https://link.springer.com/journal/10489",
+    "official_guidelines_url": "https://link.springer.com/journal/10489/submission-guidelines",
+    "official_publishing_options_url": "https://link.springer.com/journal/10489/how-to-publish-with-us",
+    "official_facts_checked_on": "2026-09-14"
+  },
+  "owner_cas_rule": {
+    "edition": "UPGRADED",
+    "edition_year": null,
+    "category_basis": "MAJOR",
+    "category_name": "Computer Science",
+    "target_tier_or_better": "Q3",
+    "final_verifier": "Hubei University of Technology research administration",
+    "owner_attested_current_target_tier": "Q3",
+    "independent_institutional_record_retained": false
+  },
+  "publication_route": {
+    "owner_selected": "SUBSCRIPTION_NON_OPEN_ACCESS",
+    "mandatory_apc_under_selected_route": false,
+    "optional_oa_only_if_required_and_funded": true,
+    "current_optional_oa_apc": {
+      "GBP": 2390,
+      "USD": 3290,
+      "EUR": 2690,
+      "taxes_may_apply": true,
+      "price_determined_at": "ARTICLE_ACCEPTANCE_DATE"
+    }
+  },
+  "manuscript_requirements": {
+    "abstract_min_words": 150,
+    "abstract_max_words": 250,
+    "keywords_min": 4,
+    "keywords_max": 6,
+    "latex_profile": "Springer macro package with smallcondensed option",
+    "numeric_citations": true,
+    "editable_sources_and_pdf": true,
+    "upload_subfolders_allowed": false,
+    "data_availability_statement_required": true,
+    "funding_and_competing_interests_required": true,
+    "substantive_llm_use_documentation_required": true
+  },
+  "current_package": {
+    "journal_neutral_abstract_words": 142,
+    "abstract_requirement_met": false,
+    "applied_intelligence_template_built": false,
+    "target_specific_pdf_verified": false,
+    "submission_authorized": false
+  },
+  "scientific_fit": "CONDITIONAL_BROAD_SCOPE_HIGH_ORIGINALITY_RISK",
+  "primary_rejection_risks": [
+    "narrow_empirical_contribution_and_no_new_selector_architecture",
+    "single_accepted_3B_reader",
+    "no_joint_pass_over_HGB_ONLY_R",
+    "missing_original_fit_time_receipts_and_independent_original_fit_witness",
+    "missing_standalone_deployment_measurements"
+  ],
+  "scientific_execution_authorized": false,
+  "submission_authorized": false
+}

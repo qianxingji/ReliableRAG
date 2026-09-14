@@ -110,15 +110,18 @@ fairness, reviewer and Submission Ready audits.
    [release audit](P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md) now
    freezes a nine-member anonymous aggregate allowlist. Two deterministic builds
    share one archive hash; the independent validator passes 100 checks and the
-   extracted verifier passes 129 checks. The candidate is withheld until the
-   owner selects a top-level project license and P0-H certifies the target
-   journal's data/code policy. The
-   [license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md) recommends
-   Apache-2.0 for project-authored code/docs and reduces the remaining owner
-   input to the exact option, legal holder/year and institutional NOTICE/review
-   requirement; it does not itself authorize release. These facts now have a
-   private machine-validated intake path shared with P0-H/I.
-   The [provisional Discover data/code policy audit](P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.md)
+   extracted verifier passes 129 checks. The candidate remains withheld. The
+   owner has selected Apache License 2.0 for project-authored code, and the exact
+   license text is now present at repository top level. Legal holder/year,
+   institutional NOTICE/review requirements, third-party release review, a new
+   corrected archive, persistent identifier and journal-accepted private-review
+   route remain open. The historical
+   [license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md) records
+   the preceding decision gate. These facts have a private machine-validated
+   intake path shared with P0-H/I.
+   The [Applied Intelligence data/code policy audit](P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.md)
+   now governs the selected target. The earlier
+   [provisional Discover data/code policy audit](P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.md)
    now fixes that candidate's official statement, code-testing and persistent-
    archive requirements. It confirms that the aggregate ZIP alone is
    insufficient for final code availability; license-bearing latest and
@@ -129,9 +132,15 @@ fairness, reviewer and Submission Ready audits.
    partly non-commercial training-data warning. Existing aggregate ZIPs remain
    immutable withheld arithmetic witnesses and must be rebuilt from the
    corrected notice before any owner-authorized distribution.
-8. **P0-H -- OFFICIAL SCOPE AND SUBMISSION REQUIREMENTS AUDITED; CAS RULE
-   PENDING:** The
-   [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
+8. **P0-H -- OWNER TARGET SELECTED / INSTITUTIONAL CAS RECORD PENDING:** The
+   [Applied Intelligence target selection](P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md)
+   records the owner's target, Hubei University of Technology major-category
+   CAS rule, current title/ISSNs, hybrid subscription route and current official
+   submission requirements. The fit is plausible but carries high originality
+   risk because the study has no new selector architecture, does not pass
+   against HGB-only and has one accepted reader. The institution-recognized CAS
+   edition/year and retained current-title/ISSN Tier-3 record are still missing.
+   The earlier [target-journal audit](P0_H_TARGET_JOURNAL_FIT_AUDIT.md) ranks Discover
    Computing first for empirical editorial fit and Journal of Intelligent
    Information Systems first for stable subject identity. The
    [submission-requirements matrix](P0_H_SUBMISSION_REQUIREMENTS_MATRIX.md)
@@ -145,8 +154,9 @@ fairness, reviewer and Submission Ready audits.
    The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
    closes the current-price lookup: the official page lists GBP 1,040, USD
    1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
-   price. Only the owner's payer/agreement/confirmed-waiver decision remains;
-   an unconfirmed waiver is not treated as funding evidence.
+   price. It is now historical rather than the active route. Applied
+   Intelligence's official page states that its selected subscription route has
+   no APC.
 9. **P0-I -- SOURCE AND COMPILED DRAFT ACCEPTED / EXTERNAL INPUTS OPEN:** The
    [manuscript preflight](P0_I_MANUSCRIPT_PREFLIGHT.md) freezes journal render
    profiles, the evidence-to-section map, table/figure sources, forbidden Claims,
@@ -172,22 +182,27 @@ fairness, reviewer and Submission Ready audits.
    including 14/14 pixel-identical rebuilt pages for that historical artifact.
    The font-clean rebuild changes only main pages 4 and 7 and passed fresh
    project-lead review; it awaits the final Astra xhigh rebind after journal
-   conversion. Final Submission Ready remains blocked by author inputs, license
-   and the certified CAS Q3 journal rule. The
+   conversion. Final Submission Ready remains blocked by incomplete author and
+   release inputs and the certified CAS Q3 journal record. The
    [author/declaration intake](P0_I_AUTHOR_DECLARATION_INTAKE.md) now reduces the
    remaining author surface to explicit identity, CRediT, funding, interests,
    ethics, acknowledgements, AI-assistance, originality and approval fields;
    none is guessed. Its 19-check verifier also compiles the placeholder title
    page successfully as a 2-page PDF, closing the template-syntax gate while
    retaining every factual field as pending. The consolidated intake adds a
-privacy-preserving local JSON route for those facts without committing them.
+   privacy-preserving local JSON route for those facts without committing them.
+   The owner has now supplied one author name, first affiliation, target journal,
+   publication route, project-license choice and CAS category rule. The local
+   verifier reports 32 remaining fields and zero validation errors; correspondence,
+   CRediT, declarations, legal holder/year, institutional review and CAS-edition
+   facts are not inferred.
    A separate local builder can then produce an ignored title page,
    declarations source and cover-letter draft. It refuses incomplete inputs,
    does not overwrite a prior directory and emits only a redacted build receipt;
    generated drafts remain unverified and submission-unauthorized.
-   The journal-neutral abstract is now 142 words, closing the inspected 150-
-   and 250-word candidate limits while preserving the frozen positive and
-   negative Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
+   The journal-neutral abstract is 142 words. It passed the former maximum-only
+   profiles but is below Applied Intelligence's 150-word minimum and must be
+   extended without changing the Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
    font and complete project-lead visual review; the mechanical verifier no
    longer self-asserts a human inspection.
    A separate reproducible PDF-length proxy records 3,951 tokens before
@@ -213,7 +228,7 @@ privacy-preserving local JSON route for those facts without committing them.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 43 repository records plus the withheld archive and passes 250
+  authenticates 51 repository records plus the withheld archive and passes 307
   checks without scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -228,6 +243,12 @@ privacy-preserving local JSON route for those facts without committing them.
 - **P1-D -- CLOSED:** Frozen dataset and retriever breakdowns are present only
   in the supplement, use their 6,000-trace cell denominators, and are explicitly
   descriptive with no subgroup superiority Claim.
+- **P1-E -- CLOSED IN PUBLIC-REPORTING SCOPE:** The
+  [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
+  failure and the corrected 49-check committed-surface verifier. GitHub push and
+  pull-request runs both pass on commit `6364ff2`. Private aggregate/statistical,
+  historical-manifest and end-to-end neural reproduction remain explicitly
+  outside this CI.
 
 ## P2: optional and currently closed
 
@@ -237,4 +258,5 @@ privacy-preserving local JSON route for those facts without committing them.
 
 Primary rejection risks are a narrow empirical contribution, no new algorithm,
 failure against HGB_ONLY_R, single accepted reader condition, incomplete original
-fit provenance, incomplete standalone deployment cost and unknown journal fit.
+fit provenance, incomplete standalone deployment cost and high Applied
+Intelligence originality/desk risk.

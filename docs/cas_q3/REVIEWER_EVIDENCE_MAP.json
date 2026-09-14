@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "661ab5f8c74f0105ea74259f8703e03730db7a60cfd08323c715bb40555e6d0e",
+      "sha256": "b0e807b61a8618cb2b32677ce3f71507b16abbd5d9a10841cfdb4a2516be896b",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -215,6 +215,46 @@
       "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_ASTRA_XHIGH_AUDIT.md",
       "required_marker": "PASS_ASTRA_XHIGH_BYTE_AUTHENTICITY_WITH_TIMESTAMP_AND_ORIGINAL_FIT_GAPS_RETAINED",
       "sha256": "f89b8ed908b4ad9d133b379f37300fb9690cfd850865b8d38b4880c8669a62b5"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "required_marker": "Apache License"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md",
+      "sha256": "3da83248cfb32aff730e4eb6884f70047ee52129420699d32e8877f4534e8c14",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.json",
+      "sha256": "05b8cda6bce653f78d391f3395f2b3081e1a03dba27825644d6c296c70078c54",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.md",
+      "sha256": "55aa1f88c3faf2fb6b6f1c56c90876790b620ec84dfb069568b22a457d2928c3",
+      "required_marker": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.json",
+      "sha256": "40a7226bae1a5db8cf506c10980aa1ccd79e50d09a99f00e4d6c3e7f4a5c7d8d",
+      "required_marker": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
+      "sha256": "164133ab7e3e83f147907ed7d03a26762d81e1bbaf1b5b643727c4ad0d07bdad",
+      "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
+    },
+    {
+      "path": ".github/workflows/public-reporting-audit.yml",
+      "sha256": "dd19ec5a7cae06360f8916bd46a5bd1949ce1647aac3dcf9571550e95cbd3a83",
+      "required_marker": "verify_cas_q3_public_reporting_surface.py"
+    },
+    {
+      "path": "scripts/verify_cas_q3_public_reporting_surface.py",
+      "sha256": "164c76504b89571eb32135db3eb2b1df74f13361be6dd076160489debbd1e41a",
+      "required_marker": "PASS_COMMITTED_PUBLIC_REPORTING_SURFACE_ONLY"
     }
   ],
   "aggregate_release_candidate": {
@@ -252,9 +292,20 @@
     "historical_manifest_independent_timestamp_certified": false
   },
   "missing_external_gates": [
-    "owner_selected_project_license_and_release_policy",
-    "author_identity_and_declarations",
-    "certified_target_journal_and_institutional_CAS_Q3_rule",
-    "target_journal_specific_format_and_font_profile"
-  ]
+    "legal_copyright_holder_year_and_institutional_release_review",
+    "complete_author_identity_contributions_and_declarations",
+    "institution_recognized_cas_edition_year_and_retained_applied_intelligence_record",
+    "applied_intelligence_source_pdf_package_and_final_astra_xhigh_audit",
+    "new_corrected_release_archive_persistent_identifier_and_private_review_route"
+  ],
+  "selected_target": {
+    "journal": "Applied Intelligence",
+    "print_issn": "0924-669X",
+    "electronic_issn": "1573-7497",
+    "owner_selected_route": "SUBSCRIPTION_NON_OPEN_ACCESS",
+    "owner_attested_cas_category": "Computer Science major-category Q3",
+    "institutional_record_retained": false,
+    "submission_authorized": false
+  },
+  "project_license": "Apache-2.0"
 }

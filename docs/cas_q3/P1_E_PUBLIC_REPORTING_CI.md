@@ -2,6 +2,13 @@
 
 Decision: **PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED**.
 
+Remote acceptance: **CLOSED** on commit
+`6364ff212745ac5e6c2ef5f1c285fa330acb32f0`. Both the
+[push run](https://github.com/qianxingji/ReliableRAG/actions/runs/34801833707)
+and the
+[pull-request run](https://github.com/qianxingji/ReliableRAG/actions/runs/34801836852)
+completed successfully on 2026-09-14.
+
 **CAS Q3 STATUS: NOT READY.** The workflow
 `.github/workflows/public-reporting-audit.yml` gives the draft PR a portable,
 reviewer-visible check over committed aggregate and manuscript artifacts. It is
@@ -57,6 +64,13 @@ The workflow improves continuous checking of the public reporting surface only.
 Private forensic reproduction remains governed by the existing hashed runbooks
 and journal-approved access boundary.
 
-**P1-E is closed when the workflow file passes local command-equivalent checks
-and GitHub reports a successful run for the pushed commit.** Until that remote
-run completes, the implementation is present but remote acceptance is pending.
+The first public run at commit `020f3cd2ba17e76a76b5767cafccb4d37438e8dc`
+failed because the original workflow invoked the private aggregate verifier on
+a checkout where the ignored aggregate inputs do not exist. That failure is
+retained in runs
+[34801428340](https://github.com/qianxingji/ReliableRAG/actions/runs/34801428340)
+and
+[34801428452](https://github.com/qianxingji/ReliableRAG/actions/runs/34801428452).
+The correction did not copy, download or publish those private inputs; it added
+a separate 49-check verifier for the committed public surface. P1-E is closed
+only for this bounded public-reporting scope.

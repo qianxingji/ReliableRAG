@@ -47,7 +47,7 @@ jobs:
         shell: bash
         run: |
           set +e
-          python scripts/verify_cas_q3_submission_readiness.py
+          python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs
           readiness_exit=$?
           set -e
           test "$readiness_exit" -eq 2

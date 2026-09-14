@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-09-14",
+  "decision": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "journal": "Applied Intelligence",
+  "official_policy_url": "https://link.springer.com/journal/10489/submission-guidelines",
+  "official_facts_checked_on": "2026-09-14",
+  "policy": {
+    "data_availability_statement_required_for_original_research": true,
+    "public_data_sharing_strongly_encouraged": true,
+    "repository_deposit_strongly_encouraged": true,
+    "conditional_access_statement_allowed_when_public_sharing_is_not_possible": true,
+    "necessary_deposit_rights_required": true,
+    "code_availability_in_declarations_summary": true
+  },
+  "current_project": {
+    "top_level_license": "Apache-2.0",
+    "license_scope": "project_authored_code_only",
+    "third_party_terms_remain_separate": true,
+    "existing_aggregate_archive_release_ready": false,
+    "existing_aggregate_archive_mutation_allowed": false,
+    "new_license_bearing_archive_required": true,
+    "persistent_archive_doi_or_unique_identifier_exists": false,
+    "journal_accepted_private_review_route_confirmed": false,
+    "distribution_authorized": false
+  },
+  "remaining_gates": [
+    "exact_legal_copyright_holder_and_year_or_range",
+    "institutional_notice_or_release_review_decision",
+    "qwen_and_deberta_release_boundary_review",
+    "new_corrected_license_bearing_aggregate_archive_and_independent_validation",
+    "versioned_latest_code_url_and_immutable_archive_identifier",
+    "journal_or_editor_accepted_private_review_route"
+  ],
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "distribution_authorized": false,
+  "submission_authorized": false
+}

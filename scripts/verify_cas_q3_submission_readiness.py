@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -54,6 +55,13 @@ def owner_input_state() -> dict[str, object]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--ignore-local-owner-inputs",
+        action="store_true",
+        help="Produce the deterministic public-checkout receipt without reading the git-ignored owner file.",
+    )
+    args = parser.parse_args()
     evidence = json.loads(INDEX.read_text(encoding="utf-8"))
     checks: list[str] = []
 
@@ -170,7 +178,7 @@ def main() -> int:
     )
     require(
         data_code["current_project_evidence"]["top_level_project_license_present"] is False,
-        "policy mapping retains the missing project-license gate",
+        "historical Discover policy mapping retains its pre-license state",
         checks,
     )
     require(
@@ -189,8 +197,56 @@ def main() -> int:
     require(third_party["current_archive"]["release_ready"] is False, "current aggregate archive remains non-release-ready", checks)
     require(third_party["source_correction"]["future_archive_rebuild_required"] is True, "corrected notice requires a future archive", checks)
 
+    target = json.loads(
+        (ROOT / evidence["p0_h_applied_intelligence_target_selection_receipt"]).read_text(encoding="utf-8")
+    )
+    require(
+        target["decision"]
+        == "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN",
+        "owner-selected Applied Intelligence profile is bound",
+        checks,
+    )
+    require(target["owner_selected_target"] is True, "Applied Intelligence is the working target", checks)
+    require(target["journal"]["print_issn"] == "0924-669X", "Applied Intelligence print ISSN", checks)
+    require(target["journal"]["electronic_issn"] == "1573-7497", "Applied Intelligence electronic ISSN", checks)
+    require(
+        target["owner_cas_rule"]["category_basis"] == "MAJOR"
+        and target["owner_cas_rule"]["category_name"] == "Computer Science",
+        "owner-selected major-category CAS rule",
+        checks,
+    )
+    require(
+        target["owner_cas_rule"]["independent_institutional_record_retained"] is False,
+        "institutional CAS record remains open",
+        checks,
+    )
+    require(
+        target["publication_route"]["owner_selected"] == "SUBSCRIPTION_NON_OPEN_ACCESS"
+        and target["publication_route"]["mandatory_apc_under_selected_route"] is False,
+        "owner-selected no-mandatory-APC subscription route",
+        checks,
+    )
+    require(target["submission_authorized"] is False, "target selection does not authorize submission", checks)
+
+    applied_policy = json.loads(
+        (ROOT / evidence["p0_g_applied_intelligence_data_code_policy_receipt"]).read_text(encoding="utf-8")
+    )
+    require(
+        applied_policy["decision"]
+        == "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN",
+        "Applied Intelligence data/code policy is mapped",
+        checks,
+    )
+    require(applied_policy["current_project"]["top_level_license"] == "Apache-2.0", "owner-selected Apache license", checks)
+    require(
+        applied_policy["current_project"]["existing_aggregate_archive_release_ready"] is False,
+        "pre-license aggregate archive remains withheld",
+        checks,
+    )
+    require(applied_policy["distribution_authorized"] is False, "Applied policy audit does not authorize distribution", checks)
+
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
-    require(len(evidence["completed_p1"]) == 4, "P1-A through P1-D are closed", checks)
+    require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
 
     # Verify every repository path that has an adjacent SHA-256 field. External
     # receipt hashes without a repository path are deliberately outside scope.
@@ -212,10 +268,8 @@ def main() -> int:
             "gate": "P0-G",
             "status": "OPEN",
             "missing": [
-                "owner-selected project license",
                 "exact legal copyright holder and year/range",
                 "institutional NOTICE or release-review decision",
-                "selected journal data/code release policy",
                 "license-bearing latest code link and immutable archive DOI or unique identifier",
                 "journal-approved review access for restricted evidence",
                 "owner/institutional review of Qwen research-license compatibility for the intended release",
@@ -227,17 +281,16 @@ def main() -> int:
             "gate": "P0-H",
             "status": "OPEN",
             "missing": [
-                "institution-recognized CAS edition/year and category rule",
-                "verified current journal title and ISSNs under that rule",
-                "title/ISSN-change and recognition-date treatment",
-                "final target journal and owner-confirmed payer, agreement, waiver or no-mandatory-APC route",
+                "institution-recognized CAS edition/year",
+                "retained institutional record for current Applied Intelligence title and ISSNs under the Computer Science major-category rule",
+                "institutional title/ISSN-change treatment",
             ],
         },
         {
             "gate": "P0-I",
             "status": "OPEN",
             "missing": [
-                "real authorship, affiliations and corresponding-author fields",
+                "complete author publishing names, department/address and corresponding-author fields",
                 "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
                 "originality, exclusive-submission and all-author approval",
                 "target-specific source/PDF/package conversion and verification",
@@ -246,10 +299,28 @@ def main() -> int:
         },
     ]
     require(evidence["p0_g_distribution_authorized"] is False, "P0-G distribution remains withheld", checks)
-    require(evidence["p0_g_project_license"] == "PENDING_OWNER_SELECTION", "P0-G license remains pending", checks)
-    require(evidence["p0_h_decision"] == "PENDING_OWNER_AND_INSTITUTION_NO_JOURNAL_CERTIFIED", "P0-H remains uncertified", checks)
-    require(evidence["p0_i_author_inputs_status"] == "PENDING_RESPONSIBLE_AUTHOR_NO_FACTS_GUESSED", "P0-I author facts remain pending", checks)
-    intake = owner_input_state()
+    require(evidence["p0_g_project_license"] == "Apache-2.0", "owner-selected project license is recorded", checks)
+    require(
+        evidence["p0_h_decision"]
+        == "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN",
+        "P0-H target is selected but institutional certification remains open",
+        checks,
+    )
+    require(
+        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_32_MISSING_ZERO_VALIDATION_ERRORS",
+        "P0-I records partial owner facts without treating them as complete",
+        checks,
+    )
+    intake = (
+        {
+            "decision": "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
+            "complete": False,
+            "missing_field_count": 1,
+            "validation_error_count": 0,
+        }
+        if args.ignore_local_owner_inputs
+        else owner_input_state()
+    )
     require(
         intake["decision"] in {
             "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
@@ -262,9 +333,9 @@ def main() -> int:
     )
     require(
         evidence["missing_p0"] == [
-            "P0_G_owner_selected_project_license_and_target_journal_release_policy",
-            "P0_H_verified_target_journal_and_applicable_cas_q3_rule",
-            "P0_I_author_identity_declarations_and_target_specific_submission_package",
+            "P0_G_release_review_and_new_license_bearing_archive",
+            "P0_H_independent_institutional_cas_record_for_applied_intelligence",
+            "P0_I_complete_author_declarations_and_applied_intelligence_package",
         ],
         "machine-readable missing-P0 list is complete",
         checks,
@@ -277,10 +348,15 @@ def main() -> int:
         "submission_ready": False,
         "closed_p0": ["P0-A", "P0-B", "P0-C", "P0-D", "P0-E", "P0-F"],
         "open_p0": ["P0-G", "P0-H", "P0-I"],
-        "closed_p1": ["P1-A", "P1-B", "P1-C", "P1-D"],
+        "closed_p1": ["P1-A", "P1-B", "P1-C", "P1-D", "P1-E"],
         "p2_status": "FROZEN_NO_NEW_EXPERIMENTS_OR_METHOD_SEARCH",
         "blockers": blockers,
         "owner_input_intake": intake,
+        "owner_input_intake_scope": (
+            "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED"
+            if args.ignore_local_owner_inputs
+            else "LOCAL_GIT_IGNORED_FILE_IF_PRESENT"
+        ),
         "verified_repository_hashes": len(verified_hashes),
         "checks": len(checks),
         "scientific_payloads_read": False,
