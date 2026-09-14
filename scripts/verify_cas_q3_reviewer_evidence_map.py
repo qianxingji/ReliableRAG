@@ -257,6 +257,22 @@ def main() -> int:
     checks.equal(applied_transport["submission_authorized"], False, "target transport does not authorize submission")
     checks.equal(applied_transport["distribution_authorized"], False, "target transport remains private")
 
+    target_packet = (ROOT / "docs" / "cas_q3" / "P0_H_TARGET_JOURNAL_DECISION_PACKET.md").read_text(
+        encoding="utf-8"
+    )
+    normalized_target_packet = " ".join(target_packet.split())
+    for phrase in (
+        "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_INSTITUTIONAL_CAS_RECORD_PENDING",
+        "current print ISSN: `0924-669X`",
+        "current electronic ISSN: `1573-7497`",
+        "JCR quartiles and third-party partition sites are not substitutes",
+    ):
+        checks.true(phrase in normalized_target_packet, f"current target qualification packet: {phrase}")
+    checks.true(
+        "DISCOVER COMPUTING REMAINS THE CONDITIONAL EDITORIAL-FIT LEAD" not in target_packet,
+        "stale Discover Computing lead removed from current packet",
+    )
+
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (
         "permissions:\n  contents: read",

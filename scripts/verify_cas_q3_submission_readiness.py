@@ -334,6 +334,24 @@ def main() -> int:
     require(target_transport["submission_authorized"] is False, "target transport does not authorize submission", checks)
     require(target_transport["distribution_authorized"] is False, "target transport remains distribution-withheld", checks)
 
+    target_packet = (ROOT / evidence["p0_h_target_journal_decision_packet"]).read_text(encoding="utf-8")
+    require(
+        "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_INSTITUTIONAL_CAS_RECORD_PENDING" in target_packet,
+        "current target packet binds the owner-selected Applied Intelligence route",
+        checks,
+    )
+    require("current print ISSN: `0924-669X`" in target_packet, "current target packet binds print ISSN", checks)
+    require(
+        "current electronic ISSN: `1573-7497`" in target_packet,
+        "current target packet binds electronic ISSN",
+        checks,
+    )
+    require(
+        "DISCOVER COMPUTING REMAINS THE CONDITIONAL EDITORIAL-FIT LEAD" not in target_packet,
+        "stale provisional target is excluded from the current packet",
+        checks,
+    )
+
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
 

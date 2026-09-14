@@ -372,6 +372,11 @@
       "path": "tests/test_cas_q3_applied_intelligence_transport.py",
       "required_marker": "AppliedIntelligenceTransportTests",
       "sha256": "a5ef993cbff5002340d19223655a933ea4fdf7eaa6f6fb7b18c573d4e1753008"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_TARGET_JOURNAL_DECISION_PACKET.md",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_INSTITUTIONAL_CAS_RECORD_PENDING",
+      "sha256": "9a6841b70a34dd9a484f9f0ebba29d7ecd8bfd6d669c381f134dc2529ca0ad87"
     }
   ],
   "aggregate_release_candidate": {

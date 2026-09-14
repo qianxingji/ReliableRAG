@@ -148,10 +148,12 @@ fairness, reviewer and Submission Ready audits.
    freezes each candidate's current article, length, file, review, declaration
    and data-policy constraints. No journal is certified until the applicable CAS
    year/category and institutional title/ISSN rule are supplied. The refreshed
-   [owner/institution decision packet](P0_H_TARGET_JOURNAL_DECISION_PACKET.md)
-   records the exact fields needed for a one-step selection and the remaining
-   target-profile gaps for all four candidates. The consolidated local intake
-   checks field completeness but cannot authenticate the institutional record.
+   [owner/institution qualification packet](P0_H_TARGET_JOURNAL_DECISION_PACKET.md)
+   now records the fixed Applied Intelligence selection, current publisher-side
+   state and exact fields needed to authenticate the institution-recognized CAS
+   result. Earlier four-journal comparisons remain historical. The consolidated
+   local intake checks field completeness but cannot authenticate the
+   institutional record.
    The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
    closes the current-price lookup: the official page lists GBP 1,040, USD
    1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
@@ -270,7 +272,8 @@ fairness, reviewer and Submission Ready audits.
   [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
   failure, the corrected 49-check committed-surface verifier and the 38-check
   committed Applied Intelligence modern-preflight verifier. GitHub push and
-  pull-request runs both pass through commit `e81c278`. Private aggregate/statistical,
+  pull-request runs pass through the current target-transport acceptance chain;
+  the latest accepted head is `8c61e8d`. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
   outside this CI.
 
