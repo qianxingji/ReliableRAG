@@ -980,6 +980,36 @@ def main() -> int:
         checks,
     )
 
+    document_inventory = json.loads(
+        (ROOT / evidence["p0_ghi_document_container_inventory"]).read_text(encoding="utf-8")
+    )
+    require(
+        document_inventory["decision"]
+        == "PASS_BOUNDED_COMMON_DOCUMENT_CONTAINER_INVENTORY_PDF_ONLY",
+        "common document-container inventory passes",
+        checks,
+    )
+    require(
+        document_inventory["ordinary_file_counts"][".pdf"] == 100
+        and document_inventory["zip_member_counts"][".pdf"] == 138
+        and document_inventory["non_pdf_document_count"] == 0
+        and document_inventory["scan_error_count"] == 0,
+        "common document-container inventory coverage is pinned",
+        checks,
+    )
+    require(
+        document_inventory["file_contents_read"] is False
+        and document_inventory["bounded_interpretation"]["files_with_incorrect_or_missing_extensions_covered"] is False
+        and document_inventory["bounded_interpretation"]["unknown_binary_formats_covered"] is False,
+        "common document-container inventory remains metadata and extension bounded",
+        checks,
+    )
+    require(
+        document_inventory["submission_authorized"] is False,
+        "common document-container inventory does not authorize submission",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

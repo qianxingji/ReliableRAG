@@ -111,6 +111,9 @@ ordinary PDFs and 138 PDF members in the ZIPs, searching 3,448,238 text bytes
 with zero candidate, skip or error. All 35 unique hashes have usable text layers
 and zero embedded attachment. Page-image OCR, other binary formats and
 locations outside the roots remain unproved.
+The [common document-container inventory](P0_GHI_DOCUMENT_CONTAINER_INVENTORY.md)
+finds no Word, Excel, PowerPoint, RTF, MSG or ODF extension among ordinary files
+or ZIP members. Incorrect, missing and unknown extensions remain outside scope.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -182,6 +185,8 @@ artifact or close P0-I.
    same roots to repeat the separate text-layer PDF pass. Its scope is
    `pdftotext` extraction plus `pdfdetach` attachment inventory and excludes
    page-image OCR.
+   Run `python scripts/audit_cas_q3_document_container_inventory.py` with the
+   same roots to repeat the metadata-only common document-extension inventory.
 
 ## Claim-to-evidence routing
 

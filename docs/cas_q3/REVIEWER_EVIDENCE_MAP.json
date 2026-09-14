@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "e6eafdb5ea9bd81157d4084967248a7c65daeb955a36e19ab62bbf7be2dcd2c2",
+      "sha256": "a835e10b316316bebc83540a3ab2378d54390c98f43380770867fcd4aec49d64",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "aa768b4cc158ea86f5bdeecc9281e887e4a15260fbd911c0bb335c23ba281020",
+      "sha256": "e5c97fd7222e671ba210df4b165834aa65b05f2c5f45bae840642b7d091066dc",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -753,6 +753,26 @@
       "path": "tests/test_cas_q3_pdf_external_closure_evidence.py",
       "sha256": "a2d25d72ff2df4b04849ebbcf3fbdb95457d6c21a5f4dcc9f1e80032d1434369",
       "required_marker": "test_zip_pdf_member_is_read_without_archive_extraction"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_DOCUMENT_CONTAINER_INVENTORY.json",
+      "sha256": "c3ef3d3588e70164c7f0dee0b90fc11bd5a41b39cbca09badbbbdfcfa71072fd",
+      "required_marker": "PASS_BOUNDED_COMMON_DOCUMENT_CONTAINER_INVENTORY_PDF_ONLY"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_DOCUMENT_CONTAINER_INVENTORY.md",
+      "sha256": "372dd06143f262eff3e4fe72c5826afcaf48b6070a8ff2210addbd86929614bd",
+      "required_marker": "PASS_BOUNDED_COMMON_DOCUMENT_CONTAINER_INVENTORY_PDF_ONLY"
+    },
+    {
+      "path": "scripts/audit_cas_q3_document_container_inventory.py",
+      "sha256": "89909bcbb09b1d5f6e1ae6a05766e9a3cc298961d4581260a19282e6d5637760",
+      "required_marker": "Inventory common document containers in the bounded closure-evidence roots"
+    },
+    {
+      "path": "tests/test_cas_q3_document_container_inventory.py",
+      "sha256": "8f9ae1565812d33a4fe6b95b5bbf4c3aebff7168bc456327fe52c17676537e8d",
+      "required_marker": "test_zip_members_are_counted_without_extraction"
     }
   ],
   "aggregate_release_candidate": {

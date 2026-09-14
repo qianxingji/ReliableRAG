@@ -370,6 +370,22 @@ def main() -> int:
     checks.equal(pdf_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "PDF census does not claim global absence")
     checks.equal(pdf_census["submission_authorized"], False, "PDF census does not authorize submission")
 
+    document_inventory = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_DOCUMENT_CONTAINER_INVENTORY.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(document_inventory["decision"], "PASS_BOUNDED_COMMON_DOCUMENT_CONTAINER_INVENTORY_PDF_ONLY", "common document-container inventory decision")
+    checks.equal(document_inventory["zip_archives_scanned"], 39, "document-container ZIP archives scanned")
+    checks.equal(document_inventory["ordinary_file_counts"][".pdf"], 100, "ordinary PDF inventory count")
+    checks.equal(document_inventory["zip_member_counts"][".pdf"], 138, "ZIP PDF inventory count")
+    checks.equal(document_inventory["non_pdf_document_count"], 0, "non-PDF common document containers")
+    checks.equal(document_inventory["scan_error_count"], 0, "document-container inventory errors")
+    checks.equal(document_inventory["file_contents_read"], False, "document-container inventory reads metadata only")
+    checks.equal(document_inventory["bounded_interpretation"]["files_with_incorrect_or_missing_extensions_covered"], False, "document inventory does not claim disguised formats")
+    checks.equal(document_inventory["bounded_interpretation"]["unknown_binary_formats_covered"], False, "document inventory does not claim unknown formats")
+    checks.equal(document_inventory["submission_authorized"], False, "document inventory does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )
@@ -797,6 +813,7 @@ def main() -> int:
         "tests.test_cas_q3_external_closure_evidence_census",
         "tests.test_cas_q3_oversized_external_closure_evidence",
         "tests.test_cas_q3_pdf_external_closure_evidence",
+        "tests.test_cas_q3_document_container_inventory",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
