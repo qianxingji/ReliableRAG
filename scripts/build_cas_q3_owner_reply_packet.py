@@ -19,6 +19,15 @@ DEFAULT_INPUT = ROOT / "docs" / "cas_q3" / "OWNER_INPUTS.local.json"
 DEFAULT_OUTPUT = ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md"
 DEFAULT_RECEIPT = ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json"
 
+AI_ASSISTANCE_CANDIDATE = (
+    "Generative AI tools (OpenAI ChatGPT/Codex) were used under author supervision "
+    "for research-project coordination, code and evidence review, manuscript drafting, "
+    "formatting, and language revision. The authors independently checked the underlying "
+    "saved results, references, analyses, and final text and take full responsibility for "
+    "the work. The tools were not listed as authors."
+)
+NO_COMPETING_INTERESTS_CANDIDATE = "The author declares no competing interests."
+
 
 PROMPTS_ZH = {
     "authorship.authors_in_order[0].credit_role_assignment": (
@@ -79,6 +88,40 @@ def render(missing: list[str]) -> str:
         f"{index}. `{path}`：{PROMPTS_ZH.get(path, '请提供该字段的真实、可核验值。')}"
         for index, path in enumerate(missing, start=1)
     )
+    candidate_lines: list[str] = []
+    if "declarations.ai_assistance_statement_approved=true" in missing:
+        candidate_lines.append(
+            "- AI assistance statement 候选：\n\n"
+            f"  > {AI_ASSISTANCE_CANDIDATE}\n\n"
+            "  请明确回答是否批准；如不准确，请给出替代措辞。"
+        )
+    if "declarations.ai_tool_version_and_use_dates" in missing:
+        candidate_lines.append(
+            "- AI 工具记录格式：`OpenAI Codex (GPT-Astra and GPT-Sol), "
+            "YYYY-MM-DD to YYYY-MM-DD`。日期必须按实际使用范围填写。"
+        )
+    if "declarations.competing_interests_statement" in missing:
+        candidate_lines.append(
+            f"- 如果确实不存在利益冲突，可确认：`{NO_COMPETING_INTERESTS_CANDIDATE}`；"
+            "否则请如实列出实际关系。"
+        )
+    if any("institutional_manuscript_approval" in path for path in missing):
+        candidate_lines.append(
+            "- 论文审批证据请存入 Git 忽略目录 "
+            "`evidence/private/institutional_manuscript_approval/`，并提供文件名、审批日期和经办单位。"
+        )
+    if any(
+        path in missing
+        for path in (
+            "project_license.institutional_release_review_required",
+            "project_license.release_review_status=APPROVED",
+        )
+    ):
+        candidate_lines.append(
+            "- 代码发布审查证据请存入 Git 忽略目录 "
+            "`evidence/private/institutional_release_record/`，并提供文件名、审批日期和经办单位。"
+        )
+    candidates = "\n".join(candidate_lines) or "- 当前缺失项没有预置候选文本，请填写真实值。"
     return f"""# P0-I 负责人一次回复确认单
 
 **CAS Q3 STATUS: NOT READY.**
@@ -88,6 +131,10 @@ def render(missing: list[str]) -> str:
 ## 当前缺失字段
 
 {numbered}
+
+## 可直接审核的候选措辞与证据位置
+
+{candidates}
 
 ## 一次回复模板
 

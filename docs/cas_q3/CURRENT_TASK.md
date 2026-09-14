@@ -356,7 +356,10 @@ fairness, reviewer and Submission Ready audits.
    [privacy-safe responsible-author one-reply packet](P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md).
    Its generator and regression test prove that already supplied local names,
    email addresses, postal details and declaration text are not serialized into
-   the tracked packet or receipt. The packet only reduces coordination friction;
+   the tracked packet or receipt. It now exposes the exact static AI-assistance
+   candidate, a truthful no-conflict option, a date-range format and the ignored
+   institutional manuscript/release evidence directories so the six open items
+   can be reviewed without guessing. The packet only reduces coordination friction;
    it does not complete any declaration or authorize submission.
    The [current private build-gate verification](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
    also exercises the real Git-ignored owner input. It confirms that the file is

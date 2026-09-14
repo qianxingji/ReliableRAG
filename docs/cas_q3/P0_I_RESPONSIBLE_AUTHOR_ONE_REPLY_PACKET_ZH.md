@@ -13,6 +13,18 @@
 5. `declarations.institutional_manuscript_approval_status=APPROVED`
 6. `project_license.release_review_status=APPROVED`
 
+## 可直接审核的候选措辞与证据位置
+
+- AI assistance statement 候选：
+
+  > Generative AI tools (OpenAI ChatGPT/Codex) were used under author supervision for research-project coordination, code and evidence review, manuscript drafting, formatting, and language revision. The authors independently checked the underlying saved results, references, analyses, and final text and take full responsibility for the work. The tools were not listed as authors.
+
+  请明确回答是否批准；如不准确，请给出替代措辞。
+- AI 工具记录格式：`OpenAI Codex (GPT-Astra and GPT-Sol), YYYY-MM-DD to YYYY-MM-DD`。日期必须按实际使用范围填写。
+- 如果确实不存在利益冲突，可确认：`The author declares no competing interests.`；否则请如实列出实际关系。
+- 论文审批证据请存入 Git 忽略目录 `evidence/private/institutional_manuscript_approval/`，并提供文件名、审批日期和经办单位。
+- 代码发布审查证据请存入 Git 忽略目录 `evidence/private/institutional_release_record/`，并提供文件名、审批日期和经办单位。
+
 ## 一次回复模板
 
 请复制下面代码块并一次填写。这里只列出当前仍缺的项目；已经验收的院系、正式署名和通讯邮箱不会再次索取。不能确认的项目写“待核实”，不要猜测。个人事实和作者声明由负责人确认；中科院分区、机构审批及代码发布审查仍须保留独立证据。

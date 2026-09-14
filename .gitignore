@@ -8,6 +8,7 @@ docs/cas_q3/INSTITUTIONAL_CAS_RECORD.local.json
 evidence/private/institutional_cas_record/
 docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json
 evidence/private/institutional_release_record/
+evidence/private/institutional_manuscript_approval/
 output/private_submission/
 .pytest_cache/
 .mypy_cache/

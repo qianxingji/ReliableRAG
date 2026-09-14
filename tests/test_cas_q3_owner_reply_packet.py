@@ -6,7 +6,11 @@ import copy
 import json
 import unittest
 
-from scripts.build_cas_q3_owner_reply_packet import build
+from scripts.build_cas_q3_owner_reply_packet import (
+    AI_ASSISTANCE_CANDIDATE,
+    NO_COMPETING_INTERESTS_CANDIDATE,
+    build,
+)
 from scripts.verify_cas_q3_owner_inputs import TEMPLATE
 
 
@@ -50,6 +54,14 @@ class OwnerReplyPacketTests(unittest.TestCase):
         self.assertNotIn("通讯作者有效邮箱", content)
         self.assertFalse(receipt["personal_values_emitted"])
         self.assertFalse(receipt["submission_authorized"])
+
+    def test_packet_exposes_reviewable_static_declaration_candidates(self):
+        content, _ = build(self.value)
+        self.assertIn(AI_ASSISTANCE_CANDIDATE, content)
+        self.assertIn(NO_COMPETING_INTERESTS_CANDIDATE, content)
+        self.assertIn("YYYY-MM-DD to YYYY-MM-DD", content)
+        self.assertIn("evidence/private/institutional_manuscript_approval/", content)
+        self.assertIn("evidence/private/institutional_release_record/", content)
 
     def test_invalid_structure_refuses_to_generate(self):
         self.value["schema_version"] = 99

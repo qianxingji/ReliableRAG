@@ -411,22 +411,22 @@
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "ce0cc93d3659f451937d6247273720eff0ac4bd83c811c3f2d5250cf3b56e39b"
+      "sha256": "88333db448529d7a8f345106e93cdaeba614f93817beee8453e3a438a1cc4930"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "3e00659a92aea75b33a4c1d93d508e3b0cb2f7a838929667c5f911ecfe394dba"
+      "sha256": "5c1a40ea5295a328c4ee1f71157f94670b2513064260e1bf60ec26902605b2cc"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "90d4bedf3aaf9a974bee6919adf9f5c686db1ee8fcb8a0beb8d49f882f223d10"
+      "sha256": "ac733f0fa312301c22a608965f3b540f8befb9e4c3aa1b15066dbe1a97f8a780"
     },
     {
       "path": "tests/test_cas_q3_owner_reply_packet.py",
       "required_marker": "OwnerReplyPacketTests",
-      "sha256": "83cf4b5763029f1aee9078bb8c0d42d656d30f4cf27eafcfa5f58656667973af"
+      "sha256": "362862e118feb06732cf05d81ae877049df7de554a3a4436f9b75cb6937ed1ee"
     },
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
