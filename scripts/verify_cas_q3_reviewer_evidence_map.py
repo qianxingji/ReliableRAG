@@ -306,6 +306,21 @@ def main() -> int:
     checks.equal(hbut_cas["p0_h_closed"], False, "P0-H remains open")
     checks.equal(hbut_cas["submission_authorized"], False, "HBUT policy evidence does not authorize submission")
 
+    hbut_request = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(hbut_request["decision"], "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING", "HBUT verification request decision")
+    checks.equal(all(hbut_request["requested_evidence"].values()), True, "HBUT request covers every external evidence field")
+    checks.equal(hbut_request["request_sent"], False, "HBUT request remains unsent")
+    checks.equal(hbut_request["institutional_response_received"], False, "HBUT response remains pending")
+    checks.equal(hbut_request["institutional_response_retained"], False, "HBUT response is not fabricated")
+    checks.equal(hbut_request["p0_g_closed"], False, "request does not close P0-G")
+    checks.equal(hbut_request["p0_h_closed"], False, "request does not close P0-H")
+    checks.equal(hbut_request["p0_i_closed"], False, "request does not close P0-I")
+    checks.equal(hbut_request["submission_authorized"], False, "request does not authorize submission")
+
     private_builder = json.loads(
         (
             ROOT

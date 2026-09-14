@@ -167,6 +167,12 @@ fairness, reviewer and Submission Ready audits.
    applicable edition/year and a retained Applied Intelligence current-title,
    ISSN and Computer Science major-category Q3-or-above record remain missing,
    so P0-H is still open.
+   A concrete [HBUT institutional verification request](P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST_ZH.md)
+   is ready for the responsible author to submit. It asks for the CAS edition,
+   current title/ISSNs, major-category tier, recognition-date and title-change
+   rules together with manuscript approval, code copyright/release and Qwen/
+   DeBERTa review. It records `request_sent=false` and cannot substitute for the
+   retained institutional response.
    The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
    closes the current-price lookup: the official page lists GBP 1,040, USD
    1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
@@ -280,9 +286,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 94 repository records plus preserved withheld archive
+  authenticates 96 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 613 checks, without
+  package in 630 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

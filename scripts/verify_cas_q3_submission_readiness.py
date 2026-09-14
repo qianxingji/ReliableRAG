@@ -383,6 +383,15 @@ def main() -> int:
     require(hbut_cas["p0_h_closed"] is False, "official HBUT policy evidence does not close P0-H", checks)
     require(hbut_cas["submission_authorized"] is False, "official HBUT policy evidence does not authorize submission", checks)
 
+    hbut_request = json.loads((ROOT / evidence["p0_gh_hbut_institutional_request_receipt"]).read_text(encoding="utf-8"))
+    require(hbut_request["decision"] == "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING", "HBUT institutional request is bound", checks)
+    require(all(hbut_request["requested_evidence"].values()), "HBUT request covers the external evidence surface", checks)
+    require(hbut_request["request_sent"] is False, "HBUT institutional request remains unsent", checks)
+    require(hbut_request["institutional_response_received"] is False, "HBUT institutional response remains pending", checks)
+    require(hbut_request["institutional_response_retained"] is False, "HBUT institutional response is not fabricated", checks)
+    require(hbut_request["p0_g_closed"] is False and hbut_request["p0_h_closed"] is False and hbut_request["p0_i_closed"] is False, "request does not close P0 gates", checks)
+    require(hbut_request["submission_authorized"] is False, "request does not authorize submission", checks)
+
     private_builder = json.loads(
         (ROOT / evidence["p0_i_applied_intelligence_private_submission_builder_results"]).read_text(
             encoding="utf-8"

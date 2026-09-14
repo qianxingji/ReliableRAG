@@ -467,6 +467,16 @@
       "path": "docs/cas_q3/P0_G_LICENSE_STATE_VERIFICATION.json",
       "required_marker": "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN",
       "sha256": "77dfb4b8bf59d0c9b5bd0bb549cc5849052a2285a49fe6d297efb2aaa034c2a0"
+    },
+    {
+      "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST_ZH.md",
+      "required_marker": "CAS Q3 STATUS: NOT READY",
+      "sha256": "306742edd29e77aa2d89fb30c81cc1421128e7fa1f37c0684ecf054f98d5b798"
+    },
+    {
+      "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST.json",
+      "required_marker": "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING",
+      "sha256": "757473daf91282b0d3f04c32d337b6e4e82e74a54d2266158ecb8055e8ac6b71"
     }
   ],
   "aggregate_release_candidate": {

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING",
+  "cas_q3_status": "NOT_READY",
+  "request_path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST_ZH.md",
+  "prepared_date": "2026-09-14",
+  "official_route_sources": [
+    "https://kjcy.hbut.edu.cn/info/1054/8295.htm",
+    "https://kjcy.hbut.edu.cn/bflm/jgsz/nsjg.htm"
+  ],
+  "requested_evidence": {
+    "institution_recognized_cas_edition_year": true,
+    "applied_intelligence_current_title_and_issns": true,
+    "computer_science_major_category_tier": true,
+    "recognition_date_rule": true,
+    "title_issn_change_treatment": true,
+    "pre_submission_and_ethics_review": true,
+    "legal_code_copyright_holder_and_year": true,
+    "apache2_release_review_and_notice": true,
+    "qwen_and_deberta_institutional_review": true,
+    "acceptable_retained_evidence_form": true
+  },
+  "request_sent": false,
+  "institutional_response_received": false,
+  "institutional_response_retained": false,
+  "p0_g_closed": false,
+  "p0_h_closed": false,
+  "p0_i_closed": false,
+  "distribution_authorized": false,
+  "submission_authorized": false
+}
