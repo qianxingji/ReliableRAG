@@ -13,21 +13,21 @@ The current machine decision is
 `FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES`:
 
 - P0-A through P0-F are closed within their stated limits.
-- P0-G remains open for the owner license, legal holder/year, institutional
-  release requirement, final selected-journal release policy, reviewer access,
-  license-bearing latest and persistent archived code links, and a newly
-  validated licensed archive. The provisional Discover policy mapping is
-  complete but does not implement these release gates. The upstream-terms
+- P0-G has an owner-selected Apache-2.0 project-code license and a corrected,
+  deterministic, independently validated aggregate V2 candidate. It remains
+  open for legal holder/year, institutional release requirements, final release
+  authorization, reviewer access, versioned latest-code link and immutable
+  archive DOI or identifier. The Applied Intelligence policy mapping is
+  complete but does not authorize these release steps. The upstream-terms
   recheck preserves the Qwen research-license and non-`-c` DeBERTa
   training-data caveats; owner/institutional review for the intended release
   remains open.
-- P0-H remains open for the institution-recognized CAS edition/category/title/
-  ISSN/date rule, final target journal and owner-confirmed publication-charge
-  route. The current Discover Computing price/date-rule lookup is complete;
-  payer, institutional coverage or a waiver remains unconfirmed.
+- P0-H records Applied Intelligence and the subscription/non-OA route. It
+  remains open for the institution-recognized CAS edition/category/title/ISSN/
+  date rule and a retained institutional record for the current title and ISSNs.
 - P0-I remains open for real author/declaration facts, target-specific source
   and PDF conversion, and the final GPT-6 Astra xhigh audit.
-- P1-A through P1-D are closed. P2 remains frozen under the Qwen-only route.
+- P1-A through P1-E are closed. P2 remains frozen under the Qwen-only route.
 
 The [consolidated owner-input intake](OWNER_INPUTS_INTAKE.md) provides one
 ignored local JSON file for the P0-G/H/I facts. Its verifier emits field paths

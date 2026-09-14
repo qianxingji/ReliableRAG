@@ -48,7 +48,7 @@
     "unresolved_markers": 0
   },
   "source_protection": {
-    "journal_neutral_source_sha256_before_and_after": "6ff60b8445c952a1d7434f7a27ec0ec05e93a92892666fdba0d8d5b3d30da841",
+    "journal_neutral_source_sha256_before_and_after": "79c50351be84ac37d6f29d308724e9b7ec2755ecf3fb702b34d88ab87f81933c",
     "allowed_transformation_count": 13,
     "allowed_transformations": [
       {
@@ -121,13 +121,13 @@
   },
   "artifacts": {
     "pdf": "output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf",
-    "pdf_sha256": "e9c114ae496c2bf3c46c970b69adb4950f733e8ae3610934335ad774db935eef",
+    "pdf_sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4",
     "pdf_pages": 12,
     "pdf_font_rows": 22,
     "pdf_nonembedded_font_rows": [],
     "pdf_type3_font_rows": [],
     "authored_source_zip": "output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip",
-    "authored_source_zip_sha256": "3f8db53d94fb27a9aa960f2867a31c23a270079659e897dc648d096d5c3120f8",
+    "authored_source_zip_sha256": "0333248977211b4d8920ffb8ecd9ed4e53b977c3ef89795d566f680de725f24f",
     "authored_source_zip_members": [
       "Fig1.pdf",
       "Fig2.pdf",
@@ -144,7 +144,7 @@
   "open_gates": [
     "resolve the journal-page smallcondensed versus current sn-jnl package conflict",
     "complete verified author, affiliation, correspondence and declaration facts",
-    "complete release review and create a corrected license-bearing archive",
+    "complete release review and authorize the validated corrected license-aware archive or a required successor",
     "retain the institution-recognized current-title and ISSN CAS record",
     "complete target-package visual inspection",
     "complete final GPT-6 Astra xhigh artifact, fairness, Claim and reviewer audit"

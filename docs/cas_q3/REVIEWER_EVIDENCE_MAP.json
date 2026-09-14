@@ -7,12 +7,12 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "e87595483004e5ae9b455a65e0f4ca06544bd04263a207724ed3125541db6949",
+      "sha256": "971abf6d941a884834829e1fd6abd23840012ba3ea99ae55a0233ce260541a59",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
       "path": "paper/manuscript.tex",
-      "sha256": "6ff60b8445c952a1d7434f7a27ec0ec05e93a92892666fdba0d8d5b3d30da841",
+      "sha256": "79c50351be84ac37d6f29d308724e9b7ec2755ecf3fb702b34d88ab87f81933c",
       "required_marker": "The same joint rule does not pass against the HGB-only policy"
     },
     {
@@ -22,20 +22,20 @@
     },
     {
       "path": "output/pdf/manuscript.pdf",
-      "sha256": "5e014ea551a086150edc453d6877585256019664977c994ce427e65c3ebdd5d8"
+      "sha256": "c185360689726b757007ee215e30709846015511ae51cc7981c9b09eb0eb4016"
     },
     {
       "path": "output/pdf/supplement.pdf",
-      "sha256": "c7486289ee67443786ce9ffe755169621a728b237f4c31de7ded771603e072d2"
+      "sha256": "3ce088ddac0064d4066a10c0376cbf19bc2f4ee4e0accd2b1ea75f0fa4ba072c"
     },
     {
       "path": "paper/COMPILE_RECEIPT.json",
-      "sha256": "906a7f8bcdbc1b8a3653fd8fa5dd890f9f81cbc45e8a05a19ab8b2a88c163dc4",
+      "sha256": "0681358af0e6caaffb13cdf99c52eb240e85b95513310ef8e5f034c24ffff349",
       "required_marker": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE"
     },
     {
       "path": "paper/MANUSCRIPT_VERIFICATION.json",
-      "sha256": "9bc74d13f43f793c453131a5b63ffaabb423971c9ff9bce97e5bc10a6868b480",
+      "sha256": "2236d5a388a8cbaca8f4438319562b4c3ee0bc625a0273840977e5bea7f3d6ff",
       "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
     },
     {
@@ -60,7 +60,7 @@
     },
     {
       "path": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
-      "sha256": "63f2bc7ecf42f104052f6665560bcb70bedc3be49f4bec2201ffdd633905ab74",
+      "sha256": "eb7403a3b00f5dd8a95b4615d42db260d4829617de7026dee8ee33637366c570",
       "required_marker": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE"
     },
     {
@@ -71,7 +71,7 @@
     {
       "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json",
       "required_marker": "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
-      "sha256": "8210210ee12b6592ea0e08ab56e473a8236efeb410f2ec68a8fcbdca12576090"
+      "sha256": "028ef5c7254bfc68bea39b6bdf26afd37ed3a211e1820c79f5866e3d5d9d606f"
     },
     {
       "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md",
@@ -85,16 +85,16 @@
     },
     {
       "path": "output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf",
-      "sha256": "e9c114ae496c2bf3c46c970b69adb4950f733e8ae3610934335ad774db935eef"
+      "sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4"
     },
     {
       "path": "output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip",
-      "sha256": "3f8db53d94fb27a9aa960f2867a31c23a270079659e897dc648d096d5c3120f8"
+      "sha256": "0333248977211b4d8920ffb8ecd9ed4e53b977c3ef89795d566f680de725f24f"
     },
     {
       "path": "scripts/build_cas_q3_applied_intelligence_preflight.py",
       "required_marker": "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
-      "sha256": "d857f20517b7b1bf1e29189cb29172b54928073782951f2864ee6a6f15812d2d"
+      "sha256": "011434fead0bedb5ace33ba5f969f225066c4938ed0c44d3902b6271ca7d1f1e"
     },
     {
       "path": "scripts/verify_cas_q3_applied_intelligence_preflight.py",
@@ -275,12 +275,12 @@
     },
     {
       "path": "docs/cas_q3/P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.md",
-      "sha256": "55aa1f88c3faf2fb6b6f1c56c90876790b620ec84dfb069568b22a457d2928c3",
+      "sha256": "bbe7f46940e7c5dc97290fc04fde4a605da2f073ec9782dfe0952029d74ec358",
       "required_marker": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN"
     },
     {
       "path": "docs/cas_q3/P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.json",
-      "sha256": "40a7226bae1a5db8cf506c10980aa1ccd79e50d09a99f00e4d6c3e7f4a5c7d8d",
+      "sha256": "b1133fd2b0f70ab9cd16fd6f9c5d3715f6a3a70c84fe492ad99495dcea929ad4",
       "required_marker": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN"
     },
     {
@@ -297,6 +297,56 @@
       "path": "scripts/verify_cas_q3_public_reporting_surface.py",
       "sha256": "164c76504b89571eb32135db3eb2b1df74f13361be6dd076160489debbd1e41a",
       "required_marker": "PASS_COMMITTED_PUBLIC_REPORTING_SURFACE_ONLY"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSED_RELEASE_V2_RESULTS.json",
+      "required_marker": "PARTIAL_PASS_APACHE2_AWARE_CORRECTED_AGGREGATE_V2_BUILT_AND_VALIDATED_DISTRIBUTION_WITHHELD",
+      "sha256": "303ed383415e56e3e60bb2928fbd1e3f621b1d9695036452601e3bd3125cb8e4"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSED_RELEASE_V2_ACCEPTANCE.md",
+      "required_marker": "PARTIAL_PASS_APACHE2_AWARE_CORRECTED_AGGREGATE_V2_BUILT_AND_VALIDATED_DISTRIBUTION_WITHHELD",
+      "sha256": "d1b6abc4d4999062509fcb94d13230688ae930e88441ffff1cfeb54d830a72d9"
+    },
+    {
+      "path": "scripts/package_cas_q3_licensed_release.py",
+      "required_marker": "ARCHIVE_NAME",
+      "sha256": "eb2a570102e6858ce3b51cbd904aebfb6da7cb284d299b95db55659b641803f6"
+    },
+    {
+      "path": "scripts/validate_cas_q3_licensed_release.py",
+      "required_marker": "PASS_CAS_Q3_APACHE2_AWARE_AGGREGATE_RELEASE_V2_ROUNDTRIP",
+      "sha256": "0b83c2e877595a6ee483ab7798c7aeaff011e2d29765dc93c2bf2ff221f37bca"
+    },
+    {
+      "path": "tests/test_cas_q3_licensed_release.py",
+      "required_marker": "AggregateReleaseTests",
+      "sha256": "61f60e7e6c7cdcfab1616819f6f87ff3ee01d9aceea36a1ece4c19b7bef65d24"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/README.md",
+      "required_marker": "Apache License 2.0",
+      "sha256": "e26d5d4f17cd67a69e6f84ab326cda2e1983ab45c080e56f2973d8134a9e29e3"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/DATA_AND_CODE_AVAILABILITY.md",
+      "required_marker": "Public distribution remains withheld",
+      "sha256": "66136f16254f26c0e1a2873c96e21affda56416e263a411f2337d18454ec8d44"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/CLAIM_EVIDENCE_SUMMARY.md",
+      "required_marker": "HGB_GBV_R",
+      "sha256": "25ef4c154f27021bdd37508a4258e712eb8c8367730f6545c3c6d35ce84c3d92"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/THIRD_PARTY_NOTICES.md",
+      "required_marker": "including non-commercial licenses",
+      "sha256": "7186c75204c5289455fbbb38b60f5196c1a6e797827aa1a39b5e6703f6885c01"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_ACCEPTANCE.md",
+      "required_marker": "PASS_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_WITH_EXTERNAL_RELEASE_TEMPLATE_AND_FINAL_AUDIT_GATES_OPEN",
+      "sha256": "34936931608db660174482a64e748efb351dfbfd14fc4b6e7ce1dce29a004ba2"
     }
   ],
   "aggregate_release_candidate": {
@@ -338,7 +388,7 @@
     "complete_author_identity_contributions_and_declarations",
     "institution_recognized_cas_edition_year_and_retained_applied_intelligence_record",
     "applied_intelligence_source_pdf_package_and_final_astra_xhigh_audit",
-    "new_corrected_release_archive_persistent_identifier_and_private_review_route"
+    "final_release_authorization_persistent_identifier_and_private_review_route"
   ],
   "selected_target": {
     "journal": "Applied Intelligence",
@@ -349,5 +399,17 @@
     "institutional_record_retained": false,
     "submission_authorized": false
   },
-  "project_license": "Apache-2.0"
+  "project_license": "Apache-2.0",
+  "licensed_aggregate_release_candidate_v2": {
+    "local_archive": "E:/paper/ReliableRAG-cas-q3-aggregate-apache2-candidate-20260914-a/paired_rag_repair_aggregate_apache2_candidate_v2.zip",
+    "second_deterministic_build": "E:/paper/ReliableRAG-cas-q3-aggregate-apache2-candidate-20260914-b/paired_rag_repair_aggregate_apache2_candidate_v2.zip",
+    "archive_sha256": "4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8",
+    "manifest_sha256": "463b26e10ae8724da998033efbea219c26c16be522b52eaaa57cc400f039b4cf",
+    "archive_members": 11,
+    "validator_checks": 125,
+    "roundtrip_reporting_checks": 129,
+    "deterministic_rebuild_equal": true,
+    "distribution_authorized": false,
+    "project_license": "Apache-2.0"
+  }
 }

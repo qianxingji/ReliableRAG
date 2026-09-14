@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_APACHE2_AWARE_CORRECTED_AGGREGATE_V2_BUILT_AND_VALIDATED_DISTRIBUTION_WITHHELD",
+  "cas_q3_status": "NOT_READY",
+  "scope": "anonymous aggregate reporting verification only",
+  "preserved_v1": {
+    "archive_sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
+    "manifest_sha256": "6c8ca3a4d0a9d70ade6a09b7194337390ee74ab1f46c79d862e918418a341a1c",
+    "mutated": false,
+    "release_ready": false
+  },
+  "v2": {
+    "archive_name": "paired_rag_repair_aggregate_apache2_candidate_v2.zip",
+    "archive_sha256": "4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8",
+    "manifest_sha256": "463b26e10ae8724da998033efbea219c26c16be522b52eaaa57cc400f039b4cf",
+    "payload_members": 10,
+    "archive_members": 11,
+    "uncompressed_payload_bytes": 136431,
+    "deterministic_rebuild_equal": true,
+    "build_a": "E:/paper/ReliableRAG-cas-q3-aggregate-apache2-candidate-20260914-a/paired_rag_repair_aggregate_apache2_candidate_v2.zip",
+    "build_b": "E:/paper/ReliableRAG-cas-q3-aggregate-apache2-candidate-20260914-b/paired_rag_repair_aggregate_apache2_candidate_v2.zip",
+    "both_archives_independently_validated": true,
+    "validator_checks_each": 125,
+    "roundtrip_verifier_status": "PASS_CAS_Q3_STATISTICAL_STATEMENT_VERIFICATION",
+    "roundtrip_verifier_checks": 129,
+    "negative_and_scope_tests": 7
+  },
+  "license": {
+    "project_code_license": "Apache-2.0",
+    "license_file_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "scope": [
+      "scripts/verify_cas_q3_claim_statistics.py",
+      "scripts/empirical_analysis_math.py"
+    ],
+    "non_code_members_relicensed": false,
+    "third_party_payloads_included": false
+  },
+  "sources": {
+    "builder": "scripts/package_cas_q3_licensed_release.py",
+    "builder_sha256": "eb2a570102e6858ce3b51cbd904aebfb6da7cb284d299b95db55659b641803f6",
+    "validator": "scripts/validate_cas_q3_licensed_release.py",
+    "validator_sha256": "0b83c2e877595a6ee483ab7798c7aeaff011e2d29765dc93c2bf2ff221f37bca",
+    "tests": "tests/test_cas_q3_licensed_release.py",
+    "tests_sha256": "61f60e7e6c7cdcfab1616819f6f87ff3ee01d9aceea36a1ece4c19b7bef65d24",
+    "release_readme": "release/cas_q3_aggregate_v2/README.md",
+    "release_readme_sha256": "e26d5d4f17cd67a69e6f84ab326cda2e1983ab45c080e56f2973d8134a9e29e3",
+    "availability": "release/cas_q3_aggregate_v2/DATA_AND_CODE_AVAILABILITY.md",
+    "availability_sha256": "66136f16254f26c0e1a2873c96e21affda56416e263a411f2337d18454ec8d44",
+    "claim_summary": "release/cas_q3_aggregate_v2/CLAIM_EVIDENCE_SUMMARY.md",
+    "claim_summary_sha256": "25ef4c154f27021bdd37508a4258e712eb8c8367730f6545c3c6d35ce84c3d92",
+    "third_party_notices": "release/cas_q3_aggregate_v2/THIRD_PARTY_NOTICES.md",
+    "third_party_notices_sha256": "7186c75204c5289455fbbb38b60f5196c1a6e797827aa1a39b5e6703f6885c01"
+  },
+  "open_release_gates": [
+    "exact legal copyright holder and year/range",
+    "institutional NOTICE or release-review decision",
+    "Qwen research-license compatibility review for intended public release",
+    "DeBERTa non-c training-data-terms review for intended public release",
+    "final written authorization of this V2 candidate or a required successor",
+    "journal-approved restricted-evidence review route",
+    "immutable archive DOI or other persistent identifier"
+  ],
+  "distribution_authorized": false,
+  "aggregate_inputs_read": true,
+  "raw_benchmark_or_answer_payloads_read": false,
+  "per_question_outcomes_or_bootstrap_multiplicities_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

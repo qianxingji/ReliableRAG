@@ -17,7 +17,7 @@ RECEIPT = ROOT / "docs" / "cas_q3" / "SUBMISSION_READINESS_VERIFICATION.json"
 class SubmissionReadinessGateTests(unittest.TestCase):
     def test_current_external_gates_fail_closed_without_scientific_execution(self):
         process = subprocess.run(
-            [sys.executable, str(SCRIPT)],
+            [sys.executable, str(SCRIPT), "--ignore-local-owner-inputs"],
             cwd=ROOT,
             capture_output=True,
             text=True,

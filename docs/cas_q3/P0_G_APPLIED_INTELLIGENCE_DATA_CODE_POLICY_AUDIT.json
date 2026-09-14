@@ -20,7 +20,12 @@
     "third_party_terms_remain_separate": true,
     "existing_aggregate_archive_release_ready": false,
     "existing_aggregate_archive_mutation_allowed": false,
-    "new_license_bearing_archive_required": true,
+    "new_corrected_candidate_built": true,
+    "new_corrected_candidate_sha256": "4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8",
+    "new_corrected_candidate_deterministic_rebuild_equal": true,
+    "new_corrected_candidate_independently_validated": true,
+    "new_corrected_candidate_distribution_authorized": false,
+    "new_license_bearing_persistent_archive_required": true,
     "persistent_archive_doi_or_unique_identifier_exists": false,
     "journal_accepted_private_review_route_confirmed": false,
     "distribution_authorized": false
@@ -29,7 +34,7 @@
     "exact_legal_copyright_holder_and_year_or_range",
     "institutional_notice_or_release_review_decision",
     "qwen_and_deberta_release_boundary_review",
-    "new_corrected_license_bearing_aggregate_archive_and_independent_validation",
+    "final_authorization_of_validated_v2_candidate_or_required_successor",
     "versioned_latest_code_url_and_immutable_archive_identifier",
     "journal_or_editor_accepted_private_review_route"
   ],

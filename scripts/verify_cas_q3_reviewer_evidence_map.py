@@ -64,15 +64,15 @@ def main() -> int:
         "mechanical verifier does not self-certify visual review",
     )
     static_receipt = json.loads((ROOT / "paper" / "MANUSCRIPT_VERIFICATION.json").read_text(encoding="utf-8"))
-    checks.equal(static_receipt["check_count"], 138, "static manuscript checks")
+    checks.equal(static_receipt["check_count"], 139, "static manuscript checks")
     checks.equal(static_receipt["abstract_word_count"], 155, "Applied Intelligence abstract words")
     checks.equal(static_receipt["bibliography_entries"], 22, "bibliography entries")
     length_receipt = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json").read_text(encoding="utf-8")
     )
     checks.equal(length_receipt["decision"], "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE", "length audit decision")
-    checks.equal(length_receipt["pdf_tokens_before_references"], 3978, "pre-reference PDF token proxy")
-    checks.equal(length_receipt["pdf_tokens_full_document"], 4676, "full PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_before_references"], 3994, "pre-reference PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_full_document"], 4691, "full PDF token proxy")
     checks.equal(length_receipt["applied_intelligence_abstract_requirement_met"], True, "Applied Intelligence abstract range")
     checks.equal(length_receipt["publisher_word_count_claimed"], False, "proxy is not a publisher word count")
     discover = json.loads(
@@ -179,7 +179,27 @@ def main() -> int:
     )
     checks.equal(applied_policy["current_project"]["top_level_license"], "Apache-2.0", "Apache-2.0 project-code license")
     checks.equal(applied_policy["current_project"]["existing_aggregate_archive_release_ready"], False, "old archive remains withheld")
+    checks.equal(applied_policy["current_project"]["new_corrected_candidate_built"], True, "corrected V2 candidate built")
+    checks.equal(applied_policy["current_project"]["new_corrected_candidate_deterministic_rebuild_equal"], True, "corrected V2 deterministic rebuild")
+    checks.equal(applied_policy["current_project"]["new_corrected_candidate_independently_validated"], True, "corrected V2 independent validation")
+    checks.equal(applied_policy["current_project"]["new_corrected_candidate_distribution_authorized"], False, "corrected V2 remains withheld")
     checks.equal(applied_policy["distribution_authorized"], False, "Applied policy does not authorize distribution")
+
+    licensed_release = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_G_LICENSED_RELEASE_V2_RESULTS.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        licensed_release["decision"],
+        "PARTIAL_PASS_APACHE2_AWARE_CORRECTED_AGGREGATE_V2_BUILT_AND_VALIDATED_DISTRIBUTION_WITHHELD",
+        "licensed V2 bounded decision",
+    )
+    checks.equal(licensed_release["v2"]["deterministic_rebuild_equal"], True, "licensed V2 rebuild equality")
+    checks.equal(licensed_release["v2"]["both_archives_independently_validated"], True, "licensed V2 archives validated")
+    checks.equal(licensed_release["v2"]["validator_checks_each"], 125, "licensed V2 validator checks")
+    checks.equal(licensed_release["v2"]["roundtrip_verifier_checks"], 129, "licensed V2 roundtrip checks")
+    checks.equal(licensed_release["license"]["project_code_license"], "Apache-2.0", "licensed V2 project-code license")
+    checks.equal(licensed_release["license"]["non_code_members_relicensed"], False, "licensed V2 does not relicense non-code members")
+    checks.equal(licensed_release["distribution_authorized"], False, "licensed V2 distribution withheld")
 
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
@@ -225,6 +245,7 @@ def main() -> int:
         "python scripts/verify_cas_q3_claim_statistics.py",
         "python scripts/verify_cas_q3_historical_manifest_archive_recovery.py",
         "tests.test_cas_q3_aggregate_release",
+        "tests.test_cas_q3_licensed_release",
     ):
         checks.true(forbidden not in workflow, f"private-input command excluded from public CI: {forbidden}")
     ci_acceptance = (ROOT / "docs" / "cas_q3" / "P1_E_PUBLIC_REPORTING_CI.md").read_text(encoding="utf-8")
@@ -272,6 +293,24 @@ def main() -> int:
         checks.equal(manifest_json["distribution_authorized"], False, "archive distribution gate")
         checks.equal(manifest_json["project_license"], "PENDING_OWNER_SELECTION", "archive license gate")
 
+    licensed = evidence["licensed_aggregate_release_candidate_v2"]
+    licensed_archive = Path(licensed["local_archive"])
+    checks.true(licensed_archive.is_file(), "licensed V2 aggregate archive exists locally")
+    checks.equal(digest(licensed_archive), licensed["archive_sha256"], "licensed V2 archive external pin")
+    with zipfile.ZipFile(licensed_archive) as bundle:
+        checks.equal(len(bundle.infolist()), licensed["archive_members"], "licensed V2 archive members")
+        manifest = bundle.read("MANIFEST.json")
+        checks.equal(hashlib.sha256(manifest).hexdigest(), licensed["manifest_sha256"], "licensed V2 manifest pin")
+        manifest_json = json.loads(manifest)
+        checks.equal(manifest_json["distribution_authorized"], False, "licensed V2 distribution gate")
+        checks.equal(manifest_json["project_license"], "Apache-2.0", "licensed V2 license")
+        checks.equal(
+            manifest_json["project_license_scope"],
+            ["scripts/verify_cas_q3_claim_statistics.py", "scripts/empirical_analysis_math.py"],
+            "licensed V2 exact code scope",
+        )
+        checks.equal(manifest_json["non_code_members_not_relicensed_by_project_code_license"], True, "licensed V2 documentation boundary")
+
     static_delivery = json.loads((ROOT / evidence["private_transport"]["static_delivery_receipt"]).read_text(encoding="utf-8"))
     checks.equal(static_delivery["status"], "PASS_DECLARED_STATIC_TRANSPORT_AND_RESTORATION_ONLY", "static delivery scope")
     checks.equal(static_delivery["complete_pipeline_delivered"], False, "static delivery is not full pipeline")
@@ -288,7 +327,8 @@ def main() -> int:
         "does not pass against `HGB_ONLY_R`",
         "does not establish advancement",
         "does not authorize distribution",
-        "arithmetic witness rather than a release-ready artifact",
+        "The V1 archive preserves the historical arithmetic witness",
+        "Neither archive has a DOI or distribution authorization",
         "An independently certified timestamp, original-fit authentication",
         "Six evidence lanes",
         "CAS Q3 STATUS: NOT READY",
@@ -314,6 +354,7 @@ def main() -> int:
         "checks": checks.count,
         "repository_records": len(evidence["repository_evidence"]),
         "aggregate_archive_sha256": release["archive_sha256"],
+        "licensed_aggregate_v2_archive_sha256": licensed["archive_sha256"],
         "aggregate_distribution_authorized": False,
         "scientific_payloads_read": False,
         "model_forwards": 0,

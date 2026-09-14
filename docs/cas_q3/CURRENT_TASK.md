@@ -113,9 +113,9 @@ fairness, reviewer and Submission Ready audits.
    extracted verifier passes 129 checks. The candidate remains withheld. The
    owner has selected Apache License 2.0 for project-authored code, and the exact
    license text is now present at repository top level. Legal holder/year,
-   institutional NOTICE/review requirements, third-party release review, a new
-   corrected archive, persistent identifier and journal-accepted private-review
-   route remain open. The historical
+   institutional NOTICE/review requirements, third-party release review, final
+   authorization and persistent archiving of the validated corrected candidate,
+   and a journal-accepted private-review route remain open. The historical
    [license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md) records
    the preceding decision gate. These facts have a private machine-validated
    intake path shared with P0-H/I.
@@ -129,9 +129,10 @@ fairness, reviewer and Submission Ready audits.
    The [third-party terms recheck](P0_G_THIRD_PARTY_TERMS_RECHECK.md) also
    corrects the release-source description of the non-`-c` DeBERTa checkpoint:
    its model card labels the foundation model MIT but retains a mixed,
-   partly non-commercial training-data warning. Existing aggregate ZIPs remain
-   immutable withheld arithmetic witnesses and must be rebuilt from the
-   corrected notice before any owner-authorized distribution.
+   partly non-commercial training-data warning. The historical aggregate ZIP
+   remains an immutable withheld arithmetic witness.
+   A corrected Apache-2.0-aware V2 candidate has now been built twice, matched
+   byte-for-byte, independently validated, and remains distribution-withheld.
 8. **P0-H -- OWNER TARGET SELECTED / INSTITUTIONAL CAS RECORD PENDING:** The
    [Applied Intelligence target selection](P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md)
    records the owner's target, Hubei University of Technology major-category
@@ -165,7 +166,7 @@ fairness, reviewer and Submission Ready audits.
    [authorization record](P0_I_MANUSCRIPT_AUTHORIZATION.md). The main manuscript,
    supplement, bibliography, generated tables/figures, title-page template and
    cover-letter template now exist under `paper/`; the independent static
-   verifier now passes 138 checks. MiKTeX produced an 11-page main PDF and 3-page
+   verifier now passes 139 checks. MiKTeX produced an 11-page main PDF and 3-page
    supplement; mechanical log checks and project-lead review of all pages pass.
    The subsequent [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md)
    replaces the unembedded Base-14 figure fonts and isolated Type 3 marker; both
@@ -205,8 +206,8 @@ fairness, reviewer and Submission Ready audits.
    Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
    font and complete project-lead visual review; the mechanical verifier no
    longer self-asserts a human inspection.
-   A separate reproducible PDF-length proxy records 3,978 tokens before
-   References and 4,676 overall. Applied Intelligence's inspected guidelines
+   A separate reproducible PDF-length proxy records 3,994 tokens before
+   References and 4,691 overall. Applied Intelligence's inspected guidelines
    specify no general full-manuscript word limit; these are reproducible proxy
    counts rather than publisher counts.
    The [Applied Intelligence abstract and keyword acceptance](P0_I_APPLIED_INTELLIGENCE_ABSTRACT_KEYWORD_ACCEPTANCE.md)
@@ -224,10 +225,11 @@ fairness, reviewer and Submission Ready audits.
    prose or numbers. It is explicitly not a selected-journal or submission
    artifact; author, funding, APC, license, institutional CAS and final Astra
    gates remain open.
-   The data-and-code statement now explicitly separates the versioned code,
-   missing license-bearing persistent archive, restricted private review route
-   and aggregate-versus-neural reproduction boundary. The rebuilt neutral and
-   12 pt provisional artifacts passed mechanical and complete visual review.
+   The data-and-code statement now explicitly records the validated corrected
+   candidate while retaining the missing persistent identifier, restricted
+   private-review route and aggregate-versus-neural reproduction boundary. The
+   rebuilt neutral and Applied Intelligence modern-preflight artifacts passed
+   mechanical and complete visual review.
    The later historical-manifest disclosure rebuild also passed: the paper now
    records the byte-identical packaged manifest copy while retaining the lack
    of independent timestamp certification and all missing original-fit evidence.
@@ -238,8 +240,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 60 repository records plus the withheld archive and passes 362
-  checks without scientific payload reads, fits or model forwards.
+  authenticates 70 repository records plus both preserved withheld archive
+  generations and passes 424 checks without scientific payload reads, fits or
+  model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
   consolidates executed workload, non-additive timers and peaks, every missing
@@ -257,7 +260,7 @@ fairness, reviewer and Submission Ready audits.
   [public CI acceptance](P1_E_PUBLIC_REPORTING_CI.md) records the preserved first
   failure, the corrected 49-check committed-surface verifier and the 38-check
   committed Applied Intelligence modern-preflight verifier. GitHub push and
-  pull-request runs both pass on commit `cd11cbf`. Private aggregate/statistical,
+  pull-request runs both pass through commit `20e099e`. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
   outside this CI.
 

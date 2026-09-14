@@ -12,5 +12,6 @@ output/pdf/*.log binary
 /paper/*.ps1 text eol=lf
 /paper/*.tex text eol=lf
 /paper/*.txt text eol=lf
+/release/cas_q3_aggregate_v2/*.md text eol=lf
 /scripts/*cas_q3*.py text eol=lf
 /tests/test_cas_q3*.py text eol=lf

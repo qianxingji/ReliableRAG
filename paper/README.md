@@ -24,7 +24,7 @@ python scripts\verify_cas_q3_compiled_pdfs.py
 
 MiKTeX produced an 11-page main PDF and 3-page supplement under `output/pdf/`.
 The abstract is 155 words and the source lists five keywords, meeting the
-inspected Applied Intelligence ranges. The static verifier passes 138 checks;
+inspected Applied Intelligence ranges. The static verifier passes 139 checks;
 the compiled verifier passes its log,
 page, text and font checks. Both PDFs have zero nonembedded and zero Type 3
 fonts. Visual review is recorded separately from the mechanical verifier; all
@@ -44,8 +44,9 @@ The main manuscript is anonymous and remains in a journal-neutral class.
 `title_page_template.tex` and
 `cover_letter_template.md` intentionally retain explicit author-input fields;
 they must not be guessed. Apache License 2.0 is present for project-authored
-code, while legal holder/year, release review, a corrected archive and
-institutional CAS qualification remain open.
+code, while legal holder/year, release review, final authorization and persistent
+archiving of the validated corrected candidate, and institutional CAS
+qualification remain open.
 
 For the ordered reviewer path across the manuscript, aggregate verification,
 private reproduction scopes and retained failures, read

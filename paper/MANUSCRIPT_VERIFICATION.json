@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "decision": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS",
-  "check_count": 138,
+  "check_count": 139,
   "abstract_word_count": 155,
   "bibliography_entries": 22,
   "checks": [
@@ -121,6 +121,7 @@
     "single-reader limitation is explicit",
     "release-review boundary is explicit",
     "project-code license is explicit",
+    "corrected V2 archive state is explicit",
     "data and code availability section is explicit",
     "persistent code archive gap is explicit",
     "aggregate versus neural reproduction boundary is explicit",

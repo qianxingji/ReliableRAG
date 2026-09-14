@@ -399,7 +399,7 @@ def build(template_zip: Path) -> dict[str, object]:
         "open_gates": [
             "resolve the journal-page smallcondensed versus current sn-jnl package conflict",
             "complete verified author, affiliation, correspondence and declaration facts",
-            "complete release review and create a corrected license-bearing archive",
+            "complete release review and authorize the validated corrected license-aware archive or a required successor",
             "retain the institution-recognized current-title and ISSN CAS record",
             "complete target-package visual inspection",
             "complete final GPT-6 Astra xhigh artifact, fairness, Claim and reviewer audit",

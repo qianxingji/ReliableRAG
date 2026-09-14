@@ -243,7 +243,38 @@ def main() -> int:
         "pre-license aggregate archive remains withheld",
         checks,
     )
+    require(applied_policy["current_project"]["new_corrected_candidate_built"] is True, "corrected V2 candidate is built", checks)
+    require(
+        applied_policy["current_project"]["new_corrected_candidate_deterministic_rebuild_equal"] is True,
+        "corrected V2 candidate rebuild is deterministic",
+        checks,
+    )
+    require(
+        applied_policy["current_project"]["new_corrected_candidate_independently_validated"] is True,
+        "corrected V2 candidate is independently validated",
+        checks,
+    )
+    require(
+        applied_policy["current_project"]["new_corrected_candidate_distribution_authorized"] is False,
+        "corrected V2 candidate remains withheld",
+        checks,
+    )
     require(applied_policy["distribution_authorized"] is False, "Applied policy audit does not authorize distribution", checks)
+
+    licensed_release = json.loads((ROOT / evidence["p0_g_licensed_release_v2_receipt"]).read_text(encoding="utf-8"))
+    require(
+        licensed_release["decision"]
+        == "PARTIAL_PASS_APACHE2_AWARE_CORRECTED_AGGREGATE_V2_BUILT_AND_VALIDATED_DISTRIBUTION_WITHHELD",
+        "Apache-aware V2 release candidate has a bounded partial pass",
+        checks,
+    )
+    require(licensed_release["v2"]["deterministic_rebuild_equal"] is True, "V2 release rebuilds byte-identically", checks)
+    require(licensed_release["v2"]["both_archives_independently_validated"] is True, "both V2 builds validate", checks)
+    require(licensed_release["v2"]["validator_checks_each"] == 125, "V2 archive validator runs 125 checks", checks)
+    require(licensed_release["v2"]["roundtrip_verifier_checks"] == 129, "V2 extracted reporting verifier runs 129 checks", checks)
+    require(licensed_release["license"]["project_code_license"] == "Apache-2.0", "V2 carries Apache-2.0 for project code", checks)
+    require(licensed_release["license"]["non_code_members_relicensed"] is False, "V2 does not relicense non-code members", checks)
+    require(licensed_release["distribution_authorized"] is False, "V2 release remains distribution-withheld", checks)
 
     modern_preflight = json.loads(
         (ROOT / evidence["p0_i_applied_intelligence_modern_preflight"]).read_text(encoding="utf-8")
@@ -303,7 +334,7 @@ def main() -> int:
                 "journal-approved review access for restricted evidence",
                 "owner/institutional review of Qwen research-license compatibility for the intended release",
                 "owner/institutional review of the non-c DeBERTa training-data terms for the intended release",
-                "new licensed release archive and independent validation",
+                "final authorization of the validated V2 archive or a required successor",
             ],
         },
         {
@@ -362,7 +393,7 @@ def main() -> int:
     )
     require(
         evidence["missing_p0"] == [
-            "P0_G_release_review_and_new_license_bearing_archive",
+            "P0_G_release_authorization_and_persistent_archive",
             "P0_H_independent_institutional_cas_record_for_applied_intelligence",
             "P0_I_complete_author_declarations_and_applied_intelligence_package",
         ],
