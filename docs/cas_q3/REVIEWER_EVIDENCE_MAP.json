@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "2472aacf60313ee2ad7c703aeef54035978f6d4f14e5a24a3a8567d4bb179954",
+      "sha256": "e6eafdb5ea9bd81157d4084967248a7c65daeb955a36e19ab62bbf7be2dcd2c2",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -701,7 +701,7 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.md",
-      "sha256": "081b9469016d640f319a40deabe0eba4fc47440b31576bb399681b07bfec9599",
+      "sha256": "bc5a229f30fb42f4dba502976e5abd1877e8f144f0ea2837fbc1a2fe0c078c13",
       "required_marker": "PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE"
     },
     {
@@ -736,22 +736,22 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.json",
-      "sha256": "05964f986b4bba897fd8a8e96d8ce81bd852d3265e53ee94e677ea3efd98871d",
+      "sha256": "ad2d0539ecdc226b897e8d2875f7203019631b238d28ea77964f5c6d1a6f6682",
       "required_marker": "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
     },
     {
       "path": "docs/cas_q3/P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.md",
-      "sha256": "beb4f1e2c93344cf834ba41fed9a18abbda8562c9e9f15c9d6ae189fb7872cbf",
+      "sha256": "3ac427a9c38b9b1628a5536f151ce9fed516f0b353aa71a1a7154ce06f88cf7c",
       "required_marker": "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
     },
     {
       "path": "scripts/audit_cas_q3_pdf_external_closure_evidence.py",
-      "sha256": "286b5d56c8c8081091cbfb322290379adc1c40ba870d0739a8956812993c819a",
+      "sha256": "7b19dfdea3e24777d36ef74c27266c55245c65e3d614273ad9308cf4aaef2771",
       "required_marker": "Extract searchable PDF text for a bounded external-closure census"
     },
     {
       "path": "tests/test_cas_q3_pdf_external_closure_evidence.py",
-      "sha256": "8990b95b47477e3568c199d719830689cffa41823a0156b324ec1421d88a7251",
+      "sha256": "a2d25d72ff2df4b04849ebbcf3fbdb95457d6c21a5f4dcc9f1e80032d1434369",
       "required_marker": "test_zip_pdf_member_is_read_without_archive_extraction"
     }
   ],

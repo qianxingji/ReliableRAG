@@ -954,8 +954,22 @@ def main() -> int:
         checks,
     )
     require(
+        pdf_census["unique_pdf_hashes"] == 35
+        and pdf_census["unique_pdfs_with_zero_extracted_text"] == 0
+        and pdf_census["unique_pdfs_with_fewer_than_20_nonwhitespace_text_bytes"] == 0,
+        "all unique PDFs retain usable extracted text layers",
+        checks,
+    )
+    require(
+        pdf_census["unique_pdfs_attachment_inspected"] == 35
+        and pdf_census["embedded_attachment_count"] == 0
+        and pdf_census["temporary_attachment_inventory_files_removed"] is True
+        and pdf_census["bounded_interpretation"]["embedded_attachment_inventory_complete"] is True,
+        "PDF attachment inventory is complete with no retained temporary files",
+        checks,
+    )
+    require(
         pdf_census["bounded_interpretation"]["pdf_image_ocr_performed"] is False
-        and pdf_census["bounded_interpretation"]["embedded_attachments_scanned"] is False
         and pdf_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False,
         "PDF external-evidence result remains text-layer bounded",
         checks,

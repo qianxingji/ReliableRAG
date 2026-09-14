@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 from typing import Any, Callable, Iterable
 import zipfile
 
@@ -23,6 +24,7 @@ MARKER = re.compile(
     re.IGNORECASE,
 )
 Extractor = Callable[[Path | bytes], tuple[int, bytes, bytes]]
+AttachmentInspector = Callable[[Path | bytes], tuple[int, bytes, bytes]]
 
 
 def _sha256(data: bytes) -> str:
@@ -72,11 +74,34 @@ def _extract_pdf(source: Path | bytes) -> tuple[int, bytes, bytes]:
     return completed.returncode, completed.stdout, completed.stderr
 
 
+def _list_pdf_attachments(source: Path | bytes) -> tuple[int, bytes, bytes]:
+    temporary_path: Path | None = None
+    try:
+        if isinstance(source, Path):
+            input_path = source
+        else:
+            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as handle:
+                handle.write(source)
+                temporary_path = Path(handle.name)
+            input_path = temporary_path
+        completed = subprocess.run(
+            ["pdfdetach", "-list", str(input_path)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+        return completed.returncode, completed.stdout, completed.stderr
+    finally:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
+
+
 def audit(
     roots: Iterable[Path],
     *,
     max_pdf_bytes: int = MAX_PDF_BYTES,
     extractor: Extractor = _extract_pdf,
+    attachment_inspector: AttachmentInspector = _list_pdf_attachments,
 ) -> dict[str, Any]:
     roots = tuple(roots)
     ordinary_pdfs_seen = 0
@@ -89,8 +114,59 @@ def audit(
     zip_pdf_member_bytes = 0
     zip_pdf_members_skipped = 0
     extracted_text_bytes = 0
+    unique_pdf_hashes: set[str] = set()
+    unique_pdfs_with_zero_text = 0
+    unique_pdfs_with_low_text = 0
+    unique_pdfs_attachment_inspected = 0
+    embedded_attachment_count = 0
+    temporary_zip_pdf_materializations = 0
     candidates: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
+
+    def inspect_unique(source: Path | bytes, digest: str, text: bytes) -> None:
+        nonlocal unique_pdfs_with_zero_text
+        nonlocal unique_pdfs_with_low_text
+        nonlocal unique_pdfs_attachment_inspected
+        nonlocal embedded_attachment_count
+        nonlocal temporary_zip_pdf_materializations
+        if digest in unique_pdf_hashes:
+            return
+        unique_pdf_hashes.add(digest)
+        nonwhitespace = len(re.sub(rb"\s+", b"", text))
+        if nonwhitespace == 0:
+            unique_pdfs_with_zero_text += 1
+        if nonwhitespace < 20:
+            unique_pdfs_with_low_text += 1
+        if isinstance(source, bytes):
+            temporary_zip_pdf_materializations += 1
+        try:
+            returncode, stdout, stderr = attachment_inspector(source)
+        except Exception as exc:  # pragma: no cover - external implementation dependent
+            errors.append({"scope": "pdf_attachment_inventory", "error": type(exc).__name__})
+            return
+        if returncode != 0:
+            errors.append(
+                {
+                    "scope": "pdf_attachment_inventory",
+                    "returncode": returncode,
+                    "pdf_sha256": digest,
+                    "stderr_sha256": _sha256(stderr),
+                }
+            )
+            return
+        match = re.match(rb"\s*(\d+) embedded files?", stdout)
+        if match is None:
+            errors.append(
+                {
+                    "scope": "pdf_attachment_inventory",
+                    "error": "UnrecognizedPdfdetachOutput",
+                    "pdf_sha256": digest,
+                    "stdout_sha256": _sha256(stdout),
+                }
+            )
+            return
+        unique_pdfs_attachment_inspected += 1
+        embedded_attachment_count += int(match.group(1))
 
     for path in _files(roots):
         if path.suffix.lower() == ".zip":
@@ -111,23 +187,25 @@ def audit(
                             errors.append({"scope": "zip_pdf_member", "error": type(exc).__name__})
                             continue
                         zip_pdf_member_bytes += len(content)
+                        pdf_digest = _sha256(content)
                         if returncode != 0:
                             errors.append(
                                 {
                                     "scope": "zip_pdf_member_extract",
                                     "returncode": returncode,
-                                    "pdf_sha256": _sha256(content),
+                                    "pdf_sha256": pdf_digest,
                                     "stderr_sha256": _sha256(stderr),
                                 }
                             )
                             continue
                         zip_pdf_members_extracted += 1
                         extracted_text_bytes += len(text)
+                        inspect_unique(content, pdf_digest, text)
                         if MARKER.search(text):
                             candidates.append(
                                 {
                                     "scope": "zip_pdf_member",
-                                    "pdf_sha256": _sha256(content),
+                                    "pdf_sha256": pdf_digest,
                                     "size": len(content),
                                     "extracted_text_bytes": len(text),
                                 }
@@ -148,6 +226,7 @@ def audit(
             ordinary_pdfs_skipped += 1
             continue
         try:
+            content = path.read_bytes()
             returncode, text, stderr = extractor(path)
         except Exception as exc:  # pragma: no cover - external implementation dependent
             errors.append({"scope": "ordinary_pdf", "error": type(exc).__name__})
@@ -158,19 +237,20 @@ def audit(
                 {
                     "scope": "ordinary_pdf_extract",
                     "returncode": returncode,
-                    "pdf_sha256": _sha256(path.read_bytes()),
+                    "pdf_sha256": _sha256(content),
                     "stderr_sha256": _sha256(stderr),
                 }
             )
             continue
         ordinary_pdfs_extracted += 1
         extracted_text_bytes += len(text)
+        pdf_digest = _sha256(content)
+        inspect_unique(path, pdf_digest, text)
         if MARKER.search(text):
-            content = path.read_bytes()
             candidates.append(
                 {
                     "scope": "ordinary_pdf",
-                    "pdf_sha256": _sha256(content),
+                    "pdf_sha256": pdf_digest,
                     "size": size,
                     "extracted_text_bytes": len(text),
                 }
@@ -178,7 +258,13 @@ def audit(
 
     decision = (
         "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
-        if not candidates and not errors and ordinary_pdfs_skipped == 0 and zip_pdf_members_skipped == 0
+        if not candidates
+        and not errors
+        and ordinary_pdfs_skipped == 0
+        and zip_pdf_members_skipped == 0
+        and unique_pdfs_with_low_text == 0
+        and unique_pdfs_attachment_inspected == len(unique_pdf_hashes)
+        and embedded_attachment_count == 0
         else "REVIEW_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_CANDIDATES_ERRORS_OR_SKIPS"
     )
     return {
@@ -197,13 +283,21 @@ def audit(
         "zip_pdf_member_bytes_processed": zip_pdf_member_bytes,
         "zip_pdf_members_skipped": zip_pdf_members_skipped,
         "extracted_text_bytes_scanned": extracted_text_bytes,
+        "unique_pdf_hashes": len(unique_pdf_hashes),
+        "unique_pdfs_with_zero_extracted_text": unique_pdfs_with_zero_text,
+        "unique_pdfs_with_fewer_than_20_nonwhitespace_text_bytes": unique_pdfs_with_low_text,
+        "unique_pdfs_attachment_inspected": unique_pdfs_attachment_inspected,
+        "embedded_attachment_count": embedded_attachment_count,
+        "zip_pdf_members_temporarily_materialized_for_attachment_inventory": temporary_zip_pdf_materializations,
+        "temporary_attachment_inventory_files_removed": True,
         "candidate_match_count": len(candidates),
         "candidate_matches": candidates,
         "scan_error_count": len(errors),
         "scan_errors": errors,
         "bounded_interpretation": {
             "pdf_image_ocr_performed": False,
-            "embedded_attachments_scanned": False,
+            "embedded_attachment_inventory_complete": unique_pdfs_attachment_inspected == len(unique_pdf_hashes),
+            "embedded_attachments_present": embedded_attachment_count > 0,
             "absence_outside_scanned_roots_proved": False,
             "other_binary_formats_covered": False,
             "institutional_record_recovered": False if not candidates else None,

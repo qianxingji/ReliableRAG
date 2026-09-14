@@ -49,9 +49,11 @@ all 26 oversized ordinary text files and all 12 oversized ZIP text members,
 binary formats were then inventoried: the roots contain 100 ordinary PDFs and
 138 PDF members across the 39 ZIPs, but no Word, Excel, PowerPoint, RTF, MSG or
 ODF document. Poppler extracted all 238 PDF text layers and searched 3,448,238
-text bytes with zero candidate, skip or error. OCR, embedded attachments,
-unknown binary formats and locations outside the three roots remain outside
-these negative results' scope.
+text bytes with zero candidate, skip or error. The 238 occurrences reduce to 35
+unique hashes; all have at least 20 non-whitespace extracted-text bytes and all
+35 have zero embedded attachment under `pdfdetach`. Page-image OCR, unknown
+binary formats and locations outside the three roots remain outside these
+negative results' scope.
 
 Latest route decision: the independent GPT-6 Astra xhigh
 [target-transition audit](TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md) sets the unique
@@ -409,7 +411,7 @@ fairness, reviewer and Submission Ready audits.
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
   authenticates 153 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,075 checks, without
+  package in 1,083 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
