@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_OWNER_2025_MAJOR_Q3_ASSERTION_RECEIVED_DECLARED_EVIDENCE_PATH_MISSING",
+  "cas_q3_status": "NOT_READY",
+  "owner_assertion_received": true,
+  "candidate_edition_year": 2025,
+  "target_journal": "Applied Intelligence",
+  "category_basis": "MAJOR",
+  "category_name": "Computer Science",
+  "asserted_tier": "Q3",
+  "declared_evidence_path": "compliance/cas_partition/2025/",
+  "declared_path_exists_in_active_worktree": false,
+  "declared_path_exists_in_original_workspace": false,
+  "institutional_record_received": false,
+  "institutional_evidence_bytes_read": 0,
+  "institutional_confirmation_obtained": false,
+  "p0_h_closed": false,
+  "private_intake_path": "evidence/private/institutional_cas_record/",
+  "owner_assertion_is_institutional_evidence": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

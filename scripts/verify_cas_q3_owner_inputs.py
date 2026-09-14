@@ -39,7 +39,10 @@ def unresolved_text(value: Any) -> bool:
     """Treat explicit pending placeholders as unanswered owner facts."""
     if not nonempty(value):
         return True
-    return bool(re.search(r"\bpending(?:[_\s-]|$)|\bpendin\b", value, flags=re.IGNORECASE))
+    return bool(
+        re.search(r"\bpending(?:[_\s-]|$)|\bpendin\b", value, flags=re.IGNORECASE)
+        or re.search(r"待定|待核实|待确认", value)
+    )
 
 
 def require_object(value: Any, path: str, errors: list[str]) -> dict[str, Any]:
@@ -105,9 +108,14 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
     review_required = license_data.get("institutional_release_review_required")
     if not isinstance(review_required, bool):
         missing.append("project_license.institutional_release_review_required")
-    expected_review_status = "APPROVED" if review_required is True else "NOT_REQUIRED"
-    if isinstance(review_required, bool) and license_data.get("release_review_status") != expected_review_status:
-        errors.append(f"project_license.release_review_status: must be {expected_review_status}")
+    elif review_required is True:
+        review_status = license_data.get("release_review_status")
+        if review_status in {None, "PENDING", "PENDING_VERIFICATION"}:
+            missing.append("project_license.release_review_status=APPROVED")
+        elif review_status != "APPROVED":
+            errors.append("project_license.release_review_status: must be APPROVED")
+    elif license_data.get("release_review_status") != "NOT_REQUIRED":
+        errors.append("project_license.release_review_status: must be NOT_REQUIRED")
 
     for key in (
         "selected_journal",
@@ -229,9 +237,14 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
     manuscript_approval_required = declarations.get("institutional_manuscript_approval_required")
     if not isinstance(manuscript_approval_required, bool):
         missing.append("declarations.institutional_manuscript_approval_required")
-    expected_manuscript_status = "APPROVED" if manuscript_approval_required is True else "NOT_REQUIRED"
-    if isinstance(manuscript_approval_required, bool) and declarations.get("institutional_manuscript_approval_status") != expected_manuscript_status:
-        errors.append(f"declarations.institutional_manuscript_approval_status: must be {expected_manuscript_status}")
+    elif manuscript_approval_required is True:
+        manuscript_status = declarations.get("institutional_manuscript_approval_status")
+        if manuscript_status in {None, "PENDING", "PENDING_VERIFICATION"}:
+            missing.append("declarations.institutional_manuscript_approval_status=APPROVED")
+        elif manuscript_status != "APPROVED":
+            errors.append("declarations.institutional_manuscript_approval_status: must be APPROVED")
+    elif declarations.get("institutional_manuscript_approval_status") != "NOT_REQUIRED":
+        errors.append("declarations.institutional_manuscript_approval_status: must be NOT_REQUIRED")
     require_text(declarations, "institutional_manuscript_approval_evidence", "declarations", missing)
     if unresolved_text(declarations.get("institutional_manuscript_approval_evidence")):
         missing.append("declarations.institutional_manuscript_approval_evidence")

@@ -46,6 +46,9 @@ PROMPTS_ZH = {
     "declarations.institutional_manuscript_approval_required": (
         "学校是否要求投稿前论文审批（是/否/待核实）。"
     ),
+    "declarations.institutional_manuscript_approval_status=APPROVED": (
+        "学校要求投稿前审批；请在实际获批后确认状态为 APPROVED，并保留书面证据。"
+    ),
     "declarations.institutional_manuscript_approval_evidence": (
         "若要求投稿前审批，给出审批状态与留存证据；若不要求，给出负责人确认记录。"
     ),
@@ -55,6 +58,9 @@ PROMPTS_ZH = {
     "project_license.copyright_year_or_range": "版权年份或年份范围。",
     "project_license.institutional_release_review_required": (
         "学校是否要求代码公开发布前审查（是/否/待核实）；若要求，请给出审批状态与留存证据。"
+    ),
+    "project_license.release_review_status=APPROVED": (
+        "学校要求代码公开发布前审查；请在实际获批后确认状态为 APPROVED，并保留书面证据。"
     ),
     "target_journal.institution_recognized_cas_edition_year": (
         "湖北工业大学采用的中科院《期刊分区表》升级版年份/版本，以及 Applied Intelligence "

@@ -46,7 +46,11 @@ route and no-mandatory-APC subscription choice. The
 [public 2025 corroboration audit](P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.md)
 records public support for Computer Science major-category Q3 and Artificial
 Intelligence minor-category Q4 while retaining one condensed Q4 ambiguity and
-the missing HBUT-recognized record. The
+the missing HBUT-recognized record. The later
+[owner-assertion path check](P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.md)
+records the owner's 2025 major-category Q3 assertion but finds the declared
+`compliance/cas_partition/2025/` path absent from both project workspaces; it
+therefore does not convert that assertion into institutional evidence. The
 [HBUT affiliation-address audit](P0_I_HBUT_AFFILIATION_ADDRESS_ACCEPTANCE.md)
 independently confirms Wuhan and postcode 430068 from official university
 pages. The responsible author subsequently supplied the department, formal
@@ -82,14 +86,14 @@ institutional review state. Its public CI scope verifies only the three empty
 templates, the idempotent no-overwrite workspace preparer and synthetic privacy
 behavior. The preparer preserved the owner-input bytes and created two
 Git-ignored empty institutional placeholders plus their evidence directories.
-The current unified result remains fail-closed at 9/22/22 missing fields for
+The current unified result remains fail-closed at 6/22/22 missing fields for
 the owner/CAS/release components; placeholders are not received records. A
 future complete structural result
 still cannot close P0-G/H/I without content, artifact and final Astra audits.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
-value or hash. Its 9-field failure occurs before a tripwire transport can be
+value or hash. Its 6-field failure occurs before a tripwire transport can be
 accessed and before an output directory can be created. This authenticates the
 current fail-closed integration state; it does not create an author-populated
 artifact or close P0-I.
@@ -153,8 +157,9 @@ artifact or close P0-I.
 
 ## Open P0 and lower priorities
 
-- **P0:** legal copyright holder/year and institutional release review; complete
-  author and declaration fields; institution-recognized CAS edition/year and a
+- **P0:** institutional release approval and legal-holder/year confirmation;
+  complete author declarations and manuscript approval; institution-recognized
+  CAS edition/year and a
   retained current Applied Intelligence title/ISSN Q3-or-better record; final
   author-populated source/PDF package; final release authorization and
   persistent identifier. The current publisher template route is accepted,

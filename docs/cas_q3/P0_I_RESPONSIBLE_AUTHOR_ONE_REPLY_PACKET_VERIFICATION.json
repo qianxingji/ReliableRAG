@@ -2,17 +2,14 @@
   "schema_version": 1,
   "decision": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
   "cas_q3_status": "NOT_READY",
-  "missing_field_count": 9,
+  "missing_field_count": 6,
   "missing_field_paths": [
     "declarations.ai_assistance_statement_approved=true",
     "declarations.ai_tool_version_and_use_dates",
-    "declarations.all_authors_approved_final_manuscript_and_order=true",
     "declarations.competing_interests_statement",
     "declarations.institutional_manuscript_approval_evidence",
-    "declarations.institutional_manuscript_approval_required",
-    "project_license.institutional_release_review_required",
-    "project_license.legal_copyright_holder",
-    "target_journal.institution_recognized_cas_edition_year"
+    "declarations.institutional_manuscript_approval_status=APPROVED",
+    "project_license.release_review_status=APPROVED"
   ],
   "validation_error_count": 0,
   "personal_values_emitted": false,
@@ -21,5 +18,5 @@
   "distribution_authorized": false,
   "submission_authorized": false,
   "packet_path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
-  "packet_sha256": "6baa3cb4ff300a7bca0abf3b6d6c758fe02db949b14ce7835d84b0cbc992fca6"
+  "packet_sha256": "ce0cc93d3659f451937d6247273720eff0ac4bd83c811c3f2d5250cf3b56e39b"
 }

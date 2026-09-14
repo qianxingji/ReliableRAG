@@ -500,6 +500,37 @@ def main() -> int:
     require(corroboration_receipt["checks"] == 39, "public corroboration verifier runs 39 checks", checks)
     require(corroboration_receipt["institution_recognized_record_retained"] is False, "public verifier retains institutional gap", checks)
 
+    owner_cas_path_check = json.loads(
+        (ROOT / evidence["p0_h_owner_2025_cas_assertion_path_check"]).read_text(encoding="utf-8")
+    )
+    require(
+        owner_cas_path_check["decision"]
+        == "PARTIAL_PASS_OWNER_2025_MAJOR_Q3_ASSERTION_RECEIVED_DECLARED_EVIDENCE_PATH_MISSING",
+        "owner CAS assertion path check is bounded",
+        checks,
+    )
+    require(
+        owner_cas_path_check["owner_assertion_received"] is True
+        and owner_cas_path_check["candidate_edition_year"] == 2025
+        and owner_cas_path_check["category_basis"] == "MAJOR"
+        and owner_cas_path_check["asserted_tier"] == "Q3",
+        "owner 2025 major-Q3 assertion is recorded",
+        checks,
+    )
+    require(
+        owner_cas_path_check["declared_path_exists_in_active_worktree"] is False
+        and owner_cas_path_check["declared_path_exists_in_original_workspace"] is False,
+        "declared CAS evidence path is absent from both workspaces",
+        checks,
+    )
+    require(
+        owner_cas_path_check["institutional_record_received"] is False
+        and owner_cas_path_check["institutional_evidence_bytes_read"] == 0
+        and owner_cas_path_check["p0_h_closed"] is False,
+        "owner assertion does not manufacture institutional evidence",
+        checks,
+    )
+
     private_builder = json.loads(
         (ROOT / evidence["p0_i_applied_intelligence_private_submission_builder_results"]).read_text(
             encoding="utf-8"
@@ -662,7 +693,7 @@ def main() -> int:
     local_validation = local_closure["validation"]
     require(local_validation["exit_code"] == 2, "local unified validation remains fail-closed", checks)
     require(
-        local_validation["owner_inputs"] == {"missing_field_count": 9, "validation_error_count": 0},
+        local_validation["owner_inputs"] == {"missing_field_count": 6, "validation_error_count": 0},
         "owner-input local status is fixed without exposing values",
         checks,
     )
@@ -701,7 +732,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_ghi_external_closure_current_owner_missing_fields"] == 9
+        evidence["p0_ghi_external_closure_current_owner_missing_fields"] == 6
         and evidence["p0_ghi_external_closure_current_owner_validation_errors"] == 0,
         "indexed owner component remains incomplete without validation errors",
         checks,
@@ -753,20 +784,17 @@ def main() -> int:
         "privacy-safe owner reply packet is bound",
         checks,
     )
-    require(reply_receipt["missing_field_count"] == 9, "owner reply packet records 9 missing fields", checks)
+    require(reply_receipt["missing_field_count"] == 6, "owner reply packet records 6 missing fields", checks)
     require(reply_receipt["validation_error_count"] == 0, "owner reply packet records zero validation errors", checks)
     require(
         set(reply_receipt["missing_field_paths"])
         == {
             "declarations.ai_assistance_statement_approved=true",
             "declarations.ai_tool_version_and_use_dates",
-            "declarations.all_authors_approved_final_manuscript_and_order=true",
             "declarations.competing_interests_statement",
             "declarations.institutional_manuscript_approval_evidence",
-            "declarations.institutional_manuscript_approval_required",
-            "project_license.institutional_release_review_required",
-            "project_license.legal_copyright_holder",
-            "target_journal.institution_recognized_cas_edition_year",
+            "declarations.institutional_manuscript_approval_status=APPROVED",
+            "project_license.release_review_status=APPROVED",
         },
         "owner reply packet records the exact current deficit",
         checks,
@@ -800,7 +828,7 @@ def main() -> int:
         checks,
     )
     require(
-        current_build_gate["missing_field_count"] == 9
+        current_build_gate["missing_field_count"] == 6
         and current_build_gate["validation_error_count"] == 0,
         "current build gate retains the exact owner-input deficit",
         checks,
@@ -826,7 +854,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_i_current_private_build_gate_missing_fields"] == 9
+        evidence["p0_i_current_private_build_gate_missing_fields"] == 6
         and evidence["p0_i_current_private_build_gate_validation_errors"] == 0
         and evidence["p0_i_current_private_build_gate_input_matches_empty_template"] is False
         and evidence["p0_i_current_private_build_gate_transport_access_attempted"] is False
@@ -929,8 +957,8 @@ def main() -> int:
             "gate": "P0-G",
             "status": "OPEN",
             "missing": [
-                "exact legal copyright holder and year/range",
-                "institutional NOTICE or release-review decision",
+                "institutional release-review approval and retained evidence",
+                "independent confirmation of legal copyright holder and year/range",
                 "license-bearing latest code link and immutable archive DOI or unique identifier",
                 "journal-approved review access for restricted evidence",
                 "owner/institutional review of Qwen research-license compatibility for the intended release",
@@ -943,7 +971,7 @@ def main() -> int:
             "gate": "P0-H",
             "status": "OPEN",
             "missing": [
-                "institution-recognized CAS edition/year",
+                "institutional confirmation of the owner-asserted 2025 CAS edition/year",
                 "retained institutional record for current Applied Intelligence title and ISSNs under the Computer Science major-category rule",
                 "institutional title/ISSN-change treatment",
             ],
@@ -953,8 +981,8 @@ def main() -> int:
             "status": "OPEN",
             "missing": [
                 "approved AI-assistance wording with a versioned and date-bounded tool record",
-                "substantive competing-interests wording and all-author final-manuscript/order approval",
-                "institutional manuscript-approval requirement and retained evidence",
+                "substantive competing-interests wording",
+                "institutional manuscript approval and retained evidence",
                 "author-populated final target package",
                 "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit",
             ],
@@ -969,7 +997,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_9_MISSING_ZERO_VALIDATION_ERRORS",
+        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_6_MISSING_ZERO_VALIDATION_ERRORS",
         "P0-I records partial owner facts without treating them as complete",
         checks,
     )

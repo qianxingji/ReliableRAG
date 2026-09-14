@@ -10,11 +10,14 @@ counts. It does not serialize any name, email, address, declaration text or
 private-input hash.
 
 The current local file is not byte-equivalent to the tracked empty template.
-The responsible author has now supplied two input batches, including identity,
-contact, CRediT and declaration fields. Explicit false or pending decisions,
-an undated AI-tool entry and a label-only competing-interests entry remain open.
+The responsible author has now supplied three input batches, including identity,
+contact, CRediT and declaration fields. The latest batch records all-author
+approval, both institutional-review-required flags, an owner-side copyright
+holder assertion and the candidate 2025 CAS edition. Unapproved AI wording,
+an undated AI-tool entry, a label-only competing-interests entry and required
+institutional approvals remain open.
 None of the supplied values is serialized here. Validation remains fail-closed
-at 9 missing fields and zero validation errors. A tripwire transport object was
+at 6 missing fields and zero validation errors. A tripwire transport object was
 supplied deliberately. The builder returned its exact incomplete-owner-input
 error before calling the tripwire,
 and the candidate output directory was never created. Therefore no anonymous

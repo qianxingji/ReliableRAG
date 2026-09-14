@@ -279,7 +279,7 @@ def main() -> int:
     )
     local_validation = local_closure["validation"]
     checks.equal(local_validation["exit_code"], 2, "current local closure remains fail-closed")
-    checks.equal(local_validation["owner_inputs"]["missing_field_count"], 9, "current owner missing fields")
+    checks.equal(local_validation["owner_inputs"]["missing_field_count"], 6, "current owner missing fields")
     checks.equal(local_validation["institutional_cas_record"]["missing_field_count"], 22, "CAS placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["missing_field_count"], 22, "release placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["validation_error_count"], 5, "release placeholder conflicts")
@@ -491,6 +491,26 @@ def main() -> int:
         "public corroboration does not replace HBUT record",
     )
     checks.equal(public_corroboration["bounded_interpretation"]["p0_h_closed"], False, "public corroboration does not close P0-H")
+
+    owner_cas_path_check = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        owner_cas_path_check["decision"],
+        "PARTIAL_PASS_OWNER_2025_MAJOR_Q3_ASSERTION_RECEIVED_DECLARED_EVIDENCE_PATH_MISSING",
+        "owner CAS assertion path-check decision",
+    )
+    checks.equal(owner_cas_path_check["owner_assertion_received"], True, "owner CAS assertion received")
+    checks.equal(owner_cas_path_check["candidate_edition_year"], 2025, "owner candidate CAS edition")
+    checks.equal(owner_cas_path_check["category_basis"], "MAJOR", "owner asserted major category")
+    checks.equal(owner_cas_path_check["asserted_tier"], "Q3", "owner asserted tier")
+    checks.equal(owner_cas_path_check["declared_path_exists_in_active_worktree"], False, "declared CAS path absent in worktree")
+    checks.equal(owner_cas_path_check["declared_path_exists_in_original_workspace"], False, "declared CAS path absent in original workspace")
+    checks.equal(owner_cas_path_check["institutional_record_received"], False, "owner assertion is not institutional record")
+    checks.equal(owner_cas_path_check["institutional_evidence_bytes_read"], 0, "owner path check read no evidence bytes")
+    checks.equal(owner_cas_path_check["p0_h_closed"], False, "owner assertion path check does not close P0-H")
     corroboration_receipt = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION.json").read_text(
             encoding="utf-8"
@@ -605,20 +625,17 @@ def main() -> int:
         "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
         "responsible-author reply packet decision",
     )
-    checks.equal(reply_receipt["missing_field_count"], 9, "reply packet missing-field count")
+    checks.equal(reply_receipt["missing_field_count"], 6, "reply packet missing-field count")
     checks.equal(reply_receipt["validation_error_count"], 0, "reply packet validation errors")
     checks.equal(
         set(reply_receipt["missing_field_paths"]),
         {
             "declarations.ai_assistance_statement_approved=true",
             "declarations.ai_tool_version_and_use_dates",
-            "declarations.all_authors_approved_final_manuscript_and_order=true",
             "declarations.competing_interests_statement",
             "declarations.institutional_manuscript_approval_evidence",
-            "declarations.institutional_manuscript_approval_required",
-            "project_license.institutional_release_review_required",
-            "project_license.legal_copyright_holder",
-            "target_journal.institution_recognized_cas_edition_year",
+            "declarations.institutional_manuscript_approval_status=APPROVED",
+            "project_license.release_review_status=APPROVED",
         },
         "exact current owner-input deficit",
     )
@@ -646,7 +663,7 @@ def main() -> int:
     )
     checks.equal(current_build_gate["input_scope"], "LOCAL_GIT_IGNORED_OWNER_INPUT", "current private gate input scope")
     checks.equal(current_build_gate["input_matches_empty_template"], False, "current owner input is not empty template")
-    checks.equal(current_build_gate["missing_field_count"], 9, "current private gate missing fields")
+    checks.equal(current_build_gate["missing_field_count"], 6, "current private gate missing fields")
     checks.equal(current_build_gate["validation_error_count"], 0, "current private gate validation errors")
     checks.equal(current_build_gate["transport_access_attempted"], False, "current private gate does not access transport")
     checks.equal(current_build_gate["output_created"], False, "current private gate creates no output")

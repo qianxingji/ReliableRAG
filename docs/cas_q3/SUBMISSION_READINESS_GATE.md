@@ -15,20 +15,22 @@ The current machine decision is
 - P0-A through P0-F are closed within their stated limits.
 - P0-G has an owner-selected Apache-2.0 project-code license and a corrected,
   deterministic, independently validated aggregate V2 candidate. It remains
-  open for legal holder/year, institutional release requirements, final release
+  open for institutional release approval, independent legal-holder/year confirmation, final release
   authorization, reviewer access, versioned latest-code link and immutable
   archive DOI or identifier. The Applied Intelligence policy mapping is
   complete but does not authorize these release steps. The upstream-terms
   recheck preserves the Qwen research-license and non-`-c` DeBERTa
   training-data caveats; owner/institutional review for the intended release
   remains open.
-- P0-H records Applied Intelligence and the subscription/non-OA route. It
-  remains open for the institution-recognized CAS edition/category/title/ISSN/
-  date rule and a retained institutional record for the current title and ISSNs.
+- P0-H records Applied Intelligence, the subscription/non-OA route and the
+  owner's 2025 major-category Q3 assertion. Its declared evidence path is absent
+  from both project workspaces. P0-H remains open for institutional confirmation
+  of the CAS edition/category/title/ISSN/date rule and a retained record for the
+  current title and ISSNs.
 - P0-I has a deterministic private complete-source transport using the
   authenticated current Springer Nature class/style; both independent builds
   clean-compile to the exact visually accepted 12-page PDF. It remains open for
-  real author/declaration facts, an author-populated final package and the final
+  six remaining declaration/approval fields, an author-populated final package and the final
   GPT-6 Astra xhigh audit. The official publisher and journal guidance now
   establish the current `sn-jnl` package as an accepted submission route. Exact
   style equivalence to the unavailable legacy `smallcondensed` profile remains

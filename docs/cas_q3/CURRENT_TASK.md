@@ -27,7 +27,7 @@ The ignored local closure workspace is now operational. The preparer preserved
 the existing owner-input bytes, created empty institutional CAS and release
 placeholders from the tracked templates, and created both private-evidence
 directories. All three files are readable by the unified verifier, which still
-fails closed: owner inputs have 9 missing fields and zero errors, the CAS
+fails closed: owner inputs have 6 missing fields and zero errors, the CAS
 placeholder has 22 missing fields and zero errors, and the release placeholder
 has 22 missing fields plus five expected empty-placeholder conflicts. No
 institutional evidence bytes were read, and placeholders are not received
@@ -209,6 +209,13 @@ fairness, reviewer and Submission Ready audits.
    library navigation page exposes an unlabeled Q4 value, so the category ambiguity
    is retained. This supports the target's plausibility under the owner's major-
    category rule but does not replace the HBUT-recognized record or close P0-H.
+   The responsible author later asserted the 2025 upgraded edition and Computer
+   Science major-category Q3 result. The accompanying
+   [declared-path check](P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.md) found that
+   `compliance/cas_partition/2025/` exists in neither the isolated worktree nor
+   the preserved original workspace. The assertion is retained as owner input,
+   but no HBUT-issued record or evidence bytes were received and P0-H remains
+   open.
    A fail-closed [private institutional-record intake](P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.md)
    now fixes the future record bytes by SHA-256 and checks the edition, current
    title, both ISSNs, major category, Q1/Q2/Q3 target tier, recognition-date and
@@ -265,18 +272,21 @@ fairness, reviewer and Submission Ready audits.
    only in the Git-ignored input. An official Applied Intelligence
    requirement audit has corrected the hard gate from the historical 30-field
    snapshot to a 19-field intermediate snapshot; the first direct owner update
-   reduced it to 16, and the second response plus fail-closed content review
-   leaves 9 real missing fields and zero validation errors.
+   reduced it to 16, the second response reduced it to 9, and the third response
+   plus fail-closed content review leaves 6 real missing fields and zero
+   validation errors. The latest accepted facts include all-author approval and
+   the requirement for institutional manuscript and release review. Those
+   reviews remain pending rather than approved.
    Optional ORCID, a separate corresponding-author postal address and acknowledgements
    are no longer treated as mandatory, while truthful CRediT coverage remains
-   required. Correspondence, CRediT,
-   declarations, legal holder/year, institutional review and CAS-edition facts
-   are not inferred.
+   required. Correspondence and CRediT are complete. The individual
+   copyright-holder and candidate 2025 CAS-edition entries remain owner
+   assertions; institutional review outcomes and CAS authority are not inferred.
    A [unified private external-closure preflight](P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md)
    now runs the owner, institutional-CAS and institutional-release validators in
    one command and checks their title, ISSN, edition, tier, recognition-rule,
    license, holder/year and review-state agreement. Its current local result is
-   fail-closed: 9 owner fields remain missing and the two institutional input
+   fail-closed: 6 owner fields remain missing and the two institutional input
    files are empty template placeholders. Even a future structural pass leaves
    the client content, author-artifact and final Astra xhigh audits open.
    A separate local builder can then produce an ignored title page,
@@ -328,11 +338,13 @@ fairness, reviewer and Submission Ready audits.
    [official-requirement correction](P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.md)
    reduced the then-current hard gate to 19 real missing fields. The subsequent
    first direct owner update resolved three of those paths and synchronized the
-   author-list name. A second response supplied CRediT and several declarations,
-   but explicit `false`/`PENDING` states, an undated AI-tool entry and a label-only
-   competing-interests entry remain open; 9 fields are still missing, so no real
-   identity-bearing target package has been generated.
-   The current 9 missing paths are rendered into a
+   author-list name. A second response supplied CRediT and several declarations.
+   The third confirms all-author approval and required institutional review and
+   supplies owner-side holder and 2025-edition assertions. AI wording approval,
+   a date-bounded AI-tool record, substantive competing-interests wording, and
+   actual institutional approvals/evidence remain open; 6 fields are still
+   missing, so no real identity-bearing target package has been generated.
+   The current 6 missing paths are rendered into a
    [privacy-safe responsible-author one-reply packet](P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md).
    Its generator and regression test prove that already supplied local names,
    email addresses, postal details and declaration text are not serialized into
@@ -340,7 +352,7 @@ fairness, reviewer and Submission Ready audits.
    it does not complete any declaration or authorize submission.
    The [current private build-gate verification](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
    also exercises the real Git-ignored owner input. It confirms that the file is
-   no longer the empty template while proving that its 9-field failure occurs
+   no longer the empty template while proving that its 6-field failure occurs
    before transport access or output creation. No identity-bearing target
    artifact was created.
    A provisional Discover Computing technical profile now also proves that the

@@ -31,10 +31,13 @@ script prints paths and state labels only; it printed no private values.
 
 The unified verifier can now read all three files, but the two newly created
 files are placeholders, not institutional records. After the responsible
-author supplied two successive input batches, the owner input remains at 9
-missing fields and zero validation errors. Explicit false or pending decisions,
-an undated AI-tool entry and a label-only competing-interests entry stay open;
-no supplied value is emitted in this record. The CAS placeholder has 22 missing
+author supplied a third input batch, the owner input remains at 6 missing
+fields and zero validation errors. The all-author approval and both
+institutional-review-required flags are recorded, along with owner assertions
+about the copyright holder and candidate 2025 CAS edition. Unapproved AI
+wording, an undated AI-tool entry, a label-only competing-interests entry and
+the two required institutional approvals stay open; no supplied value is
+emitted in this record. The CAS placeholder has 22 missing
 fields and zero validation errors. The release placeholder has 22 missing fields
 and five expected fail-closed placeholder conflicts. No institutional evidence
 bytes were read, no cross-record inconsistency was observed, and the command

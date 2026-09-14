@@ -149,6 +149,29 @@ class OwnerInputsTests(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertIn(path, result["missing_field_paths"])
 
+    def test_required_but_pending_approvals_are_missing_not_structural_errors(self):
+        value = copy.deepcopy(self.template)
+        value["project_license"]["institutional_release_review_required"] = True
+        value["project_license"]["release_review_status"] = "PENDING"
+        value["declarations"]["institutional_manuscript_approval_required"] = True
+        value["declarations"]["institutional_manuscript_approval_status"] = "PENDING"
+        value["declarations"]["institutional_manuscript_approval_evidence"] = "待定。"
+        result = validate(value)
+        self.assertIn("project_license.release_review_status=APPROVED", result["missing_field_paths"])
+        self.assertIn(
+            "declarations.institutional_manuscript_approval_status=APPROVED",
+            result["missing_field_paths"],
+        )
+        self.assertIn(
+            "declarations.institutional_manuscript_approval_evidence",
+            result["missing_field_paths"],
+        )
+        self.assertNotIn("project_license.release_review_status: must be APPROVED", result["validation_error_paths"])
+        self.assertNotIn(
+            "declarations.institutional_manuscript_approval_status: must be APPROVED",
+            result["validation_error_paths"],
+        )
+
     def test_optional_orcid_postal_address_and_acknowledgements_do_not_block(self):
         value = copy.deepcopy(self.template)
         value["authorship"]["authors_in_order"] = [

@@ -29,8 +29,8 @@
       "gate": "P0-G",
       "status": "OPEN",
       "missing": [
-        "exact legal copyright holder and year/range",
-        "institutional NOTICE or release-review decision",
+        "institutional release-review approval and retained evidence",
+        "independent confirmation of legal copyright holder and year/range",
         "license-bearing latest code link and immutable archive DOI or unique identifier",
         "journal-approved review access for restricted evidence",
         "owner/institutional review of Qwen research-license compatibility for the intended release",
@@ -43,7 +43,7 @@
       "gate": "P0-H",
       "status": "OPEN",
       "missing": [
-        "institution-recognized CAS edition/year",
+        "institutional confirmation of the owner-asserted 2025 CAS edition/year",
         "retained institutional record for current Applied Intelligence title and ISSNs under the Computer Science major-category rule",
         "institutional title/ISSN-change treatment"
       ]
@@ -53,8 +53,8 @@
       "status": "OPEN",
       "missing": [
         "approved AI-assistance wording with a versioned and date-bounded tool record",
-        "substantive competing-interests wording and all-author final-manuscript/order approval",
-        "institutional manuscript-approval requirement and retained evidence",
+        "substantive competing-interests wording",
+        "institutional manuscript approval and retained evidence",
         "author-populated final target package",
         "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit"
       ]
@@ -67,8 +67,8 @@
     "validation_error_count": 0
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
-  "verified_repository_hashes": 166,
-  "checks": 580,
+  "verified_repository_hashes": 168,
+  "checks": 588,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0
