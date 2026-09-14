@@ -59,6 +59,7 @@ jobs:
             tests.test_cas_q3_current_private_build_gate \
             tests.test_cas_q3_original_fit_receipt_census \
             tests.test_cas_q3_external_closure_evidence_census \
+            tests.test_cas_q3_oversized_external_closure_evidence \
             tests.test_cas_q3_owner_reply_packet \
             tests.test_cas_q3_private_submission_packet \
             tests.test_cas_q3_manuscript_length \

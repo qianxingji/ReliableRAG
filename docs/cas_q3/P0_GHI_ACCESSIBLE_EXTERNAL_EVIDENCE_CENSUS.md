@@ -33,3 +33,9 @@ record, manuscript approval or code-release approval was recovered, so P0-G,
 P0-H and P0-I remain open. The scan performed no model forward, scientific fit,
 bootstrap recomputation or scientific-payload interpretation and does not
 authorize submission or distribution.
+
+A subsequent, separately versioned
+[oversized streaming census](P0_GHI_OVERSIZED_EXTERNAL_EVIDENCE_CENSUS.md)
+covered all 26 oversized ordinary text files and all 12 oversized ZIP text
+members with zero candidate, skip or error. This original receipt remains the
+unaltered record of the first bounded pass.

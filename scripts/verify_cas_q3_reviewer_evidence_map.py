@@ -325,6 +325,24 @@ def main() -> int:
     checks.true("PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE" in external_evidence_triage, "external-evidence candidate triage decision")
     checks.true("experimental data, fit/calibration/test" in external_evidence_triage, "external-evidence false-positive boundary")
 
+    oversized_census = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_OVERSIZED_EXTERNAL_EVIDENCE_CENSUS.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(oversized_census["decision"], "PASS_BOUNDED_OVERSIZED_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES", "oversized external-evidence census decision")
+    checks.equal(oversized_census["ordinary_large_text_files_stream_scanned"], 26, "oversized ordinary text files streamed")
+    checks.equal(oversized_census["ordinary_large_text_bytes_scanned"], 518683752, "oversized ordinary bytes streamed")
+    checks.equal(oversized_census["zip_large_text_members_stream_scanned"], 12, "oversized ZIP text members streamed")
+    checks.equal(oversized_census["zip_large_text_member_bytes_scanned"], 970485466, "oversized ZIP member bytes streamed")
+    checks.equal(oversized_census["ordinary_too_large_text_files_skipped"], 0, "oversized ordinary cap skips")
+    checks.equal(oversized_census["zip_too_large_text_members_skipped"], 0, "oversized ZIP cap skips")
+    checks.equal(oversized_census["candidate_match_count"], 0, "oversized external-evidence candidates")
+    checks.equal(oversized_census["scan_error_count"], 0, "oversized external-evidence scan errors")
+    checks.equal(oversized_census["bounded_interpretation"]["unsupported_binary_formats_covered"], False, "oversized census excludes unsupported binary formats")
+    checks.equal(oversized_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "oversized census does not claim global absence")
+    checks.equal(oversized_census["submission_authorized"], False, "oversized census does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )
@@ -750,6 +768,7 @@ def main() -> int:
         "tests.test_cas_q3_current_private_build_gate",
         "tests.test_cas_q3_original_fit_receipt_census",
         "tests.test_cas_q3_external_closure_evidence_census",
+        "tests.test_cas_q3_oversized_external_closure_evidence",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",

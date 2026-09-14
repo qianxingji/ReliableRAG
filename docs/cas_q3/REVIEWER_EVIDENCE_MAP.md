@@ -101,6 +101,11 @@ repository ZIP. Its three broad-marker candidates were historical experiment
 reports whose partition language referred to data or evaluation partitions.
 No institutional record was recovered. The result does not cover oversized or
 unsupported formats, prove absence outside those roots, or close any P0 gate.
+The subsequent
+[oversized streaming census](P0_GHI_OVERSIZED_EXTERNAL_EVIDENCE_CENSUS.md)
+covers all 26 oversized ordinary text files and 12 oversized ZIP text members,
+1,489,169,218 bytes in total, with zero candidate, skip or error. Unsupported
+binary formats and locations outside the roots remain unproved.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -164,6 +169,10 @@ artifact or close P0-I.
    three retained root arguments. Its current raw result requires triage because
    it retains three broad-marker candidates; the acceptance record documents
    why each is an experimental partition false positive.
+   Run `python scripts/audit_cas_q3_oversized_external_closure_evidence.py`
+   with the same roots to cover the files excluded only by the primary pass's
+   5,000,000-byte threshold. The accepted extension streams all 38 such items
+   without extraction and returns zero candidate, skip or error.
 
 ## Claim-to-evidence routing
 

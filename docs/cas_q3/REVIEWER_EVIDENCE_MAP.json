@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "da6195a39dc17dd792451133009b7efafd35f649d5428aa8cc06a15eee335326",
+      "sha256": "78ca0c5692d1d11d6a97e17ccacfd6b6b4571a381808aa3006aad4930225bdcb",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "687922af05cd08e9c86ce72e2b1a43175d6fc7819cb5d454dc6dc31bd4ae100f",
+      "sha256": "99f6ff923146d071e9c21de9a8c17fd08bb66733ed5baa2a5f311c260235fd6f",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -701,7 +701,7 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.md",
-      "sha256": "5e9131cbe3427bc468861a741efe035eff3b594e8e1386e726a378df88b6e3d7",
+      "sha256": "582eee3fddd1f35548f62b1d17921b10e5130e142a9ad1204660e312773a8446",
       "required_marker": "PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE"
     },
     {
@@ -713,6 +713,26 @@
       "path": "tests/test_cas_q3_external_closure_evidence_census.py",
       "sha256": "cf659a0917ff40dd7d693a6798ada21a2b9addd5aa3696bf0e2b6272acaa153f",
       "required_marker": "test_zip_member_candidate_is_detected_without_extraction"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_OVERSIZED_EXTERNAL_EVIDENCE_CENSUS.json",
+      "sha256": "404a78508ea448808c9c96620c28c0d91ce5f8686cf453502635fbca75dbc19c",
+      "required_marker": "PASS_BOUNDED_OVERSIZED_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_OVERSIZED_EXTERNAL_EVIDENCE_CENSUS.md",
+      "sha256": "f606efed576e348a63798a9e22cd60e858d501c504107fb981912c3fb1b22a9a",
+      "required_marker": "PASS_BOUNDED_OVERSIZED_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "scripts/audit_cas_q3_oversized_external_closure_evidence.py",
+      "sha256": "80ebec51735fdaf2a0db88c3948648453586e164a17148cdfd268c5f97e61443",
+      "required_marker": "Stream-scan oversized text excluded from the primary closure census"
+    },
+    {
+      "path": "tests/test_cas_q3_oversized_external_closure_evidence.py",
+      "sha256": "b9972823d889ba7dd60e3ec569514f10f02ee549a662abe35322d6ee62bd3fee",
+      "required_marker": "test_marker_crossing_stream_chunk_boundary_is_detected"
     }
   ],
   "aggregate_release_candidate": {

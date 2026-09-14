@@ -890,6 +890,43 @@ def main() -> int:
         checks,
     )
 
+    oversized_census = json.loads(
+        (ROOT / evidence["p0_ghi_oversized_external_evidence_census"]).read_text(encoding="utf-8")
+    )
+    require(
+        oversized_census["decision"]
+        == "PASS_BOUNDED_OVERSIZED_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES",
+        "oversized external-evidence census passes without candidates",
+        checks,
+    )
+    require(
+        oversized_census["ordinary_large_text_files_stream_scanned"] == 26
+        and oversized_census["ordinary_large_text_bytes_scanned"] == 518683752
+        and oversized_census["zip_large_text_members_stream_scanned"] == 12
+        and oversized_census["zip_large_text_member_bytes_scanned"] == 970485466,
+        "oversized external-evidence coverage is pinned",
+        checks,
+    )
+    require(
+        oversized_census["ordinary_too_large_text_files_skipped"] == 0
+        and oversized_census["zip_too_large_text_members_skipped"] == 0
+        and oversized_census["candidate_match_count"] == 0
+        and oversized_census["scan_error_count"] == 0,
+        "oversized external-evidence census retains zero skips, candidates and errors",
+        checks,
+    )
+    require(
+        oversized_census["bounded_interpretation"]["unsupported_binary_formats_covered"] is False
+        and oversized_census["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False,
+        "oversized external-evidence result remains bounded",
+        checks,
+    )
+    require(
+        oversized_census["submission_authorized"] is False,
+        "oversized external-evidence census does not authorize submission",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

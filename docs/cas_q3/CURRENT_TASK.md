@@ -43,8 +43,11 @@ preserved private historical root and the old repository ZIP. It read 454,115
 bounded ordinary text files and 1,448 bounded text members across 39 ZIPs.
 Three broad-marker candidates were historical experiment reports in which
 “分区” meant data or training partitions. No HBUT CAS, manuscript-approval or
-code-release record was recovered. Oversized and unsupported formats remain
-outside this negative result's scope.
+code-release record was recovered. A separate streaming extension then covered
+all 26 oversized ordinary text files and all 12 oversized ZIP text members,
+1,489,169,218 bytes in total, with zero candidate, skip or error. Unsupported
+binary formats and locations outside the three roots remain outside these
+negative results' scope.
 
 Latest route decision: the independent GPT-6 Astra xhigh
 [target-transition audit](TARGET_TRANSITION_ASTRA_XHIGH_AUDIT.md) sets the unique
@@ -400,9 +403,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 145 repository records plus preserved withheld archive
+  authenticates 149 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,016 checks, without
+  package in 1,045 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
