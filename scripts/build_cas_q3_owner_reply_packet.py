@@ -43,44 +43,34 @@ def render(missing: list[str]) -> str:
 ```text
 【单位与作者】
 1. 院系/部门的正式中英文署名：
-2. 第一作者的 ORCID（没有或不提供请写 NONE_NOT_SUPPLIED）：
-3. 通讯作者正式署名：
-4. 通讯作者邮箱：
-5. 通讯作者完整邮寄地址（含院系、学校、城市、邮编、国家）：
+2. 通讯作者正式署名：
+3. 通讯作者有效邮箱：
+可选：ORCID（官方指南为 if available/recommended）；单独邮寄地址仅在不同于已填写单位地址时提供。
 
 【CRediT 贡献】
-以下每项填写实际承担该角色的作者正式署名；当前只有一位作者时可填该作者正式署名，但必须据实确认。
-6. Conceptualization：
-7. Formal analysis：
-8. Methodology：
-9. Project administration：
-10. Software：
-11. Supervision：
-12. Validation：
-13. Writing - original draft：
-14. Writing - review and editing：
+4. 按实际贡献列出每位作者承担的 CRediT 角色。每位作者至少一个角色；不要为了填满表格虚构 Supervision、Project administration 或其他未发生的贡献：
 
 【论文声明】
-15. Funding statement（无外部资助也请明确写出）：
-16. Competing interests statement：
-17. Ethics statement / approval（请依据学校规则确认公开 benchmark 计算实验是否不涉及人或动物伦理审批）：
-18. Acknowledgements（无则写 NONE）：
-19. AI assistance statement 是否批准当前候选措辞（是/否；否时给出真实替代措辞）：
-20. 实际使用的 AI 工具、版本及使用日期范围：
-21. Overlapping work / preprint disclosure（无则写 NONE_DISCLOSED）：
-22. 是否确认论文原创且没有一稿多投（是/否）：
-23. 是否确认 Applied Intelligence 为当前唯一投稿目标（是/否）：
-24. 全部作者是否批准最终稿和作者顺序（是/否；单作者也需确认）：
-25. 学校是否要求投稿前论文审批（是/否/待核实）：
-26. 若要求，审批状态与留存证据；若不要求，给出负责人确认记录：
+5. Funding statement（无外部资助也请明确写出）：
+6. Competing interests statement：
+7. Ethics statement / approval（请依据学校规则确认公开 benchmark 计算实验是否不涉及人或动物伦理审批）：
+8. AI assistance statement 是否批准当前候选措辞（是/否；否时给出真实替代措辞）：
+9. 实际使用的 AI 工具、版本及使用日期范围：
+10. Overlapping work / preprint disclosure（无则写 NONE_DISCLOSED）：
+11. 是否确认论文原创且没有一稿多投（是/否）：
+12. 是否确认 Applied Intelligence 为当前唯一投稿目标（是/否）：
+13. 全部作者是否批准最终稿和作者顺序（是/否；单作者也需确认）：
+14. 学校是否要求投稿前论文审批（是/否/待核实）：
+15. 若要求，审批状态与留存证据；若不要求，给出负责人确认记录：
+可选：Acknowledgements；没有致谢对象时可以不设置该段。
 
 【代码版权与发布】
-27. ReliableRAG 原创代码的法律版权人（个人/学校/其他，写法须经确认）：
-28. 版权年份或年份范围：
-29. 学校是否要求代码公开发布前审查（是/否/待核实）；若要求，请给出审批状态与留存证据：
+16. ReliableRAG 原创代码的法律版权人（个人/学校/其他，写法须经确认）：
+17. 版权年份或年份范围：
+18. 学校是否要求代码公开发布前审查（是/否/待核实）；若要求，请给出审批状态与留存证据：
 
 【中科院分区独立证据】
-30. 湖北工业大学采用的中科院《期刊分区表》升级版年份/版本，以及 Applied Intelligence 在计算机科学大类三区及以上的留存记录路径或经办部门：
+19. 湖北工业大学采用的中科院《期刊分区表》升级版年份/版本，以及 Applied Intelligence 在计算机科学大类三区及以上的留存记录路径或经办部门：
 ```
 
 ## 验收边界

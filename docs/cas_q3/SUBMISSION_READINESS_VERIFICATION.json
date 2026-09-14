@@ -51,8 +51,8 @@
       "gate": "P0-I",
       "status": "OPEN",
       "missing": [
-        "complete author publishing names, department/address and corresponding-author fields",
-        "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
+        "department and corresponding-author identity/email fields",
+        "truthful per-author contribution coverage, funding, interests, ethics and AI-assistance declarations",
         "originality, exclusive-submission and all-author approval",
         "author-populated final target package",
         "retained publisher or Editorial Manager acceptance of the modern sn-jnl route, or a working journal-specific legacy package",
@@ -67,8 +67,8 @@
     "validation_error_count": 0
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
-  "verified_repository_hashes": 131,
-  "checks": 399,
+  "verified_repository_hashes": 133,
+  "checks": 412,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

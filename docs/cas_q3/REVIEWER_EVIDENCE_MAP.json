@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "c052bff476beb5864f5f0a088f3f1c8b7a74e351fef4bbf1dab4fc2f8a8c737d",
+      "sha256": "20d42a24129a2ee8e67f7a15f15ebd9c10f03a8cb8f2487d9e7bb7f9e7f80503",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -401,32 +401,32 @@
     {
       "path": "scripts/build_cas_q3_applied_intelligence_private_submission.py",
       "required_marker": "PASS_PRIVATE_APPLIED_INTELLIGENCE_AUTHOR_POPULATED_CANDIDATE_FINAL_AUDITS_OPEN",
-      "sha256": "1ed79ba1579dcca095a17eb21ce89834ed3e9e79b216bcf587a7e04eeb1ec1c6"
+      "sha256": "cb28da6046639174dfe87e51c08d31e977f326ac79ad8d20a085003ef3906f7b"
     },
     {
       "path": "tests/test_cas_q3_applied_intelligence_private_submission.py",
       "required_marker": "AppliedIntelligencePrivateSubmissionTests",
-      "sha256": "e7d61adeea2481d67bfbc7d907b2b7e702c8f3a07a0c857105b116ee7e606bf0"
+      "sha256": "cd87816ad0dc95825a2dc24f76517140296680f6813ec853956af8545c98c064"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "edb7b021ea1123c9515441144691903baffafe16efe77636359820296441b8b4"
+      "sha256": "de8dcc202d73dfe0948ae56eb6e7d71f2207f828ff3b140054b6b4c1ce60cda4"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "aa504eb3854f2e8918c489e14eda789ebadf41c3d91f162ce543e10b1cd96584"
+      "sha256": "58a5ae09bfc30253046d81f8a6fd56519fafc474b09324381e6ecddec38dea1c"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "f75d462ae54e9650cbb951b71409113e06e588b27c6a87aae4f8652414865681"
+      "sha256": "50b1840bc7a353bb7648ea538b2832bc217075ae8648674d4d3468ffb4fb308d"
     },
     {
       "path": "tests/test_cas_q3_owner_reply_packet.py",
       "required_marker": "OwnerReplyPacketTests",
-      "sha256": "e72a9b38cf901c2661340da438c261153de9787f93870157f1be9a4e8bb03238"
+      "sha256": "75cde41e45f5501ffbc320ee17445cab82fe1798aac7ad33460b90c06685c79d"
     },
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
@@ -477,6 +477,16 @@
       "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST.json",
       "required_marker": "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING",
       "sha256": "757473daf91282b0d3f04c32d337b6e4e82e74a54d2266158ecb8055e8ac6b71"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.json",
+      "required_marker": "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
+      "sha256": "a3520e4bd83101edecc385903e1851e0ec69f53aee3c7113b39e0a6191cab1a0"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.md",
+      "required_marker": "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
+      "sha256": "8338abdd77933670b4e0a38a4419c3bc48655fe4a31ac45a8ef9aeac7cd986f2"
     }
   ],
   "aggregate_release_candidate": {

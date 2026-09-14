@@ -2,23 +2,12 @@
   "schema_version": 1,
   "decision": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
   "cas_q3_status": "NOT_READY",
-  "missing_field_count": 30,
+  "missing_field_count": 19,
   "missing_field_paths": [
     "authorship.affiliations[0].department",
-    "authorship.authors_in_order[0].orcid",
+    "authorship.authors_in_order[0].credit_role_assignment",
     "authorship.corresponding_author_email",
     "authorship.corresponding_author_name",
-    "authorship.corresponding_author_postal_address",
-    "authorship.credit_role_mapping.Conceptualization",
-    "authorship.credit_role_mapping.Formal analysis",
-    "authorship.credit_role_mapping.Methodology",
-    "authorship.credit_role_mapping.Project administration",
-    "authorship.credit_role_mapping.Software",
-    "authorship.credit_role_mapping.Supervision",
-    "authorship.credit_role_mapping.Validation",
-    "authorship.credit_role_mapping.Writing - original draft",
-    "authorship.credit_role_mapping.Writing - review and editing",
-    "declarations.acknowledgements",
     "declarations.ai_assistance_statement_approved=true",
     "declarations.ai_tool_version_and_use_dates",
     "declarations.all_authors_approved_final_manuscript_and_order=true",
@@ -42,5 +31,5 @@
   "distribution_authorized": false,
   "submission_authorized": false,
   "packet_path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
-  "packet_sha256": "edb7b021ea1123c9515441144691903baffafe16efe77636359820296441b8b4"
+  "packet_sha256": "de8dcc202d73dfe0948ae56eb6e7d71f2207f828ff3b140054b6b4c1ce60cda4"
 }

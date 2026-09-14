@@ -129,6 +129,32 @@ class OwnerInputsTests(unittest.TestCase):
             result["missing_field_paths"],
         )
 
+    def test_optional_orcid_postal_address_and_acknowledgements_do_not_block(self):
+        value = copy.deepcopy(self.template)
+        value["authorship"]["authors_in_order"] = [
+            {"name": "Example Author", "affiliation_ids": ["aff1"], "orcid": None}
+        ]
+        value["authorship"]["affiliations"] = [
+            {"id": "aff1", "institution": "U", "department": "D", "city": "C", "postal_code": "0", "country": "X"}
+        ]
+        value["authorship"]["credit_role_mapping"]["Conceptualization"] = ["Example Author"]
+        result = validate(value)
+        self.assertNotIn("authorship.authors_in_order[0].orcid", result["missing_field_paths"])
+        self.assertNotIn("authorship.corresponding_author_postal_address", result["missing_field_paths"])
+        self.assertNotIn("declarations.acknowledgements", result["missing_field_paths"])
+        self.assertNotIn("authorship.authors_in_order[0].credit_role_assignment", result["missing_field_paths"])
+
+    def test_every_author_needs_at_least_one_truthful_credit_role(self):
+        value = copy.deepcopy(self.template)
+        value["authorship"]["authors_in_order"] = [
+            {"name": "Example Author", "affiliation_ids": ["aff1"], "orcid": None}
+        ]
+        value["authorship"]["affiliations"] = [
+            {"id": "aff1", "institution": "U", "department": "D", "city": "C", "postal_code": "0", "country": "X"}
+        ]
+        result = validate(value)
+        self.assertIn("authorship.authors_in_order[0].credit_role_assignment", result["missing_field_paths"])
+
 
 if __name__ == "__main__":
     unittest.main()

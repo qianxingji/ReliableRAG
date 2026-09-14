@@ -63,9 +63,10 @@ submission-unauthorized until publisher-template acceptance and the final
 Astra xhigh audit pass.
 
 `null` means unanswered. Use an explicit factual value when the answer is
-negative: for example, `NONE` for no acknowledgement, `NONE_DISCLOSED` for no
-overlapping work, or `NONE_NOT_SUPPLIED` for an author ORCID. Every author entry
-must have this shape:
+negative: for example, `NONE_DISCLOSED` for no overlapping work or
+`NONE_NOT_SUPPLIED` for an author ORCID. ORCID is optional because the target
+journal says “if available” and recommends rather than requires it; `null` is
+also accepted. Every author entry has this shape:
 
 ```json
 {
@@ -106,11 +107,12 @@ source. For Discover Computing, the 2026-09-14 official-page snapshot is
 recorded in `P0_H_DISCOVER_COMPUTING_APC_AUDIT.md`; its listed prices are not a
 future quote because the publisher applies the acceptance-date price.
 
-The CRediT map may use an empty list only for a role that did not occur, but
-every named contributor must be an author in `authors_in_order`. At least one
-author must be assigned to Conceptualization, Methodology, Software, Validation,
-Formal analysis, Writing - original draft, Writing - review and editing,
-Supervision and Project administration. The responsible authors must approve
+The CRediT map uses an empty list for every role that did not occur, and every
+named contributor must be an author in `authors_in_order`. Each listed author
+must have at least one truthful role; the validator does not force Supervision,
+Project administration or any other role that did not occur. A separate
+corresponding-author postal address and acknowledgements are optional. The
+responsible authors must approve
 the AI-assistance statement or replace it with target-compliant truthful wording
 before setting its approval field to `true`.
 

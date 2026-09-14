@@ -122,6 +122,20 @@ class PrivateSubmissionPacketTests(unittest.TestCase):
                 build(copy.deepcopy(value), output)
             self.assertEqual(marker.read_text(encoding="utf-8"), "keep")
 
+    def test_optional_identity_and_acknowledgement_fields_are_omitted_cleanly(self):
+        value = complete_fixture()
+        value["authorship"]["authors_in_order"][0]["orcid"] = None
+        value["authorship"]["corresponding_author_postal_address"] = None
+        value["declarations"]["acknowledgements"] = None
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "packet"
+            build(value, output)
+            title = (output / "title_page.tex").read_text(encoding="utf-8")
+            declarations = (output / "declarations.tex").read_text(encoding="utf-8")
+            self.assertNotIn("ORCID", title)
+            self.assertNotIn("Acknowledgements", declarations)
+            self.assertNotIn("None", title)
+
     def test_synthetic_title_page_compiles_when_latex_is_available(self):
         try:
             pdflatex = executable("pdflatex")

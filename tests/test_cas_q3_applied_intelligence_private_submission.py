@@ -44,6 +44,21 @@ class AppliedIntelligencePrivateSubmissionTests(unittest.TestCase):
             with self.assertRaises(AssertionError):
                 render_target_source(source, data)
 
+    def test_render_omits_optional_orcid_postal_address_and_acknowledgements(self):
+        source = (
+            ANONYMOUS_FRONT_MATTER
+            + "\nThe same joint rule does not pass against the HGB-only policy.\n"
+            + "This is not a new selector architecture.\nPublic distribution remains withheld.\n"
+            + DECLARATION_PLACEHOLDER
+        )
+        data = complete_fixture()
+        data["authorship"]["authors_in_order"][0]["orcid"] = None
+        data["authorship"]["corresponding_author_postal_address"] = None
+        data["declarations"]["acknowledgements"] = None
+        rendered = render_target_source(source, data)
+        self.assertNotIn(r"\paragraph{ORCID.}", rendered)
+        self.assertNotIn(r"\paragraph{Acknowledgements.}", rendered)
+
     def test_incomplete_real_shape_fails_before_reading_transport_or_creating_output(self):
         data = complete_fixture()
         data["authorship"]["corresponding_author_email"] = None

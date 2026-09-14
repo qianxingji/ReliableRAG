@@ -82,24 +82,21 @@ def declaration_text(data: dict[str, object]) -> str:
             credit.append(f"{tex(role)}: {tex(', '.join(names))}")
     orcids = []
     for author in authorship["authors_in_order"]:
-        if not str(author["orcid"]).startswith("NONE_"):
+        if isinstance(author.get("orcid"), str) and author["orcid"].strip() and not author["orcid"].startswith("NONE_"):
             orcids.append(f"{tex(author['name'])}: {tex(author['orcid'])}")
+    corresponding = tex(authorship["corresponding_author_name"])
+    if isinstance(authorship.get("corresponding_author_postal_address"), str) and authorship["corresponding_author_postal_address"].strip():
+        corresponding += "; " + tex(normalize_statement(authorship["corresponding_author_postal_address"]))
+    corresponding += "; " + tex(authorship["corresponding_author_email"]) + "."
     rows = [
         r"\section*{Declarations}",
-        r"\paragraph{Corresponding author.} "
-        + tex(authorship["corresponding_author_name"])
-        + "; "
-        + tex(normalize_statement(authorship["corresponding_author_postal_address"]))
-        + "; "
-        + tex(authorship["corresponding_author_email"])
-        + ".",
+        r"\paragraph{Corresponding author.} " + corresponding,
         r"\paragraph{Author contributions.} " + "; ".join(credit) + ".",
         r"\paragraph{Funding.} " + tex(normalize_statement(declarations["funding_statement"])),
         r"\paragraph{Competing interests.} "
         + tex(normalize_statement(declarations["competing_interests_statement"])),
         r"\paragraph{Ethics approval.} "
         + tex(normalize_statement(declarations["ethics_statement_or_approval"])),
-        r"\paragraph{Acknowledgements.} " + tex(normalize_statement(declarations["acknowledgements"])),
         r"\paragraph{Generative AI and AI-assisted technologies in manuscript preparation.} "
         + tex(normalize_statement(declarations["ai_assistance_statement"]))
         + " "
@@ -107,6 +104,8 @@ def declaration_text(data: dict[str, object]) -> str:
         r"\paragraph{Overlapping work or preprint.} "
         + tex(normalize_statement(declarations["overlapping_work_or_preprint_disclosure"])),
     ]
+    if isinstance(declarations.get("acknowledgements"), str) and declarations["acknowledgements"].strip():
+        rows.insert(6, r"\paragraph{Acknowledgements.} " + tex(normalize_statement(declarations["acknowledgements"])))
     if orcids:
         rows.append(r"\paragraph{ORCID.} " + "; ".join(orcids) + ".")
     return "\n\n".join(rows)

@@ -336,7 +336,7 @@ def main() -> int:
     )
     checks.equal(private_builder["input_scope"]["synthetic_complete_fixture_used"], True, "synthetic input scope")
     checks.equal(private_builder["input_scope"]["real_owner_input_used"], False, "real owner input excluded")
-    checks.equal(private_builder["input_scope"]["real_owner_input_missing_fields"], 30, "real owner missing fields")
+    checks.equal(private_builder["input_scope"]["real_owner_input_missing_fields"], 30, "historical real owner missing fields")
     checks.equal(
         private_builder["authenticated_anonymous_transport"]["archive_sha256"],
         transport_result["archive_sha256"],
@@ -369,13 +369,32 @@ def main() -> int:
         "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
         "responsible-author reply packet decision",
     )
-    checks.equal(reply_receipt["missing_field_count"], 30, "reply packet missing-field count")
+    checks.equal(reply_receipt["missing_field_count"], 19, "reply packet missing-field count")
     checks.equal(reply_receipt["validation_error_count"], 0, "reply packet validation errors")
     checks.equal(reply_receipt["personal_values_emitted"], False, "reply packet privacy boundary")
     checks.equal(reply_receipt["submission_authorized"], False, "reply packet does not authorize submission")
     reply_packet = (ROOT / reply_receipt["packet_path"]).read_text(encoding="utf-8")
     checks.equal(hashlib.sha256(reply_packet.encode("utf-8")).hexdigest(), reply_receipt["packet_sha256"], "reply packet hash")
     checks.true("@" not in reply_packet, "tracked reply packet contains no email value")
+
+    correction = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        correction["decision"],
+        "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
+        "official requirement correction decision",
+    )
+    checks.equal(correction["correction"]["prior_snapshot_missing_fields"], 30, "prior snapshot count")
+    checks.equal(correction["correction"]["current_real_missing_fields"], 19, "current real missing count")
+    checks.equal(correction["correction"]["current_validation_errors"], 0, "current validation error count")
+    checks.equal(correction["correction"]["net_missing_field_reduction"], 11, "missing-field correction size")
+    checks.equal(correction["historical_private_builder_snapshot_mutated"], False, "historical snapshot preserved")
+    checks.equal(correction["real_owner_values_emitted"], False, "correction emits no owner values")
+    checks.equal(correction["real_private_package_built"], False, "correction does not build private package")
+    checks.equal(correction["submission_authorized"], False, "correction does not authorize submission")
 
     workflow = (ROOT / ".github" / "workflows" / "public-reporting-audit.yml").read_text(encoding="utf-8")
     for phrase in (
@@ -388,6 +407,7 @@ def main() -> int:
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
+        "tests.test_cas_q3_private_submission_packet",
         "tests.test_cas_q3_owner_reply_packet",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",

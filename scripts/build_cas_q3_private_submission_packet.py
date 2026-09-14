@@ -61,9 +61,18 @@ def render_title_page(data: dict[str, Any]) -> str:
             tex(item[key]) for key in ("department", "institution", "city", "postal_code", "country")
         )
         affiliation_lines.append(f"$^{{{aff_number[identifier]}}}${address}")
-    orcid_lines = [f"{tex(author['name'])}: {tex(author['orcid'])}" for author in authors]
-    return "\n".join(
-        [
+    orcid_lines = [
+        f"{tex(author['name'])}: {tex(author['orcid'])}"
+        for author in authors
+        if isinstance(author.get("orcid"), str)
+        and author["orcid"].strip()
+        and not author["orcid"].startswith("NONE_")
+    ]
+    corresponding_lines = [tex(authorship["corresponding_author_name"])]
+    if isinstance(authorship.get("corresponding_author_postal_address"), str) and authorship["corresponding_author_postal_address"].strip():
+        corresponding_lines.append(tex(authorship["corresponding_author_postal_address"]))
+    corresponding_lines.append(tex(authorship["corresponding_author_email"]))
+    rows = [
             r"\documentclass[11pt]{article}",
             r"\usepackage[margin=1in]{geometry}",
             r"\usepackage[hidelinks]{hyperref}",
@@ -78,14 +87,13 @@ def render_title_page(data: dict[str, Any]) -> str:
             r"\\".join(affiliation_lines),
             "",
             r"\section*{Corresponding author}",
-            tex(authorship["corresponding_author_name"]) + r"\\" + tex(authorship["corresponding_author_postal_address"]) + r"\\" + tex(authorship["corresponding_author_email"]),
-            "",
-            r"\section*{ORCID}",
-            r"\\".join(orcid_lines),
-            r"\end{document}",
+            r"\\".join(corresponding_lines),
             "",
         ]
-    )
+    if orcid_lines:
+        rows.extend([r"\section*{ORCID}", r"\\".join(orcid_lines), ""])
+    rows.extend([r"\end{document}", ""])
+    return "\n".join(rows)
 
 
 def render_declarations(data: dict[str, Any]) -> str:
@@ -100,12 +108,13 @@ def render_declarations(data: dict[str, Any]) -> str:
         ("Funding", tex(normalize_statement(declarations["funding_statement"]))),
         ("Competing interests", tex(normalize_statement(declarations["competing_interests_statement"]))),
         ("Ethics approval", tex(normalize_statement(declarations["ethics_statement_or_approval"]))),
-        ("Acknowledgements", tex(normalize_statement(declarations["acknowledgements"]))),
         ("Generative AI and writing assistance", tex(normalize_statement(declarations["ai_assistance_statement"]))),
         ("AI tool/version/use dates", tex(normalize_statement(declarations["ai_tool_version_and_use_dates"]))),
         ("Overlapping work or preprint", tex(normalize_statement(declarations["overlapping_work_or_preprint_disclosure"]))),
         ("Institutional manuscript approval evidence", tex(normalize_statement(declarations["institutional_manuscript_approval_evidence"]))),
     ]
+    if isinstance(declarations.get("acknowledgements"), str) and declarations["acknowledgements"].strip():
+        sections.insert(4, ("Acknowledgements", tex(normalize_statement(declarations["acknowledgements"]))))
     rows = [
         "% Private draft generated from owner-supplied facts; not submission-authorized.",
         r"\section*{Declarations}",
@@ -139,7 +148,7 @@ Please consider our Research Article, “{MANUSCRIPT_TITLE}.” The manuscript s
 
 Across 6,000 question groups and 18,000 traces from three multi-hop QA datasets and three retrieval conditions, HGB+GbV_R improves exact match and reduces full-population Damage relative to the matched GbV-only selector. The same joint rule does not pass against HGB-only, and the larger 25-feature policy does not establish an advance. The paper therefore presents a bounded empirical attribution result rather than a new selector architecture or a reader-general claim.
 
-The responsible authors supplied originality, exclusive-submission, contribution, funding, interest, ethics, acknowledgement, and AI-assistance declarations in the private intake. Their exact target-journal wording and all final artifacts remain subject to independent verification.
+The responsible authors supplied originality, exclusive-submission, contribution, funding, interest, ethics, and AI-assistance declarations in the private intake, plus acknowledgements if applicable. Their exact target-journal wording and all final artifacts remain subject to independent verification.
 
 Sincerely,
 

@@ -405,7 +405,7 @@ def main() -> int:
     )
     require(private_builder["input_scope"]["synthetic_complete_fixture_used"] is True, "synthetic builder input", checks)
     require(private_builder["input_scope"]["real_owner_input_used"] is False, "real owner input was not used", checks)
-    require(private_builder["input_scope"]["real_owner_input_missing_fields"] == 30, "real owner input remains incomplete", checks)
+    require(private_builder["input_scope"]["real_owner_input_missing_fields"] == 30, "historical real owner input snapshot remains incomplete", checks)
     require(private_builder["synthetic_private_build"]["source_members"] == 10, "synthetic target source members", checks)
     require(private_builder["synthetic_private_build"]["compiled_pages"] == 13, "synthetic target PDF pages", checks)
     require(private_builder["synthetic_private_build"]["visual_defects"] == 0, "synthetic target visual review", checks)
@@ -436,10 +436,28 @@ def main() -> int:
         "privacy-safe owner reply packet is bound",
         checks,
     )
-    require(reply_receipt["missing_field_count"] == 30, "owner reply packet records 30 missing fields", checks)
+    require(reply_receipt["missing_field_count"] == 19, "owner reply packet records 19 missing fields", checks)
     require(reply_receipt["validation_error_count"] == 0, "owner reply packet records zero validation errors", checks)
     require(reply_receipt["personal_values_emitted"] is False, "owner reply packet emits no personal values", checks)
     require(reply_receipt["submission_authorized"] is False, "owner reply packet does not authorize submission", checks)
+
+    correction = json.loads(
+        (ROOT / evidence["p0_i_required_owner_fields_correction"]).read_text(encoding="utf-8")
+    )
+    require(
+        correction["decision"]
+        == "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
+        "official Applied Intelligence owner-gate correction is bound",
+        checks,
+    )
+    require(correction["correction"]["prior_snapshot_missing_fields"] == 30, "owner-gate prior snapshot count", checks)
+    require(correction["correction"]["current_real_missing_fields"] == 19, "owner-gate current missing count", checks)
+    require(correction["correction"]["current_validation_errors"] == 0, "owner-gate current validation errors", checks)
+    require(correction["correction"]["net_missing_field_reduction"] == 11, "owner-gate correction size", checks)
+    require(correction["historical_private_builder_snapshot_mutated"] is False, "historical builder snapshot remains immutable", checks)
+    require(correction["real_owner_values_emitted"] is False, "owner-gate correction exposes no owner values", checks)
+    require(correction["real_private_package_built"] is False, "owner-gate correction builds no private package", checks)
+    require(correction["submission_authorized"] is False, "owner-gate correction does not authorize submission", checks)
 
     require(len(evidence["completed_p0"]) == 6, "exactly P0-A through P0-F are fully closed", checks)
     require(len(evidence["completed_p1"]) == 5, "P1-A through P1-E are closed", checks)
@@ -486,8 +504,8 @@ def main() -> int:
             "gate": "P0-I",
             "status": "OPEN",
             "missing": [
-                "complete author publishing names, department/address and corresponding-author fields",
-                "CRediT, funding, interests, ethics, acknowledgements and AI-assistance declarations",
+                "department and corresponding-author identity/email fields",
+                "truthful per-author contribution coverage, funding, interests, ethics and AI-assistance declarations",
                 "originality, exclusive-submission and all-author approval",
                 "author-populated final target package",
                 "retained publisher or Editorial Manager acceptance of the modern sn-jnl route, or a working journal-specific legacy package",
@@ -504,7 +522,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_30_MISSING_ZERO_VALIDATION_ERRORS",
+        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_19_MISSING_ZERO_VALIDATION_ERRORS",
         "P0-I records partial owner facts without treating them as complete",
         checks,
     )

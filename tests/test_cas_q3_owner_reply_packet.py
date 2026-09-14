@@ -43,7 +43,8 @@ class OwnerReplyPacketTests(unittest.TestCase):
             self.assertNotIn(secret, content)
             self.assertNotIn(secret, json.dumps(receipt))
         self.assertIn("authorship.affiliations[0].department", content)
-        self.assertIn("authorship.authors_in_order[0].orcid", content)
+        self.assertNotIn("authorship.authors_in_order[0].orcid", content)
+        self.assertIn("authorship.authors_in_order[0].credit_role_assignment", content)
         self.assertFalse(receipt["personal_values_emitted"])
         self.assertFalse(receipt["submission_authorized"])
 

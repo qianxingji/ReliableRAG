@@ -217,8 +217,12 @@ fairness, reviewer and Submission Ready audits.
    publication route, project-license choice and CAS category rule. The
    [official HBUT address verification](P0_I_HBUT_AFFILIATION_ADDRESS_ACCEPTANCE.md)
    independently supplies Wuhan and postcode 430068 without inferring a
-   department or personal contact detail. The local verifier now reports 30
-   remaining fields and zero validation errors; correspondence, CRediT,
+   department or personal contact detail. An official Applied Intelligence
+   requirement audit has corrected the hard gate from the historical 30-field
+   snapshot to 19 real missing fields and zero validation errors; optional
+   ORCID, a separate corresponding-author postal address and acknowledgements
+   are no longer treated as mandatory, while truthful CRediT coverage remains
+   required. Correspondence, CRediT,
    declarations, legal holder/year, institutional review and CAS-edition facts
    are not inferred.
    A separate local builder can then produce an ignored title page,
@@ -257,9 +261,13 @@ fairness, reviewer and Submission Ready audits.
    implements the remaining mechanical path from a complete owner-input file
    to an author-populated flat source ZIP, compiled PDF and cover letter. A
    synthetic complete fixture passed the full build and all 13 rendered pages
-   passed visual inspection. The actual local input remains fail-closed at 30
-   missing fields, so no real identity-bearing target package was generated.
-   The current 30 missing paths are also rendered into a
+   passed visual inspection. At that historical synthetic-builder snapshot the
+   actual local input remained fail-closed at 30 missing fields; the underlying
+   historical receipt is intentionally unchanged. The later
+   [official-requirement correction](P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.md)
+   reduces the current hard gate to 19 real missing fields, so no real
+   identity-bearing target package has been generated.
+   The current 19 missing paths are rendered into a
    [privacy-safe responsible-author one-reply packet](P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md).
    Its generator and regression test prove that already supplied local names,
    email addresses, postal details and declaration text are not serialized into
@@ -286,9 +294,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 96 repository records plus preserved withheld archive
+  authenticates 98 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 630 checks, without
+  package in 648 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

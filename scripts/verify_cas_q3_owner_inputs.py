@@ -14,17 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = ROOT / "docs" / "cas_q3" / "OWNER_INPUTS_TEMPLATE.json"
 LICENSE_OPTIONS = {"Apache-2.0", "MIT", "NO_PUBLIC_CODE_LICENSE_YET"}
 PUBLICATION_CHARGE_ROUTES = {"ACCEPTED", "WAIVER_CONFIRMED", "NO_MANDATORY_APC"}
-REQUIRED_CREDIT_ROLES = {
-    "Conceptualization",
-    "Methodology",
-    "Software",
-    "Validation",
-    "Formal analysis",
-    "Writing - original draft",
-    "Writing - review and editing",
-    "Supervision",
-    "Project administration",
-}
 ALL_CREDIT_ROLES = {
     "Conceptualization",
     "Methodology",
@@ -169,14 +158,12 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
         elif any(not nonempty(value) or value not in affiliation_ids for value in ids):
             errors.append(f"authorship.authors_in_order[{index}].affiliation_ids: unknown id")
         orcid = item.get("orcid")
-        if not nonempty(orcid):
-            missing.append(f"authorship.authors_in_order[{index}].orcid")
-        elif orcid != "NONE_NOT_SUPPLIED" and not re.fullmatch(r"\d{4}-\d{4}-\d{4}-[\dX]{4}", orcid):
+        if nonempty(orcid) and orcid != "NONE_NOT_SUPPLIED" and not re.fullmatch(r"\d{4}-\d{4}-\d{4}-[\dX]{4}", orcid):
             errors.append(f"authorship.authors_in_order[{index}].orcid: invalid format")
     if len(set(author_names)) != len(author_names):
         errors.append("authorship.authors_in_order: duplicate publishing name")
 
-    for key in ("corresponding_author_name", "corresponding_author_email", "corresponding_author_postal_address"):
+    for key in ("corresponding_author_name", "corresponding_author_email"):
         require_text(authorship, key, "authorship", missing)
     corresponding = authorship.get("corresponding_author_name")
     if nonempty(corresponding) and corresponding not in author_names:
@@ -188,20 +175,23 @@ def validate(data: Any, *, template_mode: bool = False) -> dict[str, Any]:
     credit = require_object(authorship.get("credit_role_mapping"), "authorship.credit_role_mapping", errors)
     if set(credit) != ALL_CREDIT_ROLES:
         errors.append("authorship.credit_role_mapping: role set must match template")
+    credited_authors: set[str] = set()
     for role in sorted(ALL_CREDIT_ROLES):
         names = credit.get(role)
         if not isinstance(names, list):
             errors.append(f"authorship.credit_role_mapping.{role}: must be an array")
-        elif role in REQUIRED_CREDIT_ROLES and not names:
-            missing.append(f"authorship.credit_role_mapping.{role}")
-        elif any(name not in author_names for name in names):
-            errors.append(f"authorship.credit_role_mapping.{role}: contributor is not a listed author")
+        else:
+            if any(name not in author_names for name in names):
+                errors.append(f"authorship.credit_role_mapping.{role}: contributor is not a listed author")
+            credited_authors.update(name for name in names if name in author_names)
+    for index, name in enumerate(author_names):
+        if name not in credited_authors:
+            missing.append(f"authorship.authors_in_order[{index}].credit_role_assignment")
 
     for key in (
         "funding_statement",
         "competing_interests_statement",
         "ethics_statement_or_approval",
-        "acknowledgements",
         "ai_assistance_statement",
         "ai_tool_version_and_use_dates",
         "overlapping_work_or_preprint_disclosure",
