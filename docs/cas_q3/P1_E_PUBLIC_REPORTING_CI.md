@@ -141,6 +141,16 @@ and pull-request run
 The repair changes traversal portability only. It does not alter the retained
 Windows census, recover institutional evidence or close a P0 gate.
 
+The oversized streaming extension at
+`3062bd855e544c4afb4913c739e871df0225e346` passed push run
+[34857250304](https://github.com/qianxingji/ReliableRAG/actions/runs/34857250304)
+and pull-request run
+[34857255190](https://github.com/qianxingji/ReliableRAG/actions/runs/34857255190).
+Both runs execute the 79-test portable suite and retain the fail-closed
+Submission Ready gate. The runner verifies the committed receipt and streaming
+implementation with synthetic files; it does not possess or rescan the three
+external Windows evidence roots.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
