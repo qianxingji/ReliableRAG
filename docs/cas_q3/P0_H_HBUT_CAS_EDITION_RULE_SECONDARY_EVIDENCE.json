@@ -23,6 +23,16 @@
     "confirmed_by_hbut_research_administration": false,
     "safe_to_use_as_final_p0_h_evidence": false
   },
+  "authoritative_cas_platform": {
+    "landing_url": "https://www.fenqubiao.com/landing.html",
+    "help_url": "https://www.fenqubiao.com/User/Help.aspx",
+    "issuer": "中国科学院文献情报中心期刊分区表",
+    "upgraded_2025_listed_as_available": true,
+    "journal_search_supports_title_and_issn": true,
+    "journal_partition_data_requires_institutional_or_authenticated_access": true,
+    "hbut_access_verified": false,
+    "applied_intelligence_2025_record_retrieved": false
+  },
   "central_policy_attachment_access": {
     "teacher_research_work_score_policy_named": true,
     "research_project_and_output_classification_policy_named": true,
@@ -30,7 +40,7 @@
     "contents_inspected": false,
     "contents_inferred": false
   },
-  "institutional_request_refinement": "Please confirm whether the prior-publication-year upgraded CAS rule in the college training plan applies university-wide to this faculty research output and, if publication occurs in 2026, whether the 2025 report controls.",
+  "institutional_request_refinement": "Please confirm whether the prior-publication-year upgraded CAS rule in the college training plan applies university-wide to this faculty research output and, if publication occurs in 2026, whether the published 2025 upgraded report controls; retain the official platform record for Applied Intelligence by current title and both ISSNs.",
   "p0_h_closed": false,
   "submission_authorized": false
 }

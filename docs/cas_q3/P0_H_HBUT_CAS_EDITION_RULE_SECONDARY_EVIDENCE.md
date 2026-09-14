@@ -18,6 +18,14 @@ not list Applied Intelligence, its ISSNs or its Computer Science major-category
 tier. It therefore cannot close P0-H or replace the requested retained record
 from the university research administration.
 
+The Chinese Academy of Sciences Documentation and Information Center's official
+partition platform lists the 2025 upgraded data as available and states that
+journals can be queried by title or ISSN. The detailed partition data requires
+institutional or authenticated access. No HBUT-authenticated session was used,
+and no Applied Intelligence 2025 record was retrieved. This proves that 2025 is
+an available candidate edition, while leaving the journal's actual major-
+category tier unproved.
+
 The central 2025 workload notice names two relevant university-policy PDF
 attachments, but both download endpoints require a CAPTCHA. Their contents
 have not been inspected or inferred. The institutional request is refined to
@@ -28,3 +36,5 @@ using the 2025 upgraded report.
 Official source inspected on 2026-09-14:
 
 - <https://lxy.hbut.edu.cn/info/1112/3890.htm>
+- <https://www.fenqubiao.com/landing.html>
+- <https://www.fenqubiao.com/User/Help.aspx>

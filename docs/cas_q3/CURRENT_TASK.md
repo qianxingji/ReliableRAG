@@ -178,7 +178,10 @@ fairness, reviewer and Submission Ready audits.
    the year before publication. It makes 2025 the candidate report year for a
    2026 publication, but does not establish that this college programme rule
    applies university-wide or that Applied Intelligence is Q3; the central
-   confirmation remains required.
+   confirmation remains required. The authoritative CAS partition platform
+   publicly lists the 2025 upgraded data as available and supports title/ISSN
+   search, but detailed records require institutional or authenticated access;
+   no Applied Intelligence record was retrieved or inferred.
    The [Discover Computing APC audit](P0_H_DISCOVER_COMPUTING_APC_AUDIT.md)
    closes the current-price lookup: the official page lists GBP 1,040, USD
    1,520, or EUR 1,140 plus applicable taxes and applies the acceptance-date
@@ -310,7 +313,7 @@ fairness, reviewer and Submission Ready audits.
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
   authenticates 106 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 715 checks, without
+  package in 720 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

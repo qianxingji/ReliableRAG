@@ -42,6 +42,12 @@ def main() -> int:
     require(candidate["if_formal_publication_year_is_2026_candidate_cas_report_year"] == 2025, "candidate report year")
     require(candidate["confirmed_by_hbut_research_administration"] is False, "central confirmation pending")
     require(candidate["safe_to_use_as_final_p0_h_evidence"] is False, "not final evidence")
+    platform = data["authoritative_cas_platform"]
+    require(platform["issuer"] == "中国科学院文献情报中心期刊分区表", "authoritative platform issuer")
+    require(platform["upgraded_2025_listed_as_available"] is True, "2025 upgraded data available")
+    require(platform["journal_search_supports_title_and_issn"] is True, "title and ISSN search supported")
+    require(platform["journal_partition_data_requires_institutional_or_authenticated_access"] is True, "partition data access boundary")
+    require(platform["hbut_access_verified"] is False and platform["applied_intelligence_2025_record_retrieved"] is False, "target record not retrieved")
     attachment = data["central_policy_attachment_access"]
     require(attachment["captcha_required"] is True, "CAPTCHA boundary")
     require(attachment["contents_inspected"] is False, "attachment not inspected")

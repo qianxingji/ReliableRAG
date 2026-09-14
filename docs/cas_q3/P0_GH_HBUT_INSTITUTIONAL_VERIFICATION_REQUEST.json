@@ -21,7 +21,8 @@
     "qwen_and_deberta_institutional_review": true,
     "acceptable_retained_evidence_form": true,
     "college_previous_publication_year_rule_applies_university_wide": true,
-    "candidate_2025_report_if_published_2026": true
+    "candidate_2025_report_if_published_2026": true,
+    "official_cas_platform_screenshot_or_export": true
   },
   "request_sent": false,
   "institutional_response_received": false,
