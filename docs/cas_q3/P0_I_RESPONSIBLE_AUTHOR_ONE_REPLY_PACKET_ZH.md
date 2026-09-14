@@ -22,7 +22,7 @@
   请明确回答是否批准；如不准确，请给出替代措辞。
 - AI 工具记录格式：`OpenAI Codex (GPT-Astra and GPT-Sol), YYYY-MM-DD to YYYY-MM-DD`。日期必须按实际使用范围填写。
 - 如果确实不存在利益冲突，可确认：`The author declares no competing interests.`；否则请如实列出实际关系。
-- 论文审批证据请存入 Git 忽略目录 `evidence/private/institutional_manuscript_approval/`，并提供文件名、审批日期和经办单位。
+- 论文审批证据请存入 Git 忽略目录 `evidence/private/institutional_manuscript_approval/`，并按 `docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD_TEMPLATE.json` 填写 Git 忽略的 `docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json`；记录须绑定获批稿件的实际 SHA-256、审批日期和经办单位。
 - 代码发布审查证据请存入 Git 忽略目录 `evidence/private/institutional_release_record/`，并提供文件名、审批日期和经办单位。
 
 ## 一次回复模板

@@ -108,7 +108,9 @@ def render(missing: list[str]) -> str:
     if any("institutional_manuscript_approval" in path for path in missing):
         candidate_lines.append(
             "- 论文审批证据请存入 Git 忽略目录 "
-            "`evidence/private/institutional_manuscript_approval/`，并提供文件名、审批日期和经办单位。"
+            "`evidence/private/institutional_manuscript_approval/`，并按 "
+            "`docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD_TEMPLATE.json` 填写 Git 忽略的 "
+            "`docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json`；记录须绑定获批稿件的实际 SHA-256、审批日期和经办单位。"
         )
     if any(
         path in missing

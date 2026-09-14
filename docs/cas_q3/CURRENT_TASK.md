@@ -25,8 +25,11 @@ evidence.
 
 The ignored local closure workspace is now operational. The preparer preserved
 the existing owner-input bytes, created empty institutional CAS and release
-placeholders from the tracked templates, and created both private-evidence
-directories. All three files are readable by the unified verifier, which still
+placeholders from the tracked templates, and created their private-evidence
+directories. A separate institutional manuscript-approval template and
+fail-closed verifier now bind eventual approval evidence to the exact approved
+manuscript bytes; its local placeholder and evidence directory are also ignored
+by Git. The three existing unified-closure files remain readable by the unified verifier, which still
 fails closed: owner inputs have 6 missing fields and zero errors, the CAS
 placeholder has 22 missing fields and zero errors, and the release placeholder
 has 22 missing fields plus five expected empty-placeholder conflicts. No
@@ -387,9 +390,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 137 repository records plus preserved withheld archive
+  authenticates 141 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 963 checks, without
+  package in 978 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

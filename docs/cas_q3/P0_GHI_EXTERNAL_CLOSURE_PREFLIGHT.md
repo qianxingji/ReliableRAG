@@ -24,10 +24,11 @@ Git-ignored.
 ## Local workspace execution on 2026-09-14
 
 `python scripts/prepare_cas_q3_private_closure_workspace.py` was executed in the
-isolated worktree. It preserved the existing owner-input file byte-for-byte,
-created the two missing institutional `.local.json` files from their empty
-templates and created both empty private-evidence directories. The preparation
-script prints paths and state labels only; it printed no private values.
+isolated worktree. It preserved the existing owner-input file byte-for-byte and
+created the two original institutional `.local.json` files from their empty
+templates. The preparer now also covers the separate institutional manuscript-
+approval placeholder and its private-evidence directory. It prints paths and
+state labels only; it prints no private values.
 
 The unified verifier can now read all three files, but the two newly created
 files are placeholders, not institutional records. After the responsible

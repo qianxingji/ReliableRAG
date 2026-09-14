@@ -18,12 +18,13 @@ class PrivateClosureWorkspaceTests(unittest.TestCase):
             (Path("templates/owner.json"), Path("private/owner.local.json")),
             (Path("templates/cas.json"), Path("private/cas.local.json")),
             (Path("templates/release.json"), Path("private/release.local.json")),
+            (Path("templates/manuscript-approval.json"), Path("private/manuscript-approval.local.json")),
         )
         for index, (template, _) in enumerate(self.specs):
             path = self.root / template
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps({"schema_version": 1, "slot": index}) + "\n", encoding="utf-8")
-        self.evidence = (Path("evidence/cas"), Path("evidence/release"))
+        self.evidence = (Path("evidence/cas"), Path("evidence/release"), Path("evidence/manuscript-approval"))
 
     def tearDown(self) -> None:
         self.directory.cleanup()
