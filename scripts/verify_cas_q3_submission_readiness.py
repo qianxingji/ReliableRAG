@@ -662,7 +662,7 @@ def main() -> int:
     local_validation = local_closure["validation"]
     require(local_validation["exit_code"] == 2, "local unified validation remains fail-closed", checks)
     require(
-        local_validation["owner_inputs"] == {"missing_field_count": 19, "validation_error_count": 0},
+        local_validation["owner_inputs"] == {"missing_field_count": 16, "validation_error_count": 0},
         "owner-input local status is fixed without exposing values",
         checks,
     )
@@ -701,7 +701,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_ghi_external_closure_current_owner_missing_fields"] == 19
+        evidence["p0_ghi_external_closure_current_owner_missing_fields"] == 16
         and evidence["p0_ghi_external_closure_current_owner_validation_errors"] == 0,
         "indexed owner component remains incomplete without validation errors",
         checks,
@@ -753,8 +753,18 @@ def main() -> int:
         "privacy-safe owner reply packet is bound",
         checks,
     )
-    require(reply_receipt["missing_field_count"] == 19, "owner reply packet records 19 missing fields", checks)
+    require(reply_receipt["missing_field_count"] == 16, "owner reply packet records 16 missing fields", checks)
     require(reply_receipt["validation_error_count"] == 0, "owner reply packet records zero validation errors", checks)
+    for resolved_path in (
+        "authorship.affiliations[0].department",
+        "authorship.corresponding_author_name",
+        "authorship.corresponding_author_email",
+    ):
+        require(
+            resolved_path not in reply_receipt["missing_field_paths"],
+            f"owner-supplied field no longer requested: {resolved_path}",
+            checks,
+        )
     require(reply_receipt["personal_values_emitted"] is False, "owner reply packet emits no personal values", checks)
     require(reply_receipt["submission_authorized"] is False, "owner reply packet does not authorize submission", checks)
 
@@ -774,7 +784,7 @@ def main() -> int:
         checks,
     )
     require(
-        current_build_gate["missing_field_count"] == 19
+        current_build_gate["missing_field_count"] == 16
         and current_build_gate["validation_error_count"] == 0,
         "current build gate retains the exact owner-input deficit",
         checks,
@@ -800,7 +810,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_i_current_private_build_gate_missing_fields"] == 19
+        evidence["p0_i_current_private_build_gate_missing_fields"] == 16
         and evidence["p0_i_current_private_build_gate_validation_errors"] == 0
         and evidence["p0_i_current_private_build_gate_input_matches_empty_template"] is False
         and evidence["p0_i_current_private_build_gate_transport_access_attempted"] is False
@@ -926,7 +936,6 @@ def main() -> int:
             "gate": "P0-I",
             "status": "OPEN",
             "missing": [
-                "department and corresponding-author identity/email fields",
                 "truthful per-author contribution coverage, funding, interests, ethics and AI-assistance declarations",
                 "originality, exclusive-submission and all-author approval",
                 "author-populated final target package",
@@ -943,7 +952,7 @@ def main() -> int:
         checks,
     )
     require(
-        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_19_MISSING_ZERO_VALIDATION_ERRORS",
+        evidence["p0_i_author_inputs_status"] == "PARTIAL_OWNER_INPUTS_LOCAL_16_MISSING_ZERO_VALIDATION_ERRORS",
         "P0-I records partial owner facts without treating them as complete",
         checks,
     )

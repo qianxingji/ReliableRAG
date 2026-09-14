@@ -30,8 +30,10 @@ templates and created both empty private-evidence directories. The preparation
 script prints paths and state labels only; it printed no private values.
 
 The unified verifier can now read all three files, but the two newly created
-files are placeholders, not institutional records. The owner input remains at
-19 missing fields and zero validation errors. The CAS placeholder has 22 missing
+files are placeholders, not institutional records. After the responsible
+author supplied the department, formal author name and active corresponding
+email, the owner input remains at 16 missing fields and zero validation errors;
+no supplied value is emitted in this record. The CAS placeholder has 22 missing
 fields and zero validation errors. The release placeholder has 22 missing fields
 and five expected fail-closed placeholder conflicts. No institutional evidence
 bytes were read, no cross-record inconsistency was observed, and the command

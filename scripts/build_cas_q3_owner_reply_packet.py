@@ -20,12 +20,59 @@ DEFAULT_OUTPUT = ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_P
 DEFAULT_RECEIPT = ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json"
 
 
+PROMPTS_ZH = {
+    "authorship.authors_in_order[0].credit_role_assignment": (
+        "按实际贡献列出作者承担的 CRediT 角色；至少一个角色，不要填写未发生的贡献。"
+    ),
+    "declarations.funding_statement": "Funding statement（无外部资助也请明确写出）。",
+    "declarations.competing_interests_statement": "Competing interests statement。",
+    "declarations.ethics_statement_or_approval": (
+        "Ethics statement / approval（依据学校规则确认公开 benchmark 计算实验是否不涉及人或动物伦理审批）。"
+    ),
+    "declarations.ai_assistance_statement_approved=true": (
+        "是否批准当前 AI assistance statement 候选措辞（是/否；否时给出真实替代措辞）。"
+    ),
+    "declarations.ai_tool_version_and_use_dates": "实际使用的 AI 工具、版本及使用日期范围。",
+    "declarations.overlapping_work_or_preprint_disclosure": (
+        "Overlapping work / preprint disclosure（无则写 NONE_DISCLOSED）。"
+    ),
+    "declarations.originality_confirmed=true": "是否确认论文原创且没有一稿多投（是/否）。",
+    "declarations.exclusive_submission_confirmed=true": (
+        "是否确认 Applied Intelligence 为当前唯一投稿目标（是/否）。"
+    ),
+    "declarations.all_authors_approved_final_manuscript_and_order=true": (
+        "全部作者是否批准最终稿和作者顺序（是/否；单作者也需确认）。"
+    ),
+    "declarations.institutional_manuscript_approval_required": (
+        "学校是否要求投稿前论文审批（是/否/待核实）。"
+    ),
+    "declarations.institutional_manuscript_approval_evidence": (
+        "若要求投稿前审批，给出审批状态与留存证据；若不要求，给出负责人确认记录。"
+    ),
+    "project_license.legal_copyright_holder": (
+        "ReliableRAG 原创代码的法律版权人（个人/学校/其他，写法须经确认）。"
+    ),
+    "project_license.copyright_year_or_range": "版权年份或年份范围。",
+    "project_license.institutional_release_review_required": (
+        "学校是否要求代码公开发布前审查（是/否/待核实）；若要求，请给出审批状态与留存证据。"
+    ),
+    "target_journal.institution_recognized_cas_edition_year": (
+        "湖北工业大学采用的中科院《期刊分区表》升级版年份/版本，以及 Applied Intelligence "
+        "在计算机科学大类三区及以上的留存记录路径或经办部门。"
+    ),
+}
+
+
 def digest(payload: bytes) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
 def render(missing: list[str]) -> str:
     numbered = "\n".join(f"{index}. `{path}`" for index, path in enumerate(missing, start=1))
+    prompts = "\n".join(
+        f"{index}. `{path}`：{PROMPTS_ZH.get(path, '请提供该字段的真实、可核验值。')}"
+        for index, path in enumerate(missing, start=1)
+    )
     return f"""# P0-I 负责人一次回复确认单
 
 **CAS Q3 STATUS: NOT READY.**
@@ -38,40 +85,13 @@ def render(missing: list[str]) -> str:
 
 ## 一次回复模板
 
-请复制下面代码块并一次填写。方括号内容是说明，不能确认的项目写“待核实”，不要猜测。个人事实和作者声明由负责人确认；中科院分区、机构审批及代码发布审查仍须保留独立证据。
+请复制下面代码块并一次填写。这里只列出当前仍缺的项目；已经验收的院系、正式署名和通讯邮箱不会再次索取。不能确认的项目写“待核实”，不要猜测。个人事实和作者声明由负责人确认；中科院分区、机构审批及代码发布审查仍须保留独立证据。
 
 ```text
-【单位与作者】
-1. 院系/部门的正式中英文署名：
-2. 通讯作者正式署名：
-3. 通讯作者有效邮箱：
-可选：ORCID（官方指南为 if available/recommended）；单独邮寄地址仅在不同于已填写单位地址时提供。
-
-【CRediT 贡献】
-4. 按实际贡献列出每位作者承担的 CRediT 角色。每位作者至少一个角色；不要为了填满表格虚构 Supervision、Project administration 或其他未发生的贡献：
-
-【论文声明】
-5. Funding statement（无外部资助也请明确写出）：
-6. Competing interests statement：
-7. Ethics statement / approval（请依据学校规则确认公开 benchmark 计算实验是否不涉及人或动物伦理审批）：
-8. AI assistance statement 是否批准当前候选措辞（是/否；否时给出真实替代措辞）：
-9. 实际使用的 AI 工具、版本及使用日期范围：
-10. Overlapping work / preprint disclosure（无则写 NONE_DISCLOSED）：
-11. 是否确认论文原创且没有一稿多投（是/否）：
-12. 是否确认 Applied Intelligence 为当前唯一投稿目标（是/否）：
-13. 全部作者是否批准最终稿和作者顺序（是/否；单作者也需确认）：
-14. 学校是否要求投稿前论文审批（是/否/待核实）：
-15. 若要求，审批状态与留存证据；若不要求，给出负责人确认记录：
-可选：Acknowledgements；没有致谢对象时可以不设置该段。
-
-【代码版权与发布】
-16. ReliableRAG 原创代码的法律版权人（个人/学校/其他，写法须经确认）：
-17. 版权年份或年份范围：
-18. 学校是否要求代码公开发布前审查（是/否/待核实）；若要求，请给出审批状态与留存证据：
-
-【中科院分区独立证据】
-19. 湖北工业大学采用的中科院《期刊分区表》升级版年份/版本，以及 Applied Intelligence 在计算机科学大类三区及以上的留存记录路径或经办部门：
+{prompts}
 ```
+
+可选：ORCID（官方指南为 if available/recommended）；单独邮寄地址仅在不同于已填写单位地址时提供；没有致谢对象时可以不设置 Acknowledgements 段。
 
 ## 验收边界
 
@@ -109,13 +129,16 @@ def main() -> int:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--receipt", type=Path, default=DEFAULT_RECEIPT)
     args = parser.parse_args()
-    data = json.loads(args.input.read_text(encoding="utf-8"))
+    input_path = args.input.resolve()
+    output_path = args.output.resolve()
+    receipt_path = args.receipt.resolve()
+    data = json.loads(input_path.read_text(encoding="utf-8"))
     content, receipt = build(data)
     payload = content.encode("utf-8")
-    args.output.write_bytes(payload)
-    receipt["packet_path"] = args.output.relative_to(ROOT).as_posix()
+    output_path.write_bytes(payload)
+    receipt["packet_path"] = output_path.relative_to(ROOT.resolve()).as_posix()
     receipt["packet_sha256"] = digest(payload)
-    args.receipt.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8", newline="\n")
+    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(receipt, indent=2))
     return 0
 

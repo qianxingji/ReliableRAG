@@ -279,7 +279,7 @@ def main() -> int:
     )
     local_validation = local_closure["validation"]
     checks.equal(local_validation["exit_code"], 2, "current local closure remains fail-closed")
-    checks.equal(local_validation["owner_inputs"]["missing_field_count"], 19, "current owner missing fields")
+    checks.equal(local_validation["owner_inputs"]["missing_field_count"], 16, "current owner missing fields")
     checks.equal(local_validation["institutional_cas_record"]["missing_field_count"], 22, "CAS placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["missing_field_count"], 22, "release placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["validation_error_count"], 5, "release placeholder conflicts")
@@ -605,8 +605,14 @@ def main() -> int:
         "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
         "responsible-author reply packet decision",
     )
-    checks.equal(reply_receipt["missing_field_count"], 19, "reply packet missing-field count")
+    checks.equal(reply_receipt["missing_field_count"], 16, "reply packet missing-field count")
     checks.equal(reply_receipt["validation_error_count"], 0, "reply packet validation errors")
+    for resolved_path in (
+        "authorship.affiliations[0].department",
+        "authorship.corresponding_author_name",
+        "authorship.corresponding_author_email",
+    ):
+        checks.equal(resolved_path in reply_receipt["missing_field_paths"], False, f"owner-supplied field resolved: {resolved_path}")
     checks.equal(reply_receipt["personal_values_emitted"], False, "reply packet privacy boundary")
     checks.equal(reply_receipt["submission_authorized"], False, "reply packet does not authorize submission")
     reply_packet = (ROOT / reply_receipt["packet_path"]).read_text(encoding="utf-8")
@@ -625,7 +631,7 @@ def main() -> int:
     )
     checks.equal(current_build_gate["input_scope"], "LOCAL_GIT_IGNORED_OWNER_INPUT", "current private gate input scope")
     checks.equal(current_build_gate["input_matches_empty_template"], False, "current owner input is not empty template")
-    checks.equal(current_build_gate["missing_field_count"], 19, "current private gate missing fields")
+    checks.equal(current_build_gate["missing_field_count"], 16, "current private gate missing fields")
     checks.equal(current_build_gate["validation_error_count"], 0, "current private gate validation errors")
     checks.equal(current_build_gate["transport_access_attempted"], False, "current private gate does not access transport")
     checks.equal(current_build_gate["output_created"], False, "current private gate creates no output")

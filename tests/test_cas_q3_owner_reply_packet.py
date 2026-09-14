@@ -45,6 +45,9 @@ class OwnerReplyPacketTests(unittest.TestCase):
         self.assertIn("authorship.affiliations[0].department", content)
         self.assertNotIn("authorship.authors_in_order[0].orcid", content)
         self.assertIn("authorship.authors_in_order[0].credit_role_assignment", content)
+        self.assertNotIn("院系/部门的正式中英文署名", content)
+        self.assertNotIn("通讯作者正式署名", content)
+        self.assertNotIn("通讯作者有效邮箱", content)
         self.assertFalse(receipt["personal_values_emitted"])
         self.assertFalse(receipt["submission_authorized"])
 
