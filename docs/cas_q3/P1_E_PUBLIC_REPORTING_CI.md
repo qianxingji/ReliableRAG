@@ -124,6 +124,23 @@ and pull-request run
 Both completed successfully on 2026-09-14 and retained the institutional CAS,
 release, author-package and final-audit gates.
 
+The first bounded external-evidence census commit
+`2552b042ec6103ed81a29c4bf98f61f91df673a1` passed all Windows checks but
+failed push run
+[34854850909](https://github.com/qianxingji/ReliableRAG/actions/runs/34854850909)
+and pull-request run
+[34854858306](https://github.com/qianxingji/ReliableRAG/actions/runs/34854858306).
+The scanner compared exclusion names against every component of an absolute
+path. Linux temporary-test roots therefore inherited the `/tmp` component and
+were excluded before three positive/skip assertions could execute. Commit
+`4da3c290f58c8150ca356e0d6dc6db68f9e87940` limits pruning to descendant
+directories inside each supplied root and passed push run
+[34855553266](https://github.com/qianxingji/ReliableRAG/actions/runs/34855553266)
+and pull-request run
+[34855558071](https://github.com/qianxingji/ReliableRAG/actions/runs/34855558071).
+The repair changes traversal portability only. It does not alter the retained
+Windows census, recover institutional evidence or close a P0 gate.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`

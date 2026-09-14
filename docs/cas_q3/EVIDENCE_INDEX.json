@@ -186,7 +186,7 @@
   "p1_a_reviewer_evidence_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
   "p1_a_reviewer_evidence_map_sha256": "da6195a39dc17dd792451133009b7efafd35f649d5428aa8cc06a15eee335326",
   "p1_a_machine_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.json",
-  "p1_a_machine_map_sha256": "45aaeb0d4aab27a0be5101e71281003804ec00497a386479f3d8c7133c8909b7",
+  "p1_a_machine_map_sha256": "882e7757238e9a24f21dcc35faf7104176957b68271bf83703731003fba6bb42",
   "p1_a_verifier": "scripts/verify_cas_q3_reviewer_evidence_map.py",
   "p1_a_verifier_sha256": "42ec20d521e7275bf84a4432bf5d8fbf6e7bed3b7a1c3f86c5c7f1f2ee68596d",
   "p1_a_verification_receipt": "docs/cas_q3/REVIEWER_EVIDENCE_MAP_VERIFICATION.json",
@@ -248,7 +248,7 @@
   "submission_readiness_verification": "docs/cas_q3/SUBMISSION_READINESS_VERIFICATION.json",
   "submission_readiness_verification_sha256": "9bf61d00aedbca290184c39d4d5b9e8c8c8baa1a6f141ce6a456817262aab02b",
   "submission_readiness_decision": "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES",
-  "current_task_sha256": "d682662c11dbdbf02d07872c7ec8b291ee2ca4b68d90310bd18c6d87bd36aea2",
+  "current_task_sha256": "a2b6954bdcbd60a7ebfe6f0fe979c13cc15bcae89bc5d4e8a94eda28528fefac",
   "owner_inputs_intake": "docs/cas_q3/OWNER_INPUTS_INTAKE.md",
   "owner_inputs_intake_sha256": "e360f4f7f08e48c464935d9f121ae3e22c07ec226b1a55272e091f863ac81bdf",
   "owner_inputs_template": "docs/cas_q3/OWNER_INPUTS_TEMPLATE.json",
@@ -387,13 +387,13 @@
   "p0_h_applied_intelligence_target_selection_receipt_sha256": "459be1bc6af3f247e9d0733822c2c473e6dad362f23251bd782c1fae1355ab6e",
   "p0_h_owner_publication_charge_route": "SUBSCRIPTION_NO_MANDATORY_APC",
   "p1_e_public_reporting_ci": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-  "p1_e_public_reporting_ci_sha256": "0657350a8cb529cc354129a9ab0e252bf0f2a25a64f03e893ba2d6335cc6f212",
+  "p1_e_public_reporting_ci_sha256": "d15db59f8f8fdb0cfb018607e7ab2a94bfc3bb600efebe07d73bb317384c7d8b",
   "p1_e_workflow": ".github/workflows/public-reporting-audit.yml",
   "p1_e_workflow_sha256": "687922af05cd08e9c86ce72e2b1a43175d6fc7819cb5d454dc6dc31bd4ae100f",
   "p1_e_public_surface_verifier": "scripts/verify_cas_q3_public_reporting_surface.py",
   "p1_e_public_surface_verifier_sha256": "164c76504b89571eb32135db3eb2b1df74f13361be6dd076160489debbd1e41a",
   "p1_e_decision": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED",
-  "p1_e_accepted_commit": "bc8821984ff0e17fa71e531b98eb0c607d302290",
+  "p1_e_accepted_commit": "4da3c290f58c8150ca356e0d6dc6db68f9e87940",
   "p1_e_successful_run_ids": [
     34801833707,
     34801836852,
@@ -416,7 +416,9 @@
     34817939287,
     34817942528,
     34820858483,
-    34820862475
+    34820862475,
+    34855553266,
+    34855558071
   ],
   "p1_e_first_failure_run_ids": [
     34801428340,
@@ -756,5 +758,12 @@
   "p0_ghi_accessible_external_evidence_census_institutional_record_recovered": false,
   "p0_ghi_accessible_external_evidence_census_global_absence_proved": false,
   "p0_ghi_accessible_external_evidence_census_closes_any_p0": false,
-  "p0_ghi_accessible_external_evidence_census_submission_authorized": false
+  "p0_ghi_accessible_external_evidence_census_submission_authorized": false,
+  "p1_e_external_census_portability_failure_run_ids": [
+    34854850909,
+    34854858306
+  ],
+  "p1_e_external_census_portability_failure_cause": "ABSOLUTE_PATH_TMP_COMPONENT_EXCLUDED_LINUX_TEMPORARY_TEST_ROOTS",
+  "p1_e_external_census_portability_repair_commit": "4da3c290f58c8150ca356e0d6dc6db68f9e87940",
+  "p1_e_external_census_portability_failure_scientific_effect": false
 }
