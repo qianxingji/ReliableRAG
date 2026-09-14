@@ -640,6 +640,98 @@ def main() -> int:
     require(external_closure["author_populated_artifact_build_required"] is True, "author-populated artifact remains mandatory", checks)
     require(external_closure["final_astra_xhigh_audit_required"] is True, "final Astra xhigh audit remains mandatory", checks)
     require(external_closure["submission_authorized"] is False, "unified preflight does not authorize submission", checks)
+    local_closure = external_closure["local_workspace_execution"]
+    require(
+        local_closure["preparation_decision"]
+        == "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE",
+        "private closure workspace was prepared without overwrite",
+        checks,
+    )
+    require(local_closure["owner_input_hash_unchanged"] is True, "owner input bytes were preserved", checks)
+    require(
+        local_closure["placeholder_files_are_institutional_records"] is False,
+        "empty institutional placeholders are not treated as received records",
+        checks,
+    )
+    require(
+        local_closure["institutional_record_received"] is False
+        and local_closure["institutional_release_record_received"] is False,
+        "institutional CAS and release records remain pending",
+        checks,
+    )
+    local_validation = local_closure["validation"]
+    require(local_validation["exit_code"] == 2, "local unified validation remains fail-closed", checks)
+    require(
+        local_validation["owner_inputs"] == {"missing_field_count": 19, "validation_error_count": 0},
+        "owner-input local status is fixed without exposing values",
+        checks,
+    )
+    require(
+        local_validation["institutional_cas_record"]
+        == {"missing_field_count": 22, "validation_error_count": 0, "evidence_bytes_read": 0},
+        "empty institutional CAS placeholder is recorded exactly",
+        checks,
+    )
+    require(
+        local_validation["institutional_release_record"]
+        == {"missing_field_count": 22, "validation_error_count": 5, "evidence_bytes_read": 0},
+        "empty institutional release placeholder is recorded exactly",
+        checks,
+    )
+    require(local_validation["cross_consistency_error_count"] == 0, "placeholder run reports no cross inconsistency", checks)
+    require(local_closure["private_values_emitted"] is False, "workspace preparation emits no private values", checks)
+    require(
+        evidence["p0_ghi_private_closure_workspace_preparation_decision"]
+        == "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE",
+        "evidence index records the no-overwrite workspace preparation",
+        checks,
+    )
+    require(
+        evidence["p0_ghi_private_closure_workspace_owner_bytes_preserved"] is True
+        and evidence["p0_ghi_private_closure_workspace_private_values_emitted"] is False,
+        "workspace preparation preserves owner bytes and privacy",
+        checks,
+    )
+    require(
+        evidence["p0_ghi_external_closure_current_cas_record_input"]
+        == "READ_EMPTY_TEMPLATE_PLACEHOLDER"
+        and evidence["p0_ghi_external_closure_current_release_record_input"]
+        == "READ_EMPTY_TEMPLATE_PLACEHOLDER",
+        "institutional local files are explicitly classified as empty placeholders",
+        checks,
+    )
+    require(
+        evidence["p0_ghi_external_closure_current_owner_missing_fields"] == 19
+        and evidence["p0_ghi_external_closure_current_owner_validation_errors"] == 0,
+        "indexed owner component remains incomplete without validation errors",
+        checks,
+    )
+    require(
+        evidence["p0_ghi_external_closure_current_cas_record_missing_fields"] == 22
+        and evidence["p0_ghi_external_closure_current_cas_record_validation_errors"] == 0
+        and evidence["p0_ghi_external_closure_current_cas_record_evidence_bytes_read"] == 0,
+        "indexed CAS placeholder state is exact",
+        checks,
+    )
+    require(
+        evidence["p0_ghi_external_closure_current_release_record_missing_fields"] == 22
+        and evidence["p0_ghi_external_closure_current_release_record_validation_errors"] == 5
+        and evidence["p0_ghi_external_closure_current_release_record_evidence_bytes_read"] == 0,
+        "indexed release placeholder state is exact",
+        checks,
+    )
+    require(
+        evidence["p0_ghi_external_closure_current_cross_consistency_errors"] == 0
+        and evidence["p0_ghi_external_closure_current_exit_code"] == 2,
+        "indexed unified local closure remains fail-closed",
+        checks,
+    )
+    require(
+        evidence["p0_ghi_external_closure_institutional_cas_record_received"] is False
+        and evidence["p0_ghi_external_closure_institutional_release_record_received"] is False,
+        "empty placeholders do not close either institutional record gate",
+        checks,
+    )
     external_closure_verification = json.loads(
         (ROOT / evidence["p0_ghi_external_closure_preflight_verification"]).read_text(encoding="utf-8")
     )

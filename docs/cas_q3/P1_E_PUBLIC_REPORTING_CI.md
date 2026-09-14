@@ -116,6 +116,14 @@ Both completed successfully on 2026-09-14. They validate the public template
 and synthetic fail-closed cases only; no private institutional evidence was
 present on the runner and distribution remained unauthorized.
 
+The consolidated HBUT request and external-closure handoff at
+`bc8821984ff0e17fa71e531b98eb0c607d302290` passed push run
+[34820858483](https://github.com/qianxingji/ReliableRAG/actions/runs/34820858483)
+and pull-request run
+[34820862475](https://github.com/qianxingji/ReliableRAG/actions/runs/34820862475).
+Both completed successfully on 2026-09-14 and retained the institutional CAS,
+release, author-package and final-audit gates.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`

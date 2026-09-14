@@ -21,6 +21,24 @@ does not print names, email addresses, declarations, evidence text, holder names
 or other supplied values. The three local inputs and their evidence remain
 Git-ignored.
 
+## Local workspace execution on 2026-09-14
+
+`python scripts/prepare_cas_q3_private_closure_workspace.py` was executed in the
+isolated worktree. It preserved the existing owner-input file byte-for-byte,
+created the two missing institutional `.local.json` files from their empty
+templates and created both empty private-evidence directories. The preparation
+script prints paths and state labels only; it printed no private values.
+
+The unified verifier can now read all three files, but the two newly created
+files are placeholders, not institutional records. The owner input remains at
+19 missing fields and zero validation errors. The CAS placeholder has 22 missing
+fields and zero validation errors. The release placeholder has 22 missing fields
+and five expected fail-closed placeholder conflicts. No institutional evidence
+bytes were read, no cross-record inconsistency was observed, and the command
+returned exit code 2 with
+`FAIL_CLOSED_PRIVATE_EXTERNAL_CLOSURE_INPUTS_INCOMPLETE_INVALID_OR_INCONSISTENT`.
+P0-G, P0-H and P0-I therefore remain open.
+
 Its strongest possible decision is
 `PASS_PRIVATE_EXTERNAL_CLOSURE_INPUTS_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_ARTIFACT_AND_ASTRA_AUDITS`.
 That result does not certify the meaning or authority of either retained record.

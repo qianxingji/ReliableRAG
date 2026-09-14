@@ -263,6 +263,28 @@ def main() -> int:
     checks.equal(external_closure["strongest_result_closes_p0_h"], False, "structural pass does not close P0-H")
     checks.equal(external_closure["strongest_result_closes_p0_i"], False, "structural pass does not close P0-I")
     checks.equal(external_closure["submission_authorized"], False, "unified preflight does not authorize submission")
+    local_closure = external_closure["local_workspace_execution"]
+    checks.equal(
+        local_closure["preparation_decision"],
+        "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE",
+        "private closure workspace prepared without overwrite",
+    )
+    checks.equal(local_closure["owner_input_hash_unchanged"], True, "owner input bytes preserved")
+    checks.equal(local_closure["placeholder_files_are_institutional_records"], False, "placeholders are not records")
+    checks.equal(local_closure["institutional_record_received"], False, "institutional CAS record remains pending")
+    checks.equal(
+        local_closure["institutional_release_record_received"],
+        False,
+        "institutional release record remains pending",
+    )
+    local_validation = local_closure["validation"]
+    checks.equal(local_validation["exit_code"], 2, "current local closure remains fail-closed")
+    checks.equal(local_validation["owner_inputs"]["missing_field_count"], 19, "current owner missing fields")
+    checks.equal(local_validation["institutional_cas_record"]["missing_field_count"], 22, "CAS placeholder missing fields")
+    checks.equal(local_validation["institutional_release_record"]["missing_field_count"], 22, "release placeholder missing fields")
+    checks.equal(local_validation["institutional_release_record"]["validation_error_count"], 5, "release placeholder conflicts")
+    checks.equal(local_validation["cross_consistency_error_count"], 0, "no cross-record inconsistency inferred from placeholders")
+    checks.equal(local_closure["private_values_emitted"], False, "workspace preparation emits no private values")
     external_closure_verification = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT_VERIFICATION.json").read_text(
             encoding="utf-8"
@@ -627,6 +649,7 @@ def main() -> int:
         "tests.test_cas_q3_institutional_cas_record",
         "tests.test_cas_q3_institutional_release_record",
         "tests.test_cas_q3_external_closure_inputs",
+        "tests.test_cas_q3_private_closure_workspace",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
@@ -645,6 +668,8 @@ def main() -> int:
         checks.true(forbidden not in workflow, f"private-input command excluded from public CI: {forbidden}")
     ci_acceptance = (ROOT / "docs" / "cas_q3" / "P1_E_PUBLIC_REPORTING_CI.md").read_text(encoding="utf-8")
     for run_id in (
+        "34820858483",
+        "34820862475",
         "34817939287",
         "34817942528",
         "34814508417",

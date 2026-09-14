@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "af79b20edd1e75ec0cae0c840624f2f118345c0fbdaede5923cc21c2b579acac",
+      "sha256": "fea6095015a8720e3b9815579f286fc33fc57b3848625f1ee950102bc3ab6be5",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -285,12 +285,12 @@
     },
     {
       "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-      "sha256": "dc6cd21f6433694fea61d71859f6debd19711bbe1c1e6fb46bb81de9c4409910",
+      "sha256": "0657350a8cb529cc354129a9ab0e252bf0f2a25a64f03e893ba2d6335cc6f212",
       "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "d536571f783420f87cffd02ca60064c35e9ccc78ac3f40614c6f913c30f6af78",
+      "sha256": "2233aaf7fa509a1e97fe0161d7a53ab65a36206abe3277b651de7b355c2ed5d7",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -596,12 +596,12 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json",
-      "sha256": "d2dcf41ef1ad49254493d0ffd2af240d4510f661778c94aeeced0d17d79ffecb",
+      "sha256": "770469eb7b7a9865e64c0ec461f9555ff28d91278436f77faa62b0406fbc3d95",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md",
-      "sha256": "116b944810c7a7b256fa8d1c6fe75cd3849a0b1528966cb516f18ca370838533",
+      "sha256": "df17633f853e76e76c0c36ef5a9476b09def78eebf328f240305060830298e4e",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
@@ -617,6 +617,15 @@
     {
       "path": "tests/test_cas_q3_external_closure_inputs.py",
       "sha256": "5e82df8f522b7d2502ee848997f9a7101e05fa8f466a421f04c14f2080deb99e"
+    },
+    {
+      "path": "scripts/prepare_cas_q3_private_closure_workspace.py",
+      "sha256": "9e7fd025614a70f9dc0a0cb1cfd3cf0d85d08e1ca70027a6572d58b6e947c3d2",
+      "required_marker": "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE"
+    },
+    {
+      "path": "tests/test_cas_q3_private_closure_workspace.py",
+      "sha256": "35cbf8bab2e991927820ca2befa314ee142e7dd02575d91dacb99e4bbd38a1ea"
     }
   ],
   "aggregate_release_candidate": {

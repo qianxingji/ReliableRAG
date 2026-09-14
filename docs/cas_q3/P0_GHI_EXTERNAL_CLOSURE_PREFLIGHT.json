@@ -21,6 +21,44 @@
     "private_values_emitted": false,
     "only_status_counts_and_field_paths_emitted": true
   },
+  "local_workspace_execution": {
+    "execution_date": "2026-09-14",
+    "preparation_decision": "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE",
+    "owner_input_status": "PRESERVED_EXISTING_BYTES",
+    "owner_input_hash_unchanged": true,
+    "institutional_cas_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
+    "institutional_release_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
+    "institutional_cas_evidence_directory_status": "CREATED_EMPTY",
+    "institutional_release_evidence_directory_status": "CREATED_EMPTY",
+    "placeholder_files_are_institutional_records": false,
+    "institutional_record_received": false,
+    "institutional_release_record_received": false,
+    "validation": {
+      "decision": "FAIL_CLOSED_PRIVATE_EXTERNAL_CLOSURE_INPUTS_INCOMPLETE_INVALID_OR_INCONSISTENT",
+      "exit_code": 2,
+      "input_file_states": {
+        "owner_inputs": "READ",
+        "institutional_cas_record": "READ",
+        "institutional_release_record": "READ"
+      },
+      "owner_inputs": {
+        "missing_field_count": 19,
+        "validation_error_count": 0
+      },
+      "institutional_cas_record": {
+        "missing_field_count": 22,
+        "validation_error_count": 0,
+        "evidence_bytes_read": 0
+      },
+      "institutional_release_record": {
+        "missing_field_count": 22,
+        "validation_error_count": 5,
+        "evidence_bytes_read": 0
+      },
+      "cross_consistency_error_count": 0
+    },
+    "private_values_emitted": false
+  },
   "strongest_possible_preflight_decision": "PASS_PRIVATE_EXTERNAL_CLOSURE_INPUTS_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_ARTIFACT_AND_ASTRA_AUDITS",
   "strongest_result_closes_p0_g": false,
   "strongest_result_closes_p0_h": false,

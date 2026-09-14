@@ -52,6 +52,7 @@ jobs:
             tests.test_cas_q3_institutional_cas_record \
             tests.test_cas_q3_institutional_release_record \
             tests.test_cas_q3_external_closure_inputs \
+            tests.test_cas_q3_private_closure_workspace \
             tests.test_cas_q3_owner_reply_packet \
             tests.test_cas_q3_private_submission_packet \
             tests.test_cas_q3_manuscript_length \
