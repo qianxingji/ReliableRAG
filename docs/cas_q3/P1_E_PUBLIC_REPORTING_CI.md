@@ -221,6 +221,18 @@ host receipt reduces 270 occurrences to 35 hashes and reports 446/446 pages
 above the text threshold, including 15 pages with raster images. CI does not
 rerun the three-root host scan or claim OCR of image-internal text.
 
+The external raster-image audit and Discover preflight test-isolation correction
+at `80f3affb84f8dd6ecb2dde148ecd5fc0daff299c` passed push run
+[34923431850](https://github.com/qianxingji/ReliableRAG/actions/runs/34923431850)
+and pull-request run
+[34923434886](https://github.com/qianxingji/ReliableRAG/actions/runs/34923434886).
+The public workflow executes the six synthetic image-audit tests and authenticates
+the committed 104-occurrence/43-hash host receipt, 7,796-path junction disclosure,
+176-record reviewer map and 210-hash fail-closed submission receipt. It does not
+possess or rescan the external Windows roots and does not infer the 43-image
+manual visual review. A separate complete local discovery passed all 123 tests
+after the Discover builder test was isolated from tracked artifacts.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
