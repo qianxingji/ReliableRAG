@@ -132,6 +132,16 @@ not hidden documents. The later
 whitespace extracted-text bytes on every one of 446 pages. Fifteen pages contain
 raster-image objects but none is textless or low-text. OCR of image-internal
 text on otherwise text-bearing pages and unknown formats remain outside scope.
+The later [external raster-image audit](P0_GHI_EXTERNAL_IMAGE_EVIDENCE.md)
+inspects common image magic in ordinary files, direct ZIP members and nested ZIP
+members. Its 104 occurrences reduce to 43 hashes; complete project-lead visual
+review classifies all of them as 14 old-manuscript figures or 29 shared-runtime
+icons/format fixtures, with no external-closure record. The companion
+[reparse-scope disclosure](P0_GHI_LOGICAL_ROOT_REPARSE_DISCLOSURE.md) records
+that one logical in-root Windows junction caused 7,796 scanned paths to resolve
+to a shared runtime outside the three physical roots. Earlier counts therefore
+describe a logical-root superset and are host-local; the negative candidate
+result remains bounded and no shared-runtime byte is treated as project evidence.
 
 The [current private build-gate check](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
 exercises the nonempty Git-ignored owner input without emitting any supplied
@@ -139,6 +149,13 @@ value or hash. Its 6-field failure occurs before a tripwire transport can be
 accessed and before an output directory can be created. This authenticates the
 current fail-closed integration state; it does not create an author-populated
 artifact or close P0-I.
+
+The [Discover preflight test-isolation corrigendum](P1_E_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM.md)
+retains the first 123-test failure caused by a test overwriting three tracked
+historical preflight files. The Submission gate rejected their changed hashes;
+the accepted bytes were restored and the test now builds only under a temporary
+worktree directory that is cleaned after its assertions. The subsequent complete
+CAS Q3 discovery passes all 123 tests.
 
 ## Reviewer sequence
 
@@ -215,9 +232,15 @@ artifact or close P0-I.
    OOXML/ODF/RTF/OLE container, mismatch or error, while retaining the three
    loose source-code `%PDF-` false positives.
    Run `python scripts/audit_cas_q3_pdf_page_text_coverage.py` with the same
-   roots to repeat the unique-PDF page pass. It must reduce 270 occurrences to
-   35 hashes and verify all 446 pages, including 15 pages with raster-image
-   objects, with zero textless/low-text page, skip or parser error.
+    roots to repeat the unique-PDF page pass. It must reduce 270 occurrences to
+    35 hashes and verify all 446 pages, including 15 pages with raster-image
+    objects, with zero textless/low-text page, skip or parser error.
+   Run `python scripts/audit_cas_q3_external_image_evidence.py` with the same
+   roots to repeat the common-raster pass. It must cover 465,460 logical paths,
+   39 direct and four nested ZIPs, return 104 image occurrences and 43 hashes,
+   disclose 7,796 outside-resolved junction paths, and produce no suffix
+   mismatch or error. Pixel-content classification remains the signed manual
+   review in its acceptance record rather than an OCR Claim.
 
 ## Claim-to-evidence routing
 

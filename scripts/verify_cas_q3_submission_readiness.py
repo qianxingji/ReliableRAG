@@ -1168,6 +1168,56 @@ def main() -> int:
         checks,
     )
 
+    image_evidence = json.loads(
+        (ROOT / evidence["p0_ghi_external_image_evidence"]).read_text(encoding="utf-8")
+    )
+    require(
+        image_evidence["decision"]
+        == "PASS_BOUNDED_COMMON_RASTER_IMAGE_INVENTORY_NO_EXTENSION_MISMATCH",
+        "external raster-image inventory passes",
+        checks,
+    )
+    require(
+        image_evidence["roots_scanned"] == 3
+        and image_evidence["ordinary_files_seen"] == 465460
+        and image_evidence["zip_archives_scanned"] == 39
+        and image_evidence["nested_zip_archives_scanned"] == 4
+        and image_evidence["direct_zip_members_seen"] == 2389
+        and image_evidence["nested_zip_members_seen"] == 301,
+        "external raster-image logical-root and archive coverage is pinned",
+        checks,
+    )
+    require(
+        image_evidence["ordinary_image_occurrences"] == 83
+        and image_evidence["direct_zip_image_members"] == 21
+        and image_evidence["nested_zip_image_members"] == 0
+        and image_evidence["image_occurrences"] == 104
+        and image_evidence["unique_image_hashes"] == 43,
+        "external raster-image occurrence and deduplication coverage is pinned",
+        checks,
+    )
+    require(
+        image_evidence["resolved_outside_declared_roots_files"] == 7796
+        and image_evidence["resolved_outside_declared_roots_image_occurrences"] == 34
+        and image_evidence["resolved_outside_declared_roots_unique_image_hashes"] == 29
+        and image_evidence["bounded_interpretation"]["logical_root_reparse_targets_disclosed"] is True,
+        "logical-root junction expansion is disclosed",
+        checks,
+    )
+    require(
+        image_evidence["image_magic_suffix_mismatch_count"] == 0
+        and image_evidence["scan_error_count"] == 0,
+        "external raster-image inventory retains no mismatch or error",
+        checks,
+    )
+    require(
+        image_evidence["bounded_interpretation"]["image_pixel_text_ocr_performed"] is False
+        and image_evidence["bounded_interpretation"]["absence_outside_scanned_roots_proved"] is False
+        and image_evidence["submission_authorized"] is False,
+        "external raster-image result remains bounded and non-authorizing",
+        checks,
+    )
+
     reply_receipt = json.loads(
         (ROOT / evidence["p0_i_owner_reply_packet_verification"]).read_text(encoding="utf-8")
     )

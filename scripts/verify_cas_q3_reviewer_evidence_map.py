@@ -476,6 +476,37 @@ def main() -> int:
     checks.equal(pdf_page_coverage["bounded_interpretation"]["text_inside_images_on_text_bearing_pages_excluded"], True, "image-internal text exclusion retained")
     checks.equal(pdf_page_coverage["submission_authorized"], False, "page audit does not authorize submission")
 
+    image_evidence = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_EXTERNAL_IMAGE_EVIDENCE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        image_evidence["decision"],
+        "PASS_BOUNDED_COMMON_RASTER_IMAGE_INVENTORY_NO_EXTENSION_MISMATCH",
+        "external raster-image inventory decision",
+    )
+    checks.equal(image_evidence["roots_scanned"], 3, "external image logical roots")
+    checks.equal(image_evidence["ordinary_files_seen"], 465460, "external image ordinary logical paths")
+    checks.equal(image_evidence["resolved_outside_declared_roots_files"], 7796, "junction outside-resolved files disclosed")
+    checks.equal(image_evidence["zip_archives_scanned"], 39, "external image direct ZIPs")
+    checks.equal(image_evidence["nested_zip_archives_scanned"], 4, "external image nested ZIPs")
+    checks.equal(image_evidence["direct_zip_members_seen"], 2389, "external image direct ZIP members")
+    checks.equal(image_evidence["nested_zip_members_seen"], 301, "external image nested ZIP members")
+    checks.equal(image_evidence["ordinary_image_occurrences"], 83, "ordinary image occurrences")
+    checks.equal(image_evidence["direct_zip_image_members"], 21, "direct ZIP image occurrences")
+    checks.equal(image_evidence["nested_zip_image_members"], 0, "nested ZIP image occurrences")
+    checks.equal(image_evidence["image_occurrences"], 104, "total image occurrences")
+    checks.equal(image_evidence["unique_image_hashes"], 43, "unique image hashes")
+    checks.equal(image_evidence["resolved_outside_declared_roots_image_occurrences"], 34, "junction image occurrences")
+    checks.equal(image_evidence["resolved_outside_declared_roots_unique_image_hashes"], 29, "junction unique image hashes")
+    checks.equal(image_evidence["image_magic_suffix_mismatch_count"], 0, "image suffix mismatches")
+    checks.equal(image_evidence["scan_error_count"], 0, "external image scan errors")
+    checks.equal(image_evidence["bounded_interpretation"]["image_pixel_text_ocr_performed"], False, "image audit does not claim OCR")
+    checks.equal(image_evidence["bounded_interpretation"]["logical_root_reparse_targets_disclosed"], True, "junction scope disclosed")
+    checks.equal(image_evidence["bounded_interpretation"]["absence_outside_scanned_roots_proved"], False, "image audit does not claim global absence")
+    checks.equal(image_evidence["submission_authorized"], False, "image audit does not authorize submission")
+
     applied_preflight = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json").read_text(encoding="utf-8")
     )

@@ -199,14 +199,25 @@ fairness, reviewer and Submission Ready audits.
    license and `LICENSE_SCOPE.md`. Its 26-check verifier rejects a return to the
    stale “owner decision required” state and keeps the legal holder, year,
    institutional review, Qwen research-license and non-`-c` DeBERTa gates open.
-   A fail-closed [private institutional release-record intake](P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.md)
+    A fail-closed [private institutional release-record intake](P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.md)
    now binds any future owner/institution decision to the exact corrected V2
    archive hash. It checks retained evidence bytes, holder/year, release-review
    and NOTICE consistency, the no-weight/no-benchmark-payload boundary, and the
    Qwen/DeBERTa scope decisions without committing private evidence. Its
-   structural pass still requires a separate client content audit, explicit
-   owner authorization, a persistent identifier and the journal-approved
-   restricted-review route; no release record has yet been received.
+    structural pass still requires a separate client content audit, explicit
+    owner authorization, a persistent identifier and the journal-approved
+    restricted-review route; no release record has yet been received.
+    A later [external raster-image audit](P0_GHI_EXTERNAL_IMAGE_EVIDENCE.md)
+    checks common image magic across the same logical roots, all direct ZIP
+    members and all first-level nested ZIP members. It reduces 104 occurrences
+    to 43 hashes and records a complete project-lead visual review: 14 hashes are
+    old manuscript figures and 29 are shared-runtime icons or format fixtures;
+    none is an institutional closure record. Its companion
+    [logical-root reparse disclosure](P0_GHI_LOGICAL_ROOT_REPARSE_DISCLOSURE.md)
+    corrects the earlier physical-boundary wording: 7,796 logical paths resolve
+    through one Windows junction into a shared runtime. That superset does not
+    invalidate the bounded negative search, but exact counts are host-local and
+    the shared-runtime bytes are not preserved project evidence.
 8. **P0-H -- OWNER TARGET SELECTED / INSTITUTIONAL CAS RECORD PENDING:** The
    [Applied Intelligence target selection](P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md)
    records the owner's target, Hubei University of Technology major-category
@@ -429,9 +440,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 169 repository records plus preserved withheld archive
+  authenticates 176 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,218 checks, without
+  package in 1,267 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -456,7 +467,13 @@ fairness, reviewer and Submission Ready audits.
   exposed Ubuntu `LOCALAPPDATA` and absolute-`/tmp` traversal failures and their
   successful repairs are retained in the CI acceptance record. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
-  outside this CI.
+  outside this CI. The later
+  [Discover preflight test-isolation corrigendum](P1_E_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM.md)
+  preserves a 123-test/one-failure run in which the test rebuilt three tracked
+  historical artifacts and the Submission gate rejected their changed hashes.
+  The test now uses a cleaned temporary output root; the accepted tracked bytes
+  were restored before further verification, and the subsequent complete CAS Q3
+  discovery passes all 123 tests.
 
 ## P2: optional and currently closed
 

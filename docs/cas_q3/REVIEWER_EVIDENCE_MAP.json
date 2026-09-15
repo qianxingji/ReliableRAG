@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "8447c246f88f2a73aca7abf8f726954a3388059228869786ceb8b2227867d235",
+      "sha256": "ec92b4ef4a9291aac71e6c87372acd2c5cca214ef78438624fa87fa8aa671f65",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "445660ce4ec31ae2fc1f6383c63aa83b7cc6e63ad2464fa623e4224d6aee593a",
+      "sha256": "6d241c331e2502ee2c5729ba587c33092b0b8a9d216df2fc7cb627f834bed000",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -833,6 +833,41 @@
       "path": "tests/test_cas_q3_pdf_page_text_coverage.py",
       "sha256": "f0a4d4077da373d54cbf635b87d362eeddae72a72b57a7dfa8ca0390a86aaa6d",
       "required_marker": "test_low_text_page_fails_closed"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_IMAGE_EVIDENCE.json",
+      "sha256": "a5f8f68651313ef685462a84fbf18a090f87c8c2a31843b8542cfed0885da5bf",
+      "required_marker": "PASS_BOUNDED_COMMON_RASTER_IMAGE_INVENTORY_NO_EXTENSION_MISMATCH"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_IMAGE_EVIDENCE.md",
+      "sha256": "9e505585ddd3348c20dc306240b20f203dd30c0e82afad9c64bb439bfab72067",
+      "required_marker": "PASS_BOUNDED_COMMON_RASTER_IMAGE_VISUAL_REVIEW_NO_EXTERNAL_CLOSURE_EVIDENCE"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_LOGICAL_ROOT_REPARSE_DISCLOSURE.md",
+      "sha256": "8cc16f542e75e28cd5133555553ee643b45490d56107e023a552122c8ee80331",
+      "required_marker": "CORRIGENDUM_LOGICAL_ROOT_SCAN_INCLUDED_DISCLOSED_EXTERNAL_JUNCTION_TARGET_NO_GATE_CLOSURE"
+    },
+    {
+      "path": "scripts/audit_cas_q3_external_image_evidence.py",
+      "sha256": "939adeb82e08883405f251d7e5bfe2c368f49972a36ce768387d30edc9aef3ff",
+      "required_marker": "Inventory common raster images in bounded external-evidence roots."
+    },
+    {
+      "path": "tests/test_cas_q3_external_image_evidence.py",
+      "sha256": "ddee05cd74e1982b442e2c5c35864f0593bdaa7f8b442d4697b93bb7a2d8705a",
+      "required_marker": "test_direct_and_nested_zip_images_are_scanned"
+    },
+    {
+      "path": "docs/cas_q3/P1_E_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM.md",
+      "sha256": "d2a8b28b44b7f9e237ae14f5d792be5a329f63ad2c585a69c1b166a51c5b639a",
+      "required_marker": "PASS_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM"
+    },
+    {
+      "path": "tests/test_cas_q3_discover_computing_preflight.py",
+      "sha256": "38e3b6c2ce0efa2eac8e22e6cbed7d0076a02fda77a4c643e2bc5bf60c3ae7af",
+      "required_marker": "test_build_is_fail_closed_and_preserves_source"
     }
   ],
   "aggregate_release_candidate": {
@@ -948,5 +983,34 @@
     "deterministic_rebuild_equal": true,
     "distribution_authorized": false,
     "project_license": "Apache-2.0"
+  },
+  "external_image_evidence": {
+    "decision": "PASS_BOUNDED_COMMON_RASTER_IMAGE_VISUAL_REVIEW_NO_EXTERNAL_CLOSURE_EVIDENCE",
+    "ordinary_logical_paths": 465460,
+    "direct_zip_archives": 39,
+    "nested_zip_archives": 4,
+    "image_occurrences": 104,
+    "unique_image_hashes": 43,
+    "old_manuscript_unique_hashes": 14,
+    "shared_runtime_unique_hashes": 29,
+    "all_unique_hashes_visually_reviewed": true,
+    "external_closure_candidate_recovered": false,
+    "submission_authorized": false
+  },
+  "logical_root_reparse_scope": {
+    "outside_resolved_files": 7796,
+    "outside_resolved_image_occurrences": 34,
+    "outside_resolved_unique_image_hashes": 29,
+    "prior_scan_scope_is_logical_root_superset": true,
+    "exact_counts_host_local": true,
+    "shared_runtime_is_preserved_project_evidence": false
+  },
+  "discover_preflight_test_isolation": {
+    "preserved_first_run_tests": 123,
+    "preserved_first_run_failures": 1,
+    "tracked_artifacts_overwritten_by_test": 3,
+    "tracked_artifacts_restored": true,
+    "temporary_output_isolation_implemented": true,
+    "scientific_effect": false
   }
 }

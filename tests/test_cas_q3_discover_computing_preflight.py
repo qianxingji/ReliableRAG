@@ -4,9 +4,16 @@ from __future__ import annotations
 
 import hashlib
 from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
-from scripts.build_cas_q3_discover_computing_preflight import ROOT, SOURCE, build, transformed_source
+from scripts import build_cas_q3_discover_computing_preflight as preflight
+
+
+ROOT = preflight.ROOT
+SOURCE = preflight.SOURCE
+transformed_source = preflight.transformed_source
 
 
 class DiscoverComputingPreflightTests(unittest.TestCase):
@@ -25,7 +32,15 @@ class DiscoverComputingPreflightTests(unittest.TestCase):
 
     def test_build_is_fail_closed_and_preserves_source(self):
         before = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
-        result = build()
+        with tempfile.TemporaryDirectory(prefix=".cas_q3_discover_test_", dir=ROOT) as directory:
+            scratch = Path(directory)
+            with (
+                patch.object(preflight, "OUTPUT", scratch / "output"),
+                patch.object(preflight, "RECEIPT", scratch / "receipt.json"),
+            ):
+                result = preflight.build()
+                self.assertTrue((ROOT / result["artifacts"]["pdf"]).is_file())
+                self.assertTrue((ROOT / result["artifacts"]["source_zip"]).is_file())
         self.assertEqual(hashlib.sha256(SOURCE.read_bytes()).hexdigest(), before)
         self.assertFalse(result["submission_authorized"])
         self.assertFalse(result["final_target_selected"])
@@ -34,8 +49,6 @@ class DiscoverComputingPreflightTests(unittest.TestCase):
         self.assertEqual(result["artifacts"]["source_zip_nested_members"], [])
         self.assertEqual(result["artifacts"]["pdf_nonembedded_font_rows"], [])
         self.assertEqual(result["artifacts"]["pdf_type3_font_rows"], [])
-        self.assertTrue((ROOT / result["artifacts"]["pdf"]).is_file())
-        self.assertTrue((ROOT / result["artifacts"]["source_zip"]).is_file())
 
 
 if __name__ == "__main__":
