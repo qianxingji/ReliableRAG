@@ -1,0 +1,100 @@
+{
+  "status": "PASS_FULL_RELOCATED_HISTORICAL_SCORING",
+  "cas_q2_status": "NOT READY",
+  "source_commit": "39e11ed26f54d512b1905b2848f42d507f467d7e",
+  "config_sha256": "7ee3060a2bc87c037f0ae0d2127563a6ddfcc51a4bba03c5eac159053be84ecf",
+  "producer": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_historical_scoring_v1\\PRODUCER_RESULT.json",
+    "sha256": "0eb824f6937d91219f4dcbbc635383e08925d01a6fb26bf1934109b07d8f4745",
+    "size_bytes": 370159
+  },
+  "independent": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_historical_scoring_v1\\INDEPENDENT_RESULT.json",
+    "sha256": "06877a6ef38a7be5519360b99223dafa3e035a6d447124c66f24f8df95d69851",
+    "size_bytes": 2046
+  },
+  "replay": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_historical_scoring_v1\\HISTORICAL_REPLAY_PRIVATE.jsonl",
+    "sha256": "50ebddb1a1f742b3c5f2be32859c8440bc37b73e6cc30cec946d2c6b1ae60042",
+    "size_bytes": 20220137
+  },
+  "original_used_inputs_unchanged": 69,
+  "restored_used_inputs_unchanged": 69,
+  "new_environment_files_unchanged": 21267,
+  "control_files_unchanged": 8,
+  "traces": 13500,
+  "eligible_pairs": 3202,
+  "producer_numeric_checks": 236948,
+  "independent_numeric_checks": 240150,
+  "producer_max_numeric_error": 0.0,
+  "independent_max_numeric_error": 0.0,
+  "archived_action_comparisons": 27000,
+  "independent_top_k_comparisons": 27000,
+  "scientific_fits": 0,
+  "neural_forwards": 0,
+  "fresh_gold_values": 0,
+  "historical_saved_model_loads": 8,
+  "current_empirical_pipeline_replay": false,
+  "historical_neural_replay": false,
+  "old_project_content_reads_in_children": 0,
+  "private_artifacts_uploaded": false,
+  "finished_utc": "2026-09-11T12:10:26.317401+00:00",
+  "snapshot_utc": "2026-09-11T12:16:25.526570+00:00",
+  "acceptance_manifest": "6066a29364a1555a27bebdbdd3efa147f4188f1d2f918457a660b9493c90d1e7",
+  "independent_exact_checks": 196788,
+  "base_score_values": 32020,
+  "v2_score_values": 3202,
+  "question_groups": 4500,
+  "forced_keep_traces": 10298,
+  "retained_null_score_values": 102980,
+  "fixed_panel_heads_metadata": 5,
+  "original_scoring_ast_records": 34,
+  "support_path_bindings": 8,
+  "unexpected_guard_events": 0,
+  "scientific_fit_total": 178,
+  "established_engineering_suite_repeated": false,
+  "metadata_diagnostic_manifest": "5a1974d07e010f7b0c80d3a74a98b2cb71f49af0b1a6b065562d04edb5d32595",
+  "platform_discrepancy": {
+    "prior_uname": "10.0.26200",
+    "current_uname": "10.0.26100",
+    "cause": "CREATE_NO_WINDOW reproduces UTF-8 UnicodeDecodeError in unmodified CPython _syscmd_ver; win32_ver falls back to WinAPI platform_version 10.0.26100",
+    "original_receipts_unchanged": true,
+    "scientific_replay_repeated": false
+  },
+  "evidence_kit": {
+    "filename": "RELOCATED_HISTORICAL_SCORING_V1_EVIDENCE_PRIVATE.zip",
+    "sha256": "f3a37168605155cad7320f5b3077604573895de8a30f85317d3cbf0c6eceef0b",
+    "size_bytes": 6425881,
+    "members": 37,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "external_dependencies": [
+    "Accepted static two-archive restoration",
+    "Accepted neural package environment",
+    "Current Windows and CPython base"
+  ],
+  "historical_neural_quantities_reused": true,
+  "independent_tree_reimplementation": false,
+  "another_host_or_OS_tested": false,
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_canonical_pid": 55688,
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 11781,
+    "generation_receipts.jsonl": 35344,
+    "repair_bindings.jsonl": 11781,
+    "branch_provenance.jsonl": 11781
+  },
+  "live_process_creation_date": "/Date(1789099374833)/",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "snapshot_scope": "Non-atomic sequential newline byte counts; no current empirical answer/score/Gold decode",
+  "pending": [
+    "C3 completion/fixed replay/acceptance",
+    "Actual C4/full prelabel",
+    "Cost and four D processes",
+    "Contribution review",
+    "Remaining package/predecessor execution bindings and completed-stage closure",
+    "Full relocated neural/pipeline execution",
+    "Seven historical fit-time receipts"
+  ]
+}

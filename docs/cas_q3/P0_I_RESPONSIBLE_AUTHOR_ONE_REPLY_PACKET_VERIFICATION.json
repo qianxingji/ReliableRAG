@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
+  "cas_q3_status": "NOT_READY",
+  "missing_field_count": 5,
+  "missing_field_paths": [
+    "declarations.ai_assistance_statement_approved=true",
+    "declarations.competing_interests_statement",
+    "declarations.institutional_manuscript_approval_evidence",
+    "declarations.institutional_manuscript_approval_status=APPROVED",
+    "project_license.release_review_status=APPROVED"
+  ],
+  "validation_error_count": 0,
+  "personal_values_emitted": false,
+  "real_owner_inputs_complete": false,
+  "independent_cas_authority_verified": false,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "packet_path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
+  "packet_sha256": "7197c3bfc5d206b01d0e3ae556967dc2604e0d06c79f347eb491e6bf07284fc1"
+}

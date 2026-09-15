@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE",
+  "engine": "MiKTeX pdfTeX 1.40.28 / LaTeX2e 2025-11-01",
+  "artifacts": {
+    "output/pdf/manuscript.pdf": {
+      "sha256": "6304d8a407d728265dbc375d968e3e3349470f73d1cae4a77e1093511f2771b7",
+      "pages": 11,
+      "page_size": "612 x 792 pts (letter)",
+      "pdf_version": "1.5",
+      "font_rows": 16,
+      "nonembedded_fonts": [],
+      "type3_fonts": []
+    },
+    "output/pdf/supplement.pdf": {
+      "sha256": "ad271207b268dac05592b555d4a357e79cb36be5a0e86e571eb616d4c7e71a49",
+      "pages": 3,
+      "page_size": "612 x 792 pts (letter)",
+      "pdf_version": "1.5",
+      "font_rows": 10,
+      "nonembedded_fonts": [],
+      "type3_fonts": []
+    }
+  },
+  "logs": {
+    "output/pdf/manuscript.log": {
+      "sha256": "a035076ce2717c14a213b180c7108fb37a33c3a28d7cbe3324683e043fe8e687",
+      "fatal_errors": 0,
+      "undefined_citations_or_references": 0,
+      "overfull_or_underfull_boxes": 0,
+      "known_nonfatal_infinite_glue_notice": false
+    },
+    "output/pdf/supplement.log": {
+      "sha256": "8a85d43363f0c04a39f4b9bdfcfd742d5fa32d1153ffafccf810bdca331de81d",
+      "fatal_errors": 0,
+      "undefined_citations_or_references": 0,
+      "overfull_or_underfull_boxes": 0,
+      "known_nonfatal_infinite_glue_notice": true
+    }
+  },
+  "text_checks": {
+    "manuscript_has_title": true,
+    "manuscript_has_references": true,
+    "supplement_has_fixed_action_table": true,
+    "unresolved_markers": 0
+  },
+  "visual_review": {
+    "status": "NOT_PERFORMED_BY_MECHANICAL_VERIFIER_SEE_VERSIONED_ACCEPTANCE_RECORD",
+    "main_pages_reviewed": 0,
+    "supplement_pages_reviewed": 0,
+    "defects_observed": null
+  },
+  "disclosures": [
+    "MiKTeX reports its installation has not yet checked for updates; this is outside the LaTeX logs.",
+    "Supplement log retains one nonfatal longtable infinite-glue page-split notice; rendered content is complete.",
+    "Both compiled PDFs now contain zero nonembedded fonts and zero Type 3 fonts.",
+    "Visual inspection is a separate project-lead action and is not inferred by this verifier.",
+    "Final target-journal PDF-profile compliance remains to be checked after journal selection."
+  ]
+}

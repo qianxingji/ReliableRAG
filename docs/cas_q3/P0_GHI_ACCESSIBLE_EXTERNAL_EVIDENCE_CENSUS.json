@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "decision": "REVIEW_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_CANDIDATES_OR_ERRORS",
+  "roots_scanned": 3,
+  "ordinary_files_seen": 465460,
+  "ordinary_text_files_scanned": 454115,
+  "ordinary_large_text_files_skipped": 26,
+  "zip_archives_scanned": 39,
+  "zip_text_members_scanned": 1448,
+  "zip_large_text_members_skipped": 12,
+  "candidate_match_count": 3,
+  "candidate_matches": [
+    {
+      "scope": "ordinary_text",
+      "file_sha256": "184cb2491837ac6fac7f2373af840ab7c907f6ef402083e18e0ba98e4f84f015",
+      "size": 18019
+    },
+    {
+      "scope": "ordinary_text",
+      "file_sha256": "bad7f809566f13aa0e0eeb1fb0f3873e707fc2dee9d4f3077a72accbe4a7e6f3",
+      "size": 17633
+    },
+    {
+      "scope": "ordinary_text",
+      "file_sha256": "f10b14f7744f9728ce3b32ab9c2c21c85cd4723d2619d477f039a78da2a79c31",
+      "size": 6933
+    }
+  ],
+  "scan_error_count": 0,
+  "scan_errors": [],
+  "max_text_bytes": 5000000,
+  "excluded_path_parts": [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "tmp"
+  ],
+  "bounded_interpretation": {
+    "absence_outside_scanned_roots_proved": false,
+    "large_skipped_files_proved_irrelevant": false,
+    "candidate_match_would_prove_authority": false,
+    "institutional_record_recovered": false,
+    "p0_g_closed": false,
+    "p0_h_closed": false,
+    "p0_i_closed": false
+  },
+  "read_only": true,
+  "archives_extracted": false,
+  "files_executed": false,
+  "scientific_payloads_interpreted": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "submission_authorized": false,
+  "cas_q3_status": "NOT_READY"
+}

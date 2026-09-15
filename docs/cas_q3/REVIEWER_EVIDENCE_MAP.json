@@ -1,0 +1,1218 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES",
+  "cas_q3_status": "NOT_READY",
+  "distribution_authorized": false,
+  "scope": "reviewer navigation and artifact authentication; no scientific recomputation",
+  "repository_evidence": [
+    {
+      "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
+      "sha256": "02a4d6cd2e47adeeb8fbbe388677ed1d42f239379958fe6964030f040f536c76",
+      "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
+    },
+    {
+      "path": "paper/manuscript.tex",
+      "sha256": "db486c967fc0e67caf3c6d3e42819c133962f3af817dde564534c81d14333425",
+      "required_marker": "The same joint rule does not pass against the HGB-only policy"
+    },
+    {
+      "path": "paper/supplement.tex",
+      "sha256": "97d2eececeeee84c4d2c5052e1fbd981c41fdda3f9d00ba827c2781f4700a47f",
+      "required_marker": "A Mistral extension stopped at protocol review before engineering or model execution."
+    },
+    {
+      "path": "output/pdf/manuscript.pdf",
+      "sha256": "6304d8a407d728265dbc375d968e3e3349470f73d1cae4a77e1093511f2771b7"
+    },
+    {
+      "path": "output/pdf/supplement.pdf",
+      "sha256": "ad271207b268dac05592b555d4a357e79cb36be5a0e86e571eb616d4c7e71a49"
+    },
+    {
+      "path": "paper/COMPILE_RECEIPT.json",
+      "sha256": "f5ac37ef7363ec3ac292cf2c77d9af9b3287868c51243605855b23deb7fddfde",
+      "required_marker": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE"
+    },
+    {
+      "path": "paper/MANUSCRIPT_VERIFICATION.json",
+      "sha256": "b5e7d7caa28ba82d05b31a33e4d4e514f274d1c4f7d835317d9341db331bb191",
+      "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND.md",
+      "sha256": "d6b3dab290122b992cce1615a9025e55e7aef2c78b88cbaffbe6013c76b3d131",
+      "required_marker": "PASS_SOURCE_AND_COMPILED_ARTIFACT_WITH_OWNER_LICENSE_CAS_BLOCKERS"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_ASTRA_XHIGH_COMPILED_REBIND_ADDENDUM.md",
+      "sha256": "878021bb621c7690328cf4e40a7cbfdc2b97d19bb04bbb7c3835b7bd49d8ce8b",
+      "required_marker": "PASS_SOURCE_AND_COMPILED_ARTIFACT_WITH_OWNER_LICENSE_CAS_BLOCKERS"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_FONT_EMBEDDING_CORRIGENDUM.md",
+      "sha256": "3e2947d21794c403f80c785a9a10186392d7200bffdab8d71755239644911f44",
+      "required_marker": "PASS FONT-CLEAN JOURNAL-NEUTRAL REBUILD"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_ABSTRACT_COMPRESSION_ACCEPTANCE.md",
+      "sha256": "03d4c406ba71380e770f82f3a40891582c6ebe6a44d511af02ba255d9f254e0d",
+      "required_marker": "PASS_142_WORD_CROSS_PROFILE_ABSTRACT_AND_REBUILT_DRAFT_WITH_FINAL_ASTRA_AND_EXTERNAL_GATES_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
+      "sha256": "cbea0d960c6f0e602369de6218ddf2634fda38b1ccac02a3c82a87a7612f6941",
+      "required_marker": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_ABSTRACT_KEYWORD_ACCEPTANCE.md",
+      "required_marker": "PASS_APPLIED_INTELLIGENCE_ABSTRACT_KEYWORDS_AND_NEUTRAL_REBUILD_TARGET_TEMPLATE_OPEN",
+      "sha256": "9de6160fb3f4fb15acad0965aa3a3bbaea968fe65f4fff0882e93646cb666c5c"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json",
+      "required_marker": "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
+      "sha256": "585fdcd88415dd6b92bc07a9a47764c675d58b5b6d6d907bbe468d7353f27de9"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md",
+      "required_marker": "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
+      "sha256": "d3c6e6eb0f44d0c2405bb75135a4059d243071f0349d5576f5a2d7aabc017f13"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_VERIFICATION.json",
+      "required_marker": "PASS_COMMITTED_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_WITH_TEMPLATE_EQUIVALENCE_OPEN",
+      "sha256": "331eb5d26606a76d5732e70caff7c99ec65121b1e069cc2a9f48fe59d09f137e"
+    },
+    {
+      "path": "output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf",
+      "sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97"
+    },
+    {
+      "path": "output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip",
+      "sha256": "e28e3c3820b321e7af444dc9ba57cb49e6890b7623d2dfadce6878dca41a4a8a"
+    },
+    {
+      "path": "scripts/build_cas_q3_applied_intelligence_preflight.py",
+      "required_marker": "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
+      "sha256": "011434fead0bedb5ace33ba5f969f225066c4938ed0c44d3902b6271ca7d1f1e"
+    },
+    {
+      "path": "scripts/verify_cas_q3_applied_intelligence_preflight.py",
+      "required_marker": "PASS_COMMITTED_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_WITH_TEMPLATE_EQUIVALENCE_OPEN",
+      "sha256": "8b7c814e291e9e212d485d7b18ca266b9509a8f6c2b2ab2f236c4f49b296b1c8"
+    },
+    {
+      "path": "tests/test_cas_q3_applied_intelligence_preflight.py",
+      "sha256": "3a38920e4c69c54d6fa8a1c7646a585eb25030df1fcfccefcfc987fbff3f0601"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT.json",
+      "required_marker": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
+      "sha256": "c473b4321429f42f871bd26c8b486b24b3a0e9d5da92010b71decab1bf6f6260"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_DISCOVER_COMPUTING_APC_AUDIT.json",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_COMPUTING_APC_FACTS_OWNER_ACCEPTANCE_PENDING",
+      "sha256": "842013173c7a8f9c79c03051b08a06754877f2aaa69250e5f7416cfda30daa27"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_DISCOVER_COMPUTING_APC_AUDIT.md",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_COMPUTING_APC_FACTS_OWNER_ACCEPTANCE_PENDING",
+      "sha256": "d2457bbada724410de86d945d66fa3a13f5d5249c2774c9c1889cae0630f0fc3"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DISCOVER_COMPUTING_PREFLIGHT_ACCEPTANCE.md",
+      "required_marker": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
+      "sha256": "c4b56850a9ec891fe5380f081d4c46546f504ee17cb5bfbb0c5d7376e49fbc0f"
+    },
+    {
+      "path": "output/target_profiles/discover_computing_preflight/manuscript_12pt_preflight.pdf",
+      "sha256": "4211f946e1b5ce7469c1e8cf8244eafdf592712a3faec0c8c26f538d7a7e38dd"
+    },
+    {
+      "path": "output/target_profiles/discover_computing_preflight/discover_computing_source_preflight.zip",
+      "sha256": "9ab31054895987e4acc218e50e5b033254b318508f937264249a12ce0868c0e2"
+    },
+    {
+      "path": "docs/cas_q3/P0_C_METHOD_FAIRNESS_ACCOUNT.md",
+      "sha256": "117e9a8fe31bd8cd7c051ebbddf58554234dbbcfc3291019c1a40366e1d31d73",
+      "required_marker": "PASS_REVIEWER_READABLE_METHOD_AND_FAIRNESS_ACCOUNT"
+    },
+    {
+      "path": "docs/cas_q3/P0_D_STATISTICAL_STATEMENT_VERIFICATION.md",
+      "sha256": "6963b21a0f075ca10595227b3f9c4f714210bf95b9f9dae2ca18b28688436e4a",
+      "required_marker": "PASS_CAS_Q3_STATISTICAL_STATEMENT_VERIFICATION"
+    },
+    {
+      "path": "docs/cas_q3/P0_F_CLAIM_SCOPED_COST_TABLE.md",
+      "sha256": "ad093212333d65a938382221bc10733800617cf5719c625e1229561c56fcfe14",
+      "required_marker": "PASS_SHARED_STUDY_COST_WITH_EXPLICIT_MISSING_DEPLOYMENT_MEASUREMENTS"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_REVIEWER_RELEASE_LICENSE_ANONYMIZATION_AUDIT.md",
+      "sha256": "cd3ecadc34afa0d677a9a10efde2f42f6d1c3f7c8d95cc091e23cb887c533b38",
+      "required_marker": "PARTIAL_PASS_P0_G_ANONYMOUS_AGGREGATE_CANDIDATE_VALIDATED_RELEASE_WITHHELD"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.json",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_DATA_CODE_POLICY_MAPPED_IMPLEMENTATION_GATES_OPEN",
+      "sha256": "28aa423dad743d509d63336e438691a89b68a4f9246da5289516725da6542753"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_DISCOVER_DATA_CODE_POLICY_AUDIT.md",
+      "required_marker": "PASS_OFFICIAL_DISCOVER_DATA_CODE_POLICY_MAPPED_IMPLEMENTATION_GATES_OPEN",
+      "sha256": "69dfeba540370022bbadf1ea38aa60a3545fcad50e37d412d6d5a6476a6c94ae"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DATA_CODE_STATEMENT_ACCEPTANCE.md",
+      "required_marker": "PASS_DATA_CODE_POLICY_BOUNDARY_AND_REBUILT_ARTIFACT_EXTERNAL_GATES_OPEN",
+      "sha256": "59f64d89bb01e30fa9018b49baa85e0665328b3c10a18785e01e57bd257b6bc4"
+    },
+    {
+      "path": "docs/cas_q2/P0_1_CLIENT_ACCEPTANCE.md",
+      "sha256": "42c93e4d8cca396066547f412d2680bf053cb78b04a0b656f9f8c464e975ac72",
+      "required_marker": "ACCEPTED_FOR_BOUNDED_DEVELOPMENT_CONTROLS"
+    },
+    {
+      "path": "docs/cas_q2/ROA_REPLAY_RELEASE_ACCEPTANCE.md",
+      "sha256": "7096bbc69cb0174734773ab4e70de1c8796e9f323bef00da100f364d4810ebec",
+      "required_marker": "same-host relocation accepted"
+    },
+    {
+      "path": "docs/cas_q2/ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md",
+      "sha256": "24dadc83ed95bafcd2e9a0ae992edc972125874fe14dab4c792938bff7d1e0c2",
+      "required_marker": "Fresh numerical-library installation and full replay accepted"
+    },
+    {
+      "path": "docs/cas_q2/EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md",
+      "sha256": "b01c8c5620237ddb0c6c91c0ece8f3270221cef78c155c88937d5087adb33929",
+      "required_marker": "Client Lead acceptance: reader acquisition execution"
+    },
+    {
+      "path": "docs/cas_q2/EMPIRICAL_D_ACCEPTANCE.md",
+      "sha256": "839989e744c74df5deb5b54a2cba8f4bf75e9ef11470d38901efd1ef29f30e85",
+      "required_marker": "ACCEPTED COMPUTATIONALLY"
+    },
+    {
+      "path": "docs/cas_q2/P0_3_FRESH_RESULT_DECISION.md",
+      "sha256": "7e3c450b83e373b5ab8e60cbc35a3342d9efbaf41e6c84885f512e95ebda8870",
+      "required_marker": "NO NOVEL FINAL CANDIDATE CLEARED"
+    },
+    {
+      "path": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md",
+      "sha256": "ebf7a49010e0752fa3a52bba3099fe5429bab6cd47e4faf779c86e1fd29a26b3",
+      "required_marker": "FAIL_P0_1_PHI_DEVELOPMENT_AUTHENTICITY"
+    },
+    {
+      "path": "docs/cas_q2/MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md",
+      "sha256": "2fbef9e52ad2ed7dd32c708f8d3ed46cb5069259175e780a12ce39d00b36bf4a",
+      "required_marker": "STOP_MISTRAL_EXTENSION_BEFORE_ENGINEERING"
+    },
+    {
+      "path": "docs/cas_q3/REVIEWER_COST_FAILURE_REGISTER.md",
+      "sha256": "195344e69f834fad4b9085f2ef917a3ece0a5debf60024126225c29f5dcb2f91",
+      "required_marker": "PASS_COMPLETE_REVIEWER_COST_AND_MATERIAL_FAILURE_REGISTER_WITH_MEASUREMENT_LIMITS"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_THIRD_PARTY_TERMS_RECHECK.json",
+      "required_marker": "PASS_THIRD_PARTY_TERMS_RECHECK_RELEASE_SOURCE_CORRECTED_CURRENT_ARCHIVE_WITHHELD",
+      "sha256": "ede4090593e0e5733f15fa3b3bbd728f041084a041fd70497e65c07386d25e21"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_THIRD_PARTY_TERMS_RECHECK.md",
+      "required_marker": "PASS_THIRD_PARTY_TERMS_RECHECK_RELEASE_SOURCE_CORRECTED_CURRENT_ARCHIVE_WITHHELD",
+      "sha256": "03ac60f8f9d90e00aa923df675b2fde2b2b55aa7376731852bcba21e1d0efd98"
+    },
+    {
+      "path": "release/cas_q3_aggregate/THIRD_PARTY_NOTICES.md",
+      "required_marker": "including non-commercial licenses",
+      "sha256": "7186c75204c5289455fbbb38b60f5196c1a6e797827aa1a39b5e6703f6885c01"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.md",
+      "required_marker": "PARTIAL_PASS_LOCALLY_PRESERVED_MARS_MANIFEST_BYTE_COPY_RECOVERED_NO_INDEPENDENT_TIMESTAMP_OR_FIT_RECEIPTS",
+      "sha256": "991b4aa707b6ed2e75a582e4def7da581525d57b4c44450527c8a87f55d270e1"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY.json",
+      "required_marker": "PARTIAL_PASS_LOCALLY_PRESERVED_MARS_MANIFEST_BYTE_COPY_RECOVERED_NO_INDEPENDENT_TIMESTAMP_OR_FIT_RECEIPTS",
+      "sha256": "8c8e69d32074509d16906b46b0526f94a456d8d90d53372bf960b931748309ae"
+    },
+    {
+      "path": "scripts/verify_cas_q3_historical_manifest_archive_recovery.py",
+      "required_marker": "PASS_BOUNDED_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION",
+      "sha256": "b5ff80d428c5cd73b029f63eaa2e91208075ecd38dbf056a2938d83b447c4718"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION.json",
+      "required_marker": "PASS_BOUNDED_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION",
+      "sha256": "eb1630d7d4249f799d1d6dbfbee77f57b0a2646f71221aeaddd4a080630acddc"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_HISTORICAL_MANIFEST_DISCLOSURE_REBUILD_ACCEPTANCE.md",
+      "required_marker": "PASS_HISTORICAL_MANIFEST_DISCLOSURE_REBUILD_FINAL_ASTRA_AND_EXTERNAL_GATES_OPEN",
+      "sha256": "31bae607db447440d2a5f77f51418295e4a77560461a008bc43bb44be39f173d"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_ASTRA_XHIGH_AUDIT.md",
+      "required_marker": "PASS_ASTRA_XHIGH_BYTE_AUTHENTICITY_WITH_TIMESTAMP_AND_ORIGINAL_FIT_GAPS_RETAINED",
+      "sha256": "f89b8ed908b4ad9d133b379f37300fb9690cfd850865b8d38b4880c8669a62b5"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "required_marker": "Apache License"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.md",
+      "sha256": "2f9d408ea0d9947aece3c8d6c79302b40f618af2310068ff146ee0a1efede81a",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_TARGET_SELECTION.json",
+      "sha256": "459be1bc6af3f247e9d0733822c2c473e6dad362f23251bd782c1fae1355ab6e",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_OFFICIAL_PROFILE_VERIFIED_CAS_DOCUMENT_AND_TARGET_PACKAGE_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.md",
+      "sha256": "df091d4f605f0c9493eabae209ff1f86e61359467b3b87dda5855a6a1ba5f904",
+      "required_marker": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_APPLIED_INTELLIGENCE_DATA_CODE_POLICY_AUDIT.json",
+      "sha256": "f92de8073094a487a030e8e9d3b3c3227031841c952366863b7c505489ccaeb6",
+      "required_marker": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
+      "sha256": "76633c8fca03fe3400867bfe929ed958cad0ac2e10425dc856bf19bbcf90407e",
+      "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
+    },
+    {
+      "path": ".github/workflows/public-reporting-audit.yml",
+      "sha256": "48323085aa52e80c6c798f46df444c1f24a3e6555afda57cb251546baf46d1c9",
+      "required_marker": "verify_cas_q3_public_reporting_surface.py"
+    },
+    {
+      "path": "scripts/verify_cas_q3_public_reporting_surface.py",
+      "sha256": "164c76504b89571eb32135db3eb2b1df74f13361be6dd076160489debbd1e41a",
+      "required_marker": "PASS_COMMITTED_PUBLIC_REPORTING_SURFACE_ONLY"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSED_RELEASE_V2_RESULTS.json",
+      "required_marker": "PARTIAL_PASS_APACHE2_AWARE_CORRECTED_AGGREGATE_V2_BUILT_AND_VALIDATED_DISTRIBUTION_WITHHELD",
+      "sha256": "303ed383415e56e3e60bb2928fbd1e3f621b1d9695036452601e3bd3125cb8e4"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSED_RELEASE_V2_ACCEPTANCE.md",
+      "required_marker": "PARTIAL_PASS_APACHE2_AWARE_CORRECTED_AGGREGATE_V2_BUILT_AND_VALIDATED_DISTRIBUTION_WITHHELD",
+      "sha256": "d1b6abc4d4999062509fcb94d13230688ae930e88441ffff1cfeb54d830a72d9"
+    },
+    {
+      "path": "scripts/package_cas_q3_licensed_release.py",
+      "required_marker": "ARCHIVE_NAME",
+      "sha256": "eb2a570102e6858ce3b51cbd904aebfb6da7cb284d299b95db55659b641803f6"
+    },
+    {
+      "path": "scripts/validate_cas_q3_licensed_release.py",
+      "required_marker": "PASS_CAS_Q3_APACHE2_AWARE_AGGREGATE_RELEASE_V2_ROUNDTRIP",
+      "sha256": "0b83c2e877595a6ee483ab7798c7aeaff011e2d29765dc93c2bf2ff221f37bca"
+    },
+    {
+      "path": "tests/test_cas_q3_licensed_release.py",
+      "required_marker": "AggregateReleaseTests",
+      "sha256": "61f60e7e6c7cdcfab1616819f6f87ff3ee01d9aceea36a1ece4c19b7bef65d24"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/README.md",
+      "required_marker": "Apache License 2.0",
+      "sha256": "e26d5d4f17cd67a69e6f84ab326cda2e1983ab45c080e56f2973d8134a9e29e3"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/DATA_AND_CODE_AVAILABILITY.md",
+      "required_marker": "Public distribution remains withheld",
+      "sha256": "66136f16254f26c0e1a2873c96e21affda56416e263a411f2337d18454ec8d44"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/CLAIM_EVIDENCE_SUMMARY.md",
+      "required_marker": "HGB_GBV_R",
+      "sha256": "25ef4c154f27021bdd37508a4258e712eb8c8367730f6545c3c6d35ce84c3d92"
+    },
+    {
+      "path": "release/cas_q3_aggregate_v2/THIRD_PARTY_NOTICES.md",
+      "required_marker": "including non-commercial licenses",
+      "sha256": "7186c75204c5289455fbbb38b60f5196c1a6e797827aa1a39b5e6703f6885c01"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_ACCEPTANCE.md",
+      "required_marker": "PASS_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_WITH_EXTERNAL_RELEASE_TEMPLATE_AND_FINAL_AUDIT_GATES_OPEN",
+      "sha256": "34936931608db660174482a64e748efb351dfbfd14fc4b6e7ce1dce29a004ba2"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_RESULTS.json",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_SN_JNL_ALLOWED_COMPLETE_PRIVATE_TRANSPORT_VALIDATED_SMALLCONDENSED_LEGACY_CONFLICT_RETAINED",
+      "sha256": "edb12641d47f99f416416e4c9ca81e532753e35061c8751825dacaec7f83442f"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_SN_JNL_ALLOWED_COMPLETE_PRIVATE_TRANSPORT_VALIDATED_SMALLCONDENSED_LEGACY_CONFLICT_RETAINED",
+      "sha256": "bb2a29c0bbf44e2074bc4ad46702b4796217d3fe7241420c434d1a740d9d4dd1"
+    },
+    {
+      "path": "scripts/package_cas_q3_applied_intelligence_transport.py",
+      "required_marker": "ARCHIVE_NAME",
+      "sha256": "c8a6f45d5cd2706bb2f3984669a4094fe90f8cd7f91e57fceeb7e4f23bb2a66d"
+    },
+    {
+      "path": "scripts/validate_cas_q3_applied_intelligence_transport.py",
+      "required_marker": "PASS_PRIVATE_COMPLETE_SOURCE_TRANSPORT_CLEAN_COMPILE_SUBMISSION_UNAUTHORIZED",
+      "sha256": "2155976f28f6893994afa396ad472681f8c9e3236d6619d983307a491379b47a"
+    },
+    {
+      "path": "tests/test_cas_q3_applied_intelligence_transport.py",
+      "required_marker": "AppliedIntelligenceTransportTests",
+      "sha256": "a5ef993cbff5002340d19223655a933ea4fdf7eaa6f6fb7b18c573d4e1753008"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_TARGET_JOURNAL_DECISION_PACKET.md",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APPLIED_INTELLIGENCE_INSTITUTIONAL_CAS_RECORD_PENDING",
+      "sha256": "9a6841b70a34dd9a484f9f0ebba29d7ecd8bfd6d669c381f134dc2529ca0ad87"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_HBUT_AFFILIATION_ADDRESS_VERIFICATION.json",
+      "required_marker": "PASS_OFFICIAL_HBUT_INSTITUTION_CITY_POSTCODE_VERIFIED_DEPARTMENT_PENDING",
+      "sha256": "1306ec83c209614c46d3593c9f41f9e030d217856f82dc83b1d1e06f3748af45"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_HBUT_AFFILIATION_ADDRESS_ACCEPTANCE.md",
+      "required_marker": "PASS_OFFICIAL_HBUT_INSTITUTION_CITY_POSTCODE_VERIFIED_DEPARTMENT_PENDING",
+      "sha256": "74c727fe643e550df9a1330504c45b1876920f0348a2d0712367cdbe3bd4daea"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_RESULTS.json",
+      "required_marker": "PASS_SYNTHETIC_COMPLETE_INPUT_TO_PRIVATE_APPLIED_INTELLIGENCE_PACKAGE_PIPELINE_FINAL_FACTS_AND_AUDITS_OPEN",
+      "sha256": "e5988cab97ee52e78f6bc619d0dec75c033dec01305c39cd2b227427d27303a4"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_PRIVATE_SUBMISSION_BUILDER_ACCEPTANCE.md",
+      "required_marker": "PASS_SYNTHETIC_COMPLETE_INPUT_TO_PRIVATE_APPLIED_INTELLIGENCE_PACKAGE_PIPELINE_FINAL_FACTS_AND_AUDITS_OPEN",
+      "sha256": "20be6d721cb23d5079d74262fe49ea647915b13218b97f1c0708cca8e7c01599"
+    },
+    {
+      "path": "scripts/build_cas_q3_applied_intelligence_private_submission.py",
+      "required_marker": "PASS_PRIVATE_APPLIED_INTELLIGENCE_AUTHOR_POPULATED_CANDIDATE_FINAL_AUDITS_OPEN",
+      "sha256": "5f857665f6f14ea50ca6c906b4da630bf01e11eaf6e11e488e21b1b31a22de0d"
+    },
+    {
+      "path": "tests/test_cas_q3_applied_intelligence_private_submission.py",
+      "required_marker": "AppliedIntelligencePrivateSubmissionTests",
+      "sha256": "1f701355ac6feac60bc758bb10afd9b6d5a7567fd4cdb688d402b2065b14b994"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
+      "required_marker": "CAS Q3 STATUS: NOT READY",
+      "sha256": "7197c3bfc5d206b01d0e3ae556967dc2604e0d06c79f347eb491e6bf07284fc1"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
+      "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
+      "sha256": "1b86416254367c630b42cbc195ddb0681c39d20aeb9aab3c863ccb48d0cfa1bf"
+    },
+    {
+      "path": "scripts/build_cas_q3_owner_reply_packet.py",
+      "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
+      "sha256": "b8437d0ae0f6ae3c756ca4c732d4c6f65b8b9d0f9ea69de2bdc740f3169f7d0e"
+    },
+    {
+      "path": "tests/test_cas_q3_owner_reply_packet.py",
+      "required_marker": "OwnerReplyPacketTests",
+      "sha256": "6bba746de0068606c556bb3c4cec4100557d417bcf0a5a3ce087336278f93f9b"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
+      "sha256": "c08c5e5e1feeefad7f2801f7facdd327a26ab9694a188cf2a5e6e76ad5cdd14a"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_ACCEPTANCE.md",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_UPGRADED_CAS_BASIS_AND_REVIEW_OFFICE_VERIFIED_EDITION_AND_JOURNAL_RECORD_PENDING",
+      "sha256": "643a336e0f60a1030e62f6aa5d7d332aee5477156c3977fbf3190d78b1c7b722"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_PROJECT_LICENSE_DECISION_PACKET.md",
+      "required_marker": "OWNER SELECTED APACHE-2.0",
+      "sha256": "eb76ad2aded3fcf85a18e117eb088bffaffd1f87e86ee7c6d44836025a59ce17"
+    },
+    {
+      "path": "LICENSE_SCOPE.md",
+      "required_marker": "Public distribution of the candidate remains withheld",
+      "sha256": "d8ac8c28dca05166433d911fde026ca305f0f75abf7aec25c98ac10566d5ee32"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSE_STATE_CORRIGENDUM.json",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APACHE2_ROOT_LICENSE_AND_SCOPE_BOUND_THIRD_PARTY_AND_INSTITUTIONAL_GATES_OPEN",
+      "sha256": "4f4e22d0f20d567fb3da74db20d675a527522b6dedd774c841b2cf899efc86d7"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSE_STATE_CORRIGENDUM.md",
+      "required_marker": "PARTIAL_PASS_OWNER_SELECTED_APACHE2_ROOT_LICENSE_AND_SCOPE_BOUND_THIRD_PARTY_AND_INSTITUTIONAL_GATES_OPEN",
+      "sha256": "6e19820a06d74b6b72091e599e74a38fb0162fc614288a29cabbd5751406768a"
+    },
+    {
+      "path": "scripts/verify_cas_q3_license_state.py",
+      "required_marker": "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN",
+      "sha256": "28b5449acc4556c3aae84af2dba5d84c45f3c4f7d7c963042624e8228f5105b0"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_LICENSE_STATE_VERIFICATION.json",
+      "required_marker": "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN",
+      "sha256": "77dfb4b8bf59d0c9b5bd0bb549cc5849052a2285a49fe6d297efb2aaa034c2a0"
+    },
+    {
+      "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST_ZH.md",
+      "required_marker": "CAS Q3 STATUS: NOT READY",
+      "sha256": "6ccc84cc4abbe59242a6a130a7693bc53a67aad6e6bb3b2fc39b3496e14014b0"
+    },
+    {
+      "path": "docs/cas_q3/P0_GH_HBUT_INSTITUTIONAL_VERIFICATION_REQUEST.json",
+      "required_marker": "PASS_CONCRETE_HBUT_INSTITUTIONAL_REQUEST_PREPARED_RESPONSE_PENDING",
+      "sha256": "ddc5ed16bd2fd0dd22ae00ae7f0e5220cd505f2fc3bf3edaca283b5f67473320"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.json",
+      "required_marker": "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
+      "sha256": "a3520e4bd83101edecc385903e1851e0ec69f53aee3c7113b39e0a6191cab1a0"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_REQUIRED_OWNER_FIELDS_CORRECTION.md",
+      "required_marker": "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
+      "sha256": "8338abdd77933670b4e0a38a4419c3bc48655fe4a31ac45a8ef9aeac7cd986f2"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.json",
+      "required_marker": "PASS_OFFICIAL_PUBLISHER_ACCEPTS_CURRENT_SN_JNL_SUBMISSION_ROUTE_SMALLCONDENSED_STYLE_EQUIVALENCE_UNPROVED",
+      "sha256": "6dc4ca4550cda504e630a339e2ba87e4ea49e7e75c53f9eb248e73ffc37c0d30"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md",
+      "required_marker": "PASS_OFFICIAL_PUBLISHER_ACCEPTS_CURRENT_SN_JNL_SUBMISSION_ROUTE_SMALLCONDENSED_STYLE_EQUIVALENCE_UNPROVED",
+      "sha256": "690fc8882c2fca186818825d078fc091a6dac8a1a487084c78fe3e765bf441d7"
+    },
+    {
+      "path": "scripts/verify_cas_q3_template_route_resolution.py",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION",
+      "sha256": "0a95b3fa35a6b7f145ad272f0b5de81db453e4949fe958cd2b686e7f48a9c3ef"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION.json",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION",
+      "sha256": "c3ce106fb7b43764e0ab437fbedd7c1e8db5385aeb5fba8a72803e85fca86a5d"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.json",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_COLLEGE_PREVIOUS_YEAR_CAS_RULE_FOUND_UNIVERSITY_WIDE_CONFIRMATION_PENDING",
+      "sha256": "086400cfc46baf2c311f410fefc8997b99d27ca71d061eee764c882e81d707a8"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.md",
+      "required_marker": "PARTIAL_PASS_OFFICIAL_HBUT_COLLEGE_PREVIOUS_YEAR_CAS_RULE_FOUND_UNIVERSITY_WIDE_CONFIRMATION_PENDING",
+      "sha256": "d735dfd7c82513f3d79b8f0fa3a1687e2ea688c3e318fd1678ec136489c1c6e8"
+    },
+    {
+      "path": "scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py",
+      "required_marker": "PASS_BOUNDED_HBUT_CAS_EDITION_SECONDARY_EVIDENCE_VERIFICATION",
+      "sha256": "84061ec0b23cb9592ca9aee4a26d8f187db63d53c7bbcd036f12a4d7c86e48db"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE_VERIFICATION.json",
+      "required_marker": "PASS_BOUNDED_HBUT_CAS_EDITION_SECONDARY_EVIDENCE_VERIFICATION",
+      "sha256": "b90e34fca14bab3adfac2916279c1abdfe763ff2201c16594c827d42b1ffc664"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.json",
+      "sha256": "fdc633d2360db879938c28e09c44f169e2e8cc2d8d13f5596aa73cd65b1dad47",
+      "required_marker": "PASS_PRIVATE_RECORD_INTAKE_PATH_PREPARED_AUTHORITY_CONTENT_STILL_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_INSTITUTIONAL_CAS_RECORD_INTAKE.md",
+      "sha256": "5bdfe33749c7e4789a47406ef9b496290422742de2807c414f7d9d92722ef7df",
+      "required_marker": "PASS_PRIVATE_RECORD_INTAKE_PATH_PREPARED_AUTHORITY_CONTENT_STILL_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/INSTITUTIONAL_CAS_RECORD_TEMPLATE.json",
+      "sha256": "2051a626419568ad2f88cb91e9eb6a78ad1d6807e40a9204ac5eeb26c00f4d89"
+    },
+    {
+      "path": "scripts/verify_cas_q3_institutional_cas_record.py",
+      "sha256": "26c044b96e63491faed020f5a1ed083415987c3ea6ef808d46828dd8de64aafe",
+      "required_marker": "PASS_PRIVATE_INSTITUTIONAL_CAS_RECORD_INTEGRITY_PREFLIGHT_PENDING_CLIENT_CONTENT_AUDIT"
+    },
+    {
+      "path": "tests/test_cas_q3_institutional_cas_record.py",
+      "sha256": "170f10e4411b74a54a19026a50b24f11f4f0f79a811fb973a7c4ba785ceb2002"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.json",
+      "sha256": "caaaa603f0a39588c47971b1a646ed96d79500b4f911cd38771f389fe4322a44",
+      "required_marker": "PASS_PRIVATE_RELEASE_RECORD_INTAKE_PREPARED_EXTERNAL_DECISIONS_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_INSTITUTIONAL_RELEASE_RECORD_INTAKE.md",
+      "sha256": "8e24e5229ed9173a45b539c73884a36879886750941625aa1c77492ab84aeea2",
+      "required_marker": "PASS_PRIVATE_RELEASE_RECORD_INTAKE_PREPARED_EXTERNAL_DECISIONS_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD_TEMPLATE.json",
+      "sha256": "4e77152c19a1ae4977ce090fbb6e8c470ab804a83283fbbebb8fcc8681dfb998"
+    },
+    {
+      "path": "scripts/verify_cas_q3_institutional_release_record.py",
+      "sha256": "ff154cbf9d45e4f55b8b118cda8e24d48ca7b1286606913b7efd65b6ee3a9933",
+      "required_marker": "PASS_PRIVATE_INSTITUTIONAL_RELEASE_RECORD_INTEGRITY_PREFLIGHT_PENDING_CLIENT_AND_OWNER_DECISIONS"
+    },
+    {
+      "path": "tests/test_cas_q3_institutional_release_record.py",
+      "sha256": "042d1a24c725423a0b71c50ddc80d872d8b226da234a7c95fd32ccf599d2729c"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.json",
+      "sha256": "209dd14a7cc2506b7da95d1e19a775b48d66356ce67eabce7dbc84301bede979",
+      "required_marker": "PARTIAL_PASS_PUBLIC_2025_MAJOR_Q3_CORROBORATION_INSTITUTIONAL_RECORD_STILL_REQUIRED"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.md",
+      "sha256": "fac5b9588db52f3371f567aca5dd877263b1bb7f2f7fcf88c14a2b339bb5fc6c",
+      "required_marker": "PARTIAL_PASS_PUBLIC_2025_MAJOR_Q3_CORROBORATION_INSTITUTIONAL_RECORD_STILL_REQUIRED"
+    },
+    {
+      "path": "scripts/verify_cas_q3_applied_intelligence_public_corroboration.py",
+      "sha256": "6e70077f1f7d15d9700cb1a9d152b78000075c8f5f3285c6cdeca254b2f14f97",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION.json",
+      "sha256": "099ae49eac9bf64e04002747f2c52a5640bf7140a66d825840526d53d3ef3b6d",
+      "required_marker": "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json",
+      "sha256": "47bd2bd12aaede96e4baabea74bda556d9bc4d58d8db27419b4e9986eda132ed",
+      "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md",
+      "sha256": "61def932763df6ca8e04700bf2afaa8996d3bd46a3237ebeadd32995ae682ccc",
+      "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT_VERIFICATION.json",
+      "sha256": "1e362d0446e378b56154db9bd565483f5932054ef0fbdba8f98de280272959cf",
+      "required_marker": "PASS_EXTERNAL_CLOSURE_TEMPLATES_AND_PRIVACY_BOUNDARY"
+    },
+    {
+      "path": "scripts/verify_cas_q3_external_closure_inputs.py",
+      "sha256": "8f5d4fb76781246dc74de47c91ef87e93bc4b229abc8d7999b233f10a2bdbdd6",
+      "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_INPUTS_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_ARTIFACT_AND_ASTRA_AUDITS"
+    },
+    {
+      "path": "tests/test_cas_q3_external_closure_inputs.py",
+      "sha256": "d2f96af99841824dbf8bfec750dc36136ccf34bc1e06acb8ddb0667ef1c31aea"
+    },
+    {
+      "path": "scripts/prepare_cas_q3_private_closure_workspace.py",
+      "sha256": "93c457488c8ba4c486e7123190a38d4cd17f03c782ff8d6aff3509dccfa2eb23",
+      "required_marker": "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE"
+    },
+    {
+      "path": "tests/test_cas_q3_private_closure_workspace.py",
+      "sha256": "502781b113c5ea38fbac01036212ded0a3cc0c77eed6354ba9d7d314fb89bfdf"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_CURRENT_PRIVATE_BUILD_GATE.md",
+      "required_marker": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
+      "sha256": "156dfc2b09b40d4a5a64123c35b74a0eb894e7f22e59d8bd9cb5e626e848ec72"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json",
+      "required_marker": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
+      "sha256": "f61e6cf656c15dd4bdc74273e79589fc850cfa5ae8b2a97843dbd2019e003ae1"
+    },
+    {
+      "path": "scripts/verify_cas_q3_current_private_build_gate.py",
+      "required_marker": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
+      "sha256": "ee6080964690dc282fc229a2b26991280d47623ddae95ff1f52a1d6bce8a7b96"
+    },
+    {
+      "path": "tests/test_cas_q3_current_private_build_gate.py",
+      "sha256": "f1f7362178c8a697fd8eeccca3896c78adcd94b57c97b54c7bc9da820d72e11b"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.json",
+      "sha256": "5d838be6e20e37f6fc9c78327dbd25cf3236936ffc045fe05d2679f4ac7e529b",
+      "required_marker": "PARTIAL_PASS_OWNER_2025_MAJOR_Q3_ASSERTION_RECEIVED_DECLARED_EVIDENCE_PATH_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.md",
+      "sha256": "bd7e291305ab3973c6d9fd860d72200270184469d95763e8fdb769ccb33bbd93",
+      "required_marker": "PARTIAL_PASS_OWNER_2025_MAJOR_Q3_ASSERTION_RECEIVED_DECLARED_EVIDENCE_PATH_MISSING"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_ORIGINAL_FIT_RECEIPT_CENSUS.json",
+      "sha256": "57c83bb6741f983b9a403e4eed6500138767f93d573a89939285d6f32373e596",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "docs/cas_q3/P0_E_ORIGINAL_FIT_RECEIPT_CENSUS.md",
+      "sha256": "e9c8369c400c61238dd6d367d0404c1950519b7bc281d81d348e5fbc82786244",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "scripts/audit_cas_q3_original_fit_receipt_census.py",
+      "sha256": "ccfa3292b7e3b62272c6a2fc03009c4db8a0feb75b48c7fae30058f9e0333f68",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "tests/test_cas_q3_original_fit_receipt_census.py",
+      "sha256": "9df31da8086c6df72f704bf515bc8593a198abbc62db5781ea494e3ee4e7fe82"
+    },
+    {
+      "path": "docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD_TEMPLATE.json",
+      "sha256": "e394026cf21d3d573171447dedc7d80222ef3d1252a805cd6dca2224b384af2c"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_INSTITUTIONAL_MANUSCRIPT_APPROVAL_INTAKE.md",
+      "sha256": "74cc8495d75c5a568b5720126957988c455c7c5f8dafae0e1437ef1ef51e8290",
+      "required_marker": "PASS_PRIVATE_MANUSCRIPT_APPROVAL_INTAKE_PREPARED_APPROVAL_EVIDENCE_MISSING"
+    },
+    {
+      "path": "scripts/verify_cas_q3_institutional_manuscript_approval_record.py",
+      "sha256": "bfef344cea02db49ce22d96f7624001476fae2be7118ac1f2f458a824fb04da0",
+      "required_marker": "PASS_INSTITUTIONAL_MANUSCRIPT_APPROVAL_TEMPLATE_AND_PRIVACY_BOUNDARY"
+    },
+    {
+      "path": "tests/test_cas_q3_institutional_manuscript_approval_record.py",
+      "sha256": "c6e56d27879c751e296d9b4ba8edfbf9cb51bdd206cb20b93e416cb6368caf94",
+      "required_marker": "test_manuscript_hash_substitution_is_rejected"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.json",
+      "sha256": "63c6422ae403a6a985af6160e601b707ba20b462ded6497669095c25c944c4d1",
+      "required_marker": "REVIEW_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_CANDIDATES_OR_ERRORS"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ACCESSIBLE_EXTERNAL_EVIDENCE_CENSUS.md",
+      "sha256": "bc5a229f30fb42f4dba502976e5abd1877e8f144f0ea2837fbc1a2fe0c078c13",
+      "required_marker": "PASS_BOUNDED_ACCESSIBLE_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_RECOVERY_AFTER_TRIAGE"
+    },
+    {
+      "path": "scripts/audit_cas_q3_external_closure_evidence_census.py",
+      "sha256": "bd6d64c1128228676eb062c7feedc706537b207ca6f8706db29cd80026c443b3",
+      "required_marker": "Bounded read-only census for pre-existing external-closure evidence"
+    },
+    {
+      "path": "tests/test_cas_q3_external_closure_evidence_census.py",
+      "sha256": "cf659a0917ff40dd7d693a6798ada21a2b9addd5aa3696bf0e2b6272acaa153f",
+      "required_marker": "test_zip_member_candidate_is_detected_without_extraction"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_OVERSIZED_EXTERNAL_EVIDENCE_CENSUS.json",
+      "sha256": "404a78508ea448808c9c96620c28c0d91ce5f8686cf453502635fbca75dbc19c",
+      "required_marker": "PASS_BOUNDED_OVERSIZED_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_OVERSIZED_EXTERNAL_EVIDENCE_CENSUS.md",
+      "sha256": "f606efed576e348a63798a9e22cd60e858d501c504107fb981912c3fb1b22a9a",
+      "required_marker": "PASS_BOUNDED_OVERSIZED_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "scripts/audit_cas_q3_oversized_external_closure_evidence.py",
+      "sha256": "80ebec51735fdaf2a0db88c3948648453586e164a17148cdfd268c5f97e61443",
+      "required_marker": "Stream-scan oversized text excluded from the primary closure census"
+    },
+    {
+      "path": "tests/test_cas_q3_oversized_external_closure_evidence.py",
+      "sha256": "b9972823d889ba7dd60e3ec569514f10f02ee549a662abe35322d6ee62bd3fee",
+      "required_marker": "test_marker_crossing_stream_chunk_boundary_is_detected"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.json",
+      "sha256": "ad2d0539ecdc226b897e8d2875f7203019631b238d28ea77964f5c6d1a6f6682",
+      "required_marker": "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_PDF_EXTERNAL_EVIDENCE_CENSUS.md",
+      "sha256": "3ac427a9c38b9b1628a5536f151ce9fed516f0b353aa71a1a7154ce06f88cf7c",
+      "required_marker": "PASS_BOUNDED_PDF_EXTERNAL_CLOSURE_EVIDENCE_CENSUS_NO_CANDIDATES"
+    },
+    {
+      "path": "scripts/audit_cas_q3_pdf_external_closure_evidence.py",
+      "sha256": "7b19dfdea3e24777d36ef74c27266c55245c65e3d614273ad9308cf4aaef2771",
+      "required_marker": "Extract searchable PDF text for a bounded external-closure census"
+    },
+    {
+      "path": "tests/test_cas_q3_pdf_external_closure_evidence.py",
+      "sha256": "a2d25d72ff2df4b04849ebbcf3fbdb95457d6c21a5f4dcc9f1e80032d1434369",
+      "required_marker": "test_zip_pdf_member_is_read_without_archive_extraction"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_DOCUMENT_CONTAINER_INVENTORY.json",
+      "sha256": "c3ef3d3588e70164c7f0dee0b90fc11bd5a41b39cbca09badbbbdfcfa71072fd",
+      "required_marker": "PASS_BOUNDED_COMMON_DOCUMENT_CONTAINER_INVENTORY_PDF_ONLY"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_DOCUMENT_CONTAINER_INVENTORY.md",
+      "sha256": "372dd06143f262eff3e4fe72c5826afcaf48b6070a8ff2210addbd86929614bd",
+      "required_marker": "PASS_BOUNDED_COMMON_DOCUMENT_CONTAINER_INVENTORY_PDF_ONLY"
+    },
+    {
+      "path": "scripts/audit_cas_q3_document_container_inventory.py",
+      "sha256": "89909bcbb09b1d5f6e1ae6a05766e9a3cc298961d4581260a19282e6d5637760",
+      "required_marker": "Inventory common document containers in the bounded closure-evidence roots"
+    },
+    {
+      "path": "tests/test_cas_q3_document_container_inventory.py",
+      "sha256": "8f9ae1565812d33a4fe6b95b5bbf4c3aebff7168bc456327fe52c17676537e8d",
+      "required_marker": "test_zip_members_are_counted_without_extraction"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_RECURSIVE_ARCHIVE_CLOSURE_EVIDENCE.json",
+      "sha256": "e8152bba017baaa6f94ccce2d130e0b2d29855fa2e4d257d06c08bd1806b2568",
+      "required_marker": "PASS_BOUNDED_FIRST_LEVEL_NESTED_ARCHIVE_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_RECURSIVE_ARCHIVE_CLOSURE_EVIDENCE.md",
+      "sha256": "17f887347d7914071d0d03d75ba5929cced099f14f21c10c71b4a8fd64e0d7f6",
+      "required_marker": "PASS_BOUNDED_FIRST_LEVEL_NESTED_ARCHIVE_CENSUS_NO_RECOVERY"
+    },
+    {
+      "path": "scripts/audit_cas_q3_recursive_archive_closure_evidence.py",
+      "sha256": "dd9aedc644b2e699c00bade3ddd738fd556260288d063f9411bedfabad2ad679",
+      "required_marker": "Audit document and text evidence inside first-level nested ZIP archives"
+    },
+    {
+      "path": "tests/test_cas_q3_recursive_archive_closure_evidence.py",
+      "sha256": "290c98cf6e5855676bbd2f72930da0277b63a7165be08401b35df11c325eae85",
+      "required_marker": "test_deeper_archive_fails_closed"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ORDINARY_DOCUMENT_MAGIC.json",
+      "sha256": "3f0eb28eefbd5386e8061d1b428882a763c40833130a1d0fdae2a277dd8a78db",
+      "required_marker": "PASS_BOUNDED_ORDINARY_DOCUMENT_MAGIC_MATCHES_EXTENSIONS"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_ORDINARY_DOCUMENT_MAGIC.md",
+      "sha256": "513ea828731b8ae04c6f1487ad2ba45298cc2a4014907d2c8b122f27e848e896",
+      "required_marker": "PASS_BOUNDED_ORDINARY_DOCUMENT_MAGIC_MATCHES_EXTENSIONS"
+    },
+    {
+      "path": "scripts/audit_cas_q3_ordinary_document_magic.py",
+      "sha256": "1edfcd8a8a343884dfb06071b75c100bb9b6694f54e0684a40d8284c07d8c6ed",
+      "required_marker": "Detect common document containers by file header, independent of suffix"
+    },
+    {
+      "path": "tests/test_cas_q3_ordinary_document_magic.py",
+      "sha256": "d3d603c705840d5d778fd37c4344a68d55835e451930561dd47bf88a6c8a17ac",
+      "required_marker": "test_ooxml_word_stored_as_zip_fails_closed"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_PDF_PAGE_TEXT_COVERAGE.json",
+      "sha256": "0af4dab98d9c67ad0a0b6a86b9f57c849506e200758f02ae32add6b60e463eea",
+      "required_marker": "PASS_BOUNDED_UNIQUE_PDF_PAGE_TEXT_COVERAGE_NO_LOW_TEXT_PAGES"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_PDF_PAGE_TEXT_COVERAGE.md",
+      "sha256": "8cd36db36bbbf41566965895f6ca1a83ef950b0cd6c01a5f48aff7084f447d40",
+      "required_marker": "PASS_BOUNDED_UNIQUE_PDF_PAGE_TEXT_COVERAGE_NO_LOW_TEXT_PAGES"
+    },
+    {
+      "path": "scripts/audit_cas_q3_pdf_page_text_coverage.py",
+      "sha256": "5d4a1456e193bf5ca38853f5ecaefbd35e55d5e437411967c9227e48e7b375a6",
+      "required_marker": "Audit per-page text coverage across direct and first-level nested PDFs"
+    },
+    {
+      "path": "tests/test_cas_q3_pdf_page_text_coverage.py",
+      "sha256": "f0a4d4077da373d54cbf635b87d362eeddae72a72b57a7dfa8ca0390a86aaa6d",
+      "required_marker": "test_low_text_page_fails_closed"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_IMAGE_EVIDENCE.json",
+      "sha256": "a5f8f68651313ef685462a84fbf18a090f87c8c2a31843b8542cfed0885da5bf",
+      "required_marker": "PASS_BOUNDED_COMMON_RASTER_IMAGE_INVENTORY_NO_EXTENSION_MISMATCH"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_EXTERNAL_IMAGE_EVIDENCE.md",
+      "sha256": "9e505585ddd3348c20dc306240b20f203dd30c0e82afad9c64bb439bfab72067",
+      "required_marker": "PASS_BOUNDED_COMMON_RASTER_IMAGE_VISUAL_REVIEW_NO_EXTERNAL_CLOSURE_EVIDENCE"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_LOGICAL_ROOT_REPARSE_DISCLOSURE.md",
+      "sha256": "8cc16f542e75e28cd5133555553ee643b45490d56107e023a552122c8ee80331",
+      "required_marker": "CORRIGENDUM_LOGICAL_ROOT_SCAN_INCLUDED_DISCLOSED_EXTERNAL_JUNCTION_TARGET_NO_GATE_CLOSURE"
+    },
+    {
+      "path": "scripts/audit_cas_q3_external_image_evidence.py",
+      "sha256": "939adeb82e08883405f251d7e5bfe2c368f49972a36ce768387d30edc9aef3ff",
+      "required_marker": "Inventory common raster images in bounded external-evidence roots."
+    },
+    {
+      "path": "tests/test_cas_q3_external_image_evidence.py",
+      "sha256": "ddee05cd74e1982b442e2c5c35864f0593bdaa7f8b442d4697b93bb7a2d8705a",
+      "required_marker": "test_direct_and_nested_zip_images_are_scanned"
+    },
+    {
+      "path": "docs/cas_q3/P1_E_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM.md",
+      "sha256": "d2a8b28b44b7f9e237ae14f5d792be5a329f63ad2c585a69c1b166a51c5b639a",
+      "required_marker": "PASS_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM"
+    },
+    {
+      "path": "tests/test_cas_q3_discover_computing_preflight.py",
+      "sha256": "38e3b6c2ce0efa2eac8e22e6cbed7d0076a02fda77a4c643e2bc5bf60c3ae7af",
+      "required_marker": "test_build_is_fail_closed_and_preserves_source"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_DATE_EVIDENCE.json",
+      "required_marker": "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+      "sha256": "96432c08eee2d31c29bae0b91fca3843ea47e3b9a530fef765b97276fd46a4a6"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_DATE_EVIDENCE.md",
+      "required_marker": "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+      "sha256": "dcc3fcdeb8837607afa94218656575cbd48fdd0343b851656950c00e3b738cb9"
+    },
+    {
+      "path": "scripts/audit_cas_q3_ai_tool_date_evidence.py",
+      "required_marker": "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+      "sha256": "22588f06c1f603ab1978545aa8496acc2bb5f2203198d14f17778e7f64993481"
+    },
+    {
+      "path": "tests/test_cas_q3_ai_tool_date_evidence.py",
+      "required_marker": "AiToolDateEvidenceTests",
+      "sha256": "a2b2999ff231d0b79418eac8926007270b8f91577ae6bd06a7c2b3e0273bd74e"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_SESSION_METADATA.json",
+      "required_marker": "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+      "sha256": "f6e53cfbec3a2316e827b55ca97a62d8f2ce5e4104e6f78f743d95fe24539ada"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_SESSION_METADATA.md",
+      "required_marker": "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+      "sha256": "0d54fd2c40b220c89ddb8b8c0c2575e98dee053931cccef1574a73b700bfaa69"
+    },
+    {
+      "path": "scripts/audit_cas_q3_codex_session_metadata.py",
+      "required_marker": "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+      "sha256": "2c092f2145f7cbeb31125bc78e1e0ad870bbe9407985735ae99902d1a0fef5e8"
+    },
+    {
+      "path": "tests/test_cas_q3_codex_session_metadata.py",
+      "required_marker": "CodexSessionMetadataTests",
+      "sha256": "5a6eb3292ee17eba1f2dbc586c05d04090731af56fe4a9ceceb43f774ae9187a"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.json",
+      "required_marker": "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+      "sha256": "1e63ad32949808276bd921ab1f0ee9c92686c191b9d7b793129fb05d61a1ddab"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md",
+      "required_marker": "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+      "sha256": "078dadd474fa536f8a8b5093101fa3542a055ddb9cb9e2c9705c5c64196d1dd3"
+    },
+    {
+      "path": "scripts/audit_cas_q3_springer_ai_policy_alignment.py",
+      "required_marker": "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+      "sha256": "7351f8902d75d9a1ad650547b97219b18ef93dd18074457c0f08a2d14c95b6d9"
+    },
+    {
+      "path": "tests/test_cas_q3_springer_ai_policy_alignment.py",
+      "required_marker": "SpringerAiPolicyAlignmentTests",
+      "sha256": "bce4667906d8c161daf1b5bff46815cbef2a37b49b796ffb23900434a1e7c725"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_PROMPT_RECORD.json",
+      "required_marker": "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+      "sha256": "99a3bd4896de8ad90d99e03da9310744a828b50c636f005b2c4d20134cd6f5c5"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_PROMPT_RECORD.md",
+      "required_marker": "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+      "sha256": "823477bfae5b19447d64b23a19ee0178c6fd298869ae39271db21ef221d71d41"
+    },
+    {
+      "path": "scripts/audit_cas_q3_ai_prompt_record.py",
+      "required_marker": "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+      "sha256": "91ef648b1c3917dfa8c3a0d984acb0d8253d605b68401071d3031c1cbd7d39c5"
+    },
+    {
+      "path": "tests/test_cas_q3_ai_prompt_record.py",
+      "required_marker": "AiPromptRecordTests",
+      "sha256": "1ec63783cbc86cc1cb7f0606779ee25a86564e69d4b4ef3f8c248684423a4841"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md",
+      "required_marker": "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
+      "sha256": "6ddb4532261ece016e2d6cb409c730363179524e8e8ce8f2412f56808466bfe1"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json",
+      "required_marker": "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
+      "sha256": "e7b66e9e70a57227924d27ed2c8ec7222106c47652a0f513093b2ae5472708e9"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.json",
+      "required_marker": "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
+      "sha256": "eed44ab5a07926f149a4cd61f5a1690febdff2d3cebaf7c77b78d5c9d0e77c55"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.md",
+      "required_marker": "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
+      "sha256": "971790fb6c0c6ab959d197fa4e6aac9e43b2480a152079dfabb4664691276dcb"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_RELEASE_ACTIVATION_INTAKE.md",
+      "sha256": "28b568e91ae73a1f13cb176cd57bf17ed484b0354e397eb06a809f4e0514a82c",
+      "required_marker": "PASS_FAIL_CLOSED_RELEASE_ACTIVATION_INTAKE_PREPARED_ACTIVATION_NOT_ATTEMPTED"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_RELEASE_ACTIVATION_INTAKE.json",
+      "sha256": "41dcdee91cceb9c0380e047080c4aacd77130a38094b6c5e9e214c1526ed860d",
+      "required_marker": "PASS_FAIL_CLOSED_RELEASE_ACTIVATION_INTAKE_PREPARED_ACTIVATION_NOT_ATTEMPTED"
+    },
+    {
+      "path": "docs/cas_q3/RELEASE_ACTIVATION_RECORD_TEMPLATE.json",
+      "sha256": "acdf222f65ea91e2f2dd23a51e09bb209d0dc08f333220e533fd81c5969256c0"
+    },
+    {
+      "path": "scripts/verify_cas_q3_release_activation_record.py",
+      "sha256": "4db61579a39c9c5d79fd3af4310c6ed8ba36581b8d9cdff693ba281633615098",
+      "required_marker": "PASS_RELEASE_ACTIVATION_RECORD_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_FINAL_ARTIFACT_AND_ASTRA_AUDITS"
+    },
+    {
+      "path": "tests/test_cas_q3_release_activation_record.py",
+      "sha256": "62cb65ea167ea0ef05d50d6e8eefaad46b46ef45f9b8eeaf3a10ca7fa23ccbc2",
+      "required_marker": "test_complete_synthetic_record_is_only_structurally_complete"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e1eac7f5d37755f63020c6eeb964ef4f1aca4a3dbed7a11e27daf8fecf100dd4",
+      "required_marker": "docs/cas_q3/RELEASE_ACTIVATION_RECORD.local.json"
+    },
+    {
+      "path": "scripts/verify_cas_q3_reviewer_evidence_map.py",
+      "sha256": "7e604dbc0fc0a781b0a12e8712112c03766de166b9bb696099855ddf9b63e048"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_HBUT_REVIEW_REQUEST_PACKET_ACCEPTANCE.md",
+      "required_marker": "PASS_DETERMINISTIC_HBUT_REVIEW_REQUEST_PACKET_PREPARED_NOT_SENT",
+      "sha256": "2bca37df8280811d246dfbd4f17df7a9bed388ec562e0b4ace4734aafc53bd27"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_HBUT_REVIEW_REQUEST_PACKET_ACCEPTANCE.json",
+      "required_marker": "PASS_DETERMINISTIC_HBUT_REVIEW_REQUEST_PACKET_PREPARED_NOT_SENT",
+      "sha256": "9b96a153ea512b22158e4f5aa138ab95b560a86350d6a6eb1fab156461b12b37"
+    },
+    {
+      "path": "scripts/build_cas_q3_hbut_review_request_packet.py",
+      "required_marker": "BUILT_DETERMINISTIC_HBUT_INSTITUTIONAL_REVIEW_REQUEST_CANDIDATE_NOT_SENT",
+      "sha256": "055db4c5736e9cca340f99c0431c64d7435ce333f05a61fe724d12fcce974bf3"
+    },
+    {
+      "path": "scripts/validate_cas_q3_hbut_review_request_packet.py",
+      "required_marker": "PASS_HBUT_INSTITUTIONAL_REVIEW_REQUEST_PACKET_INTEGRITY_NOT_SENT",
+      "sha256": "61c72405dab58deba3c80a5ac2cfa8e9b2df1b9a5193908b2701e796374b4773"
+    },
+    {
+      "path": "tests/test_cas_q3_hbut_review_request_packet.py",
+      "required_marker": "test_validator_direct_cli_entrypoint",
+      "sha256": "97387f4bac03be9dcfc5aaecdc0d4d16760a72276ebdb2030a10f7ba6a045fad"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_HBUT_EMAIL_DRAFT_ACCEPTANCE.md",
+      "required_marker": "PASS_DETERMINISTIC_HBUT_EMAIL_DRAFT_PREPARED_WITHOUT_SENDER_NOT_SENT",
+      "sha256": "7450582b41c29157166b0f19e30335649a4888581c1d6d2f7bf1736715993f98"
+    },
+    {
+      "path": "docs/cas_q3/P0_GHI_HBUT_EMAIL_DRAFT_ACCEPTANCE.json",
+      "required_marker": "PASS_DETERMINISTIC_HBUT_EMAIL_DRAFT_PREPARED_WITHOUT_SENDER_NOT_SENT",
+      "sha256": "b33a6d274b71ce69549b6326056e0b93d3a80418de4501ed75031ca45e9d4695"
+    },
+    {
+      "path": "scripts/build_cas_q3_hbut_email_draft.py",
+      "required_marker": "BUILT_DETERMINISTIC_HBUT_EMAIL_DRAFT_WITHOUT_SENDER_NOT_SENT",
+      "sha256": "8649edbb24746a6d2c633f57ceca30cf860cb2e88af357ee26bde1188c6b72bb"
+    },
+    {
+      "path": "scripts/validate_cas_q3_hbut_email_draft.py",
+      "required_marker": "PASS_READY_TO_REVIEW_HBUT_EMAIL_DRAFT_NOT_SENT",
+      "sha256": "10529dd07dbbb208e32f39684f346fcd492f35c57c5a1fe187414adbecbad35e"
+    },
+    {
+      "path": "tests/test_cas_q3_hbut_email_draft.py",
+      "required_marker": "test_no_sender_or_transport_headers_and_exact_attachment",
+      "sha256": "1b9b2d511b7d69a27bbeb11355c933ea55b4b4e9e49b73e45d199af97a73ba38"
+    }
+  ],
+  "aggregate_release_candidate": {
+    "local_archive": "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-e/paired_rag_repair_aggregate_candidate.zip",
+    "archive_sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
+    "manifest_sha256": "6c8ca3a4d0a9d70ade6a09b7194337390ee74ab1f46c79d862e918418a341a1c",
+    "archive_members": 10,
+    "validator_checks": 100,
+    "roundtrip_reporting_checks": 129,
+    "distribution_authorized": false,
+    "project_license": "PENDING_OWNER_SELECTION"
+  },
+  "private_transport": {
+    "static_delivery_receipt": "docs/cas_q2/STATIC_DELIVERY_RESULTS.json",
+    "static_archive_sha256": "b80bbe91fee02dbdc9b360cebf29385948f9fa81c62fc1564bb4c0bc0214efe5",
+    "pretrained_archive_sha256": "741b30828503c481cbdc712295c9ab12f52a1c3de183c17bc572a11436762fa9",
+    "evidence_companion_sha256": "cda1095b983f63ad37d174ee9458ee86de05b7210de34555c6341a988c56e41b",
+    "roa_replay_receipt": "docs/cas_q2/ROA_REPLAY_RELEASE_RESULTS.json",
+    "roa_archive_sha256": "052219db01230c5a5ea0031cfdde56e6ae23f14c2bda63097c75c21b3e9f17a2",
+    "uploaded": false,
+    "another_host_or_os_verified": false,
+    "full_public_pipeline_reproduction": false
+  },
+  "applied_intelligence_private_transport_candidate": {
+    "first_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260915-policy-a/applied_intelligence_complete_source_transport_candidate.zip",
+    "second_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260915-policy-b/applied_intelligence_complete_source_transport_candidate.zip",
+    "archive_sha256": "d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e",
+    "archive_members": [
+      "Fig1.pdf",
+      "Fig2.pdf",
+      "manuscript.bbl",
+      "manuscript.tex",
+      "references.bib",
+      "sn-basic.bst",
+      "sn-jnl.cls",
+      "table_main_results.tex",
+      "table_primary_comparisons.tex",
+      "table_study_design.tex"
+    ],
+    "sn_jnl_class_sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "sn_basic_bst_sha256": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c",
+    "clean_compile_pdf_sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97",
+    "validator_checks_each": 56,
+    "smallcondensed_equivalence_proved": false,
+    "submission_authorized": false,
+    "distribution_authorized": false,
+    "publisher_current_sn_jnl_route_accepted": true,
+    "pre_submission_template_route_gate_closed": true,
+    "historical_archive_sha256": "f4279cf38aa09a1ddc212b9b295e0c73b78a67b7262845e72a6df584edeb8fdd",
+    "historical_record": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_RESULTS.json",
+    "current_record": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json"
+  },
+  "applied_intelligence_private_submission_synthetic_candidate": {
+    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260915-policy-refresh-a",
+    "source_archive": "applied_intelligence_author_populated_source.zip",
+    "source_archive_sha256": "36eb522d2bbe5305a812a938e68d2fd5120adaacbefa0d77145a706abb783d90",
+    "compiled_pdf": "manuscript.pdf",
+    "compiled_pdf_sha256": "a21e80ad06b45eb0044de3cf4c1a98f3220b738589b29b49f2dcc48eb211aa40",
+    "cover_letter": "cover_letter.md",
+    "cover_letter_sha256": "e430fb658ddd7672f5f37137f4c13daee41c9b556fbc78b51ad3a5455a7d2948",
+    "receipt": "PRIVATE_BUILD_RECEIPT.json",
+    "compiled_pages": 13,
+    "visual_review": "PASS_PROJECT_LEAD_ALL_13_PAGES_110_DPI",
+    "synthetic_values_only": true,
+    "real_owner_package_built": false,
+    "submission_authorized": false,
+    "distribution_authorized": false,
+    "historical_source_archive_sha256": "7f0c7e233945aa150b1aa2c68e6918d45f18f7c7531a92a004fe07d5c60da15e",
+    "current_record": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json"
+  },
+  "scientific_boundaries": {
+    "only_joint_positive": "HGB_GBV_R_minus_GBV_ONLY_R",
+    "hgb_only_joint_advantage": false,
+    "roa_full_advancement": false,
+    "novel_top_level_method": false,
+    "accepted_readers": [
+      "QWEN"
+    ],
+    "historical_fit_time_receipts_complete": false,
+    "standalone_deployment_cost_measured": false,
+    "historical_manifest_locally_preserved_dated_named_package_byte_copy_recovered": true,
+    "historical_manifest_independent_timestamp_certified": false
+  },
+  "missing_external_gates": [
+    "legal_copyright_holder_year_and_institutional_release_review",
+    "complete_author_identity_contributions_and_declarations",
+    "institution_recognized_cas_edition_year_and_retained_applied_intelligence_record",
+    "final_release_authorization_persistent_identifier_and_private_review_route",
+    "applied_intelligence_author_populated_package_and_final_astra_xhigh_audit"
+  ],
+  "selected_target": {
+    "journal": "Applied Intelligence",
+    "print_issn": "0924-669X",
+    "electronic_issn": "1573-7497",
+    "owner_selected_route": "SUBSCRIPTION_NON_OPEN_ACCESS",
+    "owner_attested_cas_category": "Computer Science major-category Q3",
+    "institutional_record_retained": false,
+    "submission_authorized": false,
+    "candidate_report_year_if_formal_publication_in_2026": 2025,
+    "candidate_year_confirmed_university_wide": false,
+    "authoritative_2025_upgraded_data_available": true,
+    "authoritative_platform_requires_authenticated_access": true,
+    "applied_intelligence_2025_record_retrieved": false,
+    "institutional_record_intake_prepared": true,
+    "institutional_record_received": false,
+    "institutional_record_content_independently_certified": false,
+    "institutional_record_client_audit_required": true
+  },
+  "project_license": "Apache-2.0",
+  "licensed_aggregate_release_candidate_v2": {
+    "local_archive": "E:/paper/ReliableRAG-cas-q3-aggregate-apache2-candidate-20260914-a/paired_rag_repair_aggregate_apache2_candidate_v2.zip",
+    "second_deterministic_build": "E:/paper/ReliableRAG-cas-q3-aggregate-apache2-candidate-20260914-b/paired_rag_repair_aggregate_apache2_candidate_v2.zip",
+    "archive_sha256": "4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8",
+    "manifest_sha256": "463b26e10ae8724da998033efbea219c26c16be522b52eaaa57cc400f039b4cf",
+    "archive_members": 11,
+    "validator_checks": 125,
+    "roundtrip_reporting_checks": 129,
+    "deterministic_rebuild_equal": true,
+    "distribution_authorized": false,
+    "project_license": "Apache-2.0"
+  },
+  "external_image_evidence": {
+    "decision": "PASS_BOUNDED_COMMON_RASTER_IMAGE_VISUAL_REVIEW_NO_EXTERNAL_CLOSURE_EVIDENCE",
+    "ordinary_logical_paths": 465460,
+    "direct_zip_archives": 39,
+    "nested_zip_archives": 4,
+    "image_occurrences": 104,
+    "unique_image_hashes": 43,
+    "old_manuscript_unique_hashes": 14,
+    "shared_runtime_unique_hashes": 29,
+    "all_unique_hashes_visually_reviewed": true,
+    "external_closure_candidate_recovered": false,
+    "submission_authorized": false
+  },
+  "logical_root_reparse_scope": {
+    "outside_resolved_files": 7796,
+    "outside_resolved_image_occurrences": 34,
+    "outside_resolved_unique_image_hashes": 29,
+    "prior_scan_scope_is_logical_root_superset": true,
+    "exact_counts_host_local": true,
+    "shared_runtime_is_preserved_project_evidence": false
+  },
+  "discover_preflight_test_isolation": {
+    "preserved_first_run_tests": 123,
+    "preserved_first_run_failures": 1,
+    "tracked_artifacts_overwritten_by_test": 3,
+    "tracked_artifacts_restored": true,
+    "temporary_output_isolation_implemented": true,
+    "scientific_effect": false
+  },
+  "applied_intelligence_ai_policy_synthetic_candidate": {
+    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260915-ai-policy-a",
+    "source_archive_sha256": "e94e586c556112a998355ac0083a2e7777a04dca06da5b704e52cb5a45fa0ff5",
+    "compiled_pdf_sha256": "0a486e7f7dcdaae0357f58301d85d3a15a35dc5fddc4b1550eecd7d2d55e05fb",
+    "cover_letter_sha256": "e430fb658ddd7672f5f37137f4c13daee41c9b556fbc78b51ad3a5455a7d2948",
+    "compiled_pages": 13,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0,
+    "all_pages_visually_reviewed": true,
+    "visual_defects_found": 0,
+    "synthetic_identity_only": true,
+    "real_owner_package_built": false,
+    "submission_authorized": false
+  }
+}

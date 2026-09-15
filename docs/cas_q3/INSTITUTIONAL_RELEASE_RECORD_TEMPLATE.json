@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "evidence": {
+    "file": null,
+    "sha256": null,
+    "kind": null,
+    "issuing_office_or_evidence_bundle_owner": null,
+    "obtained_date": null,
+    "authenticated_or_formally_retained": null
+  },
+  "license_decision": {
+    "project_code_license": null,
+    "legal_copyright_holder": null,
+    "copyright_year_or_range": null,
+    "holder_may_license_project_authored_material": null,
+    "institutional_release_review_required": null,
+    "institutional_release_review_status": null,
+    "project_specific_notice_required": null,
+    "notice_decision_evidence": null
+  },
+  "third_party_scope_decision": {
+    "qwen_boundary_decision": null,
+    "deberta_boundary_decision": null,
+    "qwen_weights_in_release": null,
+    "deberta_weights_in_release": null,
+    "benchmark_payloads_or_answers_in_release": null,
+    "per_question_records_in_release": null,
+    "aggregate_v2_candidate_sha256": null,
+    "aggregate_v2_scope_reviewed": null
+  },
+  "manual_review": {
+    "reviewer_role": null,
+    "review_date": null,
+    "record_visually_inspected": null,
+    "metadata_matches_record": null,
+    "legal_advice_not_claimed_unless_issued_by_counsel": null
+  }
+}

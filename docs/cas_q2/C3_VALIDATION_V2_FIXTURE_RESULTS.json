@@ -1,0 +1,37 @@
+{
+  "status": "ACCEPTED_C3_VALIDATION_V2_FOR_ONE_FULL_RUN",
+  "cas_q2_status": "NOT READY",
+  "implementation_commit": "f12213c6f32e3f825b31d99b907d6a3d68a2357c",
+  "fixture_manifest_sha256": "cfee161327ca4c90ac62cc0522885040ed7d40a2ba0e695814a97b156764f39a",
+  "fixture_freeze_sha256": "25e075691b303cf36e6c0a999a1956473b9267aab0419a211308844e4ef66608",
+  "fixture_acceptance_sha256": "9cb10a4ae66534ada5eb013ab4e329095d04a5fe73dc19fe8c41ef1b62d5ac50",
+  "client_review_sha256": "b86868efa05b01c7a59ffc3b3dca138df1deb7ef38336846d0027d99d69bb711",
+  "tested_v2_sources": {
+    "binding_v2": "340fe2b8da55e50dbe533417d0c03719264b715c93aefe05a4261cd3dfed94e9",
+    "entry_v2": "c4cefe036392660e0e89e46a3cb6e65a5249bc7945e82b8af92774407e6ef96b",
+    "fixture_v2": "09e26d8fcae8afa8dae418c66dd50eafa5353df6712691d0d62850cc2ed94f4f"
+  },
+  "original_missing_constants_reproduced": [
+    "DATASETS",
+    "RETRIEVERS"
+  ],
+  "authenticated_constant_assignment_asts": 2,
+  "all_nine_strata_passed": true,
+  "exact_branch_rejections": 8,
+  "negative_authentication_and_nested_dependency_cases": 4,
+  "composed_generation_checks": 3,
+  "generated_ids_checked": 11,
+  "complete_vocabulary_checks": 2,
+  "inputs_unchanged": 65,
+  "controls_unchanged": 11,
+  "old_environment_files_unchanged": 30823,
+  "original_C3_frozen_sources_unchanged": 41,
+  "actual_current_C3_validation": false,
+  "one_full_run_only": true,
+  "failure_preservation_and_relocation_required_before_full_run": true,
+  "full_validation_required_generations": 54540,
+  "current_gold_values": 0,
+  "neural_forwards": 0,
+  "new_scientific_fits": 0,
+  "total_scientific_fits": 185
+}

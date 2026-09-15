@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE",
+  "manuscript_pdf_sha256": "6304d8a407d728265dbc375d968e3e3349470f73d1cae4a77e1093511f2771b7",
+  "count_method": "Poppler pdftotext -layout plus documented regex tokenization",
+  "pdf_tokens_before_references": 4048,
+  "pdf_tokens_full_document": 4745,
+  "static_abstract_word_count": 155,
+  "applied_intelligence_abstract_word_range": [
+    150,
+    250
+  ],
+  "applied_intelligence_abstract_requirement_met": true,
+  "publisher_word_count_claimed": false,
+  "texcount_used": false,
+  "limitations": [
+    "This is a reproducible PDF-text token proxy, not the journal submission system's official word count.",
+    "The PDF proxy includes visible titles, captions, tables and page text before References.",
+    "The full-document proxy includes the reference list.",
+    "Applied Intelligence's inspected guidelines specify the abstract range but no general full-manuscript word limit."
+  ],
+  "official_requirement_url": "https://link.springer.com/journal/10489/submission-guidelines",
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "cas_q3_status": "NOT_READY"
+}

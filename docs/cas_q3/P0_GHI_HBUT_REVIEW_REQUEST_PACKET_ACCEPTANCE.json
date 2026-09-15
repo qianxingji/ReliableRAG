@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_DETERMINISTIC_HBUT_REVIEW_REQUEST_PACKET_PREPARED_NOT_SENT",
+  "cas_q3_status": "NOT_READY",
+  "source_commit": "f715faaaf6a66cd5a17e70461d07456030e48519",
+  "first_build": "E:/paper/ReliableRAG-hbut-institutional-review-request-candidate-20260915-a/hbut_institutional_review_request_candidate.zip",
+  "second_build": "E:/paper/ReliableRAG-hbut-institutional-review-request-candidate-20260915-b/hbut_institutional_review_request_candidate.zip",
+  "archive_sha256": "42f533f6fba88b3d7367477ed27173ea49692f2eaf3e3abff8e85dbe76f13c5b",
+  "manifest_sha256": "d99932cc4a8adf826fc475342ec787f402e2726f0f617d608ebc4989b140a0d5",
+  "deterministic_rebuild_equal": true,
+  "archive_members": 11,
+  "validator_checks_each": 99,
+  "archive_extracted": false,
+  "packet_scope": {
+    "institutional_request": true,
+    "anonymous_manuscript_and_supplement_drafts": true,
+    "license_and_third_party_review_inputs": true,
+    "owner_local_input_included": false,
+    "institutional_response_included": false,
+    "raw_scientific_payload_included": false,
+    "model_weights_or_private_reproduction_archive_included": false,
+    "final_author_artifact_rebind_required": true
+  },
+  "preserved_failure": {
+    "stage": "first_direct_validator_cli_invocation",
+    "failure": "ModuleNotFoundError_package_import_from_direct_script_entrypoint",
+    "archive_bytes_changed_by_correction": false,
+    "direct_cli_regression_test_added": true
+  },
+  "request_sent": false,
+  "institutional_response_received": false,
+  "institutional_cas_tier_verified": false,
+  "manuscript_approved": false,
+  "code_release_approved": false,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "p0_g_closed": false,
+  "p0_h_closed": false,
+  "p0_i_closed": false
+}

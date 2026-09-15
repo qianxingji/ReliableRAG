@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "ACCEPTED_C4_BASE_AND_EXACT_DEVICE_ALIAS_CORRIGENDUM_V2",
+  "cas_q2_status": "NOT READY",
+  "implementation_commit": "3d98665e032efb9d03e6ac029872184852d8cebe",
+  "base": {
+    "scientific_manifest_sha256": "6cbc051be274617e26f548f4b51b5a6ec3cddeb5e1caf6761f00fa8301913cab",
+    "receipt_sha256": "6a8fba007045a2eba50db74ca14e6bc216cc337681836240d4e9c9da58ba1989",
+    "external_run_manifest_sha256": "88f946931259b10501c7ae31e84fc93d9868db5240c0e105b774b25f9f916d9e",
+    "ordinary_audit_manifest_sha256": "8f240e2d950f021533e02903aa5d4bcd63687a8413887abaa04bfbea4f1e6522",
+    "preserved_failed_audit_manifest_sha256": "ae8cea154ceccf22779ad486d1735c414a88ca7f048358c6349cb405ee091674",
+    "traces": 18000,
+    "native_eligible_traces": 4267,
+    "likelihood_requests": 17068,
+    "bge_forward_calls": 2250,
+    "bge_rows": 36000,
+    "qwen_forward_calls": 16932,
+    "qwen_cache_hits": 136,
+    "numeric_checks": 311491,
+    "maximum_numeric_error": 1.27675647831893e-15
+  },
+  "authenticity_audit": {
+    "status": "ACCEPTED_P0_1_BASE_AUTHENTICITY_WITH_PROSPECTIVE_DEVICE_ALIAS_CORRIGENDUM_V1",
+    "manifest_sha256": "aeb30f8d7251d134a445c4a3e6fbfeb3760c16231f423e1c3881797eaee4fc13",
+    "model": "gpt-6-astra",
+    "reasoning": "xhigh",
+    "inputs_rehashed": 476,
+    "environment_files_rehashed": 30912
+  },
+  "corrigendum": {
+    "producer_manifest_sha256": "6e6c6122f0f10be71d55b9bcc8adde085fe843b35b9f5ff774dc8d5cc4d82e63",
+    "client_audit_manifest_sha256": "f988d39075bbf3823322d7532dc3f43725645aa7b868cd4c8473c94a43bc0719",
+    "producer_tests": 132,
+    "client_tests": 7,
+    "fail_closed_alias_cases": 15,
+    "environment_files_rehashed": 30912,
+    "metadata_device": "cuda",
+    "observed_forward_device": "cuda:0",
+    "generic_cuda_alias_acceptance": false,
+    "receipt_mutated": false,
+    "original_validator_unchanged": true,
+    "original_bound_v2_unchanged": true
+  },
+  "gbv_launch_authorized": true,
+  "gbv_execution_entry": "scripts.run_roa_empirical_scoring_bound_v3",
+  "gbv_predecessor_manifests": {
+    "runtime": "dc2905224798b07302db8950f68db228de1faff9042c44dbaee7111ba107878f",
+    "gpu_preflight": "1aabac381c8a5e5381f46729f49e9afcaae915c1fa84cd375141486e513b530a",
+    "base": "6cbc051be274617e26f548f4b51b5a6ec3cddeb5e1caf6761f00fa8301913cab"
+  },
+  "scientific_fit_calls": 0,
+  "fresh_gold_values_materialized": 0,
+  "scope": "Accepted base saved-witness arithmetic and exact validator correction; GbV, outcome quality, fairness and submission readiness remain pending."
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_BOUNDED_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION_VERIFICATION",
+  "checks": 39,
+  "public_major_category_q3_supported": true,
+  "institution_recognized_record_retained": false,
+  "p0_h_closed": false,
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "cas_q3_status": "NOT_READY"
+}

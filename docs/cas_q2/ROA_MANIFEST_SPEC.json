@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "namespace": "outputs/daa_v3_development/recovery_only_isolation_v1",
+  "manifest_path": "outputs/daa_v3_development/recovery_only_isolation_v1/SHA256_MANIFEST.json",
+  "manifest_sha256": "0921b3b15be2a58b7863911e60cd4ce10cb2b063055dda9823508c3ab2e6a8d6",
+  "payload_file_count": 216,
+  "payload_size_bytes": 54435934
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_THIRD_PARTY_TERMS_RECHECK_RELEASE_SOURCE_CORRECTED_CURRENT_ARCHIVE_WITHHELD",
+  "cas_q3_status": "NOT_READY",
+  "checked_local_date": "2026-09-14",
+  "legal_advice_claimed": false,
+  "distribution_authorized": false,
+  "current_archive": {
+    "sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
+    "third_party_notice_sha256": "20d6198a76b35d050c95b51423b1c6f6729e7ae1074b28c48fb32a80539e5180",
+    "preserved": true,
+    "arithmetic_verification_witness": true,
+    "release_ready": false,
+    "publication_authorized": false
+  },
+  "source_correction": {
+    "path": "release/cas_q3_aggregate/THIRD_PARTY_NOTICES.md",
+    "corrected_source_sha256": "7186c75204c5289455fbbb38b60f5196c1a6e797827aa1a39b5e6703f6885c01",
+    "old_deberta_summary": "MIT",
+    "corrected_deberta_boundary": "foundation model labelled MIT; non-c checkpoint training-data licenses vary and include non-commercial licenses; downstream legal effect is not resolved by this audit",
+    "future_archive_rebuild_required": true
+  },
+  "upstream_records": {
+    "hotpotqa": "https://github.com/hotpotqa/hotpot",
+    "two_wiki_multihopqa": "https://github.com/Alab-NII/2wikimultihop",
+    "musique": "https://github.com/stonybrooknlp/musique",
+    "qwen_exact_revision_license": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/aa8e72537993ba99e69dfaafa59ed015b17504d1/LICENSE",
+    "bge_exact_revision": "https://huggingface.co/BAAI/bge-base-en-v1.5/tree/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+    "deberta_exact_revision": "https://huggingface.co/MoritzLaurer/deberta-v3-large-zeroshot-v2.0/tree/5a4338ab2151dc8db04ad53b42b6153382bf4f99"
+  },
+  "open_release_gates": [
+    "owner-selected project license and legal holder/year",
+    "institutional release decision",
+    "Qwen research-license compatibility review for the intended release",
+    "DeBERTa non-c training-data-terms review for the intended release",
+    "selected-journal data/code policy and reviewer access channel",
+    "new license-bearing persistent archive and independent validation"
+  ],
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "logical_original_root": "E:/paper/ReliableRAG",
+  "models": {
+    "bge": {
+      "model_id": "BAAI/bge-base-en-v1.5",
+      "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+      "files": 6,
+      "bytes": 438899684
+    },
+    "qwen": {
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "files": 9,
+      "bytes": 6183451098
+    },
+    "gbv_nli": {
+      "model_id": "MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
+      "revision": "5a4338ab2151dc8db04ad53b42b6153382bf4f99",
+      "files": 7,
+      "bytes": 872645751
+    }
+  },
+  "files": [
+    {
+      "model": "bge",
+      "path": "data/models/huggingface/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/config.json",
+      "sha256": "bc00af31a4a31b74040d73370aa83b62da34c90b75eb77bfa7db039d90abd591",
+      "size_bytes": 777
+    },
+    {
+      "model": "bge",
+      "path": "data/models/huggingface/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/model.safetensors",
+      "sha256": "c7c1988aae201f80cf91a5dbbd5866409503b89dcaba877ca6dba7dd0a5167d7",
+      "size_bytes": 437955512
+    },
+    {
+      "model": "bge",
+      "path": "data/models/huggingface/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/special_tokens_map.json",
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "size_bytes": 125
+    },
+    {
+      "model": "bge",
+      "path": "data/models/huggingface/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer.json",
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "size_bytes": 711396
+    },
+    {
+      "model": "bge",
+      "path": "data/models/huggingface/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/tokenizer_config.json",
+      "sha256": "9261e7d79b44c8195c1cada2b453e55b00aeb81e907a6664974b4d7776172ab3",
+      "size_bytes": 366
+    },
+    {
+      "model": "bge",
+      "path": "data/models/huggingface/models--BAAI--bge-base-en-v1.5/snapshots/a5beb1e3e68b9ab74eb54cfd186867f64f240e1a/vocab.txt",
+      "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+      "size_bytes": 231508
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/config.json",
+      "sha256": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b",
+      "size_bytes": 661
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/generation_config.json",
+      "sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+      "size_bytes": 242
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/merges.txt",
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "size_bytes": 1671839
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/model-00001-of-00002.safetensors",
+      "sha256": "67347b23fb4165b652eb6611f5e1f2a06dfcddba8e909df1b2b0b1857bee06c2",
+      "size_bytes": 3968658944
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/model-00002-of-00002.safetensors",
+      "sha256": "a40d941d0e7e0b966ad8b62bb6d6b7c88cce1299197b599d9d0a4ce59aabfc1d",
+      "size_bytes": 2203268048
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/model.safetensors.index.json",
+      "sha256": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56",
+      "size_bytes": 35581
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer.json",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "size_bytes": 7031645
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer_config.json",
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "size_bytes": 7305
+    },
+    {
+      "model": "qwen",
+      "path": "data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "size_bytes": 2776833
+    },
+    {
+      "model": "gbv_nli",
+      "path": "outputs/published_baseline_gbv_nli_v1/infrastructure/model_snapshot/README.md",
+      "sha256": "5628e67584cf574825c763f890607aae540b250c92eca475c77e993fda3483cb",
+      "size_bytes": 2195
+    },
+    {
+      "model": "gbv_nli",
+      "path": "outputs/published_baseline_gbv_nli_v1/infrastructure/model_snapshot/added_tokens.json",
+      "sha256": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+      "size_bytes": 23
+    },
+    {
+      "model": "gbv_nli",
+      "path": "outputs/published_baseline_gbv_nli_v1/infrastructure/model_snapshot/config.json",
+      "sha256": "3b0a2a3fb311037ba72670d87cbd16f920581985178547a76936dfdb292e5271",
+      "size_bytes": 1019
+    },
+    {
+      "model": "gbv_nli",
+      "path": "outputs/published_baseline_gbv_nli_v1/infrastructure/model_snapshot/model.safetensors",
+      "sha256": "2031ec34340911b2cecf4f95f5e24db91b2a5d7ea0fa1e704e9cd6d61585e477",
+      "size_bytes": 870176356
+    },
+    {
+      "model": "gbv_nli",
+      "path": "outputs/published_baseline_gbv_nli_v1/infrastructure/model_snapshot/special_tokens_map.json",
+      "sha256": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+      "size_bytes": 286
+    },
+    {
+      "model": "gbv_nli",
+      "path": "outputs/published_baseline_gbv_nli_v1/infrastructure/model_snapshot/spm.model",
+      "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+      "size_bytes": 2464616
+    },
+    {
+      "model": "gbv_nli",
+      "path": "outputs/published_baseline_gbv_nli_v1/infrastructure/model_snapshot/tokenizer_config.json",
+      "sha256": "f5a1a74a632c0e9225e09a21ddf60c2e70ef5d3bfc1f261a24fd8ddab27254d2",
+      "size_bytes": 1256
+    }
+  ]
+}

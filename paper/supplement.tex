@@ -1,0 +1,94 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,graphicx,microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\raggedbottom
+\title{Supplementary Material: Supervision-Matched Selection of Paired RAG Repairs}
+\author{Anonymous authors}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Fixed-action sensitivity}
+The primary analysis reallocates the global top-$K$ actions within every question-cluster bootstrap draw. The following pre-specified sensitivity holds the observed action memberships fixed while reusing the same 20,000 draws and six-endpoint multiplicity adjustment.
+
+\begin{table}[h]
+\centering
+\caption{Fixed-action sensitivity. Values are percentage points.}
+\resizebox{\textwidth}{!}{\input{tables/fixed_action_sensitivity.tex}}
+\end{table}
+
+\section{Dataset breakdown}
+The cells below describe the one global allocation after partitioning by dataset. Each cell contains 6,000 traces. Actions, Recovery, Damage, and Net are counts; the EM/F1 differences from that cell's Keep baseline are percentage points with the cell denominator. The cells do not reallocate 900 actions within each dataset and support no subgroup inference.
+\input{tables/dataset_breakdown.tex}
+
+\section{Retriever breakdown}
+The cells below describe the same global allocation after partitioning by retriever. Each cell contains 6,000 traces. Counts and percentage-point differences have the same meaning as above, using the retriever-cell denominator. These cells support no retriever-specific superiority claim.
+\input{tables/retriever_breakdown.tex}
+
+\section{Policy construction details}
+All five supervised heads use 3,600 fit questions and 900 disjoint calibration questions, with three retriever siblings retained within a question group. Numeric imputation and standardization use fit data only. Missing-value indicators and one-hot retriever indicators are unscaled. The base classifiers and Platt calibrators use fixed logistic-regression settings and are never refit after fresh outcomes are opened. Raw HGB, raw GbV, and V2 are included for descriptive context but are not supervision-matched attribution controls.
+
+\section{Frozen historical HGB score}
+\label{sec:hgb-score}
+
+\paragraph{Identity and target.}
+HGB means the historical \emph{histogram-based gradient-boosting} pairwise selector implemented with \texttt{HistGradientBoostingClassifier}. It is a frozen upstream estimator and is not the HGB-only$_R$ head fitted in the current experiment. Its historical development universe contains 7,200 labeled traces from 4,800 question groups and 1,539 available pair-feature records. Only 601 informative traces from 518 question groups enter the final fit. For normalized exact-match outcomes $c_i\in\{0,1\}$ of answer $a_i$, the historical target is
+\[
+ y=\begin{cases}
+ 1,&(c_0,c_1)=(0,1),\\
+ 0,&(c_0,c_1)=(1,0).
+ \end{cases}
+\]
+Pairs with $(c_0,c_1)=(0,0)$ or $(1,1)$ have no preference label and are excluded from HGB fitting. Thus HGB learns which member of an already acquired answer pair is correct when exactly one member is correct; it does not learn the current experiment's full-population Recovery target from all eligible traces.
+
+\paragraph{Likelihood cells and branch features.}
+For $i,j\in\{0,1\}$, $L_{ij}$ is the mean teacher-forced token log probability of the fixed answer $a_i$ when the reader is conditioned on the question and evidence set $E_j$. Hence $L_{00}$ and $L_{11}$ are the two own-evidence likelihoods, while $L_{01}$ and $L_{10}$ score each answer under the other branch's evidence. For branch $i$, define the eight-component vector
+\[
+ \phi_i=(\ell_i^{\mathrm{own}},\ell_i^{\mathrm{cross}},
+ \ell_i^{\mathrm{own}}-\ell_i^{\mathrm{cross}},n_i,
+ u_i^+,u_i^-,s_i^+,s_i^-),
+\]
+where $\ell_0^{\mathrm{own}}=L_{00}$, $\ell_0^{\mathrm{cross}}=L_{01}$, $\ell_1^{\mathrm{own}}=L_{11}$, and $\ell_1^{\mathrm{cross}}=L_{10}$. Here $n_i$ is answer token length; $u_i^+$ and $u_i^-$ are multiset token F1 between $a_i$ and the added and removed document text; and $s_i^+$ and $s_i^-$ are \texttt{SequenceMatcher} ratios between normalized $a_i$ and those texts. The last two historical field names contain ``semantic compatibility,'' but their frozen implementation is normalized string-sequence similarity rather than a neural semantic model.
+
+Let $\delta=\phi_1-\phi_0$. The five pair-context variables are
+\[
+ z=(o_E,d_S,n_E,t_A,s_A),
+\]
+where $o_E$ is the Jaccard overlap of document IDs in $E_0$ and $E_1$; $d_S$ is added-document retrieval score minus removed-document retrieval score; $n_E$ is one minus the largest token-set Jaccard similarity between the added document and any document in $E_0$; $t_A$ is token F1 between $a_0$ and $a_1$; and $s_A$ is their saved BGE answer-pair similarity. The HGB input is
+\[
+ x=[\delta;\,\delta\otimes z]\in\mathbb{R}^{8+8\times5}=\mathbb{R}^{48}.
+\]
+This compact construction expands to eight branch differences and forty difference--context interactions. Dataset and retriever identities are absent from the historical HGB input.
+
+\paragraph{State symmetry, model, and score direction.}
+The fit duplicates each historical example as $(x,y)$ and $(-x,1-y)$. The fixed classifier uses \texttt{max\_iter=300}, \texttt{max\_leaf\_nodes=15}, learning rate 0.08, L2 regularization 1.0, and final-fit seed 20261834; no feature scaling or hyperparameter search is applied to this final HGB fit. If $p_H(1\mid x)$ is its class-one probability, the stored repair-preference score is
+\[
+ h(x)=\tfrac12\{p_H(1\mid x)+1-p_H(1\mid -x)\}.
+\]
+Consequently $h(-x)=1-h(x)$ up to numerical precision, and a larger $h(x)$ favors replacing $a_0$ with $a_1$. Raw HGB ranks eligible traces directly by $h(x)$. HGB-only$_R$ is a separate current L2-logistic Recovery head whose inputs are $h(x)$, one missingness flag, and three retriever indicators; HGB+GbV$_R$ adds the paired GbV margin and its flag. The two current heads share the current fit/calibration recipe and never refit HGB.
+
+\paragraph{Source and provenance boundary.}
+The authenticated historical definitions are \texttt{src/mars/state\_symmetric.py} (SHA-256 \nolinkurl{3724b5ac77722b70cabdf2589379d5584942f34ec81f3f5a04f88e0665f8f717}) and the model binding in \texttt{src/mars/full\_experiment.py} (SHA-256 \nolinkurl{65713509ef6c8d094bb44ad2c47b0238ceade607616d3e729b31c56096326d50}). The original saved HGB artifact is 639,652 bytes with SHA-256 \nolinkurl{9245170f855435b5603b04013bd4fbab79a75d2761853a012ab9f3259600bf6e}. A source-assembled replay reproduced all 1,539 HGB scores with zero numerical error. Its serialized file was not byte-identical because the saved bin mapper recorded one CPU-thread metadata value instead of six; all observed learned arrays and tree fields matched. The original per-estimator fit-time ID/matrix receipts and an independent original-fit witness remain unavailable, so this evidence authenticates the saved computation and reconstructed fit, not the literal historical execution event.
+
+\section{Answer metrics}
+Normalization lowercases text, removes ASCII punctuation and the English articles \texttt{a}, \texttt{an}, and \texttt{the}, and collapses whitespace. EM is one if the normalized prediction equals any allowed reference. Token F1 uses multiset token overlap and takes the maximum over allowed references. Unequal answers involving \texttt{yes}, \texttt{no}, or \texttt{noanswer} receive zero F1; an empty token sequence scores one only against another empty sequence. The method-blind independent metric implementation applies these same conventions. No new reference evaluation is performed for manuscript preparation.
+
+\section{Data and historical-development scope}
+The evaluation source frames are HotpotQA validation, 2WikiMultiHopQA development, and MuSiQue training. The last label describes the public benchmark split, not membership in the current selector's fit set. A prospectively fixed hash order selected 2,000 questions per dataset after excluding the recorded 18,600-question union; the result is a deterministic frame-scoped cohort, not a probability sample or semantic-decontamination certificate.
+
+The seven historical upstream estimators have reconstructed membership of 601 fit traces / 518 question groups within a 7,200-trace / 4,800-question historical development universe. Those 4,800 groups and the 3,000 earlier V2 questions belong to the exclusion union and have zero recorded dataset/ID overlap with the current five-head development cohort. Only the five current heads share the 4,500-question, 3,600-fit / 900-calibration recipe. Upstream learning histories are part of the fixed signal dependency, so matched current heads do not imply equal total historical label budgets for every signal.
+
+\section{Provenance and stopped extensions}
+Saved estimator bytes, reconstructed historical membership, numerical replay, pre-label scoring witnesses, action memberships, outcome mapping, aggregate analysis, and independent validators are preserved under hashes. A locally preserved pre-ROA-named package contains a byte-identical copy of the complete historical training manifest, but its timestamp has no independent external certification. Seven original per-estimator fit-time ID/matrix receipts and an independent original-fit witness remain unavailable. These disclosures do not exclude unknown unlogged activity. The Qwen/BGE replay covers a prospectively selected 180 of 18,000 traces; downstream saved neural witnesses are fully checked, but this is not a second complete neural-forward run.
+
+A Phi reader extension acquired artifacts but failed its fixed semantic validation because 6,573 of 9,120 BF16 query vectors exceeded the $10^{-3}$ tolerance, with maximum deviation 0.0041683525. It was excluded before policy fitting and fresh effect analysis. A Mistral extension stopped at protocol review before engineering or model execution. Neither is a failed reader-effect experiment, and neither supports a robustness claim.
+
+\section{Workload disclosure}
+Stage timers cover distinct receipt boundaries and must not be summed: C2 1,096.562 s; C3 45,216.887 s; base scoring 5,337.573 s; GbV scoring 3,523.022 s; allocation 157.658 s. Separate saved C4 peaks of 8,153,970,176 and 2,956,706,304 bytes are also non-additive. The bounded replay separately contains 540 generation receipts, 518,966 prompt tokens, and 8,441 generated tokens/forwards. It is a reproduction witness, not an independent workload estimate. Standalone policy and per-generation latency, a uniform end-to-end timer, canonical C2/C3 peaks, a simultaneous whole-system peak, C2/C3 BGE token totals, generation input-token touches per autoregressive forward, FLOPs, and energy were not measured. Missing values are not zero; prompt or output-token totals are not FLOP estimates.
+
+\section{Reproduction boundary}
+The anonymous aggregate candidate permits deterministic checking of published numbers, interval signs, joint decisions, and file hashes. It excludes raw benchmark text, model weights, local paths, per-example outcomes, and private immutable ledgers. This supports aggregate reporting verification. It does not yet support public end-to-end regeneration of retrieval, answers, neural scores, or upstream training.
+
+\end{document}

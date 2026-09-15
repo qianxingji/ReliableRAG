@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "audit_date_local": "2026-09-15",
+  "official_sources_checked": [
+    "https://link.springer.com/journal/10489/submission-guidelines",
+    "https://www.springernature.com/gp/authors/research-data-policy",
+    "https://www.springernature.com/gp/authors/research-data-policy/data-policy-faqs",
+    "https://support.springernature.com/en/support/solutions/articles/6000237619-software-and-code-sharing"
+  ],
+  "policy_boundary": {
+    "public_github_repository_exists": true,
+    "final_submission_code_revision_frozen": false,
+    "permanent_archive_identifier_released": false,
+    "restricted_evidence_delivery_is_request_bound": true,
+    "particular_private_delivery_channel_preapproved": false
+  },
+  "base_artifacts": {
+    "manuscript_pdf_sha256": "6304d8a407d728265dbc375d968e3e3349470f73d1cae4a77e1093511f2771b7",
+    "manuscript_pages": 11,
+    "supplement_pdf_sha256": "ad271207b268dac05592b555d4a357e79cb36be5a0e86e571eb616d4c7e71a49",
+    "supplement_pages": 3,
+    "static_checks": 141,
+    "pdf_tokens_before_references": 4048,
+    "pdf_tokens_full_document": 4745,
+    "pages_visually_inspected": 14,
+    "visual_defects": 0,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0
+  },
+  "target_preflight": {
+    "pdf_sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97",
+    "source_zip_sha256": "e28e3c3820b321e7af444dc9ba57cb49e6890b7623d2dfadce6878dca41a4a8a",
+    "pages": 12,
+    "verification_checks": 38,
+    "pages_visually_inspected": 12,
+    "visual_defects": 0,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0
+  },
+  "current_private_transport": {
+    "first_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260915-policy-a/applied_intelligence_complete_source_transport_candidate.zip",
+    "second_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260915-policy-b/applied_intelligence_complete_source_transport_candidate.zip",
+    "archive_sha256": "d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e",
+    "deterministic_rebuild_equal": true,
+    "archive_members": 10,
+    "flat_archive": true,
+    "validator_checks_each": 56,
+    "clean_compile_pages": 12,
+    "clean_compile_pdf_sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97",
+    "both_builds_independently_validated": true
+  },
+  "current_synthetic_private_build": {
+    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260915-policy-refresh-a",
+    "source_archive": "applied_intelligence_author_populated_source.zip",
+    "source_archive_sha256": "36eb522d2bbe5305a812a938e68d2fd5120adaacbefa0d77145a706abb783d90",
+    "compiled_pdf": "manuscript.pdf",
+    "compiled_pdf_sha256": "a21e80ad06b45eb0044de3cf4c1a98f3220b738589b29b49f2dcc48eb211aa40",
+    "cover_letter": "cover_letter.md",
+    "cover_letter_sha256": "e430fb658ddd7672f5f37137f4c13daee41c9b556fbc78b51ad3a5455a7d2948",
+    "receipt": "PRIVATE_BUILD_RECEIPT.json",
+    "source_members": 10,
+    "compiled_pages": 13,
+    "pages_visually_inspected": 13,
+    "visual_defects": 0,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0,
+    "synthetic_values_only": true,
+    "real_owner_package_built": false
+  },
+  "default_builder_rebuild": {
+    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260915-policy-refresh-default-check",
+    "used_default_transport_path": true,
+    "source_archive_sha256": "36eb522d2bbe5305a812a938e68d2fd5120adaacbefa0d77145a706abb783d90",
+    "compiled_pdf_sha256": "a21e80ad06b45eb0044de3cf4c1a98f3220b738589b29b49f2dcc48eb211aa40",
+    "cover_letter_sha256": "e430fb658ddd7672f5f37137f4c13daee41c9b556fbc78b51ad3a5455a7d2948",
+    "byte_identical_to_current_synthetic_build": true
+  },
+  "preserved_historical_artifacts": {
+    "prior_transport_archive_sha256": "f4279cf38aa09a1ddc212b9b295e0c73b78a67b7262845e72a6df584edeb8fdd",
+    "prior_transport_record_mutated": false,
+    "prior_synthetic_records_mutated": false,
+    "prior_build_directories_preserved": true
+  },
+  "engineering_validation_history": {
+    "initial_reviewer_map_run": "FAIL_STALE_HISTORICAL_TRANSPORT_TO_CURRENT_PREFLIGHT_EQUALITY_ASSERTION",
+    "observed_historical_clean_pdf_sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4",
+    "observed_current_preflight_pdf_sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97",
+    "resolution": "PRESERVE_HISTORICAL_PIN_AND_BIND_CURRENT_PREFLIGHT_ONLY_TO_REFRESHED_TRANSPORT",
+    "scientific_result_failure": false
+  },
+  "final_verification": {
+    "reviewer_evidence_map_records": 194,
+    "reviewer_evidence_map_checks": 1472,
+    "submission_gate_repository_hashes": 228,
+    "submission_gate_checks": 819,
+    "submission_gate_expected_exit_code": 2,
+    "real_owner_input_missing_fields": 6,
+    "real_owner_input_validation_errors": 0,
+    "cas_q3_tests_passed": 135,
+    "full_repository_tests_passed": 409,
+    "full_repository_platform_skips": 2
+  },
+  "scope": {
+    "owner_or_institutional_approval_supplied": false,
+    "real_author_package_built": false,
+    "distribution_authorized": false,
+    "submission_authorized": false,
+    "scientific_payloads_read": false,
+    "model_forwards": 0,
+    "scientific_fits": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "evidence": {
+    "file": null,
+    "sha256": null,
+    "kind": null,
+    "issuing_office": null,
+    "obtained_date": null,
+    "authenticated_or_institution_issued": null
+  },
+  "recorded_facts": {
+    "cas_edition_year": null,
+    "category_basis": null,
+    "category_name": null,
+    "journal_title": null,
+    "print_issn": null,
+    "electronic_issn": null,
+    "tier": null,
+    "recognition_date_rule": null,
+    "title_issn_change_treatment": null,
+    "applies_to_hbut_first_affiliation_output": null
+  },
+  "manual_review": {
+    "reviewer_role": null,
+    "review_date": null,
+    "record_visually_inspected": null,
+    "metadata_matches_record": null,
+    "jcr_result_not_substituted": null
+  }
+}

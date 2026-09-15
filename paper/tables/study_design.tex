@@ -1,0 +1,16 @@
+% Generated/frozen study-design summary.
+\begin{tabular}{p{0.31\linewidth}p{0.63\linewidth}}
+\toprule
+Component & Frozen setting \\
+\midrule
+Question groups / traces & 6,000 / 18,000 \\
+Datasets & HotpotQA, 2WikiMultiHopQA, MuSiQue; 2,000 questions each \\
+Retrievers & BM25, BGE dense, hybrid RRF; one sibling trace per question \\
+Dataset-specific pool sizes & 19,352; 11,746; 23,618 documents (54,716 total) \\
+Reader & Qwen2.5-3B-Instruct, revision \texttt{aa8e7253\ldots 04d1} \\
+Development supervision & 4,500 questions / 13,500 traces; 3,600 fit + 900 calibration \\
+Fresh eligibility / denominator & 4,267 / 18,000 traces \\
+Action allocation & Global $K=900$ for each switching policy; Keep selects zero \\
+Primary resampling & 20,000 dataset-stratified question-cluster draws \\
+\bottomrule
+\end{tabular}
