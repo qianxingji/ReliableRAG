@@ -186,7 +186,7 @@
   "p1_a_reviewer_evidence_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
   "p1_a_reviewer_evidence_map_sha256": "1b6a55c78742d62e87fb424f2ff2191c83e2de1ae2df3c6349b9ed82e4fc3246",
   "p1_a_machine_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.json",
-  "p1_a_machine_map_sha256": "7b64d453419c98043080f764a724e78f40e206e1f584a50ce8dcb93a3fb979a8",
+  "p1_a_machine_map_sha256": "3e13cd94a4487ff2bd2806c251954917453aaa3c1f832c46c6311c843ab64403",
   "p1_a_verifier": "scripts/verify_cas_q3_reviewer_evidence_map.py",
   "p1_a_verifier_sha256": "4ffbda7422acfd928d9800dec03dcd77f5cc514785aea3eabc40f0086aa49b26",
   "p1_a_verification_receipt": "docs/cas_q3/REVIEWER_EVIDENCE_MAP_VERIFICATION.json",
