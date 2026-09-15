@@ -303,6 +303,24 @@ and pull-request run
 The correction changes one digest only; the reviewer-map decision, open gates,
 scientific exclusions and NOT READY status are unchanged.
 
+The Applied Intelligence data/code-policy refresh at
+`136bac11b8994a1661006a3d5752ed14ea825544` passed push run
+[34931815342](https://github.com/qianxingji/ReliableRAG/actions/runs/34931815342)
+and pull-request run
+[34931817346](https://github.com/qianxingji/ReliableRAG/actions/runs/34931817346).
+The refresh corrects the public-repository, final-revision, persistent-archive
+and request-bound restricted-evidence wording; rebuilds the committed base and
+target PDFs; and exercises the refreshed private transport and synthetic target
+builder outside CI. Local validation passes all 135 CAS Q3 tests and all 409
+repository tests with two Windows platform skips. The reviewer map authenticates
+194 records in 1,472 checks, and the fail-closed Submission gate authenticates
+228 repository hashes in 819 checks while retaining `NOT_READY`. The first
+local reviewer-map run exposed a stale historical-transport equality assertion;
+that failed run and its correction are retained in the versioned refresh
+acceptance. Neither successful CI run reads the private transport or synthetic
+author package, supplies institutional evidence, or authorizes distribution or
+submission.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
@@ -319,7 +337,7 @@ or pretrained archives, historical ZIP recovery source, model weights, raw
 question/answer ledgers or selected Gold. It therefore does not run or claim:
 
 - the 129-check aggregate statistical-statement verifier, either aggregate-
-  package rebuild/test suite or the 139-check full manuscript verifier, all of
+  package rebuild/test suite or the 141-check full manuscript verifier, all of
   which require ignored aggregate inputs;
 - the 30-check same-host historical-manifest archive verifier;
 - reviewer-map verification that requires the withheld aggregate archive;

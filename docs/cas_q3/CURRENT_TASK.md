@@ -499,9 +499,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 184 repository records plus preserved withheld archive
+  authenticates 194 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,334 checks, without
+  package in 1,472 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -522,7 +522,7 @@ fairness, reviewer and Submission Ready audits.
   committed Applied Intelligence modern-preflight verifier. GitHub push and
   pull-request runs pass through the current owner-gate correction, portable
   LaTeX-lookup repair, official-template route and authoritative CAS-platform
-  boundary; the latest retained successful functional head is `fdd90a1`. The
+  boundary; the latest retained successful functional head is `136bac1`. The
   exposed Ubuntu `LOCALAPPDATA` and absolute-`/tmp` traversal failures and their
   successful repairs are retained in the CI acceptance record. Private aggregate/statistical,
   historical-manifest and end-to-end neural reproduction remain explicitly
