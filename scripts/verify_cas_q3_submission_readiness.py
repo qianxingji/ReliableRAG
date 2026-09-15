@@ -566,6 +566,45 @@ def main() -> int:
     require(hbut_request["p0_g_closed"] is False and hbut_request["p0_h_closed"] is False and hbut_request["p0_i_closed"] is False, "request does not close P0 gates", checks)
     require(hbut_request["submission_authorized"] is False, "request does not authorize submission", checks)
 
+    hbut_packet = json.loads(
+        (ROOT / evidence["p0_ghi_hbut_review_request_packet_acceptance"]).read_text(encoding="utf-8")
+    )
+    require(
+        hbut_packet["decision"]
+        == "PASS_DETERMINISTIC_HBUT_REVIEW_REQUEST_PACKET_PREPARED_NOT_SENT",
+        "deterministic HBUT review-request packet is prepared",
+        checks,
+    )
+    require(hbut_packet["deterministic_rebuild_equal"] is True, "HBUT request packet rebuilds byte-identically", checks)
+    require(hbut_packet["archive_members"] == 11 and hbut_packet["validator_checks_each"] == 99, "HBUT request packet validation is bound", checks)
+    require(
+        hbut_packet["packet_scope"]["owner_local_input_included"] is False
+        and hbut_packet["packet_scope"]["institutional_response_included"] is False
+        and hbut_packet["packet_scope"]["raw_scientific_payload_included"] is False,
+        "HBUT request packet excludes private inputs, responses and raw payloads",
+        checks,
+    )
+    require(hbut_packet["packet_scope"]["final_author_artifact_rebind_required"] is True, "HBUT request packet retains final artifact rebind", checks)
+    require(
+        hbut_packet["request_sent"] is False
+        and hbut_packet["institutional_response_received"] is False,
+        "HBUT request packet remains unsent and unanswered",
+        checks,
+    )
+    require(
+        hbut_packet["institutional_cas_tier_verified"] is False
+        and hbut_packet["manuscript_approved"] is False
+        and hbut_packet["code_release_approved"] is False,
+        "HBUT request packet supplies no institutional decision",
+        checks,
+    )
+    require(
+        hbut_packet["distribution_authorized"] is False
+        and hbut_packet["submission_authorized"] is False,
+        "HBUT request packet authorizes neither distribution nor submission",
+        checks,
+    )
+
     hbut_secondary = json.loads(
         (ROOT / evidence["p0_h_hbut_cas_edition_secondary_evidence"]).read_text(encoding="utf-8")
     )

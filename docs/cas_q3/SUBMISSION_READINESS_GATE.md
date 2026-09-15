@@ -64,6 +64,10 @@ The current machine decision is
   the former `f4279c...` transport remains a preserved historical build. This
   refresh changes no scientific result and supplies no owner or institutional
   approval, real author package, release authorization or permanent archive.
+  The existing HBUT evidence request has also been assembled twice into a
+  byte-identical, validated institutional-review packet containing the anonymous
+  drafts and release-review inputs. It has not been sent and supplies no
+  institutional response, approval or author-populated artifact.
   A fixed-cutoff private prompt ledger now retains 47 root-user prompt chunks
   after excluding subagents and automatically injected context. The tracked
   receipt exposes only counts and hashes. The ledger is Git-ignored,

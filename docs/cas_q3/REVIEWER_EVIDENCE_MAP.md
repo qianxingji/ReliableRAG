@@ -311,6 +311,9 @@ CAS Q3 discovery passes all 129 tests.
   but neither record has been received and their content still requires separate
   client audits. Public corroboration supports the 2025 major-category Q3
   interpretation but cannot certify the institution-recognized edition or record.
+  A deterministic 11-member HBUT review-request packet now combines the request,
+  anonymous drafts and license/third-party review inputs; it remains unsent and
+  is evidence of preparation only.
   Current Springer Nature AI guidance additionally requires the responsible
   author to approve the revised use/prompt-scope disclosure and supply the final
   end date. The private target builder's Methods placement has passed a

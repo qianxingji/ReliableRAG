@@ -760,6 +760,31 @@ def main() -> int:
     checks.true("python scripts/verify_cas_q3_external_closure_inputs.py" in request_text, "request contains private import command")
     checks.true("本稿不依据未读取的" in request_text, "request retains CAPTCHA non-inference boundary")
 
+    hbut_packet = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_HBUT_REVIEW_REQUEST_PACKET_ACCEPTANCE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        hbut_packet["decision"],
+        "PASS_DETERMINISTIC_HBUT_REVIEW_REQUEST_PACKET_PREPARED_NOT_SENT",
+        "HBUT review-request packet decision",
+    )
+    checks.equal(hbut_packet["deterministic_rebuild_equal"], True, "HBUT packet deterministic rebuild")
+    checks.equal(hbut_packet["archive_members"], 11, "HBUT packet member count")
+    checks.equal(hbut_packet["validator_checks_each"], 99, "HBUT packet validation count")
+    checks.equal(hbut_packet["packet_scope"]["owner_local_input_included"], False, "HBUT packet excludes owner local input")
+    checks.equal(hbut_packet["packet_scope"]["institutional_response_included"], False, "HBUT packet excludes nonexistent response")
+    checks.equal(hbut_packet["packet_scope"]["final_author_artifact_rebind_required"], True, "HBUT packet retains final artifact rebind")
+    checks.equal(hbut_packet["preserved_failure"]["archive_bytes_changed_by_correction"], False, "HBUT CLI correction preserves archive bytes")
+    checks.equal(hbut_packet["request_sent"], False, "HBUT packet remains unsent")
+    checks.equal(hbut_packet["institutional_response_received"], False, "HBUT packet supplies no response")
+    checks.equal(hbut_packet["institutional_cas_tier_verified"], False, "HBUT packet does not verify tier")
+    checks.equal(hbut_packet["manuscript_approved"], False, "HBUT packet does not approve manuscript")
+    checks.equal(hbut_packet["code_release_approved"], False, "HBUT packet does not approve release")
+    checks.equal(hbut_packet["distribution_authorized"], False, "HBUT packet does not authorize distribution")
+    checks.equal(hbut_packet["submission_authorized"], False, "HBUT packet does not authorize submission")
+
     hbut_secondary = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.json").read_text(
             encoding="utf-8"

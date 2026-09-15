@@ -77,6 +77,7 @@ jobs:
             tests.test_cas_q3_manuscript_length \
             tests.test_cas_q3_applied_intelligence_preflight \
             tests.test_cas_q3_applied_intelligence_transport \
+            tests.test_cas_q3_hbut_review_request_packet \
             tests.test_cas_q3_applied_intelligence_private_submission
 
       - name: Require the submission gate to remain fail-closed

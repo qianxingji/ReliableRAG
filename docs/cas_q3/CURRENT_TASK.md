@@ -265,6 +265,13 @@ fairness, reviewer and Submission Ready audits.
    rules together with manuscript approval, code copyright/release and Qwen/
    DeBERTa review. It records `request_sent=false` and cannot substitute for the
    retained institutional response.
+   A deterministic [HBUT review-request packet](P0_GHI_HBUT_REVIEW_REQUEST_PACKET_ACCEPTANCE.md)
+   now places that request beside the current anonymous manuscript/supplement,
+   proposed Apache-2.0 materials and third-party review inputs. Two independent
+   11-member builds are byte-identical and each passes 99 checks without
+   extraction. The packet remains unsent, contains no institutional response or
+   local owner input, and any later manuscript approval must be rebound to the
+   exact final author-populated artifact.
    A later [official HBUT college-level secondary-evidence audit](P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.md)
    finds a published School of Science rule using the upgraded CAS report from
    the year before publication. It makes 2025 the candidate report year for a
