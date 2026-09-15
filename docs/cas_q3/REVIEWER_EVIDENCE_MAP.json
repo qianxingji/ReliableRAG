@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "29cbd480b7fd3ab2cd0b7a6a09d8dce351d6dada148a48b5fda3b011bbc6a69c",
+      "sha256": "cbe3c376824df8b7cbca98be79545118b80e7f7a45b4a603e61c4b900e66f626",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "78cba5d6b15f674cf50b9f8c591c553a37d2e28db50a84e5e0880a230c758039",
+      "sha256": "17af7ae4e50a6ab50e7c05a67c7c67ff3b98ab2705a702196cc673cc7ba6cfe9",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -401,32 +401,32 @@
     {
       "path": "scripts/build_cas_q3_applied_intelligence_private_submission.py",
       "required_marker": "PASS_PRIVATE_APPLIED_INTELLIGENCE_AUTHOR_POPULATED_CANDIDATE_FINAL_AUDITS_OPEN",
-      "sha256": "cb28da6046639174dfe87e51c08d31e977f326ac79ad8d20a085003ef3906f7b"
+      "sha256": "e912f237fb7160f427e17d33c9734eaacb77444450bd75a116f03008b493e5c4"
     },
     {
       "path": "tests/test_cas_q3_applied_intelligence_private_submission.py",
       "required_marker": "AppliedIntelligencePrivateSubmissionTests",
-      "sha256": "cd87816ad0dc95825a2dc24f76517140296680f6813ec853956af8545c98c064"
+      "sha256": "b68c21a6584a40321d14967933609ea221625a57b7b4a0999aebe2768822f6fb"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "78a931d3d10fa873b17b77b5fffb643e39cde8cc6906050af957c4f1a95d6c70"
+      "sha256": "2104ad552998f7a70e8e1bafc5ffa130b9d1713bb792849c966a19fd50d9a316"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "d1a1ae7d51f7133d23003c378b9e53c9819b1f16b1f824d7599b4971c2c041f4"
+      "sha256": "ded94ed29ebeb73eda363f78917d18729c391bce9d5d1dc6b8225629e884c4bf"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "314996a5d87003834bb1f5fd6630aaf51ad953d93bd25bfa7f885042982531a2"
+      "sha256": "95103afd26846c55cf4832b81b492d66f7f5243f866c61b5b6986ba40ab1be21"
     },
     {
       "path": "tests/test_cas_q3_owner_reply_packet.py",
       "required_marker": "OwnerReplyPacketTests",
-      "sha256": "c850083933ec0eb0cda6fe3d2922f56c2a2ee7d69f809a20063624e3d9817635"
+      "sha256": "5a0d74b8ab5e940412e29c190baabb0688dbfd42643583f1fb0bf04c507a9031"
     },
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
@@ -908,6 +908,26 @@
       "path": "tests/test_cas_q3_codex_session_metadata.py",
       "required_marker": "CodexSessionMetadataTests",
       "sha256": "5a6eb3292ee17eba1f2dbc586c05d04090731af56fe4a9ceceb43f774ae9187a"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.json",
+      "required_marker": "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+      "sha256": "1e63ad32949808276bd921ab1f0ee9c92686c191b9d7b793129fb05d61a1ddab"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md",
+      "required_marker": "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+      "sha256": "078dadd474fa536f8a8b5093101fa3542a055ddb9cb9e2c9705c5c64196d1dd3"
+    },
+    {
+      "path": "scripts/audit_cas_q3_springer_ai_policy_alignment.py",
+      "required_marker": "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+      "sha256": "7351f8902d75d9a1ad650547b97219b18ef93dd18074457c0f08a2d14c95b6d9"
+    },
+    {
+      "path": "tests/test_cas_q3_springer_ai_policy_alignment.py",
+      "required_marker": "SpringerAiPolicyAlignmentTests",
+      "sha256": "bce4667906d8c161daf1b5bff46815cbef2a37b49b796ffb23900434a1e7c725"
     }
   ],
   "aggregate_release_candidate": {
@@ -1052,5 +1072,19 @@
     "tracked_artifacts_restored": true,
     "temporary_output_isolation_implemented": true,
     "scientific_effect": false
+  },
+  "applied_intelligence_ai_policy_synthetic_candidate": {
+    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260915-ai-policy-a",
+    "source_archive_sha256": "e94e586c556112a998355ac0083a2e7777a04dca06da5b704e52cb5a45fa0ff5",
+    "compiled_pdf_sha256": "0a486e7f7dcdaae0357f58301d85d3a15a35dc5fddc4b1550eecd7d2d55e05fb",
+    "cover_letter_sha256": "e430fb658ddd7672f5f37137f4c13daee41c9b556fbc78b51ad3a5455a7d2948",
+    "compiled_pages": 13,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0,
+    "all_pages_visually_reviewed": true,
+    "visual_defects_found": 0,
+    "synthetic_identity_only": true,
+    "real_owner_package_built": false,
+    "submission_authorized": false
   }
 }

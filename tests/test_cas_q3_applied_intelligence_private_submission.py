@@ -8,6 +8,7 @@ import tempfile
 import unittest
 
 from scripts.build_cas_q3_applied_intelligence_private_submission import (
+    AI_METHOD_ANCHOR,
     ANONYMOUS_FRONT_MATTER,
     DECLARATION_PLACEHOLDER,
     build,
@@ -22,6 +23,7 @@ class AppliedIntelligencePrivateSubmissionTests(unittest.TestCase):
             ANONYMOUS_FRONT_MATTER
             + "\nThe same joint rule does not pass against the HGB-only policy.\n"
             + "This is not a new selector architecture.\nPublic distribution remains withheld.\n"
+            + AI_METHOD_ANCHOR
             + DECLARATION_PLACEHOLDER
         )
         data = complete_fixture()
@@ -36,11 +38,17 @@ class AppliedIntelligencePrivateSubmissionTests(unittest.TestCase):
         self.assertIn("does not pass against the HGB-only policy", rendered)
         self.assertIn("not a new selector architecture", rendered)
         self.assertIn("Public distribution remains withheld", rendered)
-        self.assertIn("Generative AI and AI-assisted technologies", rendered)
+        self.assertIn(r"\subsection{Generative AI use and human validation}", rendered)
+        self.assertLess(rendered.index("Generative AI use and human validation"), rendered.index(AI_METHOD_ANCHOR))
+        self.assertIn("Prompts instructed the tools", rendered)
 
     def test_render_rejects_missing_or_duplicate_anchors(self):
         data = complete_fixture()
-        for source in ("missing", ANONYMOUS_FRONT_MATTER * 2 + DECLARATION_PLACEHOLDER):
+        for source in (
+            "missing",
+            ANONYMOUS_FRONT_MATTER * 2 + AI_METHOD_ANCHOR + DECLARATION_PLACEHOLDER,
+            ANONYMOUS_FRONT_MATTER + AI_METHOD_ANCHOR * 2 + DECLARATION_PLACEHOLDER,
+        ):
             with self.assertRaises(AssertionError):
                 render_target_source(source, data)
 
@@ -49,6 +57,7 @@ class AppliedIntelligencePrivateSubmissionTests(unittest.TestCase):
             ANONYMOUS_FRONT_MATTER
             + "\nThe same joint rule does not pass against the HGB-only policy.\n"
             + "This is not a new selector architecture.\nPublic distribution remains withheld.\n"
+            + AI_METHOD_ANCHOR
             + DECLARATION_PLACEHOLDER
         )
         data = complete_fixture()

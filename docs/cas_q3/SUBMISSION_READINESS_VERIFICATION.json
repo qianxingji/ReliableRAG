@@ -53,6 +53,7 @@
       "status": "OPEN",
       "missing": [
         "approved AI-assistance wording with a versioned and date-bounded tool record",
+        "responsible-author confirmation of the complete AI-use and prompt-category disclosure",
         "substantive competing-interests wording",
         "institutional manuscript approval and retained evidence",
         "author-populated final target package",
@@ -67,8 +68,8 @@
     "validation_error_count": 0
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
-  "verified_repository_hashes": 218,
-  "checks": 755,
+  "verified_repository_hashes": 222,
+  "checks": 769,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

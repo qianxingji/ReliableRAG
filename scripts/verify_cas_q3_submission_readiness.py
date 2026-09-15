@@ -1337,6 +1337,61 @@ def main() -> int:
         checks,
     )
 
+    ai_policy = json.loads(
+        (ROOT / evidence["p0_i_springer_ai_policy_alignment"]).read_text(encoding="utf-8")
+    )
+    require(
+        ai_policy["decision"]
+        == "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+        "current Springer Nature AI policy is mapped without closing P0-I",
+        checks,
+    )
+    require(
+        ai_policy["accessed_date"] == "2026-09-15"
+        and len(ai_policy["sources"]) == 5
+        and all(source["url"].startswith("https://") for source in ai_policy["sources"]),
+        "AI policy source set and access date are bounded",
+        checks,
+    )
+    application = ai_policy["policy_application"]
+    require(
+        application["copy_editing_only_exception_applies"] is False
+        and application["journal_specific_methods_documentation_required"] is True
+        and application["tool_versions_required"] is True
+        and application["usage_dates_required"] is True
+        and application["prompt_scope_required"] is True
+        and application["extent_of_contribution_required"] is True,
+        "AI disclosure requirements match the current policy mapping",
+        checks,
+    )
+    candidate = ai_policy["candidate_revision"]
+    require(
+        candidate["previous_candidate_is_complete_for_current_policy"] is False
+        and candidate["revised_candidate_covers_prompt_categories"] is True
+        and candidate["revised_candidate_claims_verbatim_complete_prompt_transcript"] is False
+        and candidate["responsible_author_approval"] is False
+        and candidate["final_use_end_date"] is None,
+        "revised AI candidate remains bounded and unapproved",
+        checks,
+    )
+    synthetic_ai = ai_policy["synthetic_target_validation"]
+    require(
+        synthetic_ai["compiled_pages"] == 13
+        and synthetic_ai["nonembedded_fonts"] == 0
+        and synthetic_ai["type3_fonts"] == 0
+        and synthetic_ai["all_pages_visually_reviewed"] is True
+        and synthetic_ai["visual_defects_found"] == 0
+        and synthetic_ai["synthetic_identity_only"] is True
+        and synthetic_ai["real_owner_package_built"] is False,
+        "AI-policy target placement passes only a synthetic compile and visual review",
+        checks,
+    )
+    require(
+        ai_policy["p0_i_closed"] is False and ai_policy["submission_authorized"] is False,
+        "AI policy alignment remains non-authorizing",
+        checks,
+    )
+
     current_build_gate = json.loads(
         (ROOT / evidence["p0_i_current_private_build_gate_verification"]).read_text(encoding="utf-8")
     )
@@ -1506,6 +1561,7 @@ def main() -> int:
             "status": "OPEN",
             "missing": [
                 "approved AI-assistance wording with a versioned and date-bounded tool record",
+                "responsible-author confirmation of the complete AI-use and prompt-category disclosure",
                 "substantive competing-interests wording",
                 "institutional manuscript approval and retained evidence",
                 "author-populated final target package",

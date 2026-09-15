@@ -432,6 +432,20 @@ fairness, reviewer and Submission Ready audits.
    no longer the empty template while proving that its 6-field failure occurs
    before transport access or output creation. No identity-bearing target
    artifact was created.
+   A [current Springer Nature AI-policy alignment audit](P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md)
+   now applies the publisher's 2026-09-10 risk-based policy and the
+   Applied Intelligence journal-specific Methods-placement rule. The former
+   candidate wording was incomplete because it omitted methodological-option
+   review, statistical and numerical checking, interpretation stress-testing
+   and prompt scope. A fuller candidate now records those uses and the retained
+   human-verification boundary. The private target builder inserts an approved
+   version into a Study-design Methods subsection rather than relying on a
+   declarations-only paragraph. A fresh synthetic-identity build clean-compiled
+   to 13 pages with zero nonembedded or Type 3 fonts; all 13 pages passed
+   project-lead visual review. The candidate remains unapproved, its final use
+   end date is unset, category-level prompt disclosure does not claim a complete
+   verbatim transcript, and no real author-populated artifact was generated.
+   P0-I therefore remains open.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific

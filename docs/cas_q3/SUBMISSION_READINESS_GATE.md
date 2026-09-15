@@ -39,6 +39,15 @@ The current machine decision is
   end-to-end test, so no additional manual source-splicing step is required
   after the remaining real inputs pass. This synthetic result is not a real
   author package or an authorization.
+  A 2026-09-15 recheck of Springer Nature's updated AI policy rejects the old
+  short disclosure candidate as incomplete for this project's actual use. The
+  revised, still-unapproved candidate covers methodological-option review,
+  code work, statistical/numerical checking, interpretation stress-testing,
+  drafting and prompt categories. The private builder now places it in a
+  Study-design Methods subsection. A new 13-page synthetic-identity build
+  passed compilation, font checks and complete visual review, but neither that
+  build nor the policy mapping supplies author approval, a final use date or a
+  real target artifact.
 - P1-A through P1-E are closed. P2 remains frozen under the Qwen-only route.
 
 The [consolidated owner-input intake](OWNER_INPUTS_INTAKE.md) provides one

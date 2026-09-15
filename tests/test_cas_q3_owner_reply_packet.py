@@ -58,6 +58,8 @@ class OwnerReplyPacketTests(unittest.TestCase):
     def test_packet_exposes_reviewable_static_declaration_candidates(self):
         content, _ = build(self.value)
         self.assertIn(AI_ASSISTANCE_CANDIDATE, content)
+        self.assertIn("P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md", content)
+        self.assertIn("提示词类别", content)
         self.assertIn(NO_COMPETING_INTERESTS_CANDIDATE, content)
         self.assertIn("YYYY-MM-DD to YYYY-MM-DD", content)
         self.assertIn("P0_I_AI_TOOL_DATE_EVIDENCE.md", content)

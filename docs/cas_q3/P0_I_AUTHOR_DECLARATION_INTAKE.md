@@ -74,23 +74,23 @@ sentence is a candidate statement, not an accepted fact until confirmed.
 
 ## Writing and generative-AI assistance
 
-The project history records substantial ChatGPT/Codex assistance in research
-coordination, source/code auditing, manuscript drafting, formatting and language
-revision. This use must not be omitted where the target journal requests an
-AI/writing-assistance disclosure. A bounded candidate statement is:
+The project history records substantial ChatGPT/Codex assistance across both
+research practice and manuscript preparation. The 2026-09-15
+[Springer Nature policy alignment](P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md)
+supersedes the earlier short candidate below because current publisher guidance
+requires tool versions, dates, prompts, contribution extent and human
+validation. The current bounded candidate statement is:
 
 ```text
-Generative AI tools (OpenAI ChatGPT/Codex) were used under author supervision
-for research-project coordination, code and evidence review, manuscript
-drafting, formatting, and language revision. The authors independently checked
-the underlying saved results, references, analyses, and final text and take full
-responsibility for the work. The tools were not listed as authors.
+Generative AI tools were used under author supervision for project planning and coordination; literature discovery and comparison; research-design and methodological option review; code scaffolding, implementation, debugging, and review; evidence, reproducibility, statistical, and numerical-result checking; interpretation stress-testing; and manuscript structuring, drafting, formatting, and language revision. Prompts instructed the tools to inspect retained artifacts, preserve failed runs and frozen protocols, compare methodological or editorial options, implement and test code, audit evidence and claims, and draft or revise text within author-specified boundaries. The tools did not fabricate or autonomously select data, references, results, claims, interpretations, or conclusions. Computational outputs were generated only by versioned code and frozen protocols and were independently checked against retained artifacts. The author independently reviewed the AI-assisted outputs, reran the documented verification procedures, checked references, analyses, claims, and the final text, made all final research and submission decisions, and accepts full responsibility. No AI tool was listed as an author.
 ```
 
-The responsible authors must verify this wording against the selected journal's
-current policy and add any required tool/version/date detail. This disclosure
-does not imply that the tools generated experimental outcomes: the manuscript
-asset build recorded zero fits, zero model forwards and no Gold/answer reads.
+The responsible author must confirm that the use and prompt categories are
+complete and accurate, add the actual model/version and final date range, and
+decide whether the editor requires more detailed private prompt records. The
+statement distinguishes AI-assisted orchestration and code work from the
+versioned programs and frozen protocols that generated computational outputs;
+it does not claim that the manuscript asset build reran scientific experiments.
 
 ## Data and code availability branch
 

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "accessed_date": "2026-09-15",
+  "sources": [
+    {
+      "authority": "Springer Nature policy-update announcement",
+      "url": "https://group.springernature.com/gp/group/media/press-releases/sn-policy-responsible-ai-use/53209516",
+      "facts": [
+        "Springer Nature announced the updated AI policy framework on 2026-09-10."
+      ]
+    },
+    {
+      "authority": "Springer Nature journal-specific author guidance",
+      "url": "https://link.springer.com/journal/10489/submission-guidelines",
+      "facts": [
+        "LLM use beyond AI-assisted copy editing should be documented in the Methods section or a suitable alternative.",
+        "Human accountability for the final text and author agreement are required."
+      ]
+    },
+    {
+      "authority": "Springer Nature editorial policy",
+      "url": "https://www.springernature.com/gp/policies/editorial-policies/ai-manuscript-preparation",
+      "facts": [
+        "Drafting and structuring with author input require disclosure, verification, and author accountability.",
+        "Arguments, interpretations, and conclusions must remain author-led.",
+        "AI-assisted visual or code generation must use verifiable inputs and receive human review and validation."
+      ]
+    },
+    {
+      "authority": "Springer Nature editorial policy",
+      "url": "https://www.springernature.com/gp/policies/editorial-policies/using-ai-in-research",
+      "facts": [
+        "AI support for analytical or interpretive processes requires methodological description and validation steps.",
+        "Authors remain accountable for research decisions, outputs, and conclusions."
+      ]
+    },
+    {
+      "authority": "Springer Nature researcher guidance and FAQ",
+      "url": "https://group.springernature.com/gp/group/ai/ai-guidance-for-our-researchers-and-communities",
+      "facts": [
+        "Generative AI use should be declared in the Introduction or Acknowledgements, except copy-editing-only use.",
+        "The disclosure guidance calls for tool versions, usage dates, prompts, and extent of contribution."
+      ]
+    }
+  ],
+  "project_use_classification": {
+    "green_or_low_risk": [
+      "project planning and coordination",
+      "literature discovery and comparison",
+      "code scaffolding and review",
+      "formatting and language revision"
+    ],
+    "amber_or_requires_care": [
+      "research-design and methodological option review",
+      "code implementation and debugging",
+      "statistical and numerical-result checking",
+      "interpretation stress-testing",
+      "manuscript structuring and drafting"
+    ],
+    "red_or_not_permitted_claimed": []
+  },
+  "policy_application": {
+    "copy_editing_only_exception_applies": false,
+    "journal_specific_methods_documentation_required": true,
+    "introduction_or_acknowledgements_disclosure_also_requested_by_group_guidance": true,
+    "tool_versions_required": true,
+    "usage_dates_required": true,
+    "prompt_scope_required": true,
+    "extent_of_contribution_required": true,
+    "human_validation_and_accountability_required": true
+  },
+  "candidate_revision": {
+    "previous_candidate": "Generative AI tools (OpenAI ChatGPT/Codex) were used under author supervision for research-project coordination, code and evidence review, manuscript drafting, formatting, and language revision. The authors independently checked the underlying saved results, references, analyses, and final text and take full responsibility for the work. The tools were not listed as authors.",
+    "previous_candidate_is_complete_for_current_policy": false,
+    "revised_candidate": "Generative AI tools were used under author supervision for project planning and coordination; literature discovery and comparison; research-design and methodological option review; code scaffolding, implementation, debugging, and review; evidence, reproducibility, statistical, and numerical-result checking; interpretation stress-testing; and manuscript structuring, drafting, formatting, and language revision. Prompts instructed the tools to inspect retained artifacts, preserve failed runs and frozen protocols, compare methodological or editorial options, implement and test code, audit evidence and claims, and draft or revise text within author-specified boundaries. The tools did not fabricate or autonomously select data, references, results, claims, interpretations, or conclusions. Computational outputs were generated only by versioned code and frozen protocols and were independently checked against retained artifacts. The author independently reviewed the AI-assisted outputs, reran the documented verification procedures, checked references, analyses, claims, and the final text, made all final research and submission decisions, and accepts full responsibility. No AI tool was listed as an author.",
+    "revised_candidate_covers_prompt_categories": true,
+    "revised_candidate_claims_verbatim_complete_prompt_transcript": false,
+    "tool_version_and_date_record_is_separate": true,
+    "responsible_author_approval": false,
+    "final_use_end_date": null
+  },
+  "target_artifact_rule": {
+    "private_builder_path": "scripts/build_cas_q3_applied_intelligence_private_submission.py",
+    "private_builder_sha256": "e912f237fb7160f427e17d33c9734eaacb77444450bd75a116f03008b493e5c4",
+    "private_builder_inserts_disclosure_in_methods_equivalent_study_design": true,
+    "public_anonymous_source_contains_owner_placeholder_only": true,
+    "author_populated_artifact_generated": false,
+    "final_astra_xhigh_rebind_required": true
+  },
+  "synthetic_target_validation": {
+    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260915-ai-policy-a",
+    "source_archive_sha256": "e94e586c556112a998355ac0083a2e7777a04dca06da5b704e52cb5a45fa0ff5",
+    "compiled_pdf_sha256": "0a486e7f7dcdaae0357f58301d85d3a15a35dc5fddc4b1550eecd7d2d55e05fb",
+    "cover_letter_sha256": "e430fb658ddd7672f5f37137f4c13daee41c9b556fbc78b51ad3a5455a7d2948",
+    "compiled_pages": 13,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0,
+    "all_pages_visually_reviewed": true,
+    "visual_defects_found": 0,
+    "synthetic_identity_only": true,
+    "real_owner_package_built": false
+  },
+  "remaining": [
+    "responsible-author confirmation that the revised scope and prompt categories are complete and accurate",
+    "final AI use end date after project work ends",
+    "author-populated Applied Intelligence build using the approved disclosure",
+    "final artifact-bound GPT-6 Astra xhigh policy, authenticity, fairness, claim, and reviewer audit"
+  ],
+  "p0_i_closed": false,
+  "submission_authorized": false
+}

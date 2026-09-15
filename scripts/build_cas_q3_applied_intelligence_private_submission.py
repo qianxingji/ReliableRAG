@@ -46,6 +46,8 @@ ANONYMOUS_FRONT_MATTER = """\\author[1]{Anonymous \\sur{Authors}}
 DECLARATION_PLACEHOLDER = """\\section*{Declarations}
 Author identities, affiliations, contributions, funding, competing interests, institutional ethics wording, acknowledgements, and any required disclosure of writing assistance are maintained in the separate title-page/declarations template and must be completed by the responsible authors before submission."""
 
+AI_METHOD_ANCHOR = "\\section{Results}"
+
 
 def author_front_matter(data: dict[str, object]) -> str:
     authorship = data["authorship"]
@@ -97,10 +99,6 @@ def declaration_text(data: dict[str, object]) -> str:
         + tex(normalize_statement(declarations["competing_interests_statement"])),
         r"\paragraph{Ethics approval.} "
         + tex(normalize_statement(declarations["ethics_statement_or_approval"])),
-        r"\paragraph{Generative AI and AI-assisted technologies in manuscript preparation.} "
-        + tex(normalize_statement(declarations["ai_assistance_statement"]))
-        + " "
-        + tex(normalize_statement(declarations["ai_tool_version_and_use_dates"])),
         r"\paragraph{Overlapping work or preprint.} "
         + tex(normalize_statement(declarations["overlapping_work_or_preprint_disclosure"])),
     ]
@@ -111,12 +109,26 @@ def declaration_text(data: dict[str, object]) -> str:
     return "\n\n".join(rows)
 
 
+def ai_method_text(data: dict[str, object]) -> str:
+    declarations = data["declarations"]
+    return (
+        r"\subsection{Generative AI use and human validation}" + "\n"
+        + tex(normalize_statement(declarations["ai_assistance_statement"]))
+        + " "
+        + tex(normalize_statement(declarations["ai_tool_version_and_use_dates"]))
+        + "\n\n"
+    )
+
+
 def render_target_source(source: str, data: dict[str, object]) -> str:
     if source.count(ANONYMOUS_FRONT_MATTER) != 1:
         raise AssertionError("anonymous front matter anchor must occur exactly once")
     if source.count(DECLARATION_PLACEHOLDER) != 1:
         raise AssertionError("declaration placeholder anchor must occur exactly once")
+    if source.count(AI_METHOD_ANCHOR) != 1:
+        raise AssertionError("Methods-to-Results anchor must occur exactly once")
     rendered = source.replace(ANONYMOUS_FRONT_MATTER, author_front_matter(data))
+    rendered = rendered.replace(AI_METHOD_ANCHOR, ai_method_text(data) + AI_METHOD_ANCHOR)
     rendered = rendered.replace(DECLARATION_PLACEHOLDER, declaration_text(data))
     if "Anonymous affiliation retained" in rendered or "must be completed by the responsible authors" in rendered:
         raise AssertionError("private target source retains a public placeholder")

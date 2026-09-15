@@ -255,6 +255,12 @@ CAS Q3 discovery passes all 129 tests.
    disclose 7,796 outside-resolved junction paths, and produce no suffix
    mismatch or error. Pixel-content classification remains the signed manual
    review in its acceptance record rather than an OCR Claim.
+   Run `python scripts/audit_cas_q3_springer_ai_policy_alignment.py` to rebuild
+   the bounded current-policy mapping and revised, unapproved AI-disclosure
+   candidate. Its expected decision is
+   `PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN`.
+   The mapping does not fetch or freeze publisher HTML, does not approve the
+   candidate and does not close P0-I.
 
 ## Claim-to-evidence routing
 
@@ -280,6 +286,10 @@ CAS Q3 discovery passes all 129 tests.
   but neither record has been received and their content still requires separate
   client audits. Public corroboration supports the 2025 major-category Q3
   interpretation but cannot certify the institution-recognized edition or record.
+  Current Springer Nature AI guidance additionally requires the responsible
+  author to approve the revised use/prompt-scope disclosure and supply the final
+  end date. The private target builder's Methods placement has passed a
+  synthetic 13-page compile and visual check; no real author package exists.
 - **P1:** insert the certified journal's final data/code statement and bind the
   authorized archive plus journal-approved evidence-review route.
 - **P2:** new readers, methods, seeds, budgets and benchmarks remain closed.

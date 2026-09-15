@@ -932,6 +932,33 @@ def main() -> int:
     checks.equal(session_metadata["p0_i_closed"], False, "session metadata does not close P0-I")
     checks.equal(session_metadata["submission_authorized"], False, "session metadata does not authorize submission")
 
+    ai_policy = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        ai_policy["decision"],
+        "PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN",
+        "current Springer Nature AI policy mapping decision",
+    )
+    checks.equal(ai_policy["accessed_date"], "2026-09-15", "AI policy access date")
+    checks.equal(len(ai_policy["sources"]), 5, "AI policy source count")
+    checks.equal(ai_policy["policy_application"]["copy_editing_only_exception_applies"], False, "copy-editing exception rejected")
+    checks.equal(ai_policy["policy_application"]["journal_specific_methods_documentation_required"], True, "Methods disclosure required")
+    checks.equal(ai_policy["policy_application"]["prompt_scope_required"], True, "prompt scope disclosure required")
+    checks.equal(ai_policy["candidate_revision"]["previous_candidate_is_complete_for_current_policy"], False, "old AI candidate incomplete")
+    checks.equal(ai_policy["candidate_revision"]["revised_candidate_covers_prompt_categories"], True, "new candidate covers prompt categories")
+    checks.equal(ai_policy["candidate_revision"]["revised_candidate_claims_verbatim_complete_prompt_transcript"], False, "no verbatim-transcript overclaim")
+    checks.equal(ai_policy["candidate_revision"]["responsible_author_approval"], False, "AI candidate unapproved")
+    checks.equal(ai_policy["candidate_revision"]["final_use_end_date"], None, "final AI end date unset")
+    checks.equal(ai_policy["synthetic_target_validation"]["compiled_pages"], 13, "policy-aligned synthetic pages")
+    checks.equal(ai_policy["synthetic_target_validation"]["all_pages_visually_reviewed"], True, "policy-aligned synthetic visual review")
+    checks.equal(ai_policy["synthetic_target_validation"]["visual_defects_found"], 0, "policy-aligned synthetic visual defects")
+    checks.equal(ai_policy["synthetic_target_validation"]["real_owner_package_built"], False, "policy test builds no real owner package")
+    checks.equal(ai_policy["p0_i_closed"], False, "AI policy alignment does not close P0-I")
+    checks.equal(ai_policy["submission_authorized"], False, "AI policy alignment does not authorize submission")
+
     current_build_gate = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json").read_text(
             encoding="utf-8"
@@ -1003,6 +1030,7 @@ def main() -> int:
         "tests.test_cas_q3_private_submission_packet",
         "tests.test_cas_q3_ai_tool_date_evidence",
         "tests.test_cas_q3_codex_session_metadata",
+        "tests.test_cas_q3_springer_ai_policy_alignment",
         "tests.test_cas_q3_owner_reply_packet",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",
@@ -1183,6 +1211,31 @@ def main() -> int:
     )
     checks.equal(private_receipt["personal_values_in_receipt"], False, "synthetic private receipt privacy")
     checks.equal(private_receipt["submission_authorized"], False, "synthetic private receipt submission gate")
+
+    ai_synthetic = evidence["applied_intelligence_ai_policy_synthetic_candidate"]
+    checks.equal(
+        ai_synthetic["compiled_pdf_sha256"],
+        ai_policy["synthetic_target_validation"]["compiled_pdf_sha256"],
+        "AI-policy synthetic map and audit PDF pin",
+    )
+    ai_synthetic_root = Path(ai_synthetic["directory"])
+    checks.true(ai_synthetic_root.is_dir(), "AI-policy synthetic target directory exists")
+    for name, expected_hash in (
+        ("applied_intelligence_author_populated_source.zip", ai_synthetic["source_archive_sha256"]),
+        ("manuscript.pdf", ai_synthetic["compiled_pdf_sha256"]),
+        ("cover_letter.md", ai_synthetic["cover_letter_sha256"]),
+    ):
+        path = ai_synthetic_root / name
+        checks.true(path.is_file(), f"AI-policy synthetic artifact exists: {name}")
+        checks.equal(digest(path), expected_hash, f"AI-policy synthetic artifact pin: {name}")
+    checks.equal(ai_synthetic["compiled_pages"], 13, "AI-policy synthetic page count")
+    checks.equal(ai_synthetic["nonembedded_fonts"], 0, "AI-policy synthetic embedded fonts")
+    checks.equal(ai_synthetic["type3_fonts"], 0, "AI-policy synthetic Type 3 fonts")
+    checks.equal(ai_synthetic["all_pages_visually_reviewed"], True, "AI-policy synthetic complete visual review")
+    checks.equal(ai_synthetic["visual_defects_found"], 0, "AI-policy synthetic visual defects")
+    checks.equal(ai_synthetic["synthetic_identity_only"], True, "AI-policy synthetic identity boundary")
+    checks.equal(ai_synthetic["real_owner_package_built"], False, "AI-policy synthetic is not real owner package")
+    checks.equal(ai_synthetic["submission_authorized"], False, "AI-policy synthetic submission gate")
 
     static_delivery = json.loads((ROOT / evidence["private_transport"]["static_delivery_receipt"]).read_text(encoding="utf-8"))
     checks.equal(static_delivery["status"], "PASS_DECLARED_STATIC_TRANSPORT_AND_RESTORATION_ONLY", "static delivery scope")

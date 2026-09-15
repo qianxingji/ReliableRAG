@@ -17,9 +17,9 @@
 
 - AI assistance statement 候选：
 
-  > Generative AI tools (OpenAI ChatGPT/Codex) were used under author supervision for research-project coordination, code and evidence review, manuscript drafting, formatting, and language revision. The authors independently checked the underlying saved results, references, analyses, and final text and take full responsibility for the work. The tools were not listed as authors.
+  > Generative AI tools were used under author supervision for project planning and coordination; literature discovery and comparison; research-design and methodological option review; code scaffolding, implementation, debugging, and review; evidence, reproducibility, statistical, and numerical-result checking; interpretation stress-testing; and manuscript structuring, drafting, formatting, and language revision. Prompts instructed the tools to inspect retained artifacts, preserve failed runs and frozen protocols, compare methodological or editorial options, implement and test code, audit evidence and claims, and draft or revise text within author-specified boundaries. The tools did not fabricate or autonomously select data, references, results, claims, interpretations, or conclusions. Computational outputs were generated only by versioned code and frozen protocols and were independently checked against retained artifacts. The author independently reviewed the AI-assisted outputs, reran the documented verification procedures, checked references, analyses, claims, and the final text, made all final research and submission decisions, and accepts full responsibility. No AI tool was listed as an author.
 
-  请明确回答是否批准；如不准确，请给出替代措辞。
+  该候选按 2026-09-15 核验的 Springer Nature 新政策补充了方法选项、统计/数值复核、解释压力测试和提示词类别。见 [政策对齐审计](P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md)。请明确回答是否完整准确并批准；如不准确，请给出替代措辞。
 - AI 工具记录格式：`OpenAI Codex (GPT-Astra and GPT-Sol), YYYY-MM-DD to YYYY-MM-DD`。日期必须按实际使用范围填写。
 - [AI 工具日期证据边界](P0_I_AI_TOOL_DATE_EVIDENCE.md)只证明两种模型族不晚于 2026-09-12 已有留存使用记录；这不是实际最早使用日，也不是完整使用区间，最终起止日期仍须作者依据真实记录确认。
 - [本地 Codex 会话元数据审计](P0_I_AI_TOOL_SESSION_METADATA.md)进一步支持项目任务开始日为 2026-09-10，工具为 `gpt-6-astra`（high/xhigh）与`gpt-5.6-sol`（high）。固定快照末次观察日为 2026-09-15，但项目仍在继续，不能把它写成最终结束日。可审核格式：`OpenAI Codex (gpt-6-astra, high/xhigh; gpt-5.6-sol, high), 2026-09-10 to YYYY-MM-DD`。

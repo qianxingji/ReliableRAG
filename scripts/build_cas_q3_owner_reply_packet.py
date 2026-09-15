@@ -11,21 +11,17 @@ from typing import Any
 
 try:
     from scripts.verify_cas_q3_owner_inputs import ROOT, validate
+    from scripts.audit_cas_q3_springer_ai_policy_alignment import REVISED_CANDIDATE
 except ModuleNotFoundError:  # Direct ``python scripts/...`` execution.
     from verify_cas_q3_owner_inputs import ROOT, validate
+    from audit_cas_q3_springer_ai_policy_alignment import REVISED_CANDIDATE
 
 
 DEFAULT_INPUT = ROOT / "docs" / "cas_q3" / "OWNER_INPUTS.local.json"
 DEFAULT_OUTPUT = ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md"
 DEFAULT_RECEIPT = ROOT / "docs" / "cas_q3" / "P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json"
 
-AI_ASSISTANCE_CANDIDATE = (
-    "Generative AI tools (OpenAI ChatGPT/Codex) were used under author supervision "
-    "for research-project coordination, code and evidence review, manuscript drafting, "
-    "formatting, and language revision. The authors independently checked the underlying "
-    "saved results, references, analyses, and final text and take full responsibility for "
-    "the work. The tools were not listed as authors."
-)
+AI_ASSISTANCE_CANDIDATE = REVISED_CANDIDATE
 NO_COMPETING_INTERESTS_CANDIDATE = "The author declares no competing interests."
 
 
@@ -93,7 +89,10 @@ def render(missing: list[str]) -> str:
         candidate_lines.append(
             "- AI assistance statement 候选：\n\n"
             f"  > {AI_ASSISTANCE_CANDIDATE}\n\n"
-            "  请明确回答是否批准；如不准确，请给出替代措辞。"
+            "  该候选按 2026-09-15 核验的 Springer Nature 新政策补充了方法选项、"
+            "统计/数值复核、解释压力测试和提示词类别。见 "
+            "[政策对齐审计](P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md)。"
+            "请明确回答是否完整准确并批准；如不准确，请给出替代措辞。"
         )
     if "declarations.ai_tool_version_and_use_dates" in missing:
         candidate_lines.append(
