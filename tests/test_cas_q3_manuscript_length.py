@@ -18,8 +18,8 @@ class ManuscriptLengthTests(unittest.TestCase):
 
     def test_current_pdf_counts_are_bound_but_not_called_publisher_counts(self):
         result = audit()
-        self.assertEqual(result["pdf_tokens_before_references"], 3994)
-        self.assertEqual(result["pdf_tokens_full_document"], 4691)
+        self.assertEqual(result["pdf_tokens_before_references"], 4048)
+        self.assertEqual(result["pdf_tokens_full_document"], 4745)
         self.assertEqual(result["static_abstract_word_count"], 155)
         self.assertTrue(result["applied_intelligence_abstract_requirement_met"])
         self.assertFalse(result["publisher_word_count_claimed"])

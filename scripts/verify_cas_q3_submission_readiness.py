@@ -409,8 +409,8 @@ def main() -> int:
     require(transport["validator_checks_each"] == 56, "target transport validator runs 56 checks", checks)
     require(transport["clean_compile_pages"] == 12, "target transport clean-compiles to 12 pages", checks)
     require(
-        transport["clean_compile_pdf_sha256"] == modern_preflight["artifacts"]["pdf_sha256"],
-        "target transport clean compile matches the visually accepted PDF bytes",
+        transport["archive_sha256"] == evidence["p0_i_applied_intelligence_template_transport_historical_archive_sha256"],
+        "historical target transport remains pinned without relabelling",
         checks,
     )
     require(
@@ -423,6 +423,53 @@ def main() -> int:
     )
     require(target_transport["submission_authorized"] is False, "target transport does not authorize submission", checks)
     require(target_transport["distribution_authorized"] is False, "target transport remains distribution-withheld", checks)
+
+    policy_refresh = json.loads(
+        (ROOT / evidence["p0_i_data_code_policy_refresh_acceptance_json"]).read_text(encoding="utf-8")
+    )
+    require(
+        policy_refresh["decision"]
+        == "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
+        "data/code policy refresh is bound",
+        checks,
+    )
+    require(policy_refresh["cas_q3_status"] == "NOT_READY", "policy refresh retains CAS Q3 status", checks)
+    require(policy_refresh["base_artifacts"]["static_checks"] == 141, "refreshed manuscript has 141 static checks", checks)
+    require(policy_refresh["base_artifacts"]["pdf_tokens_before_references"] == 4048, "refreshed pre-reference token proxy", checks)
+    require(policy_refresh["base_artifacts"]["pdf_tokens_full_document"] == 4745, "refreshed full token proxy", checks)
+    require(policy_refresh["base_artifacts"]["pages_visually_inspected"] == 14, "all refreshed base pages inspected", checks)
+    require(policy_refresh["base_artifacts"]["visual_defects"] == 0, "refreshed base visual review passes", checks)
+    require(
+        policy_refresh["target_preflight"]["pdf_sha256"] == modern_preflight["artifacts"]["pdf_sha256"],
+        "refreshed target PDF matches committed modern preflight",
+        checks,
+    )
+    require(policy_refresh["target_preflight"]["pages_visually_inspected"] == 12, "all refreshed target pages inspected", checks)
+    require(policy_refresh["target_preflight"]["visual_defects"] == 0, "refreshed target visual review passes", checks)
+    refreshed_transport = policy_refresh["current_private_transport"]
+    require(refreshed_transport["deterministic_rebuild_equal"] is True, "refreshed transports rebuild byte-identically", checks)
+    require(refreshed_transport["both_builds_independently_validated"] is True, "both refreshed transports validate", checks)
+    require(refreshed_transport["validator_checks_each"] == 56, "refreshed transport validator runs 56 checks", checks)
+    require(refreshed_transport["clean_compile_pages"] == 12, "refreshed transport compiles to 12 pages", checks)
+    require(
+        refreshed_transport["clean_compile_pdf_sha256"] == modern_preflight["artifacts"]["pdf_sha256"],
+        "refreshed transport compile matches current target PDF",
+        checks,
+    )
+    require(
+        policy_refresh["preserved_historical_artifacts"]["prior_transport_archive_sha256"]
+        == transport["archive_sha256"],
+        "policy refresh preserves the historical transport hash",
+        checks,
+    )
+    refreshed_synthetic = policy_refresh["current_synthetic_private_build"]
+    require(refreshed_synthetic["compiled_pages"] == 13, "refreshed synthetic package has 13 pages", checks)
+    require(refreshed_synthetic["pages_visually_inspected"] == 13, "all refreshed synthetic pages inspected", checks)
+    require(refreshed_synthetic["visual_defects"] == 0, "refreshed synthetic visual review passes", checks)
+    require(refreshed_synthetic["synthetic_values_only"] is True, "refreshed private build remains synthetic-only", checks)
+    require(refreshed_synthetic["real_owner_package_built"] is False, "refreshed private build is not a real package", checks)
+    require(policy_refresh["scope"]["distribution_authorized"] is False, "policy refresh does not authorize distribution", checks)
+    require(policy_refresh["scope"]["submission_authorized"] is False, "policy refresh does not authorize submission", checks)
 
     target_packet = (ROOT / evidence["p0_h_target_journal_decision_packet"]).read_text(encoding="utf-8")
     require(

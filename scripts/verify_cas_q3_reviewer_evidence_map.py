@@ -64,15 +64,15 @@ def main() -> int:
         "mechanical verifier does not self-certify visual review",
     )
     static_receipt = json.loads((ROOT / "paper" / "MANUSCRIPT_VERIFICATION.json").read_text(encoding="utf-8"))
-    checks.equal(static_receipt["check_count"], 139, "static manuscript checks")
+    checks.equal(static_receipt["check_count"], 141, "static manuscript checks")
     checks.equal(static_receipt["abstract_word_count"], 155, "Applied Intelligence abstract words")
     checks.equal(static_receipt["bibliography_entries"], 22, "bibliography entries")
     length_receipt = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json").read_text(encoding="utf-8")
     )
     checks.equal(length_receipt["decision"], "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE", "length audit decision")
-    checks.equal(length_receipt["pdf_tokens_before_references"], 3994, "pre-reference PDF token proxy")
-    checks.equal(length_receipt["pdf_tokens_full_document"], 4691, "full PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_before_references"], 4048, "pre-reference PDF token proxy")
+    checks.equal(length_receipt["pdf_tokens_full_document"], 4745, "full PDF token proxy")
     checks.equal(length_receipt["applied_intelligence_abstract_requirement_met"], True, "Applied Intelligence abstract range")
     checks.equal(length_receipt["publisher_word_count_claimed"], False, "proxy is not a publisher word count")
     discover = json.loads(
@@ -561,8 +561,8 @@ def main() -> int:
     checks.equal(transport_result["clean_compile_pages"], 12, "target transport compiled pages")
     checks.equal(
         transport_result["clean_compile_pdf_sha256"],
-        applied_preflight["artifacts"]["pdf_sha256"],
-        "target transport recompiles to accepted preflight PDF bytes",
+        "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4",
+        "historical target transport compiled PDF remains pinned",
     )
     checks.equal(
         applied_transport["official_source_findings"]["journal_specific_equivalence_from_sn_jnl_to_smallcondensed_proved"],
@@ -571,6 +571,49 @@ def main() -> int:
     )
     checks.equal(applied_transport["submission_authorized"], False, "target transport does not authorize submission")
     checks.equal(applied_transport["distribution_authorized"], False, "target transport remains private")
+
+    policy_refresh = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        policy_refresh["decision"],
+        "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
+        "data/code policy refresh bounded decision",
+    )
+    checks.equal(policy_refresh["cas_q3_status"], "NOT_READY", "policy refresh retains CAS Q3 status")
+    checks.equal(policy_refresh["base_artifacts"]["static_checks"], 141, "policy refresh static checks")
+    checks.equal(policy_refresh["base_artifacts"]["pdf_tokens_before_references"], 4048, "policy refresh pre-reference tokens")
+    checks.equal(policy_refresh["base_artifacts"]["pdf_tokens_full_document"], 4745, "policy refresh full tokens")
+    checks.equal(policy_refresh["base_artifacts"]["pages_visually_inspected"], 14, "policy refresh base visual pages")
+    checks.equal(policy_refresh["base_artifacts"]["visual_defects"], 0, "policy refresh base visual defects")
+    checks.equal(
+        policy_refresh["target_preflight"]["pdf_sha256"],
+        applied_preflight["artifacts"]["pdf_sha256"],
+        "policy refresh target PDF pin",
+    )
+    checks.equal(policy_refresh["target_preflight"]["pages_visually_inspected"], 12, "policy refresh target visual pages")
+    checks.equal(policy_refresh["target_preflight"]["visual_defects"], 0, "policy refresh target visual defects")
+    current_transport_result = policy_refresh["current_private_transport"]
+    checks.equal(current_transport_result["deterministic_rebuild_equal"], True, "refreshed transport rebuild equality")
+    checks.equal(current_transport_result["both_builds_independently_validated"], True, "refreshed transports validated")
+    checks.equal(current_transport_result["validator_checks_each"], 56, "refreshed transport checks")
+    checks.equal(current_transport_result["clean_compile_pages"], 12, "refreshed transport pages")
+    checks.equal(
+        current_transport_result["clean_compile_pdf_sha256"],
+        applied_preflight["artifacts"]["pdf_sha256"],
+        "refreshed transport compiles to current preflight PDF",
+    )
+    checks.equal(
+        policy_refresh["preserved_historical_artifacts"]["prior_transport_archive_sha256"],
+        transport_result["archive_sha256"],
+        "prior transport remains bound as history",
+    )
+    checks.equal(policy_refresh["preserved_historical_artifacts"]["prior_transport_record_mutated"], False, "historical transport record not mutated")
+    checks.equal(policy_refresh["scope"]["real_author_package_built"], False, "refresh builds no real author package")
+    checks.equal(policy_refresh["scope"]["distribution_authorized"], False, "refresh does not authorize distribution")
+    checks.equal(policy_refresh["scope"]["submission_authorized"], False, "refresh does not authorize submission")
 
     target_packet = (ROOT / "docs" / "cas_q3" / "P0_H_TARGET_JOURNAL_DECISION_PACKET.md").read_text(
         encoding="utf-8"
@@ -1201,13 +1244,18 @@ def main() -> int:
     target_transport = evidence["applied_intelligence_private_transport_candidate"]
     checks.equal(
         target_transport["archive_sha256"],
-        transport_result["archive_sha256"],
-        "target transport result and external map archive pin",
+        current_transport_result["archive_sha256"],
+        "refreshed target transport and external map archive pin",
     )
     checks.equal(
         target_transport["clean_compile_pdf_sha256"],
-        transport_result["clean_compile_pdf_sha256"],
-        "target transport result and external map compiled PDF pin",
+        current_transport_result["clean_compile_pdf_sha256"],
+        "refreshed target transport and external map compiled PDF pin",
+    )
+    checks.equal(
+        target_transport["historical_archive_sha256"],
+        transport_result["archive_sha256"],
+        "external map preserves historical transport pin",
     )
     checks.equal(
         target_transport["smallcondensed_equivalence_proved"],
@@ -1237,11 +1285,12 @@ def main() -> int:
     checks.equal(target_transport["distribution_authorized"], False, "external target transport distribution gate")
 
     synthetic = evidence["applied_intelligence_private_submission_synthetic_candidate"]
+    current_synthetic = policy_refresh["current_synthetic_private_build"]
     for key in ("source_archive_sha256", "compiled_pdf_sha256", "cover_letter_sha256"):
         checks.equal(
             synthetic[key],
-            private_builder["synthetic_private_build"][key],
-            f"synthetic private result and map pin: {key}",
+            current_synthetic[key],
+            f"refreshed synthetic private result and map pin: {key}",
         )
     synthetic_root = Path(synthetic["directory"])
     checks.true(synthetic_root.is_dir(), "synthetic private target directory exists")
@@ -1263,6 +1312,12 @@ def main() -> int:
     )
     checks.equal(private_receipt["personal_values_in_receipt"], False, "synthetic private receipt privacy")
     checks.equal(private_receipt["submission_authorized"], False, "synthetic private receipt submission gate")
+    checks.equal(synthetic["compiled_pages"], 13, "refreshed synthetic page count")
+    checks.equal(synthetic["visual_review"], "PASS_PROJECT_LEAD_ALL_13_PAGES_110_DPI", "refreshed synthetic visual review")
+    checks.equal(current_synthetic["pages_visually_inspected"], 13, "refreshed synthetic inspected pages")
+    checks.equal(current_synthetic["visual_defects"], 0, "refreshed synthetic visual defects")
+    checks.equal(current_synthetic["synthetic_values_only"], True, "refreshed synthetic-only boundary")
+    checks.equal(current_synthetic["real_owner_package_built"], False, "refreshed synthetic is not real package")
 
     ai_synthetic = evidence["applied_intelligence_ai_policy_synthetic_candidate"]
     checks.equal(

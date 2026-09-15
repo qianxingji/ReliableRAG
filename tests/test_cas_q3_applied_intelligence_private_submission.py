@@ -22,7 +22,7 @@ class AppliedIntelligencePrivateSubmissionTests(unittest.TestCase):
         source = (
             ANONYMOUS_FRONT_MATTER
             + "\nThe same joint rule does not pass against the HGB-only policy.\n"
-            + "This is not a new selector architecture.\nPublic distribution remains withheld.\n"
+            + "This is not a new selector architecture.\nPublic distribution of the aggregate candidate remains withheld.\n"
             + AI_METHOD_ANCHOR
             + DECLARATION_PLACEHOLDER
         )
@@ -37,7 +37,7 @@ class AppliedIntelligencePrivateSubmissionTests(unittest.TestCase):
         self.assertIn("private@example.org", rendered)
         self.assertIn("does not pass against the HGB-only policy", rendered)
         self.assertIn("not a new selector architecture", rendered)
-        self.assertIn("Public distribution remains withheld", rendered)
+        self.assertIn("Public distribution of the aggregate candidate remains withheld", rendered)
         self.assertIn(r"\subsection{Generative AI use and human validation}", rendered)
         self.assertLess(rendered.index("Generative AI use and human validation"), rendered.index(AI_METHOD_ANCHOR))
         self.assertIn("Prompts instructed the tools", rendered)
@@ -56,7 +56,7 @@ class AppliedIntelligencePrivateSubmissionTests(unittest.TestCase):
         source = (
             ANONYMOUS_FRONT_MATTER
             + "\nThe same joint rule does not pass against the HGB-only policy.\n"
-            + "This is not a new selector architecture.\nPublic distribution remains withheld.\n"
+            + "This is not a new selector architecture.\nPublic distribution of the aggregate candidate remains withheld.\n"
             + AI_METHOD_ANCHOR
             + DECLARATION_PLACEHOLDER
         )

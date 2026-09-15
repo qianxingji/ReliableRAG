@@ -48,7 +48,7 @@
     "unresolved_markers": 0
   },
   "source_protection": {
-    "journal_neutral_source_sha256_before_and_after": "79c50351be84ac37d6f29d308724e9b7ec2755ecf3fb702b34d88ab87f81933c",
+    "journal_neutral_source_sha256_before_and_after": "db486c967fc0e67caf3c6d3e42819c133962f3af817dde564534c81d14333425",
     "allowed_transformation_count": 13,
     "allowed_transformations": [
       {
@@ -121,13 +121,13 @@
   },
   "artifacts": {
     "pdf": "output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf",
-    "pdf_sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4",
+    "pdf_sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97",
     "pdf_pages": 12,
     "pdf_font_rows": 22,
     "pdf_nonembedded_font_rows": [],
     "pdf_type3_font_rows": [],
     "authored_source_zip": "output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip",
-    "authored_source_zip_sha256": "0333248977211b4d8920ffb8ecd9ed4e53b977c3ef89795d566f680de725f24f",
+    "authored_source_zip_sha256": "e28e3c3820b321e7af444dc9ba57cb49e6890b7623d2dfadce6878dca41a4a8a",
     "authored_source_zip_members": [
       "Fig1.pdf",
       "Fig2.pdf",

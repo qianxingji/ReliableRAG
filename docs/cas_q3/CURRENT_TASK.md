@@ -302,7 +302,7 @@ fairness, reviewer and Submission Ready audits.
    [authorization record](P0_I_MANUSCRIPT_AUTHORIZATION.md). The main manuscript,
    supplement, bibliography, generated tables/figures, title-page template and
    cover-letter template now exist under `paper/`; the independent static
-   verifier now passes 139 checks. MiKTeX produced an 11-page main PDF and 3-page
+   verifier now passes 141 checks. MiKTeX produced an 11-page main PDF and 3-page
    supplement; mechanical log checks and project-lead review of all pages pass.
    The subsequent [font-embedding corrigendum](P0_I_FONT_EMBEDDING_CORRIGENDUM.md)
    replaces the unembedded Base-14 figure fonts and isolated Type 3 marker; both
@@ -364,8 +364,8 @@ fairness, reviewer and Submission Ready audits.
    Claim boundary. The rebuilt 11+3 pages passed separate mechanical,
    font and complete project-lead visual review; the mechanical verifier no
    longer self-asserts a human inspection.
-   A separate reproducible PDF-length proxy records 3,994 tokens before
-   References and 4,691 overall. Applied Intelligence's inspected guidelines
+   A separate reproducible PDF-length proxy records 4,048 tokens before
+   References and 4,745 overall. Applied Intelligence's inspected guidelines
    specify no general full-manuscript word limit; these are reproducible proxy
    counts rather than publisher counts.
    The [Applied Intelligence abstract and keyword acceptance](P0_I_APPLIED_INTELLIGENCE_ABSTRACT_KEYWORD_ACCEPTANCE.md)
@@ -475,6 +475,20 @@ fairness, reviewer and Submission Ready audits.
    private-review route and aggregate-versus-neural reproduction boundary. The
    rebuilt neutral and Applied Intelligence modern-preflight artifacts passed
    mechanical and complete visual review.
+   The subsequent
+   [data/code policy refresh acceptance](P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md)
+   corrects the remaining publication-state wording: the public GitHub repository
+   exists, while the final submission revision and permanent archive identifier
+   remain unfrozen; restricted evidence is supplied only if requested through a
+   channel designated or accepted by the handling editor. The current base PDFs
+   pass 141 static checks and complete 14-page visual review. The current 12-page
+   target preflight, two byte-identical ten-member private transports, and a
+   13-page synthetic-only author-package build all pass their mechanical, font
+   and complete visual checks. The selected transport archive is now
+   `d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e`.
+   The prior `f4279c...` transport and earlier synthetic builds remain immutable
+   historical records. No real author package, release approval or submission
+   authorization was created, so P0-G and P0-I remain open.
    The later historical-manifest disclosure rebuild also passed: the paper now
    records the byte-identical packaged manifest copy while retaining the lack
    of independent timestamp certification and all missing original-fit evidence.

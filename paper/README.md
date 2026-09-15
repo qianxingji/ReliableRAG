@@ -24,7 +24,7 @@ python scripts\verify_cas_q3_compiled_pdfs.py
 
 MiKTeX produced an 11-page main PDF and 3-page supplement under `output/pdf/`.
 The abstract is 155 words and the source lists five keywords, meeting the
-inspected Applied Intelligence ranges. The static verifier passes 139 checks;
+inspected Applied Intelligence ranges. The static verifier passes 141 checks;
 the compiled verifier passes its log,
 page, text and font checks. Both PDFs have zero nonembedded and zero Type 3
 fonts. Visual review is recorded separately from the mechanical verifier; all
@@ -43,8 +43,10 @@ route. This does not prove style equivalence between that package and the
 A separate private transport combines those eight authored files with the
 exact authenticated `sn-jnl.cls` and `sn-basic.bst`; two builds are byte-
 identical and independently clean-compile to the already visually accepted
-12-page PDF. See
-`docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md` and
+12-page PDF. The current data/code-policy refresh transport has SHA-256
+`d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e`;
+the former `f4279c...` transport remains a historical build. See
+`docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md` and
 `docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md`.
 The transport remains anonymous, untracked, and submission-unauthorized.
 

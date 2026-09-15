@@ -51,6 +51,16 @@ The current machine decision is
   passed compilation, font checks and complete visual review, but neither that
   build nor the policy mapping supplies author approval, a final use date or a
   real target artifact.
+  A later data/code policy refresh rebuilt the 11-page manuscript, 3-page
+  supplement, 12-page target preflight, two deterministic private transports
+  and one 13-page synthetic author package. The base verifier now passes 141
+  static checks; every one of the 14 base pages, 12 target pages and 13
+  synthetic pages passed project-lead visual inspection. The current transport
+  SHA-256 is
+  `d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e`;
+  the former `f4279c...` transport remains a preserved historical build. This
+  refresh changes no scientific result and supplies no owner or institutional
+  approval, real author package, release authorization or permanent archive.
   A fixed-cutoff private prompt ledger now retains 47 root-user prompt chunks
   after excluding subagents and automatically injected context. The tracked
   receipt exposes only counts and hashes. The ledger is Git-ignored,

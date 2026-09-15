@@ -34,10 +34,10 @@ except ModuleNotFoundError:  # Direct ``python scripts/...`` execution.
 
 DEFAULT_INPUT = ROOT / "docs" / "cas_q3" / "OWNER_INPUTS.local.json"
 DEFAULT_TRANSPORT = Path(
-    "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260914-a/"
+    "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260915-policy-a/"
     "applied_intelligence_complete_source_transport_candidate.zip"
 )
-EXPECTED_TRANSPORT_SHA256 = "f4279cf38aa09a1ddc212b9b295e0c73b78a67b7262845e72a6df584edeb8fdd"
+EXPECTED_TRANSPORT_SHA256 = "d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e"
 SOURCE_ARCHIVE_NAME = "applied_intelligence_author_populated_source.zip"
 
 ANONYMOUS_FRONT_MATTER = """\\author[1]{Anonymous \\sur{Authors}}
@@ -135,7 +135,7 @@ def render_target_source(source: str, data: dict[str, object]) -> str:
     for marker in (
         "The same joint rule does not pass against the HGB-only policy",
         "not a new selector architecture",
-        "Public distribution remains withheld",
+        "Public distribution of the aggregate candidate remains withheld",
     ):
         if marker not in rendered:
             raise AssertionError(f"scientific/release boundary missing after render: {marker}")

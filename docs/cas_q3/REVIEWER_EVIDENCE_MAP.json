@@ -7,12 +7,12 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "1b6a55c78742d62e87fb424f2ff2191c83e2de1ae2df3c6349b9ed82e4fc3246",
+      "sha256": "98ab051494c85fdd890b0e87f328a4c3a5738397e214eeeb79bb7dba66332570",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
       "path": "paper/manuscript.tex",
-      "sha256": "79c50351be84ac37d6f29d308724e9b7ec2755ecf3fb702b34d88ab87f81933c",
+      "sha256": "db486c967fc0e67caf3c6d3e42819c133962f3af817dde564534c81d14333425",
       "required_marker": "The same joint rule does not pass against the HGB-only policy"
     },
     {
@@ -22,20 +22,20 @@
     },
     {
       "path": "output/pdf/manuscript.pdf",
-      "sha256": "c185360689726b757007ee215e30709846015511ae51cc7981c9b09eb0eb4016"
+      "sha256": "6304d8a407d728265dbc375d968e3e3349470f73d1cae4a77e1093511f2771b7"
     },
     {
       "path": "output/pdf/supplement.pdf",
-      "sha256": "3ce088ddac0064d4066a10c0376cbf19bc2f4ee4e0accd2b1ea75f0fa4ba072c"
+      "sha256": "ad271207b268dac05592b555d4a357e79cb36be5a0e86e571eb616d4c7e71a49"
     },
     {
       "path": "paper/COMPILE_RECEIPT.json",
-      "sha256": "0681358af0e6caaffb13cdf99c52eb240e85b95513310ef8e5f034c24ffff349",
+      "sha256": "f5ac37ef7363ec3ac292cf2c77d9af9b3287868c51243605855b23deb7fddfde",
       "required_marker": "PASS_COMPILED_PDF_MECHANICAL_AND_FONT_VERIFICATION_WITH_LONGTABLE_NOTICE"
     },
     {
       "path": "paper/MANUSCRIPT_VERIFICATION.json",
-      "sha256": "2236d5a388a8cbaca8f4438319562b4c3ee0bc625a0273840977e5bea7f3d6ff",
+      "sha256": "b5e7d7caa28ba82d05b31a33e4d4e514f274d1c4f7d835317d9341db331bb191",
       "required_marker": "PASS_MANUSCRIPT_STATIC_AND_CLAIM_CHECKS"
     },
     {
@@ -60,7 +60,7 @@
     },
     {
       "path": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
-      "sha256": "eb7403a3b00f5dd8a95b4615d42db260d4829617de7026dee8ee33637366c570",
+      "sha256": "cbea0d960c6f0e602369de6218ddf2634fda38b1ccac02a3c82a87a7612f6941",
       "required_marker": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE"
     },
     {
@@ -71,7 +71,7 @@
     {
       "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT.json",
       "required_marker": "PARTIAL_PASS_APPLIED_INTELLIGENCE_MODERN_SN_JNL_PREFLIGHT_SMALLCONDENSED_EQUIVALENCE_OPEN",
-      "sha256": "028ef5c7254bfc68bea39b6bdf26afd37ed3a211e1820c79f5866e3d5d9d606f"
+      "sha256": "585fdcd88415dd6b92bc07a9a47764c675d58b5b6d6d907bbe468d7353f27de9"
     },
     {
       "path": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md",
@@ -85,11 +85,11 @@
     },
     {
       "path": "output/target_profiles/applied_intelligence_modern_preflight/manuscript_sn_jnl_preflight.pdf",
-      "sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4"
+      "sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97"
     },
     {
       "path": "output/target_profiles/applied_intelligence_modern_preflight/applied_intelligence_authored_source_preflight.zip",
-      "sha256": "0333248977211b4d8920ffb8ecd9ed4e53b977c3ef89795d566f680de725f24f"
+      "sha256": "e28e3c3820b321e7af444dc9ba57cb49e6890b7623d2dfadce6878dca41a4a8a"
     },
     {
       "path": "scripts/build_cas_q3_applied_intelligence_preflight.py",
@@ -401,12 +401,12 @@
     {
       "path": "scripts/build_cas_q3_applied_intelligence_private_submission.py",
       "required_marker": "PASS_PRIVATE_APPLIED_INTELLIGENCE_AUTHOR_POPULATED_CANDIDATE_FINAL_AUDITS_OPEN",
-      "sha256": "e912f237fb7160f427e17d33c9734eaacb77444450bd75a116f03008b493e5c4"
+      "sha256": "5f857665f6f14ea50ca6c906b4da630bf01e11eaf6e11e488e21b1b31a22de0d"
     },
     {
       "path": "tests/test_cas_q3_applied_intelligence_private_submission.py",
       "required_marker": "AppliedIntelligencePrivateSubmissionTests",
-      "sha256": "b68c21a6584a40321d14967933609ea221625a57b7b4a0999aebe2768822f6fb"
+      "sha256": "1f701355ac6feac60bc758bb10afd9b6d5a7567fd4cdb688d402b2065b14b994"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
@@ -948,6 +948,16 @@
       "path": "tests/test_cas_q3_ai_prompt_record.py",
       "required_marker": "AiPromptRecordTests",
       "sha256": "1ec63783cbc86cc1cb7f0606779ee25a86564e69d4b4ef3f8c248684423a4841"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md",
+      "required_marker": "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
+      "sha256": "6ddb4532261ece016e2d6cb409c730363179524e8e8ce8f2412f56808466bfe1"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json",
+      "required_marker": "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
+      "sha256": "e7b66e9e70a57227924d27ed2c8ec7222106c47652a0f513093b2ae5472708e9"
     }
   ],
   "aggregate_release_candidate": {
@@ -972,9 +982,9 @@
     "full_public_pipeline_reproduction": false
   },
   "applied_intelligence_private_transport_candidate": {
-    "first_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260914-a/applied_intelligence_complete_source_transport_candidate.zip",
-    "second_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260914-b/applied_intelligence_complete_source_transport_candidate.zip",
-    "archive_sha256": "f4279cf38aa09a1ddc212b9b295e0c73b78a67b7262845e72a6df584edeb8fdd",
+    "first_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260915-policy-a/applied_intelligence_complete_source_transport_candidate.zip",
+    "second_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260915-policy-b/applied_intelligence_complete_source_transport_candidate.zip",
+    "archive_sha256": "d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e",
     "archive_members": [
       "Fig1.pdf",
       "Fig2.pdf",
@@ -989,29 +999,34 @@
     ],
     "sn_jnl_class_sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
     "sn_basic_bst_sha256": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c",
-    "clean_compile_pdf_sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4",
+    "clean_compile_pdf_sha256": "6e3d40864f2acfa506c282c096059b147cff4a2d22d859ae9a2036fed6f42f97",
     "validator_checks_each": 56,
     "smallcondensed_equivalence_proved": false,
     "submission_authorized": false,
     "distribution_authorized": false,
     "publisher_current_sn_jnl_route_accepted": true,
-    "pre_submission_template_route_gate_closed": true
+    "pre_submission_template_route_gate_closed": true,
+    "historical_archive_sha256": "f4279cf38aa09a1ddc212b9b295e0c73b78a67b7262845e72a6df584edeb8fdd",
+    "historical_record": "docs/cas_q3/P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_RESULTS.json",
+    "current_record": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json"
   },
   "applied_intelligence_private_submission_synthetic_candidate": {
-    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260914-b",
+    "directory": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260915-policy-refresh-a",
     "source_archive": "applied_intelligence_author_populated_source.zip",
-    "source_archive_sha256": "7f0c7e233945aa150b1aa2c68e6918d45f18f7c7531a92a004fe07d5c60da15e",
+    "source_archive_sha256": "36eb522d2bbe5305a812a938e68d2fd5120adaacbefa0d77145a706abb783d90",
     "compiled_pdf": "manuscript.pdf",
-    "compiled_pdf_sha256": "ebcd5f9214aeeebde352f0bb0eb62bc93142f23a17642e95439c187141656878",
+    "compiled_pdf_sha256": "a21e80ad06b45eb0044de3cf4c1a98f3220b738589b29b49f2dcc48eb211aa40",
     "cover_letter": "cover_letter.md",
-    "cover_letter_sha256": "ae982b6ad7fc3df70e14062056310fac7950759c9a24a88b43ad74ee33eb00a2",
+    "cover_letter_sha256": "e430fb658ddd7672f5f37137f4c13daee41c9b556fbc78b51ad3a5455a7d2948",
     "receipt": "PRIVATE_BUILD_RECEIPT.json",
     "compiled_pages": 13,
     "visual_review": "PASS_PROJECT_LEAD_ALL_13_PAGES_110_DPI",
     "synthetic_values_only": true,
     "real_owner_package_built": false,
     "submission_authorized": false,
-    "distribution_authorized": false
+    "distribution_authorized": false,
+    "historical_source_archive_sha256": "7f0c7e233945aa150b1aa2c68e6918d45f18f7c7531a92a004fe07d5c60da15e",
+    "current_record": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json"
   },
   "scientific_boundaries": {
     "only_joint_positive": "HGB_GBV_R_minus_GBV_ONLY_R",

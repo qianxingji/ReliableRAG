@@ -23,7 +23,7 @@ a deployment-cost reduction.
 
 | Lane | Reviewer entry point | What it proves | What it does not prove |
 |---|---|---|---|
-| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json`, `P0_I_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_TEMPLATE_TRANSPORT_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md`, `P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 155-word abstract and five keywords meet Applied Intelligence's inspected count rules. A reproducible PDF-text proxy counts 3,994 tokens before References and 4,691 in the full document. The selected-target modern `sn-jnl` preflight compiles to 12 font-clean pages with numeric citations and flat authored sources. Two private complete-source transports add the exact authenticated class/style, rebuild byte-identically and clean-compile to the same reviewed PDF. Official journal and publisher guidance accepts this current template as a submission route. | A publisher word count, proof that modern `sn-jnl` equals the `smallcondensed` profile named on the journal page, an observed Editorial Manager compile, a final author-populated package, final Astra artifact rebind, release authorization or CAS status. |
+| 1. Paper artifact | `output/pdf/manuscript.pdf`, `output/pdf/supplement.pdf`, `paper/COMPILE_RECEIPT.json`, `P0_I_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_MODERN_PREFLIGHT_ACCEPTANCE.md`, `P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md`, `P0_I_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION.md`, `P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json` | The 11-page manuscript and 3-page supplement compile, resolve citations, contain the frozen tables, expose the negative results and limitations, and have zero nonembedded or Type 3 fonts. The 155-word abstract and five keywords meet Applied Intelligence's inspected count rules. A reproducible PDF-text proxy counts 4,048 tokens before References and 4,745 in the full document. The selected-target modern `sn-jnl` preflight compiles to 12 font-clean pages with numeric citations and flat authored sources. Two private complete-source transports add the exact authenticated class/style, rebuild byte-identically and clean-compile to the same reviewed PDF. Official journal and publisher guidance accepts this current template as a submission route. | A publisher word count, proof that modern `sn-jnl` equals the `smallcondensed` profile named on the journal page, an observed Editorial Manager compile, a final author-populated package, final Astra artifact rebind, release authorization or CAS status. |
 | 2. Anonymous aggregate check | Preserved V1 witness SHA-256 `b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d`; corrected Apache-aware V2 candidate SHA-256 `4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8` | The V1 archive preserves the historical arithmetic witness. The V2 archive adds the exact Apache-2.0 text, restricts that license to two project-authored scripts, uses the corrected third-party notice, rebuilds byte-identically twice, passes 125 package checks per build and passes the extracted 129-check reporting verifier. | Bootstrap recomputation, per-question inspection, model rerun, refit, legal approval or public redistribution. Neither archive has a DOI or distribution authorization. |
 | 3. Private forensic reproduction | `P0_1_CLIENT_ACCEPTANCE.md`, `ROA_REPLAY_RELEASE_ACCEPTANCE.md`, `ROA_CLEAN_ENVIRONMENT_ACCEPTANCE.md`, `EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md`, `EMPIRICAL_D_ACCEPTANCE.md` | Saved-parameter numerical replay, source/data relocation on the same Windows host, clean numerical-library replay, full Qwen acquisition/replay acceptance and final aggregate analysis acceptance within their recorded scopes. | Original training-event reconstruction, another-host/OS reproduction, full public end-to-end execution or elimination of contamination. |
 | 4. Negative and stopped routes | `P0_3_FRESH_RESULT_DECISION.md`, `PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md`, `MISTRAL_EMPIRICAL_EXTENSION_PROTOCOL_GO_STOP_REVIEW.md` | The non-advancement of ROA, terminal Phi semantic validation failure and Mistral stop before engineering are retained rather than converted into positive evidence. | A second-reader effect, method novelty or permission to restart reader/method search. |
@@ -66,6 +66,15 @@ maps the mandatory Data Availability Statement and conditional-access boundary.
 The Apache-2.0 license is present and a corrected candidate is independently
 validated, while legal holder/year, institutional review, final release
 authorization, persistent identifier and review-channel implementation remain open.
+The later
+[data/code policy refresh acceptance](P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md)
+binds the corrected publication-state wording to the current base and target
+PDFs, two deterministic complete-source transports and a synthetic-only private
+build. The current transport SHA-256 is
+`d55ffb74cb8f88a9ec261c9a414219f511d92bd10eb4d888f5dbaa185d1c681e`;
+the prior `f4279c...` transport and earlier synthetic builds remain preserved
+historical evidence. This refresh supplies no real author package or release
+authorization.
 
 The [third-party terms recheck](P0_G_THIRD_PARTY_TERMS_RECHECK.md) records the
 Qwen research-license boundary and the non-`-c` DeBERTa checkpoint's mixed
@@ -191,13 +200,13 @@ CAS Q3 discovery passes all 129 tests.
    ```
 
    Expected results are a 49-check public-surface PASS, a 38-check committed
-   Applied Intelligence modern-preflight PASS and 139 private-input
+   Applied Intelligence modern-preflight PASS and 141 private-input
    static manuscript checks, a compiled mechanical and font PASS, an explicitly
-   non-publisher length proxy of 3,994 pre-reference and 4,691 full-document
+   non-publisher length proxy of 4,048 pre-reference and 4,745 full-document
    tokens, a non-submittable 12 pt Discover Computing technical-profile PASS,
    and a reviewer-map PASS. The latest complete visual review is
    separate from the mechanical verifier and is documented in
-   `P0_I_LICENSED_RELEASE_V2_DISCLOSURE_REBUILD_ACCEPTANCE.md`. The older
+   `P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md`. The older
    acceptance files remain historical records for their exact artifacts.
    Where the private target transport is available locally, run
    `validate_cas_q3_applied_intelligence_transport.py` with its archive path and

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "decision": "PASS_REPRODUCIBLE_LENGTH_PROXY_WITH_APPLIED_INTELLIGENCE_ABSTRACT_RANGE",
-  "manuscript_pdf_sha256": "c185360689726b757007ee215e30709846015511ae51cc7981c9b09eb0eb4016",
+  "manuscript_pdf_sha256": "6304d8a407d728265dbc375d968e3e3349470f73d1cae4a77e1093511f2771b7",
   "count_method": "Poppler pdftotext -layout plus documented regex tokenization",
-  "pdf_tokens_before_references": 3994,
-  "pdf_tokens_full_document": 4691,
+  "pdf_tokens_before_references": 4048,
+  "pdf_tokens_full_document": 4745,
   "static_abstract_word_count": 155,
   "applied_intelligence_abstract_word_range": [
     150,
