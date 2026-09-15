@@ -1392,6 +1392,67 @@ def main() -> int:
         checks,
     )
 
+    prompt_record = json.loads(
+        (ROOT / evidence["p0_i_ai_prompt_record"]).read_text(encoding="utf-8")
+    )
+    require(
+        prompt_record["decision"]
+        == "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+        "private AI prompt-record snapshot is authenticated",
+        checks,
+    )
+    prompt_scope = prompt_record["selection_scope"]
+    require(
+        prompt_record["snapshot_cutoff_utc"] == "2026-09-15T04:18:53.028Z"
+        and prompt_scope["session_files_with_metadata_scanned"] == 115
+        and prompt_scope["root_user_sessions_selected"] == 1
+        and prompt_scope["subagent_sessions_excluded"] is True
+        and prompt_scope["retained_user_prompt_chunks"] == 47
+        and prompt_scope["unique_exact_user_prompt_hashes"] == 37
+        and prompt_scope["raw_prompt_characters"] == 9785,
+        "prompt-record root-session selection and fixed counts are exact",
+        checks,
+    )
+    require(
+        prompt_scope["automatic_context_chunk_counts"]
+        == {"<codex_internal_context": 269, "<recommended_plugins>": 7, "<environment_context>": 17}
+        and prompt_scope["system_and_developer_messages_excluded"] is True
+        and prompt_scope["assistant_messages_and_tool_io_excluded"] is True,
+        "automatic and non-user prompt material is excluded",
+        checks,
+    )
+    prompt_privacy = prompt_record["privacy_and_integrity"]
+    require(
+        prompt_privacy["private_ledger_contains_redacted_prompt_text"] is True
+        and prompt_privacy["private_ledger_contains_complete_unredacted_prompt_set"] is False
+        and prompt_privacy["unaffected_prompt_chunks_may_remain_verbatim"] is True
+        and prompt_privacy["private_ledger_is_anonymous"] is False
+        and prompt_privacy["redaction_is_identity_minimization_not_anonymization"] is True
+        and prompt_privacy["public_receipt_contains_prompt_text"] is False
+        and prompt_privacy["public_receipt_contains_session_identifier"] is False
+        and prompt_privacy["public_receipt_contains_absolute_session_path"] is False,
+        "prompt-record privacy boundary is not overclaimed",
+        checks,
+    )
+    prompt_boundary = prompt_record["disclosure_boundary"]
+    require(
+        prompt_boundary["prompt_snapshot_prepared"] is True
+        and prompt_boundary["snapshot_is_final_project_use_range"] is False
+        and prompt_boundary["responsible_author_content_review_complete"] is False
+        and prompt_boundary["responsible_author_release_approval"] is False
+        and prompt_boundary["editor_requested_or_approved_access_route"] is False
+        and prompt_boundary["final_ai_use_end_date"] is None,
+        "prompt record leaves final author, editor, and date gates open",
+        checks,
+    )
+    require(
+        prompt_record["operations"] == {"scientific_payloads_read": False, "model_forwards": 0, "scientific_fits": 0}
+        and prompt_record["p0_i_closed"] is False
+        and prompt_record["submission_authorized"] is False,
+        "prompt-record audit is non-scientific and non-authorizing",
+        checks,
+    )
+
     current_build_gate = json.loads(
         (ROOT / evidence["p0_i_current_private_build_gate_verification"]).read_text(encoding="utf-8")
     )

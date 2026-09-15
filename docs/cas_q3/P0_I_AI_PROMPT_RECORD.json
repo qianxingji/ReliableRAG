@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "snapshot_cutoff_utc": "2026-09-15T04:18:53.028Z",
+  "selection_scope": {
+    "session_files_with_metadata_scanned": 115,
+    "root_user_sessions_selected": 1,
+    "thread_directory_basename": "reliablerag-research-project-lead-submission-ready",
+    "subagent_sessions_excluded": true,
+    "system_and_developer_messages_excluded": true,
+    "assistant_messages_and_tool_io_excluded": true,
+    "automatic_context_prefixes_excluded": [
+      "<codex_internal_context",
+      "<recommended_plugins>",
+      "<environment_context>"
+    ],
+    "automatic_context_chunk_counts": {
+      "<codex_internal_context": 269,
+      "<recommended_plugins>": 7,
+      "<environment_context>": 17
+    },
+    "user_message_records_seen": 333,
+    "user_input_text_chunks_seen": 340,
+    "retained_user_prompt_chunks": 47,
+    "unique_exact_user_prompt_hashes": 37,
+    "raw_prompt_characters": 9785
+  },
+  "privacy_and_integrity": {
+    "private_ledger_contains_redacted_prompt_text": true,
+    "private_ledger_contains_complete_unredacted_prompt_set": false,
+    "unaffected_prompt_chunks_may_remain_verbatim": true,
+    "private_ledger_is_anonymous": false,
+    "redaction_is_identity_minimization_not_anonymization": true,
+    "raw_prompt_hashes_retained": true,
+    "owner_value_and_email_redactions": 1,
+    "public_receipt_contains_prompt_text": false,
+    "public_receipt_contains_session_identifier": false,
+    "public_receipt_contains_absolute_session_path": false,
+    "canonical_raw_prompt_metadata_sha256": "b3572ea11dfa1dcf8166910c36a41c9857679aa950bb62c83de3d0a6cc5f3b64",
+    "private_ledger_sha256": "b5d424fddcfbd7c17b4432bdb9fb2937e1279ebd618202dc44c3f6883224b1dc",
+    "private_ledger_bytes": 22771
+  },
+  "disclosure_boundary": {
+    "prompt_snapshot_prepared": true,
+    "snapshot_is_complete_through_cutoff": true,
+    "snapshot_is_final_project_use_range": false,
+    "responsible_author_content_review_complete": false,
+    "responsible_author_release_approval": false,
+    "editor_requested_or_approved_access_route": false,
+    "verbatim_unredacted_prompt_release_prepared": false,
+    "final_ai_use_end_date": null
+  },
+  "operations": {
+    "scientific_payloads_read": false,
+    "model_forwards": 0,
+    "scientific_fits": 0
+  },
+  "p0_i_closed": false,
+  "submission_authorized": false
+}

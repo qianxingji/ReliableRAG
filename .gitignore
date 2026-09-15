@@ -10,6 +10,7 @@ docs/cas_q3/INSTITUTIONAL_RELEASE_RECORD.local.json
 evidence/private/institutional_release_record/
 docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json
 evidence/private/institutional_manuscript_approval/
+evidence/private/ai_prompt_record/
 output/private_submission/
 .pytest_cache/
 .mypy_cache/

@@ -66,6 +66,8 @@ class OwnerReplyPacketTests(unittest.TestCase):
         self.assertIn("这不是实际最早使用日", content)
         self.assertIn("最终起止日期仍须作者依据真实记录确认", content)
         self.assertIn("P0_I_AI_TOOL_SESSION_METADATA.md", content)
+        self.assertIn("P0_I_AI_PROMPT_RECORD.md", content)
+        self.assertIn("47 个", content)
         self.assertIn("2026-09-10 to YYYY-MM-DD", content)
         self.assertIn("不能把它写成最终结束日", content)
         self.assertIn("evidence/private/institutional_manuscript_approval/", content)

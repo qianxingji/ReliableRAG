@@ -23,6 +23,7 @@
 - AI 工具记录格式：`OpenAI Codex (GPT-Astra and GPT-Sol), YYYY-MM-DD to YYYY-MM-DD`。日期必须按实际使用范围填写。
 - [AI 工具日期证据边界](P0_I_AI_TOOL_DATE_EVIDENCE.md)只证明两种模型族不晚于 2026-09-12 已有留存使用记录；这不是实际最早使用日，也不是完整使用区间，最终起止日期仍须作者依据真实记录确认。
 - [本地 Codex 会话元数据审计](P0_I_AI_TOOL_SESSION_METADATA.md)进一步支持项目任务开始日为 2026-09-10，工具为 `gpt-6-astra`（high/xhigh）与`gpt-5.6-sol`（high）。固定快照末次观察日为 2026-09-15，但项目仍在继续，不能把它写成最终结束日。可审核格式：`OpenAI Codex (gpt-6-astra, high/xhigh; gpt-5.6-sol, high), 2026-09-10 to YYYY-MM-DD`。
+- [私有提示词记录快照](P0_I_AI_PROMPT_RECORD.md)已在固定截止时间筛出 47 个root-user 提示块并保存脱敏文本与原始哈希。它不公开提示正文、不是最终使用区间，也未获负责人逐条审核或编辑访问授权。
 - 如果确实不存在利益冲突，可确认：`The author declares no competing interests.`；否则请如实列出实际关系。
 - 论文审批证据请存入 Git 忽略目录 `evidence/private/institutional_manuscript_approval/`，并按 `docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD_TEMPLATE.json` 填写 Git 忽略的 `docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json`；记录须绑定获批稿件的实际 SHA-256、审批日期和经办单位。
 - 代码发布审查证据请存入 Git 忽略目录 `evidence/private/institutional_release_record/`，并提供文件名、审批日期和经办单位。

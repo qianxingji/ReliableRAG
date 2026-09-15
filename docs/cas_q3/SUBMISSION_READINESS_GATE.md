@@ -48,6 +48,12 @@ The current machine decision is
   passed compilation, font checks and complete visual review, but neither that
   build nor the policy mapping supplies author approval, a final use date or a
   real target artifact.
+  A fixed-cutoff private prompt ledger now retains 47 root-user prompt chunks
+  after excluding subagents and automatically injected context. The tracked
+  receipt exposes only counts and hashes. The ledger is Git-ignored,
+  identity-minimized rather than anonymous, and neither author-reviewed nor
+  approved for editor access. It improves traceability but does not complete
+  the final prompt/use range or close P0-I.
 - P1-A through P1-E are closed. P2 remains frozen under the Qwen-only route.
 
 The [consolidated owner-input intake](OWNER_INPUTS_INTAKE.md) provides one

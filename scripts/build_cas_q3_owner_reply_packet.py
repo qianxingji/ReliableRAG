@@ -111,6 +111,11 @@ def render(missing: list[str]) -> str:
             "继续，不能把它写成最终结束日。可审核格式：`OpenAI Codex "
             "(gpt-6-astra, high/xhigh; gpt-5.6-sol, high), 2026-09-10 to YYYY-MM-DD`。"
         )
+        candidate_lines.append(
+            "- [私有提示词记录快照](P0_I_AI_PROMPT_RECORD.md)已在固定截止时间筛出 47 个"
+            "root-user 提示块并保存脱敏文本与原始哈希。它不公开提示正文、不是最终使用"
+            "区间，也未获负责人逐条审核或编辑访问授权。"
+        )
     if "declarations.competing_interests_statement" in missing:
         candidate_lines.append(
             f"- 如果确实不存在利益冲突，可确认：`{NO_COMPETING_INTERESTS_CANDIDATE}`；"

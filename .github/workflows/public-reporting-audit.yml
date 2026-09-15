@@ -69,6 +69,7 @@ jobs:
             tests.test_cas_q3_ai_tool_date_evidence \
             tests.test_cas_q3_codex_session_metadata \
             tests.test_cas_q3_springer_ai_policy_alignment \
+            tests.test_cas_q3_ai_prompt_record \
             tests.test_cas_q3_owner_reply_packet \
             tests.test_cas_q3_private_submission_packet \
             tests.test_cas_q3_manuscript_length \

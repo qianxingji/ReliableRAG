@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "cbe3c376824df8b7cbca98be79545118b80e7f7a45b4a603e61c4b900e66f626",
+      "sha256": "1b6a55c78742d62e87fb424f2ff2191c83e2de1ae2df3c6349b9ed82e4fc3246",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "17af7ae4e50a6ab50e7c05a67c7c67ff3b98ab2705a702196cc673cc7ba6cfe9",
+      "sha256": "6bf1184eeb111794910f7eaa6a2b60e4086b00ae151e17c8b23bfdd444b920df",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -411,22 +411,22 @@
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "2104ad552998f7a70e8e1bafc5ffa130b9d1713bb792849c966a19fd50d9a316"
+      "sha256": "1834a2b8ebe162e707305d6a1075cfbd009be873887d2f9c743d869af9431a73"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "ded94ed29ebeb73eda363f78917d18729c391bce9d5d1dc6b8225629e884c4bf"
+      "sha256": "b03a168771db1427971cbe5bdcacf048f8e715785774452a77045b759014329d"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "95103afd26846c55cf4832b81b492d66f7f5243f866c61b5b6986ba40ab1be21"
+      "sha256": "b8437d0ae0f6ae3c756ca4c732d4c6f65b8b9d0f9ea69de2bdc740f3169f7d0e"
     },
     {
       "path": "tests/test_cas_q3_owner_reply_packet.py",
       "required_marker": "OwnerReplyPacketTests",
-      "sha256": "5a0d74b8ab5e940412e29c190baabb0688dbfd42643583f1fb0bf04c507a9031"
+      "sha256": "6bba746de0068606c556bb3c4cec4100557d417bcf0a5a3ce087336278f93f9b"
     },
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
@@ -928,6 +928,26 @@
       "path": "tests/test_cas_q3_springer_ai_policy_alignment.py",
       "required_marker": "SpringerAiPolicyAlignmentTests",
       "sha256": "bce4667906d8c161daf1b5bff46815cbef2a37b49b796ffb23900434a1e7c725"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_PROMPT_RECORD.json",
+      "required_marker": "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+      "sha256": "99a3bd4896de8ad90d99e03da9310744a828b50c636f005b2c4d20134cd6f5c5"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_PROMPT_RECORD.md",
+      "required_marker": "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+      "sha256": "823477bfae5b19447d64b23a19ee0178c6fd298869ae39271db21ef221d71d41"
+    },
+    {
+      "path": "scripts/audit_cas_q3_ai_prompt_record.py",
+      "required_marker": "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+      "sha256": "91ef648b1c3917dfa8c3a0d984acb0d8253d605b68401071d3031c1cbd7d39c5"
+    },
+    {
+      "path": "tests/test_cas_q3_ai_prompt_record.py",
+      "required_marker": "AiPromptRecordTests",
+      "sha256": "1ec63783cbc86cc1cb7f0606779ee25a86564e69d4b4ef3f8c248684423a4841"
     }
   ],
   "aggregate_release_candidate": {

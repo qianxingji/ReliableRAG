@@ -446,6 +446,19 @@ fairness, reviewer and Submission Ready audits.
    end date is unset, category-level prompt disclosure does not claim a complete
    verbatim transcript, and no real author-populated artifact was generated.
    P0-I therefore remains open.
+   A subsequent [private root-user prompt-record snapshot](P0_I_AI_PROMPT_RECORD.md)
+   reads only the one root user session at a fixed cutoff. It excludes all five
+   subagent sessions, system/developer and assistant messages, tool I/O, 269
+   automatic goal-context chunks, seven plugin-list chunks and 17 environment
+   chunks. The resulting Git-ignored ledger contains 47 retained user-prompt
+   chunks, 37 unique exact hashes and 9,785 raw characters; it stores redacted
+   text, time, length and raw hashes, while the public receipt contains no
+   prompt text, session identifier or absolute session path. One owner/email
+   value was replaced. The private ledger is identity-minimized rather than
+   anonymous because unaffected prompts can remain verbatim and may contain
+   public project identifiers. It is a non-final snapshot: responsible-author
+   content review, release approval, an editor-approved access route and the
+   final use end date remain open, so it does not close P0-I.
    A provisional Discover Computing technical profile now also proves that the
    accepted source can be changed to 12 pt, flattened into a top-level LaTeX
    ZIP and compiled to a font-clean 12-page PDF without changing scientific

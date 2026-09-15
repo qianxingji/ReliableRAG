@@ -261,6 +261,11 @@ CAS Q3 discovery passes all 129 tests.
    `PARTIAL_PASS_CURRENT_SPRINGER_NATURE_AI_POLICY_MAPPED_AUTHOR_APPROVAL_FINAL_DATE_AND_ARTIFACT_OPEN`.
    The mapping does not fetch or freeze publisher HTML, does not approve the
    candidate and does not close P0-I.
+   Run `python scripts/audit_cas_q3_ai_prompt_record.py` only on the preserved
+   local Codex host to rebuild the fixed-cutoff private prompt ledger. The
+   tracked receipt must report 47 retained root-user prompt chunks, 37 unique
+   hashes, no public prompt text and no authorization. A public checkout lacks
+   the source sessions and cannot reproduce the private ledger.
 
 ## Claim-to-evidence routing
 
@@ -290,6 +295,8 @@ CAS Q3 discovery passes all 129 tests.
   author to approve the revised use/prompt-scope disclosure and supply the final
   end date. The private target builder's Methods placement has passed a
   synthetic 13-page compile and visual check; no real author package exists.
+  A private fixed-cutoff prompt ledger is prepared, but it is not a final use
+  range, an anonymous public supplement or an editor-authorized disclosure.
 - **P1:** insert the certified journal's final data/code statement and bind the
   authorized archive plus journal-approved evidence-review route.
 - **P2:** new readers, methods, seeds, budgets and benchmarks remain closed.

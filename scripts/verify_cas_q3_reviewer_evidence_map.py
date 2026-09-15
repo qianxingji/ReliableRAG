@@ -959,6 +959,40 @@ def main() -> int:
     checks.equal(ai_policy["p0_i_closed"], False, "AI policy alignment does not close P0-I")
     checks.equal(ai_policy["submission_authorized"], False, "AI policy alignment does not authorize submission")
 
+    prompt_record = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_AI_PROMPT_RECORD.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        prompt_record["decision"],
+        "PASS_PRIVATE_REDACTED_ROOT_USER_PROMPT_LEDGER_SNAPSHOT_FINAL_RANGE_AND_AUTHOR_RELEASE_OPEN",
+        "private prompt-record snapshot decision",
+    )
+    checks.equal(prompt_record["snapshot_cutoff_utc"], "2026-09-15T04:18:53.028Z", "prompt snapshot cutoff")
+    prompt_scope = prompt_record["selection_scope"]
+    checks.equal(prompt_scope["root_user_sessions_selected"], 1, "one root user session selected")
+    checks.equal(prompt_scope["subagent_sessions_excluded"], True, "subagent sessions excluded from prompt record")
+    checks.equal(prompt_scope["retained_user_prompt_chunks"], 47, "retained user prompt chunks")
+    checks.equal(prompt_scope["unique_exact_user_prompt_hashes"], 37, "unique user prompt hashes")
+    checks.equal(prompt_scope["raw_prompt_characters"], 9785, "raw user prompt characters")
+    checks.equal(
+        prompt_scope["automatic_context_chunk_counts"],
+        {"<codex_internal_context": 269, "<recommended_plugins>": 7, "<environment_context>": 17},
+        "automatic context chunks excluded",
+    )
+    prompt_privacy = prompt_record["privacy_and_integrity"]
+    checks.equal(prompt_privacy["private_ledger_contains_complete_unredacted_prompt_set"], False, "no complete raw prompt copy")
+    checks.equal(prompt_privacy["unaffected_prompt_chunks_may_remain_verbatim"], True, "verbatim private chunks disclosed")
+    checks.equal(prompt_privacy["private_ledger_is_anonymous"], False, "private ledger is not called anonymous")
+    checks.equal(prompt_privacy["redaction_is_identity_minimization_not_anonymization"], True, "redaction scope is bounded")
+    checks.equal(prompt_privacy["public_receipt_contains_prompt_text"], False, "public receipt emits no prompt text")
+    prompt_boundary = prompt_record["disclosure_boundary"]
+    checks.equal(prompt_boundary["snapshot_is_final_project_use_range"], False, "prompt snapshot is not final range")
+    checks.equal(prompt_boundary["responsible_author_content_review_complete"], False, "prompt record awaits author review")
+    checks.equal(prompt_boundary["responsible_author_release_approval"], False, "prompt release awaits author approval")
+    checks.equal(prompt_boundary["editor_requested_or_approved_access_route"], False, "prompt editor route open")
+    checks.equal(prompt_record["p0_i_closed"], False, "prompt record does not close P0-I")
+    checks.equal(prompt_record["submission_authorized"], False, "prompt record does not authorize submission")
+
     current_build_gate = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json").read_text(
             encoding="utf-8"
@@ -1031,6 +1065,7 @@ def main() -> int:
         "tests.test_cas_q3_ai_tool_date_evidence",
         "tests.test_cas_q3_codex_session_metadata",
         "tests.test_cas_q3_springer_ai_policy_alignment",
+        "tests.test_cas_q3_ai_prompt_record",
         "tests.test_cas_q3_owner_reply_packet",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",
