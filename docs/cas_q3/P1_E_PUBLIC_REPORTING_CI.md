@@ -233,6 +233,19 @@ possess or rescan the external Windows roots and does not infer the 43-image
 manual visual review. A separate complete local discovery passed all 123 tests
 after the Discover builder test was isolated from tracked artifacts.
 
+The bounded AI-tool use-date evidence at
+`2d64878e06f403f8a6a158291980c38432aa6748` passed push run
+[34924995292](https://github.com/qianxingji/ReliableRAG/actions/runs/34924995292)
+and pull-request run
+[34924997925](https://github.com/qianxingji/ReliableRAG/actions/runs/34924997925).
+The workflow adds three tests that prevent a routing-rule date from being
+promoted to an actual use date and require the exact first/last dates to remain
+unresolved pending author confirmation. The public Submission gate checks 214
+pinned repository hashes in 741 checks and remains fail-closed. A separate local
+reviewer-map run authenticates 180 repository records in 1,295 checks; the
+withheld archives remain outside public CI. The project dependency environment
+also passed the complete 400-test repository discovery with two platform skips.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
