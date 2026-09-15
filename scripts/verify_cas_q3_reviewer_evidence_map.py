@@ -785,6 +785,38 @@ def main() -> int:
     checks.equal(hbut_packet["distribution_authorized"], False, "HBUT packet does not authorize distribution")
     checks.equal(hbut_packet["submission_authorized"], False, "HBUT packet does not authorize submission")
 
+    hbut_email = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_GHI_HBUT_EMAIL_DRAFT_ACCEPTANCE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        hbut_email["decision"],
+        "PASS_DETERMINISTIC_HBUT_EMAIL_DRAFT_PREPARED_WITHOUT_SENDER_NOT_SENT",
+        "HBUT email-draft decision",
+    )
+    checks.equal(hbut_email["deterministic_rebuild_equal"], True, "HBUT email draft deterministic rebuild")
+    checks.equal(hbut_email["validator_checks_each"], 43, "HBUT email-draft validation count")
+    checks.equal(hbut_email["targeted_tests"], 6, "HBUT email-draft targeted tests")
+    checks.equal(hbut_email["draft_scope"]["one_authenticated_zip_attachment"], True, "HBUT email has one authenticated attachment")
+    checks.equal(hbut_email["draft_scope"]["sender_identity_present"], False, "HBUT email excludes sender identity")
+    checks.equal(hbut_email["draft_scope"]["transport_headers_present"], False, "HBUT email excludes transport headers")
+    checks.equal(hbut_email["draft_scope"]["owner_local_input_included"], False, "HBUT email excludes owner local input")
+    checks.equal(hbut_email["draft_scope"]["institutional_response_included"], False, "HBUT email excludes nonexistent response")
+    checks.equal(hbut_email["draft_scope"]["final_author_artifact_rebind_required"], True, "HBUT email retains final artifact rebind")
+    checks.equal(hbut_email["preserved_failures"]["packet_bytes_changed_by_correction"], False, "HBUT email correction preserves packet bytes")
+    checks.equal(hbut_email["preserved_failures"]["superseded_drafts_sent"], False, "superseded HBUT drafts remain unsent")
+    checks.equal(hbut_email["email_sent"], False, "HBUT email remains unsent")
+    checks.equal(hbut_email["institutional_response_received"], False, "HBUT email supplies no response")
+    checks.equal(hbut_email["institutional_cas_tier_verified"], False, "HBUT email does not verify tier")
+    checks.equal(hbut_email["manuscript_approved"], False, "HBUT email does not approve manuscript")
+    checks.equal(hbut_email["code_release_approved"], False, "HBUT email does not approve release")
+    checks.equal(hbut_email["distribution_authorized"], False, "HBUT email does not authorize distribution")
+    checks.equal(hbut_email["submission_authorized"], False, "HBUT email does not authorize submission")
+    checks.equal(hbut_email["p0_g_closed"], False, "HBUT email does not close P0-G")
+    checks.equal(hbut_email["p0_h_closed"], False, "HBUT email does not close P0-H")
+    checks.equal(hbut_email["p0_i_closed"], False, "HBUT email does not close P0-I")
+
     hbut_secondary = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.json").read_text(
             encoding="utf-8"

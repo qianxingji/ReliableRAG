@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_DETERMINISTIC_HBUT_EMAIL_DRAFT_PREPARED_WITHOUT_SENDER_NOT_SENT",
+  "cas_q3_status": "NOT_READY",
+  "packet_acceptance_commit": "815193e3e332ea216ea33efca69fba6c5258de17",
+  "recipient": "kyc@mail.hbut.edu.cn",
+  "subject": "咨询 Applied Intelligence 中科院升级版大类分区认定及 ReliableRAG 代码发布审查",
+  "first_build": "E:/paper/ReliableRAG-hbut-institutional-review-email-draft-20260915-c/hbut_institutional_review_request_draft.eml",
+  "second_build": "E:/paper/ReliableRAG-hbut-institutional-review-email-draft-20260915-d/hbut_institutional_review_request_draft.eml",
+  "draft_sha256": "34ac643f5059436274e6368d3bf3ced758298d79ce5ec6c653173a80acad5b75",
+  "draft_size_bytes": 562539,
+  "packet_sha256": "42f533f6fba88b3d7367477ed27173ea49692f2eaf3e3abff8e85dbe76f13c5b",
+  "deterministic_rebuild_equal": true,
+  "validator_checks_each": 43,
+  "targeted_tests": 6,
+  "draft_scope": {
+    "one_plain_text_body": true,
+    "one_authenticated_zip_attachment": true,
+    "sender_identity_present": false,
+    "transport_headers_present": false,
+    "owner_local_input_included": false,
+    "institutional_response_included": false,
+    "final_author_artifact_rebind_required": true
+  },
+  "preserved_failures": {
+    "initial_attachment_hash_header": "long_unstructured_attachment_sha256_header_folded_with_semantic_whitespace",
+    "first_provenance_label_correction_test": "long_packet_acceptance_commit_header_folded_with_semantic_whitespace",
+    "superseded_unsent_draft_builds": [
+      "E:/paper/ReliableRAG-hbut-institutional-review-email-draft-20260915-a/hbut_institutional_review_request_draft.eml",
+      "E:/paper/ReliableRAG-hbut-institutional-review-email-draft-20260915-b/hbut_institutional_review_request_draft.eml"
+    ],
+    "packet_bytes_changed_by_correction": false,
+    "superseded_drafts_sent": false,
+    "final_draft_header_representation": "two_32_character_fold_safe_sha256_headers_and_length_safe_packet_commit_header"
+  },
+  "email_sent": false,
+  "institutional_response_received": false,
+  "institutional_cas_tier_verified": false,
+  "manuscript_approved": false,
+  "code_release_approved": false,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "p0_g_closed": false,
+  "p0_h_closed": false,
+  "p0_i_closed": false
+}

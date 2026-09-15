@@ -605,6 +605,52 @@ def main() -> int:
         checks,
     )
 
+    hbut_email = json.loads(
+        (ROOT / evidence["p0_ghi_hbut_email_draft_acceptance"]).read_text(encoding="utf-8")
+    )
+    require(
+        hbut_email["decision"]
+        == "PASS_DETERMINISTIC_HBUT_EMAIL_DRAFT_PREPARED_WITHOUT_SENDER_NOT_SENT",
+        "deterministic HBUT email draft is prepared",
+        checks,
+    )
+    require(hbut_email["deterministic_rebuild_equal"] is True, "HBUT email draft rebuilds byte-identically", checks)
+    require(hbut_email["validator_checks_each"] == 43 and hbut_email["targeted_tests"] == 6, "HBUT email draft validation is bound", checks)
+    require(
+        hbut_email["draft_scope"]["one_authenticated_zip_attachment"] is True
+        and hbut_email["packet_sha256"] == hbut_packet["archive_sha256"],
+        "HBUT email draft embeds the authenticated request packet",
+        checks,
+    )
+    require(
+        hbut_email["draft_scope"]["sender_identity_present"] is False
+        and hbut_email["draft_scope"]["transport_headers_present"] is False,
+        "HBUT email draft remains sender-free and untransported",
+        checks,
+    )
+    require(
+        hbut_email["email_sent"] is False
+        and hbut_email["institutional_response_received"] is False,
+        "HBUT email draft remains unsent and unanswered",
+        checks,
+    )
+    require(
+        hbut_email["institutional_cas_tier_verified"] is False
+        and hbut_email["manuscript_approved"] is False
+        and hbut_email["code_release_approved"] is False,
+        "HBUT email draft supplies no institutional decision",
+        checks,
+    )
+    require(
+        hbut_email["distribution_authorized"] is False
+        and hbut_email["submission_authorized"] is False
+        and hbut_email["p0_g_closed"] is False
+        and hbut_email["p0_h_closed"] is False
+        and hbut_email["p0_i_closed"] is False,
+        "HBUT email draft changes no gate or authorization",
+        checks,
+    )
+
     hbut_secondary = json.loads(
         (ROOT / evidence["p0_h_hbut_cas_edition_secondary_evidence"]).read_text(encoding="utf-8")
     )

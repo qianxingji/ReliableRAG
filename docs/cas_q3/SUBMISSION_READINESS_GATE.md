@@ -68,6 +68,9 @@ The current machine decision is
   byte-identical, validated institutional-review packet containing the anonymous
   drafts and release-review inputs. It has not been sent and supplies no
   institutional response, approval or author-populated artifact.
+  A deterministic sender-free `.eml` now carries that exact authenticated ZIP
+  as its sole attachment. It has no sender or transport headers and has not
+  been sent, so it changes no external gate or authorization state.
   A fixed-cutoff private prompt ledger now retains 47 root-user prompt chunks
   after excluding subagents and automatically injected context. The tracked
   receipt exposes only counts and hashes. The ledger is Git-ignored,

@@ -272,6 +272,11 @@ fairness, reviewer and Submission Ready audits.
    extraction. The packet remains unsent, contains no institutional response or
    local owner input, and any later manuscript approval must be rebound to the
    exact final author-populated artifact.
+   A deterministic [sender-free HBUT email draft](P0_GHI_HBUT_EMAIL_DRAFT_ACCEPTANCE.md)
+   now wraps the authenticated request packet as its sole attachment. Two
+   independent `.eml` builds are byte-identical and each passes 43 checks. The
+   draft contains no sender identity or transport headers and has not been
+   sent; it therefore supplies no institutional response, approval or P0 pass.
    A later [official HBUT college-level secondary-evidence audit](P0_H_HBUT_CAS_EDITION_RULE_SECONDARY_EVIDENCE.md)
    finds a published School of Science rule using the upgraded CAS report from
    the year before publication. It makes 2025 the candidate report year for a
