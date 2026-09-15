@@ -1,5 +1,12 @@
 # CAS Q3 manuscript package
 
+The author-designated latest review manuscript is the 15-page combined PDF
+`output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf`. Its identity, hash,
+page count, and review status are recorded in `LATEST_MANUSCRIPT.json`. Use that
+combined artifact for current manuscript review. The split PDFs and their
+compile receipts remain historical/rebuild evidence until a later revision
+replaces the combined artifact and updates the latest-manuscript receipt.
+
 The anonymous scientific draft is `manuscript.tex`; secondary tables and audit
 details are in `supplement.tex`. Run the following from the repository root:
 

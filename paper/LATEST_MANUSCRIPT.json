@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "decision": "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
+  "designated_by": "qianxingji",
+  "designated_date": "2026-09-15",
+  "registered_utc": "2026-09-15T11:36:20.052385+00:00",
+  "cas_q3_status": "NOT_READY",
+  "authoritative_artifact": "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",
+  "source_filename": "ReliableRAG_Manuscript_with_Appendices.pdf",
+  "sha256": "22d16ac2131690da54b64d5eed12616030f1a3d42f9ac6459cf897ad80fe569a",
+  "size_bytes": 632400,
+  "pages": 15,
+  "page_size": "612 x 792 pts (letter)",
+  "pdf_version": "1.7",
+  "visual_review": {
+    "status": "PASS_ALL_15_PAGES_NO_CLIPPING_OR_OVERLAP_OBSERVED",
+    "pages_reviewed": 15,
+    "hgb_pages_reviewed": [
+      3,
+      14
+    ]
+  },
+  "content_bindings": {
+    "complete_hgb_definition_in_main_text": true,
+    "complete_hgb_definition_in_appendix_e": true,
+    "appendices_a_through_j_present": true,
+    "scientific_results_changed_by_registration": false
+  },
+  "usage": "Use this combined PDF as the current manuscript-review baseline. Editable TeX sources remain rebuild inputs; any later manuscript revision must replace this artifact and update this receipt.",
+  "supersedes_for_current_review": [
+    "output/pdf/manuscript.pdf",
+    "output/pdf/supplement.pdf",
+    "output/pdf/manuscript_hgb_complete.pdf",
+    "output/pdf/supplement_hgb_complete.pdf"
+  ]
+}
