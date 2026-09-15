@@ -246,6 +246,18 @@ reviewer-map run authenticates 180 repository records in 1,295 checks; the
 withheld archives remain outside public CI. The project dependency environment
 also passed the complete 400-test repository discovery with two platform skips.
 
+The local Codex session-metadata audit at
+`fdd90a17d7a34f78caae582a19b33f7a702ab5ea` passed push run
+[34926007624](https://github.com/qianxingji/ReliableRAG/actions/runs/34926007624)
+and pull-request run
+[34926009687](https://github.com/qianxingji/ReliableRAG/actions/runs/34926009687).
+CI runs three synthetic privacy/scope tests and authenticates the committed
+fixed-cutoff aggregate; it does not possess or scan the originating local Codex
+session files. The current bounded surface passes 129 CAS Q3 tests, a separate
+project-environment discovery passes 403 tests with two platform skips, the
+reviewer map authenticates 184 records in 1,334 checks, and the Submission gate
+checks 218 hashes in 755 checks while remaining NOT READY.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
