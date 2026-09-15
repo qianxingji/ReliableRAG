@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+  "cas_q3_status": "NOT_READY",
+  "routing_record": {
+    "recorded_date": "2026-09-11",
+    "proves_actual_use_on_that_date": false,
+    "reason": "The routing document explicitly disclaims proving a model replacement within an already running turn."
+  },
+  "retained_use_evidence_by_model": {
+    "GPT-Sol": {
+      "retained_use_evidence_date": "2026-09-12",
+      "evidence_path": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md",
+      "evidence_creation_time": "2026-09-12T04:36:43+08:00"
+    },
+    "GPT-Astra": {
+      "retained_use_evidence_date": "2026-09-12",
+      "evidence_path": "docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md",
+      "evidence_creation_time": "2026-09-12T00:59:48+08:00"
+    }
+  },
+  "joint_evidence_boundary": {
+    "both_model_families_have_retained_use_evidence_by": "2026-09-12",
+    "is_actual_first_use_date": false,
+    "is_complete_use_range": false
+  },
+  "declaration_fields": {
+    "actual_first_use_date": null,
+    "actual_last_use_date": null,
+    "exact_version_and_date_bounded_record_complete": false,
+    "author_confirmation_required": true
+  },
+  "evidence_records": [
+    {
+      "kind": "routing_rule",
+      "path": "docs/cas_q2/MODEL_ROUTING.md",
+      "sha256": "dec79674c679fef3dcdd31b49acd1ab053e725c4f9f7c10a467ba8f87fd36dc1",
+      "creation_commit": "7d1fe3675fd1b0c301ebed921448c215a2c8810d",
+      "creation_time": "2026-09-11T23:56:00+08:00",
+      "required_markers": [
+        "`Sol` means `gpt-5.6-sol`; `Astra` means",
+        "`gpt-6-astra`",
+        "not evidence of a model replacement within an already running turn"
+      ],
+      "proves_model_use": false,
+      "actual_sha256": "dec79674c679fef3dcdd31b49acd1ab053e725c4f9f7c10a467ba8f87fd36dc1",
+      "file_present": true,
+      "hash_matches": true,
+      "markers_present": true,
+      "verified": true
+    },
+    {
+      "kind": "retained_sol_use_record",
+      "path": "docs/cas_q2/C4_JINJA_EXECUTION_BINDING_V2_ACCEPTANCE.md",
+      "sha256": "08ad739047737d383b72eee638a9711a262627020a0a2d6fe8c74b74f3b15592",
+      "creation_commit": "f6368506f495cc5a0e122bd5810fa0fa230305b2",
+      "creation_time": "2026-09-12T04:36:43+08:00",
+      "required_markers": [
+        "Date: 2026-09-12. Client Research Lead review: Sol High."
+      ],
+      "model_family": "GPT-Sol",
+      "model_id_from_routing_record": "gpt-5.6-sol",
+      "reasoning": "high",
+      "recorded_use_date": "2026-09-12",
+      "proves_model_use": true,
+      "actual_sha256": "08ad739047737d383b72eee638a9711a262627020a0a2d6fe8c74b74f3b15592",
+      "file_present": true,
+      "hash_matches": true,
+      "markers_present": true,
+      "verified": true
+    },
+    {
+      "kind": "retained_astra_use_record",
+      "path": "docs/cas_q2/C3_VALIDATION_V1_FAILURE_REVIEW.md",
+      "sha256": "3fcb423501c11ba376152ee642c454927740c263567d60aafda4e1fc73a5add9",
+      "creation_commit": "e6cb54c78829caf7b001e1d9802e608a9f84d1bb",
+      "creation_time": "2026-09-12T00:59:48+08:00",
+      "required_markers": [
+        "2026-09-12 Asia/Shanghai. **CAS Q2 STATUS: NOT READY.**",
+        "This is the Astra xhigh anomaly audit required by MODEL_ROUTING.md."
+      ],
+      "model_family": "GPT-Astra",
+      "model_id_from_routing_record": "gpt-6-astra",
+      "reasoning": "xhigh",
+      "recorded_use_date": "2026-09-12",
+      "proves_model_use": true,
+      "actual_sha256": "3fcb423501c11ba376152ee642c454927740c263567d60aafda4e1fc73a5add9",
+      "file_present": true,
+      "hash_matches": true,
+      "markers_present": true,
+      "verified": true
+    }
+  ],
+  "p0_i_closed": false,
+  "submission_authorized": false
+}

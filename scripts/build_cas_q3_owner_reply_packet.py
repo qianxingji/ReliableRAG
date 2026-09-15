@@ -100,6 +100,11 @@ def render(missing: list[str]) -> str:
             "- AI 工具记录格式：`OpenAI Codex (GPT-Astra and GPT-Sol), "
             "YYYY-MM-DD to YYYY-MM-DD`。日期必须按实际使用范围填写。"
         )
+        candidate_lines.append(
+            "- [AI 工具日期证据边界](P0_I_AI_TOOL_DATE_EVIDENCE.md)只证明两种模型族"
+            "不晚于 2026-09-12 已有留存使用记录；这不是实际最早使用日，也不是完整"
+            "使用区间，最终起止日期仍须作者依据真实记录确认。"
+        )
     if "declarations.competing_interests_statement" in missing:
         candidate_lines.append(
             f"- 如果确实不存在利益冲突，可确认：`{NO_COMPETING_INTERESTS_CANDIDATE}`；"

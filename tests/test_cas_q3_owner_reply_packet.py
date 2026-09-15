@@ -60,6 +60,9 @@ class OwnerReplyPacketTests(unittest.TestCase):
         self.assertIn(AI_ASSISTANCE_CANDIDATE, content)
         self.assertIn(NO_COMPETING_INTERESTS_CANDIDATE, content)
         self.assertIn("YYYY-MM-DD to YYYY-MM-DD", content)
+        self.assertIn("P0_I_AI_TOOL_DATE_EVIDENCE.md", content)
+        self.assertIn("这不是实际最早使用日", content)
+        self.assertIn("最终起止日期仍须作者依据真实记录确认", content)
         self.assertIn("evidence/private/institutional_manuscript_approval/", content)
         self.assertIn("evidence/private/institutional_release_record/", content)
 

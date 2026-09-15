@@ -1255,6 +1255,42 @@ def main() -> int:
     require(reply_receipt["personal_values_emitted"] is False, "owner reply packet emits no personal values", checks)
     require(reply_receipt["submission_authorized"] is False, "owner reply packet does not authorize submission", checks)
 
+    ai_dates = json.loads(
+        (ROOT / evidence["p0_i_ai_tool_date_evidence"]).read_text(encoding="utf-8")
+    )
+    require(
+        ai_dates["decision"]
+        == "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+        "bounded AI-tool date evidence is authenticated",
+        checks,
+    )
+    require(
+        ai_dates["routing_record"]["recorded_date"] == "2026-09-11"
+        and ai_dates["routing_record"]["proves_actual_use_on_that_date"] is False,
+        "routing record is not promoted to actual use evidence",
+        checks,
+    )
+    require(
+        ai_dates["joint_evidence_boundary"]["both_model_families_have_retained_use_evidence_by"]
+        == "2026-09-12"
+        and ai_dates["joint_evidence_boundary"]["is_actual_first_use_date"] is False
+        and ai_dates["joint_evidence_boundary"]["is_complete_use_range"] is False,
+        "retained records bound use by date without inventing a complete range",
+        checks,
+    )
+    require(
+        ai_dates["declaration_fields"]["actual_first_use_date"] is None
+        and ai_dates["declaration_fields"]["actual_last_use_date"] is None
+        and ai_dates["declaration_fields"]["author_confirmation_required"] is True,
+        "actual AI-tool date range remains an owner-confirmed field",
+        checks,
+    )
+    require(
+        ai_dates["p0_i_closed"] is False and ai_dates["submission_authorized"] is False,
+        "bounded AI-tool date evidence remains non-authorizing",
+        checks,
+    )
+
     current_build_gate = json.loads(
         (ROOT / evidence["p0_i_current_private_build_gate_verification"]).read_text(encoding="utf-8")
     )

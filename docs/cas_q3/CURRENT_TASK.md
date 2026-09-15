@@ -414,6 +414,12 @@ fairness, reviewer and Submission Ready audits.
    institutional manuscript/release evidence directories so the six open items
    can be reviewed without guessing. The packet only reduces coordination friction;
    it does not complete any declaration or authorize submission.
+   The subsequent [AI-tool date evidence audit](P0_I_AI_TOOL_DATE_EVIDENCE.md)
+   authenticates retained model-specific records without turning a
+   routing instruction into use evidence. It proves only that GPT-Sol and
+   GPT-Astra both have retained use records by 2026-09-12. The actual first and
+   last use dates remain unknown and require author confirmation, so the
+   date-bounded declaration and P0-I remain open.
    The [current private build-gate verification](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
    also exercises the real Git-ignored owner input. It confirms that the file is
    no longer the empty template while proving that its 6-field failure occurs
@@ -440,9 +446,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 176 repository records plus preserved withheld archive
+  authenticates 180 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,267 checks, without
+  package in 1,295 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -473,7 +479,7 @@ fairness, reviewer and Submission Ready audits.
   historical artifacts and the Submission gate rejected their changed hashes.
   The test now uses a cleaned temporary output root; the accepted tracked bytes
   were restored before further verification, and the subsequent complete CAS Q3
-  discovery passes all 123 tests.
+  discovery passes all 126 tests.
 
 ## P2: optional and currently closed
 

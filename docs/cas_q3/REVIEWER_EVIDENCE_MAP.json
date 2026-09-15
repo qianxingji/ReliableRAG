@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "ec92b4ef4a9291aac71e6c87372acd2c5cca214ef78438624fa87fa8aa671f65",
+      "sha256": "9a910b4396954a5f5bef29f566982a25f8aa183ec496ec2d83a90a7fda787d2d",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "6d241c331e2502ee2c5729ba587c33092b0b8a9d216df2fc7cb627f834bed000",
+      "sha256": "beb91a5b9ed87ad753aac984defe250fcf4647ed2afdb9f6d386739ba771d98c",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -411,22 +411,22 @@
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "ba900b6fad330e2b35bc9631632d0d1e14afe2c6e260a340011df0a221a84cc8"
+      "sha256": "5fb4b0cace9ff1ae53241804fae19eee79481a79f8681cfd025ca790b759136f"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "8c01e2ae4f569c98eb980b3ad4756a06745e55347e3c329af89a3cf33d85e3f1"
+      "sha256": "874c716aa31baaea8d02c994ff8b8d51182498aa1c4903b60d998312a6423a13"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "55eb5e781aa2199d4d294bcfda8c4485744e7c2f3a4a1adf72daccc1eb2219e8"
+      "sha256": "aa7685112a4ee3a4198d3b9ec1556de49d8cd26cda9a527fa1589c5312a8e4ce"
     },
     {
       "path": "tests/test_cas_q3_owner_reply_packet.py",
       "required_marker": "OwnerReplyPacketTests",
-      "sha256": "362862e118feb06732cf05d81ae877049df7de554a3a4436f9b75cb6937ed1ee"
+      "sha256": "0cba38391b5b4321bd396f1f40a0f83b914b6e37d5a39ef690c57ee58b133502"
     },
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
@@ -868,6 +868,26 @@
       "path": "tests/test_cas_q3_discover_computing_preflight.py",
       "sha256": "38e3b6c2ce0efa2eac8e22e6cbed7d0076a02fda77a4c643e2bc5bf60c3ae7af",
       "required_marker": "test_build_is_fail_closed_and_preserves_source"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_DATE_EVIDENCE.json",
+      "required_marker": "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+      "sha256": "96432c08eee2d31c29bae0b91fca3843ea47e3b9a530fef765b97276fd46a4a6"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_DATE_EVIDENCE.md",
+      "required_marker": "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+      "sha256": "dcc3fcdeb8837607afa94218656575cbd48fdd0343b851656950c00e3b738cb9"
+    },
+    {
+      "path": "scripts/audit_cas_q3_ai_tool_date_evidence.py",
+      "required_marker": "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+      "sha256": "22588f06c1f603ab1978545aa8496acc2bb5f2203198d14f17778e7f64993481"
+    },
+    {
+      "path": "tests/test_cas_q3_ai_tool_date_evidence.py",
+      "required_marker": "AiToolDateEvidenceTests",
+      "sha256": "a2b2999ff231d0b79418eac8926007270b8f91577ae6bd06a7c2b3e0273bd74e"
     }
   ],
   "aggregate_release_candidate": {

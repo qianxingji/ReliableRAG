@@ -870,6 +870,33 @@ def main() -> int:
     checks.equal(hashlib.sha256(reply_packet.encode("utf-8")).hexdigest(), reply_receipt["packet_sha256"], "reply packet hash")
     checks.true("@" not in reply_packet, "tracked reply packet contains no email value")
 
+    ai_dates = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_AI_TOOL_DATE_EVIDENCE.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        ai_dates["decision"],
+        "PASS_EVIDENCE_BOUNDED_AI_TOOL_USE_CONFIRMED_BY_DATE_EXACT_RANGE_PENDING",
+        "AI-tool date evidence decision",
+    )
+    checks.equal(ai_dates["routing_record"]["recorded_date"], "2026-09-11", "routing record date")
+    checks.equal(
+        ai_dates["routing_record"]["proves_actual_use_on_that_date"],
+        False,
+        "routing date is not promoted to an actual use date",
+    )
+    checks.equal(
+        ai_dates["joint_evidence_boundary"]["both_model_families_have_retained_use_evidence_by"],
+        "2026-09-12",
+        "both retained model-use records exist by date",
+    )
+    checks.equal(ai_dates["joint_evidence_boundary"]["is_actual_first_use_date"], False, "first use remains unknown")
+    checks.equal(ai_dates["joint_evidence_boundary"]["is_complete_use_range"], False, "complete use range remains unknown")
+    checks.equal(ai_dates["declaration_fields"]["actual_first_use_date"], None, "actual first-use date not guessed")
+    checks.equal(ai_dates["declaration_fields"]["actual_last_use_date"], None, "actual last-use date not guessed")
+    checks.equal(ai_dates["declaration_fields"]["author_confirmation_required"], True, "author date confirmation retained")
+    checks.equal(ai_dates["p0_i_closed"], False, "bounded date evidence does not close P0-I")
+    checks.equal(ai_dates["submission_authorized"], False, "bounded date evidence does not authorize submission")
+
     current_build_gate = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json").read_text(
             encoding="utf-8"
@@ -939,6 +966,7 @@ def main() -> int:
         "tests.test_cas_q3_applied_intelligence_transport",
         "tests.test_cas_q3_applied_intelligence_private_submission",
         "tests.test_cas_q3_private_submission_packet",
+        "tests.test_cas_q3_ai_tool_date_evidence",
         "tests.test_cas_q3_owner_reply_packet",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",

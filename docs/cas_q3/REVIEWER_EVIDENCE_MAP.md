@@ -150,12 +150,19 @@ accessed and before an output directory can be created. This authenticates the
 current fail-closed integration state; it does not create an author-populated
 artifact or close P0-I.
 
+The [AI-tool date evidence audit](P0_I_AI_TOOL_DATE_EVIDENCE.md) binds the
+retained Sol- and Astra-specific records. It proves that both model
+families have retained use evidence by 2026-09-12, while explicitly rejecting
+the 2026-09-11 routing-file date as proof of actual use. The real first and last
+use dates remain owner-confirmed fields; this record does not complete the AI
+declaration or close P0-I.
+
 The [Discover preflight test-isolation corrigendum](P1_E_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM.md)
 retains the first 123-test failure caused by a test overwriting three tracked
 historical preflight files. The Submission gate rejected their changed hashes;
 the accepted bytes were restored and the test now builds only under a temporary
 worktree directory that is cleaned after its assertions. The subsequent complete
-CAS Q3 discovery passes all 123 tests.
+CAS Q3 discovery passes all 126 tests.
 
 ## Reviewer sequence
 
