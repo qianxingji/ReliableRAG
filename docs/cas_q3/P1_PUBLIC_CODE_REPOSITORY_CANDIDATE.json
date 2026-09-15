@@ -3,7 +3,7 @@
   "signed_date": "2026-09-15",
   "timezone": "Asia/Shanghai",
   "reviewer_role": "client-side Research Project Lead",
-  "decision": "PASS_CLEAN_PUBLIC_REPOSITORY_CANDIDATE_PUBLICATION_WITHHELD",
+  "decision": "PASS_CLEAN_PUBLIC_REPOSITORY_PUBLISHED_USER_AUTHORIZED_INSTITUTIONAL_RECORD_PENDING",
   "cas_q3_status": "NOT_READY",
   "candidate": {
     "local_repository": "E:/paper/ReliableRAG-Code",
@@ -13,7 +13,32 @@
     "commit_count": 1,
     "tracked_files": 33,
     "total_tracked_bytes": 180158,
-    "public_creation_attempted": false
+    "public_repository": "https://github.com/qianxingji/ReliableRAG-Code",
+    "public_creation_completed": true,
+    "visibility": "public",
+    "default_branch": "main",
+    "github_detected_license": "Apache-2.0"
+  },
+  "public_activation": {
+    "responsible_author_action_time_authorization": true,
+    "remote_main": "55b65a835cbea3d49185fe5212a11eba06fe0a55",
+    "github_actions": {
+      "run_id": 34968615526,
+      "name": "public-code-audit",
+      "head_sha": "55b65a835cbea3d49185fe5212a11eba06fe0a55",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/qianxingji/ReliableRAG-Code/actions/runs/34968615526"
+    },
+    "public_clone": {
+      "path": "E:/paper/ReliableRAG-cas-q2-p0-1/tmp/public_repo_github_checkout_20260915",
+      "head": "55b65a835cbea3d49185fe5212a11eba06fe0a55",
+      "working_tree_clean": true,
+      "unit_tests_passed": 6,
+      "aggregate_verification_checks": 129,
+      "repository_audit_checks": 162,
+      "historical_hgb_source_sha256": "3724b5ac77722b70cabdf2589379d5584942f34ec81f3f5a04f88e0665f8f717"
+    }
   },
   "fresh_clone": {
     "path": "E:/paper/ReliableRAG-cas-q2-p0-1/tmp/public_repo_clean_checkout_20260915_b",
@@ -41,9 +66,6 @@
   },
   "remaining_gates": [
     "written institutional release-review approval",
-    "responsible-author action-time authorization",
-    "public GitHub creation and exact-commit push",
-    "public GitHub Actions verification",
     "persistent release identifier"
   ]
 }

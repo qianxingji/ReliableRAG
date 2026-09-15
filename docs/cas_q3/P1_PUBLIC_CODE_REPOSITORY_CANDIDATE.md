@@ -3,11 +3,11 @@
 Signed date: 2026-09-15 (Asia/Shanghai). Reviewer: client-side Research
 Project Lead.
 
-**DECISION: PASS_CLEAN_PUBLIC_REPOSITORY_CANDIDATE_PUBLICATION_WITHHELD.**
+**DECISION: PASS_CLEAN_PUBLIC_REPOSITORY_PUBLISHED_USER_AUTHORIZED_INSTITUTIONAL_RECORD_PENDING.**
 
-**CAS Q3 STATUS: NOT READY.** The clean repository candidate is technically
-ready for public creation, but this record does not replace the required
-institutional release review or authorize public distribution.
+**CAS Q3 STATUS: NOT READY.** The responsible author authorized public creation
+in the client task and the accepted repository is now public. This record does
+not establish or replace the separately required institutional release review.
 
 ## Candidate identity
 
@@ -21,12 +21,30 @@ institutional release review or authorize public distribution.
 | Tracked files | 33 |
 | Total tracked bytes | 180,158 |
 | License | Apache License 2.0 for project-authored code; explicit scope file included |
-| Public creation attempted | false |
+| Public repository | `https://github.com/qianxingji/ReliableRAG-Code` |
+| Public creation completed | true |
 
 The candidate is a new independent Git repository. It does not contain the
 private project's Git history, forensic receipts, benchmark payloads, generated
 answers, per-question outcomes, model weights, learned estimators, local paths,
 or private execution artifacts.
+
+## Public activation
+
+The GitHub repository was created as public and the accepted local commit was
+pushed without rewriting it. Git and the GitHub public API independently report
+`main` at `55b65a835cbea3d49185fe5212a11eba06fe0a55`. GitHub identifies the
+repository as public, the default branch as `main`, and the detected license as
+Apache-2.0.
+
+GitHub Actions run
+`https://github.com/qianxingji/ReliableRAG-Code/actions/runs/34968615526`
+completed successfully for the same commit. A second clone from the public
+GitHub URL into
+`E:/paper/ReliableRAG-cas-q2-p0-1/tmp/public_repo_github_checkout_20260915`
+passed all six unit tests, all 129 aggregate-reporting checks, and all 162
+repository checks. Its HGB source hash matched the authenticated historical
+hash.
 
 ## Fresh-clone acceptance
 
@@ -64,16 +82,14 @@ It does not claim to regenerate the accepted 18,000 neural traces from raw
 benchmark inputs. The README, code-availability statement, data statement,
 third-party notices, and reproduction guide state this boundary explicitly.
 
-## Remaining release gates
+## Remaining project gates
 
 - retain written institutional release-review approval;
-- obtain the responsible author's final action-time authorization to create the
-  public GitHub repository;
-- create and push the exact accepted commit without rewriting its history;
-- verify the public GitHub Actions run and record the resulting URL and commit;
 - archive the accepted public release under a persistent identifier when the
   manuscript submission package is finalized.
 
-Public distribution remains withheld until the applicable release authorization
-is recorded. Passing this engineering acceptance must not be represented as
-full end-to-end neural reproducibility or as submission readiness.
+The repository is publicly distributed under the responsible author's explicit
+authorization. Institutional release-review evidence remains pending and must
+be retained before submission. Passing this engineering acceptance must not be
+represented as full end-to-end neural reproducibility or as submission
+readiness.
