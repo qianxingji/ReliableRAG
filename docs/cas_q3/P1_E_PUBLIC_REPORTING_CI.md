@@ -321,6 +321,22 @@ acceptance. Neither successful CI run reads the private transport or synthetic
 author package, supplies institutional evidence, or authorizes distribution or
 submission.
 
+The P0-G final release-activation intake at
+`94f5ac70d782c5401ad183e917ff34ec6e9dfc00` passed push run
+[34933660684](https://github.com/qianxingji/ReliableRAG/actions/runs/34933660684)
+and pull-request run
+[34933662956](https://github.com/qianxingji/ReliableRAG/actions/runs/34933662956).
+The workflow now checks the empty activation template and eight synthetic
+fail-closed tests. Local validation passes 143 CAS Q3 tests and 417 complete
+repository tests with two Windows platform skips. The reviewer map authenticates
+203 records in 1,539 checks, and the top-level gate authenticates 235 repository
+hashes in 852 checks while retaining `NOT_READY`. The first full-suite command
+used a system interpreter missing the established scientific dependencies; its
+eight import errors and two dependent failures are retained in the activation
+acceptance, followed by the passing project-environment run. Neither CI run
+contains an approval, release archive, DOI or restricted-review delivery, and
+the activation verifier cannot authorize distribution or submission.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`

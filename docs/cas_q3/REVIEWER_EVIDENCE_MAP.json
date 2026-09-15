@@ -285,7 +285,7 @@
     },
     {
       "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-      "sha256": "ae26925a9a4db166964fbd627acdbef7ebba0b299b2766cae672da51a1ca1339",
+      "sha256": "e465353496ae6623e1c5c650038f998203bd64e301123ad8dcd266eeffeac7d2",
       "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
     },
     {
