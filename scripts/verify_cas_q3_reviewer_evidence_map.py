@@ -897,6 +897,41 @@ def main() -> int:
     checks.equal(ai_dates["p0_i_closed"], False, "bounded date evidence does not close P0-I")
     checks.equal(ai_dates["submission_authorized"], False, "bounded date evidence does not authorize submission")
 
+    session_metadata = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_I_AI_TOOL_SESSION_METADATA.json").read_text(encoding="utf-8")
+    )
+    checks.equal(
+        session_metadata["decision"],
+        "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+        "local Codex session-metadata decision",
+    )
+    checks.equal(session_metadata["snapshot_cutoff_utc"], "2026-09-15T03:32:41.264Z", "session metadata cutoff")
+    scope = session_metadata["selection_scope"]
+    checks.equal(scope["session_files_scanned"], 115, "pre-cutoff local session files scanned")
+    checks.equal(scope["selected_session_files"], 6, "ReliableRAG project-task sessions selected")
+    checks.equal(scope["selected_session_identifiers_emitted"], False, "session identifiers not emitted")
+    checks.equal(scope["absolute_paths_emitted"], False, "absolute session paths not emitted")
+    checks.equal(scope["message_response_or_tool_content_inspected"], False, "message and tool content not inspected")
+    checks.equal(session_metadata["target_turn_context_count"], 379, "target model turn-context count")
+    astra_metadata = session_metadata["models"]["gpt-6-astra"]
+    sol_metadata = session_metadata["models"]["gpt-5.6-sol"]
+    checks.equal(astra_metadata["turn_context_count"], 62, "Astra turn-context count")
+    checks.equal(astra_metadata["reasoning_effort_counts"], {"high": 3, "xhigh": 59}, "Astra reasoning levels")
+    checks.equal(astra_metadata["first_observed_asia_shanghai_date"], "2026-09-10", "Astra first observed date")
+    checks.equal(sol_metadata["turn_context_count"], 317, "Sol turn-context count")
+    checks.equal(sol_metadata["reasoning_effort_counts"], {"high": 317}, "Sol reasoning level")
+    checks.equal(sol_metadata["first_observed_asia_shanghai_date"], "2026-09-11", "Sol first observed date")
+    observation = session_metadata["project_task_observation"]
+    checks.equal(observation["first_observed_asia_shanghai_date"], "2026-09-10", "project-task AI start date")
+    checks.equal(observation["last_observed_asia_shanghai_date"], "2026-09-15", "project-task last observed date")
+    checks.equal(observation["last_observed_date_is_final_use_date"], False, "last observation is not final use")
+    declaration = session_metadata["declaration_boundary"]
+    checks.equal(declaration["final_use_end_date"], None, "final AI use date remains unset")
+    checks.equal(declaration["date_bounded_declaration_complete"], False, "AI date declaration remains incomplete")
+    checks.equal(declaration["author_approval_still_required"], True, "AI statement still needs author approval")
+    checks.equal(session_metadata["p0_i_closed"], False, "session metadata does not close P0-I")
+    checks.equal(session_metadata["submission_authorized"], False, "session metadata does not authorize submission")
+
     current_build_gate = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json").read_text(
             encoding="utf-8"
@@ -967,6 +1002,7 @@ def main() -> int:
         "tests.test_cas_q3_applied_intelligence_private_submission",
         "tests.test_cas_q3_private_submission_packet",
         "tests.test_cas_q3_ai_tool_date_evidence",
+        "tests.test_cas_q3_codex_session_metadata",
         "tests.test_cas_q3_owner_reply_packet",
         "python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs",
         "git diff --exit-code",

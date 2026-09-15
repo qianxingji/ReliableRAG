@@ -157,12 +157,19 @@ the 2026-09-11 routing-file date as proof of actual use. The real first and last
 use dates remain owner-confirmed fields; this record does not complete the AI
 declaration or close P0-I.
 
+The [local Codex session-metadata audit](P0_I_AI_TOOL_SESSION_METADATA.md)
+uses a fixed UTC cutoff and parses only `session_meta` and `turn_context` rows.
+It selects 6 project-task sessions and verifies 379 target-model contexts:
+62 `gpt-6-astra` high/xhigh and 317 `gpt-5.6-sol` high. The task start date is
+supported as 2026-09-10. The 2026-09-15 last observation is not a final use
+date because project work continues, so the disclosure remains incomplete.
+
 The [Discover preflight test-isolation corrigendum](P1_E_DISCOVER_PREFLIGHT_TEST_ISOLATION_CORRIGENDUM.md)
 retains the first 123-test failure caused by a test overwriting three tracked
 historical preflight files. The Submission gate rejected their changed hashes;
 the accepted bytes were restored and the test now builds only under a temporary
 worktree directory that is cleaned after its assertions. The subsequent complete
-CAS Q3 discovery passes all 126 tests.
+CAS Q3 discovery passes all 129 tests.
 
 ## Reviewer sequence
 

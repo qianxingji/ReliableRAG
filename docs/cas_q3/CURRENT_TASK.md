@@ -420,6 +420,13 @@ fairness, reviewer and Submission Ready audits.
    GPT-Astra both have retained use records by 2026-09-12. The actual first and
    last use dates remain unknown and require author confirmation, so the
    date-bounded declaration and P0-I remain open.
+   A stronger [local Codex session-metadata audit](P0_I_AI_TOOL_SESSION_METADATA.md)
+   parses only project-task `session_meta` and `turn_context` rows at a fixed
+   cutoff. Across 6 selected sessions and 379 target-model contexts, it verifies
+   `gpt-6-astra` high/xhigh and `gpt-5.6-sol` high, and supports a project-task
+   start date of 2026-09-10. The last observed date is 2026-09-15, but the work
+   remains active, so no final end date is manufactured and the declaration
+   remains owner-confirmed and open.
    The [current private build-gate verification](P0_I_CURRENT_PRIVATE_BUILD_GATE.md)
    also exercises the real Git-ignored owner input. It confirms that the file is
    no longer the empty template while proving that its 6-field failure occurs
@@ -446,9 +453,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 180 repository records plus preserved withheld archive
+  authenticates 184 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,295 checks, without
+  package in 1,334 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)
@@ -479,7 +486,7 @@ fairness, reviewer and Submission Ready audits.
   historical artifacts and the Submission gate rejected their changed hashes.
   The test now uses a cleaned temporary output root; the accepted tracked bytes
   were restored before further verification, and the subsequent complete CAS Q3
-  discovery passes all 126 tests.
+  discovery passes all 129 tests.
 
 ## P2: optional and currently closed
 

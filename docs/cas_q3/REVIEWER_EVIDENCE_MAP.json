@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "9a910b4396954a5f5bef29f566982a25f8aa183ec496ec2d83a90a7fda787d2d",
+      "sha256": "29cbd480b7fd3ab2cd0b7a6a09d8dce351d6dada148a48b5fda3b011bbc6a69c",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "beb91a5b9ed87ad753aac984defe250fcf4647ed2afdb9f6d386739ba771d98c",
+      "sha256": "78cba5d6b15f674cf50b9f8c591c553a37d2e28db50a84e5e0880a230c758039",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -411,22 +411,22 @@
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "5fb4b0cace9ff1ae53241804fae19eee79481a79f8681cfd025ca790b759136f"
+      "sha256": "78a931d3d10fa873b17b77b5fffb643e39cde8cc6906050af957c4f1a95d6c70"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "874c716aa31baaea8d02c994ff8b8d51182498aa1c4903b60d998312a6423a13"
+      "sha256": "d1a1ae7d51f7133d23003c378b9e53c9819b1f16b1f824d7599b4971c2c041f4"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "aa7685112a4ee3a4198d3b9ec1556de49d8cd26cda9a527fa1589c5312a8e4ce"
+      "sha256": "314996a5d87003834bb1f5fd6630aaf51ad953d93bd25bfa7f885042982531a2"
     },
     {
       "path": "tests/test_cas_q3_owner_reply_packet.py",
       "required_marker": "OwnerReplyPacketTests",
-      "sha256": "0cba38391b5b4321bd396f1f40a0f83b914b6e37d5a39ef690c57ee58b133502"
+      "sha256": "c850083933ec0eb0cda6fe3d2922f56c2a2ee7d69f809a20063624e3d9817635"
     },
     {
       "path": "docs/cas_q3/P0_H_HBUT_CAS_POLICY_VERIFICATION.json",
@@ -888,6 +888,26 @@
       "path": "tests/test_cas_q3_ai_tool_date_evidence.py",
       "required_marker": "AiToolDateEvidenceTests",
       "sha256": "a2b2999ff231d0b79418eac8926007270b8f91577ae6bd06a7c2b3e0273bd74e"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_SESSION_METADATA.json",
+      "required_marker": "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+      "sha256": "f6e53cfbec3a2316e827b55ca97a62d8f2ce5e4104e6f78f743d95fe24539ada"
+    },
+    {
+      "path": "docs/cas_q3/P0_I_AI_TOOL_SESSION_METADATA.md",
+      "required_marker": "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+      "sha256": "0d54fd2c40b220c89ddb8b8c0c2575e98dee053931cccef1574a73b700bfaa69"
+    },
+    {
+      "path": "scripts/audit_cas_q3_codex_session_metadata.py",
+      "required_marker": "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+      "sha256": "2c092f2145f7cbeb31125bc78e1e0ad870bbe9407985735ae99902d1a0fef5e8"
+    },
+    {
+      "path": "tests/test_cas_q3_codex_session_metadata.py",
+      "required_marker": "CodexSessionMetadataTests",
+      "sha256": "5a6eb3292ee17eba1f2dbc586c05d04090731af56fe4a9ceceb43f774ae9187a"
     }
   ],
   "aggregate_release_candidate": {

@@ -1291,6 +1291,52 @@ def main() -> int:
         checks,
     )
 
+    session_metadata = json.loads(
+        (ROOT / evidence["p0_i_ai_tool_session_metadata"]).read_text(encoding="utf-8")
+    )
+    require(
+        session_metadata["decision"]
+        == "PASS_LOCAL_CODEX_TURN_CONTEXT_METADATA_START_BOUND_END_DATE_PENDING",
+        "local Codex turn-context metadata is authenticated",
+        checks,
+    )
+    require(
+        session_metadata["selection_scope"]["selected_session_files"] == 6
+        and session_metadata["target_turn_context_count"] == 379
+        and session_metadata["selection_scope"]["message_response_or_tool_content_inspected"] is False,
+        "session metadata scope and privacy boundary are exact",
+        checks,
+    )
+    require(
+        session_metadata["models"]["gpt-6-astra"]["turn_context_count"] == 62
+        and session_metadata["models"]["gpt-6-astra"]["reasoning_effort_counts"]
+        == {"high": 3, "xhigh": 59}
+        and session_metadata["models"]["gpt-5.6-sol"]["turn_context_count"] == 317
+        and session_metadata["models"]["gpt-5.6-sol"]["reasoning_effort_counts"] == {"high": 317},
+        "Astra and Sol model-level turn contexts are retained",
+        checks,
+    )
+    require(
+        session_metadata["project_task_observation"]["first_observed_asia_shanghai_date"] == "2026-09-10"
+        and session_metadata["project_task_observation"]["last_observed_asia_shanghai_date"] == "2026-09-15"
+        and session_metadata["project_task_observation"]["last_observed_date_is_final_use_date"] is False,
+        "project-task start is supported while the final end date remains open",
+        checks,
+    )
+    require(
+        session_metadata["declaration_boundary"]["final_use_end_date"] is None
+        and session_metadata["declaration_boundary"]["date_bounded_declaration_complete"] is False
+        and session_metadata["declaration_boundary"]["author_approval_still_required"] is True,
+        "AI disclosure still requires a final date and author approval",
+        checks,
+    )
+    require(
+        session_metadata["p0_i_closed"] is False
+        and session_metadata["submission_authorized"] is False,
+        "session metadata remains non-authorizing",
+        checks,
+    )
+
     current_build_gate = json.loads(
         (ROOT / evidence["p0_i_current_private_build_gate_verification"]).read_text(encoding="utf-8")
     )

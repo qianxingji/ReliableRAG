@@ -105,6 +105,13 @@ def render(missing: list[str]) -> str:
             "不晚于 2026-09-12 已有留存使用记录；这不是实际最早使用日，也不是完整"
             "使用区间，最终起止日期仍须作者依据真实记录确认。"
         )
+        candidate_lines.append(
+            "- [本地 Codex 会话元数据审计](P0_I_AI_TOOL_SESSION_METADATA.md)进一步支持"
+            "项目任务开始日为 2026-09-10，工具为 `gpt-6-astra`（high/xhigh）与"
+            "`gpt-5.6-sol`（high）。固定快照末次观察日为 2026-09-15，但项目仍在"
+            "继续，不能把它写成最终结束日。可审核格式：`OpenAI Codex "
+            "(gpt-6-astra, high/xhigh; gpt-5.6-sol, high), 2026-09-10 to YYYY-MM-DD`。"
+        )
     if "declarations.competing_interests_statement" in missing:
         candidate_lines.append(
             f"- 如果确实不存在利益冲突，可确认：`{NO_COMPETING_INTERESTS_CANDIDATE}`；"
