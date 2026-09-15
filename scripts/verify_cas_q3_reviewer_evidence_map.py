@@ -347,7 +347,10 @@ def main() -> int:
     )
     local_validation = local_closure["validation"]
     checks.equal(local_validation["exit_code"], 2, "current local closure remains fail-closed")
-    checks.equal(local_validation["owner_inputs"]["missing_field_count"], 6, "current owner missing fields")
+    checks.equal(local_validation["owner_inputs"]["missing_field_count"], 5, "current owner missing fields")
+    checks.equal(local_closure["owner_input_updated_after_preparation"], True, "owner input has a later responsible-author update")
+    checks.equal(local_closure["ai_tool_date_range_supplied"], True, "AI tool date range supplied")
+    checks.equal(local_closure["ai_tool_planned_end_date_requires_final_confirmation"], True, "planned AI end date still needs final confirmation")
     checks.equal(local_validation["institutional_cas_record"]["missing_field_count"], 22, "CAS placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["missing_field_count"], 22, "release placeholder missing fields")
     checks.equal(local_validation["institutional_release_record"]["validation_error_count"], 5, "release placeholder conflicts")
@@ -1028,13 +1031,12 @@ def main() -> int:
         "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
         "responsible-author reply packet decision",
     )
-    checks.equal(reply_receipt["missing_field_count"], 6, "reply packet missing-field count")
+    checks.equal(reply_receipt["missing_field_count"], 5, "reply packet missing-field count")
     checks.equal(reply_receipt["validation_error_count"], 0, "reply packet validation errors")
     checks.equal(
         set(reply_receipt["missing_field_paths"]),
         {
             "declarations.ai_assistance_statement_approved=true",
-            "declarations.ai_tool_version_and_use_dates",
             "declarations.competing_interests_statement",
             "declarations.institutional_manuscript_approval_evidence",
             "declarations.institutional_manuscript_approval_status=APPROVED",
@@ -1189,7 +1191,8 @@ def main() -> int:
     )
     checks.equal(current_build_gate["input_scope"], "LOCAL_GIT_IGNORED_OWNER_INPUT", "current private gate input scope")
     checks.equal(current_build_gate["input_matches_empty_template"], False, "current owner input is not empty template")
-    checks.equal(current_build_gate["missing_field_count"], 6, "current private gate missing fields")
+    checks.equal(current_build_gate["missing_field_count"], 5, "current private gate missing fields")
+    checks.equal(current_build_gate["expected_missing_field_count"], 5, "current private gate expected deficit")
     checks.equal(current_build_gate["validation_error_count"], 0, "current private gate validation errors")
     checks.equal(current_build_gate["transport_access_attempted"], False, "current private gate does not access transport")
     checks.equal(current_build_gate["output_created"], False, "current private gate creates no output")

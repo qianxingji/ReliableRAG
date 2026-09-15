@@ -36,7 +36,8 @@ The current machine decision is
 - P0-I has a deterministic private complete-source transport using the
   authenticated current Springer Nature class/style; both independent builds
   clean-compile to the exact visually accepted 12-page PDF. It remains open for
-  six remaining declaration/approval fields, an author-populated final package and the final
+  five remaining declaration/approval fields, final confirmation of the
+  supplied planned AI-use end date, an author-populated final package and the final
   GPT-6 Astra xhigh audit. The official publisher and journal guidance now
   establish the current `sn-jnl` package as an accepted submission route. Exact
   style equivalence to the unavailable legacy `smallcondensed` profile remains

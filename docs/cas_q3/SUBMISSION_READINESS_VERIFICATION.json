@@ -52,7 +52,8 @@
       "gate": "P0-I",
       "status": "OPEN",
       "missing": [
-        "approved AI-assistance wording with a versioned and date-bounded tool record",
+        "approved AI-assistance wording",
+        "final confirmation of the author-supplied planned AI-use end date",
         "responsible-author confirmation of the complete AI-use and prompt-category disclosure",
         "substantive competing-interests wording",
         "institutional manuscript approval and retained evidence",
@@ -69,7 +70,7 @@
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
   "verified_repository_hashes": 245,
-  "checks": 888,
+  "checks": 892,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

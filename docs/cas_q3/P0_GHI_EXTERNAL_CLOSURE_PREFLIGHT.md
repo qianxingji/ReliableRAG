@@ -33,13 +33,15 @@ state labels only; it prints no private values.
 
 The unified verifier can now read all four files, but the three institutional
 files are placeholders, not institutional records. After the responsible
-author supplied a third input batch, the owner input remains at 6 missing
+author supplied a fourth input batch, the owner input remains at 5 missing
 fields and zero validation errors. The all-author approval and both
 institutional-review-required flags are recorded, along with owner assertions
-about the copyright holder and candidate 2025 CAS edition. Unapproved AI
-wording, an undated AI-tool entry, a label-only competing-interests entry and
-the two required institutional approvals stay open; no supplied value is
-emitted in this record. The CAS placeholder has 22 missing
+about the copyright holder and candidate 2025 CAS edition. The owner has also
+supplied an AI-tool range beginning 2026-07-10 and planned through 2026-09-20;
+because the planned end is later than the 2026-09-15 validation date, its final
+end-date confirmation remains open. Unapproved AI wording, a label-only
+competing-interests entry and the two required institutional approvals stay
+open; no supplied private value is emitted in the machine record. The CAS placeholder has 22 missing
 fields and zero validation errors. The release placeholder has 22 missing fields
 and five expected fail-closed placeholder conflicts. The manuscript-approval
 placeholder has 17 missing fields and two expected fail-closed conflicts. No

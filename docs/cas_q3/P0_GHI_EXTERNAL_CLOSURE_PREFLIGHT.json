@@ -26,9 +26,13 @@
   },
   "local_workspace_execution": {
     "execution_date": "2026-09-14",
+    "latest_validation_date": "2026-09-15",
     "preparation_decision": "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE",
     "owner_input_status": "PRESERVED_EXISTING_BYTES",
     "owner_input_hash_unchanged": true,
+    "owner_input_updated_after_preparation": true,
+    "ai_tool_date_range_supplied": true,
+    "ai_tool_planned_end_date_requires_final_confirmation": true,
     "institutional_cas_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
     "institutional_release_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
     "institutional_manuscript_approval_local_status": "CREATED_FROM_EMPTY_TEMPLATE",
@@ -49,7 +53,7 @@
         "institutional_manuscript_approval_record": "READ"
       },
       "owner_inputs": {
-        "missing_field_count": 6,
+        "missing_field_count": 5,
         "validation_error_count": 0
       },
       "institutional_cas_record": {

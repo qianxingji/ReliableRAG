@@ -984,7 +984,7 @@ def main() -> int:
     local_validation = local_closure["validation"]
     require(local_validation["exit_code"] == 2, "local unified validation remains fail-closed", checks)
     require(
-        local_validation["owner_inputs"] == {"missing_field_count": 6, "validation_error_count": 0},
+        local_validation["owner_inputs"] == {"missing_field_count": 5, "validation_error_count": 0},
         "owner-input local status is fixed without exposing values",
         checks,
     )
@@ -1012,6 +1012,9 @@ def main() -> int:
         checks,
     )
     require(local_validation["cross_consistency_error_count"] == 0, "placeholder run reports no cross inconsistency", checks)
+    require(local_closure["owner_input_updated_after_preparation"] is True, "owner input has a later responsible-author update", checks)
+    require(local_closure["ai_tool_date_range_supplied"] is True, "AI tool date range is supplied", checks)
+    require(local_closure["ai_tool_planned_end_date_requires_final_confirmation"] is True, "planned AI end date remains subject to final confirmation", checks)
     require(local_closure["private_values_emitted"] is False, "workspace preparation emits no private values", checks)
     require(
         evidence["p0_ghi_private_closure_workspace_preparation_decision"]
@@ -1468,13 +1471,12 @@ def main() -> int:
         "privacy-safe owner reply packet is bound",
         checks,
     )
-    require(reply_receipt["missing_field_count"] == 6, "owner reply packet records 6 missing fields", checks)
+    require(reply_receipt["missing_field_count"] == 5, "owner reply packet records 5 missing fields", checks)
     require(reply_receipt["validation_error_count"] == 0, "owner reply packet records zero validation errors", checks)
     require(
         set(reply_receipt["missing_field_paths"])
         == {
             "declarations.ai_assistance_statement_approved=true",
-            "declarations.ai_tool_version_and_use_dates",
             "declarations.competing_interests_statement",
             "declarations.institutional_manuscript_approval_evidence",
             "declarations.institutional_manuscript_approval_status=APPROVED",
@@ -1710,7 +1712,7 @@ def main() -> int:
         checks,
     )
     require(
-        current_build_gate["missing_field_count"] == 6
+        current_build_gate["missing_field_count"] == 5
         and current_build_gate["validation_error_count"] == 0,
         "current build gate retains the exact owner-input deficit",
         checks,
@@ -1721,6 +1723,7 @@ def main() -> int:
         "current build gate stops before transport access and output creation",
         checks,
     )
+    require(current_build_gate["expected_missing_field_count"] == 5, "current private gate binds the five-field deficit", checks)
     require(
         current_build_gate["author_populated_package_built"] is False
         and current_build_gate["private_values_emitted"] is False
@@ -1862,7 +1865,8 @@ def main() -> int:
             "gate": "P0-I",
             "status": "OPEN",
             "missing": [
-                "approved AI-assistance wording with a versioned and date-bounded tool record",
+                "approved AI-assistance wording",
+                "final confirmation of the author-supplied planned AI-use end date",
                 "responsible-author confirmation of the complete AI-use and prompt-category disclosure",
                 "substantive competing-interests wording",
                 "institutional manuscript approval and retained evidence",

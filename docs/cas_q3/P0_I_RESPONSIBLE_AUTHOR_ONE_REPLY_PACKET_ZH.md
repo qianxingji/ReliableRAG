@@ -2,16 +2,15 @@
 
 **CAS Q3 STATUS: NOT READY.**
 
-生成时本地负责人输入还缺 **6** 项，且已有字段没有校验错误。本文件只列出缺失字段路径和静态填写说明；生成器不会把本地文件中已经填写的姓名、邮箱、地址或声明文本写入仓库。已核验并写入本地文件的学校所在城市和邮编无需重复提供。
+生成时本地负责人输入还缺 **5** 项，且已有字段没有校验错误。本文件只列出缺失字段路径和静态填写说明；生成器不会把本地文件中已经填写的姓名、邮箱、地址或声明文本写入仓库。已核验并写入本地文件的学校所在城市和邮编无需重复提供。
 
 ## 当前缺失字段
 
 1. `declarations.ai_assistance_statement_approved=true`
-2. `declarations.ai_tool_version_and_use_dates`
-3. `declarations.competing_interests_statement`
-4. `declarations.institutional_manuscript_approval_evidence`
-5. `declarations.institutional_manuscript_approval_status=APPROVED`
-6. `project_license.release_review_status=APPROVED`
+2. `declarations.competing_interests_statement`
+3. `declarations.institutional_manuscript_approval_evidence`
+4. `declarations.institutional_manuscript_approval_status=APPROVED`
+5. `project_license.release_review_status=APPROVED`
 
 ## 可直接审核的候选措辞与证据位置
 
@@ -20,10 +19,6 @@
   > Generative AI tools were used under author supervision for project planning and coordination; literature discovery and comparison; research-design and methodological option review; code scaffolding, implementation, debugging, and review; evidence, reproducibility, statistical, and numerical-result checking; interpretation stress-testing; and manuscript structuring, drafting, formatting, and language revision. Prompts instructed the tools to inspect retained artifacts, preserve failed runs and frozen protocols, compare methodological or editorial options, implement and test code, audit evidence and claims, and draft or revise text within author-specified boundaries. The tools did not fabricate or autonomously select data, references, results, claims, interpretations, or conclusions. Computational outputs were generated only by versioned code and frozen protocols and were independently checked against retained artifacts. The author independently reviewed the AI-assisted outputs, reran the documented verification procedures, checked references, analyses, claims, and the final text, made all final research and submission decisions, and accepts full responsibility. No AI tool was listed as an author.
 
   该候选按 2026-09-15 核验的 Springer Nature 新政策补充了方法选项、统计/数值复核、解释压力测试和提示词类别。见 [政策对齐审计](P0_I_SPRINGER_NATURE_AI_POLICY_ALIGNMENT.md)。请明确回答是否完整准确并批准；如不准确，请给出替代措辞。
-- AI 工具记录格式：`OpenAI Codex (GPT-Astra and GPT-Sol), YYYY-MM-DD to YYYY-MM-DD`。日期必须按实际使用范围填写。
-- [AI 工具日期证据边界](P0_I_AI_TOOL_DATE_EVIDENCE.md)只证明两种模型族不晚于 2026-09-12 已有留存使用记录；这不是实际最早使用日，也不是完整使用区间，最终起止日期仍须作者依据真实记录确认。
-- [本地 Codex 会话元数据审计](P0_I_AI_TOOL_SESSION_METADATA.md)进一步支持项目任务开始日为 2026-09-10，工具为 `gpt-6-astra`（high/xhigh）与`gpt-5.6-sol`（high）。固定快照末次观察日为 2026-09-15，但项目仍在继续，不能把它写成最终结束日。可审核格式：`OpenAI Codex (gpt-6-astra, high/xhigh; gpt-5.6-sol, high), 2026-09-10 to YYYY-MM-DD`。
-- [私有提示词记录快照](P0_I_AI_PROMPT_RECORD.md)已在固定截止时间筛出 47 个root-user 提示块并保存脱敏文本与原始哈希。它不公开提示正文、不是最终使用区间，也未获负责人逐条审核或编辑访问授权。
 - 如果确实不存在利益冲突，可确认：`The author declares no competing interests.`；否则请如实列出实际关系。
 - 论文审批证据请存入 Git 忽略目录 `evidence/private/institutional_manuscript_approval/`，并按 `docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD_TEMPLATE.json` 填写 Git 忽略的 `docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json`；记录须绑定获批稿件的实际 SHA-256、审批日期和经办单位。
 - 代码发布审查证据请存入 Git 忽略目录 `evidence/private/institutional_release_record/`，并提供文件名、审批日期和经办单位。
@@ -34,11 +29,10 @@
 
 ```text
 1. `declarations.ai_assistance_statement_approved=true`：是否批准当前 AI assistance statement 候选措辞（是/否；否时给出真实替代措辞）。
-2. `declarations.ai_tool_version_and_use_dates`：实际使用的 AI 工具、版本及使用日期范围。
-3. `declarations.competing_interests_statement`：Competing interests statement。
-4. `declarations.institutional_manuscript_approval_evidence`：若要求投稿前审批，给出审批状态与留存证据；若不要求，给出负责人确认记录。
-5. `declarations.institutional_manuscript_approval_status=APPROVED`：学校要求投稿前审批；请在实际获批后确认状态为 APPROVED，并保留书面证据。
-6. `project_license.release_review_status=APPROVED`：学校要求代码公开发布前审查；请在实际获批后确认状态为 APPROVED，并保留书面证据。
+2. `declarations.competing_interests_statement`：Competing interests statement。
+3. `declarations.institutional_manuscript_approval_evidence`：若要求投稿前审批，给出审批状态与留存证据；若不要求，给出负责人确认记录。
+4. `declarations.institutional_manuscript_approval_status=APPROVED`：学校要求投稿前审批；请在实际获批后确认状态为 APPROVED，并保留书面证据。
+5. `project_license.release_review_status=APPROVED`：学校要求代码公开发布前审查；请在实际获批后确认状态为 APPROVED，并保留书面证据。
 ```
 
 可选：ORCID（官方指南为 if available/recommended）；单独邮寄地址仅在不同于已填写单位地址时提供；没有致谢对象时可以不设置 Acknowledgements 段。

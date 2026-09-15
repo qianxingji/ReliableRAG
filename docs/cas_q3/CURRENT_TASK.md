@@ -31,7 +31,7 @@ fail-closed verifier now bind eventual approval evidence to the exact approved
 manuscript bytes; its local placeholder and evidence directory are also ignored
 by Git. The unified verifier now checks all four records together, including
 approval status, target journal and exact approved-manuscript digest. It still
-fails closed: owner inputs have 6 missing fields and zero errors, the CAS
+fails closed: owner inputs have 5 missing fields and zero errors, the CAS
 placeholder has 22 missing fields and zero errors, the release placeholder has
 22 missing fields plus five expected conflicts, and the manuscript-approval
 placeholder has 17 missing fields plus two expected conflicts. No institutional
@@ -368,10 +368,14 @@ fairness, reviewer and Submission Ready audits.
    requirement audit has corrected the hard gate from the historical 30-field
    snapshot to a 19-field intermediate snapshot; the first direct owner update
    reduced it to 16, the second response reduced it to 9, and the third response
-   plus fail-closed content review leaves 6 real missing fields and zero
+   plus fail-closed content review left 6 real missing fields and zero
    validation errors. The latest accepted facts include all-author approval and
    the requirement for institutional manuscript and release review. Those
    reviews remain pending rather than approved.
+   A fourth owner update supplies an AI-tool range beginning 2026-07-10 and
+   planned through 2026-09-20. Because the planned end is later than the current
+   2026-09-15 validation date, final end-date confirmation remains open; the
+   structural owner deficit is now 5 fields with zero validation errors.
    Optional ORCID, a separate corresponding-author postal address and acknowledgements
    are no longer treated as mandatory, while truthful CRediT coverage remains
    required. Correspondence and CRediT are complete. The individual
@@ -381,7 +385,7 @@ fairness, reviewer and Submission Ready audits.
    now runs the owner, institutional-CAS and institutional-release validators in
    one command and checks their title, ISSN, edition, tier, recognition-rule,
    license, holder/year and review-state agreement. Its current local result is
-   fail-closed: 6 owner fields remain missing and the two institutional input
+   fail-closed: 5 owner fields remain missing and the two institutional input
    files are empty template placeholders. Even a future structural pass leaves
    the client content, author-artifact and final Astra xhigh audits open.
    A separate local builder can then produce an ignored title page,
@@ -436,16 +440,17 @@ fairness, reviewer and Submission Ready audits.
    author-list name. A second response supplied CRediT and several declarations.
    The third confirms all-author approval and required institutional review and
    supplies owner-side holder and 2025-edition assertions. AI wording approval,
-   a date-bounded AI-tool record, substantive competing-interests wording, and
-   actual institutional approvals/evidence remain open; 6 fields are still
+   final confirmation of the supplied planned AI-use end date, substantive competing-interests wording, and
+   actual institutional approvals/evidence remain open; after the fourth
+   date-range update, 5 fields are still
    missing, so no real identity-bearing target package has been generated.
-   The current 6 missing paths are rendered into a
+   The current 5 missing paths are rendered into a
    [privacy-safe responsible-author one-reply packet](P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md).
    Its generator and regression test prove that already supplied local names,
    email addresses, postal details and declaration text are not serialized into
    the tracked packet or receipt. It now exposes the exact static AI-assistance
    candidate, a truthful no-conflict option, a date-range format and the ignored
-   institutional manuscript/release evidence directories so the six open items
+   institutional manuscript/release evidence directories so the five open items
    can be reviewed without guessing. The packet only reduces coordination friction;
    it does not complete any declaration or authorize submission.
    The subsequent [AI-tool date evidence audit](P0_I_AI_TOOL_DATE_EVIDENCE.md)
@@ -453,7 +458,10 @@ fairness, reviewer and Submission Ready audits.
    routing instruction into use evidence. It proves only that GPT-Sol and
    GPT-Astra both have retained use records by 2026-09-12. The actual first and
    last use dates remain unknown and require author confirmation, so the
-   date-bounded declaration and P0-I remain open.
+   repository-only date audit cannot close P0-I. The later fourth owner update
+   supplies 2026-07-10 as the start and 2026-09-20 as the planned end; because
+   the latter is still in the future at validation time, final confirmation
+   remains open.
    A stronger [local Codex session-metadata audit](P0_I_AI_TOOL_SESSION_METADATA.md)
    parses only project-task `session_meta` and `turn_context` rows at a fixed
    cutoff. Across 6 selected sessions and 379 target-model contexts, it verifies

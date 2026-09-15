@@ -411,12 +411,12 @@
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_ZH.md",
       "required_marker": "CAS Q3 STATUS: NOT READY",
-      "sha256": "1834a2b8ebe162e707305d6a1075cfbd009be873887d2f9c743d869af9431a73"
+      "sha256": "7197c3bfc5d206b01d0e3ae556967dc2604e0d06c79f347eb491e6bf07284fc1"
     },
     {
       "path": "docs/cas_q3/P0_I_RESPONSIBLE_AUTHOR_ONE_REPLY_PACKET_VERIFICATION.json",
       "required_marker": "PASS_PRIVACY_SAFE_ONE_REPLY_PACKET_GENERATED_OWNER_CONFIRMATION_PENDING",
-      "sha256": "b03a168771db1427971cbe5bdcacf048f8e715785774452a77045b759014329d"
+      "sha256": "1b86416254367c630b42cbc195ddb0681c39d20aeb9aab3c863ccb48d0cfa1bf"
     },
     {
       "path": "scripts/build_cas_q3_owner_reply_packet.py",
@@ -596,12 +596,12 @@
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json",
-      "sha256": "e3f48d20da6fe34ca56ff2bfe629eb3bde3cbd2789fc6f52eb1d6d24ee0fd907",
+      "sha256": "47bd2bd12aaede96e4baabea74bda556d9bc4d58d8db27419b4e9986eda132ed",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
       "path": "docs/cas_q3/P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.md",
-      "sha256": "ec48dd54f2f913abd248ad887d6742b7e38058b40e7d5c09fd62bdaa303e884b",
+      "sha256": "61def932763df6ca8e04700bf2afaa8996d3bd46a3237ebeadd32995ae682ccc",
       "required_marker": "PASS_PRIVATE_EXTERNAL_CLOSURE_PREFLIGHT_PREPARED_REAL_INPUTS_AND_AUDITS_OPEN"
     },
     {
@@ -630,12 +630,12 @@
     {
       "path": "docs/cas_q3/P0_I_CURRENT_PRIVATE_BUILD_GATE.md",
       "required_marker": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
-      "sha256": "9ab2359a61e666cf2f666c5d43300774d8a14f080041f2d7e6323fb28df69d30"
+      "sha256": "156dfc2b09b40d4a5a64123c35b74a0eb894e7f22e59d8bd9cb5e626e848ec72"
     },
     {
       "path": "docs/cas_q3/P0_I_CURRENT_PRIVATE_BUILD_GATE_VERIFICATION.json",
       "required_marker": "PASS_OWNER_INPUT_GATE_REJECTS_BEFORE_TRANSPORT_OR_OUTPUT",
-      "sha256": "689e806d592d1cf1641b58983b5c70b29bb329262920107af134969948af21fb"
+      "sha256": "f61e6cf656c15dd4bdc74273e79589fc850cfa5ae8b2a97843dbd2019e003ae1"
     },
     {
       "path": "scripts/verify_cas_q3_current_private_build_gate.py",
@@ -1000,7 +1000,7 @@
     },
     {
       "path": "scripts/verify_cas_q3_reviewer_evidence_map.py",
-      "sha256": "93e2eb652e3bbd8f9e3ea102a8ade0ac62e2825bf9491fb9627406d26b725d80"
+      "sha256": "7e604dbc0fc0a781b0a12e8712112c03766de166b9bb696099855ddf9b63e048"
     },
     {
       "path": "docs/cas_q3/P0_GHI_HBUT_REVIEW_REQUEST_PACKET_ACCEPTANCE.md",
