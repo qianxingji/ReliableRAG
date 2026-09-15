@@ -24,7 +24,10 @@ The current machine decision is
   channel or authorize release. The upstream-terms
   recheck preserves the Qwen research-license and non-`-c` DeBERTa
   training-data caveats; owner/institutional review for the intended release
-  remains open.
+  remains open. A fail-closed activation intake now covers the later binding of
+  approval, exact Git commit, release archive, permanent identifier and any
+  editor-requested restricted delivery. It is an empty engineering template;
+  it creates no authorization, release, deposit or P0-G pass.
 - P0-H records Applied Intelligence, the subscription/non-OA route and the
   owner's 2025 major-category Q3 assertion. Its declared evidence path is absent
   from both project workspaces. P0-H remains open for institutional confirmation

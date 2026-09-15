@@ -254,6 +254,60 @@ def main() -> int:
     checks.equal(release_record_intake["current_state"]["p0_g_closed"], False, "release intake does not close P0-G")
     checks.equal(release_record_intake["distribution_authorized"], False, "release intake does not authorize distribution")
 
+    activation_intake = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_G_RELEASE_ACTIVATION_INTAKE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        activation_intake["decision"],
+        "PASS_FAIL_CLOSED_RELEASE_ACTIVATION_INTAKE_PREPARED_ACTIVATION_NOT_ATTEMPTED",
+        "release activation intake decision",
+    )
+    checks.equal(
+        activation_intake["bound_candidate"]["aggregate_v2_sha256"],
+        licensed_release["v2"]["archive_sha256"],
+        "release activation intake binds the validated aggregate V2 source",
+    )
+    checks.equal(
+        activation_intake["bound_candidate"]["repository_url"],
+        "https://github.com/qianxingji/ReliableRAG",
+        "release activation intake binds the selected repository",
+    )
+    for key in (
+        "client_audited_release_authorization",
+        "exact_frozen_commit",
+        "exact_archive_and_manifest_hashes",
+        "resolving_persistent_identifier",
+        "restricted_review_request_and_channel_state",
+        "manual_cross_record_review",
+    ):
+        checks.equal(
+            activation_intake["activation_requirements"][key],
+            True,
+            f"release activation requirement: {key}",
+        )
+    for key in (
+        "activation_attempted",
+        "owner_distribution_authorization_received",
+        "final_submission_revision_frozen",
+        "release_or_commit_reference_published",
+        "persistent_identifier_exists",
+        "restricted_review_delivery_occurred",
+        "client_content_audit_complete",
+        "final_artifact_rebind_complete",
+        "astra_xhigh_final_audit_complete",
+        "p0_g_closed",
+    ):
+        checks.equal(
+            activation_intake["current_state"][key],
+            False,
+            f"release activation remains open: {key}",
+        )
+    checks.equal(activation_intake["external_urls_fetched"], False, "activation intake performs no URL fetch")
+    checks.equal(activation_intake["distribution_authorized"], False, "activation intake does not authorize distribution")
+    checks.equal(activation_intake["submission_authorized"], False, "activation intake does not authorize submission")
+
     external_closure = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_GHI_EXTERNAL_CLOSURE_PREFLIGHT.json").read_text(
             encoding="utf-8"

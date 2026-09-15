@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_FAIL_CLOSED_RELEASE_ACTIVATION_INTAKE_PREPARED_ACTIVATION_NOT_ATTEMPTED",
+  "cas_q3_status": "NOT_READY",
+  "template_path": "docs/cas_q3/RELEASE_ACTIVATION_RECORD_TEMPLATE.json",
+  "local_metadata_path": "docs/cas_q3/RELEASE_ACTIVATION_RECORD.local.json",
+  "private_archive_directory": "evidence/private/release_activation/",
+  "verifier_path": "scripts/verify_cas_q3_release_activation_record.py",
+  "test_path": "tests/test_cas_q3_release_activation_record.py",
+  "bound_candidate": {
+    "aggregate_v2_sha256": "4eebb724b43a402600449286dd22b32b2b5c7b7720296e9276db45cffae9aaf8",
+    "repository_url": "https://github.com/qianxingji/ReliableRAG"
+  },
+  "activation_requirements": {
+    "client_audited_release_authorization": true,
+    "exact_frozen_commit": true,
+    "exact_archive_and_manifest_hashes": true,
+    "resolving_persistent_identifier": true,
+    "restricted_review_request_and_channel_state": true,
+    "manual_cross_record_review": true
+  },
+  "current_state": {
+    "activation_attempted": false,
+    "owner_distribution_authorization_received": false,
+    "final_submission_revision_frozen": false,
+    "release_or_commit_reference_published": false,
+    "persistent_identifier_exists": false,
+    "restricted_review_delivery_requested": false,
+    "restricted_review_delivery_occurred": false,
+    "client_content_audit_complete": false,
+    "final_artifact_rebind_complete": false,
+    "astra_xhigh_final_audit_complete": false,
+    "p0_g_closed": false
+  },
+  "privacy_boundary": {
+    "local_metadata_git_ignored": true,
+    "private_archive_directory_git_ignored": true,
+    "private_values_emitted": false
+  },
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "external_urls_fetched": false,
+  "distribution_authorized": false,
+  "submission_authorized": false
+}

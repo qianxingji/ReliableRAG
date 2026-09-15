@@ -72,6 +72,11 @@ maps the mandatory Data Availability Statement and conditional-access boundary.
 The Apache-2.0 license is present and a corrected candidate is independently
 validated, while legal holder/year, institutional review, final release
 authorization, persistent identifier and review-channel implementation remain open.
+The final release-activation intake now provides a machine-checkable binding for
+the future approval record, frozen commit, exact archive, persistent landing
+record and editor-request state. Its strongest structural result still requires
+client content review, final artifact rebinding and Astra xhigh review; it does
+not authorize distribution or close P0-G.
 The later
 [data/code policy refresh acceptance](P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.md)
 binds the corrected publication-state wording to the current base and target

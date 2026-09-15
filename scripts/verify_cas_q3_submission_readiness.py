@@ -800,6 +800,54 @@ def main() -> int:
     require(release_record_intake["current_state"]["p0_g_closed"] is False, "release intake does not close P0-G", checks)
     require(release_record_intake["distribution_authorized"] is False, "release intake does not authorize distribution", checks)
 
+    activation_intake = json.loads(
+        (ROOT / evidence["p0_g_release_activation_intake"]).read_text(encoding="utf-8")
+    )
+    require(
+        activation_intake["decision"]
+        == "PASS_FAIL_CLOSED_RELEASE_ACTIVATION_INTAKE_PREPARED_ACTIVATION_NOT_ATTEMPTED",
+        "final release-activation intake is prepared",
+        checks,
+    )
+    require(
+        activation_intake["bound_candidate"]["aggregate_v2_sha256"]
+        == licensed_release["v2"]["archive_sha256"],
+        "release activation binds the exact validated V2 source candidate",
+        checks,
+    )
+    require(
+        activation_intake["bound_candidate"]["repository_url"]
+        == "https://github.com/qianxingji/ReliableRAG",
+        "release activation binds the selected public repository",
+        checks,
+    )
+    require(
+        all(activation_intake["activation_requirements"].values()),
+        "activation intake requires authorization, revision, archive, identifier, access and review bindings",
+        checks,
+    )
+    require(
+        activation_intake["current_state"]
+        == {
+            "activation_attempted": False,
+            "owner_distribution_authorization_received": False,
+            "final_submission_revision_frozen": False,
+            "release_or_commit_reference_published": False,
+            "persistent_identifier_exists": False,
+            "restricted_review_delivery_requested": False,
+            "restricted_review_delivery_occurred": False,
+            "client_content_audit_complete": False,
+            "final_artifact_rebind_complete": False,
+            "astra_xhigh_final_audit_complete": False,
+            "p0_g_closed": False,
+        },
+        "release activation remains entirely unattempted and fail-closed",
+        checks,
+    )
+    require(activation_intake["external_urls_fetched"] is False, "activation intake fetches no external URL", checks)
+    require(activation_intake["distribution_authorized"] is False, "activation intake does not authorize distribution", checks)
+    require(activation_intake["submission_authorized"] is False, "activation intake does not authorize submission", checks)
+
     external_closure = json.loads(
         (ROOT / evidence["p0_ghi_external_closure_preflight"]).read_text(encoding="utf-8")
     )

@@ -212,6 +212,14 @@ fairness, reviewer and Submission Ready audits.
     structural pass still requires a separate client content audit, explicit
     owner authorization, a persistent identifier and the journal-approved
     restricted-review route; no release record has yet been received.
+    A separate fail-closed [final release-activation intake](P0_G_RELEASE_ACTIVATION_INTAKE.md)
+    now binds those future decisions to the exact frozen Git commit, immutable
+    commit URL, retained release-archive and manifest hashes, resolving
+    persistent identifier, and the observed editor-request/review-channel
+    state. Its verifier never fetches, uploads or publishes anything and cannot
+    authorize distribution. Even a structurally complete record remains pending
+    client content review, final artifact rebinding and the required Astra xhigh
+    audit. No real activation value, tag, release, deposit or DOI exists yet.
     A later [external raster-image audit](P0_GHI_EXTERNAL_IMAGE_EVIDENCE.md)
     checks common image magic across the same logical roots, all direct ZIP
     members and all first-level nested ZIP members. It reduces 104 occurrences

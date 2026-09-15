@@ -28,11 +28,16 @@ INPUT_SPECS = (
         Path("docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD_TEMPLATE.json"),
         Path("docs/cas_q3/INSTITUTIONAL_MANUSCRIPT_APPROVAL_RECORD.local.json"),
     ),
+    (
+        Path("docs/cas_q3/RELEASE_ACTIVATION_RECORD_TEMPLATE.json"),
+        Path("docs/cas_q3/RELEASE_ACTIVATION_RECORD.local.json"),
+    ),
 )
 EVIDENCE_DIRECTORIES = (
     Path("evidence/private/institutional_cas_record"),
     Path("evidence/private/institutional_release_record"),
     Path("evidence/private/institutional_manuscript_approval"),
+    Path("evidence/private/release_activation"),
 )
 
 

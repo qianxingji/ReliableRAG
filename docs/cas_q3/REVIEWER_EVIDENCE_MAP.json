@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "68ad4ec329b7b3b7699293b4fecfeb6d6e7277c7d30fe7092efb709698ef5c8e",
+      "sha256": "42996d2816253d2981a78bf69211363a7f369a23c4f50233169d9feadd12c4f7",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -290,7 +290,7 @@
     },
     {
       "path": ".github/workflows/public-reporting-audit.yml",
-      "sha256": "6bf1184eeb111794910f7eaa6a2b60e4086b00ae151e17c8b23bfdd444b920df",
+      "sha256": "3d6251c81047cdad2dcec7b30d57f3f702bbc6484e7851f1a9347217b30844ce",
       "required_marker": "verify_cas_q3_public_reporting_surface.py"
     },
     {
@@ -620,7 +620,7 @@
     },
     {
       "path": "scripts/prepare_cas_q3_private_closure_workspace.py",
-      "sha256": "6eb6da584dda5b231bbc69307ee8cb1a38b06ae2192fc39c0663fed78ecd8c5d",
+      "sha256": "93c457488c8ba4c486e7123190a38d4cd17f03c782ff8d6aff3509dccfa2eb23",
       "required_marker": "PASS_PRIVATE_CLOSURE_WORKSPACE_PREPARED_WITHOUT_OVERWRITE"
     },
     {
@@ -968,6 +968,39 @@
       "path": "docs/cas_q3/P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.md",
       "required_marker": "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
       "sha256": "971790fb6c0c6ab959d197fa4e6aac9e43b2480a152079dfabb4664691276dcb"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_RELEASE_ACTIVATION_INTAKE.md",
+      "sha256": "28b568e91ae73a1f13cb176cd57bf17ed484b0354e397eb06a809f4e0514a82c",
+      "required_marker": "PASS_FAIL_CLOSED_RELEASE_ACTIVATION_INTAKE_PREPARED_ACTIVATION_NOT_ATTEMPTED"
+    },
+    {
+      "path": "docs/cas_q3/P0_G_RELEASE_ACTIVATION_INTAKE.json",
+      "sha256": "41dcdee91cceb9c0380e047080c4aacd77130a38094b6c5e9e214c1526ed860d",
+      "required_marker": "PASS_FAIL_CLOSED_RELEASE_ACTIVATION_INTAKE_PREPARED_ACTIVATION_NOT_ATTEMPTED"
+    },
+    {
+      "path": "docs/cas_q3/RELEASE_ACTIVATION_RECORD_TEMPLATE.json",
+      "sha256": "acdf222f65ea91e2f2dd23a51e09bb209d0dc08f333220e533fd81c5969256c0"
+    },
+    {
+      "path": "scripts/verify_cas_q3_release_activation_record.py",
+      "sha256": "4db61579a39c9c5d79fd3af4310c6ed8ba36581b8d9cdff693ba281633615098",
+      "required_marker": "PASS_RELEASE_ACTIVATION_RECORD_STRUCTURALLY_COMPLETE_PENDING_CLIENT_CONTENT_FINAL_ARTIFACT_AND_ASTRA_AUDITS"
+    },
+    {
+      "path": "tests/test_cas_q3_release_activation_record.py",
+      "sha256": "62cb65ea167ea0ef05d50d6e8eefaad46b46ef45f9b8eeaf3a10ca7fa23ccbc2",
+      "required_marker": "test_complete_synthetic_record_is_only_structurally_complete"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e1eac7f5d37755f63020c6eeb964ef4f1aca4a3dbed7a11e27daf8fecf100dd4",
+      "required_marker": "docs/cas_q3/RELEASE_ACTIVATION_RECORD.local.json"
+    },
+    {
+      "path": "scripts/verify_cas_q3_reviewer_evidence_map.py",
+      "sha256": "e6b6f28bedebb89ab0393f7e8eec6a95fef54a916c1e279583a52f4a3a32dbbd"
     }
   ],
   "aggregate_release_candidate": {
