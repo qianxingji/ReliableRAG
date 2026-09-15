@@ -186,11 +186,11 @@
   "p1_a_reviewer_evidence_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
   "p1_a_reviewer_evidence_map_sha256": "1b6a55c78742d62e87fb424f2ff2191c83e2de1ae2df3c6349b9ed82e4fc3246",
   "p1_a_machine_map": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.json",
-  "p1_a_machine_map_sha256": "3e13cd94a4487ff2bd2806c251954917453aaa3c1f832c46c6311c843ab64403",
+  "p1_a_machine_map_sha256": "1e105a961e7135755121d943236135c3fa32bb42c4d40a73ed7f3c8bd49c333c",
   "p1_a_verifier": "scripts/verify_cas_q3_reviewer_evidence_map.py",
-  "p1_a_verifier_sha256": "4ffbda7422acfd928d9800dec03dcd77f5cc514785aea3eabc40f0086aa49b26",
+  "p1_a_verifier_sha256": "4cd4b507883dc55ab9c61bce9e868b2877090326b1044d39c85f7aa86c3e5de9",
   "p1_a_verification_receipt": "docs/cas_q3/REVIEWER_EVIDENCE_MAP_VERIFICATION.json",
-  "p1_a_verification_receipt_sha256": "9983f986ac5144e695adc0c8494c5eebb86952a0abe4c72d3e64b8c2c6311477",
+  "p1_a_verification_receipt_sha256": "c4bbba120e3cbf948acf3957874d4793740ed05230f753579484e952270f5bcc",
   "p1_a_decision": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES",
   "completed_p1": [
     "P1_A_reviewer_evidence_map_and_reproduction_entry_points",
@@ -297,7 +297,7 @@
   "p0_i_current_visual_review": "PASS_PROJECT_LEAD_CURRENT_11_MAIN_PLUS_3_SUPPLEMENT_AND_MODERN_TARGET_12_ALL_PAGES",
   "p0_i_compiled_verifier_visual_scope": "MECHANICAL_ONLY_VISUAL_ACCEPTANCE_SEPARATE",
   "p1_a_repository_records": 192,
-  "p1_a_check_count": 1424,
+  "p1_a_check_count": 1428,
   "p0_i_manuscript_length_verification": "docs/cas_q3/P0_I_MANUSCRIPT_LENGTH_VERIFICATION.json",
   "p0_i_manuscript_length_auditor": "scripts/audit_cas_q3_manuscript_length.py",
   "p0_i_manuscript_length_tests": "tests/test_cas_q3_manuscript_length.py",
@@ -387,13 +387,13 @@
   "p0_h_applied_intelligence_target_selection_receipt_sha256": "459be1bc6af3f247e9d0733822c2c473e6dad362f23251bd782c1fae1355ab6e",
   "p0_h_owner_publication_charge_route": "SUBSCRIPTION_NO_MANDATORY_APC",
   "p1_e_public_reporting_ci": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-  "p1_e_public_reporting_ci_sha256": "6cc228c26bc8b1be6906f49fca9faf58e93a7b3d84fd6dba7ac11b658a56883a",
+  "p1_e_public_reporting_ci_sha256": "100ff28da01a284c44c716da7a34dfce553acbb6e9df6d009dfb70bd28f2fcde",
   "p1_e_workflow": ".github/workflows/public-reporting-audit.yml",
   "p1_e_workflow_sha256": "6bf1184eeb111794910f7eaa6a2b60e4086b00ae151e17c8b23bfdd444b920df",
   "p1_e_public_surface_verifier": "scripts/verify_cas_q3_public_reporting_surface.py",
   "p1_e_public_surface_verifier_sha256": "164c76504b89571eb32135db3eb2b1df74f13361be6dd076160489debbd1e41a",
   "p1_e_decision": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED",
-  "p1_e_accepted_commit": "9fc56414a3d4d2229f77f6eecec14faf7143b837",
+  "p1_e_accepted_commit": "1ac9ce4afc2c2ecf4c586bbd113e7135580c2f04",
   "p1_e_successful_run_ids": [
     34801833707,
     34801836852,
@@ -444,7 +444,9 @@
     34927816944,
     34927820531,
     34928736267,
-    34928739266
+    34928739266,
+    34929458917,
+    34929463056
   ],
   "p1_e_first_failure_run_ids": [
     34801428340,
@@ -1028,5 +1030,9 @@
   "p0_i_ai_prompt_record_sha256": "99a3bd4896de8ad90d99e03da9310744a828b50c636f005b2c4d20134cd6f5c5",
   "p0_i_ai_prompt_record_acceptance_sha256": "823477bfae5b19447d64b23a19ee0178c6fd298869ae39271db21ef221d71d41",
   "p0_i_ai_prompt_record_auditor_sha256": "91ef648b1c3917dfa8c3a0d984acb0d8253d605b68401071d3031c1cbd7d39c5",
-  "p0_i_ai_prompt_record_tests_sha256": "1ec63783cbc86cc1cb7f0606779ee25a86564e69d4b4ef3f8c248684423a4841"
+  "p0_i_ai_prompt_record_tests_sha256": "1ec63783cbc86cc1cb7f0606779ee25a86564e69d4b4ef3f8c248684423a4841",
+  "p1_e_additional_failure_run_ids": [
+    34929268521,
+    34929271440
+  ]
 }

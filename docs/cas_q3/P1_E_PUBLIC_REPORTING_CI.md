@@ -286,6 +286,23 @@ in 1,424 checks, and the Submission gate checks 226 hashes in 783 checks while
 remaining NOT READY. Neither CI run exposes prompt content or supplies author
 or editor authorization.
 
+The first CI-evidence record commit, `4e34f0abae4ca806da5ca2f949df74671ceb1c53`,
+is retained as a failed portability check. Push run
+[34929268521](https://github.com/qianxingji/ReliableRAG/actions/runs/34929268521)
+and pull-request run
+[34929271440](https://github.com/qianxingji/ReliableRAG/actions/runs/34929271440)
+both rejected the submission gate because the evidence index pinned the
+Windows CRLF working-tree digest of `REVIEWER_EVIDENCE_MAP.json`, while Git's
+declared `eol=lf` policy committed LF bytes. No scientific result or prior
+receipt was changed to conceal this failure. Correction commit
+`1ac9ce4afc2c2ecf4c586bbd113e7135580c2f04` pins the committed LF digest and
+passed push run
+[34929458917](https://github.com/qianxingji/ReliableRAG/actions/runs/34929458917)
+and pull-request run
+[34929463056](https://github.com/qianxingji/ReliableRAG/actions/runs/34929463056).
+The correction changes one digest only; the reviewer-map decision, open gates,
+scientific exclusions and NOT READY status are unchanged.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
