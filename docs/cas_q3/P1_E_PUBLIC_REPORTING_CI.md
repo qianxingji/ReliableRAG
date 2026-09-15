@@ -337,6 +337,20 @@ acceptance, followed by the passing project-environment run. Neither CI run
 contains an approval, release archive, DOI or restricted-review delivery, and
 the activation verifier cannot authorize distribution or submission.
 
+The deterministic HBUT institutional-review request packet at
+`cc48e33bb7ad5eb6a052121509f80a9c08680a45` passed push run
+[34934693621](https://github.com/qianxingji/ReliableRAG/actions/runs/34934693621)
+and pull-request run
+[34934696329](https://github.com/qianxingji/ReliableRAG/actions/runs/34934696329).
+The portable workflow executes eight packet builder/validator tests, including
+the direct CLI entrypoint that corrects and preserves the earlier import
+failure. Local validation passes 151 CAS Q3 tests and 425 complete repository
+tests with two Windows platform skips. The reviewer map authenticates 208
+records in 1,574 checks; the top gate authenticates 240 repository hashes in
+870 checks and remains `NOT_READY`. The external ZIP candidates are absent from
+CI. The workflow proves only deterministic assembly and fail-closed structure;
+it neither sends the request nor supplies an HBUT response or approval.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
