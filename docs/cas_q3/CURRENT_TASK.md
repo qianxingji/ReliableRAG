@@ -275,6 +275,15 @@ fairness, reviewer and Submission Ready audits.
    library navigation page exposes an unlabeled Q4 value, so the category ambiguity
    is retained. This supports the target's plausibility under the owner's major-
    category rule but does not replace the HBUT-recognized record or close P0-H.
+   A 2026-09-15
+   [HBUT public target-record recheck](P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.md)
+   then inspects the official HBUT pages most likely to be mistaken for target
+   qualification evidence. Their Applied Intelligence entries are historical
+   article listings labelled only “SCI 2区” or have no tier; a 2014 assessment
+   rule is also too old and target-unspecific. None binds the 2025 upgraded
+   edition, Computer Science major category, current title and both ISSNs. The
+   bounded public search does not prove absence from internal or authenticated
+   systems and therefore leaves the institutional record requirement open.
    The responsible author later asserted the 2025 upgraded edition and Computer
    Science major-category Q3 result. The accompanying
    [declared-path check](P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.md) found that
@@ -499,9 +508,9 @@ fairness, reviewer and Submission Ready audits.
   [reviewer evidence map](REVIEWER_EVIDENCE_MAP.md) gives one ordered path
   through the compiled paper, anonymous aggregate package, private forensic
   scopes and preserved Phi/Mistral/ROA failures. Its independent verifier
-  authenticates 194 repository records plus preserved withheld archive
+  authenticates 196 repository records plus preserved withheld archive
   generations, the private target transport and the synthetic author-populated
-  package in 1,472 checks, without
+  package in 1,491 checks, without
   scientific payload reads, fits or model forwards.
 - **P1-B -- CLOSED:** The
   [reviewer cost and failure register](REVIEWER_COST_FAILURE_REGISTER.md)

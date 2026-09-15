@@ -637,6 +637,26 @@ def main() -> int:
     require(corroboration_receipt["checks"] == 39, "public corroboration verifier runs 39 checks", checks)
     require(corroboration_receipt["institution_recognized_record_retained"] is False, "public verifier retains institutional gap", checks)
 
+    hbut_public_recheck = json.loads(
+        (ROOT / evidence["p0_h_hbut_public_target_record_recheck"]).read_text(encoding="utf-8")
+    )
+    require(
+        hbut_public_recheck["decision"]
+        == "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
+        "HBUT public target-record recheck is bounded",
+        checks,
+    )
+    require(hbut_public_recheck["cas_q3_status"] == "NOT_READY", "HBUT public recheck retains CAS Q3 status", checks)
+    require(len(hbut_public_recheck["candidate_pages"]) == 4, "HBUT public recheck covers four candidate pages", checks)
+    require(all(not item["qualifies_for_current_gate"] for item in hbut_public_recheck["candidate_pages"]), "HBUT public candidates do not satisfy the gate", checks)
+    require(hbut_public_recheck["search_scope"]["search_engine_completeness_claimed"] is False, "HBUT search completeness is not overclaimed", checks)
+    require(hbut_public_recheck["search_scope"]["authenticated_or_internal_pages_searched"] is False, "HBUT internal pages remain outside scope", checks)
+    require(hbut_public_recheck["search_scope"]["captcha_protected_attachments_inspected"] is False, "HBUT CAPTCHA attachments remain uninspected", checks)
+    require(hbut_public_recheck["result"]["qualifying_public_hbut_record_found"] is False, "no qualifying public HBUT record was found", checks)
+    require(hbut_public_recheck["result"]["absence_of_any_institutional_record_proved"] is False, "institutional absence is not claimed", checks)
+    require(hbut_public_recheck["result"]["p0_h_closed"] is False, "HBUT public recheck leaves P0-H open", checks)
+    require(hbut_public_recheck["submission_authorized"] is False, "HBUT public recheck does not authorize submission", checks)
+
     owner_cas_path_check = json.loads(
         (ROOT / evidence["p0_h_owner_2025_cas_assertion_path_check"]).read_text(encoding="utf-8")
     )

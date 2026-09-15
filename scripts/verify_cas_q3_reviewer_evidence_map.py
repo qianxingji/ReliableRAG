@@ -763,6 +763,27 @@ def main() -> int:
     )
     checks.equal(public_corroboration["bounded_interpretation"]["p0_h_closed"], False, "public corroboration does not close P0-H")
 
+    hbut_public_recheck = json.loads(
+        (ROOT / "docs" / "cas_q3" / "P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    checks.equal(
+        hbut_public_recheck["decision"],
+        "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
+        "HBUT public target-record recheck decision",
+    )
+    checks.equal(hbut_public_recheck["cas_q3_status"], "NOT_READY", "HBUT public recheck retains CAS Q3 status")
+    checks.equal(len(hbut_public_recheck["candidate_pages"]), 4, "HBUT public recheck candidate pages")
+    checks.equal(all(not item["qualifies_for_current_gate"] for item in hbut_public_recheck["candidate_pages"]), True, "HBUT public candidates do not qualify")
+    checks.equal(hbut_public_recheck["search_scope"]["search_engine_completeness_claimed"], False, "HBUT web search completeness not overclaimed")
+    checks.equal(hbut_public_recheck["search_scope"]["authenticated_or_internal_pages_searched"], False, "HBUT internal pages outside scope")
+    checks.equal(hbut_public_recheck["search_scope"]["captcha_protected_attachments_inspected"], False, "HBUT CAPTCHA attachments outside recheck")
+    checks.equal(hbut_public_recheck["result"]["qualifying_public_hbut_record_found"], False, "no qualifying public HBUT record found")
+    checks.equal(hbut_public_recheck["result"]["absence_of_any_institutional_record_proved"], False, "institutional record absence not claimed")
+    checks.equal(hbut_public_recheck["result"]["p0_h_closed"], False, "HBUT public recheck does not close P0-H")
+    checks.equal(hbut_public_recheck["submission_authorized"], False, "HBUT public recheck does not authorize submission")
+
     owner_cas_path_check = json.loads(
         (ROOT / "docs" / "cas_q3" / "P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.json").read_text(
             encoding="utf-8"

@@ -46,7 +46,13 @@ route and no-mandatory-APC subscription choice. The
 [public 2025 corroboration audit](P0_H_APPLIED_INTELLIGENCE_2025_PUBLIC_CORROBORATION.md)
 records public support for Computer Science major-category Q3 and Artificial
 Intelligence minor-category Q4 while retaining one condensed Q4 ambiguity and
-the missing HBUT-recognized record. The later
+the missing HBUT-recognized record. The subsequent
+[HBUT public target-record recheck](P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.md)
+records why official HBUT pages describing historical Applied Intelligence
+articles as “SCI 2区,” a current article listing without a tier, and a 2014
+assessment rule do not satisfy the 2025 major-category title/ISSN gate. The
+search is explicitly bounded and does not claim absence from internal,
+authenticated or CAPTCHA-protected sources. The later
 [owner-assertion path check](P0_H_OWNER_2025_CAS_ASSERTION_PATH_CHECK.md)
 records the owner's 2025 major-category Q3 assertion but finds the declared
 `compliance/cas_partition/2025/` path absent from both project workspaces; it

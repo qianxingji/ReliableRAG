@@ -7,7 +7,7 @@
   "repository_evidence": [
     {
       "path": "docs/cas_q3/REVIEWER_EVIDENCE_MAP.md",
-      "sha256": "98ab051494c85fdd890b0e87f328a4c3a5738397e214eeeb79bb7dba66332570",
+      "sha256": "68ad4ec329b7b3b7699293b4fecfeb6d6e7277c7d30fe7092efb709698ef5c8e",
       "required_marker": "PASS_REVIEWER_EVIDENCE_MAP_WITH_EXTERNAL_RELEASE_GATES"
     },
     {
@@ -958,6 +958,16 @@
       "path": "docs/cas_q3/P0_I_DATA_CODE_POLICY_REFRESH_ACCEPTANCE.json",
       "required_marker": "PASS_DATA_CODE_POLICY_REFRESH_BASE_TARGET_TRANSPORT_AND_SYNTHETIC_BUILD_ACCEPTED_EXTERNAL_GATES_OPEN",
       "sha256": "e7b66e9e70a57227924d27ed2c8ec7222106c47652a0f513093b2ae5472708e9"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.json",
+      "required_marker": "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
+      "sha256": "eed44ab5a07926f149a4cd61f5a1690febdff2d3cebaf7c77b78d5c9d0e77c55"
+    },
+    {
+      "path": "docs/cas_q3/P0_H_HBUT_PUBLIC_TARGET_RECORD_RECHECK.md",
+      "required_marker": "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
+      "sha256": "971790fb6c0c6ab959d197fa4e6aac9e43b2480a152079dfabb4664691276dcb"
     }
   ],
   "aggregate_release_candidate": {
