@@ -16,9 +16,12 @@ The current machine decision is
 - P0-G has an owner-selected Apache-2.0 project-code license and a corrected,
   deterministic, independently validated aggregate V2 candidate. It remains
   open for institutional release approval, independent legal-holder/year confirmation, final release
-  authorization, reviewer access, versioned latest-code link and immutable
-  archive DOI or identifier. The Applied Intelligence policy mapping is
-  complete but does not authorize these release steps. The upstream-terms
+  authorization, operational reviewer access if requested, a frozen final
+  versioned-code link and immutable archive DOI or identifier. The public
+  GitHub location exists. Springer Nature policy permits reasonable
+  third-party licence restrictions and lets editors/reviewers request
+  non-public data or code, but it does not pre-approve a particular delivery
+  channel or authorize release. The upstream-terms
   recheck preserves the Qwen research-license and non-`-c` DeBERTa
   training-data caveats; owner/institutional review for the intended release
   remains open.

@@ -308,6 +308,47 @@ def main() -> int:
         "corrected V2 candidate remains withheld",
         checks,
     )
+    require(
+        applied_policy["policy"]["relevant_new_code_free_availability_implied_by_submission"] is True,
+        "current Springer code-sharing obligation is mapped",
+        checks,
+    )
+    require(
+        applied_policy["policy"]["code_availability_section_required_under_company_policy"] is True,
+        "current Code Availability section requirement is mapped",
+        checks,
+    )
+    require(
+        applied_policy["policy"]["reasonable_third_party_license_data_restrictions_permitted"] is True,
+        "licensed-data restrictions are policy-compatible",
+        checks,
+    )
+    require(
+        applied_policy["policy"]["editors_or_reviewers_may_request_nonpublic_data_or_code"] is True,
+        "editor/reviewer access right is retained",
+        checks,
+    )
+    require(
+        applied_policy["policy"]["particular_private_delivery_channel_preapproved"] is False,
+        "private delivery channel is not overclaimed",
+        checks,
+    )
+    require(applied_policy["current_project"]["public_github_repository_exists"] is True, "public code location exists", checks)
+    require(
+        applied_policy["current_project"]["final_submission_code_revision_frozen"] is False,
+        "final code revision remains open",
+        checks,
+    )
+    require(
+        applied_policy["current_project"]["restricted_evidence_policy_compatible_in_principle"] is True,
+        "restricted evidence is policy-compatible in principle",
+        checks,
+    )
+    require(
+        applied_policy["current_project"]["restricted_evidence_operational_delivery_confirmed"] is False,
+        "restricted-evidence delivery remains open",
+        checks,
+    )
     require(applied_policy["distribution_authorized"] is False, "Applied policy audit does not authorize distribution", checks)
 
     licensed_release = json.loads((ROOT / evidence["p0_g_licensed_release_v2_receipt"]).read_text(encoding="utf-8"))
@@ -1600,8 +1641,8 @@ def main() -> int:
             "missing": [
                 "institutional release-review approval and retained evidence",
                 "independent confirmation of legal copyright holder and year/range",
-                "license-bearing latest code link and immutable archive DOI or unique identifier",
-                "journal-approved review access for restricted evidence",
+                "frozen final versioned-code link and immutable archive DOI or permanent identifier",
+                "operational restricted-evidence delivery if requested by the editor or reviewers",
                 "owner/institutional review of Qwen research-license compatibility for the intended release",
                 "owner/institutional review of the non-c DeBERTa training-data terms for the intended release",
                 "retained private institutional release record and separate client content audit",

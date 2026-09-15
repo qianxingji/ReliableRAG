@@ -175,7 +175,12 @@ fairness, reviewer and Submission Ready audits.
    license text is now present at repository top level. Legal holder/year,
    institutional NOTICE/review requirements, third-party release review, final
    authorization and persistent archiving of the validated corrected candidate,
-   and a journal-accepted private-review route remain open. The historical
+   and an operational private-review delivery route remain open. Springer
+   Nature's current policy now establishes that reasonable third-party licence
+   restrictions are permitted and that editors/reviewers may request non-public
+   data or code; it does not pre-approve a particular transfer channel. The
+   public GitHub location exists, while the final submission revision and
+   permanent archive identifier remain unfrozen. The historical
    [current license decision packet](P0_G_PROJECT_LICENSE_DECISION_PACKET.md)
    records the implemented Apache choice and remaining holder/year/review
    fields. These facts have a private machine-validated

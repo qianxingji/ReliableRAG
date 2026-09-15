@@ -31,8 +31,8 @@
       "missing": [
         "institutional release-review approval and retained evidence",
         "independent confirmation of legal copyright holder and year/range",
-        "license-bearing latest code link and immutable archive DOI or unique identifier",
-        "journal-approved review access for restricted evidence",
+        "frozen final versioned-code link and immutable archive DOI or permanent identifier",
+        "operational restricted-evidence delivery if requested by the editor or reviewers",
         "owner/institutional review of Qwen research-license compatibility for the intended release",
         "owner/institutional review of the non-c DeBERTa training-data terms for the intended release",
         "retained private institutional release record and separate client content audit",
@@ -69,7 +69,7 @@
   },
   "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
   "verified_repository_hashes": 226,
-  "checks": 783,
+  "checks": 792,
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0

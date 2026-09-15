@@ -187,6 +187,15 @@ def main() -> int:
     checks.equal(applied_policy["current_project"]["new_corrected_candidate_deterministic_rebuild_equal"], True, "corrected V2 deterministic rebuild")
     checks.equal(applied_policy["current_project"]["new_corrected_candidate_independently_validated"], True, "corrected V2 independent validation")
     checks.equal(applied_policy["current_project"]["new_corrected_candidate_distribution_authorized"], False, "corrected V2 remains withheld")
+    checks.equal(applied_policy["policy"]["relevant_new_code_free_availability_implied_by_submission"], True, "current Springer code-sharing obligation")
+    checks.equal(applied_policy["policy"]["code_availability_section_required_under_company_policy"], True, "current Code Availability section requirement")
+    checks.equal(applied_policy["policy"]["reasonable_third_party_license_data_restrictions_permitted"], True, "licensed-data restrictions are policy-compatible")
+    checks.equal(applied_policy["policy"]["editors_or_reviewers_may_request_nonpublic_data_or_code"], True, "editor/reviewer access right retained")
+    checks.equal(applied_policy["policy"]["particular_private_delivery_channel_preapproved"], False, "private delivery channel is not overclaimed")
+    checks.equal(applied_policy["current_project"]["public_github_repository_exists"], True, "public code location exists")
+    checks.equal(applied_policy["current_project"]["final_submission_code_revision_frozen"], False, "final code revision remains open")
+    checks.equal(applied_policy["current_project"]["restricted_evidence_policy_compatible_in_principle"], True, "restricted evidence is policy-compatible in principle")
+    checks.equal(applied_policy["current_project"]["restricted_evidence_operational_delivery_confirmed"], False, "restricted-evidence delivery remains open")
     checks.equal(applied_policy["distribution_authorized"], False, "Applied policy does not authorize distribution")
 
     licensed_release = json.loads(

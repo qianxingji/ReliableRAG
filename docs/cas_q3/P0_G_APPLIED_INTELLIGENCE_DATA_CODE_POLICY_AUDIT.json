@@ -1,18 +1,25 @@
 {
   "schema_version": 1,
-  "audit_date": "2026-09-14",
+  "audit_date": "2026-09-15",
   "decision": "PASS_OFFICIAL_APPLIED_INTELLIGENCE_POLICY_MAPPED_RELEASE_AND_REVIEW_ACCESS_GATES_OPEN",
   "cas_q3_status": "NOT_READY",
   "journal": "Applied Intelligence",
   "official_policy_url": "https://link.springer.com/journal/10489/submission-guidelines",
-  "official_facts_checked_on": "2026-09-14",
+  "official_facts_checked_on": "2026-09-15",
   "policy": {
     "data_availability_statement_required_for_original_research": true,
     "public_data_sharing_strongly_encouraged": true,
     "repository_deposit_strongly_encouraged": true,
     "conditional_access_statement_allowed_when_public_sharing_is_not_possible": true,
     "necessary_deposit_rights_required": true,
-    "code_availability_in_declarations_summary": true
+    "code_availability_in_declarations_summary": true,
+    "relevant_new_code_free_availability_implied_by_submission": true,
+    "code_availability_section_required_under_company_policy": true,
+    "stable_public_code_repository_encouraged": true,
+    "permanent_code_identifier_encouraged": true,
+    "reasonable_third_party_license_data_restrictions_permitted": true,
+    "editors_or_reviewers_may_request_nonpublic_data_or_code": true,
+    "particular_private_delivery_channel_preapproved": false
   },
   "current_project": {
     "top_level_license": "Apache-2.0",
@@ -28,19 +35,31 @@
     "new_license_bearing_persistent_archive_required": true,
     "persistent_archive_doi_or_unique_identifier_exists": false,
     "journal_accepted_private_review_route_confirmed": false,
-    "distribution_authorized": false
+    "distribution_authorized": false,
+    "public_github_repository_exists": true,
+    "current_commit_urls_are_versioned": true,
+    "final_submission_code_revision_frozen": false,
+    "git_commit_url_claimed_as_permanent_archive_identifier": false,
+    "restricted_evidence_policy_compatible_in_principle": true,
+    "restricted_evidence_operational_delivery_confirmed": false
   },
   "remaining_gates": [
     "exact_legal_copyright_holder_and_year_or_range",
     "institutional_notice_or_release_review_decision",
     "qwen_and_deberta_release_boundary_review",
     "final_authorization_of_validated_v2_candidate_or_required_successor",
-    "versioned_latest_code_url_and_immutable_archive_identifier",
-    "journal_or_editor_accepted_private_review_route"
+    "frozen_final_versioned_code_url_and_immutable_archive_identifier",
+    "operational_restricted_evidence_delivery_if_requested_by_editor_or_reviewers"
   ],
   "scientific_payloads_read": false,
   "model_forwards": 0,
   "scientific_fits": 0,
   "distribution_authorized": false,
-  "submission_authorized": false
+  "submission_authorized": false,
+  "official_policy_urls": [
+    "https://link.springer.com/journal/10489/submission-guidelines",
+    "https://www.springernature.com/gp/authors/research-data-policy",
+    "https://www.springernature.com/gp/authors/research-data-policy/data-policy-faqs",
+    "https://support.springernature.com/en/support/solutions/articles/6000237619-software-and-code-sharing"
+  ]
 }
