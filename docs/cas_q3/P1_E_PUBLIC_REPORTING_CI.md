@@ -351,6 +351,26 @@ records in 1,574 checks; the top gate authenticates 240 repository hashes in
 CI. The workflow proves only deterministic assembly and fail-closed structure;
 it neither sends the request nor supplies an HBUT response or approval.
 
+The deterministic sender-free HBUT email-draft implementation at
+`eb236f9fe5eb4ffb8f6daf2417f91a245c075e07` passed push run
+[34936839329](https://github.com/qianxingji/ReliableRAG/actions/runs/34936839329)
+and pull-request run
+[34936842103](https://github.com/qianxingji/ReliableRAG/actions/runs/34936842103).
+The portable workflow adds six builder/validator tests covering byte-identical
+MIME output, the exact authenticated ZIP attachment, missing sender and
+transport headers, refusal to overwrite, input-hash rejection, tamper rejection
+and the direct validator CLI. Local validation passes 157 CAS Q3 tests and 431
+complete repository tests with two Windows platform skips. The reviewer map
+authenticates 213 records through 1,619 checks; the top gate authenticates 245
+repository hashes through 888 checks and remains `NOT_READY`.
+
+The first email test run rejected the folded 64-character custom attachment
+hash header, and the first provenance-label correction rejected a second long
+custom header for the same reason. Both failures are retained in the acceptance
+record. The final c/d drafts are byte-identical and remain local, sender-free
+and unsent. CI does not build the real external `.eml` or access the withheld
+ZIP; it verifies the deterministic logic with temporary test packets only.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`

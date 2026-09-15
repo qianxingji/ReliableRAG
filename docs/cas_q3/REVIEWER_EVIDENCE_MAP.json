@@ -285,7 +285,7 @@
     },
     {
       "path": "docs/cas_q3/P1_E_PUBLIC_REPORTING_CI.md",
-      "sha256": "e147dc37368c2c53c130a19b9e4487c4e663e0e0e0fad765faaff6b54e5ddd57",
+      "sha256": "76633c8fca03fe3400867bfe929ed958cad0ac2e10425dc856bf19bbcf90407e",
       "required_marker": "PASS_PORTABLE_PUBLIC_REPORTING_CI_WITH_PRIVATE_REPRODUCTION_EXCLUDED"
     },
     {
@@ -1000,7 +1000,7 @@
     },
     {
       "path": "scripts/verify_cas_q3_reviewer_evidence_map.py",
-      "sha256": "028c5ff507ddc147ebe761cf8bbbe8c9a5cc021d1180b7c850c1a6c895593256"
+      "sha256": "93e2eb652e3bbd8f9e3ea102a8ade0ac62e2825bf9491fb9627406d26b725d80"
     },
     {
       "path": "docs/cas_q3/P0_GHI_HBUT_REVIEW_REQUEST_PACKET_ACCEPTANCE.md",

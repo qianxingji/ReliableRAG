@@ -1244,6 +1244,7 @@ def main() -> int:
         "tests.test_cas_q3_document_container_inventory",
         "tests.test_cas_q3_applied_intelligence_preflight",
         "tests.test_cas_q3_applied_intelligence_transport",
+        "tests.test_cas_q3_hbut_email_draft",
         "tests.test_cas_q3_applied_intelligence_private_submission",
         "tests.test_cas_q3_private_submission_packet",
         "tests.test_cas_q3_ai_tool_date_evidence",
@@ -1264,6 +1265,8 @@ def main() -> int:
         checks.true(forbidden not in workflow, f"private-input command excluded from public CI: {forbidden}")
     ci_acceptance = (ROOT / "docs" / "cas_q3" / "P1_E_PUBLIC_REPORTING_CI.md").read_text(encoding="utf-8")
     for run_id in (
+        "34936839329",
+        "34936842103",
         "34929458917",
         "34929463056",
         "34929268521",
