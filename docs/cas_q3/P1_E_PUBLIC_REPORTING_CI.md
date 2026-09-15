@@ -258,6 +258,21 @@ project-environment discovery passes 403 tests with two platform skips, the
 reviewer map authenticates 184 records in 1,334 checks, and the Submission gate
 checks 218 hashes in 755 checks while remaining NOT READY.
 
+The current Springer Nature AI-policy alignment at
+`aa17a04a058e38c438f2abfaf4ce7e6a0722d270` passed push run
+[34927816944](https://github.com/qianxingji/ReliableRAG/actions/runs/34927816944)
+and pull-request run
+[34927820531](https://github.com/qianxingji/ReliableRAG/actions/runs/34927820531).
+The workflow adds three policy-mapping tests and exercises the target builder's
+Methods-placement logic without real author facts or external transport. Local
+validation separately clean-compiled and reviewed all 13 pages of a
+synthetic-identity target PDF. The current bounded surface passes 132 CAS Q3
+tests and 406 repository tests with two platform skips; the reviewer map
+authenticates 188 records in 1,384 checks, and the Submission gate checks 222
+hashes in 769 checks while remaining NOT READY. CI does not approve the AI
+statement, supply its final date, build a real author package or authorize
+submission.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`
