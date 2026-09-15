@@ -273,6 +273,19 @@ hashes in 769 checks while remaining NOT READY. CI does not approve the AI
 statement, supply its final date, build a real author package or authorize
 submission.
 
+The private prompt-traceability snapshot at
+`9fc56414a3d4d2229f77f6eecec14faf7143b837` passed push run
+[34928736267](https://github.com/qianxingji/ReliableRAG/actions/runs/34928736267)
+and pull-request run
+[34928739266](https://github.com/qianxingji/ReliableRAG/actions/runs/34928739266).
+The workflow adds three synthetic selection, redaction and fail-closed tests.
+The public runner authenticates only the tracked content-free receipt; it does
+not possess the local Codex sessions or the Git-ignored redacted ledger. Local
+validation passes 135 CAS Q3 tests, the reviewer map authenticates 192 records
+in 1,424 checks, and the Submission gate checks 226 hashes in 783 checks while
+remaining NOT READY. Neither CI run exposes prompt content or supplies author
+or editor authorization.
+
 ## Supply-chain and permission boundary
 
 The workflow grants only `contents: read`. Official `actions/checkout@v7.0.1`

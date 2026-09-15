@@ -1080,6 +1080,8 @@ def main() -> int:
         checks.true(forbidden not in workflow, f"private-input command excluded from public CI: {forbidden}")
     ci_acceptance = (ROOT / "docs" / "cas_q3" / "P1_E_PUBLIC_REPORTING_CI.md").read_text(encoding="utf-8")
     for run_id in (
+        "34928736267",
+        "34928739266",
         "34927816944",
         "34927820531",
         "34820858483",
