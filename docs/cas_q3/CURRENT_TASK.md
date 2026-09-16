@@ -358,8 +358,7 @@ and plans exactly 36,000 durable `a0`/repair-query generations under the same
 GPU mutex and resume semantics as development. A real no-model source smoke
 reconstructed all 18,000 frozen traces and 6,000 groups without Gold access.
 Six focused tests and the complete 113-test Mistral suite pass. The executor has
-not run, and repair retrieval, `a1_likelihood`, witness replay and test neural
-scoring remain to be implemented.
+not run; its implemented downstream stages are documented below.
 
 The test repair executor and a separate no-model replay validator are now
 implemented in `scripts/run_mistral_test_repair.py` and
@@ -372,6 +371,21 @@ the rankings from stored query vectors with zero model load. A real label-blind
 source smoke restored all three retrieval datasets and checked first/last
 evidence identities in each. Five focused tests and the complete 118-test
 Mistral suite pass. No formal repair was executed.
+
+The test `a1_likelihood` executor and independent tokenizer-only validator are
+now implemented in `scripts/run_mistral_test_a1_likelihood.py` and
+`scripts/validate_mistral_test_a1_likelihood.py`. They require independently
+accepted test `a0_query` and repair stages, bind every predecessor member, and
+fix 18,000 `a1` generations plus 72,000 `L00/L01/L10/L11` likelihoods. BGE,
+NLI, Gold, fitting and tuning are forbidden. The validator reconstructs all
+90,000 prompts, targets, journal entries and likelihood summaries with zero
+model load. The initial source smoke without the pinned dependency overlay
+failed before tokenizer construction because SentencePiece/protobuf were not on
+`PYTHONPATH`; that failure is retained. The corrected pinned-overlay smoke bound
+all 18,000 test traces and passed six synthetic first/last-dataset `E1` prompt
+checks with zero model forwards and zero Gold access. Five focused tests and the
+complete 123-test Mistral suite pass. No formal test `a1_likelihood` execution
+was started.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique

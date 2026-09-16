@@ -2,12 +2,12 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_AND_TEST_A0_REPAIR_IMPLEMENTED_A1_SCORING_OPEN`.
+Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_AND_TEST_ACQUISITION_IMPLEMENTED_WITNESS_SCORING_OPEN`.
 This document fixes the one-time Mistral test route prospectively. The pure
 analysis kernel, label-blind action seal, numeric-only outcome executor, formal
 20,000-draw analysis executor and their independent audit paths are implemented
-on invented rows. The test `a0_query` and repair executors plus their no-model
-validators are also implemented; `a1_likelihood`, witness replay and neural
+on invented rows. The test `a0_query`, repair and `a1_likelihood` executors plus
+their no-model validators are also implemented; witness replay and neural
 scoring are not. This document neither opens test outcomes nor authorizes test
 execution. Formal test
 acquisition may start only after the complete development chain, selected models
@@ -97,6 +97,15 @@ It preserves ranks 1--4 and replaces only rank 5. The no-model validator replays
 all rankings from the saved 768-dimensional query vectors. The formal repair
 namespace has not been created.
 
+The implemented test `a1_likelihood` executor requires independently accepted
+test `a0_query` and repair stages. It reconstructs repaired evidence from the
+sealed inserted-document identity, loads only the pinned Mistral reader, and
+performs exactly 18,000 `a1` generations plus 72,000 teacher-forced
+`L00/L01/L10/L11` likelihood operations. BGE, NLI, Gold, fitting and tuning are
+forbidden. Its independent validator loads only the pinned tokenizer and
+reconstructs all 90,000 prompts, target token sequences, journal records and
+summary arithmetic. The formal namespace has not been created.
+
 ## Label-blind scoring and action seal
 
 After accepted acquisition and replay, execute and independently validate these
@@ -183,8 +192,8 @@ benchmark cohort rather than an independent new-question confirmation.
 
 - P0: this prospective contract is frozen; development acquisition and all
   ordered acceptances remain incomplete.
-- P1: implement test `a1_likelihood`, witness replay and scoring without opening
-  outcomes, then execute the full frozen chain once after the complete
+- P1: implement test witness replay and scoring without opening outcomes, then
+  execute the full frozen chain once after the complete
   development gate passes.
 - P2: update the manuscript, supplement and public numeric reproduction package
   only from independently accepted results.

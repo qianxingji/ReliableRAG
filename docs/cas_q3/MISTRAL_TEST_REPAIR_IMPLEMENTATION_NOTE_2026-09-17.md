@@ -10,7 +10,8 @@ answer, repair result, outcome or performance claim.
 
 `scripts/run_mistral_test_repair.py` requires the accepted test `a0_query`
 producer and independent validation before it can create a stage namespace. It
-binds the 18,000-row test trace, selected candidate-pool members, Mistral input
+binds every accepted `a0_query` namespace member, the 18,000-row test trace,
+selected candidate-pool members, Mistral input
 ledger, complete accepted retrieval namespace, original native runtime fixture,
 BGE synthetic GPU preflight and six BGE model files.
 

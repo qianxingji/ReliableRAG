@@ -280,7 +280,10 @@ def main() -> int:
             *verify_manifest(cpu_tests, CPU_TEST_SHA),
             *verify_manifest(input_freeze,
                              EXPECTED_INPUT_FREEZE_MANIFEST_SHA256),
-            a0_stage / "SHA256_MANIFEST.json", a0_validation,
+            *verify_manifest(
+                a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json")
+            ),
+            a0_validation,
             Path(__file__), REPO / "scripts/validate_mistral_test_repair.py",
             REPO / "scripts/empirical_runtime_io.py",
             REPO / "scripts/empirical_retrieval_io.py",
