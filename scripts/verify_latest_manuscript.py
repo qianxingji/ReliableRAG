@@ -64,7 +64,6 @@ def main() -> int:
         "title": receipt.get(
             "title", "supervision-matched selection of paired rag repairs"
         ).lower(),
-        "author surface": "qianxingji",
         "references": "references",
         "appendix start": "appendix a sensitivity to fixed action membership",
         "HGB appendix": "appendix e hgb-based pairwise preference scoring",
@@ -76,6 +75,8 @@ def main() -> int:
     }
     for label, marker in required_text.items():
         require(marker in text, f"PDF contains {label}", checks)
+    for author in receipt.get("authors", ["qianxingji"]):
+        require(author.lower() in text, f"PDF contains author {author}", checks)
 
     fonts = run("pdffonts", str(artifact)).splitlines()[2:]
     require(bool(fonts), "PDF contains font records", checks)

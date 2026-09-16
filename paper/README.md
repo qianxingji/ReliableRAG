@@ -1,12 +1,15 @@
 # CAS Q3 manuscript package
 
-The latest manuscript is **Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements**, as requested by the author on
-2026-09-16. The 22-page PDF is `output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf`,
-SHA-256 `37d05cb6a9c2825b1a5aa9574f7d7b66e6421e4c573205562a3c5168b4817d1a`. Use this title revision for subsequent review and editing.
-Only the first-page title and PDF title metadata changed: first-page body text
-and rendering, all other pages, links, and bookmarks match the source.
-See `JIIS_REVISED_20260916_TITLE_VERIFICATION.json`; final scientific acceptance
-remains pending. The original supplied PDF and its receipt remain archived.
+The latest manuscript is **Selecting Between Original and Repaired RAG Answers:
+A Controlled Study of Accuracy and Harmful Replacements**. The 22-page PDF is
+`output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf`, SHA-256
+`816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3`.
+Its first page lists Zhigang Xu, Xingji Qian, and Xinhua Dong; the supplied HBUT
+address and the two supplied contact emails are included. No corresponding-author
+marker was added because this update did not specify one. The scientific body,
+all other pages, links, and bookmarks match the retitled source. See
+`JIIS_REVISED_20260916_AUTHOR_INFORMATION_VERIFICATION.json`. Final scientific
+acceptance remains pending; all preceding PDFs and receipts remain archived.
 
 The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest
 manuscript on 2026-09-16. Its byte-identical project copy is the **22-page A4 PDF**
