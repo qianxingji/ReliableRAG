@@ -12,6 +12,16 @@ editorial priority. Read
 Formal neural execution still needs a prospective executable protocol; the old
 Mistral STOP and all Phi FAIL records remain preserved, not waived.
 
+The user also authorizes tuning if results are unsatisfactory. The
+[development tuning policy](READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md)
+specifies eight logistic-head configurations per main method, three shared
+question-group folds within the 3,600-question fit partition, and a separate
+900-question calibration partition. The full search plus selected refits and
+calibration costs at most 78 planned fits; none has run. Fusion, HGB-only and
+GbV-only receive identical search budgets. Final configuration selection and
+the primary comparison family must be fixed before new reader test results.
+Disappointing test results remain evidence, not tuning targets.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

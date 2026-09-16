@@ -12,6 +12,11 @@ The proposed Mistral condition has no new results and no frozen executable
 protocol yet. Preserve all Qwen evidence and all Phi failures, and complete the
 prospective scientific/runtime contract before formal reader experiments.
 The current manuscript and public release remain unchanged by this steering.
+The user additionally authorizes parameter tuning when results disappoint.
+Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
+data, matched search budgets for fusion and strong controls, and a separate
+calibration partition. Freeze selection before final testing; preserve failed
+results and do not tune against the final test set.
 
 ## Goal
 This repository implements experiments for a research project on:
