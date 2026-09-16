@@ -230,6 +230,21 @@ paths agree on invented fixtures, and the full Mistral-focused suite passes 53
 tests. This stage remains blocked on accepted answer semantics. It has produced
 no project HGB score, Gold access, fit, neural forward or test result.
 
+The paired-GbV stage is now implemented but has not run. It requires the
+independently accepted HGB stage, scores `a0/E0` before `a1/E1` with exact
+`MoritzLaurer/deberta-v3-large-zeroshot-v2.0@5a4338ab2151dc8db04ad53b42b6153382bf4f99`
+in FP32, and durably saves every raw two-logit forward plus tokenizer fields.
+Its independent validator imports neither the producer nor the model class and
+reconstructs token batches, softmax values, branch maxima and row margins from
+the sealed logits. The initial slow-tokenizer smoke check failed before any
+scientific output because the original virtual environment did not itself expose
+SentencePiece. The hash-bound recovery in
+`MISTRAL_GBV_SENTENCEPIECE_DEPENDENCY_RECOVERY_2026-09-17.md` uses the exact
+historical 0.2.1 package copy, validates all 17 package files and provenance,
+and performs no environment installation. Eight focused GbV tests and the complete
+61-test Mistral suite pass. The stage remains blocked on HGB acceptance and has
+produced no GbV score, Gold access, fit, test result or NLI model forward.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
