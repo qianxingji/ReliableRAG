@@ -43,8 +43,20 @@ three sharded BF16 weight files contain 291 indexed tensors and 7,248,023,552
 parameters; the duplicate consolidated serialization was prospectively excluded.
 The initial no-payload HTTP attempt is preserved and the Xet retry completed.
 Read `MISTRAL_ASSET_ACQUISITION_DECISION_2026-09-17.md`. No model was loaded;
-whole-model memory, tokenizer/semantic, replay and workload contracts remain
+whole-model memory, semantic model-output, replay and workload contracts remain
 open.
+
+The exact tokenizer gate is now independently accepted. The isolated overlay
+adds official-hash-matched SentencePiece 0.2.1 and protobuf 7.36.1. Explicit
+fast, slow and default routes agree on three invented fixtures; the fast route,
+native chat template, special-token handling, left padding, 8,192-token guards
+and answer/query caps are frozen. An independent validator passes 102 checks,
+including a 36,076-token invented boundary case. Three earlier dependency
+failures remain in the external attempt log. Read
+`MISTRAL_TOKENIZER_PREFLIGHT_DECISION_2026-09-17.md`. The stage used zero model
+loads, neural forwards, project rows, fits or Gold. Whole-model NF4 load and
+invented-output validation are the next gate; no scientific reader experiment
+has begun.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique

@@ -15,8 +15,11 @@ The current manuscript and public release remain unchanged by this steering.
 The exact pinned Mistral assets are now authenticated outside the worktree; read
 `docs/cas_q3/MISTRAL_ASSET_ACQUISITION_DECISION_2026-09-17.md`. This closes
 asset identity only. Do not infer that the 4-bit full model loads or that a
-reader experiment has begun; tokenizer semantics, model-load/resource,
-witness/replay and full-workload gates remain open.
+reader experiment has begun. The exact tokenizer route and its isolated
+SentencePiece/protobuf dependencies now pass independent replay; read
+`docs/cas_q3/MISTRAL_TOKENIZER_PREFLIGHT_DECISION_2026-09-17.md`. Do not repeat
+that accepted tokenizer gate. Whole-model load/resource, semantic
+generation/scoring, witness/replay and full-workload gates remain open.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
