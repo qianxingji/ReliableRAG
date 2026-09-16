@@ -1,11 +1,28 @@
 # CAS Q3 manuscript package
 
-The author-designated latest review manuscript is the 15-page combined PDF
-`output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf`. Its identity, hash,
-page count, and review status are recorded in `LATEST_MANUSCRIPT.json`. Use that
-combined artifact for current manuscript review. The split PDFs and their
-compile receipts remain historical/rebuild evidence until a later revision
-replaces the combined artifact and updates the latest-manuscript receipt.
+The current review manuscript is the 21-page A4 PDF
+`output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf`. It preserves the
+author-designated `JIIS_Manuscript_R3.pdf` scientific content and replaces only
+four release-state paragraphs so that the paper names and accurately scopes the
+public repository at commit `a6da7d80aca082301824b320ec4698c0dfac7b12`.
+`LATEST_MANUSCRIPT.json` records the exact identities. The retained R3 source is
+`source_reference/JIIS_Manuscript_R3.pdf`; the builder is
+`../scripts/build_jiis_r4_code_aligned_pdf.py`, and the 75-check alignment receipt
+is `JIIS_R4_CODE_ALIGNMENT_VERIFICATION.json`.
+
+Rebuild and verify this artifact with:
+
+```powershell
+python scripts\build_jiis_r4_code_aligned_pdf.py
+python scripts\verify_jiis_r4_code_alignment.py
+python scripts\verify_latest_manuscript.py
+```
+
+The code-alignment revision adds three clickable public-repository links, binds
+the released fitting, NLI, and HGB source versions, and states the excluded
+per-question/fitted assets. It does not change any scientific result. The split
+PDFs, editable TeX files, and their compile receipts remain historical rebuild
+evidence for the earlier manuscript line.
 
 The anonymous scientific draft is `manuscript.tex`; secondary tables and audit
 details are in `supplement.tex`. Run the following from the repository root:

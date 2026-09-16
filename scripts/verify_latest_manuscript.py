@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the author-designated latest combined manuscript artifact."""
+"""Verify the author-designated latest manuscript artifact."""
 
 from __future__ import annotations
 
@@ -45,26 +45,28 @@ def main() -> int:
         "receipt records the author's latest-manuscript designation",
         checks,
     )
-    require(artifact.is_file(), "latest combined PDF exists", checks)
+    require(artifact.is_file(), "latest manuscript PDF exists", checks)
     require(artifact.stat().st_size == receipt["size_bytes"], "PDF byte count matches", checks)
     require(sha256(artifact) == receipt["sha256"], "PDF SHA-256 matches", checks)
 
     info = run("pdfinfo", str(artifact))
     pages = int(re.search(r"^Pages:\s+(\d+)", info, re.MULTILINE).group(1))
-    require(pages == receipt["pages"] == 15, "combined PDF has 15 pages", checks)
-    require("Page size:       612 x 792 pts (letter)" in info, "PDF uses recorded letter page size", checks)
+    require(pages == receipt["pages"], "PDF page count matches the receipt", checks)
+    require("Page size:       " + receipt["page_size"] in info, "PDF uses the recorded page size", checks)
     require("Encrypted:       no" in info, "PDF is not encrypted", checks)
 
-    text = re.sub(r"\s+", " ", run("pdftotext", "-layout", str(artifact), "-")).lower()
+    text = re.sub(r"\s+", " ", run("pdftotext", "-layout", str(artifact), "-").replace("\u00ad", "-")).lower()
     required_text = {
         "title": "supervision-matched selection of paired rag repairs",
-        "anonymous author surface": "anonymous authors",
+        "author surface": "qianxingji",
         "references": "references",
-        "appendix start": "appendix a. fixed-action sensitivity",
-        "HGB appendix": "appendix e. frozen historical hgb score",
+        "appendix start": "appendix a sensitivity to fixed action membership",
+        "HGB appendix": "appendix e hgb-based pairwise preference scoring",
         "HGB estimator": "histgradientboostingclassifier",
         "HGB string feature": "sequencematcher",
-        "final appendix": "appendix j. reproduction boundary",
+        "final appendix": "appendix j scope of available replication materials",
+        "public repository": "https://github.com/qianxingji/reliablerag-code",
+        "public commit": "a6da7d80aca082301824b320ec4698c0dfac7b12",
     }
     for label, marker in required_text.items():
         require(marker in text, f"PDF contains {label}", checks)

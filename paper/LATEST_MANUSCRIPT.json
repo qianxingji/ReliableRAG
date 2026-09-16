@@ -1,36 +1,50 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "decision": "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
   "designated_by": "qianxingji",
-  "designated_date": "2026-09-15",
-  "registered_utc": "2026-09-15T11:36:20.052385+00:00",
+  "designated_date": "2026-09-16",
+  "registered_utc": "2026-09-16T03:22:38.108904+00:00",
   "cas_q3_status": "NOT_READY",
-  "authoritative_artifact": "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",
-  "source_filename": "ReliableRAG_Manuscript_with_Appendices.pdf",
-  "sha256": "22d16ac2131690da54b64d5eed12616030f1a3d42f9ac6459cf897ad80fe569a",
-  "size_bytes": 632400,
-  "pages": 15,
-  "page_size": "612 x 792 pts (letter)",
+  "authoritative_artifact": "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
+  "source_artifact": "paper/source_reference/JIIS_Manuscript_R3.pdf",
+  "source_filename": "JIIS_Manuscript_R3.pdf",
+  "source_sha256": "b01683e3431cd01c62739c66cd6045395f30362234c04f3315458602eebf6c2e",
+  "sha256": "8f2ce9928ca381c37926b198859b3a91ae1dbab9f6d0bfa4e61d07b9603e8aba",
+  "size_bytes": 1106417,
+  "pages": 21,
+  "page_size": "595.276 x 841.89 pts (A4)",
   "pdf_version": "1.7",
+  "public_repository": {
+    "url": "https://github.com/qianxingji/ReliableRAG-Code",
+    "commit": "a6da7d80aca082301824b320ec4698c0dfac7b12"
+  },
   "visual_review": {
-    "status": "PASS_ALL_15_PAGES_NO_CLIPPING_OR_OVERLAP_OBSERVED",
-    "pages_reviewed": 15,
-    "hgb_pages_reviewed": [
-      3,
-      14
-    ]
+    "status": "PASS_ALL_21_PAGES_NO_CLIPPING_OVERLAP_OR_OVERFLOW_OBSERVED",
+    "pages_reviewed": 21,
+    "release_text_pages_reviewed_at_full_size": [12, 17, 19, 21]
   },
   "content_bindings": {
     "complete_hgb_definition_in_main_text": true,
     "complete_hgb_definition_in_appendix_e": true,
     "appendices_a_through_j_present": true,
-    "scientific_results_changed_by_registration": false
+    "public_repository_commit_bound": true,
+    "public_fitting_and_nli_paths_bound": true,
+    "aggregate_results_verified_against_public_json": true,
+    "scientific_results_changed_by_r4_revision": false
   },
-  "usage": "Use this combined PDF as the current manuscript-review baseline. Editable TeX sources remain rebuild inputs; any later manuscript revision must replace this artifact and update this receipt.",
+  "mechanical_verification": {
+    "receipt": "paper/JIIS_R4_CODE_ALIGNMENT_VERIFICATION.json",
+    "decision": "PASS_JIIS_R4_CODE_ALIGNMENT",
+    "check_count": 75,
+    "all_fonts_embedded": true,
+    "type_3_fonts": 0,
+    "repository_links": 3
+  },
+  "usage": "Use R4 as the current JIIS manuscript-review baseline. It preserves the author-designated R3 scientific content and updates four release-state paragraphs to bind the public repository accurately.",
   "supersedes_for_current_review": [
+    "paper/source_reference/JIIS_Manuscript_R3.pdf",
+    "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",
     "output/pdf/manuscript.pdf",
-    "output/pdf/supplement.pdf",
-    "output/pdf/manuscript_hgb_complete.pdf",
-    "output/pdf/supplement_hgb_complete.pdf"
+    "output/pdf/supplement.pdf"
   ]
 }
