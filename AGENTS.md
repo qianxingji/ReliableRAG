@@ -100,6 +100,11 @@ The final 18-position witness replay producer and its independent tokenizer-only
 validator are implemented as well. The replay must remain blocked until all
 three canonical stages pass their independent validators; its 126 raw FP32
 vectors are audit witnesses and cannot replace canonical rows.
+The development scoring and bounded tuning order is frozen in
+`docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md`.
+It requires BGE answer semantics, fixed transferred HGB, paired GbV and a sealed
+common prelabel mask before development Gold may open. The selected grid winner
+is primary; `C=1, class_weight=None` is secondary sensitivity. Test remains closed.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate

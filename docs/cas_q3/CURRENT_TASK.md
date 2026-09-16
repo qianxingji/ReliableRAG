@@ -199,6 +199,14 @@ bytes), and independently recompute the selected-token log-softmax. Four new
 tests and the complete 36-test focused suite pass. Witness replay is blocked on
 `a1_likelihood` acceptance. No Gold, fit, test, a1, likelihood or NLI work has run.
 
+The subsequent development scoring/tuning order is now frozen before any such
+work in `MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md`: BGE
+answer semantics, fixed transferred HGB, paired GbV, common prelabel freeze,
+development-only outcomes, then the equal 78-fit maximum search. The selected
+grid winner is the primary Mistral recipe; the original `C=1` recipe is a
+secondary sensitivity. Test inputs and outcomes remain closed until parameters,
+allocation and the four-endpoint family are sealed.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
