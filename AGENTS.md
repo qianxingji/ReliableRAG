@@ -21,9 +21,12 @@ SentencePiece/protobuf dependencies now pass independent replay; read
 that accepted tokenizer gate. Whole-model load/resource, semantic
 generation/scoring, witness/replay and full-workload gates remain open. The
 one-attempt invented-only whole-model gate is now prospectively frozen in
-`docs/cas_q3/MISTRAL_WHOLE_MODEL_PREFLIGHT_PROTOCOL_2026-09-17.md`; execute only
-its committed producer, retain any failure, and do not enable CPU/disk offload
-or change its quantization, semantic predicates or resource thresholds.
+`docs/cas_q3/MISTRAL_WHOLE_MODEL_PREFLIGHT_PROTOCOL_2026-09-17.md` and has now
+passed exactly once; read
+`docs/cas_q3/MISTRAL_WHOLE_MODEL_PREFLIGHT_ACCEPTANCE_2026-09-17.md`. Do not
+repeat it or infer full-workload/scientific validity. Full input binding,
+longest-shape resource, production adapter, replay/storage and final analysis
+gates remain open.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
