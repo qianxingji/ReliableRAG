@@ -30,8 +30,10 @@ from scripts.mistral_development_acquisition_common import (
 from scripts.mistral_development_scoring_common import write_bytes_once
 from scripts.run_mistral_development_a0_query import (
     EXPECTED_INPUT_FREEZE_MANIFEST_SHA256, EXPECTED_INPUT_LEDGER_SHA256,
-    EXPECTED_RUNTIME_MANIFEST_SHA256, load_original_native, validate_manifest_pin,
+    EXPECTED_POOL_MANIFEST_SHA256, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+    EXPECTED_RUNTIME_MANIFEST_SHA256, load_original_native,
 )
+from scripts.run_mistral_development_repair import legacy_manifest_member_paths
 from src.arbitration.mistral_reader_runtime import canonical, object_sha256, require
 from src.evaluation.answer_normalization import assess_pair_eligibility
 
@@ -169,28 +171,58 @@ def main() -> int:
         require(sha256(input_manifest) == EXPECTED_INPUT_FREEZE_MANIFEST_SHA256
                 and sha256(frozen_ledger) == EXPECTED_INPUT_LEDGER_SHA256, "INPUT_FREEZE")
         runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
+        pool_root = original / "outputs/daa_v2_fresh_v1/pool_freeze"
+        retrieval_root = original / "outputs/daa_v2_fresh_v1/retrieval_freeze"
         preflight = original / "outputs/daa_v2_fresh_v1/prelabel_seal_v3/preflight/PREFLIGHT_INPUT_VERIFICATION.json"
         require(sha256(preflight) == HISTORICAL_PREFLIGHT_SHA256, "HISTORICAL_PREFLIGHT_PIN")
-        input_records = [
-            validate_manifest_pin(runtime_root / "SHA256_MANIFEST.json", EXPECTED_RUNTIME_MANIFEST_SHA256),
-            record(input_manifest), record(frozen_ledger),
-            record(semantics_stage / "SHA256_MANIFEST.json"), record(semantics_validation),
-            record(root / "a0_query/SHA256_MANIFEST.json"),
-            record(root / "repair/SHA256_MANIFEST.json"),
-            record(root / "a1_likelihood/SHA256_MANIFEST.json"),
-            record(preflight), record(method_path), record(model_path),
-            record(answers_path), record(state_path),
+        paths = [
+            *legacy_manifest_member_paths(
+                original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+            ),
+            *legacy_manifest_member_paths(
+                original, pool_root, EXPECTED_POOL_MANIFEST_SHA256,
+            ),
+            *legacy_manifest_member_paths(
+                original, retrieval_root, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                semantics_stage, sha256(semantics_stage / "SHA256_MANIFEST.json"),
+            ),
+            semantics_validation,
+            *verify_manifest(
+                root / "a0_query", sha256(root / "a0_query/SHA256_MANIFEST.json"),
+            ),
+            *verify_manifest(
+                root / "repair", sha256(root / "repair/SHA256_MANIFEST.json"),
+            ),
+            *verify_manifest(
+                root / "a1_likelihood",
+                sha256(root / "a1_likelihood/SHA256_MANIFEST.json"),
+            ),
+            preflight, method_path, model_path, answers_path, state_path,
         ]
         controls = [
-            Path(__file__), REPO / "scripts/mistral_development_acquisition_common.py",
+            Path(__file__), REPO / "scripts/validate_mistral_development_hgb_signal.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
             REPO / "scripts/mistral_development_scoring_common.py",
             REPO / "scripts/run_mistral_development_a0_query.py",
+            REPO / "scripts/run_mistral_development_repair.py",
+            REPO / "scripts/empirical_feature_independent.py",
+            REPO / "src/evaluation/__init__.py",
             REPO / "src/evaluation/answer_normalization.py",
             REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_HGB_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             runtime_root / "runtime_support.py", runtime_root / "native_runtime.py",
             runtime_root / "trace_manifest.jsonl",
         ]
-        input_records += [record(path) for path in controls]
+        input_records = [record(path) for path in sorted(
+            {Path(path).resolve() for path in [*paths, *controls]}, key=str
+        )]
+        require(len({item["path"] for item in input_records}) == len(input_records),
+                "UNIQUE_HGB_INPUTS")
         freeze = {
             "status": "FROZEN_BEFORE_MISTRAL_DEVELOPMENT_HGB_SIGNAL",
             "source_commit": commit, "stage": "hgb_signal",

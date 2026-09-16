@@ -246,8 +246,12 @@ development pair, and performs inference without refitting. Its independent
 validator uses the separate `empirical_feature_independent.py` formulas and
 directly recomputes the HGB positive/negative symmetry calculation instead of
 calling the producer's selector method. Native and independent feature/score
-paths agree on invented fixtures, and the full Mistral-focused suite passes 53
-tests. This stage remains blocked on accepted answer semantics. It has produced
+paths agree on invented fixtures. Its prospective input-graph amendment binds
+all 223 legacy paths, every required predecessor member, the exact historical
+HGB artifact and all direct control files. The independent validator requires
+exact path equality and exact bindings for both HGB output ledgers. Seven focused
+HGB tests and the complete 162-test Mistral suite pass. This stage remains
+blocked on accepted answer semantics. It has produced
 no project HGB score, Gold access, fit, neural forward or test result.
 
 The paired-GbV stage is now implemented but has not run. It requires the

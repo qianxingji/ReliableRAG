@@ -29,6 +29,19 @@ HGB_MODEL_SHA256 = "9245170f855435b5603b04013bd4fbab79a75d2761853a012ab9f3259600
 METHOD_FREEZE_SHA256 = "af69d7b3a974656bf81da0514a32385476421ac5bd0b32a6585d2291f10aa87a"
 STATE_SYMMETRIC_SOURCE_SHA256 = "3724b5ac77722b70cabdf2589379d5584942f34ec81f3f5a04f88e0665f8f717"
 ANSWERS_SOURCE_SHA256 = "d6de10b0d44bf32c5aa3727c4d2b4b3dc2556b3e4f791cc1fc4f08ad957dd182"
+HISTORICAL_PREFLIGHT_SHA256 = "f29a5ad13c2d8ce6cab3bb6331bd315837c70907fa9d71725339af07baeb5790"
+EXPECTED_INPUT_FREEZE_MANIFEST_SHA256 = (
+    "588b4d86fb6048ade1bba52731829496772d62fd522a260a7a4c60ec584586ca"
+)
+EXPECTED_RUNTIME_MANIFEST_SHA256 = (
+    "0e831d2807ee48197029f03f8ed1e18381a60bc5fc25327edccc8d8486b6cefb"
+)
+EXPECTED_POOL_MANIFEST_SHA256 = (
+    "f53575bc7b9514f33a235f8380520b99c2faac4cb8b6d78533fc42cb08f377b8"
+)
+EXPECTED_RETRIEVAL_MANIFEST_SHA256 = (
+    "15a18dc5c2a61a83171add05be2cb989813ab023ffea8a035cb1ba42dacdf651"
+)
 
 
 def text_sha(value: str) -> str:
@@ -48,6 +61,51 @@ def validate_manifest(namespace: Path) -> None:
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    if "status" in value:
+        require(value["status"] == "PASS", "CURRENT_MANIFEST_STATUS")
+    if "exact_recursive_coverage" in value:
+        require(value["exact_recursive_coverage"] is True,
+                "CURRENT_MANIFEST_EXACT_COVERAGE")
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
+def legacy_manifest_member_paths(
+    original: Path, namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    original = original.resolve(); namespace = namespace.resolve()
+    manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "LEGACY_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (original / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "LEGACY_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    extras = actual - members - {manifest_path.resolve()}
+    require(all("__pycache__" in path.parts and path.suffix == ".pyc"
+                for path in extras), "LEGACY_MANIFEST_UNEXPECTED_EXTRA")
+    return {manifest_path.resolve(), *members}
 
 
 def validate_semantics(root: Path) -> Path:
@@ -159,7 +217,62 @@ def main() -> int:
         require(path.stat().st_size == item["size_bytes"] and sha256(path) == item["sha256"],
                 "FROZEN_INPUT")
     frozen_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(semantics_validation.resolve() in frozen_paths, "FROZEN_SEMANTICS_VALIDATION")
+    require(len(frozen_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
+    pool_root = original / "outputs/daa_v2_fresh_v1/pool_freeze"
+    retrieval_root = original / "outputs/daa_v2_fresh_v1/retrieval_freeze"
+    preflight = original / "outputs/daa_v2_fresh_v1/prelabel_seal_v3/preflight/PREFLIGHT_INPUT_VERIFICATION.json"
+    require(sha256(preflight) == HISTORICAL_PREFLIGHT_SHA256,
+            "HISTORICAL_PREFLIGHT_PIN")
+    required_inputs = {
+        *legacy_manifest_member_paths(
+            original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+        ),
+        *legacy_manifest_member_paths(
+            original, pool_root, EXPECTED_POOL_MANIFEST_SHA256,
+        ),
+        *legacy_manifest_member_paths(
+            original, retrieval_root, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            root / "answer_semantics",
+            sha256(root / "answer_semantics/SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            root / "a0_query", sha256(root / "a0_query/SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            root / "repair", sha256(root / "repair/SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            root / "a1_likelihood",
+            sha256(root / "a1_likelihood/SHA256_MANIFEST.json"),
+        ),
+        semantics_validation.resolve(), preflight.resolve(),
+        (original / "outputs/mars_full/method_freeze.json").resolve(),
+        (original / "outputs/mars_full/models/state_symmetric_hgb.joblib").resolve(),
+        (original / "src/evaluation/answers.py").resolve(),
+        (original / "src/mars/state_symmetric.py").resolve(),
+        (REPO / "scripts/run_mistral_development_hgb_signal.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/run_mistral_development_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_development_repair.py").resolve(),
+        (REPO / "scripts/empirical_feature_independent.py").resolve(),
+        (REPO / "src/evaluation/__init__.py").resolve(),
+        (REPO / "src/evaluation/answer_normalization.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_HGB_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (runtime_root / "runtime_support.py").resolve(),
+        (runtime_root / "native_runtime.py").resolve(),
+        (runtime_root / "trace_manifest.jsonl").resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     feature_rows = read_rows(namespace / "HGB_FEATURE_ROWS.jsonl")
     signal_rows = read_rows(namespace / "HGB_SIGNAL_ROWS.jsonl")
@@ -268,6 +381,19 @@ def main() -> int:
             and receipt["forced_keep_counts"] == forced, "RECEIPT_COUNTS")
     require("torch" not in sys.modules and "transformers" not in sys.modules,
             "NEURAL_RUNTIME_LOADED")
+    expected_feature_record = {
+        "path": str((namespace / "HGB_FEATURE_ROWS.jsonl").resolve()),
+        "size_bytes": (namespace / "HGB_FEATURE_ROWS.jsonl").stat().st_size,
+        "sha256": sha256(namespace / "HGB_FEATURE_ROWS.jsonl"),
+    }
+    expected_signal_record = {
+        "path": str((namespace / "HGB_SIGNAL_ROWS.jsonl").resolve()),
+        "size_bytes": (namespace / "HGB_SIGNAL_ROWS.jsonl").stat().st_size,
+        "sha256": sha256(namespace / "HGB_SIGNAL_ROWS.jsonl"),
+    }
+    require(receipt["hgb_feature_rows"] == expected_feature_record
+            and receipt["hgb_signal_rows"] == expected_signal_record,
+            "PRODUCER_FILE_BINDINGS")
     result = {
         "status": "PASS_INDEPENDENT_FORMULA_MISTRAL_DEVELOPMENT_HGB_SIGNAL",
         "cas_q3_status": "NOT READY", "checks": checks,
