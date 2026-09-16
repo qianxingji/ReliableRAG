@@ -175,9 +175,8 @@ compact receipts for exactly 27,000 operations and supports exact-hash resume.
 The validator imports neither the producer nor adapter, loads no model, and
 reconstructs every question/evidence prompt, token sequence, parser result,
 journal hash and frozen input identity from the original sources. Three new
-stage tests and all prior focused tests pass (24 total). A formal run has not
-yet started; it must start only from the committed clean tree and remains
-development-only with zero Gold, fit and test access.
+stage tests and all prior focused tests passed (24 total) before the formal run
+started. The run remains development-only with zero Gold, fit and test access.
 
 The formal `a0_query` stage has now started from committed source `cd80cad` in
 the new `mistral_development_acquisition_v1` namespace. It passed input/model
@@ -187,7 +186,12 @@ seconds, implying roughly 11--12 hours for this stage if sustained. No second
 instance or concurrent BGE stage is permitted. The repair-stage executor and
 its independent saved-vector reconstruction validator are now implemented and
 pass four focused tests, but they remain blocked on `a0_query` completion and
-independent acceptance. No Gold, fit, test, a1, likelihood or NLI work has run.
+independent acceptance. The `a1_likelihood` executor and its independent
+tokenizer-only validator are also implemented. They reconstruct the dynamic E1,
+the `a1` prompt and all four answer-token teacher-forcing cells from prior sealed
+inputs, and they rehash every prior-stage manifest member before use. Four new
+stage tests and the complete 32-test focused suite pass. This stage is blocked
+on repair acceptance. No Gold, fit, test, a1, likelihood or NLI work has run.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique

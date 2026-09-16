@@ -90,7 +90,13 @@ def main() -> int:
     events = read_rows(namespace / "CALL_JOURNAL.jsonl")
     require(len(repair_rows) == EXPECTED_TRACES, "REPAIR_ROW_COUNT")
     recovery_count = validate_journal(repair_rows, events)
-    a0_stage = root / "a0_query"
+    a0_stage = root / "a0_query"; validate_manifest(a0_stage)
+    a0_validation = json.loads((root / "a0_query_validation/VALIDATION.json").read_text(encoding="utf-8"))
+    require(a0_validation["status"] == "PASS_INDEPENDENT_FULL_SOURCE_MISTRAL_DEVELOPMENT_A0_QUERY"
+            and a0_validation["producer_receipt_sha256"] == sha256(a0_stage / "STAGE_RECEIPT.json")
+            and a0_validation["generation_receipts_sha256"] == sha256(a0_stage / "GENERATION_RECEIPTS.jsonl")
+            and a0_validation["call_journal_sha256"] == sha256(a0_stage / "CALL_JOURNAL.jsonl"),
+            "A0_VALIDATION_BINDING")
     query_rows = [row for row in read_rows(a0_stage / "GENERATION_RECEIPTS.jsonl")
                   if row["operation"] == "repair_query"]
     require(len(query_rows) == EXPECTED_TRACES, "QUERY_ROW_COUNT")

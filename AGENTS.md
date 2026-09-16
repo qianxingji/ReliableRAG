@@ -92,6 +92,10 @@ The formal `a0_query` stage is now running from committed source `cd80cad` in
 second instance, modify any of its frozen input files, or launch BGE concurrently.
 The repair-stage producer and independent saved-vector validator are implemented
 but may run only after `a0_query` completes and passes its independent validator.
+The `a1_likelihood` producer and independent tokenizer-only validator are also
+implemented. They rehash every prior-stage manifest member and bind all 13,500
+`a1` generations plus 54,000 L00/L01/L10/L11 calls. They may run only after the
+repair stage passes independent validation. None of these later stages has run.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate

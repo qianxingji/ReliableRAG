@@ -19,7 +19,7 @@ if __package__ in {None, ""}:
 
 from scripts.mistral_development_acquisition_common import (
     DurableLedger, read_jsonl, record, recover_or_execute, sha256,
-    validate_development_binding, write_json_durable,
+    validate_development_binding, verify_manifest, write_json_durable,
 )
 from scripts.run_mistral_development_a0_query import (
     EXPECTED_INPUT_FREEZE_MANIFEST_SHA256, EXPECTED_INPUT_LEDGER_SHA256,
@@ -102,8 +102,13 @@ def main() -> int:
     a0_receipt = json.loads((a0_stage / "STAGE_RECEIPT.json").read_text(encoding="utf-8"))
     validation_receipt = json.loads(validation.read_text(encoding="utf-8"))
     require(a0_receipt["status"] == "PASS_MISTRAL_DEVELOPMENT_A0_QUERY_PENDING_INDEPENDENT"
-            and validation_receipt["status"] == "PASS_INDEPENDENT_FULL_SOURCE_MISTRAL_DEVELOPMENT_A0_QUERY",
-            "A0_QUERY_STATUS")
+             and validation_receipt["status"] == "PASS_INDEPENDENT_FULL_SOURCE_MISTRAL_DEVELOPMENT_A0_QUERY",
+             "A0_QUERY_STATUS")
+    verify_manifest(a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"))
+    require(validation_receipt["producer_receipt_sha256"] == sha256(a0_stage / "STAGE_RECEIPT.json")
+            and validation_receipt["generation_receipts_sha256"] == sha256(a0_stage / "GENERATION_RECEIPTS.jsonl")
+            and validation_receipt["call_journal_sha256"] == sha256(a0_stage / "CALL_JOURNAL.jsonl"),
+            "A0_QUERY_VALIDATION_BINDING")
     stage_output = root / "repair"
     require(not any((stage_output / name).exists() for name in
                     ("STAGE_RECEIPT.json", "STAGE_FAILURE.json", "SHA256_MANIFEST.json")), "TERMINAL_STAGE_IMMUTABLE")
