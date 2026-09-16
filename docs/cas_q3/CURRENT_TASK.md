@@ -58,6 +58,14 @@ loads, neural forwards, project rows, fits or Gold. Whole-model NF4 load and
 invented-output validation are the next gate; no scientific reader experiment
 has begun.
 
+The next gate is now frozen before execution in
+`MISTRAL_WHOLE_MODEL_PREFLIGHT_PROTOCOL_2026-09-17.md`. It permits one complete
+NF4 model load and only invented answer, repair-query and likelihood witnesses.
+It requires all 224 transformer projections to be NF4/double-quant/BF16 on CUDA
+0, forbids CPU/disk offload, and fixes RAM/GPU/disk/time ceilings. The committed
+producer and saved-witness validator have three static contract tests. No
+whole-model attempt or output exists at this prospective-freeze point.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

@@ -19,7 +19,11 @@ reader experiment has begun. The exact tokenizer route and its isolated
 SentencePiece/protobuf dependencies now pass independent replay; read
 `docs/cas_q3/MISTRAL_TOKENIZER_PREFLIGHT_DECISION_2026-09-17.md`. Do not repeat
 that accepted tokenizer gate. Whole-model load/resource, semantic
-generation/scoring, witness/replay and full-workload gates remain open.
+generation/scoring, witness/replay and full-workload gates remain open. The
+one-attempt invented-only whole-model gate is now prospectively frozen in
+`docs/cas_q3/MISTRAL_WHOLE_MODEL_PREFLIGHT_PROTOCOL_2026-09-17.md`; execute only
+its committed producer, retain any failure, and do not enable CPU/disk offload
+or change its quantization, semantic predicates or resource thresholds.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
