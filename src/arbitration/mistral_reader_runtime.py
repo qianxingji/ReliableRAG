@@ -147,7 +147,11 @@ def prepare_generation(
     """Tokenize and admit a generation request entirely on CPU."""
 
     prompt, render = render_prompt(tokenizer, template, question, evidence)
-    encoded = tokenizer([prompt], return_tensors="pt", truncation=False)
+    # The native chat template already emits BOS.  A second tokenizer special-
+    # token pass would prepend a duplicate BOS and violate the accepted route.
+    encoded = tokenizer(
+        [prompt], return_tensors="pt", truncation=False, add_special_tokens=False,
+    )
     width = require_generation_admission(
         stage=stage,
         input_ids=encoded["input_ids"],

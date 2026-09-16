@@ -9,6 +9,7 @@ from src.arbitration.mistral_reader_runtime import (
     object_sha256,
     parse_answer,
     parse_repair_query,
+    prepare_generation,
     prepare_likelihood,
     require_generation_admission,
 )
@@ -19,8 +20,15 @@ class FakeTokenizer:
         assert tokenize is False and add_generation_prompt is True
         return "<s>[INST] " + messages[0]["content"] + " [/INST]"
 
-    def __call__(self, text, *, add_special_tokens=False):
+    def __call__(self, text, *, add_special_tokens=False, return_tensors=None, truncation=None):
         assert add_special_tokens is False
+        if isinstance(text, list):
+            assert return_tensors == "pt" and truncation is False and len(text) == 1
+            values = list(text[0].encode("utf-8"))
+            class Row(list):
+                def tolist(self):
+                    return list(self)
+            return {"input_ids": [Row(values)], "attention_mask": [Row([1] * len(values))]}
         return {"input_ids": list(text.encode("utf-8"))}
 
 
@@ -48,6 +56,14 @@ class MistralReaderRuntimeTests(unittest.TestCase):
         self.assertEqual(prepared["total_tokens"], 8192)
         self.assertEqual(prepared["target_token_ids"], list(b"target"))
         self.assertEqual(prepared["full_token_ids"][-6:], list(b"target"))
+
+    def test_generation_uses_no_second_special_token_pass(self):
+        prepared = prepare_generation(
+            FakeTokenizer(), stage="a0", template="Q={question}\nE={evidence}",
+            question="invented", evidence=evidence(),
+        )
+        self.assertEqual(prepared["input_token_ids"][:3], list(b"<s>"))
+        self.assertEqual(prepared["attention_mask"], [1] * prepared["input_tokens"])
 
     def test_journal_resumes_only_pending_exact_input_and_skips_completed(self):
         with tempfile.TemporaryDirectory() as temporary:

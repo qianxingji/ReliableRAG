@@ -136,6 +136,17 @@ before the reset. V2 must use a fresh namespace/log and still precedes any
 formal development execution. Read
 `MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_V1_FAILURE_AND_V2_AMENDMENT_2026-09-17.md`.
 
+V2 then completed one invented model load, 3 generations, 4 likelihoods and 39
+forwards, but its independent validator correctly failed at the first prompt
+identity. The saved generation IDs begin `[1, 1, 3, ...]` instead of the frozen
+`[1, 3, ...]`: generation had applied tokenizer special tokens to a native chat
+template that already contained BOS. V2 is rejected and preserved despite its
+plausible invented answers. The committed V3 correction sets only
+`add_special_tokens=False` for generation CPU tokenization; likelihood already
+used that rule. Seventeen focused/static tests now pass. V3 still requires a
+fresh exact-model run and unchanged independent validation before development.
+Read `MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_V2_VALIDATION_FAILURE_AND_V3_AMENDMENT_2026-09-17.md`.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

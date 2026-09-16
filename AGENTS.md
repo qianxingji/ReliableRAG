@@ -61,6 +61,12 @@ PyTorch rejected peak-stat reset on an uninitialized integer CUDA device. Read
 Preserve V1. V2 is authorized only with an explicit device-properties query
 before the reset, using a fresh namespace and attempt log; all scientific and
 model controls remain unchanged.
+V2 completed invented model calls but failed its independent validator because
+generation added a second BOS after the native chat template. Preserve V2 and
+read `docs/cas_q3/MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_V2_VALIDATION_FAILURE_AND_V3_AMENDMENT_2026-09-17.md`.
+V3 is authorized only with `add_special_tokens=False` in CPU generation
+tokenization, matching the already accepted tokenizer contract. It must use a
+fresh namespace/log and pass the unchanged independent validator.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
