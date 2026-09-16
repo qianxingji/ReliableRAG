@@ -191,7 +191,13 @@ tokenizer-only validator are also implemented. They reconstruct the dynamic E1,
 the `a1` prompt and all four answer-token teacher-forcing cells from prior sealed
 inputs, and they rehash every prior-stage manifest member before use. Four new
 stage tests and the complete 32-test focused suite pass. This stage is blocked
-on repair acceptance. No Gold, fit, test, a1, likelihood or NLI work has run.
+on repair acceptance. The final 18-position witness-replay producer and
+independent tokenizer-only validator are also implemented. They require all
+three independently accepted canonical stages, reproduce the exact canonical
+receipts, save 126 complete 32,768-way FP32 first-token vectors (16,515,072 raw
+bytes), and independently recompute the selected-token log-softmax. Four new
+tests and the complete 36-test focused suite pass. Witness replay is blocked on
+`a1_likelihood` acceptance. No Gold, fit, test, a1, likelihood or NLI work has run.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique

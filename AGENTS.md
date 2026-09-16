@@ -96,6 +96,10 @@ The `a1_likelihood` producer and independent tokenizer-only validator are also
 implemented. They rehash every prior-stage manifest member and bind all 13,500
 `a1` generations plus 54,000 L00/L01/L10/L11 calls. They may run only after the
 repair stage passes independent validation. None of these later stages has run.
+The final 18-position witness replay producer and its independent tokenizer-only
+validator are implemented as well. The replay must remain blocked until all
+three canonical stages pass their independent validators; its 126 raw FP32
+vectors are audit witnesses and cannot replace canonical rows.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
