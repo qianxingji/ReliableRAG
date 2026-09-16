@@ -4,26 +4,32 @@
 
 ## Current superseding milestone (2026-09-16)
 
-The author has selected **Journal of Intelligent Information Systems (JIIS)** as
-the current target and designated `JIIS_Manuscript_R3.pdf` as the scientific
-baseline. The reproducibility-aligned derivative
-`output/pdf/JIIS_Manuscript_R5_Reproducible.pdf` is now the latest manuscript.
-It binds the clean public repository
+The current target is **Journal of Intelligent Information Systems (JIIS)**.
+The author has now designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest
+manuscript. Its byte-identical 22-page project copy is
+`output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf`, SHA-256
+`755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb`.
+Use this PDF as the current baseline. `paper/LATEST_MANUSCRIPT.json` records
+the designation and preserves the preceding R6 receipt under
+`paper/manuscript_history/`. R3, R4, R5, and R6 remain historical.
+
+The new manuscript cites the clean public repository
 <https://github.com/qianxingji/ReliableRAG-Code> at commit
-`44d22c66c2adbdce8ebc2289844a8b26e6929bd5` and changes no scientific result.
-The public text-free 18,000-trace bundle exactly reconstructs all point estimates
-and the full 20,000-draw bootstrap. The 90-check paper/code/data audit, 20-check
-latest-artifact audit, eight public unit tests, 129 aggregate statement checks,
-194 repository checks, full font audit, and 21-page visual review pass. See
-`P1_JIIS_R5_PUBLIC_REPRODUCIBILITY_ACCEPTANCE.md` and
-`../../paper/JIIS_R5_REPRODUCIBILITY_VERIFICATION.json`.
+`038d769e96d092a2eec3bbc5df9f45f3c2a17ff0`. Its development, parameter, and
+evaluation bundle hashes match the local public checkout. The earlier R6
+release verification covers current-head refitting and full statistical
+reconstruction; see `JIIS_R6_MAJOR_REVISION_ACCEPTANCE.md`. Registration of
+the new PDF is an identity/mechanical check, not final scientific acceptance.
+Its exact claims and the prior R6 response letter still need to be reviewed
+against these new bytes; no experiments or refits were run during registration.
 
 The older Applied Intelligence route records below remain historical evidence;
 they do not override the later JIIS target selection. Remaining work is a
 JIIS-specific scientific/editorial audit and the required Astra xhigh final
-Claim-sufficiency and Submission Ready acceptance. Public per-question numeric
-selection/bootstrap reconstruction is now closed; end-to-end retrieval,
-generation, neural scoring, and head refitting remain outside the release.
+Claim-sufficiency and Submission Ready acceptance. Public current-head refitting
+and per-question numeric selection/bootstrap reconstruction were verified for
+the cited release. End-to-end retrieval, generation, neural scoring, and
+historical upstream fitting remain outside the release.
 
 The user's 2026-09-13 steering is to continue this work as a **conditional CAS
 Q3 empirical study**. This authorizes target-neutral editorial and packaging

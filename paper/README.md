@@ -1,6 +1,24 @@
 # CAS Q3 manuscript package
 
-The current JIIS major-revision manuscript is the 21-page A4 PDF
+The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest
+manuscript on 2026-09-16. Its byte-identical project copy is the **22-page A4 PDF**
+`output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf`, SHA-256
+`755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb`.
+Use this file for subsequent review, editing, and paper/code alignment.
+`LATEST_MANUSCRIPT.json` records the designation. The original PDF was not
+rewritten. It cites public code commit `038d769e96d092a2eec3bbc5df9f45f3c2a17ff0`;
+the three numeric-bundle/parameter hashes were checked against the local public
+checkout. This registration does not transfer R6 scientific acceptance or its
+response letter to the new file; both require review against the new manuscript.
+Only pages 1, 18, and 22 received a visual spot check in this registration.
+
+Verify the current file identity with:
+
+```powershell
+python scripts\verify_latest_manuscript.py
+```
+
+The preceding JIIS major-revision manuscript is the 21-page A4 PDF
 `output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf`. R6 addresses the reviewer
 request to sharpen the empirical contribution, report effective fit/calibration
 sample and positive counts, disclose learned parameter counts, and unify the
