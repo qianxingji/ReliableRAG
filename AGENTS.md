@@ -87,6 +87,11 @@ from the accepted original sources and does not import the producer/adapter.
 After these files are committed from a clean tree, the single formal
 development `a0_query` stage may start in a new namespace. It remains zero Gold,
 zero fit and zero test.
+The formal `a0_query` stage is now running from committed source `cd80cad` in
+`outputs/cas_q3/mistral_development_acquisition_v1/a0_query`. Do not start a
+second instance, modify any of its frozen input files, or launch BGE concurrently.
+The repair-stage producer and independent saved-vector validator are implemented
+but may run only after `a0_query` completes and passes its independent validator.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate

@@ -179,6 +179,16 @@ stage tests and all prior focused tests pass (24 total). A formal run has not
 yet started; it must start only from the committed clean tree and remains
 development-only with zero Gold, fit and test access.
 
+The formal `a0_query` stage has now started from committed source `cd80cad` in
+the new `mistral_development_acquisition_v1` namespace. It passed input/model
+asset authentication, loaded the exact NF4 reader and is writing two fsynced
+operations per trace. Early observed throughput is about 10 traces per 30
+seconds, implying roughly 11--12 hours for this stage if sustained. No second
+instance or concurrent BGE stage is permitted. The repair-stage executor and
+its independent saved-vector reconstruction validator are now implemented and
+pass four focused tests, but they remain blocked on `a0_query` completion and
+independent acceptance. No Gold, fit, test, a1, likelihood or NLI work has run.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
