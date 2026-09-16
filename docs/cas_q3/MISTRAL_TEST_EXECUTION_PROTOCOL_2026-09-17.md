@@ -2,14 +2,14 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_AND_TEST_A0_IMPLEMENTED_REPAIR_A1_SCORING_OPEN`.
+Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_AND_TEST_A0_REPAIR_IMPLEMENTED_A1_SCORING_OPEN`.
 This document fixes the one-time Mistral test route prospectively. The pure
 analysis kernel, label-blind action seal, numeric-only outcome executor, formal
 20,000-draw analysis executor and their independent audit paths are implemented
-on invented rows. The test `a0_query` executor and tokenizer-only full-source
-validator are also implemented; repair, `a1_likelihood`, witness replay and
-neural scoring are not. This document neither opens test outcomes nor authorizes
-test execution. Formal test
+on invented rows. The test `a0_query` and repair executors plus their no-model
+validators are also implemented; `a1_likelihood`, witness replay and neural
+scoring are not. This document neither opens test outcomes nor authorizes test
+execution. Formal test
 acquisition may start only after the complete development chain, selected models
 and fixed reference models pass their producer, independent-validator and client
 gates.
@@ -88,6 +88,14 @@ and uses the same GPU mutex as development acquisition. Its independent
 validator imports no neural reader and reconstructs all 36,000 prompts and
 receipts with the tokenizer only. The formal namespace has not been created and
 this implementation statement is not an execution result.
+
+The implemented test repair executor requires accepted test `a0_query`, loads
+only the pinned BGE model, reuses sealed document vectors and BM25 structures,
+and performs exactly 18,000 same-retriever depth-50 repairs. BM25 rows make no
+dense query forward; dense and hybrid rows make one each, for 12,000 forwards.
+It preserves ranks 1--4 and replaces only rank 5. The no-model validator replays
+all rankings from the saved 768-dimensional query vectors. The formal repair
+namespace has not been created.
 
 ## Label-blind scoring and action seal
 
@@ -175,8 +183,8 @@ benchmark cohort rather than an independent new-question confirmation.
 
 - P0: this prospective contract is frozen; development acquisition and all
   ordered acceptances remain incomplete.
-- P1: implement test repair, `a1_likelihood`, witness replay and scoring without
-  opening outcomes, then execute the full frozen chain once after the complete
+- P1: implement test `a1_likelihood`, witness replay and scoring without opening
+  outcomes, then execute the full frozen chain once after the complete
   development gate passes.
 - P2: update the manuscript, supplement and public numeric reproduction package
   only from independently accepted results.

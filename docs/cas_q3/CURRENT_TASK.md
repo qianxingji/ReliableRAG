@@ -361,6 +361,18 @@ Six focused tests and the complete 113-test Mistral suite pass. The executor has
 not run, and repair retrieval, `a1_likelihood`, witness replay and test neural
 scoring remain to be implemented.
 
+The test repair executor and a separate no-model replay validator are now
+implemented in `scripts/run_mistral_test_repair.py` and
+`scripts/validate_mistral_test_repair.py`. They require accepted test
+`a0_query`, bind the accepted retrieval arrays and BGE synthetic preflight, and
+fix 18,000 same-retriever depth-50 repairs with exactly 12,000 dense/hybrid
+query forwards. Document re-embedding, Mistral, NLI, Gold and fitting are
+forbidden; rank 5 is the only replacement position. The validator reconstructs
+the rankings from stored query vectors with zero model load. A real label-blind
+source smoke restored all three retrieval datasets and checked first/last
+evidence identities in each. Five focused tests and the complete 118-test
+Mistral suite pass. No formal repair was executed.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
