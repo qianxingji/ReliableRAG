@@ -147,6 +147,17 @@ used that rule. Seventeen focused/static tests now pass. V3 still requires a
 fresh exact-model run and unchanged independent validation before development.
 Read `MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_V2_VALIDATION_FAILURE_AND_V3_AMENDMENT_2026-09-17.md`.
 
+V3 now passes. It performed one exact NF4 model load/unload, three invented
+generations, four answer-token likelihood calls and 51 forwards. The unchanged
+independent validator passes 105 checks, reconstructs the single-BOS prompts,
+binds all seven journal transactions and recomputes seven full-vocabulary
+first-token softmax values without loading a model. Peak CUDA reserved memory
+was 7,419,723,776 bytes and post-close allocation was 33,555,456 bytes. Read
+`MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_ACCEPTANCE_2026-09-17.md`. This closes the
+invented adapter gate only. The next P0 work is the formal component-sequential
+development executor/validator; no 13,500-trace Mistral acquisition, Gold read
+or scientific fit has begun.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

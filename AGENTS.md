@@ -67,6 +67,12 @@ read `docs/cas_q3/MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_V2_VALIDATION_FAILURE_AND
 V3 is authorized only with `add_special_tokens=False` in CPU generation
 tokenization, matching the already accepted tokenizer contract. It must use a
 fresh namespace/log and pass the unchanged independent validator.
+V3 now passes the exact-model producer and 105-check independent no-model
+validator; read
+`docs/cas_q3/MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_ACCEPTANCE_2026-09-17.md`.
+Do not repeat V3. This accepts only the invented adapter path. Formal 13,500-row
+development acquisition has not begun and still requires a committed
+component-sequential executor plus independent validator.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
