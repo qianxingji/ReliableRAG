@@ -36,8 +36,9 @@ METHODS = ("HGB_GBV_R", "HGB_ONLY_R", "GBV_ONLY_R")
 EXPECTED_TRACES = 13_500
 EXPECTED_FIT_TRACES = 10_800
 EXPECTED_CAL_TRACES = 2_700
-EXPECTED_FIT_ATTEMPTS = 78
-EXPECTED_EVENT_ROWS = 156
+EXPECTED_SEARCH_FIT_ATTEMPTS = 78
+EXPECTED_FIT_ATTEMPTS = 84
+EXPECTED_EVENT_ROWS = 168
 MAX_STAGE_SECONDS = 60 * 60
 IDENTITY_FIELDS = ("dataset", "retriever", "sample_id", "position", "role")
 DATASETS = ("hotpotqa", "2wikimultihopqa", "musique")
@@ -232,7 +233,10 @@ def main() -> int:
             "candidate_grid": list(candidate_grid()),
             "c_search_values": list(C_SEARCH_VALUES),
             "c_tie_order": list(C_TIE_ORDER), "base_fixed": BASE_FIXED,
-            "platt_fixed": PLATT_FIXED, "expected_fit_attempts": EXPECTED_FIT_ATTEMPTS,
+            "platt_fixed": PLATT_FIXED,
+            "expected_search_fit_attempts": EXPECTED_SEARCH_FIT_ATTEMPTS,
+            "expected_fixed_reference_fit_attempts": 6,
+            "expected_fit_attempts": EXPECTED_FIT_ATTEMPTS,
             "selection_metric": "pooled_eligible_validation_binary_log_loss",
             "target": "a0_em==0 and a1_em==1", "test_access": "FORBIDDEN",
             "action_budget_tuning": "FORBIDDEN", "inputs": input_records,
@@ -290,12 +294,14 @@ def main() -> int:
             journal.close()
             result["scientific_fit_attempts"] = sum(
                 row["event"] in {"cv_fit_started", "selected_base_fit_started",
-                                 "platt_fit_started"}
+                                 "platt_fit_started", "fixed_base_fit_started",
+                                 "fixed_platt_fit_started"}
                 for row in journal.rows
             )
             result["scientific_fit_completions"] = sum(
                 row["event"] in {"cv_fit_completed", "selected_base_fit_completed",
-                                 "platt_fit_completed"}
+                                 "platt_fit_completed", "fixed_base_fit_completed",
+                                 "fixed_platt_fit_completed"}
                 for row in journal.rows
             )
         result.update(

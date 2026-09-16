@@ -16,8 +16,9 @@ The user also authorizes tuning if results are unsatisfactory. The
 [development tuning policy](READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md)
 specifies eight logistic-head configurations per main method, three shared
 question-group folds within the 3,600-question fit partition, and a separate
-900-question calibration partition. The full search plus selected refits and
-calibration costs at most 78 planned fits; none has run. Fusion, HGB-only and
+900-question calibration partition. The bounded search costs 78 planned fits;
+six additional fixed-reference fits make the formal producer total 84. None has
+run on project data. Fusion, HGB-only and
 GbV-only receive identical search budgets. Final configuration selection and
 the primary comparison family must be fixed before new reader test results.
 Disappointing test results remain evidence, not tuning targets.
@@ -202,10 +203,11 @@ tests and the complete 36-test focused suite pass. Witness replay is blocked on
 The subsequent development scoring/tuning order is now frozen before any such
 work in `MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md`: BGE
 answer semantics, fixed transferred HGB, paired GbV, common prelabel freeze,
-development-only outcomes, then the equal 78-fit maximum search. The selected
-grid winner is the primary Mistral recipe; the original `C=1` recipe is a
-secondary sensitivity. Test inputs and outcomes remain closed until parameters,
-allocation and the four-endpoint family are sealed.
+development-only outcomes, then the equal 78-fit search plus six non-search
+fixed-reference fits. The selected grid winner is the primary Mistral recipe;
+the original `C=1` recipe is a secondary sensitivity. Test inputs and outcomes
+remain closed until parameters, allocation and the four-endpoint family are
+sealed.
 
 The first post-acquisition scoring stage is now implemented but has not run.
 `run_mistral_development_answer_semantics.py` fixes canonical dataset order and
@@ -272,11 +274,12 @@ The equal-budget development tuner and a separate full-refit validator are now
 also implemented but have not run on project outcomes. The producer requires
 accepted prelabel and development-outcome stages, then applies the frozen eight
 candidate grid and three question-group folds identically to all three methods.
-It durably records every fit start and terminal event, with exactly 78 producer
-fit attempts and 156 journal rows. The validator imports neither the producer
-nor the tuning core; it independently reconstructs folds, preprocessing, all CV
-fits, pooled log losses, tie-breaking, selected refits and Platt fits, adding 78
-audit refits rather than a second selection search. A complete
+It durably records every fit start and terminal event, with exactly 84 producer
+fit attempts and 168 journal rows: 78 search fits plus six fixed-reference fits.
+The validator imports neither the producer nor the tuning core; it independently
+reconstructs folds, preprocessing, all CV fits, pooled log losses, tie-breaking,
+selected refits, fixed-reference heads and Platt fits, adding 84 audit refits
+rather than a second selection search. A complete
 three-method synthetic replay shows agreement within the fixed `1e-10` numerical
 tolerance. Six focused tests and the complete 81-test Mistral suite pass. Test
 access and action-budget tuning remain forbidden. This stage is blocked on

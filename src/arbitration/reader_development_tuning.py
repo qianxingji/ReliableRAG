@@ -355,6 +355,26 @@ def tune_recovery_head(
     successful_fits += 1
     emitted({"event": "platt_fit_completed", "variant": variant})
 
+    fixed_parameters = {**BASE_FIXED, "C": 1.0, "class_weight": None}
+    fixed_identifier = candidate_id(fixed_parameters)
+    emitted({"event": "fixed_base_fit_started", "variant": variant,
+             "candidate_id": fixed_identifier})
+    fit_attempts += 1
+    fixed_base = _fit_logistic(x_fit, y_fit, fixed_parameters)
+    successful_fits += 1
+    emitted({"event": "fixed_base_fit_completed", "variant": variant,
+             "candidate_id": fixed_identifier})
+    fixed_calibration_logits = x_cal @ fixed_base.coef_[0] + fixed_base.intercept_[0]
+    emitted({"event": "fixed_platt_fit_started", "variant": variant,
+             "candidate_id": fixed_identifier})
+    fit_attempts += 1
+    fixed_platt = _fit_logistic(
+        fixed_calibration_logits.reshape(-1, 1), y_cal, PLATT_FIXED
+    )
+    successful_fits += 1
+    emitted({"event": "fixed_platt_fit_completed", "variant": variant,
+             "candidate_id": fixed_identifier})
+
     return {
         "schema_version": 1,
         "role": "DEVELOPMENT_ONLY_READER_HEAD_TUNING",
@@ -392,6 +412,24 @@ def tune_recovery_head(
             "platt_slope": float(platt.coef_[0, 0]),
             "platt_intercept": float(platt.intercept_[0]),
             "platt_iterations": platt.n_iter_.tolist(),
+        },
+        "fixed_reference_model": {
+            "candidate_id": fixed_identifier,
+            "parameters": fixed_parameters,
+            "fit_keys_sha256": key_hash(eligible_fit),
+            "cal_keys_sha256": key_hash(eligible_cal),
+            "fit_rows": len(eligible_fit),
+            "cal_rows": len(eligible_cal),
+            "fit_class_counts": np.bincount(y_fit, minlength=2).tolist(),
+            "cal_class_counts": np.bincount(y_cal, minlength=2).tolist(),
+            "preprocessing": preprocessing,
+            "coef": fixed_base.coef_[0].tolist(),
+            "intercept": float(fixed_base.intercept_[0]),
+            "base_iterations": fixed_base.n_iter_.tolist(),
+            "platt_parameters": PLATT_FIXED,
+            "platt_slope": float(fixed_platt.coef_[0, 0]),
+            "platt_intercept": float(fixed_platt.intercept_[0]),
+            "platt_iterations": fixed_platt.n_iter_.tolist(),
         },
         "test_labels_read": False,
         "test_predictions_emitted": False,

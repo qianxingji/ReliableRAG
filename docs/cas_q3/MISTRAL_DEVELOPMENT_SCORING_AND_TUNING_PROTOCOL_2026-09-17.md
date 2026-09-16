@@ -2,10 +2,13 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_BEFORE_SCORING_EXECUTOR_IMPLEMENTATION`. This protocol fixes the
-development-only scoring, outcome opening and bounded head search for the exact
-Mistral reader condition. It is not evidence that scoring, Gold evaluation,
-fitting or testing has run.
+Status: `PROSPECTIVELY_AMENDED_BEFORE_DEVELOPMENT_GOLD_OR_SCIENTIFIC_FIT`. This
+protocol fixes the development-only scoring, outcome opening and bounded head
+search for the exact Mistral reader condition. The pipeline executors and
+independent validators are implemented, but this is not evidence that scoring,
+Gold evaluation, scientific fitting or testing has run. The fixed-reference
+fit amendment is recorded in
+`MISTRAL_FIXED_RECIPE_SENSITIVITY_AMENDMENT_2026-09-17.md`.
 
 ## Scientific purpose and fixed condition
 
@@ -62,8 +65,13 @@ closed.
    same three deterministic question-group folds. Selection uses pooled held-out
    recovery-target log loss on fit folds only. Refit the selected base head on
    all fit questions, then fit its fixed Platt layer once on calibration rows.
-   The maximum successful workload is 72 cross-validation fits, three selected
-   refits and three Platt fits: 78 fits. Failures remain in the event journal.
+   The search workload is 72 cross-validation fits, three selected refits and
+   three selected-model Platt fits: 78 fits. Separately fit the prospectively
+   fixed `C=1.0, class_weight=None` base and Platt reference once per method on
+   the same fit/cal partitions: six non-search fits. The producer therefore has
+   exactly 84 fit attempts and 168 start/terminal journal rows. Failures remain
+   in the event journal. The independent validator repeats all 84 fits as audit
+   refits; those repeats are validation work and never enter model selection.
 
 Every producer has an independent validator that reconstructs identities,
 features, masks, counts, hashes and numerical formulas without importing that
@@ -115,4 +123,3 @@ Main rejection risks remain a small or uncertain increment over the strong
 identities, rare Damage, transferred HGB provenance and public end-to-end neural
 reproduction cost. This protocol can measure those limits; it cannot guarantee
 a favorable result.
-

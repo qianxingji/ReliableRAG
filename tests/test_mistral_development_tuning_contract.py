@@ -76,7 +76,7 @@ class MistralDevelopmentTuningContractTests(unittest.TestCase):
         self.assertEqual(EXPECTED_TRACES, 13_500)
         self.assertEqual(EXPECTED_FIT_TRACES, 10_800)
         self.assertEqual(EXPECTED_CAL_TRACES, 2_700)
-        self.assertEqual(EXPECTED_FIT_ATTEMPTS, 78)
+        self.assertEqual(EXPECTED_FIT_ATTEMPTS, 84)
         self.assertEqual(set(features), set(METHODS))
         self.assertEqual(len(outcomes), EXPECTED_TRACES)
         self.assertEqual({role: len(keys) for role, keys in parts.items()},
@@ -101,7 +101,7 @@ class MistralDevelopmentTuningContractTests(unittest.TestCase):
                  "numeric_checks": 0, "exact_checks": 0}
         compare(comparable(produced), comparable(independent), state)
         self.assertLessEqual(state["maximum_numeric_error"], 1e-10)
-        self.assertEqual(produced["fit_attempts"], 26)
+        self.assertEqual(produced["fit_attempts"], 28)
 
     def test_complete_event_journal_binds_all_three_methods(self):
         features, outcomes, parts, _ = assemble_inputs(self.prelabels, self.outcomes)
@@ -120,7 +120,7 @@ class MistralDevelopmentTuningContractTests(unittest.TestCase):
         for method in METHODS:
             compare(comparable(produced[method]), comparable(independent[method]), state)
         validate_events(events, independent, state)
-        self.assertEqual(len(events), 156)
+        self.assertEqual(len(events), 168)
 
     def test_validator_does_not_import_producer_or_tuning_core(self):
         path = (Path(__file__).resolve().parents[1]

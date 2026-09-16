@@ -284,6 +284,12 @@ def replay_variant(rows: dict, outcomes: dict, parts: dict, variant: str) -> dic
     calibration_logits = x_cal @ base.coef_[0] + base.intercept_[0]
     fit_attempts += 1
     platt = fit(calibration_logits.reshape(-1, 1), y_cal, PLATT); successes += 1
+    fixed_parameters = {**BASE, "C": 1.0, "class_weight": None}
+    fixed_identifier = candidate_id(fixed_parameters)
+    fit_attempts += 1; fixed_base = fit(x_fit, y_fit, fixed_parameters); successes += 1
+    fixed_logits = x_cal @ fixed_base.coef_[0] + fixed_base.intercept_[0]
+    fit_attempts += 1
+    fixed_platt = fit(fixed_logits.reshape(-1, 1), y_cal, PLATT); successes += 1
     return {
         "schema_version": 1, "role": "DEVELOPMENT_ONLY_READER_HEAD_TUNING",
         "variant": variant, "fold_prefix": FOLD_PREFIX,
@@ -311,6 +317,23 @@ def replay_variant(rows: dict, outcomes: dict, parts: dict, variant: str) -> dic
             "platt_slope": float(platt.coef_[0, 0]),
             "platt_intercept": float(platt.intercept_[0]),
             "platt_iterations": platt.n_iter_.tolist(),
+        },
+        "fixed_reference_model": {
+            "candidate_id": fixed_identifier,
+            "parameters": fixed_parameters,
+            "fit_keys_sha256": key_hash(fit_keys),
+            "cal_keys_sha256": key_hash(cal_keys),
+            "fit_rows": len(fit_keys), "cal_rows": len(cal_keys),
+            "fit_class_counts": np.bincount(y_fit, minlength=2).tolist(),
+            "cal_class_counts": np.bincount(y_cal, minlength=2).tolist(),
+            "preprocessing": preprocessing,
+            "coef": fixed_base.coef_[0].tolist(),
+            "intercept": float(fixed_base.intercept_[0]),
+            "base_iterations": fixed_base.n_iter_.tolist(),
+            "platt_parameters": PLATT,
+            "platt_slope": float(fixed_platt.coef_[0, 0]),
+            "platt_intercept": float(fixed_platt.intercept_[0]),
+            "platt_iterations": fixed_platt.n_iter_.tolist(),
         },
         "test_labels_read": False, "test_predictions_emitted": False,
         "action_budget_tuned": False,
@@ -380,7 +403,7 @@ def read_canonical_events(path: Path) -> list[dict]:
 
 
 def validate_events(events: list[dict], results: dict, state: dict) -> None:
-    require(len(events) == 156, "EVENT_ROW_COUNT")
+    require(len(events) == 168, "EVENT_ROW_COUNT")
     counts = collections.Counter((event["variant"], event["event"]) for event in events)
     for method in METHODS:
         require(counts[(method, "cv_fit_started")] == 24
@@ -389,7 +412,11 @@ def validate_events(events: list[dict], results: dict, state: dict) -> None:
                 and counts[(method, "selected_base_fit_started")] == 1
                 and counts[(method, "selected_base_fit_completed")] == 1
                 and counts[(method, "platt_fit_started")] == 1
-                and counts[(method, "platt_fit_completed")] == 1,
+                and counts[(method, "platt_fit_completed")] == 1
+                and counts[(method, "fixed_base_fit_started")] == 1
+                and counts[(method, "fixed_base_fit_completed")] == 1
+                and counts[(method, "fixed_platt_fit_started")] == 1
+                and counts[(method, "fixed_platt_fit_completed")] == 1,
                 "EVENT_METHOD_COUNTS")
         selected = results[method]["selected_candidate_id"]
         require(next(event for event in events
@@ -425,6 +452,15 @@ def validate_events(events: list[dict], results: dict, state: dict) -> None:
                          "variant": method}); sequence += 1
         expected.append({"sequence": sequence, "event": "platt_fit_completed",
                          "variant": method}); sequence += 1
+        fixed = result["fixed_reference_model"]["candidate_id"]
+        expected.append({"sequence": sequence, "event": "fixed_base_fit_started",
+                         "variant": method, "candidate_id": fixed}); sequence += 1
+        expected.append({"sequence": sequence, "event": "fixed_base_fit_completed",
+                         "variant": method, "candidate_id": fixed}); sequence += 1
+        expected.append({"sequence": sequence, "event": "fixed_platt_fit_started",
+                         "variant": method, "candidate_id": fixed}); sequence += 1
+        expected.append({"sequence": sequence, "event": "fixed_platt_fit_completed",
+                         "variant": method, "candidate_id": fixed}); sequence += 1
     compare(comparable(events), comparable(expected), state)
 
 
@@ -441,7 +477,7 @@ def main() -> int:
     namespace = root / "tuning"; validate_manifest(namespace)
     receipt = json.loads((namespace / "STAGE_RECEIPT.json").read_text(encoding="utf-8"))
     require(receipt["status"] == "PASS_MISTRAL_DEVELOPMENT_TUNING_PENDING_INDEPENDENT"
-            and receipt["scientific_fit_attempts"] == 78
+            and receipt["scientific_fit_attempts"] == 84
             and receipt["development_rows_read"] == EXPECTED_TRACES
             and receipt["development_gold_metric_values_read"] == EXPECTED_TRACES * 4
             and receipt["test_rows_read"] == receipt["test_gold_values_read"]
@@ -455,7 +491,9 @@ def main() -> int:
             and freeze["fold_prefix"] == FOLD_PREFIX
             and freeze["candidate_grid"] == list(grid())
             and freeze["base_fixed"] == BASE and freeze["platt_fixed"] == PLATT
-            and freeze["expected_fit_attempts"] == 78
+            and freeze["expected_search_fit_attempts"] == 78
+            and freeze["expected_fixed_reference_fit_attempts"] == 6
+            and freeze["expected_fit_attempts"] == 84
             and freeze["test_access"] == "FORBIDDEN"
             and freeze["action_budget_tuning"] == "FORBIDDEN",
             "EXECUTABLE_FREEZE")
@@ -534,7 +572,7 @@ def main() -> int:
         "producer_receipt_sha256": sha256(namespace / "STAGE_RECEIPT.json"),
         "tuning_results_sha256": sha256(namespace / "TUNING_RESULTS.json"),
         "fit_events_sha256": sha256(namespace / "FIT_EVENTS.jsonl"),
-        "methods": list(METHODS), "scientific_fit_attempts_verified": 78,
+        "methods": list(METHODS), "scientific_fit_attempts_verified": 84,
         "scientific_fit_completions_verified": receipt["scientific_fit_completions"],
         "independent_audit_refit_attempts": sum(
             replayed[method]["fit_attempts"] for method in METHODS
@@ -542,7 +580,7 @@ def main() -> int:
         "independent_audit_refit_completions": sum(
             replayed[method]["successful_fits"] for method in METHODS
         ),
-        "combined_producer_and_validator_fit_attempts": 156,
+        "combined_producer_and_validator_fit_attempts": 168,
         "selected_candidates": receipt["selected_candidates"],
         "maximum_numeric_error": state["maximum_numeric_error"],
         "numeric_checks": state["numeric_checks"],

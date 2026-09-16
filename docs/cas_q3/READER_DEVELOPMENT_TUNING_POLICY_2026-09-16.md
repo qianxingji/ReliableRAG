@@ -70,11 +70,15 @@ eligible rows, class counts and fitted coefficients are recorded at every fit.
 
 The maximum successful search workload is `3 methods × 8 configurations ×
 3 folds = 72` base fits, followed by three selected base refits and three
-Platt fits: **78 fits**. These are additional planned work, not completed fits,
-and are distinct from any fixed-recipe reference heads and historical totals.
-This is one finite search, not repeated rounds until the desired result appears.
-Resource limits and exact fold identities must be bound in the executable
-reader protocol before this budget is used.
+selected-model Platt fits: **78 search fits**. The prospective fixed-recipe
+sensitivity requires one additional fixed base fit and one fixed Platt fit for
+each method: six non-search fits. The formal producer therefore performs **84
+fit attempts = 78 search + 6 fixed-reference**; its independent validator
+repeats the same 84 fits only to audit the result. This accounting was amended
+before any project Gold read or scientific fit in
+`MISTRAL_FIXED_RECIPE_SENSITIVITY_AMENDMENT_2026-09-17.md`. This is one finite
+search, not repeated rounds until the desired result appears. Resource limits
+and exact fold identities are bound in the executable reader protocol.
 
 ## Evaluation and interpretation
 
@@ -106,13 +110,15 @@ are never tunable objectives.
 
 ## Progress
 
-- P0: this development tuning design and its reusable execution core are
-  implemented. Four synthetic contract tests pass in
+- P0: this development tuning design, reusable execution core, formal producer
+  and independent full-refit validator are implemented. Four core synthetic
+  contract tests pass in
   `tests/test_reader_development_tuning.py`, SHA-256
-  `b87e4b827f5a58673841ce89e910ac79583c85cd83d1b785bbf0d77db3adbd00`.
-  They verify the exact folds, grid/tie rule, finite 26-fit per-method budget and
-  rejection of extra roles/outcome scope. Executable reader resource, numerical
-  and final analysis contracts remain unfinished.
+  `ea220853b6b75c006572fa9cc253fa2cc29d9f39dfe8d2f7c7697432e2ff682f`.
+  They verify the exact folds, grid/tie rule, finite 28-fit per-method budget,
+  fixed-reference identity and rejection of extra roles/outcome scope. Six
+  formal tuning contract tests and the complete 81-test Mistral suite also pass.
+  No project scientific fit has run.
 - P1: once those are ready, run the equal-budget search, freeze selected models,
   and evaluate the fixed reader condition with all outcomes retained.
 - P2: update manuscript and public release only from accepted results.

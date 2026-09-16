@@ -100,16 +100,21 @@ class ReaderDevelopmentTuningTests(unittest.TestCase):
             "HGB_ONLY_R",
             events.append,
         )
-        self.assertEqual(result["fit_attempts"], 26)
-        self.assertEqual(result["successful_fits"], 26)
+        self.assertEqual(result["fit_attempts"], 28)
+        self.assertEqual(result["successful_fits"], 28)
         self.assertEqual(len(result["candidates"]), 8)
         self.assertTrue(all(item["valid"] for item in result["candidates"]))
         self.assertEqual(sum(e["event"] == "cv_fit_started" for e in events), 24)
         self.assertEqual(sum(e["event"] == "cv_fit_completed" for e in events), 24)
+        self.assertEqual(sum(e["event"] == "fixed_base_fit_completed" for e in events), 1)
+        self.assertEqual(sum(e["event"] == "fixed_platt_fit_completed" for e in events), 1)
         self.assertFalse(result["test_labels_read"])
         self.assertFalse(result["test_predictions_emitted"])
         self.assertFalse(result["action_budget_tuned"])
         self.assertIn(result["selected_parameters"], candidate_grid())
+        self.assertEqual(result["fixed_reference_model"]["parameters"], {
+            **BASE_FIXED, "C": 1.0, "class_weight": None,
+        })
 
     def test_rejects_extra_role_and_outcome_scope(self):
         fit, cal = development_keys()
