@@ -11,7 +11,7 @@ CAS Q3 STATUS: **NOT READY**
 - Author-designated scientific baseline: `paper/source_reference/JIIS_Manuscript_R3.pdf`
   - SHA-256: `b01683e3431cd01c62739c66cd6045395f30362234c04f3315458602eebf6c2e`
 - Current code-aligned manuscript: `output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf`
-  - SHA-256: `8f2ce9928ca381c37926b198859b3a91ae1dbab9f6d0bfa4e61d07b9603e8aba`
+  - SHA-256: `a25f4a2b2e1a6d4fc1c828e632f4258226352e33e7aacfeb3cfe00941d750737`
   - 21 A4 pages, PDF 1.7, all fonts embedded, zero Type 3 fonts
 - Public repository: <https://github.com/qianxingji/ReliableRAG-Code>
   - fixed commit: `a6da7d80aca082301824b320ec4698c0dfac7b12`
@@ -25,6 +25,7 @@ scientific result, table, figure, Claim, or interval changed.
 
 - `scripts/verify_jiis_r4_code_alignment.py`: 75 checks passed.
 - `scripts/verify_latest_manuscript.py`: 20 checks passed.
+- Two consecutive clean R4 builds produced the same SHA-256.
 - Public unit tests: 7 passed after installing the repository-declared dependencies.
 - Public aggregate verifier: 129 reporting checks passed.
 - Public repository verifier: 167 checks passed, with zero scientific fits and zero model forwards inside that verifier.

@@ -5,7 +5,7 @@
   "current_target_journal": "Journal of Intelligent Information Systems",
   "latest_manuscript_receipt": "paper/LATEST_MANUSCRIPT.json",
   "latest_manuscript": "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
-  "latest_manuscript_sha256": "8f2ce9928ca381c37926b198859b3a91ae1dbab9f6d0bfa4e61d07b9603e8aba",
+  "latest_manuscript_sha256": "a25f4a2b2e1a6d4fc1c828e632f4258226352e33e7aacfeb3cfe00941d750737",
   "jiis_r4_code_alignment_acceptance": "docs/cas_q3/P1_JIIS_R4_CODE_ALIGNMENT_ACCEPTANCE.md",
   "jiis_r4_code_alignment_receipt": "paper/JIIS_R4_CODE_ALIGNMENT_VERIFICATION.json",
   "jiis_r4_code_alignment_decision": "PASS_JIIS_R4_CODE_ALIGNMENT",

@@ -6,7 +6,6 @@ whose repository-release state changed after R3 was compiled.
 """
 from __future__ import annotations
 
-from datetime import datetime, timezone
 import hashlib
 from pathlib import Path
 import re
@@ -139,7 +138,8 @@ def main() -> None:
     metadata["title"] = "Supervision-Matched Selection of Paired RAG Repairs: An Empirical Study of Accuracy and Damage"
     metadata["author"] = "qianxingji"
     metadata["subject"] = "Post-generation selection of paired RAG repairs; code-aligned R4"
-    metadata["modDate"] = datetime.now(timezone.utc).strftime("D:%Y%m%d%H%M%SZ")
+    # Freeze metadata so identical source/code/font inputs produce identical bytes.
+    metadata["modDate"] = "D:20260916030000Z"
     document.set_metadata(metadata)
     work_pdf = ROOT / "tmp" / "pdfs" / "JIIS_Manuscript_R4_Code_Aligned.work.pdf"
     work_pdf.parent.mkdir(parents=True, exist_ok=True)
