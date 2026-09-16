@@ -1,6 +1,25 @@
 # CAS Q3 manuscript package
 
-The current review manuscript is the 21-page A4 PDF
+The current JIIS major-revision manuscript is the 21-page A4 PDF
+`output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf`. R6 addresses the reviewer
+request to sharpen the empirical contribution, report effective fit/calibration
+sample and positive counts, disclose learned parameter counts, and unify the
+public reproduction boundary. It is bound to public repository commit
+`038d769e96d092a2eec3bbc5df9f45f3c2a17ff0`, whose workflow exactly refits the
+five current heads before reconstructing all reported statistics. The point
+estimates, intervals, candidates, actions, and conclusions are unchanged.
+
+Rebuild and verify R6 with:
+
+```powershell
+python scripts\build_jiis_r6_major_revision_pdf.py
+python scripts\verify_jiis_r6_major_revision.py
+```
+
+The point-by-point response is `JIIS_R6_RESPONSE_TO_REVIEWER.md`, and the
+mechanical receipt is `JIIS_R6_MAJOR_REVISION_VERIFICATION.json`.
+
+The preceding review manuscript is the 21-page A4 PDF
 `output/pdf/JIIS_Manuscript_R5_Reproducible.pdf`. It preserves the
 author-designated `JIIS_Manuscript_R3.pdf` scientific content and replaces only
 four release-state paragraphs so that the paper names and accurately scopes the

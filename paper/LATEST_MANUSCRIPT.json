@@ -1,50 +1,76 @@
 {
-  "schema_version": 3,
-  "decision": "AUTHOR_REQUESTED_REPRODUCIBILITY_UPGRADE",
+  "schema_version": 4,
+  "decision": "JIIS_REVIEWER_MAJOR_REVISION_COMPLETED",
   "designated_by": "qianxingji",
   "designated_date": "2026-09-16",
-  "registered_utc": "2026-09-16T04:03:43.963532+00:00",
+  "registered_utc": "2026-09-16T05:06:19.188262+00:00",
   "cas_q3_status": "NOT_READY",
-  "authoritative_artifact": "output/pdf/JIIS_Manuscript_R5_Reproducible.pdf",
-  "source_artifact": "paper/source_reference/JIIS_Manuscript_R3.pdf",
-  "source_filename": "JIIS_Manuscript_R3.pdf",
-  "source_sha256": "b01683e3431cd01c62739c66cd6045395f30362234c04f3315458602eebf6c2e",
-  "sha256": "fdb055b765899bc71e3d0258c4e65e3a70a10bccd7bb409e9ac73f32c7f0258b",
-  "size_bytes": 1106812,
+  "authoritative_artifact": "output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf",
+  "source_artifact": "output/pdf/JIIS_Manuscript_R5_Reproducible.pdf",
+  "source_sha256": "fdb055b765899bc71e3d0258c4e65e3a70a10bccd7bb409e9ac73f32c7f0258b",
+  "sha256": "9ea482bb9a6887ec3a7e2d5951bef7215355ae76c3b431b0810abd8992e00199",
+  "size_bytes": 1107350,
   "pages": 21,
   "page_size": "595.276 x 841.89 pts (A4)",
   "pdf_version": "1.7",
   "public_repository": {
     "url": "https://github.com/qianxingji/ReliableRAG-Code",
-    "commit": "44d22c66c2adbdce8ebc2289844a8b26e6929bd5",
+    "commit": "038d769e96d092a2eec3bbc5df9f45f3c2a17ff0",
+    "github_actions_run": "https://github.com/qianxingji/ReliableRAG-Code/actions/runs/35057594179",
+    "github_actions_conclusion": "success",
+    "development_bundle_sha256": "8867daa8c8d827d5aa928627d8de068656e35760b47f784c38d328a369afe7f0",
+    "current_heads_sha256": "a519b80b08ece87c59d296a3b590a1cda31de16122c68a1e0efe5a2c27f1e5ea",
     "numeric_bundle_sha256": "a930286d62bddf9f4837cb1beb4b863f0f94c1bc697b2311977a9b0eb18f09f7"
   },
   "visual_review": {
-    "status": "PASS_ALL_21_PAGES_NO_CLIPPING_OVERLAP_OR_OVERFLOW_OBSERVED",
-    "pages_reviewed": 21,
-    "reproducibility_text_pages_reviewed_at_full_size": [12, 17, 19, 21]
+    "status": "PASS_CHANGED_PAGES_NO_CLIPPING_OVERLAP_OR_OVERFLOW_OBSERVED",
+    "pages_reviewed": [
+      2,
+      5,
+      10,
+      12,
+      17,
+      19,
+      21
+    ]
   },
   "content_bindings": {
-    "complete_hgb_definition_in_main_text": true,
-    "complete_hgb_definition_in_appendix_e": true,
-    "appendices_a_through_j_present": true,
-    "public_repository_commit_bound": true,
-    "text_free_trace_bundle_bound": true,
-    "public_fitting_and_nli_paths_bound": true,
+    "empirical_contribution_sharpened": true,
+    "hgb_only_nonadvancement_retained": true,
+    "effective_fit_counts_reported": {
+      "eligible": 2572,
+      "positive": 557,
+      "negative": 2015
+    },
+    "effective_calibration_counts_reported": {
+      "eligible": 630,
+      "positive": 132,
+      "negative": 498
+    },
+    "learned_parameter_counts_reported": {
+      "ROA-FULL": 28,
+      "ROA-NOGBV": 26,
+      "HGB_GBV_R": 10,
+      "HGB_ONLY_R": 8,
+      "GBV_ONLY_R": 8
+    },
+    "exact_current_head_refit_public": true,
     "point_estimates_publicly_reconstructed_exactly": true,
     "full_20000_draw_bootstrap_publicly_reconstructed_exactly": true,
-    "scientific_results_changed_by_r5_revision": false
+    "scientific_results_changed_by_r6_revision": false
   },
   "mechanical_verification": {
-    "receipt": "paper/JIIS_R5_REPRODUCIBILITY_VERIFICATION.json",
-    "decision": "PASS_JIIS_R5_PUBLIC_STATISTICAL_REPRODUCIBILITY",
-    "check_count": 90,
+    "receipt": "paper/JIIS_R6_MAJOR_REVISION_VERIFICATION.json",
+    "decision": "PASS_JIIS_R6_MAJOR_REVISION",
+    "check_count": 32,
     "all_fonts_embedded": true,
     "type_3_fonts": 0,
     "repository_links": 3
   },
-  "usage": "Use R5 as the current JIIS manuscript-review baseline. It preserves the designated R3 scientific results and upgrades the public release from aggregate verification to exact trace-level statistical reconstruction.",
+  "response_to_reviewer": "paper/JIIS_R6_RESPONSE_TO_REVIEWER.md",
+  "usage": "Use R6 as the current JIIS manuscript-review baseline. It addresses the supplied major-revision comments and upgrades the public release to exact current-head refitting plus full statistical reconstruction.",
   "supersedes_for_current_review": [
+    "output/pdf/JIIS_Manuscript_R5_Reproducible.pdf",
     "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
     "paper/source_reference/JIIS_Manuscript_R3.pdf",
     "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",

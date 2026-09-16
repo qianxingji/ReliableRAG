@@ -41,7 +41,11 @@ def main() -> int:
     checks: list[str] = []
 
     require(
-        receipt["decision"] in {"AUTHOR_DESIGNATED_LATEST_MANUSCRIPT", "AUTHOR_REQUESTED_REPRODUCIBILITY_UPGRADE"},
+        receipt["decision"] in {
+            "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
+            "AUTHOR_REQUESTED_REPRODUCIBILITY_UPGRADE",
+            "JIIS_REVIEWER_MAJOR_REVISION_COMPLETED",
+        },
         "receipt records the author's latest-manuscript decision",
         checks,
     )
