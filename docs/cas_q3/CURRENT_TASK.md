@@ -431,8 +431,18 @@ two frozen deterministic context-window failures. The validator loads no model,
 reconstructs every token batch and float64 softmax, and proves exact logit-file
 coverage. Eight new contract tests and the complete 145-test Mistral suite pass.
 Mistral/BGE loads, Gold, outcomes, fitting and tuning remain forbidden. This
-stage is blocked on accepted test HGB; the common test prelabel freeze is now the
-remaining label-blind scoring implementation gap.
+stage is blocked on accepted test HGB.
+
+The common test prelabel producer and independent validator are now implemented
+but have not run. They require independently accepted test HGB and GbV, bind the
+complete authenticated test trace/pool/retrieval/input-freeze chain, and merge
+all 18,000 rows into one common eligibility mask for `HGB_GBV_R`, `HGB_ONLY_R`
+and `GBV_ONLY_R`. The validator independently reconstructs every row without
+importing the producer. Seven focused tests and the complete 152-test Mistral
+suite pass. No model was loaded, no fit or tuning was performed, and no project
+Gold, test Gold or test outcome was read. The label-blind test scoring/action
+implementation chain is now complete; execution remains blocked on the accepted
+development chain and sequential acceptance of every formal test predecessor.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique

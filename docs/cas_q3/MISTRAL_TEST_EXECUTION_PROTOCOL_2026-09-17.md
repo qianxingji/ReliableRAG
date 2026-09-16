@@ -2,15 +2,15 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_TEST_ACQUISITION_WITNESS_ANSWER_SEMANTICS_HGB_AND_GBV_IMPLEMENTED_PRELABEL_OPEN`.
+Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_TEST_LABEL_BLIND_CHAIN_IMPLEMENTED_PRELABEL_PENDING_EXECUTION`.
 This document fixes the one-time Mistral test route prospectively. The pure
 analysis kernel, label-blind action seal, numeric-only outcome executor, formal
 20,000-draw analysis executor and their independent audit paths are implemented
 on invented rows. The test `a0_query`, repair, `a1_likelihood` and witness replay
 executors plus their no-model validators are also implemented. The first neural
 scoring stage, BGE answer semantics, its tokenizer-only validator, the fixed HGB
-transfer, paired GbV and their independent audits are now implemented but have
-not run. The common test prelabel freeze remains open. This document neither
+transfer, paired GbV, common prelabel freeze and their independent audits are
+now implemented but have not run. This document neither
 opens test outcomes nor authorizes test execution.
 Formal test
 acquisition may start only after the complete development chain, selected models
@@ -154,7 +154,17 @@ little-endian FP32 bytes. The validator loads only the tokenizer and independent
 reconstructs all premise/hypothesis chunks, token fields, float64 softmax values,
 branch maxima and margins. Only the two frozen deterministic context-window
 errors can force Keep; all other failures fail closed. Formal GbV output does
-not exist, and the common test prelabel code remains open.
+not exist.
+
+The common test prelabel producer and independent validator are implemented.
+They require accepted HGB and GbV validations, reconstruct all 18,000 test
+identities, and emit the same eligibility mask and ordered feature vectors for
+`HGB_GBV_R`, `HGB_ONLY_R` and `GBV_ONLY_R`. The freeze recursively binds the
+test trace, pool, retrieval, native-runtime tests, input freeze, both complete
+signal stages and their acceptance records. It loads no model, performs no fit
+or tuning, and forbids project Gold, test Gold and test outcomes. The validator
+independently reconstructs every row without importing the producer. Formal
+prelabel output does not exist.
 
 For each recipe and method, sort eligible rows by descending calibrated recovery
 probability and then ascending `(dataset, retriever, sample_id)`. Select exactly
