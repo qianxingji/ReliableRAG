@@ -168,6 +168,17 @@ passes four additional durable-recovery and compaction tests (21 focused tests
 total). The stage executor and independent validator remain to be implemented
 and accepted before any formal call is allowed.
 
+The formal `a0_query` executor and full-source independent validator are now
+implemented. The executor pins the accepted Qwen runtime/pool/retrieval
+manifests, Mistral input freeze and all 14 model assets; it produces fsynced
+compact receipts for exactly 27,000 operations and supports exact-hash resume.
+The validator imports neither the producer nor adapter, loads no model, and
+reconstructs every question/evidence prompt, token sequence, parser result,
+journal hash and frozen input identity from the original sources. Three new
+stage tests and all prior focused tests pass (24 total). A formal run has not
+yet started; it must start only from the committed clean tree and remains
+development-only with zero Gold, fit and test access.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

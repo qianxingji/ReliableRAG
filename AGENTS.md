@@ -79,6 +79,14 @@ semantics and 18-position replay are now frozen in
 no-model common layer passes four recovery/compaction tests. Do not launch a
 formal stage until the stage executor and independent validator are also
 committed and pass their invented/static tests.
+The `a0_query` stage executor and full-source no-model validator are now
+implemented in `scripts/run_mistral_development_a0_query.py` and
+`scripts/validate_mistral_development_a0_query.py`. Three stage-specific plus
+21 prior focused tests pass. The validator independently rebuilds all prompts
+from the accepted original sources and does not import the producer/adapter.
+After these files are committed from a clean tree, the single formal
+development `a0_query` stage may start in a new namespace. It remains zero Gold,
+zero fit and zero test.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
