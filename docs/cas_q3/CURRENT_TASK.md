@@ -333,8 +333,21 @@ and numeric-outcome stages, the producer will save all 20,000 dataset-stratified
 question multiplicities and draw receipts, point estimates and four-endpoint
 intervals. The validator reconstructs every RNG draw and explicit-copy top-K
 allocation without importing the producer arithmetic. Nine focused tests and
-the complete 98-test Mistral suite pass. No production draw or test outcome has
-been read; acquisition, neural scoring and numeric-outcome executors remain open.
+the then-complete 98-test Mistral suite pass. No production draw or test outcome
+has been read.
+
+The numeric-only test-outcome producer and independent validator are now
+implemented in `scripts/run_mistral_test_outcomes.py` and
+`scripts/validate_mistral_test_outcomes.py`. Before any test Gold access, both
+paths require the accepted 18,000-row action seal and independently accepted
+test `a0_query` and `a1_likelihood` answer receipts. The producer then writes
+exactly 18,000 rows with only identity plus `a0_em`, `a1_em`, `a0_f1` and
+`a1_f1`; the validator separately rereads authenticated Gold and recomputes all
+72,000 metric values without importing the producer. Raw references are never
+written, and failure text is withheld after Gold access. Nine focused tests and
+the complete 107-test Mistral suite pass on invented fixtures. The test
+acquisition and neural-scoring predecessors do not exist, so no formal outcome
+namespace was created and test Gold remains closed.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
