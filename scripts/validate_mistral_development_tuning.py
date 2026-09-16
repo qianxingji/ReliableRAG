@@ -388,6 +388,27 @@ def validate_manifest(namespace: Path) -> None:
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
 
 
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    require(value["status"] == "PASS" and value["exact_recursive_coverage"] is True,
+            "CURRENT_MANIFEST_STATUS")
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
 def read_canonical_events(path: Path) -> list[dict]:
     rows = []
     with path.open("rb") as handle:
@@ -514,9 +535,29 @@ def main() -> int:
     prelabel_validation = root / "prelabel_validation/VALIDATION.json"
     outcomes_validation = root / "development_outcomes_validation/VALIDATION.json"
     input_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(prelabel_validation.resolve() in input_paths
-            and outcomes_validation.resolve() in input_paths,
-            "FROZEN_ACCEPTANCE_INPUTS")
+    required_inputs = {
+        *current_manifest_member_paths(
+            prelabel, sha256(prelabel / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            outcomes_path, sha256(outcomes_path / "SHA256_MANIFEST.json"),
+        ),
+        prelabel_validation.resolve(),
+        outcomes_validation.resolve(),
+        (REPO / "scripts/run_mistral_development_tuning.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "src/arbitration/reader_development_tuning.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/validate_mistral_development_a0_query.py").resolve(),
+        (REPO / "src/arbitration/empirical_contract.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_TUNING_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
     validate_manifest(prelabel); validate_manifest(outcomes_path)
     prelabel_acceptance = json.loads(prelabel_validation.read_text(encoding="utf-8"))
     outcome_acceptance = json.loads(outcomes_validation.read_text(encoding="utf-8"))

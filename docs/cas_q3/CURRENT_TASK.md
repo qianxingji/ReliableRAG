@@ -313,9 +313,13 @@ reconstructs folds, preprocessing, all CV fits, pooled log losses, tie-breaking,
 selected refits, fixed-reference heads and Platt fits, adding 84 audit refits
 rather than a second selection search. A complete
 three-method synthetic replay shows agreement within the fixed `1e-10` numerical
-tolerance. Six focused tests and the complete 81-test Mistral suite pass. Test
-access and action-budget tuning remain forbidden. This stage is blocked on
-independent development-outcome acceptance and has performed no scientific fit.
+tolerance. A prospective input-graph amendment now freezes every member of both
+accepted predecessor namespaces plus both independent validation receipts and
+the complete direct control set. The validator reconstructs that set and
+requires exact equality before refitting. Eight focused tests and the complete
+170-test Mistral suite pass. Test access and action-budget tuning remain
+forbidden. This stage is blocked on independent development-outcome acceptance
+and has performed no scientific fit.
 
 The one-time Mistral test route is now prospectively frozen in
 `MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md`. It binds the exact 6,000-question

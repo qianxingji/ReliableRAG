@@ -1503,11 +1503,11 @@
   "mistral_development_outcomes_suite_tests": 168,
   "mistral_development_outcomes_status": "IMPLEMENTED_BLOCKED_ON_PRELABEL_ACCEPTANCE",
   "mistral_development_tuning_executor": "scripts/run_mistral_development_tuning.py",
-  "mistral_development_tuning_executor_sha256": "dfb1cd2055fc9a73bf2360ae2039c2e03113078ff52a11f0f5c9e0961a1f3cdb",
+  "mistral_development_tuning_executor_sha256": "6bd02d7f6fc33ae602f436db55ad6d4cc51bcde1ee2d5b8b18a6f096004cc6be",
   "mistral_development_tuning_validator": "scripts/validate_mistral_development_tuning.py",
-  "mistral_development_tuning_validator_sha256": "e74f0cb726060b27dbdd4de0ea0b8da34207735dec2cb67bc3b7c4a1b6f2ff9e",
+  "mistral_development_tuning_validator_sha256": "322f816b96229a7c1e7019ab29c19aede37dbc1fec698ed863788a7662054eb9",
   "mistral_development_tuning_tests": "tests/test_mistral_development_tuning_contract.py",
-  "mistral_development_tuning_tests_sha256": "b0f56d361e91f8e74e88140dabe987bfc0a5afc42347b20bfdb127a918fedbf3",
+  "mistral_development_tuning_tests_sha256": "00081363ba93faac3ce4c5baeef6fdf46cc87ee47876b25dcd506484fe5b56f9",
   "mistral_development_tuning_methods": [
     "HGB_GBV_R",
     "HGB_ONLY_R",
@@ -1520,9 +1520,9 @@
   "mistral_development_tuning_expected_fit_attempts": 84,
   "mistral_development_tuning_expected_event_rows": 168,
   "mistral_development_tuning_independent_numeric_tolerance": 1e-10,
-  "mistral_development_tuning_focused_tests": 6,
-  "mistral_development_tuning_suite_tests": 81,
-  "mistral_development_tuning_status": "IMPLEMENTED_BLOCKED_ON_DEVELOPMENT_OUTCOME_ACCEPTANCE",
+  "mistral_development_tuning_focused_tests": 8,
+  "mistral_development_tuning_suite_tests": 170,
+  "mistral_development_tuning_status": "PROSPECTIVELY_HARDENED_BLOCKED_ON_DEVELOPMENT_OUTCOME_ACCEPTANCE",
   "mistral_development_tuning_validator_refit_attempts": 84,
   "mistral_development_tuning_combined_producer_validator_fit_attempts": 168,
   "mistral_test_outcomes_executor": "scripts/run_mistral_test_outcomes.py",
@@ -1778,5 +1778,9 @@
   "mistral_development_outcomes_authenticated_original_paths": 785,
   "mistral_development_outcomes_authenticated_pyarrow_files": 770,
   "mistral_development_outcomes_input_graph_equality": "EXACT_REQUIRED_BEFORE_INDEPENDENT_GOLD_REREAD",
-  "mistral_development_outcomes_input_graph_status": "PROSPECTIVELY_HARDENED_BEFORE_GOLD_ACCESS"
+  "mistral_development_outcomes_input_graph_status": "PROSPECTIVELY_HARDENED_BEFORE_GOLD_ACCESS",
+  "mistral_development_tuning_input_graph_amendment": "docs/cas_q3/MISTRAL_DEVELOPMENT_TUNING_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
+  "mistral_development_tuning_input_graph_amendment_sha256": "d8621a3d89b4512d4520c01937a51e44c1608ef127dff7dbebe708dcb41fcf77",
+  "mistral_development_tuning_input_graph_equality": "EXACT_REQUIRED_BEFORE_INDEPENDENT_AUDIT_REFIT",
+  "mistral_development_tuning_input_graph_status": "PROSPECTIVELY_HARDENED_BEFORE_SCIENTIFIC_FIT"
 }

@@ -211,18 +211,28 @@ def main() -> int:
         require(all(name not in sys.modules for name in ("torch", "transformers")),
                 "NEURAL_RUNTIME_ALREADY_LOADED")
         input_paths = [
-            prelabel / "SHA256_MANIFEST.json", prelabel_validation,
-            outcomes / "SHA256_MANIFEST.json", outcomes_validation,
+            *verify_manifest(
+                prelabel, sha256(prelabel / "SHA256_MANIFEST.json"),
+            ),
+            prelabel_validation,
+            *verify_manifest(
+                outcomes, sha256(outcomes / "SHA256_MANIFEST.json"),
+            ),
+            outcomes_validation,
             Path(__file__), REPO / "scripts/validate_mistral_development_tuning.py",
             REPO / "src/arbitration/reader_development_tuning.py",
             REPO / "scripts/mistral_development_acquisition_common.py",
+            REPO / "scripts/mistral_development_scoring_common.py",
+            REPO / "scripts/validate_mistral_development_a0_query.py",
+            REPO / "src/arbitration/empirical_contract.py",
+            REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md",
             REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_TUNING_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             Path(sys.executable),
         ]
-        input_records = [record(path) for path in input_paths]
-        require(len({item["path"] for item in input_records}) == len(input_records),
-                "UNIQUE_TUNING_INPUTS")
+        unique_paths = sorted({path.resolve() for path in input_paths}, key=str)
+        input_records = [record(path) for path in unique_paths]
         threadpools = threadpool_info()
         packages = {name: importlib.metadata.version(name) for name in
                     ("numpy", "scipy", "scikit-learn", "threadpoolctl")}
