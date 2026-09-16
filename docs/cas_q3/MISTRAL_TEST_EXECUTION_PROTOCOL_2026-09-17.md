@@ -2,12 +2,14 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_IMPLEMENTED_ACQUISITION_SCORING_OPEN`.
+Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_AND_TEST_A0_IMPLEMENTED_REPAIR_A1_SCORING_OPEN`.
 This document fixes the one-time Mistral test route prospectively. The pure
 analysis kernel, label-blind action seal, numeric-only outcome executor, formal
 20,000-draw analysis executor and their independent audit paths are implemented
-on invented rows; test acquisition and neural scoring are not. This document
-neither opens test outcomes nor authorizes test execution. Formal test
+on invented rows. The test `a0_query` executor and tokenizer-only full-source
+validator are also implemented; repair, `a1_likelihood`, witness replay and
+neural scoring are not. This document neither opens test outcomes nor authorizes
+test execution. Formal test
 acquisition may start only after the complete development chain, selected models
 and fixed reference models pass their producer, independent-validator and client
 gates.
@@ -78,6 +80,14 @@ token limits, parser, retrieval settings, likelihood semantics and deterministic
 environment are identical to accepted development. There is no fallback reader,
 prompt, quantization or retry seed. Durable intent/result journaling, exact-hash
 resume and failure preservation follow the accepted development contract.
+
+The implemented test `a0_query` executor binds the authenticated 18,000-row
+test trace, candidate-pool and input-freeze manifests, reconstructs the frozen
+question and ordered five-document evidence directly from label-blind sources,
+and uses the same GPU mutex as development acquisition. Its independent
+validator imports no neural reader and reconstructs all 36,000 prompts and
+receipts with the tokenizer only. The formal namespace has not been created and
+this implementation statement is not an execution result.
 
 ## Label-blind scoring and action seal
 
@@ -165,7 +175,7 @@ benchmark cohort rather than an independent new-question confirmation.
 
 - P0: this prospective contract is frozen; development acquisition and all
   ordered acceptances remain incomplete.
-- P1: implement the remaining test acquisition and scoring executors without
+- P1: implement test repair, `a1_likelihood`, witness replay and scoring without
   opening outcomes, then execute the full frozen chain once after the complete
   development gate passes.
 - P2: update the manuscript, supplement and public numeric reproduction package

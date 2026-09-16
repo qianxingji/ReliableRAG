@@ -349,6 +349,18 @@ the complete 107-test Mistral suite pass on invented fixtures. The test
 acquisition and neural-scoring predecessors do not exist, so no formal outcome
 namespace was created and test Gold remains closed.
 
+The first test-acquisition component is now implemented in
+`scripts/run_mistral_test_a0_query.py`, with a separate tokenizer-only audit in
+`scripts/validate_mistral_test_a0_query.py`. It binds the authenticated test
+trace, candidate-pool and Mistral input-freeze manifests; reconstructs all
+18,000 label-blind questions and ordered five-document evidence sets directly;
+and plans exactly 36,000 durable `a0`/repair-query generations under the same
+GPU mutex and resume semantics as development. A real no-model source smoke
+reconstructed all 18,000 frozen traces and 6,000 groups without Gold access.
+Six focused tests and the complete 113-test Mistral suite pass. The executor has
+not run, and repair retrieval, `a1_likelihood`, witness replay and test neural
+scoring remain to be implemented.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
