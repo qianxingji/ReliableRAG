@@ -126,6 +126,16 @@ gate is one invented-only exact-model adapter execution and an independent
 no-model witness validator. Formal 13,500-trace development generation, Gold
 access and scientific fitting have not started.
 
+The first invented adapter launch failed before model construction at
+`torch.cuda.reset_peak_memory_stats(0)`: this Windows/PyTorch process had not
+initialized the concrete integer CUDA device. Its namespace and external
+start/failure log are preserved, with zero project rows, model calls, Gold and
+fits. The committed V2 amendment adds only
+`torch.cuda.get_device_properties(0)` plus the accepted GPU identity check
+before the reset. V2 must use a fresh namespace/log and still precedes any
+formal development execution. Read
+`MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_V1_FAILURE_AND_V2_AMENDMENT_2026-09-17.md`.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

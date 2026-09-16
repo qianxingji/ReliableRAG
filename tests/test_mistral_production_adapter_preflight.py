@@ -39,6 +39,13 @@ class MistralProductionAdapterPreflightTests(unittest.TestCase):
         self.assertNotIn("outputs/daa", source)
         self.assertNotIn("Gold", source)
 
+    def test_cuda_context_is_initialized_before_peak_reset(self):
+        source = (REPO / "scripts/preflight_mistral_production_adapter.py").read_text(encoding="utf-8")
+        self.assertLess(
+            source.index("torch.cuda.get_device_properties(0)"),
+            source.index("torch.cuda.reset_peak_memory_stats(0)"),
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

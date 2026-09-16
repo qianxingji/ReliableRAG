@@ -55,6 +55,12 @@ formal development generation until the exact-model invented adapter producer
 and independent witness validator pass. Completed journal keys may never be
 regenerated; an interrupted final intent may be reissued only with its exact
 operation/key/input hash and a durable recovery event.
+The V1 invented adapter preflight then failed before model construction because
+PyTorch rejected peak-stat reset on an uninitialized integer CUDA device. Read
+`docs/cas_q3/MISTRAL_PRODUCTION_ADAPTER_PREFLIGHT_V1_FAILURE_AND_V2_AMENDMENT_2026-09-17.md`.
+Preserve V1. V2 is authorized only with an explicit device-properties query
+before the reset, using a fresh namespace and attempt log; all scientific and
+model controls remain unchanged.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate

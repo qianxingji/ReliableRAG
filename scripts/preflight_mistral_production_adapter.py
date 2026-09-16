@@ -158,6 +158,11 @@ def main() -> int:
 
         versions = {name: importlib.metadata.version(name) for name in EXPECTED_VERSIONS}
         require(versions == EXPECTED_VERSIONS, "VERSION_SET")
+        # On this Windows/PyTorch build, reset_peak_memory_stats(0) rejects the
+        # integer device until a concrete CUDA device has been initialized.
+        # Querying its properties is metadata-only and precedes every model load.
+        device_properties = torch.cuda.get_device_properties(0)
+        require(device_properties.name == "NVIDIA GeForce RTX 5060 Ti", "GPU_IDENTITY")
         torch.cuda.empty_cache()
         torch.cuda.reset_peak_memory_stats(0)
         gpu_free_before, gpu_total = (int(value) for value in torch.cuda.mem_get_info(0))
@@ -262,6 +267,7 @@ def main() -> int:
             "receipts": record(receipt_path), "journal": record(output / "CALL_JOURNAL.jsonl"),
             "resources": {
                 "gpu_free_before_bytes": gpu_free_before, "gpu_total_bytes": gpu_total,
+                "gpu_name": device_properties.name,
                 "host_ram_available_before_bytes": ram_before,
                 "gpu_peak_reserved_bytes": peak_reserved, "gpu_peak_allocated_bytes": peak_allocated,
                 "gpu_allocated_after_close_bytes": allocated_after_close,
