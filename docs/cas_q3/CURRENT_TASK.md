@@ -256,6 +256,18 @@ policy-specific eligible row. Seven focused tests and the complete 68-test
 Mistral suite pass. This stage remains blocked on independent GbV acceptance and
 has read no Gold or test value, loaded no model, and performed no fit.
 
+The development-outcome producer and its independent validator are now
+implemented but have not run. They require the independently accepted common
+prelabel freeze before opening Gold, then materialize only the 4,500 selected
+development question labels and emit 13,500 numeric a0/a1 EM/F1 rows with exact
+answer-receipt and prelabel-row bindings. Raw references are never written; the
+failure receipt withholds exception text after Gold access to avoid accidental
+reference leakage. The validator separately rereads the same authenticated
+development references and recomputes normalized EM and token F1 with an
+independent formula. Seven focused tests and the complete 75-test Mistral suite
+pass. This stage remains blocked on independent prelabel acceptance and has read
+no Gold or test value, loaded no model, and performed no fit.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
