@@ -21,6 +21,7 @@ tmp/
 output/pdf/*.aux
 output/pdf/*.out
 outputs/cas_q2/
+outputs/cas_q3/
 data/raw/*
 data/processed/*
 data/indexes/*

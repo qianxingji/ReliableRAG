@@ -86,6 +86,16 @@ row, model or Gold. The failure is preserved externally. The committed
 one module-mode launch with the repository root added to `PYTHONPATH`; scientific
 code and thresholds are unchanged.
 
+The corrected producer and independent reconstruction now both pass. They bind
+31,500 development/test rows and independently reproduce all 63,000 prompt
+tokenizations from the direct accepted Qwen label-free source chain. The maximum
+fixed prompt is a 3,675-token development 2Wiki dense repair-query prompt, with
+4,517 tokens of headroom; no context was truncated and every access counter for
+model, answer, fit and Gold remains zero. Read
+`MISTRAL_READER_INPUT_FREEZE_ACCEPTANCE_2026-09-17.md`. The next gate is an
+invented longest-observed-shape resource preflight and production-adapter/replay
+validation; formal development generation has not started.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
