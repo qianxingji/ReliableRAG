@@ -113,6 +113,19 @@ reconstruct their greedy tokens. Read
 be unloaded before BGE/NLI. Production adapter, journal/resume, compact replay,
 component-sequential scoring and the formal development run remain open.
 
+The production adapter and recovery design is now prospectively frozen in
+`MISTRAL_PRODUCTION_ADAPTER_PROTOCOL_2026-09-17.md`. The implementation at
+`src/arbitration/mistral_reader_runtime.py` fixes CPU-side 8,192-token admission,
+NF4/double-quant/BF16/eager CUDA-only loading, exact parsers, target-preserving
+likelihood truncation, explicit unload, fsync call journals and value-blind
+18-position full-vocabulary witnesses. Four new unit tests plus six accepted
+input/resource tests pass under unittest. Two attempted pytest launches stopped
+before test collection because those Python environments do not include pytest;
+they are engineering launcher records, not scientific failures. The next P0
+gate is one invented-only exact-model adapter execution and an independent
+no-model witness validator. Formal 13,500-trace development generation, Gold
+access and scientific fitting have not started.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

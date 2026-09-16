@@ -45,6 +45,16 @@ once; read
 `docs/cas_q3/MISTRAL_LONGEST_SHAPE_PREFLIGHT_ACCEPTANCE_2026-09-17.md`. Do not
 repeat it. The production runtime must keep Mistral exclusive on GPU and unload
 it before BGE/NLI; concurrent component residency is not accepted.
+The production-adapter, durable recovery, component-sequential execution and
+compact full-vocabulary witness design is now prospectively frozen in
+`docs/cas_q3/MISTRAL_PRODUCTION_ADAPTER_PROTOCOL_2026-09-17.md`. Its static
+implementation has ten passing focused tests when combined with the accepted
+input/resource contracts. The first PATH Python attempts could not import
+pytest and did not enter the tests; the repository uses unittest. Do not start
+formal development generation until the exact-model invented adapter producer
+and independent witness validator pass. Completed journal keys may never be
+regenerated; an interrupted final intent may be reissued only with its exact
+operation/key/input hash and a durable recovery event.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
