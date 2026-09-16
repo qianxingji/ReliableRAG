@@ -1,47 +1,51 @@
 {
-  "schema_version": 2,
-  "decision": "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
+  "schema_version": 3,
+  "decision": "AUTHOR_REQUESTED_REPRODUCIBILITY_UPGRADE",
   "designated_by": "qianxingji",
   "designated_date": "2026-09-16",
-  "registered_utc": "2026-09-16T03:22:38.108904+00:00",
+  "registered_utc": "2026-09-16T04:03:43.963532+00:00",
   "cas_q3_status": "NOT_READY",
-  "authoritative_artifact": "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
+  "authoritative_artifact": "output/pdf/JIIS_Manuscript_R5_Reproducible.pdf",
   "source_artifact": "paper/source_reference/JIIS_Manuscript_R3.pdf",
   "source_filename": "JIIS_Manuscript_R3.pdf",
   "source_sha256": "b01683e3431cd01c62739c66cd6045395f30362234c04f3315458602eebf6c2e",
-  "sha256": "a25f4a2b2e1a6d4fc1c828e632f4258226352e33e7aacfeb3cfe00941d750737",
-  "size_bytes": 1106417,
+  "sha256": "fdb055b765899bc71e3d0258c4e65e3a70a10bccd7bb409e9ac73f32c7f0258b",
+  "size_bytes": 1106812,
   "pages": 21,
   "page_size": "595.276 x 841.89 pts (A4)",
   "pdf_version": "1.7",
   "public_repository": {
     "url": "https://github.com/qianxingji/ReliableRAG-Code",
-    "commit": "a6da7d80aca082301824b320ec4698c0dfac7b12"
+    "commit": "44d22c66c2adbdce8ebc2289844a8b26e6929bd5",
+    "numeric_bundle_sha256": "a930286d62bddf9f4837cb1beb4b863f0f94c1bc697b2311977a9b0eb18f09f7"
   },
   "visual_review": {
     "status": "PASS_ALL_21_PAGES_NO_CLIPPING_OVERLAP_OR_OVERFLOW_OBSERVED",
     "pages_reviewed": 21,
-    "release_text_pages_reviewed_at_full_size": [12, 17, 19, 21]
+    "reproducibility_text_pages_reviewed_at_full_size": [12, 17, 19, 21]
   },
   "content_bindings": {
     "complete_hgb_definition_in_main_text": true,
     "complete_hgb_definition_in_appendix_e": true,
     "appendices_a_through_j_present": true,
     "public_repository_commit_bound": true,
+    "text_free_trace_bundle_bound": true,
     "public_fitting_and_nli_paths_bound": true,
-    "aggregate_results_verified_against_public_json": true,
-    "scientific_results_changed_by_r4_revision": false
+    "point_estimates_publicly_reconstructed_exactly": true,
+    "full_20000_draw_bootstrap_publicly_reconstructed_exactly": true,
+    "scientific_results_changed_by_r5_revision": false
   },
   "mechanical_verification": {
-    "receipt": "paper/JIIS_R4_CODE_ALIGNMENT_VERIFICATION.json",
-    "decision": "PASS_JIIS_R4_CODE_ALIGNMENT",
-    "check_count": 75,
+    "receipt": "paper/JIIS_R5_REPRODUCIBILITY_VERIFICATION.json",
+    "decision": "PASS_JIIS_R5_PUBLIC_STATISTICAL_REPRODUCIBILITY",
+    "check_count": 90,
     "all_fonts_embedded": true,
     "type_3_fonts": 0,
     "repository_links": 3
   },
-  "usage": "Use R4 as the current JIIS manuscript-review baseline. It preserves the author-designated R3 scientific content and updates four release-state paragraphs to bind the public repository accurately.",
+  "usage": "Use R5 as the current JIIS manuscript-review baseline. It preserves the designated R3 scientific results and upgrades the public release from aggregate verification to exact trace-level statistical reconstruction.",
   "supersedes_for_current_review": [
+    "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
     "paper/source_reference/JIIS_Manuscript_R3.pdf",
     "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",
     "output/pdf/manuscript.pdf",

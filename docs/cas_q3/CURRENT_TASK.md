@@ -6,23 +6,24 @@
 
 The author has selected **Journal of Intelligent Information Systems (JIIS)** as
 the current target and designated `JIIS_Manuscript_R3.pdf` as the scientific
-baseline. The code-aligned derivative
-`output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf` is now the latest manuscript.
+baseline. The reproducibility-aligned derivative
+`output/pdf/JIIS_Manuscript_R5_Reproducible.pdf` is now the latest manuscript.
 It binds the clean public repository
 <https://github.com/qianxingji/ReliableRAG-Code> at commit
-`a6da7d80aca082301824b320ec4698c0dfac7b12` and changes no scientific result.
-The 75-check paper/code audit, 20-check latest-artifact audit, seven public unit
-tests, 129 aggregate statement checks, 167 repository checks, full font audit,
-and 21-page visual review pass. See
-`P1_JIIS_R4_CODE_ALIGNMENT_ACCEPTANCE.md` and
-`../../paper/JIIS_R4_CODE_ALIGNMENT_VERIFICATION.json`.
+`44d22c66c2adbdce8ebc2289844a8b26e6929bd5` and changes no scientific result.
+The public text-free 18,000-trace bundle exactly reconstructs all point estimates
+and the full 20,000-draw bootstrap. The 90-check paper/code/data audit, 20-check
+latest-artifact audit, eight public unit tests, 129 aggregate statement checks,
+194 repository checks, full font audit, and 21-page visual review pass. See
+`P1_JIIS_R5_PUBLIC_REPRODUCIBILITY_ACCEPTANCE.md` and
+`../../paper/JIIS_R5_REPRODUCIBILITY_VERIFICATION.json`.
 
 The older Applied Intelligence route records below remain historical evidence;
 they do not override the later JIIS target selection. Remaining work is a
 JIIS-specific scientific/editorial audit and the required Astra xhigh final
-Claim-sufficiency and Submission Ready acceptance. The public release boundary
-still prevents independent per-question top-K/bootstrap reconstruction and
-end-to-end neural regeneration.
+Claim-sufficiency and Submission Ready acceptance. Public per-question numeric
+selection/bootstrap reconstruction is now closed; end-to-end retrieval,
+generation, neural scoring, and head refitting remain outside the release.
 
 The user's 2026-09-13 steering is to continue this work as a **conditional CAS
 Q3 empirical study**. This authorizes target-neutral editorial and packaging

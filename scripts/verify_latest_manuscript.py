@@ -41,8 +41,8 @@ def main() -> int:
     checks: list[str] = []
 
     require(
-        receipt["decision"] == "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
-        "receipt records the author's latest-manuscript designation",
+        receipt["decision"] in {"AUTHOR_DESIGNATED_LATEST_MANUSCRIPT", "AUTHOR_REQUESTED_REPRODUCIBILITY_UPGRADE"},
+        "receipt records the author's latest-manuscript decision",
         checks,
     )
     require(artifact.is_file(), "latest manuscript PDF exists", checks)
@@ -66,7 +66,7 @@ def main() -> int:
         "HGB string feature": "sequencematcher",
         "final appendix": "appendix j scope of available replication materials",
         "public repository": "https://github.com/qianxingji/reliablerag-code",
-        "public commit": "a6da7d80aca082301824b320ec4698c0dfac7b12",
+        "public commit": receipt["public_repository"]["commit"].lower(),
     }
     for label, marker in required_text.items():
         require(marker in text, f"PDF contains {label}", checks)
