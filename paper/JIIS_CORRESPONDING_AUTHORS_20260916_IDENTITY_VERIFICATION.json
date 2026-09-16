@@ -1,0 +1,33 @@
+{
+  "decision": "PASS_LATEST_MANUSCRIPT_IDENTITY_AND_MECHANICAL_CHECKS",
+  "check_count": 24,
+  "artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf",
+  "sha256": "968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179",
+  "pages": 22,
+  "checks": [
+    "receipt records the author's latest-manuscript decision",
+    "latest manuscript PDF exists",
+    "PDF byte count matches",
+    "PDF SHA-256 matches",
+    "PDF page count matches the receipt",
+    "PDF uses the recorded page size",
+    "PDF is not encrypted",
+    "PDF contains title",
+    "PDF contains references",
+    "PDF contains appendix start",
+    "PDF contains HGB appendix",
+    "PDF contains HGB estimator",
+    "PDF contains HGB string feature",
+    "PDF contains final appendix",
+    "PDF contains public repository",
+    "PDF contains public commit",
+    "PDF contains author Zhigang Xu",
+    "PDF contains author Xingji Qian",
+    "PDF contains author Xinhua Dong",
+    "PDF contains ordered corresponding author 1",
+    "PDF contains ordered corresponding author 2",
+    "PDF contains font records",
+    "all PDF fonts are embedded",
+    "PDF contains no Type 3 fonts"
+  ]
+}

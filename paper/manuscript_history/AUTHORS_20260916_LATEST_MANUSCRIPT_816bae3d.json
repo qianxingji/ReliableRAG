@@ -1,24 +1,24 @@
 {
-  "schema_version": 8,
+  "schema_version": 7,
   "decision": "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
   "designated_by": "qianxingji",
   "designated_date": "2026-09-16",
-  "registered_utc": "2026-09-16T09:16:14.3906929Z",
+  "registered_utc": "2026-09-16T09:10:51.9379606Z",
   "cas_q3_status": "NOT_READY",
-  "authoritative_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf",
+  "authoritative_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
   "source_filename": "JIIS_Revised_Manuscript(1) (1).pdf",
   "source_sha256": "755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb",
-  "sha256": "968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179",
-  "size_bytes": 1158934,
+  "sha256": "816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3",
+  "size_bytes": 1153142,
   "pages": 22,
   "page_size": "595.276 x 841.89 pts (A4)",
   "pdf_version": "1.7",
   "preservation": {
-    "mode": "ORDERED_CORRESPONDING_AUTHORS_ONLY_PDF_DERIVATIVE",
+    "mode": "AUTHOR_AFFILIATION_CONTACT_ONLY_PDF_DERIVATIVE",
     "source_unchanged": true,
-    "previous_latest_receipt": "paper/manuscript_history/AUTHORS_20260916_LATEST_MANUSCRIPT_816bae3d.json",
-    "previous_latest_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
-    "previous_latest_sha256": "816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3"
+    "previous_latest_receipt": "paper/manuscript_history/RETITLED_20260916_LATEST_MANUSCRIPT_37d05cb6.json",
+    "previous_latest_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf",
+    "previous_latest_sha256": "37d05cb6a9c2825b1a5aa9574f7d7b66e6421e4c573205562a3c5168b4817d1a"
   },
   "public_repository": {
     "url": "https://github.com/qianxingji/ReliableRAG-Code",
@@ -31,7 +31,7 @@
     }
   },
   "visual_review": {
-    "status": "PAGE_1_CORRESPONDING_AUTHOR_ORDER_VISUALLY_CHECKED_BODY_AND_PAGES_2_TO_22_RENDER_IDENTICAL",
+    "status": "PAGE_1_AUTHOR_BLOCK_VISUALLY_CHECKED_BODY_AND_PAGES_2_TO_22_RENDER_IDENTICAL",
     "pages_reviewed": [
       1
     ],
@@ -45,16 +45,15 @@
     "prior_response_letter_rebound": false
   },
   "mechanical_verification": {
-    "receipt": "paper/JIIS_CORRESPONDING_AUTHORS_20260916_IDENTITY_VERIFICATION.json",
+    "receipt": "paper/JIIS_AUTHORS_20260916_IDENTITY_VERIFICATION.json",
     "status": "PASS_LATEST_MANUSCRIPT_IDENTITY_AND_MECHANICAL_CHECKS",
-    "check_count": 24,
+    "check_count": 22,
     "all_fonts_embedded": true,
     "type_3_fonts": 0,
     "repository_links": 4
   },
-  "usage": "Use this ordered-corresponding-author revision as the latest manuscript. The 22-page scientific body is unchanged; scientific acceptance and R6 response rebinding remain pending.",
+  "usage": "Use this author-information revision as the latest manuscript. The 22-page scientific body is unchanged; scientific acceptance and R6 response rebinding remain pending.",
   "supersedes_for_current_review": [
-    "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
     "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf",
     "output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf",
     "output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf",
@@ -66,7 +65,7 @@
     "output/pdf/supplement.pdf"
   ],
   "title": "Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements",
-  "revision_reason": "AUTHOR_REQUESTED_ORDERED_CORRESPONDING_AUTHORS",
+  "revision_reason": "AUTHOR_REQUESTED_AUTHOR_AFFILIATION_CONTACT_UPDATE",
   "editorial_verification": "paper/JIIS_REVISED_20260916_TITLE_VERIFICATION.json",
   "author_information_verification": "paper/JIIS_REVISED_20260916_AUTHOR_INFORMATION_VERIFICATION.json",
   "authors": [
@@ -79,19 +78,5 @@
     "Xingji Qian": "102511283@hbut.edu.cn",
     "Xinhua Dong": "xhdong@hbut.edu.cn"
   },
-  "corresponding_author_verification": "paper/JIIS_REVISED_20260916_CORRESPONDING_AUTHOR_VERIFICATION.json",
-  "corresponding_authors_in_order": [
-    {
-      "order": 1,
-      "label": "1st",
-      "name": "Xinhua Dong",
-      "email": "xhdong@hbut.edu.cn"
-    },
-    {
-      "order": 2,
-      "label": "2nd",
-      "name": "Xingji Qian",
-      "email": "102511283@hbut.edu.cn"
-    }
-  ]
+  "corresponding_author_marker": "NOT_ADDED_USER_DID_NOT_SPECIFY_IN_THIS_UPDATE"
 }

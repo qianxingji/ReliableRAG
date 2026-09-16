@@ -8,16 +8,16 @@ The current target is **Journal of Intelligent Information Systems (JIIS)**.
 The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest source
 and then requested the title **Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements**.
 The current 22-page PDF is
-`output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf`, SHA-256
-`816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3`.
+`output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf`, SHA-256
+`968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179`.
 Its first page records Zhigang Xu, Xingji Qian, and Xinhua Dong; Hubei University
-of Technology, Wuhan, 430068, Hubei, China; and the supplied Xingji Qian and
-Xinhua Dong email addresses. No corresponding-author marker was inferred. The
-scientific body and all remaining pages have identical text and rendering to the
-retitled source. Use this author-information revision as the current baseline.
-`paper/LATEST_MANUSCRIPT.json` records the artifact. The original supplied PDF,
-R3--R6, the title-only revision, and prior receipts remain preserved. The edit
-verification is `paper/JIIS_REVISED_20260916_AUTHOR_INFORMATION_VERIFICATION.json`.
+of Technology, Wuhan, 430068, Hubei, China; Xinhua Dong as first corresponding
+author (`xhdong@hbut.edu.cn`); and Xingji Qian as second corresponding author
+(`102511283@hbut.edu.cn`). The scientific body and all remaining pages have
+identical text and rendering to the preceding revision. Use this ordered-
+corresponding-author revision as the current baseline. `paper/LATEST_MANUSCRIPT.json`
+records the artifact. All prior PDFs and receipts remain preserved. Verification
+is `paper/JIIS_REVISED_20260916_CORRESPONDING_AUTHOR_VERIFICATION.json`.
 
 The new manuscript cites the clean public repository
 <https://github.com/qianxingji/ReliableRAG-Code> at commit

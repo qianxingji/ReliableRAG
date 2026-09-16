@@ -77,6 +77,16 @@ def main() -> int:
         require(marker in text, f"PDF contains {label}", checks)
     for author in receipt.get("authors", ["qianxingji"]):
         require(author.lower() in text, f"PDF contains author {author}", checks)
+    for corresponding in receipt.get("corresponding_authors_in_order", []):
+        marker = (
+            f"{corresponding['label']} corresponding author: "
+            f"{corresponding['name']} ({corresponding['email']})"
+        ).lower()
+        require(
+            marker in text,
+            f"PDF contains ordered corresponding author {corresponding['order']}",
+            checks,
+        )
 
     fonts = run("pdffonts", str(artifact)).splitlines()[2:]
     require(bool(fonts), "PDF contains font records", checks)

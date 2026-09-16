@@ -2,13 +2,15 @@
 
 The latest manuscript is **Selecting Between Original and Repaired RAG Answers:
 A Controlled Study of Accuracy and Harmful Replacements**. The 22-page PDF is
-`output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf`, SHA-256
-`816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3`.
-Its first page lists Zhigang Xu, Xingji Qian, and Xinhua Dong; the supplied HBUT
-address and the two supplied contact emails are included. No corresponding-author
-marker was added because this update did not specify one. The scientific body,
-all other pages, links, and bookmarks match the retitled source. See
-`JIIS_REVISED_20260916_AUTHOR_INFORMATION_VERIFICATION.json`. Final scientific
+`output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf`, SHA-256
+`968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179`.
+Its first page lists Zhigang Xu, Xingji Qian, and Xinhua Dong, and marks both
+Xingji Qian and Xinhua Dong with an asterisk. The correspondence line explicitly
+records Xinhua Dong (`xhdong@hbut.edu.cn`) as first corresponding author and
+Xingji Qian (`102511283@hbut.edu.cn`) as second corresponding author. The
+scientific body, all other pages, links, and bookmarks match the preceding
+author-information revision. See
+`JIIS_REVISED_20260916_CORRESPONDING_AUTHOR_VERIFICATION.json`. Final scientific
 acceptance remains pending; all preceding PDFs and receipts remain archived.
 
 The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest

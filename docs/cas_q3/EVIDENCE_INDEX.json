@@ -4,14 +4,15 @@
   "cas_q3_status": "NOT READY",
   "current_target_journal": "Journal of Intelligent Information Systems",
   "latest_manuscript_receipt": "paper/LATEST_MANUSCRIPT.json",
-  "latest_manuscript": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
-  "latest_manuscript_sha256": "816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3",
+  "latest_manuscript": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf",
+  "latest_manuscript_sha256": "968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179",
   "latest_manuscript_authors": [
     "Zhigang Xu",
     "Xingji Qian",
     "Xinhua Dong"
   ],
   "latest_manuscript_author_information_verification": "paper/JIIS_REVISED_20260916_AUTHOR_INFORMATION_VERIFICATION.json",
+  "latest_manuscript_corresponding_author_verification": "paper/JIIS_REVISED_20260916_CORRESPONDING_AUTHOR_VERIFICATION.json",
   "jiis_r5_public_reproducibility_acceptance": "docs/cas_q3/P1_JIIS_R5_PUBLIC_REPRODUCIBILITY_ACCEPTANCE.md",
   "jiis_r5_public_reproducibility_receipt": "paper/JIIS_R5_REPRODUCIBILITY_VERIFICATION.json",
   "jiis_r5_public_reproducibility_decision": "PASS_JIIS_R5_PUBLIC_STATISTICAL_REPRODUCIBILITY",
@@ -1129,8 +1130,8 @@
   "p0_ghi_hbut_email_draft_sha256": "34ac643f5059436274e6368d3bf3ced758298d79ce5ec6c653173a80acad5b75",
   "p0_ghi_hbut_email_draft_sent": false,
   "p0_ghi_hbut_email_draft_response_received": false,
-  "latest_manuscript_identity_receipt": "paper/JIIS_AUTHORS_20260916_IDENTITY_VERIFICATION.json",
-  "latest_manuscript_scientific_audit": "PENDING_FOR_AUTHOR_INFORMATION_REVISION_816bae3d",
+  "latest_manuscript_identity_receipt": "paper/JIIS_CORRESPONDING_AUTHORS_20260916_IDENTITY_VERIFICATION.json",
+  "latest_manuscript_scientific_audit": "PENDING_FOR_CORRESPONDING_AUTHOR_REVISION_968fde7c",
   "jiis_r6_historical_receipt": "paper/JIIS_R6_MAJOR_REVISION_VERIFICATION.json",
   "latest_manuscript_title": "Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements",
   "latest_manuscript_title_verification": "paper/JIIS_REVISED_20260916_TITLE_VERIFICATION.json"
