@@ -411,6 +411,18 @@ acquisition/witness predecessors. Test HGB, GbV and the common prelabel freeze
 remain the next engineering gaps; no test Gold, outcome, fit or tuning access
 occurred.
 
+The following test HGB-signal stage is now implemented but has not run. It
+reconstructs all 18,000 test E0/E1 evidence pairs from authenticated pool and
+retrieval arrays, applies the exact historical 48-feature state-symmetric HGB
+without refitting, and retains explicit forced-Keep reasons for ineligible
+pairs. Its independent validator uses the separate feature formulas and directly
+recomputes the positive/negative probability symmetry instead of calling the
+producer selector. Five new contract tests pass. Neural loads/forwards, project
+or test Gold, test outcomes, fitting and tuning remain forbidden; the complete
+Mistral suite now passes 137 tests. This stage is
+blocked on accepted test answer semantics; test GbV and common prelabel remain
+the next engineering gaps.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
