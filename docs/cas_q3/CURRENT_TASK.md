@@ -393,8 +393,11 @@ trace, candidate-pool and Mistral input-freeze manifests; reconstructs all
 and plans exactly 36,000 durable `a0`/repair-query generations under the same
 GPU mutex and resume semantics as development. A real no-model source smoke
 reconstructed all 18,000 frozen traces and 6,000 groups without Gold access.
-Six focused tests and the complete 113-test Mistral suite pass. The executor has
-not run; its implemented downstream stages are documented below.
+A prospective input-graph amendment now makes the independent validator rebuild
+the exact direct path set, including all selected source and model files, and
+reject any missing or extra frozen path before tokenizer construction. Eight
+focused tests and the complete 172-test Mistral suite pass. The executor has not
+run; its implemented downstream stages are documented below.
 
 The test repair executor and a separate no-model replay validator are now
 implemented in `scripts/run_mistral_test_repair.py` and

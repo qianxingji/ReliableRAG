@@ -41,14 +41,17 @@ development mutex, preventing concurrent development and test model work.
 neural reader. It independently verifies the manifest and durable journal,
 reconstructs every question and evidence set, tokenizes all 36,000 prompts,
 checks prompt and token hashes, decodes generated token IDs, reruns both parsers,
-and verifies output lengths and finite chosen-token log probabilities. Its
-expected terminal status is
+and verifies output lengths and finite chosen-token log probabilities. A
+prospective amendment additionally requires exact equality between the frozen
+direct input graph and an independently reconstructed set before tokenizer
+construction. Its expected terminal status is
 `PASS_INDEPENDENT_FULL_SOURCE_MISTRAL_TEST_A0_QUERY`.
 
-Six invented-only contract tests cover exact population and operation counts,
+Eight invented-only contract tests cover exact population and operation counts,
 identity and role failures, ordered evidence reconstruction, label-blind source
-pins, shared GPU exclusion, validator independence and canonical hash agreement.
-All six pass. The complete Mistral engineering suite passes 113/113.
+pins, shared GPU exclusion, validator independence, canonical hash agreement,
+exact input-graph closure and unexpected-file rejection. All eight pass. The
+complete Mistral engineering suite passes 172/172.
 
 A separate label-blind source smoke read the real frozen trace, input ledger and
 candidate-pool rows and reconstructed all 18,000 traces, 6,000 question groups

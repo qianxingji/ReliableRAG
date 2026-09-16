@@ -114,6 +114,43 @@ def validate_selected_manifest(
     return [manifest_path.resolve(), *paths]
 
 
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    require(value["status"] == "PASS" and value["exact_recursive_coverage"] is True,
+            "CURRENT_MANIFEST_STATUS")
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
+def asset_member_paths(asset: Path) -> set[Path]:
+    asset = asset.resolve(); manifest_path = asset / "ASSET_MANIFEST.json"
+    require(sha256(manifest_path) == EXPECTED_ASSET_MANIFEST_SHA256,
+            "ASSET_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    require(value["selected_file_count"] == len(value["selected_files"]) == 14,
+            "ASSET_MANIFEST_FILE_COUNT")
+    for item in value["selected_files"]:
+        path = (asset / item["path"]).resolve()
+        require(path.is_relative_to(asset) and path not in members
+                and path.is_file() and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "ASSET_MEMBER")
+        members.add(path)
+    return {manifest_path.resolve(), *members}
+
+
 def validate_journal(rows: list[dict], events: list[dict]) -> None:
     row_map = {row["operation_key"]: row for row in rows}
     require(len(row_map) == len(rows), "UNIQUE_ROWS")
@@ -307,8 +344,7 @@ def main() -> int:
         require(path.is_file() and path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_INPUT")
     input_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(Path(__file__).resolve() in input_paths,
-            "VALIDATOR_FROZEN_AS_INPUT")
+    require(len(input_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
     input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
     frozen_ledger = input_freeze / "INPUT_LENGTHS_PRIVATE.jsonl"
     require(sha256(input_freeze / "SHA256_MANIFEST.json")
@@ -320,17 +356,34 @@ def main() -> int:
     trace_path = preparation / "TRACE_MANIFEST_PRIVATE.jsonl"
     require(sha256(trace_path) == EXPECTED_TEST_TRACE_SHA256,
             "TEST_TRACE_PIN")
-    validate_selected_manifest(
+    preparation_paths = validate_selected_manifest(
         preparation, EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
         ("TRACE_MANIFEST_PRIVATE.jsonl",),
     )
-    validate_selected_manifest(
+    pool_paths = validate_selected_manifest(
         pool_root, EXPECTED_TEST_POOL_MANIFEST_SHA256,
         tuple(f"{folder}/{dataset}.jsonl"
               for folder in ("pools", "runtime") for dataset in DATASETS),
     )
-    require(sha256(asset / "ASSET_MANIFEST.json")
-            == EXPECTED_ASSET_MANIFEST_SHA256, "ASSET_MANIFEST_PIN")
+    required_inputs = {
+        *{path.resolve() for path in preparation_paths},
+        *{path.resolve() for path in pool_paths},
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *asset_member_paths(asset),
+        (REPO / "scripts/run_mistral_test_a0_query.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_reader_input_freeze_common.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_A0_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (original / "prompts/baseline_v1.txt").resolve(),
+        (original / "prompts/repair_missing_v1.txt").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     from transformers import AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained(

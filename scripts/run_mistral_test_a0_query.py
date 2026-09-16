@@ -291,8 +291,10 @@ def main() -> int:
             REPO / "scripts/mistral_reader_input_freeze_common.py",
             REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_TEST_A0_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             original / "prompts/baseline_v1.txt",
             original / "prompts/repair_missing_v1.txt",
+            Path(sys.executable),
         ]
         unique_paths = sorted({Path(path).resolve()
                                for path in [*source_paths, *control_paths]}, key=str)
