@@ -293,6 +293,17 @@ the four primary endpoints and 20,000 dataset-stratified question-cluster draws
 with `default_rng(20260930)` and adjusted quantiles 0.00625/0.99375. This is a
 protocol only: no test generation, score, action, outcome or bootstrap exists.
 
+The result-independent test arithmetic and a non-importing explicit-copy audit
+are now implemented in `scripts/mistral_test_analysis_math.py` and
+`scripts/mistral_test_analysis_independent.py`. They cover the selected and
+fixed-C recipes, exact point estimates, action overlaps, global top-K
+reallocation on every draw, four-endpoint intervals and durable draw replay. The
+first invented-only run exposed an incorrect test assertion that limited
+resampled copies by the number of unique eligible source rows; that assertion
+was corrected because bootstrap multiplicity can repeat one eligible row. No
+analysis code or scientific rule changed. Seven focused tests and the complete
+88-test Mistral suite pass. No benchmark outcome was read.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
