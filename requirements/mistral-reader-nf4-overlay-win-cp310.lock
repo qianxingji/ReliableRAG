@@ -1,0 +1,7 @@
+# Overlay packages only. The preserved base neural environment supplies
+# torch==2.7.1+cu128 and transformers==4.53.2. Install with --no-deps,
+# --require-hashes and an explicit --target directory.
+accelerate==1.8.1 \
+    --hash=sha256:c47b8994498875a2b1286e945bd4d20e476956056c7941d512334f4eb44ff991
+bitsandbytes==0.50.2 \
+    --hash=sha256:c697963c8fda3dcd0d7ebd9b5211ae4067feef7cd06e0350d4e816a434fe683d

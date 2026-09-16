@@ -29,6 +29,16 @@ three-fold dataset-stratified question grouping, and emits no test prediction.
 Four synthetic contract tests pass. No project data were fit and no Mistral
 model was loaded; implementation readiness is not experiment completion.
 
+The bounded NF4 runtime check is also complete. A new isolated overlay supplies
+official-digest-matched Accelerate 1.8.1 and bitsandbytes 0.50.2 while leaving
+the accepted neural environment unchanged. A producer and independent validator
+execute the same deterministic BF16/NF4 CUDA witness on the RTX 5060 Ti and
+match its output SHA-256; 37 independent checks pass. Read
+`MISTRAL_RESOURCE_AND_RUNTIME_PREFLIGHT_DECISION_2026-09-17.md`. This is a
+kernel-only partial PASS: no Mistral asset exists locally, no model was loaded,
+and whole-model memory, tokenizer/semantic, replay and workload contracts remain
+open.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
