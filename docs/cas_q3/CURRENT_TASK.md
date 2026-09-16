@@ -96,6 +96,14 @@ model, answer, fit and Gold remains zero. Read
 invented longest-observed-shape resource preflight and production-adapter/replay
 validation; formal development generation has not started.
 
+The one-load longest-shape resource protocol is now committed in
+`MISTRAL_LONGEST_SHAPE_PREFLIGHT_PROTOCOL_2026-09-17.md`. It uses a fully
+invented `[BOS, INST, repeated token 1000, END_INST]` sequence at exactly 3,675
+tokens and forces 64 greedy decode steps solely to bound memory. It retains the
+same NF4/BF16/eager/CUDA-only model contract and saves full FP32 step scores for
+a no-model validator. Two static contract tests pass; this resource run has not
+yet executed at the prospective-freeze point.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
