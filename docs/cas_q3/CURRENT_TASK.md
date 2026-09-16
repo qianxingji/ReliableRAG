@@ -78,6 +78,14 @@ outcome or Gold access. The independent validator reconstructs every row without
 importing producer/common code. Four static contract tests pass; the unique
 input-freeze namespace has not yet been created at this freeze point.
 
+The first direct-script launch then failed before import/main with
+`ModuleNotFoundError: No module named 'scripts'` because `PYTHONPATH` contained
+only the overlay. It created no namespace and accessed no tokenizer, project
+row, model or Gold. The failure is preserved externally. The committed
+`MISTRAL_READER_INPUT_FREEZE_LAUNCH_AMENDMENT_2026-09-17.md` authorizes exactly
+one module-mode launch with the repository root added to `PYTHONPATH`; scientific
+code and thresholds are unchanged.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

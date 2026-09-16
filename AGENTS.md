@@ -31,6 +31,10 @@ prospectively fixed by
 `docs/cas_q3/MISTRAL_READER_INPUT_FREEZE_PROTOCOL_2026-09-17.md`; it must bind
 directly to accepted Qwen label-free inputs, never Phi artifacts, and remains
 zero-model/zero-Gold.
+The first direct-script launch failed before import/main because its PYTHONPATH
+omitted the repository root. Preserve it and follow only the module-launch
+correction in
+`docs/cas_q3/MISTRAL_READER_INPUT_FREEZE_LAUNCH_AMENDMENT_2026-09-17.md`.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
