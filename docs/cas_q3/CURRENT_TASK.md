@@ -265,8 +265,11 @@ scientific output because the original virtual environment did not itself expose
 SentencePiece. The hash-bound recovery in
 `MISTRAL_GBV_SENTENCEPIECE_DEPENDENCY_RECOVERY_2026-09-17.md` uses the exact
 historical 0.2.1 package copy, validates all 17 package files and provenance,
-and performs no environment installation. Eight focused GbV tests and the complete
-61-test Mistral suite pass. The stage remains blocked on HGB acceptance and has
+and performs no environment installation. A prospective input-graph amendment now binds all
+223 legacy paths, every required predecessor member, 27 exact model/package
+provenance paths and every direct control file; the independent validator
+requires exact path equality. Ten focused GbV tests and the complete 164-test
+Mistral suite pass. The stage remains blocked on HGB acceptance and has
 produced no GbV score, Gold access, fit, test result or NLI model forward.
 
 The common prelabel-freeze producer and an independently implemented validator

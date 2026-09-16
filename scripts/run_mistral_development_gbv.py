@@ -30,9 +30,10 @@ from scripts.mistral_development_scoring_common import (
 )
 from scripts.run_mistral_development_a0_query import (
     EXPECTED_INPUT_FREEZE_MANIFEST_SHA256, EXPECTED_INPUT_LEDGER_SHA256,
+    EXPECTED_POOL_MANIFEST_SHA256, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
     EXPECTED_RUNTIME_MANIFEST_SHA256, acquire_gpu_mutex, load_original_native,
-    validate_manifest_pin,
 )
+from scripts.run_mistral_development_repair import legacy_manifest_member_paths
 from src.arbitration.mistral_reader_runtime import object_sha256, require, text_sha256
 from src.evaluation.answer_normalization import assess_pair_eligibility
 from src.verification.gbv_nli import (
@@ -314,25 +315,58 @@ def main() -> int:
         require(sha256(input_manifest) == EXPECTED_INPUT_FREEZE_MANIFEST_SHA256
                 and sha256(frozen_ledger) == EXPECTED_INPUT_LEDGER_SHA256, "INPUT_FREEZE")
         runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
-        input_records = [
-            validate_manifest_pin(runtime_root / "SHA256_MANIFEST.json", EXPECTED_RUNTIME_MANIFEST_SHA256),
-            record(input_manifest), record(frozen_ledger),
-            record(hgb_stage / "SHA256_MANIFEST.json"), record(hgb_validation),
-            record(root / "a0_query/SHA256_MANIFEST.json"),
-            record(root / "repair/SHA256_MANIFEST.json"),
-            record(root / "a1_likelihood/SHA256_MANIFEST.json"),
-            *asset_records,
+        pool_root = original / "outputs/daa_v2_fresh_v1/pool_freeze"
+        retrieval_root = original / "outputs/daa_v2_fresh_v1/retrieval_freeze"
+        paths = [
+            *legacy_manifest_member_paths(
+                original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+            ),
+            *legacy_manifest_member_paths(
+                original, pool_root, EXPECTED_POOL_MANIFEST_SHA256,
+            ),
+            *legacy_manifest_member_paths(
+                original, retrieval_root, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                hgb_stage, sha256(hgb_stage / "SHA256_MANIFEST.json"),
+            ),
+            hgb_validation,
+            *verify_manifest(
+                root / "a0_query", sha256(root / "a0_query/SHA256_MANIFEST.json"),
+            ),
+            *verify_manifest(
+                root / "repair", sha256(root / "repair/SHA256_MANIFEST.json"),
+            ),
+            *verify_manifest(
+                root / "a1_likelihood",
+                sha256(root / "a1_likelihood/SHA256_MANIFEST.json"),
+            ),
         ]
         controls = [
-            Path(__file__), REPO / "scripts/mistral_development_acquisition_common.py",
+            Path(__file__), REPO / "scripts/validate_mistral_development_gbv.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
             REPO / "scripts/mistral_development_scoring_common.py",
             REPO / "scripts/run_mistral_development_a0_query.py",
+            REPO / "scripts/run_mistral_development_repair.py",
+            REPO / "scripts/empirical_feature_independent.py",
+            REPO / "src/evaluation/__init__.py",
             REPO / "src/evaluation/answer_normalization.py",
+            REPO / "src/verification/__init__.py",
             REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_GBV_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             runtime_root / "runtime_support.py", runtime_root / "native_runtime.py",
             runtime_root / "trace_manifest.jsonl",
         ]
-        input_records += [record(path) for path in controls]
+        records = [record(path) for path in sorted(
+            {Path(path).resolve() for path in [*paths, *controls]}, key=str
+        )]
+        by_path = {item["path"]: item for item in [*records, *asset_records]}
+        require(len(by_path) == len(records) + len(asset_records),
+                "UNIQUE_GBV_INPUTS")
+        input_records = [by_path[path] for path in sorted(by_path)]
         freeze = {
             "status": "FROZEN_BEFORE_MISTRAL_DEVELOPMENT_GBV", "source_commit": commit,
             "stage": "gbv", "expected_traces": EXPECTED_TRACES,
