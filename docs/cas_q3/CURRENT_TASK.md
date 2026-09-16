@@ -219,6 +219,17 @@ has not been loaded for it, and no HGB/GbV score, Gold value, fit or test result
 has been produced. Development tuning remains limited to the already frozen
 eight-candidate grid. No search expansion or test-result tuning is authorized.
 
+The next CPU-only fixed-HGB stage is also implemented but has not run. It loads
+the exact 639,652-byte historical `state_symmetric_hgb` artifact, reconstructs
+the authenticated 48-feature state-symmetric record for every eligible Mistral
+development pair, and performs inference without refitting. Its independent
+validator uses the separate `empirical_feature_independent.py` formulas and
+directly recomputes the HGB positive/negative symmetry calculation instead of
+calling the producer's selector method. Native and independent feature/score
+paths agree on invented fixtures, and the full Mistral-focused suite passes 53
+tests. This stage remains blocked on accepted answer semantics. It has produced
+no project HGB score, Gold access, fit, neural forward or test result.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
