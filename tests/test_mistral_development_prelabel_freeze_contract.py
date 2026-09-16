@@ -1,12 +1,18 @@
 from pathlib import Path
 import ast
 import copy
+import hashlib
+import json
+import tempfile
 import unittest
 
 from scripts.run_mistral_development_prelabel_freeze import (
     EXPECTED_TRACES, METHOD_FEATURES, merge_prelabel_row,
 )
-from scripts.validate_mistral_development_prelabel_freeze import reconstruct_prelabel_row
+from scripts.validate_mistral_development_prelabel_freeze import (
+    current_manifest_member_paths,
+    reconstruct_prelabel_row,
+)
 
 
 def source_rows():
@@ -116,6 +122,38 @@ class MistralDevelopmentPrelabelFreezeContractTests(unittest.TestCase):
             imported | direct_imports
         ))
         self.assertIn("PASS_INDEPENDENT_MISTRAL_DEVELOPMENT_PRELABEL_FREEZE", source)
+
+    def test_prelabel_freeze_requires_exact_source_and_predecessor_graph(self):
+        producer = (Path(__file__).resolve().parents[1]
+                    / "scripts/run_mistral_development_prelabel_freeze.py").read_text(
+                        encoding="utf-8"
+                    )
+        validator = (Path(__file__).resolve().parents[1]
+                     / "scripts/validate_mistral_development_prelabel_freeze.py").read_text(
+                         encoding="utf-8"
+                     )
+        self.assertIn("legacy_manifest_member_paths", producer)
+        self.assertIn("validate_mistral_development_prelabel_freeze.py", producer)
+        self.assertIn("NONEXACT_FROZEN_INPUT_GRAPH", validator)
+
+    def test_independent_current_manifest_coverage_rejects_extra_file(self):
+        with tempfile.TemporaryDirectory() as folder:
+            namespace = Path(folder)
+            payload = namespace / "payload.bin"; payload.write_bytes(b"payload")
+            manifest = namespace / "SHA256_MANIFEST.json"
+            value = {"files": [{
+                "path": "payload.bin", "size_bytes": payload.stat().st_size,
+                "sha256": hashlib.sha256(payload.read_bytes()).hexdigest(),
+            }]}
+            manifest.write_text(json.dumps(value), encoding="utf-8")
+            manifest_sha = hashlib.sha256(manifest.read_bytes()).hexdigest()
+            self.assertEqual(
+                current_manifest_member_paths(namespace, manifest_sha),
+                {manifest.resolve(), payload.resolve()},
+            )
+            (namespace / "unexpected.txt").write_text("unexpected", encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "CURRENT_MANIFEST_COVERAGE"):
+                current_manifest_member_paths(namespace, manifest_sha)
 
 
 if __name__ == "__main__":

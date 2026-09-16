@@ -23,8 +23,9 @@ from scripts.mistral_development_acquisition_common import (
 from scripts.mistral_development_scoring_common import write_bytes_once
 from scripts.run_mistral_development_a0_query import (
     EXPECTED_INPUT_FREEZE_MANIFEST_SHA256, EXPECTED_INPUT_LEDGER_SHA256,
-    EXPECTED_RUNTIME_MANIFEST_SHA256, validate_manifest_pin,
+    EXPECTED_RUNTIME_MANIFEST_SHA256,
 )
+from scripts.run_mistral_development_repair import legacy_manifest_member_paths
 from src.arbitration.mistral_reader_runtime import canonical, object_sha256, require
 
 
@@ -223,19 +224,31 @@ def main() -> int:
                 and sha256(frozen_ledger) == EXPECTED_INPUT_LEDGER_SHA256,
                 "INPUT_FREEZE")
         runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
-        input_records = [
-            validate_manifest_pin(runtime_root / "SHA256_MANIFEST.json",
-                                  EXPECTED_RUNTIME_MANIFEST_SHA256),
-            record(input_manifest), record(frozen_ledger),
-            record(hgb / "SHA256_MANIFEST.json"), record(hgb_validation),
-            record(gbv / "SHA256_MANIFEST.json"), record(gbv_validation),
-            record(Path(__file__)),
-            record(REPO / "scripts/mistral_development_acquisition_common.py"),
-            record(REPO / "scripts/mistral_development_scoring_common.py"),
-            record(REPO / "scripts/run_mistral_development_a0_query.py"),
-            record(REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md"),
-            record(runtime_root / "trace_manifest.jsonl"),
+        paths = [
+            *legacy_manifest_member_paths(
+                original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+            ),
+            *verify_manifest(hgb, sha256(hgb / "SHA256_MANIFEST.json")),
+            hgb_validation,
+            *verify_manifest(gbv, sha256(gbv / "SHA256_MANIFEST.json")),
+            gbv_validation,
         ]
+        controls = [
+            Path(__file__), REPO / "scripts/validate_mistral_development_prelabel_freeze.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
+            REPO / "scripts/mistral_development_scoring_common.py",
+            REPO / "scripts/run_mistral_development_a0_query.py",
+            REPO / "scripts/run_mistral_development_repair.py",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_PRELABEL_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
+            runtime_root / "trace_manifest.jsonl",
+        ]
+        input_records = [record(path) for path in sorted(
+            {Path(path).resolve() for path in [*paths, *controls]}, key=str
+        )]
         require(len({item["path"] for item in input_records}) == len(input_records),
                 "UNIQUE_INPUT_RECORDS")
         freeze = {

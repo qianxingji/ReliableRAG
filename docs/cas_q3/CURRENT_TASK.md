@@ -279,9 +279,12 @@ orders `HGB_GBV_R=[HGB,GbV]`, `HGB_ONLY_R=[HGB]`, and
 `GBV_ONLY_R=[GbV]` under one shared eligibility mask. Native ineligible pairs and
 deterministic NLI context failures force Keep for all three heads; any successfully
 completed first GbV branch remains recorded for diagnosis without becoming a
-policy-specific eligible row. Seven focused tests and the complete 68-test
-Mistral suite pass. This stage remains blocked on independent GbV acceptance and
-has read no Gold or test value, loaded no model, and performed no fit.
+policy-specific eligible row. A prospective input-graph amendment now binds all 56
+historical runtime paths, every HGB/GbV predecessor member and both independent
+acceptances. The validator requires exact path equality. Nine focused prelabel
+tests and the complete 166-test Mistral suite pass. This stage remains blocked
+on independent GbV acceptance and has read no Gold or test value, loaded no
+model, and performed no fit.
 
 The development-outcome producer and its independent validator are now
 implemented but have not run. They require the independently accepted common

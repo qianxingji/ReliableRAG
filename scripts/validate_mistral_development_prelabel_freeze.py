@@ -17,6 +17,12 @@ from scripts.validate_mistral_development_a0_query import read_rows, require, sh
 
 REPO = Path(__file__).resolve().parents[1]
 EXPECTED_TRACES = 13_500
+EXPECTED_INPUT_FREEZE_MANIFEST_SHA256 = (
+    "588b4d86fb6048ade1bba52731829496772d62fd522a260a7a4c60ec584586ca"
+)
+EXPECTED_RUNTIME_MANIFEST_SHA256 = (
+    "0e831d2807ee48197029f03f8ed1e18381a60bc5fc25327edccc8d8486b6cefb"
+)
 METHOD_FEATURES = {
     "HGB_GBV_R": ("hgb_score", "gbv_margin"),
     "HGB_ONLY_R": ("hgb_score",),
@@ -59,6 +65,51 @@ def validate_manifest(namespace: Path) -> None:
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    if "status" in value:
+        require(value["status"] == "PASS", "CURRENT_MANIFEST_STATUS")
+    if "exact_recursive_coverage" in value:
+        require(value["exact_recursive_coverage"] is True,
+                "CURRENT_MANIFEST_EXACT_COVERAGE")
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
+def legacy_manifest_member_paths(
+    original: Path, namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    original = original.resolve(); namespace = namespace.resolve()
+    manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "LEGACY_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (original / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "LEGACY_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    extras = actual - members - {manifest_path.resolve()}
+    require(all("__pycache__" in path.parts and path.suffix == ".pyc"
+                for path in extras), "LEGACY_MANIFEST_UNEXPECTED_EXTRA")
+    return {manifest_path.resolve(), *members}
 
 
 def validate_predecessors(root: Path) -> tuple[Path, Path, Path, Path]:
@@ -183,7 +234,34 @@ def main() -> int:
         require(path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_INPUT")
 
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
     runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
+    required_inputs = {
+        *legacy_manifest_member_paths(
+            original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            hgb, sha256(hgb / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            gbv, sha256(gbv / "SHA256_MANIFEST.json"),
+        ),
+        hgb_validation.resolve(), gbv_validation.resolve(),
+        (REPO / "scripts/run_mistral_development_prelabel_freeze.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/run_mistral_development_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_development_repair.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_PRELABEL_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (runtime_root / "trace_manifest.jsonl").resolve(),
+    }
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
+
     traces = read_rows(runtime_root / "trace_manifest.jsonl")
     frozen_rows = [row for row in read_rows(
         REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1/INPUT_LENGTHS_PRIVATE.jsonl"
