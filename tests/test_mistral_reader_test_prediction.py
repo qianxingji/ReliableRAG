@@ -1,6 +1,9 @@
 """Invented-only tests for label-blind Mistral test prediction and actions."""
 import copy
+import hashlib
+import json
 from pathlib import Path
+import tempfile
 import unittest
 
 from scripts.mistral_test_prediction_independent import (
@@ -224,6 +227,53 @@ class ReaderTestPredictionTests(unittest.TestCase):
         self.assertNotIn("import src.arbitration.reader_test_prediction", source)
         self.assertNotIn("from src.evaluation.batch_allocation", source)
         self.assertNotIn("import src.evaluation.batch_allocation", source)
+
+    def test_formal_executor_and_validator_keep_outcomes_closed_and_paths_separate(self):
+        root = Path(__file__).resolve().parents[1]
+        producer = (root / "scripts" / "run_mistral_test_action_seal.py").read_text(
+            encoding="utf-8"
+        )
+        validator = (root / "scripts" / "validate_mistral_test_action_seal.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("score_and_allocate", producer)
+        self.assertIn("_independent_score_and_allocate", validator)
+        self.assertNotIn("from scripts.run_mistral_test_action_seal", validator)
+        self.assertNotIn("from src.arbitration.reader_test_prediction", validator)
+        for source in (producer, validator):
+            self.assertIn('"test_gold_values_read": 0', source)
+            self.assertIn('"test_outcome_values_read": 0', source)
+            self.assertIn('"action_budget_tuned": False', source)
+        self.assertIn("PASS_MISTRAL_TEST_ACTION_SEAL_PENDING_INDEPENDENT", producer)
+        self.assertIn("PASS_INDEPENDENT_MISTRAL_TEST_ACTION_SEAL", validator)
+
+    def test_formal_manifest_checks_reject_unsealed_or_mutated_members(self):
+        from scripts.run_mistral_test_action_seal import validate_manifest as producer_check
+        from scripts.validate_mistral_test_action_seal import validate_manifest as audit_check
+
+        with tempfile.TemporaryDirectory() as directory:
+            namespace = Path(directory)
+            member = namespace / "member.txt"
+            member.write_bytes(b"invented-only\n")
+            manifest = {
+                "status": "PASS",
+                "files": [{
+                    "path": "member.txt",
+                    "size_bytes": member.stat().st_size,
+                    "sha256": hashlib.sha256(member.read_bytes()).hexdigest(),
+                }],
+                "excludes_only": "SHA256_MANIFEST.json",
+                "exact_recursive_coverage": True,
+            }
+            (namespace / "SHA256_MANIFEST.json").write_text(
+                json.dumps(manifest), encoding="utf-8"
+            )
+            producer_check(namespace)
+            audit_check(namespace)
+            member.write_bytes(b"changed\n")
+            for check in (producer_check, audit_check):
+                with self.assertRaises(RuntimeError):
+                    check(namespace)
 
 
 if __name__ == "__main__":

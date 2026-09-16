@@ -23,6 +23,16 @@ actions directly. It imports neither the producer nor a top-K helper. Producer
 and audit probabilities must agree within `1e-12`, while identities, masks,
 actions, model hashes and counts must agree exactly.
 
+The formal single-use wrapper is
+`scripts/run_mistral_test_action_seal.py`; its independent validator is
+`scripts/validate_mistral_test_action_seal.py`. Both verify recursive predecessor
+manifests and exact independent-acceptance hashes. Formal execution requires an
+accepted development tuning stage with 84 producer fits and 84 audit refits,
+plus an independently accepted test prelabel stage with zero Gold/outcome
+access. The executor freezes its source commit and inputs, writes canonical
+`ACTION_ROWS.jsonl`, a receipt and a complete recursive manifest. The validator
+imports neither the wrapper nor the production prediction core.
+
 ## Preserved engineering failure
 
 The first six-test run failed one dependency-isolation assertion. The independent
@@ -32,8 +42,9 @@ name and therefore treated explanatory prose as an import. The assertion was
 narrowed to concrete `from ... import` and `import ...` statements. No
 production formula, allocation rule, tolerance or scientific setting changed.
 
-The corrected focused suite passes 6/6 tests. With the file named under the
-Mistral test pattern, the complete Mistral suite passes 94/94 tests. These checks
-use invented feature vectors and fabricated coefficients only. No test answer,
-Gold value, outcome, scientific fit, neural forward or formal action ledger was
-read or created.
+The corrected core suite and formal-wrapper checks pass 8/8 focused tests. The
+complete Mistral suite passes 96/96 tests. These checks use invented feature
+vectors, fabricated coefficients and temporary invented manifests only. No test
+answer, Gold value, outcome, scientific fit, neural forward or formal action
+ledger was read or created. The required test acquisition/scoring/prelabel
+predecessors remain unimplemented, so the formal wrapper cannot yet run.

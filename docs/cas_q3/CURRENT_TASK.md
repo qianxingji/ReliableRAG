@@ -316,6 +316,16 @@ narrowed to actual import statements without changing production code. Six
 focused tests and the complete 94-test Mistral suite pass. No test label,
 outcome, model fit or action ledger was produced.
 
+The formal single-use action-seal executor and its independent validator are now
+implemented in `scripts/run_mistral_test_action_seal.py` and
+`scripts/validate_mistral_test_action_seal.py`. They require the accepted
+development 84-fit result plus its 84-refit audit and a future independently
+accepted 18,000-row test prelabel freeze. The executor writes only a canonical
+label-blind action ledger; the validator independently recomputes every
+probability and action within `1e-12`. Eight focused tests and the complete
+96-test Mistral suite pass. The required test acquisition/scoring/prelabel
+predecessors do not yet exist, so the formal namespace has not been created.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
