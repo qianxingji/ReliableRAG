@@ -423,6 +423,17 @@ Mistral suite now passes 137 tests. This stage is
 blocked on accepted test answer semantics; test GbV and common prelabel remain
 the next engineering gaps.
 
+The paired test GbV producer and independent tokenizer/logit validator are now
+implemented but have not run. They pin the exact DeBERTa NLI revision, FP32,
+batch size 8 and `a0/E0` before `a1/E1` order, save every two-logit forward as
+explicit little-endian bytes, and retain a valid F0 if F1 later has one of the
+two frozen deterministic context-window failures. The validator loads no model,
+reconstructs every token batch and float64 softmax, and proves exact logit-file
+coverage. Eight new contract tests and the complete 145-test Mistral suite pass.
+Mistral/BGE loads, Gold, outcomes, fitting and tuning remain forbidden. This
+stage is blocked on accepted test HGB; the common test prelabel freeze is now the
+remaining label-blind scoring implementation gap.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

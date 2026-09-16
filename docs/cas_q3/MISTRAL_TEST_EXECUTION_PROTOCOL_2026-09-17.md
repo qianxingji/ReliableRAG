@@ -2,16 +2,16 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_TEST_ACQUISITION_WITNESS_ANSWER_SEMANTICS_AND_HGB_IMPLEMENTED_GBV_PRELABEL_OPEN`.
+Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_TEST_ACQUISITION_WITNESS_ANSWER_SEMANTICS_HGB_AND_GBV_IMPLEMENTED_PRELABEL_OPEN`.
 This document fixes the one-time Mistral test route prospectively. The pure
 analysis kernel, label-blind action seal, numeric-only outcome executor, formal
 20,000-draw analysis executor and their independent audit paths are implemented
 on invented rows. The test `a0_query`, repair, `a1_likelihood` and witness replay
 executors plus their no-model validators are also implemented. The first neural
 scoring stage, BGE answer semantics, its tokenizer-only validator, the fixed HGB
-transfer and its independent formula audit are now implemented but have not run.
-Test GbV and the common prelabel freeze remain open. This document neither opens
-test outcomes nor authorizes test execution.
+transfer, paired GbV and their independent audits are now implemented but have
+not run. The common test prelabel freeze remains open. This document neither
+opens test outcomes nor authorizes test execution.
 Formal test
 acquisition may start only after the complete development chain, selected models
 and fixed reference models pass their producer, independent-validator and client
@@ -145,7 +145,16 @@ test pairs and apply the pinned 639,652-byte HGB artifact without refitting. The
 validator rebuilds every feature tree through the separate independent formulas
 and recomputes the positive/negative probability symmetry directly. Neural
 loads/forwards, Gold, outcomes, fitting and tuning remain forbidden. Formal HGB
-output does not exist; test GbV and common prelabel code remain open.
+output does not exist.
+
+The paired-GbV producer and independent validator are implemented as well. The
+producer runs the pinned DeBERTa NLI model in FP32 and batch size 8, always scores
+`a0/E0` before `a1/E1`, and saves every two-logit forward as explicit
+little-endian FP32 bytes. The validator loads only the tokenizer and independently
+reconstructs all premise/hypothesis chunks, token fields, float64 softmax values,
+branch maxima and margins. Only the two frozen deterministic context-window
+errors can force Keep; all other failures fail closed. Formal GbV output does
+not exist, and the common test prelabel code remains open.
 
 For each recipe and method, sort eligible rows by descending calibrated recovery
 probability and then ascending `(dataset, retriever, sample_id)`. Select exactly
