@@ -158,6 +158,16 @@ invented adapter gate only. The next P0 work is the formal component-sequential
 development executor/validator; no 13,500-trace Mistral acquisition, Gold read
 or scientific fit has begun.
 
+The formal development acquisition is now prospectively frozen in
+`MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md`: 27,000 `a0`/query
+generation operations, 13,500 separate repair operations, then 13,500 `a1`
+generations plus 54,000 likelihood calls, with Mistral and BGE never resident
+together. A distinct fixed 18-position replay will save 126 compact
+full-vocabulary first-token witnesses. The no-model common implementation now
+passes four additional durable-recovery and compaction tests (21 focused tests
+total). The stage executor and independent validator remain to be implemented
+and accepted before any formal call is allowed.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

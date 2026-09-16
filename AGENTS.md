@@ -73,6 +73,12 @@ validator; read
 Do not repeat V3. This accepts only the invented adapter path. Formal 13,500-row
 development acquisition has not begun and still requires a committed
 component-sequential executor plus independent validator.
+The formal acquisition stages, exact call counts, compact receipts, recovery
+semantics and 18-position replay are now frozen in
+`docs/cas_q3/MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md`. Its
+no-model common layer passes four recovery/compaction tests. Do not launch a
+formal stage until the stage executor and independent validator are also
+committed and pass their invented/static tests.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate
