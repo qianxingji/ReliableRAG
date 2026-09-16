@@ -30,6 +30,12 @@ DATASET_ORDER = ("hotpotqa", "2wikimultihopqa", "musique")
 BGE_REVISION = "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
 BGE_PREFLIGHT_SHA256 = "f29a5ad13c2d8ce6cab3bb6331bd315837c70907fa9d71725339af07baeb5790"
 BGE_INVENTORY_SHA256 = "1a52cb26692f2407b59ea4233a9f1b3b63a200a2b04fc33cff416ea7acfc2712"
+EXPECTED_INPUT_FREEZE_MANIFEST_SHA256 = (
+    "588b4d86fb6048ade1bba52731829496772d62fd522a260a7a4c60ec584586ca"
+)
+EXPECTED_RUNTIME_MANIFEST_SHA256 = (
+    "0e831d2807ee48197029f03f8ed1e18381a60bc5fc25327edccc8d8486b6cefb"
+)
 
 
 def text_sha(value: str) -> str:
@@ -49,6 +55,51 @@ def validate_manifest(namespace: Path) -> None:
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    if "status" in value:
+        require(value["status"] == "PASS", "CURRENT_MANIFEST_STATUS")
+    if "exact_recursive_coverage" in value:
+        require(value["exact_recursive_coverage"] is True,
+                "CURRENT_MANIFEST_EXACT_COVERAGE")
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
+def legacy_manifest_member_paths(
+    original: Path, namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    original = original.resolve(); namespace = namespace.resolve()
+    manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "LEGACY_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (original / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "LEGACY_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    extras = actual - members - {manifest_path.resolve()}
+    require(all("__pycache__" in path.parts and path.suffix == ".pyc"
+                for path in extras), "LEGACY_MANIFEST_UNEXPECTED_EXTRA")
+    return {manifest_path.resolve(), *members}
 
 
 def validate_witness(root: Path) -> Path:
@@ -82,11 +133,14 @@ def validate_bge_assets(original: Path):
             and inventory["file_count"] == 6 and inventory["total_size_bytes"] == 438_899_684,
             "BGE_INVENTORY")
     snapshot = (original / inventory["snapshot_relative_path"]).resolve()
+    paths = {preflight.resolve()}
     for item in inventory["file_inventory"]:
         path = (snapshot / item["path"]).resolve()
         require(path.is_relative_to(snapshot) and path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "BGE_ASSET:" + item["path"])
-    return snapshot, preflight
+        paths.add(path)
+    require(len(paths) == 7, "BGE_ASSET_COUNT")
+    return snapshot, preflight, paths
 
 
 def validate_journal(rows: list[dict], events: list[dict]) -> int:
@@ -133,7 +187,7 @@ def main() -> int:
     witness_validation = validate_witness(root)
     for prior in (root / "a0_query", root / "a1_likelihood"):
         validate_manifest(prior)
-    snapshot, preflight = validate_bge_assets(original)
+    snapshot, preflight, bge_paths = validate_bge_assets(original)
 
     namespace = root / "answer_semantics"; validate_manifest(namespace)
     receipt = json.loads((namespace / "STAGE_RECEIPT.json").read_text(encoding="utf-8"))
@@ -162,8 +216,42 @@ def main() -> int:
         require(path.stat().st_size == item["size_bytes"] and sha256(path) == item["sha256"],
                 "FROZEN_INPUT")
     frozen_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(preflight.resolve() in frozen_paths and witness_validation.resolve() in frozen_paths,
-            "FROZEN_PREREQUISITES")
+    require(len(frozen_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
+    required_inputs = {
+        *legacy_manifest_member_paths(
+            original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            root / "witness_replay",
+            sha256(root / "witness_replay/SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            root / "a0_query", sha256(root / "a0_query/SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            root / "a1_likelihood",
+            sha256(root / "a1_likelihood/SHA256_MANIFEST.json"),
+        ),
+        *bge_paths,
+        witness_validation.resolve(),
+        (REPO / "scripts/run_mistral_development_answer_semantics.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/run_mistral_development_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_development_repair.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_ANSWER_SEMANTICS_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (runtime_root / "runtime_support.py").resolve(),
+        (runtime_root / "native_runtime.py").resolve(),
+        (runtime_root / "trace_manifest.jsonl").resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     batch_rows = read_rows(namespace / "BATCH_RECEIPTS.jsonl")
     events = read_rows(namespace / "CALL_JOURNAL.jsonl")
@@ -282,6 +370,25 @@ def main() -> int:
     require(all_semantic_rows == semantic_rows_file
             and [row["position"] for row in all_semantic_rows] == list(range(EXPECTED_TRACES)),
             "FLATTENED_SEMANTIC_ROWS")
+    expected_batch_record = {
+        "path": str((namespace / "BATCH_RECEIPTS.jsonl").resolve()),
+        "size_bytes": (namespace / "BATCH_RECEIPTS.jsonl").stat().st_size,
+        "sha256": sha256(namespace / "BATCH_RECEIPTS.jsonl"),
+    }
+    expected_semantic_record = {
+        "path": str((namespace / "SEMANTIC_ROWS.jsonl").resolve()),
+        "size_bytes": (namespace / "SEMANTIC_ROWS.jsonl").stat().st_size,
+        "sha256": sha256(namespace / "SEMANTIC_ROWS.jsonl"),
+    }
+    expected_journal_record = {
+        "path": str((namespace / "CALL_JOURNAL.jsonl").resolve()),
+        "size_bytes": (namespace / "CALL_JOURNAL.jsonl").stat().st_size,
+        "sha256": sha256(namespace / "CALL_JOURNAL.jsonl"),
+    }
+    require(receipt["batch_receipts"] == expected_batch_record
+            and receipt["semantic_rows"] == expected_semantic_record
+            and receipt["call_journal"] == expected_journal_record,
+            "PRODUCER_FILE_BINDINGS")
     result = {
         "status": "PASS_INDEPENDENT_TOKENIZER_ONLY_MISTRAL_DEVELOPMENT_ANSWER_SEMANTICS",
         "cas_q3_status": "NOT READY", "checks": checks,

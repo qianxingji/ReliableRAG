@@ -229,8 +229,12 @@ The first post-acquisition scoring stage is now implemented but has not run.
 binds each of the 13,500 answer-pair dot products to the accepted acquisition
 chain. Its separate tokenizer-only validator reconstructs every batch input,
 checks every vector file and recomputes every dot product without loading a
-model. A generic append-only scoring journal and 48 Mistral-focused tests now
-pass. This stage remains blocked on independent witness-replay acceptance; BGE
+model. Its prospective input-graph amendment now binds all 56 historical
+runtime paths, every required predecessor-stage member, seven exact BGE
+provenance paths and every direct control file. The independent validator
+requires exact path equality and exact bindings for all three output ledgers.
+Six focused answer-semantics tests and the complete 160-test Mistral suite pass.
+This stage remains blocked on independent witness-replay acceptance; BGE
 has not been loaded for it, and no HGB/GbV score, Gold value, fit or test result
 has been produced. Development tuning remains limited to the already frozen
 eight-candidate grid. No search expansion or test-result tuning is authorized.

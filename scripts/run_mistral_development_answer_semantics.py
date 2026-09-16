@@ -30,8 +30,8 @@ from scripts.mistral_development_scoring_common import (
 from scripts.run_mistral_development_a0_query import (
     EXPECTED_INPUT_FREEZE_MANIFEST_SHA256, EXPECTED_INPUT_LEDGER_SHA256,
     EXPECTED_RUNTIME_MANIFEST_SHA256, acquire_gpu_mutex, load_original_native,
-    validate_manifest_pin,
 )
+from scripts.run_mistral_development_repair import legacy_manifest_member_paths
 from src.arbitration.mistral_reader_runtime import object_sha256, require, text_sha256
 
 
@@ -180,22 +180,43 @@ def main() -> int:
         require(sha256(input_manifest) == EXPECTED_INPUT_FREEZE_MANIFEST_SHA256
                 and sha256(frozen_ledger) == EXPECTED_INPUT_LEDGER_SHA256, "INPUT_FREEZE")
         runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
-        input_records = [
-            validate_manifest_pin(runtime_root / "SHA256_MANIFEST.json", EXPECTED_RUNTIME_MANIFEST_SHA256),
-            record(input_manifest), record(frozen_ledger),
-            record(witness_stage / "SHA256_MANIFEST.json"), record(witness_validation),
-            record(a0_stage / "SHA256_MANIFEST.json"), record(a1_stage / "SHA256_MANIFEST.json"),
-            *validate_bge_assets(original),
+        paths = [
+            *legacy_manifest_member_paths(
+                original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                witness_stage, sha256(witness_stage / "SHA256_MANIFEST.json"),
+            ),
+            witness_validation,
+            *verify_manifest(
+                a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"),
+            ),
+            *verify_manifest(
+                a1_stage, sha256(a1_stage / "SHA256_MANIFEST.json"),
+            ),
         ]
         control_paths = [
-            Path(__file__), REPO / "scripts/mistral_development_acquisition_common.py",
+            Path(__file__), REPO / "scripts/validate_mistral_development_answer_semantics.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
             REPO / "scripts/mistral_development_scoring_common.py",
             REPO / "scripts/run_mistral_development_a0_query.py",
+            REPO / "scripts/run_mistral_development_repair.py",
             REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_ANSWER_SEMANTICS_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             runtime_root / "runtime_support.py", runtime_root / "native_runtime.py",
             runtime_root / "trace_manifest.jsonl",
         ]
-        input_records += [record(path) for path in control_paths]
+        records = [record(path) for path in sorted(
+            {Path(path).resolve() for path in [*paths, *control_paths]}, key=str
+        )]
+        assets = validate_bge_assets(original)
+        by_path = {item["path"]: item for item in [*records, *assets]}
+        require(len(by_path) == len(records) + len(assets),
+                "UNIQUE_ANSWER_SEMANTIC_INPUTS")
+        input_records = [by_path[path] for path in sorted(by_path)]
         freeze = {
             "status": "FROZEN_BEFORE_FORMAL_ANSWER_SEMANTICS", "source_commit": commit,
             "stage": "answer_semantics", "expected_traces": EXPECTED_TRACES,
