@@ -125,6 +125,12 @@ class MistralDevelopmentRepairContractTests(unittest.TestCase):
         self.assertIn("INCOMPLETE_FROZEN_INPUT_GRAPH", source)
         self.assertIn("bge_asset_paths", source)
         self.assertIn("PRODUCER_FILE_BINDINGS", source)
+        self.assertIn('root / "EXECUTABLE_FREEZE.json"', source)
+        producer = (Path(__file__).resolve().parents[1]
+                    / "scripts/run_mistral_development_repair.py").read_text(
+                        encoding="utf-8"
+                    )
+        self.assertIn('root / "EXECUTABLE_FREEZE.json"', producer)
 
 
 if __name__ == "__main__":

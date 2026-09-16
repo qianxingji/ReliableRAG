@@ -229,6 +229,7 @@ def main() -> int:
             EXPECTED_RETRIEVAL_MANIFEST_SHA256,
         ),
         *bge_asset_paths(preflight, original),
+        (root / "EXECUTABLE_FREEZE.json").resolve(),
         a0_validation_path.resolve(), Path(__file__).resolve(),
         (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_REPAIR_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
     }

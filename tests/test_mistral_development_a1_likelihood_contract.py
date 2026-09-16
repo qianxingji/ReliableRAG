@@ -1,6 +1,9 @@
 from pathlib import Path
 import ast
+import hashlib
+import json
 import math
+import tempfile
 import unittest
 
 from scripts.run_mistral_development_a1_likelihood import (
@@ -11,6 +14,7 @@ from scripts.run_mistral_development_a1_likelihood import (
     validate_generation_payload,
     validate_likelihood_payload,
 )
+from scripts.validate_mistral_development_a1_likelihood import current_manifest_member_paths
 
 
 class MistralDevelopmentA1LikelihoodContractTests(unittest.TestCase):
@@ -79,6 +83,43 @@ class MistralDevelopmentA1LikelihoodContractTests(unittest.TestCase):
         self.assertNotIn("ExactLocalBGEBackend", source)
         self.assertIn("AutoTokenizer", source)
         self.assertIn("PROMPT_TARGET_PREFIX", source)
+
+    def test_a1_freeze_requires_complete_predecessor_and_asset_graph(self):
+        producer = (Path(__file__).resolve().parents[1]
+                    / "scripts/run_mistral_development_a1_likelihood.py").read_text(
+                        encoding="utf-8"
+                    )
+        validator = (Path(__file__).resolve().parents[1]
+                     / "scripts/validate_mistral_development_a1_likelihood.py").read_text(
+                         encoding="utf-8"
+                     )
+        self.assertIn("legacy_manifest_member_paths", producer)
+        self.assertIn("validate_mistral_development_a1_likelihood.py", producer)
+        self.assertIn("UNIQUE_A1_INPUTS", producer)
+        self.assertIn("NONEXACT_FROZEN_INPUT_GRAPH", validator)
+        self.assertIn("asset_paths", validator)
+        self.assertIn("PRODUCER_FILE_BINDINGS", validator)
+        self.assertIn('run_mistral_development_a1_likelihood.py").resolve()', validator)
+        self.assertIn('MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md").resolve()', validator)
+
+    def test_independent_current_manifest_coverage_rejects_extra_file(self):
+        with tempfile.TemporaryDirectory() as folder:
+            namespace = Path(folder)
+            payload = namespace / "payload.bin"; payload.write_bytes(b"payload")
+            manifest = namespace / "SHA256_MANIFEST.json"
+            value = {"files": [{
+                "path": "payload.bin", "size_bytes": payload.stat().st_size,
+                "sha256": hashlib.sha256(payload.read_bytes()).hexdigest(),
+            }]}
+            manifest.write_text(json.dumps(value), encoding="utf-8")
+            manifest_sha = hashlib.sha256(manifest.read_bytes()).hexdigest()
+            self.assertEqual(
+                current_manifest_member_paths(namespace, manifest_sha),
+                {manifest.resolve(), payload.resolve()},
+            )
+            (namespace / "unexpected.txt").write_text("unexpected", encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "CURRENT_MANIFEST_COVERAGE"):
+                current_manifest_member_paths(namespace, manifest_sha)
 
 
 if __name__ == "__main__":

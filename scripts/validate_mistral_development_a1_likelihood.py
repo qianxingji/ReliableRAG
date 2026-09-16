@@ -22,6 +22,21 @@ EXPECTED_TRACES = 13_500
 CELLS = ("L00", "L01", "L10", "L11")
 EXPECTED_OPERATIONS = EXPECTED_TRACES * 5
 REVISION = "c170c708c41dac9275d15a8fff4eca08d52bab71"
+EXPECTED_INPUT_FREEZE_MANIFEST_SHA256 = (
+    "588b4d86fb6048ade1bba52731829496772d62fd522a260a7a4c60ec584586ca"
+)
+EXPECTED_ASSET_MANIFEST_SHA256 = (
+    "0d52dd24d4f819af27b022877712a59ee07dab44e40a8e9c2586afa141b9fa18"
+)
+EXPECTED_RUNTIME_MANIFEST_SHA256 = (
+    "0e831d2807ee48197029f03f8ed1e18381a60bc5fc25327edccc8d8486b6cefb"
+)
+EXPECTED_POOL_MANIFEST_SHA256 = (
+    "f53575bc7b9514f33a235f8380520b99c2faac4cb8b6d78533fc42cb08f377b8"
+)
+EXPECTED_RETRIEVAL_MANIFEST_SHA256 = (
+    "15a18dc5c2a61a83171add05be2cb989813ab023ffea8a035cb1ba42dacdf651"
+)
 
 
 def text_sha(value: str) -> str:
@@ -104,6 +119,9 @@ def reconstruct_e1(native, e0, payload: dict, data: dict):
 def validate_manifest(namespace: Path) -> None:
     manifest_path = namespace / "SHA256_MANIFEST.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    require(manifest.get("status") == "PASS"
+            and manifest.get("exact_recursive_coverage") is True,
+            "MANIFEST_STATUS")
     for item in manifest["files"]:
         path = (namespace / item["path"]).resolve()
         require(path.is_relative_to(namespace) and path not in members, "MANIFEST_PATH")
@@ -112,6 +130,68 @@ def validate_manifest(namespace: Path) -> None:
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    if "status" in value:
+        require(value["status"] == "PASS", "CURRENT_MANIFEST_STATUS")
+    if "exact_recursive_coverage" in value:
+        require(value["exact_recursive_coverage"] is True,
+                "CURRENT_MANIFEST_EXACT_COVERAGE")
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
+def legacy_manifest_member_paths(
+    original: Path, namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    original = original.resolve(); namespace = namespace.resolve()
+    manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "LEGACY_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (original / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "LEGACY_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    extras = actual - members - {manifest_path.resolve()}
+    require(all("__pycache__" in path.parts and path.suffix == ".pyc"
+                for path in extras), "LEGACY_MANIFEST_UNEXPECTED_EXTRA")
+    return {manifest_path.resolve(), *members}
+
+
+def asset_paths(asset: Path) -> set[Path]:
+    asset = asset.resolve(); manifest_path = asset / "ASSET_MANIFEST.json"
+    require(sha256(manifest_path) == EXPECTED_ASSET_MANIFEST_SHA256,
+            "ASSET_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8"))
+    require(value.get("selected_file_count") == 14, "ASSET_FILE_COUNT")
+    members = set()
+    for item in value["selected_files"]:
+        path = (asset / item["path"]).resolve()
+        require(path.is_relative_to(asset) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "ASSET_MEMBER")
+        members.add(path)
+    require(len(members) == 14, "ASSET_SELECTED_FILE_COUNT")
+    return {manifest_path.resolve(), *members}
 
 
 def validate_journal(rows: list[dict], events: list[dict]) -> int:
@@ -150,8 +230,10 @@ def main() -> int:
     namespace = root / "a1_likelihood"; validate_manifest(namespace)
     a0_stage, repair_stage = root / "a0_query", root / "repair"
     validate_manifest(a0_stage); validate_manifest(repair_stage)
-    a0_validation = json.loads((root / "a0_query_validation/VALIDATION.json").read_text(encoding="utf-8"))
-    repair_validation = json.loads((root / "repair_validation/VALIDATION.json").read_text(encoding="utf-8"))
+    a0_validation_path = root / "a0_query_validation/VALIDATION.json"
+    repair_validation_path = root / "repair_validation/VALIDATION.json"
+    a0_validation = json.loads(a0_validation_path.read_text(encoding="utf-8"))
+    repair_validation = json.loads(repair_validation_path.read_text(encoding="utf-8"))
     require(a0_validation["status"] == "PASS_INDEPENDENT_FULL_SOURCE_MISTRAL_DEVELOPMENT_A0_QUERY"
             and a0_validation["producer_receipt_sha256"] == sha256(a0_stage / "STAGE_RECEIPT.json")
             and a0_validation["generation_receipts_sha256"] == sha256(a0_stage / "GENERATION_RECEIPTS.jsonl")
@@ -165,14 +247,73 @@ def main() -> int:
     stage = json.loads((namespace / "STAGE_RECEIPT.json").read_text(encoding="utf-8"))
     require(stage["status"] == "PASS_MISTRAL_DEVELOPMENT_A1_LIKELIHOOD_PENDING_INDEPENDENT"
             and stage["completed_traces"] == EXPECTED_TRACES
-            and stage["logical_operations"] == EXPECTED_OPERATIONS, "PRODUCER_STATUS")
+            and stage["logical_operations"] == EXPECTED_OPERATIONS
+            and stage["a1_generation_operations"] == EXPECTED_TRACES
+            and stage["likelihood_operations"] == EXPECTED_TRACES * 4
+            and sum(stage["operation_modes"].values()) == EXPECTED_OPERATIONS
+            and stage["model_loads"] == stage["model_unloads"] == 1,
+            "PRODUCER_STATUS")
     freeze = json.loads((namespace / "EXECUTABLE_FREEZE.json").read_text(encoding="utf-8"))
-    require(freeze["source_commit"] == stage["source_commit"]
-            and freeze["expected_operations"] == EXPECTED_OPERATIONS, "EXECUTABLE_FREEZE")
+    require(freeze["status"] == "FROZEN_BEFORE_FORMAL_A1_LIKELIHOOD"
+            and freeze["source_commit"] == stage["source_commit"]
+            and freeze["stage"] == "a1_likelihood"
+            and freeze["expected_traces"] == EXPECTED_TRACES
+            and freeze["expected_a1_generations"] == EXPECTED_TRACES
+            and freeze["expected_likelihoods"] == EXPECTED_TRACES * 4
+            and freeze["expected_operations"] == EXPECTED_OPERATIONS,
+            "EXECUTABLE_FREEZE")
+    input_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
+    require(len(input_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
     for item in freeze["inputs"]:
         path = Path(item["path"])
         require(path.stat().st_size == item["size_bytes"] and sha256(path) == item["sha256"],
                 "FROZEN_INPUT")
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
+    pool_root = original / "outputs/daa_v2_fresh_v1/pool_freeze"
+    retrieval_root = original / "outputs/daa_v2_fresh_v1/retrieval_freeze"
+    required_inputs = {
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            repair_stage, sha256(repair_stage / "SHA256_MANIFEST.json"),
+        ),
+        *legacy_manifest_member_paths(
+            original, runtime_root,
+            EXPECTED_RUNTIME_MANIFEST_SHA256,
+        ),
+        *legacy_manifest_member_paths(
+            original, pool_root,
+            EXPECTED_POOL_MANIFEST_SHA256,
+        ),
+        *legacy_manifest_member_paths(
+            original, retrieval_root,
+            EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+        ),
+        *asset_paths(asset),
+        (root / "EXECUTABLE_FREEZE.json").resolve(),
+        a0_validation_path.resolve(), repair_validation_path.resolve(),
+        (REPO / "scripts/run_mistral_development_a1_likelihood.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/run_mistral_development_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_development_repair.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_A1_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (original / "prompts/baseline_v1.txt").resolve(),
+        (original / "prompts/repair_missing_v1.txt").resolve(),
+        (runtime_root / "runtime_support.py").resolve(),
+        (runtime_root / "native_runtime.py").resolve(),
+        (runtime_root / "RUNTIME_CONFIG_FREEZE.json").resolve(),
+        (runtime_root / "SYNTHETIC_TEST_RESULT_V2.json").resolve(),
+        (runtime_root / "trace_manifest.jsonl").resolve(),
+    }
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
     rows = read_rows(namespace / "MODEL_RECEIPTS.jsonl")
     events = read_rows(namespace / "CALL_JOURNAL.jsonl")
     require(len(rows) == EXPECTED_OPERATIONS, "MODEL_ROW_COUNT")
@@ -305,6 +446,19 @@ def main() -> int:
         checks += 112
     require(stage["gold_values_read"] == stage["scientific_fits"] == stage["test_rows_read"] == 0
             and stage["bge_model_loads"] == stage["nli_model_loads"] == 0, "ZERO_FORBIDDEN_ACCESS")
+    expected_model_record = {
+        "path": str((namespace / "MODEL_RECEIPTS.jsonl").resolve()),
+        "size_bytes": (namespace / "MODEL_RECEIPTS.jsonl").stat().st_size,
+        "sha256": sha256(namespace / "MODEL_RECEIPTS.jsonl"),
+    }
+    expected_journal_record = {
+        "path": str((namespace / "CALL_JOURNAL.jsonl").resolve()),
+        "size_bytes": (namespace / "CALL_JOURNAL.jsonl").stat().st_size,
+        "sha256": sha256(namespace / "CALL_JOURNAL.jsonl"),
+    }
+    require(stage["model_receipts"] == expected_model_record
+            and stage["call_journal"] == expected_journal_record,
+            "PRODUCER_FILE_BINDINGS")
     result = {
         "status": "PASS_INDEPENDENT_NO_MODEL_MISTRAL_DEVELOPMENT_A1_LIKELIHOOD",
         "cas_q3_status": "NOT READY", "checks": checks,

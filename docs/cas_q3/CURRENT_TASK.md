@@ -193,13 +193,16 @@ runtime/pool/retrieval artifacts, the Mistral input freeze, accepted `a0_query`,
 the BGE preflight and its six exact model assets. The independent validator
 reconstructs that graph and the producer rehashes every member at finalization.
 This closes a manifest-only time-of-check gap without changing any scientific
-operation; the complete Mistral suite now passes 154 tests. The
-`a1_likelihood` executor and its independent
-tokenizer-only validator are also implemented. They reconstruct the dynamic E1,
-the `a1` prompt and all four answer-token teacher-forcing cells from prior sealed
-inputs, and they rehash every prior-stage manifest member before use. Four new
-stage tests and the complete 32-test focused suite pass. This stage is blocked
-on repair acceptance. The final 18-position witness-replay producer and
+operation. The `a1_likelihood` executor and its independent tokenizer-only
+validator are also implemented. They reconstruct the dynamic E1, the `a1`
+prompt and all four answer-token teacher-forcing cells from prior sealed inputs.
+A prospective A1 input-graph amendment now requires all 220 historical payload
+members and three manifests, every current predecessor-stage member, both
+independent predecessor acceptances, the root A0 executable freeze, all 15
+Mistral asset paths and every direct control file. The producer rehashes the
+complete set at finalization and the independent validator requires exact path
+equality. Six focused A1 tests and the complete 156-test Mistral suite pass.
+This stage remains blocked on repair acceptance. The final 18-position witness-replay producer and
 independent tokenizer-only validator are also implemented. They require all
 three independently accepted canonical stages, reproduce the exact canonical
 receipts, save 126 complete 32,768-way FP32 first-token vectors (16,515,072 raw

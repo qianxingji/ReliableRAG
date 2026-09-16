@@ -215,6 +215,7 @@ def main() -> int:
             *verify_manifest(
                 a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"),
             ),
+            root / "EXECUTABLE_FREEZE.json",
             validation,
             Path(__file__), REPO / "scripts/validate_mistral_development_repair.py",
             REPO / "scripts/mistral_development_acquisition_common.py",

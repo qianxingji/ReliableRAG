@@ -28,7 +28,8 @@ Before any repair execution, the producer must now:
 2. allow only generated `__pycache__/*.pyc` files outside those legacy
    manifests and reject every other extra file;
 3. verify and record every member of the accepted Mistral input freeze, BGE
-   synthetic preflight and completed `a0_query` stage;
+   synthetic preflight and completed `a0_query` stage, plus the stage's
+   root-level `EXECUTABLE_FREEZE.json`;
 4. verify and record the six exact BGE snapshot files authenticated by the
    accepted preflight;
 5. freeze the `a0_query` independent acceptance, repair producer, independent
