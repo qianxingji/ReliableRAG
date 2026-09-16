@@ -1,0 +1,39 @@
+# Mistral test action-seal implementation note
+
+Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
+
+Decision: `PASS_INVENTED_ONLY_LABEL_BLIND_ACTION_ENGINEERING`.
+
+The pure action-seal core is implemented in
+`src/arbitration/reader_test_prediction.py`. It rejects outcome/reference
+fields, accepts only `role=test` prelabel rows and the three independently
+accepted development tuning records, then applies the stored fit-only
+preprocessing, base coefficients and Platt coefficients without fitting.
+
+For each of `HGB_GBV_R`, `HGB_ONLY_R` and `GBV_ONLY_R`, it emits one selected
+recipe probability and one fixed-`C=1.0, class_weight=None` probability. All six
+policies use the same common eligibility mask. Ineligible rows have null scores,
+are forced Keep and remain in the denominator. The public entry point fixes
+18,000 traces, 6,000 question groups and global K=900; ties use ascending
+`(dataset, retriever, sample_id)` after descending calibrated probability.
+
+`scripts/mistral_test_prediction_independent.py` uses a separate pure-Python
+formula with `math.fsum`, repeats preprocessing/base/Platt calculation and sorts
+actions directly. It imports neither the producer nor a top-K helper. Producer
+and audit probabilities must agree within `1e-12`, while identities, masks,
+actions, model hashes and counts must agree exactly.
+
+## Preserved engineering failure
+
+The first six-test run failed one dependency-isolation assertion. The independent
+module did not import the producer; its module docstring merely named the module
+that it intentionally avoids. The test originally searched for the bare module
+name and therefore treated explanatory prose as an import. The assertion was
+narrowed to concrete `from ... import` and `import ...` statements. No
+production formula, allocation rule, tolerance or scientific setting changed.
+
+The corrected focused suite passes 6/6 tests. With the file named under the
+Mistral test pattern, the complete Mistral suite passes 94/94 tests. These checks
+use invented feature vectors and fabricated coefficients only. No test answer,
+Gold value, outcome, scientific fit, neural forward or formal action ledger was
+read or created.

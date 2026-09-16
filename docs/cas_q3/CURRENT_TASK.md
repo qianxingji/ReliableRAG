@@ -304,6 +304,18 @@ was corrected because bootstrap multiplicity can repeat one eligible row. No
 analysis code or scientific rule changed. Seven focused tests and the complete
 88-test Mistral suite pass. No benchmark outcome was read.
 
+The label-blind test prediction and action-seal core is now also implemented in
+`src/arbitration/reader_test_prediction.py`. It accepts only the exact test
+prelabel schema and frozen development model records, reconstructs selected and
+fixed-C probabilities, and seals all six score-based policies under the common
+mask and canonical global action cap. The separate pure-Python audit in
+`scripts/mistral_test_prediction_independent.py` imports neither the producer
+nor an allocation kernel. Its first test run had one false-positive dependency
+assertion caused by a module name in explanatory prose; the assertion was
+narrowed to actual import statements without changing production code. Six
+focused tests and the complete 94-test Mistral suite pass. No test label,
+outcome, model fit or action ledger was produced.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

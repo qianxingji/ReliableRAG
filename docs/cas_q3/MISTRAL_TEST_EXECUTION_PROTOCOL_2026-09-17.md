@@ -2,13 +2,14 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ANALYSIS_KERNEL_IMPLEMENTED_ACQUISITION_AND_ACTION_EXECUTORS_OPEN`.
+Status: `FROZEN_ANALYSIS_AND_ACTION_CORES_IMPLEMENTED_ACQUISITION_EXECUTORS_OPEN`.
 This document fixes the one-time Mistral test route prospectively. The pure
-analysis kernel and explicit-copy audit are implemented on invented rows; the
-acquisition, scoring, action and outcome executors are not. This document neither
-opens test outcomes nor authorizes test execution. Formal test acquisition may
-start only after the complete development chain, selected models and fixed
-reference models pass their producer, independent-validator and client gates.
+analysis kernel, label-blind prediction/action core and their independent audit
+paths are implemented on invented rows; the acquisition, neural scoring and
+outcome executors are not. This document neither opens test outcomes nor
+authorizes test execution. Formal test acquisition may start only after the
+complete development chain, selected models and fixed reference models pass
+their producer, independent-validator and client gates.
 
 ## Authenticated label-blind population
 
