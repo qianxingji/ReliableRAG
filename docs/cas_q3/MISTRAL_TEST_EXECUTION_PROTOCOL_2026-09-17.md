@@ -2,14 +2,14 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_AND_TEST_ACQUISITION_IMPLEMENTED_WITNESS_SCORING_OPEN`.
+Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_TEST_ACQUISITION_AND_WITNESS_IMPLEMENTED_SCORING_OPEN`.
 This document fixes the one-time Mistral test route prospectively. The pure
 analysis kernel, label-blind action seal, numeric-only outcome executor, formal
 20,000-draw analysis executor and their independent audit paths are implemented
-on invented rows. The test `a0_query`, repair and `a1_likelihood` executors plus
-their no-model validators are also implemented; witness replay and neural
-scoring are not. This document neither opens test outcomes nor authorizes test
-execution. Formal test
+on invented rows. The test `a0_query`, repair, `a1_likelihood` and witness replay
+executors plus their no-model validators are also implemented; neural scoring is
+not. This document neither opens test outcomes nor authorizes test execution.
+Formal test
 acquisition may start only after the complete development chain, selected models
 and fixed reference models pass their producer, independent-validator and client
 gates.
@@ -106,6 +106,15 @@ forbidden. Its independent validator loads only the pinned tokenizer and
 reconstructs all 90,000 prompts, target token sequences, journal records and
 summary arithmetic. The formal namespace has not been created.
 
+The implemented witness executor independently requires accepted `a0_query`,
+repair and `a1_likelihood` stages. It chooses the first and last canonical test
+position in each of the nine dataset-by-retriever cells, exactly 18 positions,
+and replays `a0`, repair query, `a1` and the four likelihood cells. It requires
+receipt equality and saves 126 raw 32,768-element FP32 first-token vectors
+(16,515,072 bytes). The independent tokenizer-only validator recomputes the
+selected token and float64 log-softmax from every vector. The formal witness
+namespace has not been created.
+
 ## Label-blind scoring and action seal
 
 After accepted acquisition and replay, execute and independently validate these
@@ -192,8 +201,8 @@ benchmark cohort rather than an independent new-question confirmation.
 
 - P0: this prospective contract is frozen; development acquisition and all
   ordered acceptances remain incomplete.
-- P1: implement test witness replay and scoring without opening outcomes, then
-  execute the full frozen chain once after the complete
+- P1: implement test scoring without opening outcomes, then execute the full
+  frozen chain once after the complete
   development gate passes.
 - P2: update the manuscript, supplement and public numeric reproduction package
   only from independently accepted results.

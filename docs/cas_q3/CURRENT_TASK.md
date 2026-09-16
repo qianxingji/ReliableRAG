@@ -387,6 +387,18 @@ checks with zero model forwards and zero Gold access. Five focused tests and the
 complete 123-test Mistral suite pass. No formal test `a1_likelihood` execution
 was started.
 
+The test witness replay executor and independent tokenizer-only vector audit are
+now implemented in `scripts/run_mistral_test_witness_replay.py` and
+`scripts/validate_mistral_test_witness_replay.py`. They require accepted test
+`a0_query`, repair and `a1_likelihood`, then select the first and last trace in
+each of nine dataset-by-retriever cells. The fixed workload is 18 positions by
+seven operations: 126 exact receipt replays and 126 raw 32,768-element FP32
+first-token vectors totaling 16,515,072 bytes. The validator independently
+recomputes target-token identity and float64 log-softmax without importing the
+producer or loading a model. Five focused tests and the complete 128-test
+Mistral suite pass. No formal witness replay was executed because its accepted
+test predecessors do not exist yet.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
