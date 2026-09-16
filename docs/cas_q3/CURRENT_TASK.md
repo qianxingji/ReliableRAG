@@ -399,6 +399,18 @@ producer or loading a model. Five focused tests and the complete 128-test
 Mistral suite pass. No formal witness replay was executed because its accepted
 test predecessors do not exist yet.
 
+The label-blind test answer-semantics producer and independent tokenizer-only
+validator are now also implemented without executing the formal stage. They fix
+18,000 test pairs, 36,000 normalized BGE vectors, 2,250 batches and 110,592,000
+explicit little-endian FP32 bytes. The validator reconstructs every batch
+identity, tokenization, vector norm and pairwise dot product without importing
+the producer or loading a model. Four new contract tests and the complete
+132-test Mistral suite pass. This stage remains blocked on the complete accepted
+development chain and accepted test
+acquisition/witness predecessors. Test HGB, GbV and the common prelabel freeze
+remain the next engineering gaps; no test Gold, outcome, fit or tuning access
+occurred.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

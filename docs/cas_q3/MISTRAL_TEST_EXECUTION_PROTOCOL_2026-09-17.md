@@ -2,13 +2,15 @@
 
 Date: 2026-09-17. **CAS Q3 STATUS: NOT READY.**
 
-Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_TEST_ACQUISITION_AND_WITNESS_IMPLEMENTED_SCORING_OPEN`.
+Status: `FROZEN_ACTION_OUTCOME_ANALYSIS_TEST_ACQUISITION_WITNESS_AND_ANSWER_SEMANTICS_IMPLEMENTED_HGB_GBV_PRELABEL_OPEN`.
 This document fixes the one-time Mistral test route prospectively. The pure
 analysis kernel, label-blind action seal, numeric-only outcome executor, formal
 20,000-draw analysis executor and their independent audit paths are implemented
 on invented rows. The test `a0_query`, repair, `a1_likelihood` and witness replay
-executors plus their no-model validators are also implemented; neural scoring is
-not. This document neither opens test outcomes nor authorizes test execution.
+executors plus their no-model validators are also implemented. The first neural
+scoring stage, BGE answer semantics, and its tokenizer-only validator are now
+implemented but have not run. Test HGB, GbV and the common prelabel freeze remain
+open. This document neither opens test outcomes nor authorizes test execution.
 Formal test
 acquisition may start only after the complete development chain, selected models
 and fixed reference models pass their producer, independent-validator and client
@@ -128,6 +130,14 @@ stages in order while test outcomes remain closed:
 5. primary selected-model probabilities and descriptive fixed-recipe
    probabilities for all three methods;
 6. global action allocation and an immutable action ledger.
+
+The answer-semantics producer and independent validator are implemented. The
+fixed workload is 2,250 document-mode BGE batches of 16 answers, yielding 36,000
+normalized 768-dimensional vectors and 110,592,000 explicit little-endian FP32
+bytes. The validator loads only the pinned tokenizer and independently checks
+all batch inputs, vector files, norms and 18,000 pairwise dot products. The
+formal namespace has not been created; test HGB, GbV and common prelabel code
+remain open.
 
 For each recipe and method, sort eligible rows by descending calibrated recovery
 probability and then ascending `(dataset, retriever, sample_id)`. Select exactly
