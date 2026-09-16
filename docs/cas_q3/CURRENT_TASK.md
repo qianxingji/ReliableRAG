@@ -206,8 +206,12 @@ This stage remains blocked on repair acceptance. The final 18-position witness-r
 independent tokenizer-only validator are also implemented. They require all
 three independently accepted canonical stages, reproduce the exact canonical
 receipts, save 126 complete 32,768-way FP32 first-token vectors (16,515,072 raw
-bytes), and independently recompute the selected-token log-softmax. Four new
-tests and the complete 36-test focused suite pass. Witness replay is blocked on
+bytes), and independently recompute the selected-token log-softmax. Its
+prospective input-graph amendment now freezes every historical and predecessor
+payload member, all 15 Mistral asset paths and every direct control file; the
+independent validator requires exact path equality and exact producer-ledger
+bindings. Six focused witness tests and the complete 158-test Mistral suite
+pass. Witness replay is blocked on
 `a1_likelihood` acceptance. No Gold, fit, test, a1, likelihood or NLI work has run.
 
 The subsequent development scoring/tuning order is now frozen before any such
