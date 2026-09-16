@@ -40,8 +40,11 @@ corrected value-blind freeze and full independent reconstruction now pass; read
 repeat them. The longest observed fixed prompt is 3,675 tokens; dynamic `a1`
 must still be guarded before CUDA.
 The single-load invented 3,675-token plus 64-step resource gate is now frozen in
-`docs/cas_q3/MISTRAL_LONGEST_SHAPE_PREFLIGHT_PROTOCOL_2026-09-17.md`. It reads
-only the tracked accepted length summary, never project token content.
+`docs/cas_q3/MISTRAL_LONGEST_SHAPE_PREFLIGHT_PROTOCOL_2026-09-17.md` and passed
+once; read
+`docs/cas_q3/MISTRAL_LONGEST_SHAPE_PREFLIGHT_ACCEPTANCE_2026-09-17.md`. Do not
+repeat it. The production runtime must keep Mistral exclusive on GPU and unload
+it before BGE/NLI; concurrent component residency is not accepted.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate

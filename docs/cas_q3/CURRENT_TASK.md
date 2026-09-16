@@ -104,6 +104,15 @@ same NF4/BF16/eager/CUDA-only model contract and saves full FP32 step scores for
 a no-model validator. Two static contract tests pass; this resource run has not
 yet executed at the prospective-freeze point.
 
+The longest-shape gate has now passed exactly once. A 3,675-token invented
+prompt completed 64 decode steps in 33.89 seconds; peak CUDA reserved memory was
+12,561,940,480 bytes, and all 64 × 32,768 saved FP32 score rows independently
+reconstruct their greedy tokens. Read
+`MISTRAL_LONGEST_SHAPE_PREFLIGHT_ACCEPTANCE_2026-09-17.md`. Because only about
+3.06 GiB remained free at peak, Mistral must be the sole GPU component and must
+be unloaded before BGE/NLI. Production adapter, journal/resume, compact replay,
+component-sequential scoring and the formal development run remain open.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
