@@ -285,6 +285,14 @@ tolerance. Six focused tests and the complete 81-test Mistral suite pass. Test
 access and action-budget tuning remain forbidden. This stage is blocked on
 independent development-outcome acceptance and has performed no scientific fit.
 
+The one-time Mistral test route is now prospectively frozen in
+`MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md`. It binds the exact 6,000-question
+/ 18,000-trace label-blind population, development predecessor gates,
+component-sequential acquisition, action sealing before Gold, global `K=900`,
+the four primary endpoints and 20,000 dataset-stratified question-cluster draws
+with `default_rng(20260930)` and adjusted quantiles 0.00625/0.99375. This is a
+protocol only: no test generation, score, action, outcome or bootstrap exists.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

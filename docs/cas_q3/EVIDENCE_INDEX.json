@@ -225,6 +225,27 @@
   "mistral_fixed_recipe_sensitivity_amendment": "docs/cas_q3/MISTRAL_FIXED_RECIPE_SENSITIVITY_AMENDMENT_2026-09-17.md",
   "mistral_fixed_recipe_sensitivity_amendment_sha256": "f6a7164846659b8e710d87d577bc81cc86b2707cf6e26a01afa274a5e34abdb2",
   "mistral_fixed_recipe_sensitivity_amendment_status": "FROZEN_BEFORE_DEVELOPMENT_GOLD_OR_SCIENTIFIC_FIT",
+  "mistral_test_execution_protocol": "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+  "mistral_test_execution_protocol_sha256": "b6372d4e6d1492ad8e189b1d790510db1dfb5b0b6d6ddd024ca0c65c5fe85e6f",
+  "mistral_test_execution_status": "FROZEN_BEFORE_TEST_EXECUTOR_IMPLEMENTATION_AND_DEVELOPMENT_SELECTION",
+  "mistral_test_questions": 6000,
+  "mistral_test_traces": 18000,
+  "mistral_test_global_action_cap": 900,
+  "mistral_test_bootstrap_seed": 20260930,
+  "mistral_test_bootstrap_draws": 20000,
+  "mistral_test_adjusted_quantiles": [
+    0.00625,
+    0.99375
+  ],
+  "mistral_test_primary_comparisons": [
+    "HGB_GBV_R-HGB_ONLY_R",
+    "HGB_GBV_R-GBV_ONLY_R"
+  ],
+  "mistral_test_primary_endpoints": [
+    "em_difference_pp",
+    "damage_rate_difference_pp"
+  ],
+  "mistral_test_execution_started": false,
   "mistral_development_scoring_tuning_status": "FULL_DEVELOPMENT_PIPELINE_IMPLEMENTED_BLOCKED_ON_ORDERED_PRIOR_ACCEPTANCE",
   "mistral_development_scoring_common": "scripts/mistral_development_scoring_common.py",
   "mistral_development_scoring_common_sha256": "044e20d429c9cab58535f1973e55088ae0c8695b833c4fd565b1b04375a85cb0",
@@ -515,7 +536,7 @@
   "submission_readiness_verification": "docs/cas_q3/SUBMISSION_READINESS_VERIFICATION.json",
   "submission_readiness_verification_sha256": "48b74e7008d1bd5531123d705e71b494677a1dabfbe2aa53108eca2269218958",
   "submission_readiness_decision": "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES",
-  "current_task_sha256": "703fafcd22eafe7e68acb38af552e07e5566abd758752286f02dae87324eeb88",
+  "current_task_sha256": "ad743a9412c1e83a66fdd0f11b348f5c78e39c9fa1e9552e4c1a7570abff45e3",
   "owner_inputs_intake": "docs/cas_q3/OWNER_INPUTS_INTAKE.md",
   "owner_inputs_intake_sha256": "e360f4f7f08e48c464935d9f121ae3e22c07ec226b1a55272e091f863ac81bdf",
   "owner_inputs_template": "docs/cas_q3/OWNER_INPUTS_TEMPLATE.json",
