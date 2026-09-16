@@ -87,6 +87,12 @@ def main() -> int:
             f"PDF contains ordered corresponding author {corresponding['order']}",
             checks,
         )
+    for index, marker in enumerate(receipt.get("required_manuscript_markers", []), start=1):
+        require(
+            marker.lower() in text,
+            f"PDF contains manuscript marker {index}",
+            checks,
+        )
 
     fonts = run("pdffonts", str(artifact)).splitlines()[2:]
     require(bool(fonts), "PDF contains font records", checks)

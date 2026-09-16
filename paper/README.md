@@ -1,17 +1,18 @@
 # CAS Q3 manuscript package
 
-The latest manuscript is **Selecting Between Original and Repaired RAG Answers:
-A Controlled Study of Accuracy and Harmful Replacements**. The 22-page PDF is
-`output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf`, SHA-256
-`968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179`.
-Its first page lists Zhigang Xu, Xingji Qian, and Xinhua Dong, and marks both
-Xingji Qian and Xinhua Dong with an asterisk. The correspondence line explicitly
-records Xinhua Dong (`xhdong@hbut.edu.cn`) as first corresponding author and
-Xingji Qian (`102511283@hbut.edu.cn`) as second corresponding author. The
-scientific body, all other pages, links, and bookmarks match the preceding
-author-information revision. See
-`JIIS_REVISED_20260916_CORRESPONDING_AUTHOR_VERIFICATION.json`. Final scientific
-acceptance remains pending; all preceding PDFs and receipts remain archived.
+The latest manuscript is the author-supplied **Selecting Between Original and
+Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements**.
+Its byte-identical 22-page project copy is
+`output/pdf/JIIS_Final_With_Declarations_2026-09-16.pdf`, SHA-256
+`60d9528b3d4a89fa8f704d6f831340b5c3d024ae14a37ddcffae5361c6a46a8f`.
+It retains Zhigang Xu, Xingji Qian, and Xinhua Dong, with Xinhua Dong as first
+corresponding author and Xingji Qian as second corresponding author. It adds a
+Statements and Declarations section covering funding, competing interests,
+author contributions, author approval, and data/code availability. The public
+repository commit and three published bundle hashes match the local public
+checkout. Pages 1, 12, 13, and 22 passed visual spot checks, and the 31-check
+identity/mechanical verifier passes. This registration does not transfer a prior
+scientific audit or establish the truth of declarations; both remain pending.
 
 The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest
 manuscript on 2026-09-16. Its byte-identical project copy is the **22-page A4 PDF**

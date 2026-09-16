@@ -5,19 +5,20 @@
 ## Current superseding milestone (2026-09-16)
 
 The current target is **Journal of Intelligent Information Systems (JIIS)**.
-The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest source
-and then requested the title **Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements**.
-The current 22-page PDF is
-`output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf`, SHA-256
-`968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179`.
-Its first page records Zhigang Xu, Xingji Qian, and Xinhua Dong; Hubei University
-of Technology, Wuhan, 430068, Hubei, China; Xinhua Dong as first corresponding
+The author designated `JIIS_Final_With_Declarations.pdf` as the latest source.
+Its byte-identical 22-page project copy is
+`output/pdf/JIIS_Final_With_Declarations_2026-09-16.pdf`, SHA-256
+`60d9528b3d4a89fa8f704d6f831340b5c3d024ae14a37ddcffae5361c6a46a8f`.
+It retains Zhigang Xu, Xingji Qian, and Xinhua Dong; Hubei University of
+Technology, Wuhan, 430068, Hubei, China; Xinhua Dong as first corresponding
 author (`xhdong@hbut.edu.cn`); and Xingji Qian as second corresponding author
-(`102511283@hbut.edu.cn`). The scientific body and all remaining pages have
-identical text and rendering to the preceding revision. Use this ordered-
-corresponding-author revision as the current baseline. `paper/LATEST_MANUSCRIPT.json`
-records the artifact. All prior PDFs and receipts remain preserved. Verification
-is `paper/JIIS_REVISED_20260916_CORRESPONDING_AUTHOR_VERIFICATION.json`.
+(`102511283@hbut.edu.cn`). It includes funding, competing interests, author
+contributions, author approval, and data/code availability statements. Use this
+PDF as the current baseline. All prior PDFs and receipts remain preserved.
+`paper/LATEST_MANUSCRIPT.json` records the current artifact, and
+`paper/JIIS_FINAL_DECLARATIONS_20260916_IDENTITY_VERIFICATION.json` records the
+31-check identity/mechanical PASS. Exact scientific and declaration audits are
+still pending for these bytes; no experiment or refit ran during registration.
 
 The new manuscript cites the clean public repository
 <https://github.com/qianxingji/ReliableRAG-Code> at commit
