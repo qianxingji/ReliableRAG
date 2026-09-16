@@ -38,6 +38,14 @@ membership and the split rule before any fit; do not try alternate splits.
 Expected membership is 1,200 validation and 2,400 training questions per fold,
 before reader-specific eligibility filtering.
 
+The implemented fold prefix is
+`cas-q3-reader-tuning-fold-v1|20260917`. Within each dataset, groups are ordered
+by the SHA-256 of the prefix, dataset and sample ID, with the sample ID as a
+collision tie-break, then assigned round-robin to folds 0--2. This gives exactly
+400 validation questions per dataset and fold. The implementation is
+`src/arbitration/reader_development_tuning.py`, SHA-256
+`300541e57cbff16bd7bdae9821aa335627bcf4e70bb1fe34586f46ba032002a7`.
+
 Fit imputation, scaling, class weights and the base model using only each
 fold's training partition. Validation rows must not contribute to fitted
 preprocessing statistics or training class weights. Select each method's configuration by the lowest
@@ -98,13 +106,19 @@ are never tunable objectives.
 
 ## Progress
 
-- P0: this development tuning design is recorded; executable reader resource,
-  numerical, fold and analysis contracts remain unfinished.
+- P0: this development tuning design and its reusable execution core are
+  implemented. Four synthetic contract tests pass in
+  `tests/test_reader_development_tuning.py`, SHA-256
+  `b87e4b827f5a58673841ce89e910ac79583c85cd83d1b785bbf0d77db3adbd00`.
+  They verify the exact folds, grid/tie rule, finite 26-fit per-method budget and
+  rejection of extra roles/outcome scope. Executable reader resource, numerical
+  and final analysis contracts remain unfinished.
 - P1: once those are ready, run the equal-budget search, freeze selected models,
   and evaluate the fixed reader condition with all outcomes retained.
 - P2: update manuscript and public release only from accepted results.
 
-No new model load, neural forward, scientific fit, bootstrap or test-outcome
-read was performed to write this policy. Existing Qwen/Phi/Mistral evidence and
-the latest manuscript remain unchanged. No model/effort switch or independent
-final acceptance is certified by this document.
+Only synthetic estimator fits were used to test the implementation. No project
+development label, new model load, neural forward, scientific fit, bootstrap or
+test-outcome read was performed. Existing Qwen/Phi/Mistral evidence and the
+latest manuscript remain unchanged. No model/effort switch or independent final
+acceptance is certified by this document.

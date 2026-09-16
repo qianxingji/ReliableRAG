@@ -22,6 +22,13 @@ GbV-only receive identical search budgets. Final configuration selection and
 the primary comparison family must be fixed before new reader test results.
 Disappointing test results remain evidence, not tuning targets.
 
+The reusable development-only tuner is now implemented in
+`src/arbitration/reader_development_tuning.py`. Its interface accepts only
+`fit` and `cal` roles, uses the frozen eight-candidate grid and deterministic
+three-fold dataset-stratified question grouping, and emits no test prediction.
+Four synthetic contract tests pass. No project data were fit and no Mistral
+model was loaded; implementation readiness is not experiment completion.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
