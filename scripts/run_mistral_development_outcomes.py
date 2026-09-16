@@ -219,15 +219,30 @@ def main() -> int:
                 and sha256(frozen_ledger) == EXPECTED_INPUT_LEDGER_SHA256,
                 "INPUT_FREEZE")
         input_paths = [
-            prelabel / "SHA256_MANIFEST.json", prelabel_validation,
-            a0_namespace / "SHA256_MANIFEST.json",
-            a1_namespace / "SHA256_MANIFEST.json",
-            input_manifest, frozen_ledger,
-            Path(__file__), REPO / "scripts/empirical_outcome_native.py",
+            *verify_manifest(
+                prelabel, sha256(prelabel / "SHA256_MANIFEST.json"),
+            ),
+            prelabel_validation,
+            *verify_manifest(
+                a0_namespace, sha256(a0_namespace / "SHA256_MANIFEST.json"),
+            ),
+            *verify_manifest(
+                a1_namespace, sha256(a1_namespace / "SHA256_MANIFEST.json"),
+            ),
+            *verify_manifest(
+                input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+            ),
+            Path(__file__), REPO / "scripts/validate_mistral_development_outcomes.py",
+            REPO / "scripts/empirical_outcome_native.py",
             REPO / "scripts/empirical_outcome_independent.py",
+            REPO / "scripts/empirical_pool_io.py",
+            REPO / "scripts/verify_roa_artifacts.py",
             REPO / "scripts/mistral_development_acquisition_common.py",
             REPO / "scripts/mistral_development_scoring_common.py",
+            REPO / "scripts/run_mistral_development_a0_query.py",
+            REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_OUTCOMES_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             *authenticated_paths,
         ]
         unique_paths = sorted({path.resolve() for path in input_paths}, key=str)

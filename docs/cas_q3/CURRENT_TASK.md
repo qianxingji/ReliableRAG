@@ -294,9 +294,13 @@ answer-receipt and prelabel-row bindings. Raw references are never written; the
 failure receipt withholds exception text after Gold access to avoid accidental
 reference leakage. The validator separately rereads the same authenticated
 development references and recomputes normalized EM and token F1 with an
-independent formula. Seven focused tests and the complete 75-test Mistral suite
-pass. This stage remains blocked on independent prelabel acceptance and has read
-no Gold or test value, loaded no model, and performed no fit.
+independent formula. A prospective input-graph amendment now binds every member
+of prelabel, A0, A1 and the input freeze together with the complete authenticated
+reference/metric/parser/PyArrow source set. The independent validator requires
+exact path equality before rereading Gold. Nine focused outcome tests and the
+complete 168-test Mistral suite pass. This stage remains blocked on independent
+prelabel acceptance and has read no Gold or test value, loaded no model, and
+performed no fit.
 
 The equal-budget development tuner and a separate full-refit validator are now
 also implemented but have not run on project outcomes. The producer requires

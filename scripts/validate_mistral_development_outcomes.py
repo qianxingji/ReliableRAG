@@ -29,6 +29,9 @@ OUTCOME_FIELDS = frozenset({
     "prelabel_row_sha256", "a0_receipt_sha256", "a1_receipt_sha256",
     "a0_em", "a1_em", "a0_f1", "a1_f1",
 })
+EXPECTED_INPUT_FREEZE_MANIFEST_SHA256 = (
+    "588b4d86fb6048ade1bba52731829496772d62fd522a260a7a4c60ec584586ca"
+)
 
 
 def object_sha(value: object) -> str:
@@ -51,6 +54,30 @@ def validate_manifest(namespace: Path) -> None:
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    if "status" in value:
+        require(value["status"] == "PASS", "CURRENT_MANIFEST_STATUS")
+    if "exact_recursive_coverage" in value:
+        require(value["exact_recursive_coverage"] is True,
+                "CURRENT_MANIFEST_EXACT_COVERAGE")
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
 
 
 def validate_prelabel(root: Path) -> tuple[Path, Path]:
@@ -159,6 +186,38 @@ def main() -> int:
         path = Path(item["path"])
         require(path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_INPUT")
+    spec, pre_gold, authenticated_paths, arrow_files = authenticate(original)
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    required_inputs = {
+        *current_manifest_member_paths(
+            prelabel, sha256(prelabel / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            root / "a0_query", sha256(root / "a0_query/SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            root / "a1_likelihood",
+            sha256(root / "a1_likelihood/SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *{Path(path).resolve() for path in authenticated_paths},
+        prelabel_validation.resolve(),
+        (REPO / "scripts/run_mistral_development_outcomes.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/empirical_outcome_native.py").resolve(),
+        (REPO / "scripts/empirical_outcome_independent.py").resolve(),
+        (REPO / "scripts/empirical_pool_io.py").resolve(),
+        (REPO / "scripts/verify_roa_artifacts.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/run_mistral_development_a0_query.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_OUTCOMES_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
     marker = json.loads((namespace / "GOLD_ACCESS_STARTED.json").read_text(encoding="utf-8"))
     require(marker["status"] == "DEVELOPMENT_GOLD_ACCESS_STARTED"
             and marker["prelabel_manifest_sha256"]
@@ -168,7 +227,6 @@ def main() -> int:
             and marker["raw_references_may_not_be_written"] is True,
             "GOLD_ACCESS_MARKER")
 
-    spec, pre_gold, _paths, arrow_files = authenticate(original)
     require(sys.version == pre_gold["environment"]["python"], "PYTHON_IDENTITY")
     import numpy as np
     require(np.__version__ == pre_gold["environment"]["numpy"], "NUMPY_IDENTITY")
