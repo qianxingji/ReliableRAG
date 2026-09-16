@@ -1,24 +1,24 @@
 {
-  "schema_version": 6,
+  "schema_version": 5,
   "decision": "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
   "designated_by": "qianxingji",
   "designated_date": "2026-09-16",
-  "registered_utc": "2026-09-16T08:19:04.038153+00:00",
+  "registered_utc": "2026-09-16T08:04:31.519399+00:00",
   "cas_q3_status": "NOT_READY",
-  "authoritative_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf",
+  "authoritative_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf",
   "source_filename": "JIIS_Revised_Manuscript(1) (1).pdf",
   "source_sha256": "755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb",
-  "sha256": "37d05cb6a9c2825b1a5aa9574f7d7b66e6421e4c573205562a3c5168b4817d1a",
-  "size_bytes": 921359,
+  "sha256": "755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb",
+  "size_bytes": 840728,
   "pages": 22,
   "page_size": "595.276 x 841.89 pts (A4)",
   "pdf_version": "1.7",
   "preservation": {
-    "mode": "TITLE_ONLY_PDF_DERIVATIVE",
+    "mode": "BYTE_IDENTICAL_COPY_NO_PDF_REWRITE",
     "source_unchanged": true,
-    "previous_latest_receipt": "paper/manuscript_history/REVISED_20260916_LATEST_MANUSCRIPT_755fc441.json",
-    "previous_latest_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf",
-    "previous_latest_sha256": "755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb"
+    "previous_latest_receipt": "paper/manuscript_history/R6_LATEST_MANUSCRIPT_9ea482bb.json",
+    "previous_latest_artifact": "output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf",
+    "previous_latest_sha256": "9ea482bb9a6887ec3a7e2d5951bef7215355ae76c3b431b0810abd8992e00199"
   },
   "public_repository": {
     "url": "https://github.com/qianxingji/ReliableRAG-Code",
@@ -31,9 +31,11 @@
     }
   },
   "visual_review": {
-    "status": "PAGE_1_TITLE_VISUALLY_CHECKED_BODY_AND_PAGES_2_TO_22_RENDER_IDENTICAL",
+    "status": "SPOT_CHECK_PAGES_1_18_22_NO_OBVIOUS_CLIPPING",
     "pages_reviewed": [
-      1
+      1,
+      18,
+      22
     ],
     "full_document_layout_review": false
   },
@@ -45,16 +47,15 @@
     "prior_response_letter_rebound": false
   },
   "mechanical_verification": {
-    "receipt": "paper/JIIS_RETITLED_20260916_IDENTITY_VERIFICATION.json",
+    "receipt": "paper/JIIS_REVISED_20260916_IDENTITY_VERIFICATION.json",
     "status": "PASS_LATEST_MANUSCRIPT_IDENTITY_AND_MECHANICAL_CHECKS",
     "check_count": 20,
     "all_fonts_embedded": true,
     "type_3_fonts": 0,
     "repository_links": 4
   },
-  "usage": "Use this author-requested title revision as the latest manuscript. The 22-page body is unchanged; scientific acceptance and R6 response rebinding remain pending.",
+  "usage": "Use this author-supplied 22-page PDF as the sole current manuscript baseline for later review, editing, and paper/code alignment. Earlier R6 and its response letter remain historical and are not automatically accepted for this artifact.",
   "supersedes_for_current_review": [
-    "output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf",
     "output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf",
     "output/pdf/JIIS_Manuscript_R5_Reproducible.pdf",
     "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
@@ -62,8 +63,5 @@
     "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",
     "output/pdf/manuscript.pdf",
     "output/pdf/supplement.pdf"
-  ],
-  "title": "Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements",
-  "revision_reason": "AUTHOR_REQUESTED_TITLE_CHANGE",
-  "editorial_verification": "paper/JIIS_REVISED_20260916_TITLE_VERIFICATION.json"
+  ]
 }

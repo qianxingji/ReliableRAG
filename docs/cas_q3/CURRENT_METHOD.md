@@ -1,14 +1,16 @@
 # Current method and claim boundary
 
-The current paper object is an empirical audit with the Astra xhigh recommended
-working title:
+The current paper object is an empirical audit. The author selected the following
+title on 2026-09-16:
 
-**Supervision-Matched Selection of Paired RAG Repairs: An Empirical Study of
-Accuracy and Damage**
+**Selecting Between Original and Repaired RAG Answers: A Controlled Study of
+Accuracy and Harmful Replacements**
 
+The preceding working title was `Supervision-Matched Selection of Paired RAG
+Repairs: An Empirical Study of Accuracy and Damage`.
 `Repair or Preserve? A Supervision-Matched Audit of Paired RAG Repair under Harm
-and Action Budgets` was the earlier Q2 working title. Freeze the final title only
-after the evidence--Claim and direct-neighbor literature gate passes.
+and Action Budgets` was the earlier Q2 working title. The title change is
+editorial; the scientific claim boundaries and pending acceptance gates remain.
 
 The [P0-A direct-neighbor audit](P0_A_DIRECT_NEIGHBOR_LITERATURE_AUDIT.md)
 rejects method novelty and accepts the bounded empirical gap. The

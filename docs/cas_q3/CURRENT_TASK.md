@@ -5,13 +5,15 @@
 ## Current superseding milestone (2026-09-16)
 
 The current target is **Journal of Intelligent Information Systems (JIIS)**.
-The author has now designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest
-manuscript. Its byte-identical 22-page project copy is
-`output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf`, SHA-256
-`755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb`.
-Use this PDF as the current baseline. `paper/LATEST_MANUSCRIPT.json` records
-the designation and preserves the preceding R6 receipt under
-`paper/manuscript_history/`. R3, R4, R5, and R6 remain historical.
+The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest source
+and then requested the title **Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements**.
+The current 22-page PDF is `output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf`,
+SHA-256 `37d05cb6a9c2825b1a5aa9574f7d7b66e6421e4c573205562a3c5168b4817d1a`. The title and PDF metadata have been updated;
+the first-page body and all remaining pages have identical text and rendering.
+Use this title revision as the current baseline. `paper/LATEST_MANUSCRIPT.json`
+records the current artifact. The original supplied PDF, R3--R6, and prior
+receipts remain preserved as historical files. Title-edit verification is
+`paper/JIIS_REVISED_20260916_TITLE_VERIFICATION.json`.
 
 The new manuscript cites the clean public repository
 <https://github.com/qianxingji/ReliableRAG-Code> at commit

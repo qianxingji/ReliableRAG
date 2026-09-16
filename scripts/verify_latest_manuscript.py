@@ -61,7 +61,9 @@ def main() -> int:
 
     text = re.sub(r"\s+", " ", run("pdftotext", "-layout", str(artifact), "-").replace("\u00ad", "-")).lower()
     required_text = {
-        "title": "supervision-matched selection of paired rag repairs",
+        "title": receipt.get(
+            "title", "supervision-matched selection of paired rag repairs"
+        ).lower(),
         "author surface": "qianxingji",
         "references": "references",
         "appendix start": "appendix a sensitivity to fixed action membership",

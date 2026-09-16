@@ -1,11 +1,19 @@
 # CAS Q3 manuscript package
 
+The latest manuscript is **Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements**, as requested by the author on
+2026-09-16. The 22-page PDF is `output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf`,
+SHA-256 `37d05cb6a9c2825b1a5aa9574f7d7b66e6421e4c573205562a3c5168b4817d1a`. Use this title revision for subsequent review and editing.
+Only the first-page title and PDF title metadata changed: first-page body text
+and rendering, all other pages, links, and bookmarks match the source.
+See `JIIS_REVISED_20260916_TITLE_VERIFICATION.json`; final scientific acceptance
+remains pending. The original supplied PDF and its receipt remain archived.
+
 The author designated `JIIS_Revised_Manuscript(1) (1).pdf` as the latest
 manuscript on 2026-09-16. Its byte-identical project copy is the **22-page A4 PDF**
 `output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf`, SHA-256
 `755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb`.
-Use this file for subsequent review, editing, and paper/code alignment.
-`LATEST_MANUSCRIPT.json` records the designation. The original PDF was not
+This supplied source is preserved; use the title revision above for current work.
+The archived receipt records that designation. The original PDF was not
 rewritten. It cites public code commit `038d769e96d092a2eec3bbc5df9f45f3c2a17ff0`;
 the three numeric-bundle/parameter hashes were checked against the local public
 checkout. This registration does not transfer R6 scientific acceptance or its
