@@ -35,8 +35,15 @@ the accepted neural environment unchanged. A producer and independent validator
 execute the same deterministic BF16/NF4 CUDA witness on the RTX 5060 Ti and
 match its output SHA-256; 37 independent checks pass. Read
 `MISTRAL_RESOURCE_AND_RUNTIME_PREFLIGHT_DECISION_2026-09-17.md`. This is a
-kernel-only partial PASS: no Mistral asset exists locally, no model was loaded,
-and whole-model memory, tokenizer/semantic, replay and workload contracts remain
+kernel-only partial PASS.
+
+The exact Mistral revision has now also been acquired. Fourteen selected files
+totaling 14,499,392,853 bytes pass an independent 1,295-check validation. The
+three sharded BF16 weight files contain 291 indexed tensors and 7,248,023,552
+parameters; the duplicate consolidated serialization was prospectively excluded.
+The initial no-payload HTTP attempt is preserved and the Xet retry completed.
+Read `MISTRAL_ASSET_ACQUISITION_DECISION_2026-09-17.md`. No model was loaded;
+whole-model memory, tokenizer/semantic, replay and workload contracts remain
 open.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public

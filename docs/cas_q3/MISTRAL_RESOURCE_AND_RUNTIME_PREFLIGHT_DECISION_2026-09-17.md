@@ -100,3 +100,8 @@ Still open before a Mistral model preflight or scientific run:
 Therefore this partial PASS removes one genuine runtime uncertainty but does not
 close the old Mistral STOP as a whole. It is not evidence that 7B fits, that the
 reader is scientifically valid, or that fusion outperforms HGB-only.
+
+Update: exact asset acquisition and independent validation subsequently passed
+in `MISTRAL_ASSET_ACQUISITION_DECISION_2026-09-17.md`; item 1 above is now
+closed. Items 2--6 remain open, and this historical runtime decision remains a
+kernel-only conclusion.

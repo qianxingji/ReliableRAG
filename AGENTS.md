@@ -12,6 +12,11 @@ The proposed Mistral condition has no new results and no frozen executable
 protocol yet. Preserve all Qwen evidence and all Phi failures, and complete the
 prospective scientific/runtime contract before formal reader experiments.
 The current manuscript and public release remain unchanged by this steering.
+The exact pinned Mistral assets are now authenticated outside the worktree; read
+`docs/cas_q3/MISTRAL_ASSET_ACQUISITION_DECISION_2026-09-17.md`. This closes
+asset identity only. Do not infer that the 4-bit full model loads or that a
+reader experiment has begun; tokenizer semantics, model-load/resource,
+witness/replay and full-workload gates remain open.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate

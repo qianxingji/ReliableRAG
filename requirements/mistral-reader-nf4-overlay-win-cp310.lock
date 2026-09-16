@@ -5,3 +5,5 @@ accelerate==1.8.1 \
     --hash=sha256:c47b8994498875a2b1286e945bd4d20e476956056c7941d512334f4eb44ff991
 bitsandbytes==0.50.2 \
     --hash=sha256:c697963c8fda3dcd0d7ebd9b5211ae4067feef7cd06e0350d4e816a434fe683d
+hf-xet==1.6.0 \
+    --hash=sha256:fb4fadde1b2b70bf4c0c14a6dccbe7194b1c28947fefd5bbe3fed9d940676c3b
