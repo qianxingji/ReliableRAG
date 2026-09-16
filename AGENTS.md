@@ -26,7 +26,11 @@ passed exactly once; read
 `docs/cas_q3/MISTRAL_WHOLE_MODEL_PREFLIGHT_ACCEPTANCE_2026-09-17.md`. Do not
 repeat it or infer full-workload/scientific validity. Full input binding,
 longest-shape resource, production adapter, replay/storage and final analysis
-gates remain open.
+gates remain open. The unique value-blind tokenizer-only input freeze is now
+prospectively fixed by
+`docs/cas_q3/MISTRAL_READER_INPUT_FREEZE_PROTOCOL_2026-09-17.md`; it must bind
+directly to accepted Qwen label-free inputs, never Phi artifacts, and remains
+zero-model/zero-Gold.
 The user additionally authorizes parameter tuning when results disappoint.
 Apply `docs/cas_q3/READER_DEVELOPMENT_TUNING_POLICY_2026-09-16.md`: use development
 data, matched search budgets for fusion and strong controls, and a separate

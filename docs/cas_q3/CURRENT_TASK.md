@@ -69,6 +69,15 @@ invented-input execution only: full input binding, longest-shape resource,
 production adapter, replay/storage and analysis gates are still open, and no
 scientific reader experiment has begun.
 
+The value-blind input freeze is now prospectively committed in
+`MISTRAL_READER_INPUT_FREEZE_PROTOCOL_2026-09-17.md`. Its producer directly
+binds the accepted Qwen development/test traces, questions, original Top-5
+evidence and role ledger; it explicitly has no Phi artifact predecessor. It is
+limited to 31,500 ledger rows / 63,000 tokenizer calls, with zero model, answer,
+outcome or Gold access. The independent validator reconstructs every row without
+importing producer/common code. Four static contract tests pass; the unique
+input-freeze namespace has not yet been created at this freeze point.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
