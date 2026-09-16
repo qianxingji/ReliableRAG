@@ -207,6 +207,18 @@ grid winner is the primary Mistral recipe; the original `C=1` recipe is a
 secondary sensitivity. Test inputs and outcomes remain closed until parameters,
 allocation and the four-endpoint family are sealed.
 
+The first post-acquisition scoring stage is now implemented but has not run.
+`run_mistral_development_answer_semantics.py` fixes canonical dataset order and
+1,689 batches, saves all 27,000 normalized BGE vectors as raw float32 bytes, and
+binds each of the 13,500 answer-pair dot products to the accepted acquisition
+chain. Its separate tokenizer-only validator reconstructs every batch input,
+checks every vector file and recomputes every dot product without loading a
+model. A generic append-only scoring journal and 48 Mistral-focused tests now
+pass. This stage remains blocked on independent witness-replay acceptance; BGE
+has not been loaded for it, and no HGB/GbV score, Gold value, fit or test result
+has been produced. Development tuning remains limited to the already frozen
+eight-candidate grid. No search expansion or test-result tuning is authorized.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
