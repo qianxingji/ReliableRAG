@@ -1,5 +1,18 @@
 # Project: Reliable RAG Research
 
+## Latest user steering (2026-09-16)
+
+The user has reopened adding a reader and assessing the weak conditional
+increment over HGB-only. Read
+`docs/cas_q3/READER_AND_HGB_INCREMENT_RESEARCH_DECISION_2026-09-16.md` and the
+latest section of `docs/cas_q3/CURRENT_TASK.md` first. Reader research design and
+bounded feasibility preparation are active again; the older Qwen-only work
+priority below is historical. This does not convert any old STOP/FAIL to PASS.
+The proposed Mistral condition has no new results and no frozen executable
+protocol yet. Preserve all Qwen evidence and all Phi failures, and complete the
+prospective scientific/runtime contract before formal reader experiments.
+The current manuscript and public release remain unchanged by this steering.
+
 ## Goal
 This repository implements experiments for a research project on:
 

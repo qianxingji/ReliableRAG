@@ -1,5 +1,14 @@
 # Current method and claim boundary
 
+On 2026-09-16 the user reopened a reader extension and the weak HGB-only
+increment question. The prospective direction is in
+`READER_AND_HGB_INCREMENT_RESEARCH_DECISION_2026-09-16.md`; no new reader result,
+new algorithm or final protocol has been accepted. The post-hoc public-data
+action accounting in `HGB_FUSION_DISAGREEMENT_2026-09-16.json` reconciles the
+existing +10 Net / -15 Damage difference and does not change the frozen claims
+below. The historical Mistral STOP remains an unpassed execution gate even
+though research design is active again.
+
 The current paper object is an empirical audit. The author selected the following
 title on 2026-09-16:
 

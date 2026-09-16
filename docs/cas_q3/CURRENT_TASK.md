@@ -1,6 +1,33 @@
-# Current task: close the Qwen empirical paper for CAS Q3 review
+# Current task: reader extension design and HGB-only contribution diagnosis
 
 **CAS Q3 STATUS: NOT READY.**
+
+## Latest research steering (2026-09-16)
+
+The user now requests an additional reader and identifies the weak contribution
+of the fusion over the stronger HGB-only control. This reopens reader research
+design and bounded feasibility preparation, superseding the previous Qwen-only
+editorial priority. Read
+[the research decision](READER_AND_HGB_INCREMENT_RESEARCH_DECISION_2026-09-16.md).
+Formal neural execution still needs a prospective executable protocol; the old
+Mistral STOP and all Phi FAIL records remain preserved, not waived.
+
+Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
+Qwen numeric rows. Both policies select 506 common replacements and 394 unique
+replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
+choices yield 114 / 25. Totals reconcile exactly with the accepted result map.
+See `HGB_FUSION_DISAGREEMENT_2026-09-16.json` and
+`scripts/describe_hgb_fusion_disagreement.py`. This is post-hoc accounting, with
+zero new fit, neural forward, bootstrap or test-guided tuning.
+
+The research choice remains pinned Mistral-7B-Instruct-v0.3, with a prospective
+4-bit deployment design to be checked on the local 16GB GPU. It would be the
+second scientifically valid reader condition, not evidence that Phi passed.
+The question is whether the change in recovery and harmful replacement recurs
+under this condition; there is no presumption of superiority. Next P0 is the
+resource/numerical contract and scientific design closure; P1 is the fixed reader
+experiment and full reporting; P2 is manuscript/release synchronization after
+valid results. Compliance closure stays deferred at the user's request.
 
 ## Current superseding milestone (2026-09-16)
 
@@ -38,11 +65,12 @@ and per-question numeric selection/bootstrap reconstruction were verified for
 the cited release. End-to-end retrieval, generation, neural scoring, and
 historical upstream fitting remain outside the release.
 
-The user's 2026-09-13 steering is to continue this work as a **conditional CAS
+The user's earlier 2026-09-13 steering was to continue this work as a **conditional CAS
 Q3 empirical study**. This authorizes target-neutral editorial and packaging
 work within the accepted Qwen evidence. It does not reopen reader/method
 experiments, relax authenticity or fairness, or imply that a CAS Q3 journal has
-already been certified.
+already been certified. The newer 2026-09-16 research steering above reopens
+reader design while preserving the accepted empirical evidence boundary.
 
 The machine-readable
 [submission-readiness gate](SUBMISSION_READINESS_GATE.md) independently verifies
