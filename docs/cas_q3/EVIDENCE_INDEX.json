@@ -219,7 +219,7 @@
   "mistral_development_witness_status": "IMPLEMENTED_BLOCKED_ON_A1_LIKELIHOOD_ACCEPTANCE",
   "mistral_development_scoring_tuning_protocol": "docs/cas_q3/MISTRAL_DEVELOPMENT_SCORING_AND_TUNING_PROTOCOL_2026-09-17.md",
   "mistral_development_scoring_tuning_protocol_sha256": "77b83350cd638a714a8aa462f176a9c377a0b70104c5336e3d9cd5dd48b427c3",
-  "mistral_development_scoring_tuning_status": "PROTOCOL_FROZEN_ANSWER_SEMANTICS_FIXED_HGB_AND_PAIRED_GBV_IMPLEMENTED_BLOCKED_ON_PRIOR_ACCEPTANCE",
+  "mistral_development_scoring_tuning_status": "PROTOCOL_FROZEN_THROUGH_COMMON_PRELABEL_IMPLEMENTATION_BLOCKED_ON_PRIOR_ACCEPTANCE",
   "mistral_development_scoring_common": "scripts/mistral_development_scoring_common.py",
   "mistral_development_scoring_common_sha256": "044e20d429c9cab58535f1973e55088ae0c8695b833c4fd565b1b04375a85cb0",
   "mistral_development_scoring_common_tests": "tests/test_mistral_development_scoring_common.py",
@@ -1376,7 +1376,7 @@
   "jiis_r6_historical_receipt": "paper/JIIS_R6_MAJOR_REVISION_VERIFICATION.json",
   "latest_manuscript_title": "Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements",
   "latest_manuscript_title_verification": "paper/JIIS_FINAL_DECLARATIONS_20260916_IDENTITY_VERIFICATION.json",
-  "as_of_utc": "2026-09-16T19:32:52Z",
+  "as_of_utc": "2026-09-16T19:46:04Z",
   "mistral_development_gbv_executor": "scripts/run_mistral_development_gbv.py",
   "mistral_development_gbv_executor_sha256": "c7d2455f54ebf7b0cfeba0bc37c9bc69e00a47744c737c4e33fcf2234f5159ef",
   "mistral_development_gbv_validator": "scripts/validate_mistral_development_gbv.py",
@@ -1398,5 +1398,21 @@
   "mistral_development_gbv_recovered_tokenizer_vocabulary_size": 128001,
   "mistral_development_gbv_focused_tests": 8,
   "mistral_development_gbv_suite_tests": 61,
-  "mistral_development_gbv_status": "IMPLEMENTED_BLOCKED_ON_HGB_ACCEPTANCE"
+  "mistral_development_gbv_status": "IMPLEMENTED_BLOCKED_ON_HGB_ACCEPTANCE",
+  "mistral_development_prelabel_executor": "scripts/run_mistral_development_prelabel_freeze.py",
+  "mistral_development_prelabel_executor_sha256": "58a71d3e6cd8065c5daaaf0fc280b691df9f36668f715f3e387ec2fdd626fedc",
+  "mistral_development_prelabel_validator": "scripts/validate_mistral_development_prelabel_freeze.py",
+  "mistral_development_prelabel_validator_sha256": "58d7725733159602d985d56ee25ce4f6fc792339e3a53c7883e03a512b4b149b",
+  "mistral_development_prelabel_tests": "tests/test_mistral_development_prelabel_freeze_contract.py",
+  "mistral_development_prelabel_tests_sha256": "ed3b8d5f7c9644c70455d6e3b48c3ab5a303d57143f79ac19adb096d403a6694",
+  "mistral_development_prelabel_methods": [
+    "HGB_GBV_R",
+    "HGB_ONLY_R",
+    "GBV_ONLY_R"
+  ],
+  "mistral_development_prelabel_expected_traces": 13500,
+  "mistral_development_prelabel_common_mask": true,
+  "mistral_development_prelabel_focused_tests": 7,
+  "mistral_development_prelabel_suite_tests": 68,
+  "mistral_development_prelabel_status": "IMPLEMENTED_BLOCKED_ON_GBV_ACCEPTANCE"
 }

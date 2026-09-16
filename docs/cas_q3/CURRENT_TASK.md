@@ -245,6 +245,17 @@ and performs no environment installation. Eight focused GbV tests and the comple
 61-test Mistral suite pass. The stage remains blocked on HGB acceptance and has
 produced no GbV score, Gold access, fit, test result or NLI model forward.
 
+The common prelabel-freeze producer and an independently implemented validator
+are now also complete but have not run. They require both accepted HGB and GbV
+stages, reconstruct all 13,500 development identities, and emit the fixed feature
+orders `HGB_GBV_R=[HGB,GbV]`, `HGB_ONLY_R=[HGB]`, and
+`GBV_ONLY_R=[GbV]` under one shared eligibility mask. Native ineligible pairs and
+deterministic NLI context failures force Keep for all three heads; any successfully
+completed first GbV branch remains recorded for diagnosis without becoming a
+policy-specific eligible row. Seven focused tests and the complete 68-test
+Mistral suite pass. This stage remains blocked on independent GbV acceptance and
+has read no Gold or test value, loaded no model, and performed no fit.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
