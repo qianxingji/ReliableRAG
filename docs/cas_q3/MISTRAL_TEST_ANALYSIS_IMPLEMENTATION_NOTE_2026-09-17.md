@@ -27,6 +27,15 @@ The frozen implementation covers:
   by retriever cells;
 - durable unsigned-16 question multiplicities and JSONL receipt reconstruction.
 
+The formal single-use wrapper is `scripts/run_mistral_test_analysis.py`; its
+independent validator is `scripts/validate_mistral_test_analysis.py`. They require
+an independently accepted label-blind action seal and an independently accepted
+18,000-row numeric-outcome stage. The producer will durably write all 20,000 by
+6,000 unsigned-16 question multiplicities (240,000,000 bytes), every draw
+receipt, point estimates and interval reports. The validator independently
+regenerates the RNG stream and expands trace copies for every draw; it imports
+neither the producer wrapper, producer arithmetic nor weighted top-K kernel.
+
 ## Preserved engineering failure
 
 The first invented-only run executed seven tests and failed one assertion for
@@ -42,6 +51,8 @@ rows. No analysis formula, seed, endpoint, allocation rule or production code
 was changed in response. The rerun passed all seven focused tests; the complete
 Mistral suite then passed 88 tests.
 
-These are synthetic engineering checks. They do not establish a reader effect,
-authorize test access or change the submission decision. Test acquisition,
-score/action sealing, outcomes and all 20,000 production draws remain unrun.
+The analysis core and formal-wrapper checks pass 9/9 focused tests; the complete
+Mistral suite passes 98/98 tests. These are synthetic engineering checks. They do
+not establish a reader effect, authorize test access or change the submission
+decision. Test acquisition, neural scoring, score/action sealing, outcomes and
+all 20,000 production draws remain unrun.

@@ -326,6 +326,16 @@ probability and action within `1e-12`. Eight focused tests and the complete
 96-test Mistral suite pass. The required test acquisition/scoring/prelabel
 predecessors do not yet exist, so the formal namespace has not been created.
 
+The final downstream analysis wrappers are now implemented in
+`scripts/run_mistral_test_analysis.py` and
+`scripts/validate_mistral_test_analysis.py`. After independently accepted action
+and numeric-outcome stages, the producer will save all 20,000 dataset-stratified
+question multiplicities and draw receipts, point estimates and four-endpoint
+intervals. The validator reconstructs every RNG draw and explicit-copy top-K
+allocation without importing the producer arithmetic. Nine focused tests and
+the complete 98-test Mistral suite pass. No production draw or test outcome has
+been read; acquisition, neural scoring and numeric-outcome executors remain open.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only

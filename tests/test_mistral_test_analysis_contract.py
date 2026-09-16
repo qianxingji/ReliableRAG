@@ -1,5 +1,6 @@
 """Invented-only tests for the frozen Mistral test analysis contract."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -236,6 +237,53 @@ class MistralTestAnalysisContractTests(unittest.TestCase):
         self.assertNotIn("batch_allocation", source)
         self.assertNotIn("weighted_top_k", source)
         self.assertEqual(SEED, 20260930)
+
+    def test_formal_analysis_wrappers_freeze_family_draws_and_independent_path(self):
+        root = Path(__file__).resolve().parents[1]
+        producer = (root / "scripts" / "run_mistral_test_analysis.py").read_text(
+            encoding="utf-8"
+        )
+        validator = (root / "scripts" / "validate_mistral_test_analysis.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("PASS_MISTRAL_TEST_ANALYSIS_PENDING_INDEPENDENT", producer)
+        self.assertIn("PASS_INDEPENDENT_MISTRAL_TEST_ANALYSIS", validator)
+        self.assertIn('"bootstrap_draws": DRAWS', producer)
+        self.assertIn('"primary_family_size": 4', producer)
+        self.assertIn('"adjusted_quantiles": [0.00625, 0.99375]', producer)
+        self.assertIn("validate_draw_files", validator)
+        self.assertNotIn("from scripts.run_mistral_test_analysis", validator)
+        self.assertNotIn("from scripts.mistral_test_analysis_math", validator)
+        self.assertNotIn("from src.evaluation.batch_allocation", validator)
+
+    def test_formal_analysis_manifest_checks_reject_mutation_and_extra_files(self):
+        from scripts.run_mistral_test_analysis import validate_manifest as producer_check
+        from scripts.validate_mistral_test_analysis import validate_manifest as audit_check
+
+        with tempfile.TemporaryDirectory() as directory:
+            namespace = Path(directory)
+            member = namespace / "invented.json"
+            member.write_bytes(b"{}\n")
+            manifest = {
+                "status": "PASS",
+                "files": [{
+                    "path": member.name,
+                    "size_bytes": member.stat().st_size,
+                    "sha256": hashlib.sha256(member.read_bytes()).hexdigest(),
+                }],
+                "excludes_only": "SHA256_MANIFEST.json",
+                "exact_recursive_coverage": True,
+            }
+            (namespace / "SHA256_MANIFEST.json").write_text(
+                json.dumps(manifest), encoding="utf-8"
+            )
+            producer_check(namespace)
+            audit_check(namespace)
+            extra = namespace / "extra.txt"
+            extra.write_text("unsealed", encoding="utf-8")
+            for check in (producer_check, audit_check):
+                with self.assertRaises(RuntimeError):
+                    check(namespace)
 
 
 if __name__ == "__main__":
