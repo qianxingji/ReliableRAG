@@ -268,6 +268,20 @@ independent formula. Seven focused tests and the complete 75-test Mistral suite
 pass. This stage remains blocked on independent prelabel acceptance and has read
 no Gold or test value, loaded no model, and performed no fit.
 
+The equal-budget development tuner and a separate full-refit validator are now
+also implemented but have not run on project outcomes. The producer requires
+accepted prelabel and development-outcome stages, then applies the frozen eight
+candidate grid and three question-group folds identically to all three methods.
+It durably records every fit start and terminal event, with exactly 78 producer
+fit attempts and 156 journal rows. The validator imports neither the producer
+nor the tuning core; it independently reconstructs folds, preprocessing, all CV
+fits, pooled log losses, tie-breaking, selected refits and Platt fits, adding 78
+audit refits rather than a second selection search. A complete
+three-method synthetic replay shows agreement within the fixed `1e-10` numerical
+tolerance. Six focused tests and the complete 81-test Mistral suite pass. Test
+access and action-budget tuning remain forbidden. This stage is blocked on
+independent development-outcome acceptance and has performed no scientific fit.
+
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique
 replacements each. Fusion-only choices yield 109 Recovery / 10 Damage; HGB-only
