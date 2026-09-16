@@ -25,7 +25,7 @@ from scripts.run_mistral_development_a0_query import (
     EXPECTED_INPUT_FREEZE_MANIFEST_SHA256, EXPECTED_INPUT_LEDGER_SHA256,
     EXPECTED_POOL_MANIFEST_SHA256, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
     EXPECTED_RUNTIME_MANIFEST_SHA256, acquire_gpu_mutex, evidence_rows,
-    load_original_native, validate_manifest_pin,
+    load_original_native,
 )
 from src.arbitration.mistral_reader_runtime import (
     DurableOperationJournal, object_sha256, require, text_sha256,
@@ -39,6 +39,64 @@ EXPECTED_DENSE_QUERY_FORWARDS = 9_000
 MIN_DISK_FREE_BYTES = 30 * 1024 ** 3
 MAX_STAGE_SECONDS = 7 * 24 * 60 * 60
 BGE_REVISION = "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+EXPECTED_BGE_PREFLIGHT_MANIFEST_SHA256 = (
+    "3861f34c6add005baa1889d36679b740c90677d0fbbbc04ea85ab8b5cc6a2b3d"
+)
+
+
+def legacy_manifest_member_paths(
+    original: Path, namespace: Path, expected_manifest_sha256: str,
+) -> list[Path]:
+    """Verify legacy repo-relative manifests while ignoring generated pyc files."""
+    original = original.resolve()
+    namespace = namespace.resolve()
+    manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "LEGACY_MANIFEST_PIN:" + str(namespace))
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    members = []
+    seen = set()
+    for item in manifest["files"]:
+        path = (original / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in seen
+                and path.is_file() and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"],
+                "LEGACY_MANIFEST_MEMBER:" + item["path"])
+        members.append(path)
+        seen.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    extras = actual - seen - {manifest_path.resolve()}
+    require(all("__pycache__" in path.parts and path.suffix == ".pyc"
+                for path in extras), "LEGACY_MANIFEST_UNEXPECTED_EXTRA")
+    return [manifest_path.resolve(), *members]
+
+
+def bge_asset_records(preflight: Path, original: Path) -> list[dict]:
+    receipt = json.loads((preflight / "GPU_PREFLIGHT.json").read_text(
+        encoding="utf-8"
+    ))
+    require(receipt.get("status") == "PASS_BGE_GPU_SYNTHETIC_ONLY"
+            and receipt.get("actual_backend", {}).get("revision") == BGE_REVISION
+            and receipt.get("benchmark_embedding_forward_calls") == 0
+            and receipt.get("fresh_gold_values_materialized") == 0,
+            "BGE_PREFLIGHT_STATUS")
+    freeze = json.loads((preflight / "EXECUTABLE_FREEZE.json").read_text(
+        encoding="utf-8"
+    ))
+    model_root = (original / "data/models/huggingface"
+                  / "models--BAAI--bge-base-en-v1.5"
+                  / "snapshots" / BGE_REVISION).resolve()
+    selected = []
+    for item in freeze["inputs"]:
+        path = Path(item["path"]).resolve()
+        if path.is_relative_to(model_root):
+            require(path.is_file() and path.stat().st_size == item["size_bytes"]
+                    and sha256(path) == item["sha256"], "BGE_ASSET_MEMBER")
+            selected.append({"path": str(path), "size_bytes": item["size_bytes"],
+                             "sha256": item["sha256"]})
+    require(len(selected) == 6 and len({item["path"] for item in selected}) == 6,
+            "BGE_ASSET_FILE_COUNT")
+    return selected
 
 
 def query_object(native, payload: dict):
@@ -135,17 +193,46 @@ def main() -> int:
         frozen_ledger = input_freeze / "INPUT_LENGTHS_PRIVATE.jsonl"
         require(sha256(frozen_ledger) == EXPECTED_INPUT_LEDGER_SHA256, "INPUT_FREEZE_LEDGER")
         runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
-        input_records = [
-            validate_manifest_pin(runtime_root / "SHA256_MANIFEST.json", EXPECTED_RUNTIME_MANIFEST_SHA256),
-            validate_manifest_pin(original / "outputs/daa_v2_fresh_v1/pool_freeze/SHA256_MANIFEST.json", EXPECTED_POOL_MANIFEST_SHA256),
-            validate_manifest_pin(original / "outputs/daa_v2_fresh_v1/retrieval_freeze/SHA256_MANIFEST.json", EXPECTED_RETRIEVAL_MANIFEST_SHA256),
-            record(frozen_ledger), record(a0_stage / "SHA256_MANIFEST.json"), record(validation),
-            record(Path(__file__)), record(REPO / "scripts/mistral_development_acquisition_common.py"),
-            record(REPO / "scripts/run_mistral_development_a0_query.py"),
-            record(REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md"),
+        pool_root = original / "outputs/daa_v2_fresh_v1/pool_freeze"
+        retrieval_root = original / "outputs/daa_v2_fresh_v1/retrieval_freeze"
+        preflight = REPO / "outputs/cas_q2/empirical_retrieval_gpu_preflight_v1"
+        paths = [
+            *legacy_manifest_member_paths(
+                original, runtime_root, EXPECTED_RUNTIME_MANIFEST_SHA256,
+            ),
+            *legacy_manifest_member_paths(
+                original, pool_root, EXPECTED_POOL_MANIFEST_SHA256,
+            ),
+            *legacy_manifest_member_paths(
+                original, retrieval_root, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                preflight, EXPECTED_BGE_PREFLIGHT_MANIFEST_SHA256,
+            ),
+            *verify_manifest(
+                a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"),
+            ),
+            validation,
+            Path(__file__), REPO / "scripts/validate_mistral_development_repair.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
+            REPO / "scripts/run_mistral_development_a0_query.py",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_REPAIR_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
         ]
+        records = [record(path) for path in sorted(
+            {Path(path).resolve() for path in paths}, key=str
+        )]
+        assets = bge_asset_records(preflight, original)
+        by_path = {item["path"]: item for item in [*records, *assets]}
+        require(len(by_path) == len(records) + len(assets),
+                "UNIQUE_REPAIR_INPUTS")
+        input_records = [by_path[path] for path in sorted(by_path)]
         freeze = {"status": "FROZEN_BEFORE_FORMAL_REPAIR", "source_commit": commit,
                   "expected_traces": EXPECTED_TRACES, "expected_dense_query_forwards": EXPECTED_DENSE_QUERY_FORWARDS,
+                  "retrieval_depth": 50, "replacement_position_zero_based": 4,
                   "inputs": input_records,
                   "scope": "development same-retriever repair only; Mistral/NLI/Gold/test/fit forbidden"}
         freeze_path = stage_output / "EXECUTABLE_FREEZE.json"

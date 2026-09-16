@@ -1,13 +1,18 @@
 from pathlib import Path
 import ast
+import hashlib
+import json
+import tempfile
 import unittest
 
 from scripts.run_mistral_development_repair import (
     BGE_REVISION,
     EXPECTED_DENSE_QUERY_FORWARDS,
     EXPECTED_TRACES,
+    legacy_manifest_member_paths,
     validate_repair_payload,
 )
+from scripts.validate_mistral_development_repair import current_manifest_member_paths
 
 
 class MistralDevelopmentRepairContractTests(unittest.TestCase):
@@ -71,6 +76,55 @@ class MistralDevelopmentRepairContractTests(unittest.TestCase):
         self.assertNotIn("AutoModel", source)
         self.assertNotIn("ExactLocalBGEBackend", source)
         self.assertIn("SavedVectorBackend", source)
+
+    def test_legacy_manifest_binds_every_payload_and_only_ignores_pyc(self):
+        with tempfile.TemporaryDirectory() as folder:
+            original = Path(folder)
+            namespace = original / "outputs/freeze"
+            namespace.mkdir(parents=True)
+            payload = namespace / "payload.bin"
+            payload.write_bytes(b"payload")
+            cache = namespace / "__pycache__/runtime.cpython-310.pyc"
+            cache.parent.mkdir(); cache.write_bytes(b"generated")
+            manifest = namespace / "SHA256_MANIFEST.json"
+            value = {"files": [{
+                "path": "outputs/freeze/payload.bin",
+                "size_bytes": payload.stat().st_size,
+                "sha256": hashlib.sha256(payload.read_bytes()).hexdigest(),
+            }]}
+            manifest.write_text(json.dumps(value), encoding="utf-8")
+            manifest_sha = hashlib.sha256(manifest.read_bytes()).hexdigest()
+            self.assertEqual(
+                set(legacy_manifest_member_paths(original, namespace, manifest_sha)),
+                {manifest.resolve(), payload.resolve()},
+            )
+            (namespace / "unexpected.txt").write_text("not frozen", encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "LEGACY_MANIFEST_UNEXPECTED_EXTRA"):
+                legacy_manifest_member_paths(original, namespace, manifest_sha)
+
+    def test_independent_validator_requires_complete_frozen_graph(self):
+        with tempfile.TemporaryDirectory() as folder:
+            namespace = Path(folder)
+            payload = namespace / "payload.bin"
+            payload.write_bytes(b"payload")
+            manifest = namespace / "SHA256_MANIFEST.json"
+            value = {"files": [{
+                "path": "payload.bin", "size_bytes": payload.stat().st_size,
+                "sha256": hashlib.sha256(payload.read_bytes()).hexdigest(),
+            }]}
+            manifest.write_text(json.dumps(value), encoding="utf-8")
+            manifest_sha = hashlib.sha256(manifest.read_bytes()).hexdigest()
+            self.assertEqual(
+                current_manifest_member_paths(namespace, manifest_sha),
+                {manifest.resolve(), payload.resolve()},
+            )
+        source = (Path(__file__).resolve().parents[1]
+                  / "scripts/validate_mistral_development_repair.py").read_text(
+                      encoding="utf-8"
+                  )
+        self.assertIn("INCOMPLETE_FROZEN_INPUT_GRAPH", source)
+        self.assertIn("bge_asset_paths", source)
+        self.assertIn("PRODUCER_FILE_BINDINGS", source)
 
 
 if __name__ == "__main__":

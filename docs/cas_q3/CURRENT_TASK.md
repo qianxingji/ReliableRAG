@@ -186,8 +186,15 @@ operations per trace. Early observed throughput is about 10 traces per 30
 seconds, implying roughly 11--12 hours for this stage if sustained. No second
 instance or concurrent BGE stage is permitted. The repair-stage executor and
 its independent saved-vector reconstruction validator are now implemented and
-pass four focused tests, but they remain blocked on `a0_query` completion and
-independent acceptance. The `a1_likelihood` executor and its independent
+pass six focused tests, but they remain blocked on `a0_query` completion and
+independent acceptance. Before repair execution, a prospective input-graph
+amendment now requires full member-level freezing of the historical
+runtime/pool/retrieval artifacts, the Mistral input freeze, accepted `a0_query`,
+the BGE preflight and its six exact model assets. The independent validator
+reconstructs that graph and the producer rehashes every member at finalization.
+This closes a manifest-only time-of-check gap without changing any scientific
+operation; the complete Mistral suite now passes 154 tests. The
+`a1_likelihood` executor and its independent
 tokenizer-only validator are also implemented. They reconstruct the dynamic E1,
 the `a1` prompt and all four answer-token teacher-forcing cells from prior sealed
 inputs, and they rehash every prior-stage manifest member before use. Four new
