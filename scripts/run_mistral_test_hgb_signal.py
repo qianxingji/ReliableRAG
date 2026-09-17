@@ -230,13 +230,17 @@ def main() -> int:
             REPO / "scripts/mistral_development_scoring_common.py",
             REPO / "scripts/run_mistral_test_a0_query.py",
             REPO / "scripts/run_mistral_test_repair.py",
+            REPO / "scripts/validate_mistral_test_a0_query.py",
             REPO / "scripts/empirical_feature_independent.py",
             REPO / "src/evaluation/answer_normalization.py",
+            REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_TEST_HGB_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/SHA256_MANIFEST.json",
             original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/runtime_support.py",
             original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/native_runtime.py",
             preflight, method_path, model_path, answers_path, state_path,
+            Path(sys.executable),
         ]
         input_records = [record(path) for path in sorted(
             {Path(path).resolve() for path in [*paths, *controls]}, key=str

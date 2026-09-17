@@ -18,9 +18,12 @@ if __package__ in {None, ""}:
 from scripts.empirical_feature_independent import (
     check_numeric_tree, feature_pair, pair_eligibility,
 )
-from scripts.empirical_runtime_io import native_runtime, restore_dataset
+from scripts.empirical_runtime_io import CPU_TEST_SHA, native_runtime, restore_dataset
 from scripts.validate_mistral_test_a0_query import (
-    object_sha, read_rows, require, sha256,
+    DATASETS, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+    EXPECTED_TEST_POOL_MANIFEST_SHA256,
+    EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+    object_sha, read_rows, require, sha256, validate_selected_manifest,
 )
 
 
@@ -32,6 +35,12 @@ HGB_MODEL_SHA256 = "9245170f855435b5603b04013bd4fbab79a75d2761853a012ab9f3259600
 METHOD_FREEZE_SHA256 = "af69d7b3a974656bf81da0514a32385476421ac5bd0b32a6585d2291f10aa87a"
 STATE_SYMMETRIC_SOURCE_SHA256 = "3724b5ac77722b70cabdf2589379d5584942f34ec81f3f5a04f88e0665f8f717"
 ANSWERS_SOURCE_SHA256 = "d6de10b0d44bf32c5aa3727c4d2b4b3dc2556b3e4f791cc1fc4f08ad957dd182"
+EXPECTED_RETRIEVAL_MANIFEST_SHA256 = (
+    "81b9c7163adf669a828bd2ef772e14fecbda727cf596bced45856a1e699a354d"
+)
+HISTORICAL_PREFLIGHT_SHA256 = (
+    "f29a5ad13c2d8ce6cab3bb6331bd315837c70907fa9d71725339af07baeb5790"
+)
 
 
 def text_sha(value: str) -> str:
@@ -51,6 +60,25 @@ def validate_manifest(namespace: Path) -> None:
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
 
 
 def validate_semantics(root: Path) -> Path:
@@ -181,9 +209,77 @@ def main() -> int:
         require(path.stat().st_size == item["size_bytes"] and sha256(path) == item["sha256"],
                 "FROZEN_INPUT")
     frozen_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(semantics_validation.resolve() in frozen_paths
-            and Path(__file__).resolve() in frozen_paths,
-            "FROZEN_SEMANTICS_VALIDATION")
+    require(len(frozen_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
+    preparation = REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
+    pool_root = REPO / "outputs/cas_q2/empirical_candidate_pool_v2"
+    retrieval = REPO / "outputs/cas_q2/empirical_retrieval_v1"
+    cpu_tests = REPO / "outputs/cas_q2/empirical_runtime_native_tests_v1"
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    semantics_stage = root / "answer_semantics"
+    preflight = (original /
+        "outputs/daa_v2_fresh_v1/prelabel_seal_v3/preflight/PREFLIGHT_INPUT_VERIFICATION.json")
+    require(sha256(preflight) == HISTORICAL_PREFLIGHT_SHA256,
+            "HISTORICAL_PREFLIGHT_PIN")
+    method_path = original / "outputs/mars_full/method_freeze.json"
+    model_path = original / "outputs/mars_full/models/state_symmetric_hgb.joblib"
+    answers_path = original / "src/evaluation/answers.py"
+    state_path = original / "src/mars/state_symmetric.py"
+    pool_relatives = tuple(
+        f"{folder}/{dataset}.jsonl"
+        for folder in ("pools", "runtime") for dataset in DATASETS
+    ) + ("INDEPENDENT_VALIDATION.json",)
+    required_inputs = {
+        *{path.resolve() for path in validate_selected_manifest(
+            preparation, EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+            ("TRACE_MANIFEST_PRIVATE.jsonl",),
+        )},
+        *{path.resolve() for path in validate_selected_manifest(
+            pool_root, EXPECTED_TEST_POOL_MANIFEST_SHA256, pool_relatives,
+        )},
+        *current_manifest_member_paths(
+            retrieval, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(cpu_tests, CPU_TEST_SHA),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            semantics_stage, sha256(semantics_stage / "SHA256_MANIFEST.json"),
+        ),
+        *{
+            path for stage in ("a0_query", "repair", "a1_likelihood")
+            for path in current_manifest_member_paths(
+                root / stage, sha256(root / stage / "SHA256_MANIFEST.json"),
+            )
+        },
+        semantics_validation.resolve(),
+        *{(root / f"{stage}_validation/VALIDATION.json").resolve()
+          for stage in ("a0_query", "repair", "a1_likelihood")},
+        (REPO / "scripts/run_mistral_test_hgb_signal.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/empirical_runtime_io.py").resolve(),
+        (REPO / "scripts/empirical_retrieval_io.py").resolve(),
+        (REPO / "scripts/empirical_pool_io.py").resolve(),
+        (REPO / "scripts/empirical_runtime_contract.py").resolve(),
+        (REPO / "scripts/replay_roa_original.py").resolve(),
+        (REPO / "scripts/verify_roa_artifacts.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/run_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_test_repair.py").resolve(),
+        (REPO / "scripts/validate_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/empirical_feature_independent.py").resolve(),
+        (REPO / "src/evaluation/answer_normalization.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_HGB_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/SHA256_MANIFEST.json").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/runtime_support.py").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/native_runtime.py").resolve(),
+        preflight.resolve(), method_path.resolve(), model_path.resolve(),
+        answers_path.resolve(), state_path.resolve(), Path(sys.executable).resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     feature_rows = read_rows(namespace / "HGB_FEATURE_ROWS.jsonl")
     signal_rows = read_rows(namespace / "HGB_SIGNAL_ROWS.jsonl")
@@ -192,12 +288,10 @@ def main() -> int:
     feature_map = {row["position"]: row for row in feature_rows}
     require(len(feature_map) == len(feature_rows), "UNIQUE_FEATURE_POSITIONS")
 
-    trace_path = (REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
-                  / "TRACE_MANIFEST_PRIVATE.jsonl")
-    require(trace_path.resolve() in frozen_paths, "FROZEN_TEST_TRACE")
+    trace_path = preparation / "TRACE_MANIFEST_PRIVATE.jsonl"
     traces = read_rows(trace_path)
     frozen_rows = [row for row in read_rows(
-        REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1/INPUT_LENGTHS_PRIVATE.jsonl"
+        input_freeze / "INPUT_LENGTHS_PRIVATE.jsonl"
     ) if row.get("cohort") == "test"]
     require(len(traces) == len(frozen_rows) == EXPECTED_TRACES, "SOURCE_COUNTS")
     a0_rows = read_rows(root / "a0_query/GENERATION_RECEIPTS.jsonl")

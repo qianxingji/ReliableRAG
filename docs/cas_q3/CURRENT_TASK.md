@@ -466,9 +466,11 @@ retrieval arrays, applies the exact historical 48-feature state-symmetric HGB
 without refitting, and retains explicit forced-Keep reasons for ineligible
 pairs. Its independent validator uses the separate feature formulas and directly
 recomputes the positive/negative probability symmetry instead of calling the
-producer selector. Five new contract tests pass. Neural loads/forwards, project
-or test Gold, test outcomes, fitting and tuning remain forbidden; the complete
-Mistral suite now passes 137 tests. This stage is
+producer selector. A prospective input-graph amendment now binds the complete
+historical HGB source/model set, all test predecessor members and direct control
+files, with exact equality required by the independent validator. Seven focused
+tests pass. Neural loads/forwards, project or test Gold, test outcomes, fitting
+and tuning remain forbidden; the complete Mistral suite now passes 182 tests. This stage is
 blocked on accepted test answer semantics; test GbV and common prelabel remain
 the next engineering gaps.
 

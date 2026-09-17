@@ -33,12 +33,14 @@ The independent validator does not import the producer. It rebuilds each feature
 tree with `scripts/empirical_feature_independent.py`, checks it numerically
 against the saved 48-feature record, calls the underlying HGB
 `predict_proba` directly on positive and negative matrices, and reconstructs the
-state-symmetric score with tolerance `1e-15`. It performs no fit or neural call.
+state-symmetric score with tolerance `1e-15`. A prospective amendment also
+requires exact equality between the frozen direct input graph and an
+independently reconstructed set. It performs no fit or neural call.
 
-Five contract tests cover the model identity, feature width, independent feature
-formula, independent HGB scoring and forbidden-access gates. The complete
-Mistral suite passes 137 tests. No formal test namespace, HGB score or outcome
-was produced during implementation.
+Seven contract tests cover the model identity, feature width, independent feature
+formula, independent HGB scoring, forbidden-access gates, exact input closure
+and unexpected-file rejection. The complete Mistral suite passes 182 tests. No
+formal test namespace, HGB score or outcome was produced during implementation.
 
 ## Remaining gates and risks
 
