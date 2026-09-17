@@ -46,7 +46,7 @@ def object_sha(value: object) -> str:
     return hashlib.sha256(canonical(value)).hexdigest()
 
 
-def validate_manifest(namespace: Path) -> None:
+def validate_manifest(namespace: Path) -> set[Path]:
     manifest_path = namespace / "SHA256_MANIFEST.json"
     require(manifest_path.is_file(), "MANIFEST_MISSING")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -62,7 +62,9 @@ def validate_manifest(namespace: Path) -> None:
                 and sha256(path) == item["sha256"], "MANIFEST_MEMBER")
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
-    require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+    paths = members | {manifest_path.resolve()}
+    require(actual == paths, "MANIFEST_COVERAGE")
+    return paths
 
 
 def validate_predecessors(root: Path):
@@ -72,8 +74,9 @@ def validate_predecessors(root: Path):
     a0_validation = root / "a0_query_validation/VALIDATION.json"
     a1 = root / "a1_likelihood"
     a1_validation = root / "a1_likelihood_validation/VALIDATION.json"
-    for namespace in (action, a0, a1):
-        validate_manifest(namespace)
+    action_paths = validate_manifest(action)
+    a0_paths = validate_manifest(a0)
+    a1_paths = validate_manifest(a1)
     require(all(path.is_file() for path in
                 (action_validation, a0_validation, a1_validation)),
             "PREDECESSOR_VALIDATIONS")
@@ -131,7 +134,8 @@ def validate_predecessors(root: Path):
                 and acceptance.get("gold_values_read") == 0
                 and acceptance.get("scientific_fits") == 0,
                 "ANSWER_SOURCE_ACCEPTANCE")
-    return action, action_validation, a0, a0_validation, a1, a1_validation
+    return (action, action_validation, a0, a0_validation, a1, a1_validation,
+            action_paths, a0_paths, a1_paths)
 
 
 def action_groups(rows: list[dict]) -> set[tuple[str, str]]:
@@ -221,9 +225,8 @@ def main() -> int:
             and output
             == (root / "test_outcomes_validation/VALIDATION.json").resolve()
             and not output.exists(), "FIXED_ROOTS_OR_OUTPUT")
-    action, action_validation, a0, a0_validation, a1, a1_validation = (
-        validate_predecessors(root)
-    )
+    (action, action_validation, a0, a0_validation, a1, a1_validation,
+     action_paths, a0_paths, a1_paths) = validate_predecessors(root)
     namespace = root / "test_outcomes"
     validate_manifest(namespace)
     receipt = json.loads((namespace / "STAGE_RECEIPT.json").read_text(
@@ -254,6 +257,8 @@ def main() -> int:
             and freeze.get("metric_fields")
             == ["a0_em", "a1_em", "a0_f1", "a1_f1"]
             and set(freeze.get("output_fields", [])) == OUTCOME_FIELDS
+            and freeze.get("python") == str(Path(sys.executable).resolve())
+            and freeze.get("python_version") == sys.version
             and freeze.get("raw_reference_output") == "FORBIDDEN"
             and freeze.get("parameter_tuning") == "FORBIDDEN",
             "EXECUTABLE_FREEZE")
@@ -269,14 +274,34 @@ def main() -> int:
                 "a1": sha256(a1 / "MODEL_RECEIPTS.jsonl"),
             }, "FROZEN_SOURCE_BINDINGS")
     frozen_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(len(frozen_paths) == len(freeze["inputs"])
-            and {action_validation.resolve(), a0_validation.resolve(),
-                 a1_validation.resolve()}.issubset(frozen_paths),
-            "FROZEN_ACCEPTANCE_INPUTS")
+    require(len(frozen_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
     for item in freeze["inputs"]:
         path = Path(item["path"])
         require(path.is_file() and path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_INPUT")
+
+    spec, pre_gold, authenticated_paths, arrow_files = authenticate(original)
+    require(sys.version == pre_gold["environment"]["python"]
+            and freeze.get("numpy_version") == pre_gold["environment"]["numpy"],
+            "FROZEN_PYTHON_NUMPY_IDENTITY")
+    required_inputs = {
+        *action_paths, action_validation.resolve(),
+        *a0_paths, a0_validation.resolve(),
+        *a1_paths, a1_validation.resolve(),
+        (REPO / "scripts/run_mistral_test_outcomes.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/empirical_outcome_native.py").resolve(),
+        (REPO / "scripts/empirical_outcome_independent.py").resolve(),
+        (REPO / "scripts/empirical_pool_io.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/verify_roa_artifacts.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_OUTCOMES_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        Path(sys.executable).resolve(),
+        *{Path(path).resolve() for path in authenticated_paths},
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     action_rows = list(read_jsonl(action / "ACTION_ROWS.jsonl"))
     selected = action_groups(action_rows)
@@ -292,7 +317,6 @@ def main() -> int:
             and marker.get("raw_references_may_not_be_written") is True,
             "GOLD_ACCESS_MARKER")
 
-    spec, pre_gold, _paths, arrow_files = authenticate(original)
     require(sys.version == pre_gold["environment"]["python"], "PYTHON_IDENTITY")
     import numpy as np
     require(np.__version__ == pre_gold["environment"]["numpy"], "NUMPY_IDENTITY")

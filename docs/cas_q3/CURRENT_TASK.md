@@ -384,9 +384,12 @@ test `a0_query` and `a1_likelihood` answer receipts. The producer then writes
 exactly 18,000 rows with only identity plus `a0_em`, `a1_em`, `a0_f1` and
 `a1_f1`; the validator separately rereads authenticated Gold and recomputes all
 72,000 metric values without importing the producer. Raw references are never
-written, and failure text is withheld after Gold access. Nine focused tests and
-the complete 107-test Mistral suite pass on invented fixtures. The test
-acquisition and neural-scoring predecessors do not exist, so no formal outcome
+written, and failure text is withheld after Gold access. A prospective amendment
+now freezes all action/a0/a1 members, validations, authenticated Gold/metric/
+PyArrow paths and direct controls, rehashes them after output, and requires exact
+independent path equality before reference materialization. Eleven focused tests
+and the complete 190-test Mistral suite pass on invented fixtures. The ordered
+predecessors are implemented but have not run and passed, so no formal outcome
 namespace was created and test Gold remains closed.
 
 The first test-acquisition component is now implemented in

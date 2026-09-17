@@ -48,7 +48,7 @@ def require(value, message):
         raise RuntimeError(message)
 
 
-def validate_manifest(namespace: Path) -> None:
+def validate_manifest(namespace: Path) -> set[Path]:
     manifest_path = namespace / "SHA256_MANIFEST.json"
     require(manifest_path.is_file(), "PREDECESSOR_MANIFEST_MISSING")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -65,14 +65,15 @@ def validate_manifest(namespace: Path) -> None:
                 "PREDECESSOR_MANIFEST_MEMBER")
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
-    require(actual == members | {manifest_path.resolve()},
-            "PREDECESSOR_MANIFEST_COVERAGE")
+    paths = members | {manifest_path.resolve()}
+    require(actual == paths, "PREDECESSOR_MANIFEST_COVERAGE")
+    return paths
 
 
-def validate_action_gate(root: Path) -> tuple[Path, Path]:
+def validate_action_gate(root: Path) -> tuple[Path, Path, set[Path]]:
     namespace = root / "action_seal"
     validation = root / "action_seal_validation/VALIDATION.json"
-    validate_manifest(namespace)
+    member_paths = validate_manifest(namespace)
     require(validation.is_file(), "ACTION_ACCEPTANCE_REQUIRED")
     receipt = json.loads((namespace / "STAGE_RECEIPT.json").read_text(
         encoding="utf-8"
@@ -98,7 +99,7 @@ def validate_action_gate(root: Path) -> tuple[Path, Path]:
             and acceptance.get("test_outcome_values_read") == 0
             and acceptance.get("action_budget_tuned") is False,
             "ACTION_ACCEPTANCE")
-    return namespace, validation
+    return namespace, validation, member_paths
 
 
 def validate_answer_source(
@@ -110,10 +111,10 @@ def validate_answer_source(
     expected_operations: int,
     validation_hash_field: str,
     producer_gold_field: str,
-) -> tuple[Path, Path]:
+) -> tuple[Path, Path, set[Path]]:
     namespace = root / stage
     validation = root / f"{stage}_validation/VALIDATION.json"
-    validate_manifest(namespace)
+    member_paths = validate_manifest(namespace)
     require(validation.is_file(), "ANSWER_SOURCE_ACCEPTANCE_REQUIRED")
     receipt = json.loads((namespace / "STAGE_RECEIPT.json").read_text(
         encoding="utf-8"
@@ -133,7 +134,7 @@ def validate_answer_source(
             and acceptance.get("gold_values_read") == 0
             and acceptance.get("scientific_fits") == 0,
             "ANSWER_SOURCE_ACCEPTANCE")
-    return namespace, validation
+    return namespace, validation, member_paths
 
 
 def test_action_scope(rows: list[dict]) -> set[tuple[str, str]]:
@@ -284,15 +285,15 @@ def main() -> int:
         "action_budget_tuned": False,
     }
     try:
-        action, action_validation = validate_action_gate(root)
-        a0, a0_validation = validate_answer_source(
+        action, action_validation, action_paths = validate_action_gate(root)
+        a0, a0_validation, a0_paths = validate_answer_source(
             root, "a0_query", "GENERATION_RECEIPTS.jsonl",
             "PASS_MISTRAL_TEST_A0_QUERY_PENDING_INDEPENDENT",
             "PASS_INDEPENDENT_FULL_SOURCE_MISTRAL_TEST_A0_QUERY",
             EXPECTED_A0_OPERATIONS, "generation_receipts_sha256",
             "project_gold_values_read",
         )
-        a1, a1_validation = validate_answer_source(
+        a1, a1_validation, a1_paths = validate_answer_source(
             root, "a1_likelihood", "MODEL_RECEIPTS.jsonl",
             "PASS_MISTRAL_TEST_A1_LIKELIHOOD_PENDING_INDEPENDENT",
             "PASS_INDEPENDENT_NO_MODEL_MISTRAL_TEST_A1_LIKELIHOOD",
@@ -311,13 +312,19 @@ def main() -> int:
                 "OUTCOME_NUMPY_IDENTITY")
         metric, cursor_type, readers, definitions = native(original, spec)
         input_paths = [
-            action / "SHA256_MANIFEST.json", action_validation,
-            a0 / "SHA256_MANIFEST.json", a0_validation,
-            a1 / "SHA256_MANIFEST.json", a1_validation,
+            *action_paths, action_validation,
+            *a0_paths, a0_validation,
+            *a1_paths, a1_validation,
             Path(__file__), REPO / "scripts/validate_mistral_test_outcomes.py",
             REPO / "scripts/empirical_outcome_native.py",
             REPO / "scripts/empirical_outcome_independent.py",
+            REPO / "scripts/empirical_pool_io.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
+            REPO / "scripts/verify_roa_artifacts.py",
+            REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_TEST_OUTCOMES_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
+            Path(sys.executable),
             *authenticated_paths,
         ]
         unique_paths = sorted({path.resolve() for path in input_paths}, key=str)

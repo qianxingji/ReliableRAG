@@ -1,5 +1,6 @@
 from pathlib import Path
 import ast
+import hashlib
 import json
 import tempfile
 import unittest
@@ -14,8 +15,11 @@ from scripts.run_mistral_test_outcomes import (
     answer_maps,
     metric_values,
     test_action_scope as producer_action_scope,
+    validate_manifest as producer_manifest,
 )
-from scripts.validate_mistral_test_outcomes import action_groups
+from scripts.validate_mistral_test_outcomes import (
+    action_groups, validate_manifest as validator_manifest,
+)
 
 
 class NativeMetric:
@@ -170,6 +174,41 @@ class MistralTestOutcomesContractTests(unittest.TestCase):
         self.assertIn("PASS_INDEPENDENT_MISTRAL_TEST_OUTCOMES", source)
         self.assertIn("expected0 = metrics", source)
         self.assertIn("expected1 = metrics", source)
+
+    def test_outcome_freeze_requires_exact_recursive_input_graph(self):
+        root = Path(__file__).resolve().parents[1]
+        producer = (root / "scripts/run_mistral_test_outcomes.py").read_text(
+            encoding="utf-8"
+        )
+        validator = (root / "scripts/validate_mistral_test_outcomes.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("MISTRAL_TEST_OUTCOMES_INPUT_GRAPH_AMENDMENT", producer)
+        self.assertIn("NONEXACT_FROZEN_INPUT_GRAPH", validator)
+        self.assertIn("authenticated_paths", validator)
+
+    def test_outcome_manifest_path_sets_reject_unexpected_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            namespace = Path(directory)
+            member = namespace / "member.txt"
+            member.write_bytes(b"invented-only\n")
+            manifest_path = namespace / "SHA256_MANIFEST.json"
+            manifest_path.write_text(json.dumps({
+                "status": "PASS",
+                "files": [{
+                    "path": "member.txt", "size_bytes": member.stat().st_size,
+                    "sha256": hashlib.sha256(member.read_bytes()).hexdigest(),
+                }],
+                "excludes_only": "SHA256_MANIFEST.json",
+                "exact_recursive_coverage": True,
+            }), encoding="utf-8")
+            expected = {manifest_path.resolve(), member.resolve()}
+            self.assertEqual(producer_manifest(namespace), expected)
+            self.assertEqual(validator_manifest(namespace), expected)
+            (namespace / "unexpected.txt").write_text("unexpected", encoding="utf-8")
+            for check in (producer_manifest, validator_manifest):
+                with self.assertRaises(RuntimeError):
+                    check(namespace)
 
 
 if __name__ == "__main__":

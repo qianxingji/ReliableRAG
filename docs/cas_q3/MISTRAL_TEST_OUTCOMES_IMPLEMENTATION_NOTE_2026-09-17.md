@@ -37,18 +37,25 @@ token F1 with `scripts.empirical_outcome_independent`, verifies all identities
 and reconciles source-reader and transition counts. Its expected terminal status
 is `PASS_INDEPENDENT_MISTRAL_TEST_OUTCOMES`.
 
+A prospective input-graph amendment now freezes every member of the action, a0
+and a1 namespaces, all three validations, the complete authenticated original
+Gold/metric/PyArrow path set and direct controls. Every input is rehashed after
+outcome writing, and the independent validator must prove exact path equality
+before reference materialization.
+
 ## Verification and execution state
 
-Nine focused invented-only tests cover the exact 18,000/6,000/2,000 population,
+Eleven focused invented-only tests cover the exact 18,000/6,000/2,000 population,
 sibling balance, duplicate and missing-row rejection, metric edge cases, answer
 receipt selection, the seven-field numeric schema, action-before-Gold ordering,
-failure-text withholding and validator independence. All nine pass. The full
-Mistral suite passes 107/107.
+failure-text withholding, validator independence, exact input closure and
+unexpected-file rejection. All eleven pass. The full Mistral suite passes
+190/190.
 
-The formal output namespace does not exist. The accepted test acquisition,
-answer-source validation, neural scoring, prelabel and action artifacts required
-by the gate have not been produced. Consequently no test Gold access or numeric
-outcome execution is authorized yet.
+The formal output namespace does not exist. The required test acquisition,
+answer-source validation, neural scoring, prelabel and action stages are
+implemented but have not executed or passed their ordered gates. Consequently
+no test Gold access or numeric-outcome execution is authorized yet.
 
 ## Remaining evidence and risks
 
