@@ -230,10 +230,18 @@ def main() -> int:
         ),
         *bge_asset_paths(preflight, original),
         (root / "EXECUTABLE_FREEZE.json").resolve(),
-        a0_validation_path.resolve(), Path(__file__).resolve(),
+        a0_validation_path.resolve(),
+        (REPO / "scripts/run_mistral_development_repair.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/run_mistral_development_a0_query.py").resolve(),
+        (REPO / "scripts/validate_mistral_development_a0_query.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md").resolve(),
         (REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_REPAIR_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        Path(sys.executable).resolve(),
     }
-    require(required_inputs <= input_paths, "INCOMPLETE_FROZEN_INPUT_GRAPH")
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
     query_rows = [row for row in read_rows(a0_stage / "GENERATION_RECEIPTS.jsonl")
                   if row["operation"] == "repair_query"]
     require(len(query_rows) == EXPECTED_TRACES, "QUERY_ROW_COUNT")

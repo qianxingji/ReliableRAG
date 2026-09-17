@@ -220,8 +220,11 @@ def main() -> int:
             Path(__file__), REPO / "scripts/validate_mistral_development_repair.py",
             REPO / "scripts/mistral_development_acquisition_common.py",
             REPO / "scripts/run_mistral_development_a0_query.py",
+            REPO / "scripts/validate_mistral_development_a0_query.py",
+            REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_ACQUISITION_PROTOCOL_2026-09-17.md",
             REPO / "docs/cas_q3/MISTRAL_DEVELOPMENT_REPAIR_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
+            Path(sys.executable),
         ]
         records = [record(path) for path in sorted(
             {Path(path).resolve() for path in paths}, key=str

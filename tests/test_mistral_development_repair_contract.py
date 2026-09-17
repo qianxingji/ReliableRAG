@@ -122,7 +122,7 @@ class MistralDevelopmentRepairContractTests(unittest.TestCase):
                   / "scripts/validate_mistral_development_repair.py").read_text(
                       encoding="utf-8"
                   )
-        self.assertIn("INCOMPLETE_FROZEN_INPUT_GRAPH", source)
+        self.assertIn("NONEXACT_FROZEN_INPUT_GRAPH", source)
         self.assertIn("bge_asset_paths", source)
         self.assertIn("PRODUCER_FILE_BINDINGS", source)
         self.assertIn('root / "EXECUTABLE_FREEZE.json"', source)
@@ -131,6 +131,8 @@ class MistralDevelopmentRepairContractTests(unittest.TestCase):
                         encoding="utf-8"
                     )
         self.assertIn('root / "EXECUTABLE_FREEZE.json"', producer)
+        self.assertIn("validate_mistral_development_a0_query.py", producer)
+        self.assertIn("mistral_reader_runtime.py", producer)
 
 
 if __name__ == "__main__":

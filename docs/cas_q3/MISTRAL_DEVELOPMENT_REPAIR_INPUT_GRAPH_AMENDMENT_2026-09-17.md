@@ -33,18 +33,20 @@ Before any repair execution, the producer must now:
 4. verify and record the six exact BGE snapshot files authenticated by the
    accepted preflight;
 5. freeze the `a0_query` independent acceptance, repair producer, independent
-   validator and this amendment; and
+   validator, imported a0 validator, canonical runtime, Python executable,
+   protocol and this amendment; and
 6. rehash every recorded input after BGE unload and before writing a PASS
    receipt.
 
-The independent validator separately reconstructs these required path sets,
-proves they are a subset of the executable freeze, checks exact manifest
-coverage and BGE asset identity, and reconciles the producer's output-file
-records and operational counters.
+The independent validator separately reconstructs every required path, requires
+exact equality with the executable freeze, checks exact manifest coverage and
+BGE asset identity, and reconciles the producer's output-file records and
+operational counters. This supersedes the earlier subset-only condition in the
+same prospective amendment; no repair execution occurred between the two.
 
 Six focused repair tests pass, including executable tests for full legacy
 payload binding, the narrow generated-pyc allowance and exact current-manifest
-coverage. The complete Mistral suite passes 154 tests. The real historical
+coverage. The complete Mistral suite passes 191 tests. The real historical
 manifests currently authenticate 56 runtime paths, 59 pool paths and 108
 retrieval paths including each manifest; the accepted BGE preflight contributes
 three paths and six separately frozen model assets.

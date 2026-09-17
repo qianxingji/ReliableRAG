@@ -190,10 +190,13 @@ pass six focused tests, but they remain blocked on `a0_query` completion and
 independent acceptance. Before repair execution, a prospective input-graph
 amendment now requires full member-level freezing of the historical
 runtime/pool/retrieval artifacts, the Mistral input freeze, accepted `a0_query`,
-the BGE preflight and its six exact model assets. The independent validator
-reconstructs that graph and the producer rehashes every member at finalization.
-This closes a manifest-only time-of-check gap without changing any scientific
-operation. The `a1_likelihood` executor and its independent tokenizer-only
+the BGE preflight and its six exact model assets. The producer now also freezes
+the imported a0 validator, canonical runtime, protocol and Python executable.
+The independent validator reconstructs the complete graph and requires exact
+path equality; the producer rehashes every member at finalization. Six focused
+repair tests and the complete 191-test Mistral suite pass. This closes a
+manifest-only time-of-check gap without changing any scientific operation. The
+`a1_likelihood` executor and its independent tokenizer-only
 validator are also implemented. They reconstruct the dynamic E1, the `a1`
 prompt and all four answer-token teacher-forcing cells from prior sealed inputs.
 A prospective A1 input-graph amendment now requires all 220 historical payload
