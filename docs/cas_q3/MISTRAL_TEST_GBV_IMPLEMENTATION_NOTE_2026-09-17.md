@@ -29,16 +29,22 @@ the 17-file SentencePiece package and its provenance, code, validator and
 protocol. Mistral/BGE loads, project/test Gold, test outcomes, fitting and tuning
 are forbidden and have explicit counters.
 
+A prospective input-graph amendment now requires the independent validator to
+reconstruct this entire input set, including all pinned DeBERTa/SentencePiece
+assets, validation receipts, direct controls, Python executable and the complete
+offline environment, and to prove exact equality before tokenizer construction.
+
 The independent validator imports no producer or neural model class. It loads
 only the pinned slow tokenizer, reconstructs every NLI premise/hypothesis pair
 and token batch, reads the raw logits, applies an independent float64 softmax,
 and recomputes every branch score and final GbV row. It also proves exact logit
 file coverage and journal/receipt binding with zero model forward.
 
-Eight contract tests cover model identity, batch width, independent softmax,
+Ten contract tests cover model identity, batch width, independent softmax,
 the exact error whitelist, partial-branch retention, raw-logit recomputation,
-hidden-data rejection and validator independence. The complete Mistral suite
-passes 145 tests. No formal test GbV namespace, score or outcome was produced.
+hidden-data rejection, validator independence, exact input closure and
+unexpected-file rejection. The complete Mistral suite passes 184 tests. No
+formal test GbV namespace, score or outcome was produced.
 
 ## Remaining gates and risks
 

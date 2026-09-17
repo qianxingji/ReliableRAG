@@ -17,9 +17,12 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.empirical_feature_independent import pair_eligibility
-from scripts.empirical_runtime_io import native_runtime, restore_dataset
+from scripts.empirical_runtime_io import CPU_TEST_SHA, native_runtime, restore_dataset
 from scripts.validate_mistral_test_a0_query import (
-    object_sha, read_rows, require, sha256,
+    DATASETS, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+    EXPECTED_TEST_POOL_MANIFEST_SHA256,
+    EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+    object_sha, read_rows, require, sha256, validate_selected_manifest,
 )
 from src.verification.gbv_nli import (
     GBV_MODEL_ID, GBV_MODEL_REVISION, format_hypothesis, resolve_entailment_index,
@@ -35,6 +38,9 @@ BATCH_SIZE = 8
 LOGIT_WIDTH = 2
 GBV_SOURCE_SHA256 = "a9ca2f6391b91fec2b56c309bdfb2543ff0a6ae9c5f8cfe89ff7e14358c11503"
 HISTORICAL_PREFLIGHT_SHA256 = "f29a5ad13c2d8ce6cab3bb6331bd315837c70907fa9d71725339af07baeb5790"
+EXPECTED_RETRIEVAL_MANIFEST_SHA256 = (
+    "81b9c7163adf669a828bd2ef772e14fecbda727cf596bced45856a1e699a354d"
+)
 GBV_PACKAGE_ROOT_RELATIVE = Path(
     "outputs/published_baseline_gbv_nli_v1/infrastructure/python_packages"
 )
@@ -59,6 +65,25 @@ def validate_manifest(namespace: Path) -> None:
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
 
 
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
 def validate_hgb(root: Path) -> Path:
     namespace = root / "hgb_signal"; validate_manifest(namespace)
     validation = root / "hgb_signal_validation/VALIDATION.json"
@@ -76,7 +101,7 @@ def validate_hgb(root: Path) -> Path:
     return validation
 
 
-def validate_assets(original: Path) -> tuple[Path, Path]:
+def validate_assets(original: Path) -> tuple[Path, Path, set[Path]]:
     preflight = original / "outputs/daa_v2_fresh_v1/prelabel_seal_v3/preflight/PREFLIGHT_INPUT_VERIFICATION.json"
     source = REPO / "src/verification/gbv_nli.py"
     require(sha256(preflight) == HISTORICAL_PREFLIGHT_SHA256
@@ -90,25 +115,30 @@ def validate_assets(original: Path) -> tuple[Path, Path]:
             and package_root.is_dir()
             and len(value["gbv"]["package_files"]) == 17,
             "GBV_SENTENCEPIECE_INVENTORY")
+    paths = {preflight.resolve(), source.resolve()}
     for item in value["gbv"]["package_files"]:
         path = (original / item["path"]).resolve()
         require(path.is_relative_to(package_root)
                 and path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"],
                 "GBV_SENTENCEPIECE_ASSET:" + item["path"])
+        paths.add(path)
     provenance = value["gbv"]["provenance"]
     provenance_path = (original / provenance["path"]).resolve()
     require(provenance_path.stat().st_size == provenance["size_bytes"]
             and sha256(provenance_path) == provenance["sha256"],
             "GBV_SENTENCEPIECE_PROVENANCE")
+    paths.add(provenance_path)
     snapshot = None
     for entry in value["gbv_local_cache_copies"]:
         item = entry["copy"]; path = (original / item["path"]).resolve()
         require(path.stat().st_size == item["size_bytes"] and sha256(path) == item["sha256"],
                 "GBV_ASSET:" + item["path"])
+        paths.add(path)
         snapshot = path.parent
     require(snapshot is not None and snapshot.name == GBV_MODEL_REVISION, "GBV_SNAPSHOT")
-    return snapshot, package_root
+    require(len(paths) == 27, "GBV_INPUT_ASSET_PATH_COUNT")
+    return snapshot, package_root, paths
 
 
 def validate_sentencepiece_runtime(package_root: Path) -> dict:
@@ -280,7 +310,8 @@ def main() -> int:
             and output == (root / "gbv_validation/VALIDATION.json").resolve()
             and not output.exists() and sys.byteorder == "little",
             "FIXED_ROOTS_OUTPUT_OR_BYTE_ORDER")
-    hgb_validation = validate_hgb(root); snapshot, package_root = validate_assets(original)
+    hgb_validation = validate_hgb(root)
+    snapshot, package_root, asset_paths = validate_assets(original)
     require(os.environ.get("PYTHONPATH") == str(package_root),
             "GBV_SENTENCEPIECE_PYTHONPATH")
     sentencepiece_runtime = validate_sentencepiece_runtime(package_root)
@@ -297,13 +328,22 @@ def main() -> int:
             and receipt["test_input_rows_read"] == EXPECTED_TRACES,
             "PRODUCER_STATUS")
     freeze = json.loads((namespace / "EXECUTABLE_FREEZE.json").read_text(encoding="utf-8"))
+    expected_environment = {
+        "HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1",
+        "TOKENIZERS_PARALLELISM": "false", "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+        "HF_HOME": str(original / "outputs/daa_v2_fresh_v1/prelabel_seal_v3/cache/hf"),
+        "HF_HUB_CACHE": str(original / "outputs/daa_v2_fresh_v1/prelabel_seal_v3/cache/hf/hub"),
+        "PYTHONPATH": str(package_root),
+    }
     require(freeze["source_commit"] == receipt["source_commit"] and freeze["stage"] == "gbv"
             and freeze["expected_traces"] == EXPECTED_TRACES
             and freeze["model_id"] == GBV_MODEL_ID and freeze["model_revision"] == GBV_MODEL_REVISION
             and freeze["batch_size"] == BATCH_SIZE and freeze["dtype"] == "float32"
+            and freeze["device"] == "cuda:0"
             and freeze["branch_order"] == ["a0_e0", "a1_e1"]
-            and freeze["environment"]["PYTHONPATH"] == str(package_root)
+            and freeze["environment"] == expected_environment
             and freeze["sentencepiece_runtime"] == sentencepiece_runtime
+            and freeze["python"] == str(Path(sys.executable).resolve())
             and freeze["test_gold_access"] == "FORBIDDEN"
             and freeze["test_outcome_access"] == "FORBIDDEN"
             and freeze["scientific_fit_access"] == "FORBIDDEN",
@@ -315,9 +355,66 @@ def main() -> int:
     require(len({Path(item["path"]).resolve() for item in freeze["inputs"]})
             == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
     frozen_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(hgb_validation.resolve() in frozen_paths
-            and Path(__file__).resolve() in frozen_paths,
-            "FROZEN_HGB_VALIDATION")
+    preparation = REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
+    pool_root = REPO / "outputs/cas_q2/empirical_candidate_pool_v2"
+    retrieval = REPO / "outputs/cas_q2/empirical_retrieval_v1"
+    cpu_tests = REPO / "outputs/cas_q2/empirical_runtime_native_tests_v1"
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    hgb_stage = root / "hgb_signal"
+    pool_relatives = tuple(
+        f"{folder}/{dataset}.jsonl"
+        for folder in ("pools", "runtime") for dataset in DATASETS
+    ) + ("INDEPENDENT_VALIDATION.json",)
+    required_inputs = {
+        *{path.resolve() for path in validate_selected_manifest(
+            preparation, EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+            ("TRACE_MANIFEST_PRIVATE.jsonl",),
+        )},
+        *{path.resolve() for path in validate_selected_manifest(
+            pool_root, EXPECTED_TEST_POOL_MANIFEST_SHA256, pool_relatives,
+        )},
+        *current_manifest_member_paths(retrieval, EXPECTED_RETRIEVAL_MANIFEST_SHA256),
+        *current_manifest_member_paths(cpu_tests, CPU_TEST_SHA),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            hgb_stage, sha256(hgb_stage / "SHA256_MANIFEST.json"),
+        ),
+        *{
+            path for stage in ("a0_query", "repair", "a1_likelihood")
+            for path in current_manifest_member_paths(
+                root / stage, sha256(root / stage / "SHA256_MANIFEST.json"),
+            )
+        },
+        hgb_validation.resolve(),
+        *{(root / f"{stage}_validation/VALIDATION.json").resolve()
+          for stage in ("a0_query", "repair", "a1_likelihood")},
+        *asset_paths,
+        (REPO / "scripts/run_mistral_test_gbv.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/empirical_runtime_io.py").resolve(),
+        (REPO / "scripts/empirical_retrieval_io.py").resolve(),
+        (REPO / "scripts/empirical_pool_io.py").resolve(),
+        (REPO / "scripts/empirical_runtime_contract.py").resolve(),
+        (REPO / "scripts/replay_roa_original.py").resolve(),
+        (REPO / "scripts/verify_roa_artifacts.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/run_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_test_repair.py").resolve(),
+        (REPO / "scripts/validate_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/empirical_feature_independent.py").resolve(),
+        (REPO / "src/evaluation/answer_normalization.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_GBV_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/SHA256_MANIFEST.json").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/runtime_support.py").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/native_runtime.py").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
     branch_rows = read_rows(namespace / "BRANCH_RECEIPTS.jsonl")
     gbv_rows = read_rows(namespace / "GBV_ROWS.jsonl")
     events = read_rows(namespace / "CALL_JOURNAL.jsonl")
@@ -332,8 +429,7 @@ def main() -> int:
     tokenizer = AutoTokenizer.from_pretrained(
         snapshot, use_fast=False, local_files_only=True, trust_remote_code=False,
     )
-    trace_path = (REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
-                  / "TRACE_MANIFEST_PRIVATE.jsonl")
+    trace_path = preparation / "TRACE_MANIFEST_PRIVATE.jsonl"
     require(trace_path.resolve() in frozen_paths, "FROZEN_TEST_TRACE")
     traces = read_rows(trace_path)
     frozen_rows = [row for row in read_rows(
