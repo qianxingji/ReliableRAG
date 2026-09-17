@@ -277,13 +277,28 @@ class MistralTestAnalysisContractTests(unittest.TestCase):
             (namespace / "SHA256_MANIFEST.json").write_text(
                 json.dumps(manifest), encoding="utf-8"
             )
-            producer_check(namespace)
-            audit_check(namespace)
+            expected = {
+                (namespace / "SHA256_MANIFEST.json").resolve(), member.resolve(),
+            }
+            self.assertEqual(producer_check(namespace), expected)
+            self.assertEqual(audit_check(namespace), expected)
             extra = namespace / "extra.txt"
             extra.write_text("unsealed", encoding="utf-8")
             for check in (producer_check, audit_check):
                 with self.assertRaises(RuntimeError):
                     check(namespace)
+
+    def test_analysis_freeze_requires_exact_recursive_input_graph(self):
+        root = Path(__file__).resolve().parents[1]
+        producer = (root / "scripts/run_mistral_test_analysis.py").read_text(
+            encoding="utf-8"
+        )
+        validator = (root / "scripts/validate_mistral_test_analysis.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("MISTRAL_TEST_ANALYSIS_INPUT_GRAPH_AMENDMENT", producer)
+        self.assertIn("NONEXACT_FROZEN_INPUT_GRAPH", validator)
+        self.assertIn('"packages": {"numpy":', producer)
 
 
 if __name__ == "__main__":

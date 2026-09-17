@@ -372,9 +372,12 @@ The final downstream analysis wrappers are now implemented in
 and numeric-outcome stages, the producer will save all 20,000 dataset-stratified
 question multiplicities and draw receipts, point estimates and four-endpoint
 intervals. The validator reconstructs every RNG draw and explicit-copy top-K
-allocation without importing the producer arithmetic. Nine focused tests and
-the then-complete 98-test Mistral suite pass. No production draw or test outcome
-has been read.
+allocation without importing the producer arithmetic. A prospective amendment
+now freezes every action/outcome member, both validations, arithmetic/storage
+sources, Python/NumPy and direct controls, rehashes all inputs after 20,000
+draws, and requires exact independent path equality before analysis replay. Ten
+focused tests and the complete 191-test Mistral suite pass. No production draw
+or test outcome has been read.
 
 The numeric-only test-outcome producer and independent validator are now
 implemented in `scripts/run_mistral_test_outcomes.py` and

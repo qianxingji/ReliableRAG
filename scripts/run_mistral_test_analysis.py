@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.metadata
 import json
 from pathlib import Path
 import platform
@@ -62,8 +63,9 @@ def validate_manifest(namespace: Path):
                 "PREDECESSOR_MANIFEST_MEMBER")
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
-    require(actual == members | {manifest_path.resolve()},
-            "PREDECESSOR_MANIFEST_COVERAGE")
+    paths = members | {manifest_path.resolve()}
+    require(actual == paths, "PREDECESSOR_MANIFEST_COVERAGE")
+    return paths
 
 
 def validate_predecessors(root: Path):
@@ -71,8 +73,8 @@ def validate_predecessors(root: Path):
     action_validation = root / "action_seal_validation/VALIDATION.json"
     outcomes = root / "test_outcomes"
     outcomes_validation = root / "test_outcomes_validation/VALIDATION.json"
-    validate_manifest(action)
-    validate_manifest(outcomes)
+    action_paths = validate_manifest(action)
+    outcome_paths = validate_manifest(outcomes)
     require(action_validation.is_file() and outcomes_validation.is_file(),
             "INDEPENDENT_ACCEPTANCE_REQUIRED")
     action_receipt = json.loads(
@@ -125,7 +127,8 @@ def validate_predecessors(root: Path):
             == EXPECTED_OUTCOME_VALUES
             and outcome_acceptance.get("raw_reference_strings_written") == 0,
             "OUTCOME_ACCEPTANCE")
-    return action, action_validation, outcomes, outcomes_validation
+    return (action, action_validation, outcomes, outcomes_validation,
+            action_paths, outcome_paths)
 
 
 def seal(stage_output: Path):
@@ -157,7 +160,8 @@ def main():
     commit = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=REPO, text=True
     ).strip()
-    action, action_validation, outcomes, outcomes_validation = validate_predecessors(root)
+    (action, action_validation, outcomes, outcomes_validation,
+     action_paths, outcome_paths) = validate_predecessors(root)
     stage_output.mkdir(parents=True, exist_ok=False)
     started = time.perf_counter()
     writer = None
@@ -179,19 +183,23 @@ def main():
         require(all(name not in sys.modules for name in
                     ("torch", "transformers", "sklearn")),
                 "MODEL_RUNTIME_ALREADY_LOADED")
-        input_paths = [
-            action / "SHA256_MANIFEST.json",
+        input_paths = sorted({
+            *action_paths,
             action_validation,
-            outcomes / "SHA256_MANIFEST.json",
+            *outcome_paths,
             outcomes_validation,
             Path(__file__),
             REPO / "scripts/validate_mistral_test_analysis.py",
             REPO / "scripts/mistral_test_analysis_math.py",
             REPO / "scripts/mistral_test_analysis_independent.py",
             REPO / "scripts/empirical_analysis_storage.py",
+            REPO / "scripts/empirical_runtime_contract.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
             REPO / "src/evaluation/batch_allocation.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
-        ]
+            REPO / "docs/cas_q3/MISTRAL_TEST_ANALYSIS_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
+            Path(sys.executable),
+        }, key=lambda path: str(Path(path).resolve()))
         inputs = [record(path) for path in input_paths]
         require(len({item["path"] for item in inputs}) == len(inputs),
                 "UNIQUE_ANALYSIS_INPUTS")
@@ -211,6 +219,7 @@ def main():
             "host": platform.platform(),
             "python": str(Path(sys.executable).resolve()),
             "python_version": sys.version,
+            "packages": {"numpy": importlib.metadata.version("numpy")},
         }
         write_json_durable(stage_output / "EXECUTABLE_FREEZE.json", freeze)
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.metadata
 import json
 from pathlib import Path
 import sys
@@ -49,7 +50,9 @@ def validate_manifest(namespace: Path):
                 and sha256(path) == item["sha256"], "MANIFEST_MEMBER")
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
-    require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+    paths = members | {manifest_path.resolve()}
+    require(actual == paths, "MANIFEST_COVERAGE")
+    return paths
 
 
 def validate_predecessors(root: Path):
@@ -57,8 +60,8 @@ def validate_predecessors(root: Path):
     action_validation = root / "action_seal_validation/VALIDATION.json"
     outcomes = root / "test_outcomes"
     outcomes_validation = root / "test_outcomes_validation/VALIDATION.json"
-    validate_manifest(action)
-    validate_manifest(outcomes)
+    action_paths = validate_manifest(action)
+    outcome_paths = validate_manifest(outcomes)
     require(action_validation.is_file() and outcomes_validation.is_file(),
             "PREDECESSOR_VALIDATIONS")
     action_receipt = json.loads(
@@ -110,7 +113,8 @@ def validate_predecessors(root: Path):
             == EXPECTED_OUTCOME_VALUES
             and outcome_acceptance.get("raw_reference_strings_written") == 0,
             "OUTCOME_ACCEPTANCE")
-    return action, action_validation, outcomes, outcomes_validation
+    return (action, action_validation, outcomes, outcomes_validation,
+            action_paths, outcome_paths)
 
 
 def main():
@@ -124,7 +128,8 @@ def main():
     require(root == TEST_ROOT.resolve()
             and output == (root / "analysis_validation/VALIDATION.json").resolve()
             and not output.exists(), "FIXED_ROOT_OR_OUTPUT")
-    action, action_validation, outcomes, outcomes_validation = validate_predecessors(root)
+    (action, action_validation, outcomes, outcomes_validation,
+     action_paths, outcome_paths) = validate_predecessors(root)
     namespace = root / "analysis"
     validate_manifest(namespace)
     receipt = json.loads(
@@ -158,6 +163,10 @@ def main():
             and freeze.get("bootstrap_draws") == DRAWS
             and freeze.get("adjusted_quantiles") == [0.00625, 0.99375]
             and freeze.get("primary_family_size") == 4
+            and freeze.get("python") == str(Path(sys.executable).resolve())
+            and freeze.get("python_version") == sys.version
+            and freeze.get("packages")
+            == {"numpy": importlib.metadata.version("numpy")}
             and freeze.get("test_parameter_tuning") == "FORBIDDEN",
             "ANALYSIS_FREEZE")
     for item in freeze.get("inputs", []):
@@ -165,9 +174,23 @@ def main():
         require(path.is_file() and path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_ANALYSIS_INPUT")
     input_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(action_validation.resolve() in input_paths
-            and outcomes_validation.resolve() in input_paths,
-            "FROZEN_ACCEPTANCE_INPUTS")
+    require(len(input_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
+    required_inputs = {
+        *action_paths, action_validation.resolve(),
+        *outcome_paths, outcomes_validation.resolve(),
+        (REPO / "scripts/run_mistral_test_analysis.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_test_analysis_math.py").resolve(),
+        (REPO / "scripts/mistral_test_analysis_independent.py").resolve(),
+        (REPO / "scripts/empirical_analysis_storage.py").resolve(),
+        (REPO / "scripts/empirical_runtime_contract.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "src/evaluation/batch_allocation.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_ANALYSIS_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     actions = list(read_jsonl(action / "ACTION_ROWS.jsonl"))
     numeric_outcomes = list(read_jsonl(outcomes / "TEST_OUTCOMES.jsonl"))

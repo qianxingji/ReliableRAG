@@ -36,6 +36,12 @@ receipt, point estimates and interval reports. The validator independently
 regenerates the RNG stream and expands trace copies for every draw; it imports
 neither the producer wrapper, producer arithmetic nor weighted top-K kernel.
 
+A prospective input-graph amendment now freezes every member of the accepted
+action and numeric-outcome namespaces, both validations, all production and
+independent arithmetic/storage sources, Python/NumPy and direct controls. Every
+input is rehashed after 20,000 draws, and the independent validator requires
+exact path equality before reading actions or outcomes.
+
 ## Preserved engineering failure
 
 The first invented-only run executed seven tests and failed one assertion for
@@ -51,8 +57,8 @@ rows. No analysis formula, seed, endpoint, allocation rule or production code
 was changed in response. The rerun passed all seven focused tests; the complete
 Mistral suite then passed 88 tests.
 
-The analysis core and formal-wrapper checks pass 9/9 focused tests; the complete
-Mistral suite passes 98/98 tests. These are synthetic engineering checks. They do
+The analysis core and formal-wrapper checks pass 10/10 focused tests; the complete
+Mistral suite passes 191/191 tests. These are synthetic engineering checks. They do
 not establish a reader effect, authorize test access or change the submission
 decision. Test acquisition, neural scoring, score/action sealing, outcomes and
 all 20,000 production draws remain unrun.
