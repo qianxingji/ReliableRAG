@@ -30,14 +30,17 @@ outcomes, fitting and tuning are forbidden and have explicit zero counters.
 The separate validator imports neither the producer, the scoring journal nor
 any model class. It loads only the pinned BGE tokenizer, reconstructs all
 2,250 batch inputs from the original sealed receipts, verifies all raw vector
-files and norms, and recomputes all 18,000 answer-pair dot products. Its expected
-terminal status is
+files and norms, and recomputes all 18,000 answer-pair dot products. A
+prospective amendment also requires exact equality between the producer freeze
+and the independently reconstructed direct path set before tokenizer
+construction. Its expected terminal status is
 `PASS_INDEPENDENT_TOKENIZER_ONLY_MISTRAL_TEST_ANSWER_SEMANTICS`.
 
-Four new contract tests cover the exact accounting, little-endian vector and
-dot-product checks, witness/forbidden-access gates, and validator independence.
-The complete Mistral engineering suite passes 132 tests. The formal stage was
-not executed while implementing or testing this code.
+Six contract tests cover the exact accounting, little-endian vector and
+dot-product checks, witness/forbidden-access gates, validator independence,
+exact input-graph closure and unexpected-file rejection. The complete Mistral
+engineering suite passes 180 tests. The formal stage was not executed while
+implementing or testing this code.
 
 ## Remaining gates and risks
 

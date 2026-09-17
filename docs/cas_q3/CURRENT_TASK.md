@@ -451,9 +451,11 @@ validator are now also implemented without executing the formal stage. They fix
 18,000 test pairs, 36,000 normalized BGE vectors, 2,250 batches and 110,592,000
 explicit little-endian FP32 bytes. The validator reconstructs every batch
 identity, tokenization, vector norm and pairwise dot product without importing
-the producer or loading a model. Four new contract tests and the complete
-132-test Mistral suite pass. This stage remains blocked on the complete accepted
-development chain and accepted test
+the producer or loading a model. A prospective input-graph amendment now makes
+the validator reconstruct the exact test predecessors, seven BGE provenance
+paths, historical runtime controls and direct code set before tokenizer
+construction. Six focused tests and the complete 180-test Mistral suite pass.
+This stage remains blocked on the complete accepted development chain and accepted test
 acquisition/witness predecessors. Test HGB, GbV and the common prelabel freeze
 remain the next engineering gaps; no test Gold, outcome, fit or tuning access
 occurred.

@@ -15,10 +15,14 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.validate_mistral_test_a0_query import (
+    EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+    EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+    current_manifest_member_paths,
     object_sha,
     read_rows,
     require,
     sha256,
+    validate_selected_manifest,
 )
 
 
@@ -44,6 +48,9 @@ BGE_PREFLIGHT_SHA256 = (
 )
 BGE_INVENTORY_SHA256 = (
     "1a52cb26692f2407b59ea4233a9f1b3b63a200a2b04fc33cff416ea7acfc2712"
+)
+EXPECTED_RUNTIME_MANIFEST_SHA256 = (
+    "0e831d2807ee48197029f03f8ed1e18381a60bc5fc25327edccc8d8486b6cefb"
 )
 
 
@@ -122,7 +129,7 @@ def validate_witness(root: Path) -> Path:
     return validation_path
 
 
-def validate_bge_assets(original: Path) -> tuple[Path, Path]:
+def validate_bge_assets(original: Path) -> tuple[Path, Path, set[Path]]:
     preflight = (
         original
         / "outputs/daa_v2_fresh_v1/prelabel_seal_v3/preflight"
@@ -140,6 +147,7 @@ def validate_bge_assets(original: Path) -> tuple[Path, Path]:
         "BGE_INVENTORY",
     )
     snapshot = (original / inventory["snapshot_relative_path"]).resolve()
+    paths = {preflight.resolve()}
     for item in inventory["file_inventory"]:
         path = (snapshot / item["path"]).resolve()
         require(
@@ -148,7 +156,9 @@ def validate_bge_assets(original: Path) -> tuple[Path, Path]:
             and sha256(path) == item["sha256"],
             "BGE_ASSET:" + item["path"],
         )
-    return snapshot, preflight
+        paths.add(path)
+    require(len(paths) == 7, "BGE_ASSET_COUNT")
+    return snapshot, preflight, paths
 
 
 def validate_journal(rows: list[dict], events: list[dict]) -> int:
@@ -226,7 +236,7 @@ def main() -> int:
     witness_validation = validate_witness(root)
     for prior in (root / "a0_query", root / "a1_likelihood"):
         validate_manifest(prior)
-    snapshot, preflight = validate_bge_assets(original)
+    snapshot, preflight, bge_paths = validate_bge_assets(original)
 
     namespace = root / "answer_semantics"
     validate_manifest(namespace)
@@ -295,12 +305,61 @@ def main() -> int:
     frozen_paths = {
         Path(item["path"]).resolve() for item in freeze["inputs"]
     }
-    require(
-        preflight.resolve() in frozen_paths
-        and witness_validation.resolve() in frozen_paths
-        and Path(__file__).resolve() in frozen_paths,
-        "FROZEN_PREREQUISITES",
-    )
+    require(len(frozen_paths) == len(freeze["inputs"]),
+            "UNIQUE_FROZEN_INPUTS")
+    preparation = REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    a0_stage = root / "a0_query"
+    repair_stage = root / "repair"
+    a1_stage = root / "a1_likelihood"
+    witness_stage = root / "witness_replay"
+    runtime_root = original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze"
+    runtime_manifest = runtime_root / "SHA256_MANIFEST.json"
+    require(sha256(runtime_manifest) == EXPECTED_RUNTIME_MANIFEST_SHA256,
+            "RUNTIME_MANIFEST_PIN")
+    required_inputs = {
+        *{path.resolve() for path in validate_selected_manifest(
+            preparation, EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+            ("TRACE_MANIFEST_PRIVATE.jsonl",),
+        )},
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            repair_stage, sha256(repair_stage / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            a1_stage, sha256(a1_stage / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            witness_stage, sha256(witness_stage / "SHA256_MANIFEST.json"),
+        ),
+        *bge_paths,
+        (root / "a0_query_validation/VALIDATION.json").resolve(),
+        (root / "repair_validation/VALIDATION.json").resolve(),
+        (root / "a1_likelihood_validation/VALIDATION.json").resolve(),
+        witness_validation.resolve(),
+        (REPO / "scripts/run_mistral_test_answer_semantics.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/run_mistral_development_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/validate_mistral_test_a0_query.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_ANSWER_SEMANTICS_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        runtime_manifest.resolve(),
+        (runtime_root / "runtime_support.py").resolve(),
+        (runtime_root / "native_runtime.py").resolve(),
+        (runtime_root / "SYNTHETIC_TEST_RESULT_V2.json").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/retrieval_freeze/retrieval_support.py").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     batch_rows = read_rows(namespace / "BATCH_RECEIPTS.jsonl")
     events = read_rows(namespace / "CALL_JOURNAL.jsonl")
@@ -313,14 +372,10 @@ def main() -> int:
     recoveries = validate_journal(batch_rows, events)
 
     trace_path = (
-        REPO
-        / "outputs/cas_q2/empirical_runtime_preparation_v1"
-        / "TRACE_MANIFEST_PRIVATE.jsonl"
+        preparation / "TRACE_MANIFEST_PRIVATE.jsonl"
     )
     ledger_path = (
-        REPO
-        / "outputs/cas_q3/mistral_reader_input_freeze_v1"
-        / "INPUT_LENGTHS_PRIVATE.jsonl"
+        input_freeze / "INPUT_LENGTHS_PRIVATE.jsonl"
     )
     require(
         sha256(trace_path) == EXPECTED_TEST_TRACE_SHA256

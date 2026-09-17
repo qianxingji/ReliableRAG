@@ -369,12 +369,15 @@ def main() -> int:
             REPO / "scripts/mistral_development_scoring_common.py",
             REPO / "scripts/run_mistral_development_a0_query.py",
             REPO / "scripts/run_mistral_test_a0_query.py",
+            REPO / "scripts/validate_mistral_test_a0_query.py",
             REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_TEST_ANSWER_SEMANTICS_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             runtime_root / "runtime_support.py",
             runtime_root / "native_runtime.py",
             runtime_root / "SYNTHETIC_TEST_RESULT_V2.json",
             retrieval_support,
+            Path(sys.executable),
         ]
         unique_paths = sorted(
             {Path(path).resolve() for path in [*source_paths, *control_paths]},
