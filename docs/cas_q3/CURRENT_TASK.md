@@ -408,8 +408,11 @@ query forwards. Document re-embedding, Mistral, NLI, Gold and fitting are
 forbidden; rank 5 is the only replacement position. The validator reconstructs
 the rankings from stored query vectors with zero model load. A real label-blind
 source smoke restored all three retrieval datasets and checked first/last
-evidence identities in each. Five focused tests and the complete 118-test
-Mistral suite pass. No formal repair was executed.
+evidence identities in each. A prospective input-graph amendment now binds the
+accepted a0 root freeze, every predecessor member, all six BGE assets and the
+complete direct control set; the independent validator requires exact path
+equality before replay. Seven focused tests and the complete 174-test Mistral
+suite pass. No formal repair was executed.
 
 The test `a1_likelihood` executor and independent tokenizer-only validator are
 now implemented in `scripts/run_mistral_test_a1_likelihood.py` and

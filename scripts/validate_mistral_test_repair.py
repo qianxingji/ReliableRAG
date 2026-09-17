@@ -14,12 +14,17 @@ import numpy as np
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.empirical_runtime_io import native_runtime, restore_dataset
+from scripts.empirical_runtime_io import CPU_TEST_SHA, native_runtime, restore_dataset
 from scripts.mistral_development_acquisition_common import read_jsonl, sha256
 from scripts.validate_mistral_test_a0_query import (
+    EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+    EXPECTED_TEST_POOL_MANIFEST_SHA256,
+    EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+    EXPECTED_TEST_TRACE_SHA256,
     object_sha,
     read_rows,
     require,
+    validate_selected_manifest,
     validate_manifest,
     validate_test_binding,
 )
@@ -30,6 +35,60 @@ ORIGINAL_ROOT = Path("E:/paper/ReliableRAG")
 TEST_ROOT = REPO / "outputs/cas_q3/mistral_test_confirmation_v1"
 EXPECTED_TRACES = 18_000
 EXPECTED_DENSE_QUERIES = 12_000
+EXPECTED_RETRIEVAL_MANIFEST_SHA256 = (
+    "81b9c7163adf669a828bd2ef772e14fecbda727cf596bced45856a1e699a354d"
+)
+EXPECTED_BGE_PREFLIGHT_MANIFEST_SHA256 = (
+    "3861f34c6add005baa1889d36679b740c90677d0fbbbc04ea85ab8b5cc6a2b3d"
+)
+BGE_REVISION = "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+DATASETS = ("hotpotqa", "2wikimultihopqa", "musique")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
+
+
+def bge_asset_paths(preflight: Path, original: Path) -> set[Path]:
+    receipt = json.loads((preflight / "GPU_PREFLIGHT.json").read_text(
+        encoding="utf-8"
+    ))
+    require(receipt.get("status") == "PASS_BGE_GPU_SYNTHETIC_ONLY"
+            and receipt.get("actual_backend", {}).get("revision") == BGE_REVISION
+            and receipt.get("benchmark_embedding_forward_calls") == 0
+            and receipt.get("fresh_gold_values_materialized") == 0,
+            "BGE_PREFLIGHT_STATUS")
+    freeze = json.loads((preflight / "EXECUTABLE_FREEZE.json").read_text(
+        encoding="utf-8"
+    ))
+    model_root = (original / "data/models/huggingface"
+                  / "models--BAAI--bge-base-en-v1.5"
+                  / "snapshots" / BGE_REVISION).resolve()
+    selected = set()
+    for item in freeze["inputs"]:
+        path = Path(item["path"]).resolve()
+        if path.is_relative_to(model_root):
+            require(path not in selected and path.is_file()
+                    and path.stat().st_size == item["size_bytes"]
+                    and sha256(path) == item["sha256"], "BGE_ASSET_MEMBER")
+            selected.add(path)
+    require(len(selected) == 6, "BGE_ASSET_FILE_COUNT")
+    return selected
 
 
 def query_object(native, payload: dict):
@@ -125,8 +184,7 @@ def main() -> int:
         require(path.is_file() and path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_INPUT")
     frozen_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(Path(__file__).resolve() in frozen_paths,
-            "VALIDATOR_FROZEN_AS_INPUT")
+    require(len(frozen_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
     repair_rows = read_rows(namespace / "REPAIR_BINDINGS.jsonl")
     events = read_rows(namespace / "CALL_JOURNAL.jsonl")
     require(len(repair_rows) == EXPECTED_TRACES, "REPAIR_ROW_COUNT")
@@ -150,6 +208,61 @@ def main() -> int:
             and a0_validation.get("call_journal_sha256")
             == sha256(a0_stage / "CALL_JOURNAL.jsonl"),
             "A0_VALIDATION_BINDING")
+    preparation = REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
+    pool_root = REPO / "outputs/cas_q2/empirical_candidate_pool_v2"
+    retrieval = REPO / "outputs/cas_q2/empirical_retrieval_v1"
+    preflight = REPO / "outputs/cas_q2/empirical_retrieval_gpu_preflight_v1"
+    cpu_tests = REPO / "outputs/cas_q2/empirical_runtime_native_tests_v1"
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    pool_relatives = tuple(
+        f"{folder}/{dataset}.jsonl"
+        for folder in ("pools", "runtime") for dataset in DATASETS
+    ) + ("INDEPENDENT_VALIDATION.json",)
+    required_inputs = {
+        *{path.resolve() for path in validate_selected_manifest(
+            preparation, EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+            ("TRACE_MANIFEST_PRIVATE.jsonl",),
+        )},
+        *{path.resolve() for path in validate_selected_manifest(
+            pool_root, EXPECTED_TEST_POOL_MANIFEST_SHA256, pool_relatives,
+        )},
+        *current_manifest_member_paths(
+            retrieval, EXPECTED_RETRIEVAL_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            preflight, EXPECTED_BGE_PREFLIGHT_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(cpu_tests, CPU_TEST_SHA),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"),
+        ),
+        *bge_asset_paths(preflight, original),
+        a0_validation_path.resolve(),
+        (root / "EXECUTABLE_FREEZE.json").resolve(),
+        (REPO / "scripts/run_mistral_test_repair.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/validate_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/empirical_runtime_io.py").resolve(),
+        (REPO / "scripts/empirical_retrieval_io.py").resolve(),
+        (REPO / "scripts/empirical_pool_io.py").resolve(),
+        (REPO / "scripts/empirical_runtime_contract.py").resolve(),
+        (REPO / "scripts/replay_roa_original.py").resolve(),
+        (REPO / "scripts/verify_roa_artifacts.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_reader_input_freeze_common.py").resolve(),
+        (REPO / "scripts/run_mistral_test_a0_query.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_REPAIR_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/SHA256_MANIFEST.json").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/runtime_support.py").resolve(),
+        (original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/native_runtime.py").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
     query_rows = [row for row in read_rows(
         a0_stage / "GENERATION_RECEIPTS.jsonl"
     ) if row["operation"] == "repair_query"]
@@ -159,13 +272,11 @@ def main() -> int:
     require(len(query_by_position) == EXPECTED_TRACES,
             "UNIQUE_QUERY_POSITIONS")
     traces = read_rows(
-        REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
-        / "TRACE_MANIFEST_PRIVATE.jsonl"
+        preparation / "TRACE_MANIFEST_PRIVATE.jsonl"
     )
     frozen_rows = validate_test_binding(
         traces,
-        read_jsonl(REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
-                   / "INPUT_LENGTHS_PRIVATE.jsonl"),
+        read_jsonl(input_freeze / "INPUT_LENGTHS_PRIVATE.jsonl"),
     )
     wrapper, native, nodes, boundary = native_runtime(original)
     require(receipt.get("native_ast_nodes") == nodes

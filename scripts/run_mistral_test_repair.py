@@ -283,8 +283,9 @@ def main() -> int:
             *verify_manifest(
                 a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json")
             ),
-            a0_validation,
+            a0_validation, root / "EXECUTABLE_FREEZE.json",
             Path(__file__), REPO / "scripts/validate_mistral_test_repair.py",
+            REPO / "scripts/validate_mistral_test_a0_query.py",
             REPO / "scripts/empirical_runtime_io.py",
             REPO / "scripts/empirical_retrieval_io.py",
             REPO / "scripts/empirical_pool_io.py",
@@ -292,11 +293,15 @@ def main() -> int:
             REPO / "scripts/replay_roa_original.py",
             REPO / "scripts/verify_roa_artifacts.py",
             REPO / "scripts/mistral_development_acquisition_common.py",
+            REPO / "scripts/mistral_reader_input_freeze_common.py",
             REPO / "scripts/run_mistral_test_a0_query.py",
+            REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_TEST_REPAIR_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/SHA256_MANIFEST.json",
             original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/runtime_support.py",
             original / "outputs/daa_v2_fresh_v1/runtime_branch_freeze/native_runtime.py",
+            Path(sys.executable),
         ]
         records = [record(path) for path in sorted(
             {Path(path).resolve() for path in paths}, key=str

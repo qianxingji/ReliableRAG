@@ -39,12 +39,15 @@ a neural model. For every row it reconstructs original evidence, rebuilds the
 native repair query object from the accepted `a0_query` receipt, injects the
 saved dense query vector, reruns the frozen BM25/dense/hybrid arithmetic and
 requires exact ranking, component, inserted-document and replacement agreement.
-Its expected terminal status is
+A prospective amendment additionally requires exact equality between the
+producer freeze and an independently reconstructed direct input graph before
+replay. Its expected terminal status is
 `PASS_INDEPENDENT_NO_MODEL_MISTRAL_TEST_REPAIR`.
 
-Five invented-only tests cover exact counts, all three retrievers, changed-rank
-failure, predecessor and component exclusions, and validator independence. All
-five pass. The full Mistral suite passes 118/118.
+Seven invented-only tests cover exact counts, all three retrievers, changed-rank
+failure, predecessor and component exclusions, validator independence, exact
+input-graph closure and unexpected-file rejection. All seven pass. The full
+Mistral suite passes 174/174.
 
 A separate real label-blind source smoke loaded the accepted retrieval arrays
 without a model, restored all three test datasets and verified original evidence
