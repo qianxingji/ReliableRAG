@@ -493,11 +493,14 @@ but have not run. They require independently accepted test HGB and GbV, bind the
 complete authenticated test trace/pool/retrieval/input-freeze chain, and merge
 all 18,000 rows into one common eligibility mask for `HGB_GBV_R`, `HGB_ONLY_R`
 and `GBV_ONLY_R`. The validator independently reconstructs every row without
-importing the producer. Seven focused tests and the complete 152-test Mistral
-suite pass. No model was loaded, no fit or tuning was performed, and no project
-Gold, test Gold or test outcome was read. The label-blind test scoring/action
-implementation chain is now complete; execution remains blocked on the accepted
-development chain and sequential acceptance of every formal test predecessor.
+importing the producer. A prospective amendment now makes it reconstruct the
+exact selected and recursive predecessor members, both validation receipts,
+direct controls and Python executable before any row audit. Nine focused tests
+and the complete 186-test Mistral suite pass. No model was loaded, no fit or
+tuning was performed, and no project Gold, test Gold or test outcome was read.
+The label-blind test scoring/action implementation chain is complete; execution
+remains blocked on the accepted development chain and sequential acceptance of
+every formal test predecessor.
 
 Completed this turn: a hash-bound descriptive decomposition of all 18,000 public
 Qwen numeric rows. Both policies select 506 common replacements and 394 unique

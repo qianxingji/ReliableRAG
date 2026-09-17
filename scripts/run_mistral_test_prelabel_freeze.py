@@ -265,10 +265,14 @@ def main() -> int:
             REPO / "scripts/validate_mistral_test_prelabel_freeze.py",
             REPO / "scripts/mistral_development_acquisition_common.py",
             REPO / "scripts/mistral_development_scoring_common.py",
+            REPO / "scripts/empirical_runtime_io.py",
             REPO / "scripts/run_mistral_test_a0_query.py",
             REPO / "scripts/run_mistral_test_repair.py",
+            REPO / "scripts/validate_mistral_test_a0_query.py",
             REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_TEST_PRELABEL_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
+            Path(sys.executable),
         ]
         input_records = [record(path) for path in sorted(
             {Path(path).resolve() for path in [*paths, *controls]}, key=str

@@ -12,13 +12,22 @@ import sys
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.validate_mistral_test_a0_query import read_rows, require, sha256
+from scripts.empirical_runtime_io import CPU_TEST_SHA
+from scripts.validate_mistral_test_a0_query import (
+    DATASETS, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+    EXPECTED_TEST_POOL_MANIFEST_SHA256,
+    EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+    read_rows, require, sha256, validate_selected_manifest,
+)
 
 
 REPO = Path(__file__).resolve().parents[1]
 ORIGINAL_ROOT = Path("E:/paper/ReliableRAG")
 TEST_ROOT = REPO / "outputs/cas_q3/mistral_test_confirmation_v1"
 EXPECTED_TRACES = 18_000
+EXPECTED_RETRIEVAL_MANIFEST_SHA256 = (
+    "81b9c7163adf669a828bd2ef772e14fecbda727cf596bced45856a1e699a354d"
+)
 METHOD_FEATURES = {
     "HGB_GBV_R": ("hgb_score", "gbv_margin"),
     "HGB_ONLY_R": ("hgb_score",),
@@ -61,6 +70,25 @@ def validate_manifest(namespace: Path) -> None:
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
     require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+
+
+def current_manifest_member_paths(
+    namespace: Path, expected_manifest_sha256: str,
+) -> set[Path]:
+    namespace = namespace.resolve(); manifest_path = namespace / "SHA256_MANIFEST.json"
+    require(sha256(manifest_path) == expected_manifest_sha256,
+            "CURRENT_MANIFEST_PIN")
+    value = json.loads(manifest_path.read_text(encoding="utf-8")); members = set()
+    for item in value["files"]:
+        path = (namespace / item["path"]).resolve()
+        require(path.is_relative_to(namespace) and path not in members
+                and path.stat().st_size == item["size_bytes"]
+                and sha256(path) == item["sha256"], "CURRENT_MANIFEST_MEMBER")
+        members.add(path)
+    actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
+    require(actual == members | {manifest_path.resolve()},
+            "CURRENT_MANIFEST_COVERAGE")
+    return {manifest_path.resolve(), *members}
 
 
 def validate_predecessors(root: Path) -> tuple[Path, Path, Path, Path]:
@@ -189,27 +217,66 @@ def main() -> int:
             and freeze["expected_traces"] == EXPECTED_TRACES
             and freeze["method_features"]
             == {key: list(value) for key, value in METHOD_FEATURES.items()}
+            and freeze["common_eligibility"]
+            == "native_pair_and_finite_hgb_and_complete_gbv_margin"
+            and freeze["python"] == str(Path(sys.executable).resolve())
             and freeze["test_gold_access"] == "FORBIDDEN"
             and freeze["test_outcome_access"] == "FORBIDDEN"
             and freeze["scientific_fit_access"] == "FORBIDDEN",
             "EXECUTABLE_FREEZE")
     input_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(len(input_paths) == len(freeze["inputs"])
-            and hgb_validation.resolve() in input_paths
-            and gbv_validation.resolve() in input_paths
-            and Path(__file__).resolve() in input_paths,
-            "FROZEN_ACCEPTANCE_INPUTS")
+    require(len(input_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
     for item in freeze["inputs"]:
         path = Path(item["path"])
         require(path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_INPUT")
 
-    trace_path = (REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
-                  / "TRACE_MANIFEST_PRIVATE.jsonl")
+    preparation = REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
+    pool_root = REPO / "outputs/cas_q2/empirical_candidate_pool_v2"
+    retrieval = REPO / "outputs/cas_q2/empirical_retrieval_v1"
+    cpu_tests = REPO / "outputs/cas_q2/empirical_runtime_native_tests_v1"
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    pool_relatives = tuple(
+        f"{folder}/{dataset}.jsonl"
+        for folder in ("pools", "runtime") for dataset in DATASETS
+    ) + ("INDEPENDENT_VALIDATION.json",)
+    required_inputs = {
+        *{path.resolve() for path in validate_selected_manifest(
+            preparation, EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+            ("TRACE_MANIFEST_PRIVATE.jsonl",),
+        )},
+        *{path.resolve() for path in validate_selected_manifest(
+            pool_root, EXPECTED_TEST_POOL_MANIFEST_SHA256, pool_relatives,
+        )},
+        *current_manifest_member_paths(retrieval, EXPECTED_RETRIEVAL_MANIFEST_SHA256),
+        *current_manifest_member_paths(cpu_tests, CPU_TEST_SHA),
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(hgb, sha256(hgb / "SHA256_MANIFEST.json")),
+        hgb_validation.resolve(),
+        *current_manifest_member_paths(gbv, sha256(gbv / "SHA256_MANIFEST.json")),
+        gbv_validation.resolve(),
+        (REPO / "scripts/run_mistral_test_prelabel_freeze.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_development_scoring_common.py").resolve(),
+        (REPO / "scripts/empirical_runtime_io.py").resolve(),
+        (REPO / "scripts/run_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_test_repair.py").resolve(),
+        (REPO / "scripts/validate_mistral_test_a0_query.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_PRELABEL_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
+
+    trace_path = preparation / "TRACE_MANIFEST_PRIVATE.jsonl"
     require(trace_path.resolve() in input_paths, "FROZEN_TEST_TRACE")
     traces = read_rows(trace_path)
     frozen_rows = [row for row in read_rows(
-        REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1/INPUT_LENGTHS_PRIVATE.jsonl"
+        input_freeze / "INPUT_LENGTHS_PRIVATE.jsonl"
     ) if row.get("cohort") == "test"]
     hgb_rows = read_rows(hgb / "HGB_SIGNAL_ROWS.jsonl")
     gbv_rows = read_rows(gbv / "GBV_ROWS.jsonl")

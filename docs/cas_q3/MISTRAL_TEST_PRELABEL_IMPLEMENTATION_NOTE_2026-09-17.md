@@ -30,12 +30,18 @@ records, code and protocol. The producer loads no neural or HGB model, performs
 no fit or tuning, and records zero project-Gold, test-Gold and test-outcome
 access.
 
+A prospective input-graph amendment now requires the independent validator to
+reconstruct every selected or recursively covered predecessor, both validation
+receipts, all direct controls and the Python executable, and to prove exact set
+equality before reconstructing any feature row.
+
 The validator does not import the producer. It independently checks both source
 schemas, all identity and eligibility constraints, recomputes the three feature
 vectors and their row hashes, verifies exact stage-manifest coverage and frozen
 input hashes, and reconciles every count in the producer receipt. Seven focused
-contract tests and the complete 152-test Mistral suite pass. No formal prelabel
-namespace or test feature row was produced during implementation.
+contract tests plus two exact-input-closure tests pass, for nine focused tests
+and a complete 186-test Mistral suite. No formal prelabel namespace or test
+feature row was produced during implementation.
 
 ## Remaining gates and risks
 
