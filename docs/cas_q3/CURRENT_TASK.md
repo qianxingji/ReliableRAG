@@ -358,9 +358,13 @@ implemented in `scripts/run_mistral_test_action_seal.py` and
 development 84-fit result plus its 84-refit audit and a future independently
 accepted 18,000-row test prelabel freeze. The executor writes only a canonical
 label-blind action ledger; the validator independently recomputes every
-probability and action within `1e-12`. Eight focused tests and the complete
-96-test Mistral suite pass. The required test acquisition/scoring/prelabel
-predecessors do not yet exist, so the formal namespace has not been created.
+probability and action within `1e-12`. A prospective input-graph amendment now
+freezes every tuning/prelabel namespace member, rehashes every input after
+ledger creation and requires exact independent path equality before action
+reconstruction. It also binds the Python/NumPy runtime and all direct formula
+sources. Ten focused tests and the complete 188-test Mistral suite pass. The
+required predecessors are implemented but have not yet passed their ordered
+formal gates, so the action namespace has not been created.
 
 The final downstream analysis wrappers are now implemented in
 `scripts/run_mistral_test_analysis.py` and

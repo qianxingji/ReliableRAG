@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.metadata
 import json
 from pathlib import Path
 import sys
@@ -46,7 +47,9 @@ def validate_manifest(namespace: Path):
                 and sha256(path) == item["sha256"], "MANIFEST_MEMBER")
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
-    require(actual == members | {manifest_path.resolve()}, "MANIFEST_COVERAGE")
+    paths = members | {manifest_path.resolve()}
+    require(actual == paths, "MANIFEST_COVERAGE")
+    return paths
 
 
 def predecessor_paths(development_root: Path, test_root: Path):
@@ -54,8 +57,8 @@ def predecessor_paths(development_root: Path, test_root: Path):
     tuning_validation = development_root / "tuning_validation/VALIDATION.json"
     prelabel = test_root / "prelabel"
     prelabel_validation = test_root / "prelabel_validation/VALIDATION.json"
-    validate_manifest(tuning)
-    validate_manifest(prelabel)
+    tuning_paths = validate_manifest(tuning)
+    prelabel_paths = validate_manifest(prelabel)
     require(tuning_validation.is_file() and prelabel_validation.is_file(),
             "PREDECESSOR_VALIDATIONS")
     tuning_receipt = json.loads(
@@ -106,7 +109,8 @@ def predecessor_paths(development_root: Path, test_root: Path):
             and prelabel_acceptance.get("test_outcome_values_read") == 0
             and prelabel_acceptance.get("scientific_fits") == 0,
             "PRELABEL_ACCEPTANCE")
-    return tuning, tuning_validation, prelabel, prelabel_validation
+    return (tuning, tuning_validation, prelabel, prelabel_validation,
+            tuning_paths, prelabel_paths)
 
 
 def read_canonical_rows(path: Path):
@@ -136,9 +140,8 @@ def main():
             and output == (test_root / "action_seal_validation/VALIDATION.json").resolve()
             and not output.exists(), "FIXED_ROOTS_OR_OUTPUT")
 
-    tuning, tuning_validation, prelabel, prelabel_validation = predecessor_paths(
-        development_root, test_root
-    )
+    (tuning, tuning_validation, prelabel, prelabel_validation,
+     tuning_paths, prelabel_paths) = predecessor_paths(development_root, test_root)
     namespace = test_root / "action_seal"
     validate_manifest(namespace)
     receipt = json.loads(
@@ -165,6 +168,10 @@ def main():
             and freeze.get("selected_recipe_role") == "PRIMARY"
             and freeze.get("fixed_c1_recipe_role")
             == "DESCRIPTIVE_OUTSIDE_CONFIRMATORY_FAMILY"
+            and freeze.get("python") == str(Path(sys.executable).resolve())
+            and freeze.get("python_version") == sys.version
+            and freeze.get("packages")
+            == {"numpy": importlib.metadata.version("numpy")}
             and freeze.get("test_outcome_access") == "FORBIDDEN"
             and freeze.get("action_budget_tuning") == "FORBIDDEN",
             "ACTION_EXECUTABLE_FREEZE")
@@ -173,9 +180,22 @@ def main():
         require(path.is_file() and path.stat().st_size == item["size_bytes"]
                 and sha256(path) == item["sha256"], "FROZEN_ACTION_INPUT")
     input_paths = {Path(item["path"]).resolve() for item in freeze["inputs"]}
-    require(tuning_validation.resolve() in input_paths
-            and prelabel_validation.resolve() in input_paths,
-            "FROZEN_ACCEPTANCE_INPUTS")
+    require(len(input_paths) == len(freeze["inputs"]), "UNIQUE_FROZEN_INPUTS")
+    required_inputs = {
+        *tuning_paths, tuning_validation.resolve(),
+        *prelabel_paths, prelabel_validation.resolve(),
+        (REPO / "scripts/run_mistral_test_action_seal.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_test_prediction_independent.py").resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "src/arbitration/reader_test_prediction.py").resolve(),
+        (REPO / "src/arbitration/empirical_contract.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_ACTION_SEAL_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == input_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     prelabel_rows = list(read_jsonl(prelabel / "PRELABEL_ROWS.jsonl"))
     tuning_results = json.loads(

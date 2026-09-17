@@ -275,6 +275,44 @@ class ReaderTestPredictionTests(unittest.TestCase):
                 with self.assertRaises(RuntimeError):
                     check(namespace)
 
+    def test_action_freeze_requires_exact_recursive_input_graph(self):
+        root = Path(__file__).resolve().parents[1]
+        producer = (root / "scripts/run_mistral_test_action_seal.py").read_text(
+            encoding="utf-8"
+        )
+        validator = (root / "scripts/validate_mistral_test_action_seal.py").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("MISTRAL_TEST_ACTION_SEAL_INPUT_GRAPH_AMENDMENT", producer)
+        self.assertIn("NONEXACT_FROZEN_INPUT_GRAPH", validator)
+        self.assertIn('"packages": {"numpy":', producer)
+
+    def test_action_manifest_path_sets_reject_unexpected_file(self):
+        from scripts.run_mistral_test_action_seal import validate_manifest as producer_check
+        from scripts.validate_mistral_test_action_seal import validate_manifest as audit_check
+
+        with tempfile.TemporaryDirectory() as directory:
+            namespace = Path(directory)
+            member = namespace / "member.txt"
+            member.write_bytes(b"invented-only\n")
+            manifest_path = namespace / "SHA256_MANIFEST.json"
+            manifest_path.write_text(json.dumps({
+                "status": "PASS",
+                "files": [{
+                    "path": "member.txt", "size_bytes": member.stat().st_size,
+                    "sha256": hashlib.sha256(member.read_bytes()).hexdigest(),
+                }],
+                "excludes_only": "SHA256_MANIFEST.json",
+                "exact_recursive_coverage": True,
+            }), encoding="utf-8")
+            expected = {manifest_path.resolve(), member.resolve()}
+            self.assertEqual(producer_check(namespace), expected)
+            self.assertEqual(audit_check(namespace), expected)
+            (namespace / "unexpected.txt").write_text("unexpected", encoding="utf-8")
+            for check in (producer_check, audit_check):
+                with self.assertRaises(RuntimeError):
+                    check(namespace)
+
 
 if __name__ == "__main__":
     unittest.main()

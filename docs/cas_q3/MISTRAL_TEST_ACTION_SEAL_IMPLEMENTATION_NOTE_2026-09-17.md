@@ -33,6 +33,12 @@ access. The executor freezes its source commit and inputs, writes canonical
 `ACTION_ROWS.jsonl`, a receipt and a complete recursive manifest. The validator
 imports neither the wrapper nor the production prediction core.
 
+A prospective input-graph amendment now freezes every member of both accepted
+predecessor namespaces rather than their manifests alone, rehashes every input
+after writing the action ledger, and requires the independent validator to prove
+exact path equality before reconstructing probabilities. It also binds the
+Python/NumPy runtime and all direct arithmetic/runtime sources.
+
 ## Preserved engineering failure
 
 The first six-test run failed one dependency-isolation assertion. The independent
@@ -42,9 +48,10 @@ name and therefore treated explanatory prose as an import. The assertion was
 narrowed to concrete `from ... import` and `import ...` statements. No
 production formula, allocation rule, tolerance or scientific setting changed.
 
-The corrected core suite and formal-wrapper checks pass 8/8 focused tests. The
-complete Mistral suite passes 96/96 tests. These checks use invented feature
+The corrected core suite and formal-wrapper checks pass 10/10 focused tests. The
+complete Mistral suite passes 188/188 tests. These checks use invented feature
 vectors, fabricated coefficients and temporary invented manifests only. No test
 answer, Gold value, outcome, scientific fit, neural forward or formal action
 ledger was read or created. The required test acquisition/scoring/prelabel
-predecessors remain unimplemented, so the formal wrapper cannot yet run.
+predecessors are implemented but have not executed or passed their ordered
+independent gates, so the formal wrapper cannot yet run.

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.metadata
 import json
 import os
 from pathlib import Path
@@ -57,8 +58,9 @@ def validate_manifest(namespace: Path):
                 "PREDECESSOR_MANIFEST_MEMBER")
         members.add(path)
     actual = {path.resolve() for path in namespace.rglob("*") if path.is_file()}
-    require(actual == members | {manifest_path.resolve()},
-            "PREDECESSOR_MANIFEST_COVERAGE")
+    paths = members | {manifest_path.resolve()}
+    require(actual == paths, "PREDECESSOR_MANIFEST_COVERAGE")
+    return paths
 
 
 def validate_predecessors(development_root: Path, test_root: Path):
@@ -66,8 +68,8 @@ def validate_predecessors(development_root: Path, test_root: Path):
     tuning_validation = development_root / "tuning_validation/VALIDATION.json"
     prelabel = test_root / "prelabel"
     prelabel_validation = test_root / "prelabel_validation/VALIDATION.json"
-    validate_manifest(tuning)
-    validate_manifest(prelabel)
+    tuning_paths = validate_manifest(tuning)
+    prelabel_paths = validate_manifest(prelabel)
     require(tuning_validation.is_file() and prelabel_validation.is_file(),
             "INDEPENDENT_ACCEPTANCE_REQUIRED")
 
@@ -120,7 +122,8 @@ def validate_predecessors(development_root: Path, test_root: Path):
             and prelabel_acceptance.get("test_outcome_values_read") == 0
             and prelabel_acceptance.get("scientific_fits") == 0,
             "TEST_PRELABEL_ACCEPTANCE")
-    return tuning, tuning_validation, prelabel, prelabel_validation
+    return (tuning, tuning_validation, prelabel, prelabel_validation,
+            tuning_paths, prelabel_paths)
 
 
 def seal(stage_output: Path):
@@ -156,9 +159,8 @@ def main():
     commit = subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=REPO, text=True
     ).strip()
-    tuning, tuning_validation, prelabel, prelabel_validation = validate_predecessors(
-        development_root, test_root
-    )
+    (tuning, tuning_validation, prelabel, prelabel_validation,
+     tuning_paths, prelabel_paths) = validate_predecessors(development_root, test_root)
     stage_output.mkdir(parents=True, exist_ok=False)
     started = time.perf_counter()
     result = {
@@ -178,17 +180,22 @@ def main():
         require(all(name not in sys.modules for name in
                     ("torch", "transformers", "sklearn")),
                 "MODEL_RUNTIME_ALREADY_LOADED")
-        input_paths = [
-            prelabel / "SHA256_MANIFEST.json",
+        input_paths = sorted({
+            *prelabel_paths,
             prelabel_validation,
-            tuning / "SHA256_MANIFEST.json",
+            *tuning_paths,
             tuning_validation,
             Path(__file__),
             REPO / "scripts/validate_mistral_test_action_seal.py",
             REPO / "scripts/mistral_test_prediction_independent.py",
+            REPO / "scripts/mistral_development_acquisition_common.py",
+            REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "src/arbitration/reader_test_prediction.py",
+            REPO / "src/arbitration/empirical_contract.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
-        ]
+            REPO / "docs/cas_q3/MISTRAL_TEST_ACTION_SEAL_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
+            Path(sys.executable),
+        }, key=lambda path: str(Path(path).resolve()))
         inputs = [record(path) for path in input_paths]
         require(len({item["path"] for item in inputs}) == len(inputs),
                 "UNIQUE_ACTION_SEAL_INPUTS")
@@ -208,6 +215,7 @@ def main():
             "host": platform.platform(),
             "python": str(Path(sys.executable).resolve()),
             "python_version": sys.version,
+            "packages": {"numpy": importlib.metadata.version("numpy")},
         }
         write_json_durable(stage_output / "EXECUTABLE_FREEZE.json", freeze)
 
