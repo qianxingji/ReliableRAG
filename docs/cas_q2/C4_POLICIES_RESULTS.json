@@ -1,0 +1,40 @@
+{
+  "status": "ACCEPTED_C4_POLICIES_SAVED_HEAD_AND_ACTION_REPLAY",
+  "cas_q2_status": "NOT READY",
+  "full_independent_c4_authorized": true,
+  "source_commit": "db96260e0cc0ece53b68457cc77b5b5e44a9c96f",
+  "scientific_manifest_sha256": "2ad0d8a6112690ffb096af848cd8c7d50824aa08e9c20483be9f4c7530b146ed",
+  "external_run_manifest_sha256": "520c7423c818eb8e57e10ea665846b89adae33ac8caace553243dea251aaf4b2",
+  "binding_config_sha256": "cec258a8c9d378b4ad4948cd510431b83acc8a452d94dd8ff24e98c7919453df",
+  "client_audit_manifest_sha256": "ec5d86d3a95b37f26fcc6bd5e5ce8ef36d1b32e4c1edb025722fc7ed2cb89d35",
+  "preserved_failed_audit_manifest_sha256": "041debcc66a00524f71861f90968493276d5751de903aa55131b69e715287593",
+  "traces": 18000,
+  "common_eligible_traces": 4267,
+  "global_denominator": 18000,
+  "cap": 900,
+  "replacement_counts": {
+    "Keep": 0,
+    "HGB": 900,
+    "GbV": 900,
+    "ROA-FULL": 900,
+    "ROA-NOGBV": 900,
+    "HGB_GBV_R": 900,
+    "HGB_ONLY_R": 900,
+    "GBV_ONLY_R": 900,
+    "V2": 900
+  },
+  "forced_keep_counts": {
+    "a0_empty": 1,
+    "normalized_answers_equal": 13732
+  },
+  "numeric_checks": 392564,
+  "maximum_numeric_error": 1.27675647831893e-15,
+  "executable_inputs_rehashed": 17454,
+  "environment_files_rehashed": 30912,
+  "neural_model_loads": 0,
+  "neural_forward_calls": 0,
+  "scientific_fits": 0,
+  "fresh_gold_values": 0,
+  "hgb_predict_proba_shared_dependency": true,
+  "acceptance": "docs/cas_q2/C4_POLICIES_ACCEPTANCE.md"
+}

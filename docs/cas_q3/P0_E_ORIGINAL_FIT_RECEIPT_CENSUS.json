@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_BOUNDED_ACCESSIBLE_HISTORICAL_RECEIPT_CENSUS_NO_RECOVERY",
+  "cas_q3_status": "NOT_READY",
+  "scope": "read-only filename, bounded metadata-text, ZIP-central-directory and exact-model-hash census",
+  "roots": [
+    {
+      "label": "original_workspace",
+      "path": "E:\\paper\\ReliableRAG"
+    },
+    {
+      "label": "static_original",
+      "path": "E:\\paper\\ReliableRAG-static-roots-v1\\original"
+    },
+    {
+      "label": "static_engineering",
+      "path": "E:\\paper\\ReliableRAG-static-roots-v1\\engineering"
+    },
+    {
+      "label": "static_task",
+      "path": "E:\\paper\\ReliableRAG-static-roots-v1\\task"
+    }
+  ],
+  "top_level_archive_root": "E:\\paper",
+  "counts": {
+    "filesystem_files_scanned": 55373,
+    "candidate_text_files_scanned": 1770,
+    "zip_archives_scanned": 37,
+    "exact_original_model_hash_copies": 14,
+    "candidate_files_with_receipt_markers_and_model_identity": 0,
+    "candidate_archive_members_with_receipt_markers_and_model_identity": 0,
+    "scan_errors": 0
+  },
+  "exact_model_copies": [
+    {
+      "root": "original_workspace",
+      "relative_path": "outputs/mars_full/models/no_B.joblib",
+      "model": "no_B",
+      "bytes": 4940,
+      "sha256": "8c9dd6cccb5081e12f67ac21efc7d268635cee0a279f3dd48c9e5f7ca4980e11",
+      "filesystem_last_write_utc": "2026-08-29T13:51:23.359729+00:00"
+    },
+    {
+      "root": "original_workspace",
+      "relative_path": "outputs/mars_full/models/no_answer_form.joblib",
+      "model": "no_answer_form",
+      "bytes": 3644,
+      "sha256": "cc6cb1ba307ade2440a4423c268641077217eac6b7490c28a0f258ca3cea53dd",
+      "filesystem_last_write_utc": "2026-08-29T13:51:23.557689+00:00"
+    },
+    {
+      "root": "original_workspace",
+      "relative_path": "outputs/mars_full/models/no_cross_state.joblib",
+      "model": "no_cross_state",
+      "bytes": 4476,
+      "sha256": "5ca5fc84e5b58e44b9271282e8629af3c3d8a579bc51bf536ce65abd3a78a64b",
+      "filesystem_last_write_utc": "2026-08-29T13:51:23.203407+00:00"
+    },
+    {
+      "root": "original_workspace",
+      "relative_path": "outputs/mars_full/models/no_evidence_change.joblib",
+      "model": "no_evidence_change",
+      "bytes": 1852,
+      "sha256": "bd225da486eeab63bfa64c2f50a2d85910a1042bfe6c2314066ac7f5d0757336",
+      "filesystem_last_write_utc": "2026-08-29T13:51:23.433901+00:00"
+    },
+    {
+      "root": "original_workspace",
+      "relative_path": "outputs/mars_full/models/ordinary_compact_logistic.joblib",
+      "model": "ordinary_compact_logistic",
+      "bytes": 2165,
+      "sha256": "761dc0238f4da181a5693da881b914134ca7603269f6fee21d66a32539d01242",
+      "filesystem_last_write_utc": "2026-08-29T13:51:28.219445+00:00"
+    },
+    {
+      "root": "original_workspace",
+      "relative_path": "outputs/mars_full/models/state_symmetric_hgb.joblib",
+      "model": "state_symmetric_hgb",
+      "bytes": 639652,
+      "sha256": "9245170f855435b5603b04013bd4fbab79a75d2761853a012ab9f3259600bf6e",
+      "filesystem_last_write_utc": "2026-08-29T13:51:27.957429+00:00"
+    },
+    {
+      "root": "original_workspace",
+      "relative_path": "outputs/mars_full/models/state_symmetric_logistic.joblib",
+      "model": "state_symmetric_logistic",
+      "bytes": 5404,
+      "sha256": "0adde50ca869a216edb4a2b4a7898e5b60a9f148ec279a0c4b757d1c439fd0bf",
+      "filesystem_last_write_utc": "2026-08-29T13:51:23.045053+00:00"
+    },
+    {
+      "root": "static_original",
+      "relative_path": "outputs/mars_full/models/no_B.joblib",
+      "model": "no_B",
+      "bytes": 4940,
+      "sha256": "8c9dd6cccb5081e12f67ac21efc7d268635cee0a279f3dd48c9e5f7ca4980e11",
+      "filesystem_last_write_utc": "2026-09-11T11:44:47.233052+00:00"
+    },
+    {
+      "root": "static_original",
+      "relative_path": "outputs/mars_full/models/no_answer_form.joblib",
+      "model": "no_answer_form",
+      "bytes": 3644,
+      "sha256": "cc6cb1ba307ade2440a4423c268641077217eac6b7490c28a0f258ca3cea53dd",
+      "filesystem_last_write_utc": "2026-09-11T11:44:47.232053+00:00"
+    },
+    {
+      "root": "static_original",
+      "relative_path": "outputs/mars_full/models/no_cross_state.joblib",
+      "model": "no_cross_state",
+      "bytes": 4476,
+      "sha256": "5ca5fc84e5b58e44b9271282e8629af3c3d8a579bc51bf536ce65abd3a78a64b",
+      "filesystem_last_write_utc": "2026-09-11T11:44:47.235052+00:00"
+    },
+    {
+      "root": "static_original",
+      "relative_path": "outputs/mars_full/models/no_evidence_change.joblib",
+      "model": "no_evidence_change",
+      "bytes": 1852,
+      "sha256": "bd225da486eeab63bfa64c2f50a2d85910a1042bfe6c2314066ac7f5d0757336",
+      "filesystem_last_write_utc": "2026-09-11T11:44:47.236559+00:00"
+    },
+    {
+      "root": "static_original",
+      "relative_path": "outputs/mars_full/models/ordinary_compact_logistic.joblib",
+      "model": "ordinary_compact_logistic",
+      "bytes": 2165,
+      "sha256": "761dc0238f4da181a5693da881b914134ca7603269f6fee21d66a32539d01242",
+      "filesystem_last_write_utc": "2026-09-11T11:44:47.238564+00:00"
+    },
+    {
+      "root": "static_original",
+      "relative_path": "outputs/mars_full/models/state_symmetric_hgb.joblib",
+      "model": "state_symmetric_hgb",
+      "bytes": 639652,
+      "sha256": "9245170f855435b5603b04013bd4fbab79a75d2761853a012ab9f3259600bf6e",
+      "filesystem_last_write_utc": "2026-09-11T11:44:47.241564+00:00"
+    },
+    {
+      "root": "static_original",
+      "relative_path": "outputs/mars_full/models/state_symmetric_logistic.joblib",
+      "model": "state_symmetric_logistic",
+      "bytes": 5404,
+      "sha256": "0adde50ca869a216edb4a2b4a7898e5b60a9f148ec279a0c4b757d1c439fd0bf",
+      "filesystem_last_write_utc": "2026-09-11T11:44:47.244073+00:00"
+    }
+  ],
+  "exact_models_by_root": {
+    "original_workspace": [
+      "no_B",
+      "no_answer_form",
+      "no_cross_state",
+      "no_evidence_change",
+      "ordinary_compact_logistic",
+      "state_symmetric_hgb",
+      "state_symmetric_logistic"
+    ],
+    "static_original": [
+      "no_B",
+      "no_answer_form",
+      "no_cross_state",
+      "no_evidence_change",
+      "ordinary_compact_logistic",
+      "state_symmetric_hgb",
+      "state_symmetric_logistic"
+    ]
+  },
+  "candidate_files": [],
+  "candidate_archive_members": [],
+  "errors": [],
+  "interpretation": {
+    "third_independent_model_copy_found": false,
+    "original_per_estimator_fit_time_id_receipts_recovered": false,
+    "original_per_estimator_fit_time_matrix_receipts_recovered": false,
+    "independent_original_fit_witness_recovered": false,
+    "absence_outside_scanned_roots_proved": false,
+    "filesystem_or_zip_timestamps_are_independent_certification": false,
+    "p0_1_authenticity_gap_closed": false
+  },
+  "operations": {
+    "scientific_payloads_decoded": false,
+    "model_deserialization": false,
+    "model_forwards": 0,
+    "scientific_fits": 0,
+    "gold_or_answer_text_interpreted": false,
+    "source_or_sealed_artifacts_modified": 0
+  }
+}

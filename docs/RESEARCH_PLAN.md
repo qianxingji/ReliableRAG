@@ -1,5 +1,10 @@
 # Research Plan
 
+> Current roadmap: [CAS Q2 current task](cas_q2/CURRENT_TASK.md) and
+> [current method](cas_q2/CURRENT_METHOD.md), effective 2026-09-10.
+> The sections below preserve the original research hypotheses. Completed
+> experiments and subsequent decisions take precedence; do not restart them.
+
 ## Working Title
 Runtime Paired Evidence Interventions for Reliable RAG under Retrieval-State Lock-In
 

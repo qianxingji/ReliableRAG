@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_SYNTHETIC_COMPLETE_INPUT_TO_PRIVATE_APPLIED_INTELLIGENCE_PACKAGE_PIPELINE_FINAL_FACTS_AND_AUDITS_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "audit_date_local": "2026-09-14",
+  "builder": "scripts/build_cas_q3_applied_intelligence_private_submission.py",
+  "test": "tests/test_cas_q3_applied_intelligence_private_submission.py",
+  "input_scope": {
+    "synthetic_complete_fixture_used": true,
+    "real_owner_input_used": false,
+    "real_owner_input_missing_fields": 30,
+    "synthetic_personal_values_are_not_author_facts": true
+  },
+  "authenticated_anonymous_transport": {
+    "archive_sha256": "f4279cf38aa09a1ddc212b9b295e0c73b78a67b7262845e72a6df584edeb8fdd",
+    "members": 10
+  },
+  "synthetic_private_build": {
+    "path": "E:/paper/ReliableRAG-applied-intelligence-private-synthetic-20260914-b",
+    "decision": "PASS_PRIVATE_APPLIED_INTELLIGENCE_AUTHOR_POPULATED_CANDIDATE_FINAL_AUDITS_OPEN",
+    "source_archive_sha256": "7f0c7e233945aa150b1aa2c68e6918d45f18f7c7531a92a004fe07d5c60da15e",
+    "compiled_pdf_sha256": "ebcd5f9214aeeebde352f0bb0eb62bc93142f23a17642e95439c187141656878",
+    "cover_letter_sha256": "ae982b6ad7fc3df70e14062056310fac7950759c9a24a88b43ad74ee33eb00a2",
+    "source_members": 10,
+    "compiled_pages": 13,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0,
+    "visible_unresolved_markers": 0,
+    "public_placeholders_remaining": 0,
+    "pages_rendered_and_inspected": 13,
+    "visual_defects": 0,
+    "receipt_contains_personal_values": false
+  },
+  "fail_closed_properties": {
+    "incomplete_input_rejected_before_transport_read": true,
+    "wrong_target_rejected_before_transport_read": true,
+    "transport_hash_authenticated": true,
+    "transport_member_allowlist_authenticated": true,
+    "anonymous_front_matter_anchor_must_be_unique": true,
+    "declaration_anchor_must_be_unique": true,
+    "negative_claim_retained": true,
+    "non_novelty_boundary_retained": true,
+    "distribution_withheld_statement_retained": true,
+    "existing_output_refused": true
+  },
+  "open_gates": [
+    "complete and validate the 30 remaining real owner/institution fields",
+    "build the real private author-populated package in a new versioned directory",
+    "verify the real author and declaration text against responsible-author approvals",
+    "retain publisher acceptance of the modern template path or obtain the journal-specific legacy package",
+    "complete the final artifact-bound GPT-6 Astra xhigh audit"
+  ],
+  "independent_cas_authority_verified": false,
+  "publisher_template_path_accepted": false,
+  "final_astra_xhigh_audit_complete": false,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

@@ -1,0 +1,55 @@
+{
+  "decision": "PASS_ORDERED_CORRESPONDING_AUTHORS_ONLY_EDIT",
+  "authors": [
+    "Zhigang Xu",
+    "Xingji Qian",
+    "Xinhua Dong"
+  ],
+  "corresponding_authors_in_order": [
+    {
+      "order": 1,
+      "name": "Xinhua Dong",
+      "email": "xhdong@hbut.edu.cn"
+    },
+    {
+      "order": 2,
+      "name": "Xingji Qian",
+      "email": "102511283@hbut.edu.cn"
+    }
+  ],
+  "source_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
+  "source_sha256": "816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3",
+  "artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf",
+  "sha256": "968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179",
+  "size_bytes": 1158934,
+  "pages": 22,
+  "page_1_below_author_block_text_and_pixels_unchanged": true,
+  "other_pages_text_and_pixels_unchanged": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "all_links_and_bookmarks_unchanged": true,
+  "all_fonts_embedded": true,
+  "type_3_fonts": 0,
+  "page_1_visual_review": "PASS",
+  "scope": "Editorial corresponding-author order and markers only; scientific review remains pending."
+}

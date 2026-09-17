@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_BOUNDED_APPLIED_INTELLIGENCE_TEMPLATE_ROUTE_RESOLUTION_VERIFICATION",
+  "checks": 26,
+  "publisher_route_accepted": true,
+  "smallcondensed_equivalence_proved": false,
+  "cas_q3_status": "NOT_READY",
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

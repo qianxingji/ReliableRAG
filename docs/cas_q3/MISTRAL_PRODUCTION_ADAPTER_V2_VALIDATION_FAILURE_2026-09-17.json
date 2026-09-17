@@ -1,0 +1,19 @@
+{
+  "cas_q3_status": "NOT READY",
+  "decision": "FAIL_INDEPENDENT_VALIDATION_DUPLICATE_BOS",
+  "failure": "PROMPT_IDS:invented:a0",
+  "first_received_token_ids": [1, 1, 3, 27075, 1040, 3764],
+  "first_expected_token_ids": [1, 3, 27075, 1040, 3764],
+  "model_loads_in_producer": 1,
+  "model_forwards_in_producer": 39,
+  "project_rows_read": 0,
+  "gold_values_read": 0,
+  "scientific_fits": 0,
+  "producer_manifest_sha256": "8ade9d0d8c853d2142a007dcf75c9a57a82900695b7cb2e2eae934c91470811a",
+  "producer_report_sha256": "dfccbd7122489b02bdb466c6807668d5fe990be8ae0bd77be7e0a5f4846d8564",
+  "producer_witness_sha256": "202a3b59d43c3df14af169c8c3d4edb2fbb36f9a197af7921af1071aef49d9ce",
+  "producer_attempt_log_sha256": "2d2c2798dc2fa4872fe788c3a5bd1f7e5b3689ca8d2b44b9e0b62882d6df3e5d",
+  "validator_model_loads": 0,
+  "validator_model_forwards": 0,
+  "v2_accepted": false
+}

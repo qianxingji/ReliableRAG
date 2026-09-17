@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "release_authorization": {
+    "institutional_release_record_sha256": null,
+    "institutional_release_record_decision": null,
+    "owner_distribution_authorized": null,
+    "authorization_date": null
+  },
+  "repository_revision": {
+    "repository_url": "https://github.com/qianxingji/ReliableRAG",
+    "commit_sha": null,
+    "immutable_commit_url": null,
+    "final_submission_revision_frozen": null,
+    "release_reference_kind": null,
+    "release_tag_or_not_applicable": null,
+    "release_url_or_not_applicable": null,
+    "release_reference_matches_commit": null
+  },
+  "archive": {
+    "kind": null,
+    "file": null,
+    "sha256": null,
+    "manifest_sha256": null,
+    "source_aggregate_v2_sha256": null,
+    "successor_reason_or_not_applicable": null,
+    "model_weights_in_archive": null,
+    "benchmark_payloads_answers_or_per_question_records_in_archive": null
+  },
+  "persistent_record": {
+    "identifier_kind": null,
+    "identifier": null,
+    "landing_url": null,
+    "resolution_status": null,
+    "landing_record_binds_exact_archive_sha256": null
+  },
+  "restricted_review_access": {
+    "editor_request_status": null,
+    "channel_status": null,
+    "delivery_evidence_reference_or_not_applicable": null,
+    "access_terms_or_not_applicable": null,
+    "recipient_role_or_not_applicable": null,
+    "delivery_date_or_not_applicable": null,
+    "no_unrequested_private_distribution": null
+  },
+  "manual_review": {
+    "reviewer_role": null,
+    "review_date": null,
+    "authorization_record_compared_to_activation_record": null,
+    "commit_url_compared_to_commit_sha": null,
+    "archive_hash_compared_to_retained_bytes": null,
+    "persistent_landing_record_visually_inspected": null,
+    "legal_advice_not_claimed_unless_issued_by_counsel": null
+  }
+}

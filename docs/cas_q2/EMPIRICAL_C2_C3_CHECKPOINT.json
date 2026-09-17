@@ -1,0 +1,33 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T04:13:33.018469+00:00",
+  "canonical_reader_status": "RUNNING_NOT_ACCEPTED",
+  "canonical_source_commit": "cc304ee37ba589cff42b936c6e1fd0a692618864",
+  "runtime_namespace": "E:\\paper\\ReliableRAG-cas-q2-p0-1\\outputs\\cas_q2\\empirical_runtime_v1",
+  "durable_complete_line_counts": {
+    "generation_receipts.jsonl": 763,
+    "repair_bindings.jsonl": 254,
+    "branch_provenance.jsonl": 254,
+    "canonical_branches.jsonl": 254
+  },
+  "count_scope": "Sequential live byte-line snapshots, not atomic; no generated text decoded. No completed-pass receipt yet.",
+  "c2_results": "EMPIRICAL_C2_RESULTS.json",
+  "c3_execution_acceptance": "docs/cas_q2/EMPIRICAL_C3_EXECUTION_ACCEPTANCE.md",
+  "c4_contract": "docs/cas_q2/EMPIRICAL_C4_SCORING_CONTRACT.md",
+  "scoring_input_audit": {
+    "manifest_sha256": "1027d9e0c062c11bca3c6427d2c2db6403b42e25880d34777d5e32b6adae8ebc",
+    "files": 73,
+    "bytes": 880110248,
+    "model_loads": 0,
+    "model_forwards": 0,
+    "fresh_branch_rows_read": 0,
+    "scientific_fit_calls": 0
+  },
+  "scoring_archive": {
+    "path": "empirical_scoring_input_audit_v1_PRIVATE.zip",
+    "sha256": "780a5c218f3ca36f3d19b123136ad3c673627003e910813bff06db62de873f87",
+    "bytes": 6521
+  },
+  "scientific_fit_total": 178,
+  "fresh_gold_values_materialized": 0
+}

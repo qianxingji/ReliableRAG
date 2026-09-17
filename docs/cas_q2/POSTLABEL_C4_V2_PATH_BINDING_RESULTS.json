@@ -1,0 +1,20 @@
+{
+  "status": "PASS_POSTLABEL_C4_V2_PATH_BINDING_ENGINEERING",
+  "cas_q2_status": "NOT READY",
+  "preserved_cost_prelaunch_failure_manifest_sha256": "f49f8c76e8e6c9ca8158f9824484a721b80eae4616c5e17cf5e8df3e0dee0120",
+  "failure_scientific_namespace_created": false,
+  "failure_generation_ledgers_decoded": false,
+  "failure_fresh_gold_values": 0,
+  "tests": 5,
+  "tests_passed": 5,
+  "only_changed_stage_path": "gpu_preflight",
+  "stage_path_before": "outputs/cas_q2/empirical_scoring_gpu_preflight_v1",
+  "stage_path_after": "outputs/cas_q2/empirical_scoring_gpu_preflight_v2",
+  "preserved_v1_manifest_sha256": "c03555a4a3562be34345bd79b35abb11c8b6bb913a4c812e24837cfb8c88f3b6",
+  "accepted_v2_manifest_sha256": "1aabac381c8a5e5381f46729f49e9afcaae915c1fa84cd375141486e513b530a",
+  "accepted_prelabel_manifest_sha256": "046009231ff834f667f469386c9617f121c4341d39310dbeddf86d5bfedf97b2",
+  "target_sources_modified": false,
+  "old_manifests_modified": false,
+  "cost_retry_authorized_after_commit": true,
+  "contract": "docs/cas_q2/POSTLABEL_C4_V2_PATH_BINDING.md"
+}

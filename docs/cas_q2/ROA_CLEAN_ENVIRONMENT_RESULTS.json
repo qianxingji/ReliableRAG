@@ -1,0 +1,88 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T08:44:58.827185+00:00",
+  "status": "PASS_FRESH_NUMERICAL_ENVIRONMENT_FULL_SAVED_PARAMETER_REPLAY",
+  "replay_source_commit": "73f8158c2570e77998d944fac6e5bc9afe4fe6eb",
+  "prospective_contract_commit": "d58b4399a2c30cb1f13d03280375f9ab397753bf",
+  "manifests": {
+    "roa_numerical_wheels_v1": "bf30b0bf3d97156484f27005cc7b4435f3b5aac30f3281527ec56857149acdc1",
+    "roa_clean_environment_install_v1": "2115a44cf582c515142ec8f76e135cb85f74e454a4604186cb732f4e4777a547",
+    "roa_clean_environment_replay_v1": "44b87939aed4f39cf83e9d3907d476cd544765228fe6431b4b818d44be6dd9cf"
+  },
+  "original_data_source_package_manifest": "77cb08f879595c9da47aff52c9ed6531453ab961ee330f3d13d1b814ab537c73",
+  "official_wheel_count": 5,
+  "official_wheel_bytes": 63378499,
+  "installed_packages": {
+    "joblib": "1.5.3",
+    "numpy": "2.2.6",
+    "pip": "22.2.1",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "setuptools": "63.2.0",
+    "threadpoolctl": "3.6.0"
+  },
+  "installed_environment_files_unchanged": 5214,
+  "installed_environment_bytes": 213473724,
+  "all_replay_inputs_unchanged": 12017,
+  "old_venv_accesses_observed": 0,
+  "primary": {
+    "status": "PASS",
+    "contexts": 28,
+    "models": 56,
+    "prediction_rows": 38424,
+    "max_logit_error": 0.0,
+    "max_probability_error": 0.0,
+    "max_metric_error": 0.0,
+    "action_membership_differences": 0
+  },
+  "independent": {
+    "checks": 2744203,
+    "max_numeric_error": 0.0
+  },
+  "new_third_party_numerical_installation": true,
+  "installation_from_local_hash_locked_wheels": true,
+  "fresh_CPython_or_OS_installation": false,
+  "different_host_or_OS_tested": false,
+  "full_neural_environment_tested": false,
+  "new_scientific_fits": 0,
+  "scientific_fit_total": 178,
+  "new_neural_forwards": 0,
+  "fresh_gold_values_materialized": 0,
+  "private_kit": {
+    "filename": "ROA_REPLAY_OFFLINE_CPU_KIT_V1_PRIVATE.zip",
+    "sha256": "a336eac5c835d123091e8eb2fa32f68b4bfb3ccbc2d3de8b6670898288143f08",
+    "size_bytes": 123569624,
+    "files": 72,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 6837,
+    "generation_receipts.jsonl": 20512,
+    "repair_bindings.jsonl": 6837,
+    "branch_provenance.jsonl": 6837
+  },
+  "snapshot_scope": "Sequential non-atomic newline byte counts; no fresh answer/score/Gold decoding",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "current_engineering_suite": {
+    "tests": 151,
+    "passed": 149,
+    "windows_skips": 2,
+    "suite_repeated_for_this_stage": false
+  },
+  "limits": [
+    "Uses current Windows host and existing CPython base; numerical libraries freshly installed",
+    "Python audit events, not OS sandbox",
+    "Saved-parameter replay only; no original training reconstruction",
+    "Fresh empirical pipeline release and historical fit-time receipts remain unresolved"
+  ],
+  "pending": [
+    "C3 completion/fixed replay/full acceptance",
+    "Actual C4 and full prelabel seal",
+    "Cost reconciliation and four D processes",
+    "Contribution review",
+    "Full neural pipeline environment/delivery",
+    "Resolve or disclose historical training/contamination limits"
+  ]
+}

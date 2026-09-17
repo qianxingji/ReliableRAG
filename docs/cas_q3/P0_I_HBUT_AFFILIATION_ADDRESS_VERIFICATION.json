@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_OFFICIAL_HBUT_INSTITUTION_CITY_POSTCODE_VERIFIED_DEPARTMENT_PENDING",
+  "cas_q3_status": "NOT_READY",
+  "checked_local_date": "2026-09-14",
+  "institution": "Hubei University of Technology",
+  "verified_affiliation_fields": {
+    "city": "Wuhan",
+    "postal_code": "430068",
+    "country": "China"
+  },
+  "official_address_context": {
+    "province": "Hubei",
+    "district": "Hongshan District",
+    "street": "No. 28 Nanli Road"
+  },
+  "official_sources": [
+    "https://www.hbut.edu.cn/xxgk/xxjj.htm",
+    "https://xxgk.hbut.edu.cn/info/1063/7191.htm",
+    "https://en.hbut.edu.cn/About_Us/Overview.htm"
+  ],
+  "department_verified": false,
+  "author_identity_inferred": false,
+  "corresponding_author_fields_inferred": false,
+  "personal_values_emitted": false,
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

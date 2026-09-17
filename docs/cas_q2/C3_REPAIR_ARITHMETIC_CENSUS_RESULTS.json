@@ -1,0 +1,49 @@
+{
+  "status": "ACCEPTED_COMPLETE_CENSUS_AND_BOUNDED_THREAD_DEPENDENCE",
+  "cas_q2_status": "NOT READY",
+  "coverage_per_mode": {
+    "traces": 18180,
+    "component_lists": 24240,
+    "component_entries": 1818000,
+    "final_rankings": 18180,
+    "replacements": 18180
+  },
+  "default_12_thread_mode": {
+    "exact_saved_rows": 18180,
+    "mismatching_saved_rows": 0,
+    "discrepancy_ledger_entries": 0
+  },
+  "explicit_1_thread_mode": {
+    "exact_saved_rows": 17673,
+    "score_only_rows": 507,
+    "component_discrepancy_entries": 565,
+    "final_ranking_discrepancy_entries": 177,
+    "membership_or_order_changes": 0,
+    "replacement_changes": 0,
+    "maximum_absolute_component_difference": 1.1920928955078125e-07,
+    "maximum_float32_ulp_distance": 4
+  },
+  "cross_mode_rows_with_any_recorded_difference": 7075,
+  "fixed_replay_signature_query_and_vector_exact_per_mode": 180,
+  "numpy_version": "2.2.6",
+  "openblas_version": "0.3.29",
+  "openblas_architecture": "SkylakeX",
+  "openblas_threading_layer": "pthreads",
+  "historical_acquisition_blas_thread_count_recorded": false,
+  "original_environment_files_unchanged": 30823,
+  "original_runtime_files_unchanged": 15,
+  "neural_forwards": 0,
+  "scientific_fits": 0,
+  "fresh_gold_values_materialized": 0,
+  "original_validator_invocations": 0,
+  "source_task_manifest_sha256": "5fd10e9c1582bfd55e401255399faef635d854f61f5bdd02c15ac545863a2321",
+  "source_archive_sha256": "3e2b45fcd0e24b815ff3af893586f0b96806735a59d26f5d1a74683e8cf80953",
+  "source_reconciliation_sha256": "366eefae16ca78ac49681cf94e635b668511739846f168598c3fd64bd33dca0b",
+  "client_audit_manifest_sha256": "8c8d897312cedda7679be5e689a65aa84f62a6c42b8b9b8052246c80ffce6f33",
+  "preserved_controller_failure_manifest_sha256": "9fe18c18f9efa9fa8a7c1323feec3fc218775fdd995d21da72de0fcbbb477ed1",
+  "preserved_auditor_failure_manifest_sha256": "140454b5f3137e58e870d1404ac03a88750e39f4ad5d1a571f1b84b477658683",
+  "private_artifacts_uploaded": false,
+  "decision": "SUFFICIENT_TO_FREEZE_PROSPECTIVE_V3_CONTRACT_ONLY",
+  "complete_c3_validation_accepted": false,
+  "c4_authorized": false
+}

@@ -1,0 +1,179 @@
+{
+  "status": "PASS_FULL_HISTORICAL_QWEN_TOKENIZER_ONLY",
+  "cas_q2_status": "NOT READY",
+  "source_commit": "40fbf7b5dedc4b94a01fd66acf87f21492f3fd19",
+  "config_sha256": "1322af17f695780b31e333f90d86c8419efb4b68359e60f8ce4dbd763e9fea66",
+  "producer": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_qwen_tokenizer_v2\\PRODUCER_RESULT.json",
+    "sha256": "1df15abe65ebda4d14e3a033a4875bd8407e108335b4eb0d397b4bec1d8b1fb2",
+    "size_bytes": 1292129
+  },
+  "independent": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_qwen_tokenizer_v2\\INDEPENDENT_RESULT.json",
+    "sha256": "053e5633fca2d827cee953aa6888552f98526ab110ffeefd764f276c40706810",
+    "size_bytes": 1296010
+  },
+  "replay": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\relocated_qwen_tokenizer_v2\\TOKENIZER_REPLAY_PRIVATE.jsonl",
+    "sha256": "f16328b0ade8a8cd62506df64b85b767ded5b9e5c8751b353d29c16b2c18eea5",
+    "size_bytes": 436078911
+  },
+  "original_used_inputs_unchanged": 21,
+  "restored_used_inputs_unchanged": 21,
+  "new_environment_files_unchanged": 21267,
+  "control_files_unchanged": 12,
+  "generation_receipts": 41040,
+  "canonical_traces": 13500,
+  "replay_traces": 180,
+  "exact_rebuilt_field_comparisons": 410400,
+  "independent_original_validation_calls": 41040,
+  "input_tokens_checked": 39750420,
+  "output_tokens_checked": 627012,
+  "scientific_fits": 0,
+  "neural_forwards": 0,
+  "pretrained_model_loads": 0,
+  "historical_gold_values": 0,
+  "fresh_gold_values": 0,
+  "old_project_content_reads_in_children": 0,
+  "historical_neural_replay": false,
+  "current_empirical_pipeline_replay": false,
+  "independent_tokenizer_implementation": false,
+  "private_artifacts_uploaded": false,
+  "explicit_cardinality_binding": {
+    "global_name": "len",
+    "only_specialized_object": "the one fixed tokenizer instance",
+    "all_other_objects": "ordinary builtin len",
+    "cardinality": 151665,
+    "vocabulary_sha256": "54a4e00eec5a8c5f40d137afdde38da75f4c46ffa802b509cb5fb2157b5a5b0d",
+    "ordinary_cardinality_and_full_vocabulary_rechecks": 11,
+    "full_ledger_specialized_calls": 627012,
+    "fixture_specialized_calls": 1,
+    "tokenizer_mutated": false,
+    "selected_original_function_asts_changed": false,
+    "original_builtin_binding_changed": true
+  },
+  "negative_checks": [
+    {
+      "fault": "prompt",
+      "expected_rejection": "Independent prompt hash",
+      "rejected": true
+    },
+    {
+      "fault": "input",
+      "expected_rejection": "Independent input token IDs/mask",
+      "rejected": true
+    },
+    {
+      "fault": "vocabulary",
+      "expected_rejection": "Generated token ID schema",
+      "rejected": true
+    }
+  ],
+  "preserved_v1_failure_manifest": "93818637823edc99772009be61920c3a091e62ab3ae684cbca47e10290aae50a",
+  "lifecycle_diagnostic_manifest": "40be35afd5f5cf6ac1943eba0dcba5c0e74c306a704b59b818488dde0b9268b6",
+  "cardinality_diagnostic_manifest": "1a95168f94600462f2c20441a28d02c307aa7678437e7c1dc5b2005b9a7d810f",
+  "finished_utc": "2026-09-11T13:04:50.494049+00:00",
+  "snapshot_utc": "2026-09-11T13:05:51.179396+00:00",
+  "acceptance_manifest": "15872f7255fee6d06a480628d47404cd799d07a44ddf3e988d9f4a87d9ce3b12",
+  "original_producer_ast_records": 11,
+  "original_independent_ast_records": 16,
+  "coverage": {
+    "canonical": {
+      "traces": 13500,
+      "generations": 40500,
+      "strata": {
+        "2wikimultihopqa/bm25": 1500,
+        "2wikimultihopqa/dense": 1500,
+        "2wikimultihopqa/hybrid": 1500,
+        "hotpotqa/bm25": 1500,
+        "hotpotqa/dense": 1500,
+        "hotpotqa/hybrid": 1500,
+        "musique/bm25": 1500,
+        "musique/dense": 1500,
+        "musique/hybrid": 1500
+      },
+      "retained_failclosed": {
+        "empty_a1": 2
+      }
+    },
+    "replay": {
+      "traces": 180,
+      "generations": 540,
+      "strata": {
+        "2wikimultihopqa/bm25": 20,
+        "2wikimultihopqa/dense": 20,
+        "2wikimultihopqa/hybrid": 20,
+        "hotpotqa/bm25": 20,
+        "hotpotqa/dense": 20,
+        "hotpotqa/hybrid": 20,
+        "musique/bm25": 20,
+        "musique/dense": 20,
+        "musique/hybrid": 20
+      },
+      "retained_failclosed": {}
+    }
+  },
+  "independent_subset_signatures": 180,
+  "tokenizer": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "physical_snapshot": "E:\\paper\\ReliableRAG-static-roots-v1\\original\\data\\models\\huggingface\\models--Qwen--Qwen2.5-3B-Instruct\\snapshots\\aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "logical_tokenizer_path": "E:/paper/ReliableRAG/data/models/huggingface/models--Qwen--Qwen2.5-3B-Instruct/snapshots/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer.json",
+    "class_name": "Qwen2TokenizerFast",
+    "vocab_size": 151665,
+    "padding_side": "left",
+    "eos_token_id": 151645,
+    "pad_token_id": 151643,
+    "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "versions": {
+      "torch": "2.7.1+cu128",
+      "transformers": "4.53.2",
+      "tokenizers": "0.21.4"
+    },
+    "core_paths": {
+      "torch": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\torch\\__init__.py",
+      "transformers": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\transformers\\__init__.py",
+      "tokenizers": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\tokenizers\\__init__.py"
+    },
+    "local_files_only": true,
+    "trust_remote_code": false
+  },
+  "unexpected_guard_events": 0,
+  "scientific_fit_total": 178,
+  "established_engineering_suite_repeated": false,
+  "all_archived_generated_ids_reused": true,
+  "another_host_or_OS_tested": false,
+  "evidence_kit": {
+    "filename": "RELOCATED_QWEN_TOKENIZER_V2_EVIDENCE_PRIVATE.zip",
+    "sha256": "c53ab6d96ac27b199f84f675d2d924604e16a0a86e36668e3d5aa833350e8fc8",
+    "size_bytes": 91163591,
+    "members": 105,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "external_dependencies": [
+    "Accepted static two-archive restoration",
+    "Accepted neural package environment",
+    "Current Windows and CPython base"
+  ],
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_canonical_pid": 55688,
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 12878,
+    "generation_receipts.jsonl": 38635,
+    "repair_bindings.jsonl": 12878,
+    "branch_provenance.jsonl": 12878
+  },
+  "live_process_creation_date": "/Date(1789099374833)/",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "snapshot_scope": "Non-atomic sequential newline byte counts; no current empirical answer/score/Gold decode",
+  "pending": [
+    "C3 completion/fixed replay/acceptance",
+    "Actual C4/full prelabel",
+    "Cost and four D processes",
+    "Contribution review",
+    "BGE/NLI tokenizer and target-package/predecessor bindings",
+    "Completed-stage closure and full relocated neural/pipeline replay",
+    "Seven historical fit-time receipts"
+  ]
+}

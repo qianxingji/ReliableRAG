@@ -1,0 +1,44 @@
+{
+  "status": "ACCEPTED_VALUE_BLIND_PHI_INPUT_FREEZE",
+  "cas_q2_status": "NOT READY",
+  "test_benchmark_execution_authorized": false,
+  "development_runtime_implementation_authorized": true,
+  "preserved_v1_failure_manifest_sha256": "c244000cb83b33d08f8a37419ee5c7aa6617f80311610d69706b3975e75dd2a9",
+  "producer_source_commit": "baf84189d0cc101fee14e0af660570be29187da8",
+  "producer_manifest_sha256": "17cb0c29e4d4a5b98991bbebf1368bdff0ebece6221ca163c73327bcf4bcedd9",
+  "validator_source_commit": "553eb6f1047c6af2acb248407397ddd82986e5c9",
+  "validator_manifest_sha256": "3d0488e18ff5433abc721230763aa82d57452a13a66322040904392a1ff0ccd0",
+  "client_audit_manifest_sha256": "74f3c9026d340d4582a78348d9448a618742c8bf59128558234601bbc9b4e312",
+  "client_audit_sha256": "d97aaa3b9bf0c69318ff3e04693b13f380a3096bd2727f60264697ca3042796c",
+  "development": {
+    "questions": 4500,
+    "traces": 13500,
+    "fit_questions": 3600,
+    "fit_traces": 10800,
+    "calibration_questions": 900,
+    "calibration_traces": 2700
+  },
+  "test": {
+    "questions": 6000,
+    "traces": 18000
+  },
+  "deterministic_prompt_rows": 31500,
+  "prompt_tokenizations": 63000,
+  "maximum_deterministic_input_tokens": 3682,
+  "admission_ceiling_tokens": 9472,
+  "deterministic_headroom_tokens": 5790,
+  "context_truncated_rows": 0,
+  "producer_environment_files_rehashed": 114,
+  "dynamic_a1_guard_required_before_cuda": true,
+  "batch_size": 1,
+  "concurrent_reader_instances": 1,
+  "execution_counts": {
+    "model_loads": 0,
+    "model_forward_calls": 0,
+    "generation_calls": 0,
+    "scientific_fit_calls": 0,
+    "gold_reads": 0,
+    "existing_answer_strings_read": 0
+  },
+  "next_gate": "PHI_DEVELOPMENT_RUNTIME_IMPLEMENTATION_AND_VALIDATION"
+}

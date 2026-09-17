@@ -1,0 +1,64 @@
+{
+  "absolute_path_files": 104,
+  "absolute_path_matches": 237,
+  "blockers": [
+    "missing_top_level_project_license",
+    "no_anonymized_reviewer_export",
+    "tracked_absolute_local_paths",
+    "tracked_user_identifier_in_historical_receipts",
+    "reviewer_release_scope_not_frozen"
+  ],
+  "email_files": 0,
+  "email_matches": 0,
+  "qianx_files": 8,
+  "qianx_locations": [
+    {
+      "matches": 1,
+      "path": "docs/cas_q2/C3_HELPER_SCOPE_AUDIT_V1.json"
+    },
+    {
+      "matches": 1,
+      "path": "docs/cas_q2/EVIDENCE_INDEX.json"
+    },
+    {
+      "matches": 1,
+      "path": "docs/cas_q2/PHI_READER_DEVELOPMENT_RUNTIME_V4_FAILURE_ACCEPTANCE.md"
+    },
+    {
+      "matches": 1,
+      "path": "docs/cas_q2/PRETRAINED_ASSET_OFFLINE_RUNBOOK.md"
+    },
+    {
+      "matches": 3,
+      "path": "docs/cas_q2/RELOCATED_HISTORICAL_SCORING_RESULTS.json"
+    },
+    {
+      "matches": 3,
+      "path": "docs/cas_q2/RELOCATED_NLI_INPUT_RESULTS.json"
+    },
+    {
+      "matches": 3,
+      "path": "docs/cas_q2/RELOCATED_QWEN_TOKENIZER_RESULTS.json"
+    },
+    {
+      "matches": 1,
+      "path": "docs/cas_q2/THIRD_READER_SELECTION_DECISION.md"
+    }
+  ],
+  "qianx_matches": 14,
+  "remote_origin": "https://github.com/qianxingji/ReliableRAG.git",
+  "requirements_lock_files": 5,
+  "status": "REVISE_P0_G_RELEASE_NOT_READY",
+  "top_level_license_present": false,
+  "tracked_data_output_all_gitkeep": true,
+  "tracked_data_output_files": [
+    "data/indexes/.gitkeep",
+    "data/processed/.gitkeep",
+    "data/raw/.gitkeep",
+    "outputs/figures/.gitkeep",
+    "outputs/logs/.gitkeep",
+    "outputs/predictions/.gitkeep",
+    "outputs/tables/.gitkeep"
+  ],
+  "tracked_files": 540
+}

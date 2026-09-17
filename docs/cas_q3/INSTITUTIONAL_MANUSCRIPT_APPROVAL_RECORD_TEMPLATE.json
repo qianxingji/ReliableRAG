@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "evidence": {
+    "file": null,
+    "sha256": null,
+    "kind": null,
+    "issuing_office": null,
+    "obtained_date": null,
+    "authenticated_or_institution_issued": null
+  },
+  "approval_decision": {
+    "institutional_manuscript_approval_required": null,
+    "institutional_manuscript_approval_status": null,
+    "approved_manuscript_file": null,
+    "approved_manuscript_sha256": null,
+    "target_journal": null,
+    "approval_date": null,
+    "conditions_or_none": null
+  },
+  "manual_review": {
+    "reviewer_role": null,
+    "review_date": null,
+    "record_visually_inspected": null,
+    "metadata_matches_record": null,
+    "approved_manuscript_digest_recomputed": null
+  }
+}

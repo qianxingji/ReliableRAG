@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "ACCEPTED_VALUE_BLIND_MISTRAL_INPUT_FREEZE",
+  "cas_q3_status": "NOT READY",
+  "source_chain": "DIRECT_ACCEPTED_QWEN_DEVELOPMENT_AND_TEST_INPUTS_NO_PHI_ARTIFACTS",
+  "producer_source_commit": "6f4b9d17562d80a58a3f98dbafd5774fc20354fc",
+  "development": {
+    "questions": 4500,
+    "traces": 13500,
+    "fit_questions": 3600,
+    "fit_traces": 10800,
+    "calibration_questions": 900,
+    "calibration_traces": 2700
+  },
+  "test": {
+    "questions": 6000,
+    "traces": 18000
+  },
+  "deterministic_prompt_rows": 31500,
+  "prompt_tokenizations": 63000,
+  "maximum_deterministic_input": {
+    "cohort": "development",
+    "dataset": "2wikimultihopqa",
+    "retriever": "dense",
+    "sample_id": "d17265b80baf11ebab90acde48001122",
+    "position": 8698,
+    "stage": "repair_query",
+    "input_tokens": 3675,
+    "prompt_sha256": "224afb725f7c4d61392adb74605f0e061db48a15d08cbfd164d6610daac894f7",
+    "input_token_ids_sha256": "02b6aa705f82f6513b8d4ba9d6a80a406a339de52256c7397236140f7eaf20d2"
+  },
+  "admission_ceiling_tokens": 8192,
+  "deterministic_headroom_tokens": 4517,
+  "context_truncated_rows": 0,
+  "dynamic_a1_guard_required_before_cuda": true,
+  "batch_size": 1,
+  "concurrent_reader_instances": 1,
+  "producer_environment_files_recorded": 98,
+  "producer_boundary_denials": 0,
+  "producer_manifest_sha256": "588b4d86fb6048ade1bba52731829496772d62fd522a260a7a4c60ec584586ca",
+  "producer_build_receipt_sha256": "d619e024d55be7d5623a96943c5ad60a0ca109ad06963cb55e0bbdcd7c5a96f7",
+  "producer_executable_freeze_sha256": "7e4cbd7be1f1be4d5c84759733cdb423e68f00499dd2c8d53b5f8e91eb5e8030",
+  "producer_private_ledger_sha256": "538970511fe517a21ef7baee4dc5eb216ce748b2c2222b3960c356a53a12f8ac",
+  "validator_manifest_sha256": "d6d97158a3662b84bf3da81592fe86fc9e11a3251db2e9aeeb593d70d7460917",
+  "validator_receipt_sha256": "4e7cce9f0d54b06bc0c1029c3b070d061de26956300be3258ef8e84532d1424e",
+  "attempt_log_sha256": "79d4e2d035af9394f317607183cb51a4dcfc74b97839f56a109b48cadaee69d4",
+  "preserved_pre_namespace_launch_failure": true,
+  "execution_counts": {
+    "model_loads": 0,
+    "model_forward_calls": 0,
+    "generation_calls": 0,
+    "scientific_fit_calls": 0,
+    "gold_reads": 0,
+    "existing_answer_strings_read": 0
+  },
+  "next_gate": "MISTRAL_LONGEST_OBSERVED_SHAPE_RESOURCE_PREFLIGHT_AND_PRODUCTION_ADAPTER_VALIDATION"
+}

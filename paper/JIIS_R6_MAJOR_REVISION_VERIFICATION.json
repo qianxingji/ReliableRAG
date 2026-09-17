@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_JIIS_R6_MAJOR_REVISION",
+  "generated_utc": "2026-09-16T05:08:18.993128+00:00",
+  "pdf": {
+    "path": "output\\pdf\\JIIS_Manuscript_R6_Major_Revision.pdf",
+    "sha256": "9ea482bb9a6887ec3a7e2d5951bef7215355ae76c3b431b0810abd8992e00199",
+    "pages": 21
+  },
+  "public_repository": {
+    "url": "https://github.com/qianxingji/ReliableRAG-Code",
+    "commit": "038d769e96d092a2eec3bbc5df9f45f3c2a17ff0",
+    "github_actions_run": "https://github.com/qianxingji/ReliableRAG-Code/actions/runs/35057594179",
+    "github_actions_conclusion": "success",
+    "exact_current_head_refit": {
+      "status": "PASS_EXACT_CURRENT_HEAD_REFIT",
+      "development_traces": 13500,
+      "fit_eligible": 2572,
+      "fit_positive": 557,
+      "calibration_eligible": 630,
+      "calibration_positive": 132,
+      "scientific_fit_calls": 10,
+      "heads": [
+        "ROA-FULL",
+        "ROA-NOGBV",
+        "HGB_GBV_R",
+        "HGB_ONLY_R",
+        "GBV_ONLY_R"
+      ]
+    },
+    "development_bundle_sha256": "8867daa8c8d827d5aa928627d8de068656e35760b47f784c38d328a369afe7f0",
+    "current_heads_sha256": "a519b80b08ece87c59d296a3b590a1cda31de16122c68a1e0efe5a2c27f1e5ea",
+    "evaluation_bundle_sha256": "a930286d62bddf9f4837cb1beb4b863f0f94c1bc697b2311977a9b0eb18f09f7"
+  },
+  "scientific_results_changed": false,
+  "revision_scope": [
+    "clarify empirical contribution against prior two-answer prediction",
+    "report effective fit/calibration sample and positive counts",
+    "report learned scalar parameter counts",
+    "release exact current-head refit inputs and parameter records",
+    "unify manuscript data/code availability boundaries"
+  ],
+  "check_count": 32,
+  "checks": [
+    "R6 PDF exists",
+    "public repository commit matches R6",
+    "public SHA-256 matches for outputs/reproduction_v1/DEVELOPMENT_NUMERIC.jsonl.gz",
+    "public SHA-256 matches for outputs/reproduction_v1/CURRENT_HEADS.json",
+    "public SHA-256 matches for outputs/reproduction_v1/TRACE_NUMERIC.jsonl.gz",
+    "public exact current-head refit passes",
+    "fit sample and positive counts match",
+    "calibration sample and positive counts match",
+    "public refit executes ten model fits",
+    "R6 PDF has 21 pages",
+    "all R6 pages are A4",
+    "R6 contains three public-repository links",
+    "R6 contains: 038d769e96d092a2eec3bbc5df9f45f3c2a17ff0",
+    "R6 contains: 2,572 eligible traces",
+    "R6 contains: 557 Recovery positives",
+    "R6 contains: 630 eligible traces",
+    "R6 contains: 132 positives",
+    "R6 contains: 28, 26, 10, 8, and 8 learned scalar parameters",
+    "R6 contains: scripts/reproduce_current_heads.py",
+    "R6 contains: adding HGB to GbV-only passes the joint rule",
+    "R6 contains: stronger HGB-only head does not",
+    "R6 contains: not end-to-end regeneration of retrieval",
+    "R6 contains: not independent authentication of the original training event",
+    "R6 omits stale statement: 44d22c66c2adbdce8ebc2289844a8b26e6929bd5",
+    "R6 omits stale statement: public materials do not report the eligible fitting/calibration row totals",
+    "R6 omits stale statement: does not regenerate the neural acquisition or refit the paper heads",
+    "R6 omits stale statement: not sufficient to reconstruct selection within the question-cluster bootstrap",
+    "R6 has font records",
+    "all R6 fonts are embedded",
+    "R6 has no Type 3 fonts",
+    "R6 is not encrypted",
+    "R6 has no JavaScript"
+  ]
+}

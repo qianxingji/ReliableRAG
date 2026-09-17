@@ -1,0 +1,82 @@
+{
+  "schema_version": 7,
+  "decision": "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
+  "designated_by": "qianxingji",
+  "designated_date": "2026-09-16",
+  "registered_utc": "2026-09-16T09:10:51.9379606Z",
+  "cas_q3_status": "NOT_READY",
+  "authoritative_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
+  "source_filename": "JIIS_Revised_Manuscript(1) (1).pdf",
+  "source_sha256": "755fc4419b047ad49b6acccde810c632f99157b58051b69497dda2f31f483ecb",
+  "sha256": "816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3",
+  "size_bytes": 1153142,
+  "pages": 22,
+  "page_size": "595.276 x 841.89 pts (A4)",
+  "pdf_version": "1.7",
+  "preservation": {
+    "mode": "AUTHOR_AFFILIATION_CONTACT_ONLY_PDF_DERIVATIVE",
+    "source_unchanged": true,
+    "previous_latest_receipt": "paper/manuscript_history/RETITLED_20260916_LATEST_MANUSCRIPT_37d05cb6.json",
+    "previous_latest_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf",
+    "previous_latest_sha256": "37d05cb6a9c2825b1a5aa9574f7d7b66e6421e4c573205562a3c5168b4817d1a"
+  },
+  "public_repository": {
+    "url": "https://github.com/qianxingji/ReliableRAG-Code",
+    "commit": "038d769e96d092a2eec3bbc5df9f45f3c2a17ff0",
+    "binding_scope": "Manuscript commit and three bundle hashes checked against local public checkout; no new experiment or refit",
+    "bundle_sha256": {
+      "DEVELOPMENT_NUMERIC.jsonl.gz": "8867daa8c8d827d5aa928627d8de068656e35760b47f784c38d328a369afe7f0",
+      "CURRENT_HEADS.json": "a519b80b08ece87c59d296a3b590a1cda31de16122c68a1e0efe5a2c27f1e5ea",
+      "TRACE_NUMERIC.jsonl.gz": "a930286d62bddf9f4837cb1beb4b863f0f94c1bc697b2311977a9b0eb18f09f7"
+    }
+  },
+  "visual_review": {
+    "status": "PAGE_1_AUTHOR_BLOCK_VISUALLY_CHECKED_BODY_AND_PAGES_2_TO_22_RENDER_IDENTICAL",
+    "pages_reviewed": [
+      1
+    ],
+    "full_document_layout_review": false
+  },
+  "scientific_acceptance": {
+    "status": "PENDING_REVIEW_OF_THIS_EXACT_ARTIFACT",
+    "prior_r6_audit_transferred": false,
+    "all_results_rechecked": false,
+    "prior_response_letter": "paper/JIIS_R6_RESPONSE_TO_REVIEWER.md",
+    "prior_response_letter_rebound": false
+  },
+  "mechanical_verification": {
+    "receipt": "paper/JIIS_AUTHORS_20260916_IDENTITY_VERIFICATION.json",
+    "status": "PASS_LATEST_MANUSCRIPT_IDENTITY_AND_MECHANICAL_CHECKS",
+    "check_count": 22,
+    "all_fonts_embedded": true,
+    "type_3_fonts": 0,
+    "repository_links": 4
+  },
+  "usage": "Use this author-information revision as the latest manuscript. The 22-page scientific body is unchanged; scientific acceptance and R6 response rebinding remain pending.",
+  "supersedes_for_current_review": [
+    "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf",
+    "output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf",
+    "output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf",
+    "output/pdf/JIIS_Manuscript_R5_Reproducible.pdf",
+    "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
+    "paper/source_reference/JIIS_Manuscript_R3.pdf",
+    "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",
+    "output/pdf/manuscript.pdf",
+    "output/pdf/supplement.pdf"
+  ],
+  "title": "Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements",
+  "revision_reason": "AUTHOR_REQUESTED_AUTHOR_AFFILIATION_CONTACT_UPDATE",
+  "editorial_verification": "paper/JIIS_REVISED_20260916_TITLE_VERIFICATION.json",
+  "author_information_verification": "paper/JIIS_REVISED_20260916_AUTHOR_INFORMATION_VERIFICATION.json",
+  "authors": [
+    "Zhigang Xu",
+    "Xingji Qian",
+    "Xinhua Dong"
+  ],
+  "affiliation": "Hubei University of Technology, Wuhan, 430068, Hubei, China",
+  "contacts": {
+    "Xingji Qian": "102511283@hbut.edu.cn",
+    "Xinhua Dong": "xhdong@hbut.edu.cn"
+  },
+  "corresponding_author_marker": "NOT_ADDED_USER_DID_NOT_SPECIFY_IN_THIS_UPDATE"
+}

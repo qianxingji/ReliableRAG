@@ -1,0 +1,19 @@
+src/arbitration/roa_original/*.py -text
+*.pdf binary
+*.zip binary
+output/pdf/*.log binary
+/.gitattributes text eol=lf
+/.gitignore text eol=lf
+/LICENSE_SCOPE.md text eol=lf
+/.github/workflows/*.yml text eol=lf
+/docs/cas_q3/*.md text eol=lf
+/docs/cas_q3/*.json text eol=lf
+/paper/*.bib text eol=lf
+/paper/*.json text eol=lf
+/paper/*.md text eol=lf
+/paper/*.ps1 text eol=lf
+/paper/*.tex text eol=lf
+/paper/*.txt text eol=lf
+/release/cas_q3_aggregate_v2/*.md text eol=lf
+/scripts/*cas_q3*.py text eol=lf
+/tests/test_cas_q3*.py text eol=lf

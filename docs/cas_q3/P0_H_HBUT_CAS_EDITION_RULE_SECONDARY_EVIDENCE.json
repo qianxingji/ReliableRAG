@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_OFFICIAL_HBUT_COLLEGE_PREVIOUS_YEAR_CAS_RULE_FOUND_UNIVERSITY_WIDE_CONFIRMATION_PENDING",
+  "cas_q3_status": "NOT_READY",
+  "verification_date": "2026-09-14",
+  "official_source": {
+    "url": "https://lxy.hbut.edu.cn/info/1112/3890.htm",
+    "title": "电子科学与技术硕士专业学位研究生培养方案",
+    "publisher": "湖北工业大学理学院",
+    "verified_observation": "科研论文分区以发表上一年度中国科学院文献情报中心（升级版）分区报告为准"
+  },
+  "evidence_scope": {
+    "official_hbut_subdomain": true,
+    "college_training_plan": true,
+    "central_research_administration_policy": false,
+    "previous_publication_year_rule_observed": true,
+    "rule_proved_university_wide_for_faculty_research_recognition": false,
+    "applied_intelligence_record_present": false,
+    "applied_intelligence_tier_proved": false
+  },
+  "candidate_interpretation_requiring_confirmation": {
+    "if_formal_publication_year_is_2026_candidate_cas_report_year": 2025,
+    "confirmed_by_hbut_research_administration": false,
+    "safe_to_use_as_final_p0_h_evidence": false
+  },
+  "authoritative_cas_platform": {
+    "landing_url": "https://www.fenqubiao.com/landing.html",
+    "help_url": "https://www.fenqubiao.com/User/Help.aspx",
+    "issuer": "中国科学院文献情报中心期刊分区表",
+    "upgraded_2025_listed_as_available": true,
+    "journal_search_supports_title_and_issn": true,
+    "journal_partition_data_requires_institutional_or_authenticated_access": true,
+    "hbut_access_verified": false,
+    "applied_intelligence_2025_record_retrieved": false
+  },
+  "central_policy_attachment_access": {
+    "teacher_research_work_score_policy_named": true,
+    "research_project_and_output_classification_policy_named": true,
+    "captcha_required": true,
+    "contents_inspected": false,
+    "contents_inferred": false
+  },
+  "institutional_request_refinement": "Please confirm whether the prior-publication-year upgraded CAS rule in the college training plan applies university-wide to this faculty research output and, if publication occurs in 2026, whether the published 2025 upgraded report controls; retain the official platform record for Applied Intelligence by current title and both ISSNs.",
+  "p0_h_closed": false,
+  "submission_authorized": false
+}

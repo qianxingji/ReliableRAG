@@ -1,0 +1,90 @@
+{
+  "status": "PASS_PRETRAINED_ASSET_DELIVERY_AND_RESTORATION_ONLY",
+  "source_commit": "ba2d2d569262f5a9e0e9d7e5889212bad15b0640",
+  "models": {
+    "bge": {
+      "model_id": "BAAI/bge-base-en-v1.5",
+      "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+      "files": 6,
+      "bytes": 438899684
+    },
+    "qwen": {
+      "model_id": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "files": 9,
+      "bytes": 6183451098
+    },
+    "gbv_nli": {
+      "model_id": "MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
+      "revision": "5a4338ab2151dc8db04ad53b42b6153382bf4f99",
+      "files": 7,
+      "bytes": 872645751
+    }
+  },
+  "payload_files": 22,
+  "payload_bytes": 7494996533,
+  "archive": {
+    "path": "PRETRAINED_RUNTIME_ASSETS_V1_PRIVATE.zip",
+    "sha256": "741b30828503c481cbdc712295c9ab12f52a1c3de183c17bc572a11436762fa9",
+    "size_bytes": 7495085322,
+    "members": 30,
+    "payload_files": 22,
+    "payload_bytes": 7494996533,
+    "uploaded": false
+  },
+  "original_assets_unchanged": 22,
+  "restored_assets_rechecked": 22,
+  "source_control_and_metadata_files_unchanged": 7,
+  "independent_validator_original_content_reads": 0,
+  "qwen_index_shards": [
+    "model-00001-of-00002.safetensors",
+    "model-00002-of-00002.safetensors"
+  ],
+  "qwen_index_tensor_names": 434,
+  "full_pipeline_replay": false,
+  "CUDA_execution": false,
+  "private_artifacts_uploaded": false,
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T11:10:18.071598+00:00",
+  "acceptance_manifest": "d8b867e17d74b1dce59e2ec5fb3b4af38b9991b83fbfe3fdd2d403d6d61f36cc",
+  "execution_freeze_sha256": "d5941e8b5bfeed2bd3c1ad272349d7cfdc50d4ac7a7da85b23558a6282f561a2",
+  "asset_lock_sha256": "53fc72dd7e85dfd6dab703531cdf2599b029e2adec8430610c688ab8a4a1a12c",
+  "independent_validation_sha256": "b786c769a577a786aeabd1f64a88b77879b662f2dfc07d7dc6c9790fd634c790",
+  "evidence_companion": {
+    "filename": "PRETRAINED_ASSET_DELIVERY_V1_EVIDENCE_PRIVATE.zip",
+    "sha256": "7a06703b979605ef2fd314041c11db1a79c8b84a7ff34c743565c5903cc09c74",
+    "size_bytes": 27409,
+    "members": 15,
+    "all_members_roundtrip_equal": true,
+    "uploaded": false
+  },
+  "new_scientific_fits": 0,
+  "scientific_fit_total": 178,
+  "model_loads": 0,
+  "neural_forwards": 0,
+  "fresh_gold_values": 0,
+  "unexpected_guard_events": 0,
+  "declared_independent_validator_processes": 1,
+  "another_host_or_OS_tested": false,
+  "complete_pipeline_delivered": false,
+  "established_engineering_suite_repeated": false,
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "live_canonical_pid": 55688,
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 10274,
+    "generation_receipts.jsonl": 30823,
+    "repair_bindings.jsonl": 10274,
+    "branch_provenance.jsonl": 10274
+  },
+  "snapshot_scope": "Non-atomic sequential newline byte counts; no fresh answer/score/Gold decoding",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "pending": [
+    "C3 completion/fixed replay/acceptance",
+    "Actual C4/full prelabel",
+    "Cost and four D processes",
+    "Contribution review",
+    "Dataset/learned-policy/completed-output dependency closure",
+    "Remaining package/predecessor bindings and relocated full pipeline execution",
+    "Historical fit-time receipts and contamination limits"
+  ]
+}

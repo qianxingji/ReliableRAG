@@ -1,0 +1,356 @@
+{
+  "source_sha256": "4090ec70c4a9154ecfc960c9c2bc26317b585d06cc308ee962a984e8981bbf6d",
+  "report_rows_checked": 40,
+  "scope": "REPORTED_AGGREGATE_ARITHMETIC_ONLY",
+  "numeric_replay_status": "NOT_RUN",
+  "uncertainty_scope": "same-cohort partition sensitivity; not a confidence interval",
+  "cas_q2_status": "NOT READY",
+  "scientific_fit_calls": 0,
+  "primary_mean_sample_std": {
+    "GbV": {
+      "r": {
+        "mean": 255.8,
+        "sample_std": 3.492849839314596
+      },
+      "d": {
+        "mean": 15.8,
+        "sample_std": 0.8366600265340756
+      },
+      "net": {
+        "mean": 240,
+        "sample_std": 3.391164991562634
+      },
+      "em_pp": {
+        "mean": 1.7777777776,
+        "sample_std": 0.025119740623633553
+      },
+      "f1_pp": {
+        "mean": 2.234517275,
+        "sample_std": 0.02060104363739354
+      }
+    },
+    "HGB": {
+      "r": {
+        "mean": 283.8,
+        "sample_std": 1.9235384061671346
+      },
+      "d": {
+        "mean": 19,
+        "sample_std": 1.224744871391589
+      },
+      "net": {
+        "mean": 264.8,
+        "sample_std": 2.7748873851023217
+      },
+      "em_pp": {
+        "mean": 1.9614814816,
+        "sample_std": 0.02055472141183731
+      },
+      "f1_pp": {
+        "mean": 2.3136151694,
+        "sample_std": 0.01934691846381757
+      }
+    },
+    "ROA-FULL": {
+      "r": {
+        "mean": 312.4,
+        "sample_std": 2.9664793948382653
+      },
+      "d": {
+        "mean": 13,
+        "sample_std": 1.8708286933869707
+      },
+      "net": {
+        "mean": 299.4,
+        "sample_std": 4.61519230368573
+      },
+      "em_pp": {
+        "mean": 2.2177777776,
+        "sample_std": 0.034186609694247576
+      },
+      "f1_pp": {
+        "mean": 2.7048507228,
+        "sample_std": 0.0353618034458927
+      }
+    },
+    "ROA-NOGBV": {
+      "r": {
+        "mean": 293,
+        "sample_std": 3.1622776601683795
+      },
+      "d": {
+        "mean": 27.8,
+        "sample_std": 3.03315017762062
+      },
+      "net": {
+        "mean": 265.2,
+        "sample_std": 5.06951674225463
+      },
+      "em_pp": {
+        "mean": 1.9644444444,
+        "sample_std": 0.03755197592371182
+      },
+      "f1_pp": {
+        "mean": 2.3538427516000002,
+        "sample_std": 0.05200642598854993
+      }
+    },
+    "V2": {
+      "r": {
+        "mean": 292,
+        "sample_std": 4.301162633521313
+      },
+      "d": {
+        "mean": 22.6,
+        "sample_std": 1.3416407864998738
+      },
+      "net": {
+        "mean": 269.4,
+        "sample_std": 5.412947441089743
+      },
+      "em_pp": {
+        "mean": 1.9955555554,
+        "sample_std": 0.040095907065801094
+      },
+      "f1_pp": {
+        "mean": 2.3714622756,
+        "sample_std": 0.031087446607986544
+      }
+    }
+  },
+  "full_minus_comparator": {
+    "GbV": {
+      "r": {
+        "mean": 56.6,
+        "sample_std": 4.774934554525329
+      },
+      "d": {
+        "mean": -2.8,
+        "sample_std": 1.7888543819998317
+      },
+      "net": {
+        "mean": 59.4,
+        "sample_std": 5.549774770204643
+      },
+      "em_pp": {
+        "mean": 0.44,
+        "sample_std": 0.041109442760608884
+      },
+      "f1_pp": {
+        "mean": 0.47033344779999986,
+        "sample_std": 0.03510914043196006
+      }
+    },
+    "HGB": {
+      "r": {
+        "mean": 28.6,
+        "sample_std": 4.505552130427524
+      },
+      "d": {
+        "mean": -6,
+        "sample_std": 1.8708286933869707
+      },
+      "net": {
+        "mean": 34.6,
+        "sample_std": 6.348228099241552
+      },
+      "em_pp": {
+        "mean": 0.25629629600000003,
+        "sample_std": 0.04702391200084075
+      },
+      "f1_pp": {
+        "mean": 0.39123555339999994,
+        "sample_std": 0.04629887511800367
+      }
+    },
+    "ROA-NOGBV": {
+      "r": {
+        "mean": 19.4,
+        "sample_std": 3.4351128074635335
+      },
+      "d": {
+        "mean": -14.8,
+        "sample_std": 2.6832815729997477
+      },
+      "net": {
+        "mean": 34.2,
+        "sample_std": 3.420526275297414
+      },
+      "em_pp": {
+        "mean": 0.25333333319999995,
+        "sample_std": 0.025337231751702893
+      },
+      "f1_pp": {
+        "mean": 0.35100797119999977,
+        "sample_std": 0.03642125972282963
+      }
+    }
+  },
+  "lodo_reported_rows": [
+    {
+      "context": "musique",
+      "method": "GbV",
+      "actions": 225,
+      "r": 84,
+      "d": 1,
+      "neutral": 140,
+      "net": 83,
+      "em_pp": 1.844444444,
+      "f1_pp": 2.297164564
+    },
+    {
+      "context": "musique",
+      "method": "HGB",
+      "actions": 225,
+      "r": 83,
+      "d": 1,
+      "neutral": 141,
+      "net": 82,
+      "em_pp": 1.822222222,
+      "f1_pp": 2.166332926
+    },
+    {
+      "context": "musique",
+      "method": "ROA-FULL",
+      "actions": 225,
+      "r": 91,
+      "d": 3,
+      "neutral": 131,
+      "net": 88,
+      "em_pp": 1.955555556,
+      "f1_pp": 2.375079365
+    },
+    {
+      "context": "musique",
+      "method": "ROA-NOGBV",
+      "actions": 225,
+      "r": 82,
+      "d": 8,
+      "neutral": 135,
+      "net": 74,
+      "em_pp": 1.644444444,
+      "f1_pp": 2.012999593
+    },
+    {
+      "context": "musique",
+      "method": "V2",
+      "actions": 225,
+      "r": 80,
+      "d": 5,
+      "neutral": 140,
+      "net": 75,
+      "em_pp": 1.666666667,
+      "f1_pp": 2.063846154
+    },
+    {
+      "context": "2wikimultihopqa",
+      "method": "GbV",
+      "actions": 225,
+      "r": 79,
+      "d": 12,
+      "neutral": 134,
+      "net": 67,
+      "em_pp": 1.488888889,
+      "f1_pp": 1.948309833
+    },
+    {
+      "context": "2wikimultihopqa",
+      "method": "HGB",
+      "actions": 225,
+      "r": 96,
+      "d": 10,
+      "neutral": 119,
+      "net": 86,
+      "em_pp": 1.911111111,
+      "f1_pp": 2.133365564
+    },
+    {
+      "context": "2wikimultihopqa",
+      "method": "ROA-FULL",
+      "actions": 225,
+      "r": 93,
+      "d": 9,
+      "neutral": 123,
+      "net": 84,
+      "em_pp": 1.866666667,
+      "f1_pp": 2.302870334
+    },
+    {
+      "context": "2wikimultihopqa",
+      "method": "ROA-NOGBV",
+      "actions": 225,
+      "r": 99,
+      "d": 12,
+      "neutral": 114,
+      "net": 87,
+      "em_pp": 1.933333333,
+      "f1_pp": 2.222610353
+    },
+    {
+      "context": "2wikimultihopqa",
+      "method": "V2",
+      "actions": 225,
+      "r": 103,
+      "d": 11,
+      "neutral": 111,
+      "net": 92,
+      "em_pp": 2.044444444,
+      "f1_pp": 2.303562734
+    },
+    {
+      "context": "hotpotqa",
+      "method": "GbV",
+      "actions": 225,
+      "r": 97,
+      "d": 2,
+      "neutral": 126,
+      "net": 95,
+      "em_pp": 2.111111111,
+      "f1_pp": 2.59663971
+    },
+    {
+      "context": "hotpotqa",
+      "method": "HGB",
+      "actions": 225,
+      "r": 108,
+      "d": 8,
+      "neutral": 109,
+      "net": 100,
+      "em_pp": 2.222222222,
+      "f1_pp": 2.651693122
+    },
+    {
+      "context": "hotpotqa",
+      "method": "ROA-FULL",
+      "actions": 225,
+      "r": 118,
+      "d": 3,
+      "neutral": 104,
+      "net": 115,
+      "em_pp": 2.555555556,
+      "f1_pp": 3.021715611
+    },
+    {
+      "context": "hotpotqa",
+      "method": "ROA-NOGBV",
+      "actions": 225,
+      "r": 104,
+      "d": 11,
+      "neutral": 110,
+      "net": 93,
+      "em_pp": 2.066666667,
+      "f1_pp": 2.518618641
+    },
+    {
+      "context": "hotpotqa",
+      "method": "V2",
+      "actions": 225,
+      "r": 110,
+      "d": 7,
+      "neutral": 108,
+      "net": 103,
+      "em_pp": 2.288888889,
+      "f1_pp": 2.714444444
+    }
+  ]
+}

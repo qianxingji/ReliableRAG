@@ -1,0 +1,175 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amiraz et~al.(2025)Amiraz, Cuconasu, Filice, and
+  Karnin]{amiraz2025distracting}
+Chen Amiraz, Florin Cuconasu, Simone Filice, and Zohar Karnin.
+\newblock The distracting effect: Understanding irrelevant passages in rag.
+\newblock In \emph{Proceedings of ACL}, pages 18228--18258, 2025.
+\newblock \doi{10.18653/v1/2025.acl-long.892}.
+
+\bibitem[Asai et~al.(2024)Asai, Wu, Wang, Sil, and Hajishirzi]{asai2024selfrag}
+Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi.
+\newblock Self-rag: Learning to retrieve, generate, and critique through
+  self-reflection.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=hSyW5go0v8}.
+
+\bibitem[Cormack et~al.(2009)Cormack, Clarke, and Buettcher]{cormack2009rrf}
+Gordon~V. Cormack, Charles L.~A. Clarke, and Stefan Buettcher.
+\newblock Reciprocal rank fusion outperforms condorcet and individual rank
+  learning methods.
+\newblock In \emph{Proceedings of SIGIR}, pages 758--759, 2009.
+\newblock \doi{10.1145/1571941.1572114}.
+
+\bibitem[Dado et~al.(2026)Dado, Carmel, and Kurland]{dado2026benefit}
+Or~Dado, David Carmel, and Oren Kurland.
+\newblock Predicting the benefit of retrieval augmentation in open-domain
+  question answering.
+\newblock \emph{arXiv preprint arXiv:2604.07985v3}, 2026.
+\newblock \doi{10.1145/3799682.3840689}.
+\newblock URL \url{https://arxiv.org/abs/2604.07985v3}.
+
+\bibitem[Du(2026)]{du2026pairid}
+Wenzhang Du.
+\newblock What would fix this rag failure? auditing counterfactual response
+  with paired evidence interventions.
+\newblock \emph{arXiv preprint arXiv:2608.08944}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2608.08944}.
+
+\bibitem[Filice et~al.(2025)Filice, Haramaty, Horowitz, Karnin, Lewin-Eytan,
+  and Shtoff]{filice2025gbv}
+Simone Filice, Elad Haramaty, Guy Horowitz, Zohar Karnin, Liane Lewin-Eytan,
+  and Alex Shtoff.
+\newblock Generate but verify: Answering with faithfulness in rag-based
+  question answering.
+\newblock In \emph{Proceedings of IJCNLP-AACL}, pages 1017--1037, 2025.
+\newblock \doi{10.18653/v1/2025.ijcnlp-long.56}.
+\newblock URL \url{https://aclanthology.org/2025.ijcnlp-long.56/}.
+
+\bibitem[Hashemifar et~al.(2026)Hashemifar, Noughabi, Zarrinkalam, and
+  Dehghantanha]{hashemifar2026d2r}
+Soroush Hashemifar, Havva~Alizadeh Noughabi, Fattane Zarrinkalam, and Ali
+  Dehghantanha.
+\newblock Diagnosing and repairing factual errors in rag under budget
+  constraints.
+\newblock \emph{arXiv preprint arXiv:2606.29377}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2606.29377}.
+
+\bibitem[Ho et~al.(2020)Ho, Duong~Nguyen, Sugawara, and Aizawa]{ho2020twowiki}
+Xanh Ho, Anh-Khoa Duong~Nguyen, Saku Sugawara, and Akiko Aizawa.
+\newblock Constructing a multi-hop qa dataset for comprehensive evaluation of
+  reasoning steps.
+\newblock In \emph{Proceedings of COLING}, pages 6609--6625, 2020.
+\newblock \doi{10.18653/v1/2020.coling-main.580}.
+
+\bibitem[Jeong et~al.(2024)Jeong, Baek, Cho, Hwang, and
+  Park]{jeong2024adaptive}
+Soyeong Jeong, Jinheon Baek, Sukmin Cho, Sung~Ju Hwang, and Jong Park.
+\newblock Adaptive-rag: Learning to adapt retrieval-augmented large language
+  models through question complexity.
+\newblock In \emph{Proceedings of NAACL-HLT}, pages 7036--7050, 2024.
+\newblock \doi{10.18653/v1/2024.naacl-long.389}.
+
+\bibitem[Jiao et~al.(2026)Jiao, Huang, Qi, Wang, Li, Weng, Liu, Cai, and
+  Yao]{jiao2026doctorrag}
+Shuguang Jiao, Chengkai Huang, Shuhan Qi, Xuan Wang, Yifan Li, Quanchi Weng,
+  Lingchuan Liu, Xunliang Cai, and Lina Yao.
+\newblock {Doctor-RAG}: A failure-aware repair framework for agentic
+  retrieval-augmented generation.
+\newblock \emph{arXiv preprint arXiv:2604.00865v2}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2604.00865v2}.
+
+\bibitem[Kim(2026)]{kim2026search}
+Minho Kim.
+\newblock When should llms search? counterfactual supervision for search
+  routing.
+\newblock \emph{arXiv preprint arXiv:2607.05752}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2607.05752}.
+
+\bibitem[Lewis et~al.(2020)Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal,
+  Kuttler, Lewis, Yih, Rocktaschel, Riedel, and Kiela]{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich Kuttler, Mike Lewis, Wen-tau Yih, Tim
+  Rocktaschel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  33:\penalty0 9459--9474, 2020.
+
+\bibitem[Oh and Thorne(2023)]{oh2023detrimental}
+Philhoon Oh and James Thorne.
+\newblock Detrimental contexts in open-domain question answering.
+\newblock In \emph{Findings of EMNLP}, pages 11589--11605, 2023.
+\newblock \doi{10.18653/v1/2023.findings-emnlp.776}.
+
+\bibitem[{Qwen Team}(2024)]{qwen2024qwen25}
+{Qwen Team}.
+\newblock Qwen2.5 technical report.
+\newblock \emph{arXiv preprint arXiv:2412.15115}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2412.15115}.
+
+\bibitem[Robertson and Zaragoza(2009)]{robertson2009bm25}
+Stephen Robertson and Hugo Zaragoza.
+\newblock The probabilistic relevance framework: Bm25 and beyond.
+\newblock \emph{Foundations and Trends in Information Retrieval}, 3\penalty0
+  (4):\penalty0 333--389, 2009.
+\newblock \doi{10.1561/1500000019}.
+
+\bibitem[Trivedi et~al.(2022)Trivedi, Balasubramanian, Khot, and
+  Sabharwal]{trivedi2022musique}
+Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal.
+\newblock Musique: Multihop questions via single-hop question composition.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  10:\penalty0 539--554, 2022.
+\newblock \doi{10.1162/tacl_a_00475}.
+
+\bibitem[Wang et~al.(2023)Wang, Li, Sun, and Liu]{wang2023skr}
+Yile Wang, Peng Li, Maosong Sun, and Yang Liu.
+\newblock Self-knowledge guided retrieval augmentation for large language
+  models.
+\newblock In \emph{Findings of EMNLP}, pages 10303--10315, 2023.
+\newblock \doi{10.18653/v1/2023.findings-emnlp.691}.
+
+\bibitem[Xiao et~al.(2024)Xiao, Liu, Zhang, Muennighoff, Lian, and
+  Nie]{xiao2023bge}
+Shitao Xiao, Zheng Liu, Peitian Zhang, Niklas Muennighoff, Defu Lian, and
+  Jian-Yun Nie.
+\newblock {C-Pack}: Packed resources for general chinese embeddings.
+\newblock \emph{arXiv preprint arXiv:2309.07597v5}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2309.07597v5}.
+
+\bibitem[Xu et~al.(2026)Xu, Shi, Shan, Liu, Bai, Li, and
+  Liu]{xu2026trustmargin}
+Jingyan Xu, Hong Shi, Yi~Shan, Penghui Liu, Yunhao Bai, Ningyuan Li, and
+  Xueyang Liu.
+\newblock Trustmargin: Training-free arbitration between parametric memory and
+  retrieved evidence in large language models.
+\newblock \emph{arXiv preprint arXiv:2606.08397}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2606.08397}.
+
+\bibitem[Yan et~al.(2024)Yan, Gu, Zhu, and Ling]{yan2024crag}
+Shi-Qi Yan, Jia-Chen Gu, Yun Zhu, and Zhen-Hua Ling.
+\newblock Corrective retrieval augmented generation.
+\newblock \emph{arXiv preprint arXiv:2401.15884}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2401.15884}.
+
+\bibitem[Yang et~al.(2018)Yang, Qi, Zhang, Bengio, Cohen, Salakhutdinov, and
+  Manning]{yang2018hotpotqa}
+Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William Cohen, Ruslan
+  Salakhutdinov, and Christopher~D. Manning.
+\newblock Hotpotqa: A dataset for diverse, explainable multi-hop question
+  answering.
+\newblock In \emph{Proceedings of EMNLP}, pages 2369--2380, 2018.
+\newblock \doi{10.18653/v1/D18-1259}.
+
+\bibitem[Zhao et~al.(2023)Zhao, Li, Joty, Qin, and Bing]{zhao2023verifyedit}
+Ruochen Zhao, Xingxuan Li, Shafiq Joty, Chengwei Qin, and Lidong Bing.
+\newblock Verify-and-edit: A knowledge-enhanced chain-of-thought framework.
+\newblock In \emph{Proceedings of ACL}, pages 5823--5840, 2023.
+\newblock \doi{10.18653/v1/2023.acl-long.320}.
+
+\end{thebibliography}

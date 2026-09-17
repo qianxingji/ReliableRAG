@@ -1,0 +1,108 @@
+name: public-reporting-audit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - work/cas-q2-p0-1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-reporting-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  aggregate-reporting:
+    name: Aggregate reporting and fail-closed boundary
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out the exact revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.11"
+
+      - name: Install PDF inspection tools
+        run: sudo apt-get update && sudo apt-get install --yes poppler-utils
+
+      - name: Verify committed public reporting and compiled artifacts
+        run: |
+          python scripts/verify_cas_q3_public_reporting_surface.py
+          python scripts/verify_cas_q3_compiled_pdfs.py
+          python scripts/audit_cas_q3_manuscript_length.py
+          python scripts/verify_cas_q3_applied_intelligence_preflight.py
+          python scripts/verify_cas_q3_template_route_resolution.py
+          python scripts/verify_cas_q3_hbut_cas_edition_secondary_evidence.py
+          python scripts/verify_cas_q3_applied_intelligence_public_corroboration.py
+          python scripts/verify_cas_q3_institutional_cas_record.py --check-template
+          python scripts/verify_cas_q3_institutional_release_record.py --check-template
+          python scripts/verify_cas_q3_release_activation_record.py --check-template
+          python scripts/verify_cas_q3_institutional_manuscript_approval_record.py --check-template
+          python scripts/verify_cas_q3_external_closure_inputs.py --check-templates
+          python scripts/verify_cas_q3_current_private_build_gate.py --check-template
+          python scripts/verify_cas_q3_license_state.py
+
+      - name: Run portable reporting and privacy tests
+        run: |
+          python -m unittest \
+            tests.test_cas_q3_owner_inputs \
+            tests.test_cas_q3_institutional_cas_record \
+            tests.test_cas_q3_institutional_release_record \
+            tests.test_cas_q3_release_activation_record \
+            tests.test_cas_q3_institutional_manuscript_approval_record \
+            tests.test_cas_q3_external_closure_inputs \
+            tests.test_cas_q3_private_closure_workspace \
+            tests.test_cas_q3_current_private_build_gate \
+            tests.test_cas_q3_original_fit_receipt_census \
+            tests.test_cas_q3_external_closure_evidence_census \
+            tests.test_cas_q3_oversized_external_closure_evidence \
+            tests.test_cas_q3_pdf_external_closure_evidence \
+            tests.test_cas_q3_document_container_inventory \
+            tests.test_cas_q3_recursive_archive_closure_evidence \
+            tests.test_cas_q3_ordinary_document_magic \
+            tests.test_cas_q3_pdf_page_text_coverage \
+            tests.test_cas_q3_external_image_evidence \
+            tests.test_cas_q3_ai_tool_date_evidence \
+            tests.test_cas_q3_codex_session_metadata \
+            tests.test_cas_q3_springer_ai_policy_alignment \
+            tests.test_cas_q3_ai_prompt_record \
+            tests.test_cas_q3_owner_reply_packet \
+            tests.test_cas_q3_private_submission_packet \
+            tests.test_cas_q3_manuscript_length \
+            tests.test_cas_q3_applied_intelligence_preflight \
+            tests.test_cas_q3_applied_intelligence_transport \
+            tests.test_cas_q3_hbut_review_request_packet \
+            tests.test_cas_q3_hbut_email_draft \
+            tests.test_cas_q3_applied_intelligence_private_submission
+
+      - name: Require the submission gate to remain fail-closed
+        shell: bash
+        run: |
+          set +e
+          python scripts/verify_cas_q3_submission_readiness.py --ignore-local-owner-inputs
+          readiness_exit=$?
+          set -e
+          test "$readiness_exit" -eq 2
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          result = json.loads(
+              Path("docs/cas_q3/SUBMISSION_READINESS_VERIFICATION.json").read_text(encoding="utf-8")
+          )
+          assert result["decision"] == "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES"
+          assert result["cas_q3_status"] == "NOT_READY"
+          assert result["submission_ready"] is False
+          assert result["scientific_payloads_read"] is False
+          assert result["model_forwards"] == 0
+          assert result["scientific_fits"] == 0
+          PY
+
+      - name: Require deterministic tracked receipts
+        run: git diff --exit-code

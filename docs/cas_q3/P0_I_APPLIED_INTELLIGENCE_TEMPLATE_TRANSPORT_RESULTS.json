@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "decision": "PARTIAL_PASS_OFFICIAL_SN_JNL_ALLOWED_COMPLETE_PRIVATE_TRANSPORT_VALIDATED_SMALLCONDENSED_LEGACY_CONFLICT_RETAINED",
+  "cas_q3_status": "NOT_READY",
+  "target_journal": "Applied Intelligence",
+  "audit_date_local": "2026-09-14",
+  "official_source_findings": {
+    "journal_submission_guidelines": "https://link.springer.com/journal/10489/submission-guidelines",
+    "current_springer_nature_latex_support": "https://www.springernature.com/gp/authors/campaigns/latex-author-support",
+    "template_support_article": "https://support.springernature.com/en/support/solutions/articles/6000081241-templates-and-style-files-for-journal-article-preparation",
+    "journal_page_recommends_current_springer_nature_latex_template": true,
+    "springer_nature_support_says_current_authoring_template_may_be_used_for_any_springer_nature_journal": true,
+    "journal_page_also_retains_legacy_smallcondensed_instruction": true,
+    "legacy_macro_download_url": "https://static.springer.com/sgw/documents/468198/application/zip/LaTeX_DL_468198_220518.zip",
+    "legacy_macro_download_observed_http_status": 404,
+    "journal_specific_equivalence_from_sn_jnl_to_smallcondensed_proved": false
+  },
+  "official_modern_template": {
+    "version_label": "Version 3.1 December 2024",
+    "zip_sha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+    "zip_members": 18,
+    "smallcondensed_string_occurrences": 0,
+    "sn_jnl_class_sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "sn_basic_bst_sha256": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c"
+  },
+  "private_complete_source_transport": {
+    "first_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260914-a/applied_intelligence_complete_source_transport_candidate.zip",
+    "second_build": "E:/paper/ReliableRAG-applied-intelligence-transport-candidate-20260914-b/applied_intelligence_complete_source_transport_candidate.zip",
+    "first_build_receipt_sha256": "94309cb72fa5e27f6c743a0e62c6bdcc5e32bfb7f8b972aa8b386ed217949946",
+    "second_build_receipt_sha256": "bd1b0871a4a928934da65fe3d34dc06343b98ce543e4f098edba5d07d046b2de",
+    "archive_sha256": "f4279cf38aa09a1ddc212b9b295e0c73b78a67b7262845e72a6df584edeb8fdd",
+    "deterministic_rebuild_equal": true,
+    "archive_members": 10,
+    "flat_archive": true,
+    "authored_members": 8,
+    "publisher_template_members": [
+      "sn-basic.bst",
+      "sn-jnl.cls"
+    ],
+    "anonymous": true,
+    "validation_decision": "PASS_PRIVATE_COMPLETE_SOURCE_TRANSPORT_CLEAN_COMPILE_SUBMISSION_UNAUTHORIZED",
+    "both_builds_independently_validated": true,
+    "validator_checks_each": 56,
+    "clean_compile_pages": 12,
+    "clean_compile_pdf_sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4",
+    "byte_identical_to_visually_accepted_modern_preflight_pdf": true,
+    "nonembedded_fonts": 0,
+    "type3_fonts": 0
+  },
+  "interpretation": {
+    "modern_sn_jnl_is_an_officially_supported_working_profile": true,
+    "complete_flat_source_transport_is_engineering_validated": true,
+    "legacy_smallcondensed_discrepancy_resolved": false,
+    "final_author_populated_package_exists": false,
+    "submission_ready": false
+  },
+  "submission_authorized": false,
+  "distribution_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

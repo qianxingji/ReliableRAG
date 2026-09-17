@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "status": "PASS_INDEPENDENT_EXACT_MISTRAL_ASSET_VALIDATION",
+  "cas_q3_status": "NOT READY",
+  "repo_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+  "manifest_sha256": "0d52dd24d4f819af27b022877712a59ee07dab44e40a8e9c2586afa141b9fa18",
+  "attempt_log_sha256": "a44e59f194e5dfd682aaddfcab083aa9ba93e485a7f2661665d227f3dd7b0189",
+  "validated_files": [
+    {
+      "path": ".gitattributes",
+      "size_bytes": 1519,
+      "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 7893,
+      "sha256": "3166974023134d972368b585d730fa5f70100873684f90a10a773b20e80b30ba"
+    },
+    {
+      "path": "config.json",
+      "size_bytes": 601,
+      "sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99"
+    },
+    {
+      "path": "generation_config.json",
+      "size_bytes": 116,
+      "sha256": "b4669f1b8f4185324bd9b12a69e85a1ad2289bc48111ef739cfaaea3bba6b0a9"
+    },
+    {
+      "path": "model-00001-of-00003.safetensors",
+      "size_bytes": 4949453792,
+      "sha256": "ce6fb6f6f4d0183f4813cbf4ece24109da629a08d4210da46f77e1d8b0bd5c19"
+    },
+    {
+      "path": "model-00002-of-00003.safetensors",
+      "size_bytes": 4999819336,
+      "sha256": "8c0e72f148366b6a3709e002a98706a33d31aec8515090c856c95b2044f92ae0"
+    },
+    {
+      "path": "model-00003-of-00003.safetensors",
+      "size_bytes": 4546807800,
+      "sha256": "905dd405363e43d95779c1c1155a2dbfd36155914ae95dbd934e12e490cfb4ca"
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "size_bytes": 23950,
+      "sha256": "e489ba553b87cde188d921b1a8283c2e0b9d33d635b88147d96ff0fcd6250016"
+    },
+    {
+      "path": "params.json",
+      "size_bytes": 202,
+      "sha256": "8a64b8657de37af1f828eef1517dc186247938d66e7fea2c78c31d5b9071efe6"
+    },
+    {
+      "path": "special_tokens_map.json",
+      "size_bytes": 414,
+      "sha256": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0"
+    },
+    {
+      "path": "tokenizer.json",
+      "size_bytes": 1961548,
+      "sha256": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49"
+    },
+    {
+      "path": "tokenizer.model",
+      "size_bytes": 587404,
+      "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+    },
+    {
+      "path": "tokenizer.model.v3",
+      "size_bytes": 587404,
+      "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "size_bytes": 140874,
+      "sha256": "0533dec9cfe319163801b6618d0f3ec9cfa126b6288e3df5deca6e32acb09cd2"
+    }
+  ],
+  "selected_file_count": 14,
+  "selected_total_bytes": 14499392853,
+  "weight_tensor_count": 291,
+  "weight_parameter_count": 7248023552,
+  "weight_tensor_bytes": 14496047104,
+  "weight_dtype_counts": {
+    "BF16": 291
+  },
+  "weight_shards": [
+    {
+      "path": "model-00001-of-00003.safetensors",
+      "header_bytes": 11224,
+      "tensors": 97,
+      "parameters": 2474721280,
+      "payload_bytes": 4949442560
+    },
+    {
+      "path": "model-00002-of-00003.safetensors",
+      "header_bytes": 12352,
+      "tensors": 106,
+      "parameters": 2499903488,
+      "payload_bytes": 4999806976
+    },
+    {
+      "path": "model-00003-of-00003.safetensors",
+      "header_bytes": 10224,
+      "tensors": 88,
+      "parameters": 2273398784,
+      "payload_bytes": 4546797568
+    }
+  ],
+  "config_identity": {
+    "model_type": "mistral",
+    "architectures": [
+      "MistralForCausalLM"
+    ],
+    "hidden_size": 4096,
+    "intermediate_size": 14336,
+    "num_hidden_layers": 32,
+    "num_attention_heads": 32,
+    "num_key_value_heads": 8,
+    "vocab_size": 32768,
+    "max_position_embeddings": 32768,
+    "torch_dtype": "bfloat16",
+    "bos_token_id": 1,
+    "eos_token_id": 2
+  },
+  "attempt_events": {
+    "asset_acquisition_started": 2,
+    "asset_acquisition_interrupted_after_no_payload_progress": 1,
+    "asset_acquisition_completed": 1
+  },
+  "checks": 1295,
+  "model_loads": 0,
+  "reader_generations": 0,
+  "project_rows_read": 0,
+  "scientific_fits": 0,
+  "gold_labels_read": 0,
+  "scope_limit": "Asset and safetensors structure only; tokenizer semantics, model loading, quantized memory fit, generation and scoring remain untested."
+}

@@ -1,0 +1,40 @@
+{
+  "cas_q2_status": "NOT READY",
+  "snapshot_utc": "2026-09-11T06:37:45.526159+00:00",
+  "canonical_reader_state": "RUNNING_NOT_ACCEPTED",
+  "runtime_source_commit": "cc304ee37ba589cff42b936c6e1fd0a692618864",
+  "live_durable_line_counts": {
+    "canonical_branches.jsonl": 3762,
+    "generation_receipts.jsonl": 11286,
+    "repair_bindings.jsonl": 3762,
+    "branch_provenance.jsonl": 3762
+  },
+  "count_scope": "Sequential byte newline counts, not atomic; no answer text decoded or assessed",
+  "runtime_frozen_source_config_files_unchanged": 41,
+  "engineering_source_commit": "61edb9a5983155bc16f1a6f0e5907e731b4aea3a",
+  "engineering_manifest": "4164666e8ad38360a3980393cd569a00476c4a196dc601db8a896aa37477017e",
+  "tests_run": 110,
+  "tests_passed": 108,
+  "windows_capability_skips": 2,
+  "frozen_input_files_unchanged": 243,
+  "elapsed_test_seconds": 7.14,
+  "new_stage_tests": 9,
+  "implemented": [
+    "Stage-specific protected GPU preflight/base/GbV/policy executors",
+    "Durable forward and branch receipts including partial failures",
+    "Separate full-file independent C3 binding, neural witness and fixed-policy validator",
+    "Single-use prelabel seal after complete acceptance"
+  ],
+  "actual_gpu_preflight_run": false,
+  "actual_fresh_scoring_run": false,
+  "complete_prelabel_accepted": false,
+  "fresh_gold_values_materialized": 0,
+  "scientific_fit_total": 178,
+  "limitation": "CPU tests use invented logits and real saved heads. Complete actual C4 stage execution remains pending accepted C3.",
+  "pending": [
+    "C3 canonical completion, fixed 180-trace replay and independent acceptance",
+    "Actual pinned-model C4 GPU preflight, base/GbV/policy execution and full-file independent prelabel seal",
+    "Frozen D analysis implementation and eventual outcome evaluation after prelabel acceptance",
+    "Contribution assessment, historical fit-time provenance gaps and undecided CAS journal qualification"
+  ]
+}

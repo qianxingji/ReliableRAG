@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_BOUNDED_HISTORICAL_MANIFEST_ARCHIVE_RECOVERY_VERIFICATION",
+  "checks": 30,
+  "archive_sha256": "4f9fab4d2bdf0d57dbc807ab9494b3b0868230f8d7ff025950fe8d422b055b5e",
+  "manifest_sha256": "5924851c30b18785cb1e2bf6893c74cdc819d3549748760bd44b4ebf7ab4e753",
+  "manifest_byte_identical": true,
+  "independent_timestamp_certified": false,
+  "fit_receipt_filenames_in_packaged_mars_json_members_found": false,
+  "full_historical_content_search_reperformed": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "gold_or_answer_text_read": false,
+  "cas_q3_status": "NOT_READY"
+}

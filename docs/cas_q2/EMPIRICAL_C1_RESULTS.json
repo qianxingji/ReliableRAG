@@ -1,0 +1,77 @@
+{
+  "cas_q2_status": "NOT READY",
+  "stage_C1": "ACCEPTED_POOL_ONLY",
+  "fixed_panel_fits_total": 178,
+  "projected_questions": 6000,
+  "expected_future_traces": 18000,
+  "total_pool_documents": 54716,
+  "independent_checks": 60818,
+  "datasets": {
+    "hotpotqa": {
+      "questions": 2000,
+      "pre_dedup_documents": 19905,
+      "documents": 19352,
+      "duplicates_removed": 553,
+      "corpus_fingerprint": "ffcb447ff321bba5b9d1bca5b23926b168ed4965b178f8d57a5e965d4e84ad58"
+    },
+    "2wikimultihopqa": {
+      "questions": 2000,
+      "pre_dedup_documents": 20000,
+      "documents": 11746,
+      "duplicates_removed": 8254,
+      "corpus_fingerprint": "f3012fd419acbb79735d67b04892d4e6cbfe59463fee4c170a225aa527b7a123"
+    },
+    "musique": {
+      "questions": 2000,
+      "pre_dedup_documents": 39991,
+      "documents": 23618,
+      "duplicates_removed": 16373,
+      "corpus_fingerprint": "51a9fed20d05f9281bca140923dd77e9eb0c78cb07ac51242934e7e42e371a23"
+    }
+  },
+  "fresh_gold_values_materialized": 0,
+  "new_reader_generation_calls": 0,
+  "new_embedding_forward_calls": 0,
+  "pool_manifest_sha256": "4b654f0d12eaf6a9bc08e4522932cffb3fea1845eb9bbcfb2d7c2fab3b87ab98",
+  "first_attempt_failure": {
+    "source_commit": "e8d5d9de8e657a18bd59279c9e27d85d1a853616",
+    "status": "FAIL_BEFORE_PROJECTION",
+    "diagnostic": "REPLAY_WRITE_OUTSIDE_OUTPUT:\\\\.\\NUL\\",
+    "manifest_sha256": "b3a151ff113747716f82db7c9a24d25d20850c9d89596c322f8c4ede90f8e240"
+  },
+  "acquisition_inventory": {
+    "status": "PASS_ACQUISITION_INPUT_INVENTORY_ONLY",
+    "checked_files": 44,
+    "checked_bytes": 6623098883,
+    "models": {
+      "bge_dense_encoder": {
+        "model_id": "BAAI/bge-base-en-v1.5",
+        "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+        "files": 6,
+        "bytes": 438899684,
+        "status": "MATCHES_AUTHENTICATED_SNAPSHOT"
+      },
+      "qwen_reader": {
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+        "files": 9,
+        "bytes": 6183451098,
+        "status": "MATCHES_AUTHENTICATED_SNAPSHOT"
+      }
+    },
+    "manifest_sha256": "6e441f8f9fef2b000ba2b39dcfd7b40f74dd4f779568d885584bb7da10b7d518"
+  },
+  "engineering_tests": {
+    "run": 37,
+    "passed": 35,
+    "skipped": 2,
+    "reason": "Windows symlink privilege and case-insensitive filename alias"
+  },
+  "limitations": [
+    "Native raw projection authenticated and guarded; independent derivation starts at safe projected source rows. No separate raw-source parser, model inference or outcome evidence.",
+    "Byte/version availability only. New pool binding, complete executable adapter freeze, GPU compatibility check and independent runtime validation are still required. This is not acquisition execution approval or fresh outcome evidence.",
+    "Failed method-advancement gates and missing historical fit-time receipts remain.",
+    "CAS partition year/category/institution rule and journal remain undecided by user."
+  ],
+  "next": "C2 retrieval/runtime adapters, GPU compatibility preflight and complete executable input freeze; then fresh acquisition and prelabel audit before any outcome access."
+}

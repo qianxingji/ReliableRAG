@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_DISCOVER_COMPUTING_PROVISIONAL_TECHNICAL_PREFLIGHT_EXTERNAL_GATES_OPEN",
+  "cas_q3_status": "NOT_READY",
+  "target_journal": "Discover Computing",
+  "article_type_profile": "Research",
+  "final_target_selected": false,
+  "institutional_cas_q3_qualification_verified": false,
+  "submission_authorized": false,
+  "distribution_authorized": false,
+  "official_sources_checked_local_date": "2026-09-14",
+  "official_sources": [
+    "https://link.springer.com/journal/10791/submission-guidelines",
+    "https://link.springer.com/journal/10791/aims-and-scope",
+    "https://www.springernature.com/gp/authors/campaigns/latex-author-support"
+  ],
+  "profile": {
+    "abstract_words": 142,
+    "abstract_limit_words_exclusive": 250,
+    "main_text_pt": 12,
+    "numeric_citations": true,
+    "flat_source_archive": true,
+    "pdflatex_build": "PASS",
+    "springer_nature_template_applied": false,
+    "generic_article_class_is_final_journal_format": false
+  },
+  "compile_checks": {
+    "fatal_errors": 0,
+    "undefined_citations_or_references": 0,
+    "overfull_or_underfull_boxes": 0,
+    "unresolved_markers": 0
+  },
+  "source_protection": {
+    "journal_neutral_source_sha256_before_and_after": "c8b7c0ca833f1fb5d46a184a1065ea3d7d24daae897942a54c9096eed6c6a3f9",
+    "allowed_transformation_count": 6,
+    "allowed_transformations": [
+      {
+        "from": "\\documentclass[11pt]{article}",
+        "to": "\\documentclass[12pt]{article}",
+        "scope": "font-size profile only"
+      },
+      {
+        "from": "figures/paired_pipeline.pdf",
+        "to": "Fig1.pdf",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "figures/recovery_damage.pdf",
+        "to": "Fig2.pdf",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "tables/study_design.tex",
+        "to": "table_study_design.tex",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "tables/main_results.tex",
+        "to": "table_main_results.tex",
+        "scope": "flat upload path only"
+      },
+      {
+        "from": "tables/primary_comparisons.tex",
+        "to": "table_primary_comparisons.tex",
+        "scope": "flat upload path only"
+      }
+    ],
+    "scientific_prose_or_numbers_changed": false
+  },
+  "artifacts": {
+    "pdf": "output/target_profiles/discover_computing_preflight/manuscript_12pt_preflight.pdf",
+    "pdf_sha256": "4211f946e1b5ce7469c1e8cf8244eafdf592712a3faec0c8c26f538d7a7e38dd",
+    "pdf_pages": 12,
+    "pdf_font_rows": 18,
+    "pdf_nonembedded_font_rows": [],
+    "pdf_type3_font_rows": [],
+    "source_zip": "output/target_profiles/discover_computing_preflight/discover_computing_source_preflight.zip",
+    "source_zip_sha256": "9ab31054895987e4acc218e50e5b033254b318508f937264249a12ce0868c0e2",
+    "source_zip_members": [
+      "Fig1.pdf",
+      "Fig2.pdf",
+      "manuscript.bbl",
+      "manuscript.tex",
+      "references.bib",
+      "table_main_results.tex",
+      "table_primary_comparisons.tex",
+      "table_study_design.tex"
+    ],
+    "source_zip_nested_members": [],
+    "unchanged_journal_neutral_supplement": "output/pdf/supplement.pdf",
+    "unchanged_journal_neutral_supplement_sha256": "8af66654eac26f14b0a1c7b00281aefbb900fe075b00621ee96c982217683775"
+  },
+  "open_external_or_final_gates": [
+    "responsible-author identities, affiliations and corresponding-author details",
+    "author contributions, mandatory funding statement, competing interests and approvals",
+    "final ethics, acknowledgements and assistance disclosures",
+    "cover letter and Snapp field completion",
+    "owner acceptance of open-access fees or confirmed funding route",
+    "project license and journal data/code-release policy",
+    "institution-recognized CAS edition, category and current-title continuity rule",
+    "final target-journal selection and exact final template/profile conversion",
+    "final GPT-6 Astra xhigh artifact, fairness, claim and Submission Ready audit"
+  ],
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

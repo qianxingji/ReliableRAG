@@ -1,0 +1,17 @@
+{
+  "status": "FAIL_PRECONFIG_REPO_IMPORT",
+  "cas_q2_status": "NOT READY",
+  "source_commit": "f412ae3709485341febbc8490cbfde02420a05c0",
+  "failure_task_manifest_sha256": "98ddd984d9e1de5f8d36a1eb52d767a8116806ab58c0341bfbe2c8b21e687471",
+  "exit_code": 1,
+  "diagnostic": "ModuleNotFoundError: No module named 'scripts'",
+  "output_namespace_created": false,
+  "configuration_read": false,
+  "model_load_calls": 0,
+  "model_forward_calls": 0,
+  "scientific_fit_calls": 0,
+  "fresh_gold_values_materialized": 0,
+  "corrected_module_help_passed": true,
+  "scientific_change": false,
+  "correction": "Run the unchanged entry as a repository-root Python module."
+}

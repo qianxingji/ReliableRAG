@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "decision": "FAIL_CLOSED_CAS_Q3_NOT_READY_EXTERNAL_OWNER_INSTITUTION_AUTHOR_GATES",
+  "cas_q3_status": "NOT_READY",
+  "submission_ready": false,
+  "closed_p0": [
+    "P0-A",
+    "P0-B",
+    "P0-C",
+    "P0-D",
+    "P0-E",
+    "P0-F"
+  ],
+  "open_p0": [
+    "P0-G",
+    "P0-H",
+    "P0-I"
+  ],
+  "closed_p1": [
+    "P1-A",
+    "P1-B",
+    "P1-C",
+    "P1-D",
+    "P1-E"
+  ],
+  "p2_status": "FROZEN_NO_NEW_EXPERIMENTS_OR_METHOD_SEARCH",
+  "blockers": [
+    {
+      "gate": "P0-G",
+      "status": "OPEN",
+      "missing": [
+        "institutional release-review approval and retained evidence",
+        "independent confirmation of legal copyright holder and year/range",
+        "frozen final versioned-code link and immutable archive DOI or permanent identifier",
+        "operational restricted-evidence delivery if requested by the editor or reviewers",
+        "owner/institutional review of Qwen research-license compatibility for the intended release",
+        "owner/institutional review of the non-c DeBERTa training-data terms for the intended release",
+        "retained private institutional release record and separate client content audit",
+        "final authorization of the validated V2 archive or a required successor"
+      ]
+    },
+    {
+      "gate": "P0-H",
+      "status": "OPEN",
+      "missing": [
+        "institutional confirmation of the owner-asserted 2025 CAS edition/year",
+        "retained institutional record for current Applied Intelligence title and ISSNs under the Computer Science major-category rule",
+        "institutional title/ISSN-change treatment"
+      ]
+    },
+    {
+      "gate": "P0-I",
+      "status": "OPEN",
+      "missing": [
+        "approved AI-assistance wording",
+        "final confirmation of the author-supplied planned AI-use end date",
+        "responsible-author confirmation of the complete AI-use and prompt-category disclosure",
+        "substantive competing-interests wording",
+        "institutional manuscript approval and retained evidence",
+        "author-populated final target package",
+        "final GPT-6 Astra xhigh fairness, claim, reviewer and Submission Ready audit"
+      ]
+    }
+  ],
+  "owner_input_intake": {
+    "decision": "FAIL_CLOSED_OWNER_INPUT_FILE_MISSING",
+    "complete": false,
+    "missing_field_count": 1,
+    "validation_error_count": 0
+  },
+  "owner_input_intake_scope": "PUBLIC_CHECKOUT_LOCAL_FILE_INTENTIONALLY_EXCLUDED",
+  "verified_repository_hashes": 245,
+  "checks": 892,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}

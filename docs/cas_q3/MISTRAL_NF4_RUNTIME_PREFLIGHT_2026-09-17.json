@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "status": "PASS_BOUNDED_NF4_KERNEL_SMOKE_ONLY",
+  "scientific_status": "NO_READER_MODEL_OR_PROJECT_DATA_EXECUTED",
+  "cas_q3_status": "NOT READY",
+  "script_sha256": "54bfaf678ab3b2263f517a12efee2883d432d3aef166affddc4686ed4a87713c",
+  "python": "3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)]",
+  "python_executable": "E:\\paper\\ReliableRAG-neural-environment-v1\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "versions": {
+    "torch": "2.7.1+cu128",
+    "transformers": "4.53.2",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.8.1"
+  },
+  "origins": {
+    "accelerate": "E:\\paper\\ReliableRAG-mistral-runtime-v1\\site-packages\\accelerate\\__init__.py",
+    "bitsandbytes": "E:\\paper\\ReliableRAG-mistral-runtime-v1\\site-packages\\bitsandbytes\\__init__.py",
+    "torch": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\torch\\__init__.py",
+    "transformers": "E:\\paper\\ReliableRAG-neural-environment-v1\\Lib\\site-packages\\transformers\\__init__.py"
+  },
+  "wheels": [
+    {
+      "filename": "accelerate-1.8.1-py3-none-any.whl",
+      "bytes": 365338,
+      "sha256": "c47b8994498875a2b1286e945bd4d20e476956056c7941d512334f4eb44ff991",
+      "official_pypi_sha256_matched_before_install": true
+    },
+    {
+      "filename": "bitsandbytes-0.50.2-py3-none-win_amd64.whl",
+      "bytes": 39096375,
+      "sha256": "c697963c8fda3dcd0d7ebd9b5211ae4067feef7cd06e0350d4e816a434fe683d",
+      "official_pypi_sha256_matched_before_install": true
+    }
+  ],
+  "cuda": {
+    "runtime": "12.8",
+    "device": "NVIDIA GeForce RTX 5060 Ti",
+    "capability": [
+      12,
+      0
+    ],
+    "bf16_supported": true,
+    "total_bytes": 17102864384,
+    "free_before_bytes": 15908995072,
+    "free_after_bytes": 15879634944,
+    "peak_allocated_bytes": 41984,
+    "peak_reserved_bytes": 2097152
+  },
+  "kernel": {
+    "layer": "bitsandbytes.nn.Linear4bit",
+    "quant_type": "nf4",
+    "double_quant": true,
+    "compute_dtype": "bfloat16",
+    "input_shape": [
+      3,
+      128
+    ],
+    "output_shape": [
+      3,
+      64
+    ],
+    "output_dtype": "torch.bfloat16",
+    "output_sha256_float32_le": "1cf0636bfb4067accdb2f46cacfa0b08b9eaca0424505dc28206e3e0e4a3da81",
+    "repeat_exact": true,
+    "finite": true
+  },
+  "model_loads": 0,
+  "reader_generations": 0,
+  "project_rows_read": 0,
+  "scientific_fits": 0,
+  "gold_labels_read": 0,
+  "claims": [
+    "The pinned Windows CUDA 12.8 NF4 kernel executes on this sm120 GPU.",
+    "This does not prove Mistral model loading, memory fit, semantic correctness, throughput, or replay acceptance."
+  ]
+}

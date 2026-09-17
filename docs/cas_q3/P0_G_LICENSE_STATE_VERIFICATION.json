@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_CURRENT_LICENSE_STATE_CONSISTENCY_WITH_EXTERNAL_GATES_OPEN",
+  "checks": 26,
+  "root_license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "project_code_license": "Apache-2.0",
+  "legal_holder_confirmed": false,
+  "copyright_year_confirmed": false,
+  "institutional_release_review_complete": false,
+  "third_party_institutional_review_complete": false,
+  "distribution_authorized": false,
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "cas_q3_status": "NOT_READY"
+}

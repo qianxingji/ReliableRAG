@@ -1,0 +1,51 @@
+{
+  "decision": "PASS_AUTHOR_AFFILIATION_CONTACT_ONLY_EDIT",
+  "title": "Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements",
+  "authors": [
+    "Zhigang Xu",
+    "Xingji Qian",
+    "Xinhua Dong"
+  ],
+  "affiliation": "Hubei University of Technology, Wuhan, 430068, Hubei, China",
+  "contacts": {
+    "Xingji Qian": "102511283@hbut.edu.cn",
+    "Xinhua Dong": "xhdong@hbut.edu.cn"
+  },
+  "corresponding_author_marker": "NOT_ADDED_USER_DID_NOT_SPECIFY_IN_THIS_UPDATE",
+  "source_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf",
+  "source_sha256": "37d05cb6a9c2825b1a5aa9574f7d7b66e6421e4c573205562a3c5168b4817d1a",
+  "artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
+  "sha256": "816bae3d394c22461b048eeff1b56daf5f85d22245112c59305c746dfd5c6aa3",
+  "size_bytes": 1153142,
+  "pages": 22,
+  "page_1_below_author_block_text_and_pixels_unchanged": true,
+  "other_pages_text_and_pixels_unchanged": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "all_links_and_bookmarks_unchanged": true,
+  "pdf_metadata_title_and_authors_match": true,
+  "all_fonts_embedded": true,
+  "type_3_fonts": 0,
+  "page_1_visual_review": "PASS",
+  "scope": "Editorial author, affiliation, and contact replacement only; scientific review remains pending."
+}

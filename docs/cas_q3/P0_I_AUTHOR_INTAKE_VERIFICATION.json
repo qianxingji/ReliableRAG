@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_AUTHOR_INTAKE_STRUCTURE_AND_PLACEHOLDER_TITLE_PAGE_COMPILE",
+  "checks": 19,
+  "title_page_pages": 2,
+  "title_page_template_sha256": "37143e1053991bd6282c50bb5e619037d0fe44a372bdbf221669ff6bf7318314",
+  "author_intake_sha256": "88295530d6eb70efb3873b95fe9c9ca1d3e55f6d5ca2668820b2b48469267fd5",
+  "author_facts_populated": false,
+  "author_identity_guessed": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "cas_q3_status": "NOT_READY"
+}

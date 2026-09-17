@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_OFFICIAL_PUBLISHER_ACCEPTS_CURRENT_SN_JNL_SUBMISSION_ROUTE_SMALLCONDENSED_STYLE_EQUIVALENCE_UNPROVED",
+  "cas_q3_status": "NOT_READY",
+  "audit_date": "2026-09-14",
+  "target_journal": "Applied Intelligence",
+  "official_sources": {
+    "journal_submission_guidelines": "https://link.springer.com/journal/10489/submission-guidelines",
+    "springer_nature_latex_author_support": "https://www.springernature.com/gp/authors/campaigns/latex-author-support",
+    "springer_nature_template_support": "https://support.springernature.com/en/support/solutions/articles/6000081241-templates-and-style-files-for-journal-article-preparation"
+  },
+  "official_findings": {
+    "journal_page_encourages_current_springer_nature_latex_template": true,
+    "journal_page_requests_editable_latex_sources_and_compiled_pdf": true,
+    "journal_page_requires_flat_upload_without_subfolders": true,
+    "publisher_support_says_current_template_can_be_used_for_any_springer_nature_journal": true,
+    "journal_page_also_retains_smallcondensed_instruction": true,
+    "linked_legacy_smallcondensed_archive_returns_404": true
+  },
+  "authenticated_current_route": {
+    "template": "sn-jnl",
+    "template_version": "Version 3.1 December 2024",
+    "template_zip_sha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+    "class_sha256": "36d0c3273a59d48dc6a9c7b080dfa1ec50dc10229d8751568d1f2e490ffa5ecc",
+    "bibliography_style_sha256": "4b368414cc5593169907933b417aacfdb0ce905866a39bdf55d21aad65e9d46c",
+    "flat_transport_members": 10,
+    "independent_transport_validations": 2,
+    "validator_checks_each": 56,
+    "clean_compile_pages": 12,
+    "clean_compile_pdf_sha256": "f423cdeb634d66e4315d56a8f4c3dda8807ef0b4fe79235e13b698c20d185ea4"
+  },
+  "resolution": {
+    "publisher_acceptance_of_current_sn_jnl_submission_route_proved": true,
+    "journal_specific_smallcondensed_style_equivalence_proved": false,
+    "working_legacy_smallcondensed_package_recovered": false,
+    "pre_submission_template_route_gate_closed": true,
+    "submission_system_compile_observed": false,
+    "author_populated_package_built": false
+  },
+  "boundary": "The official current template is an accepted submission route; no claim is made that its appearance equals the unavailable legacy smallcondensed profile.",
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0,
+  "submission_authorized": false,
+  "distribution_authorized": false
+}

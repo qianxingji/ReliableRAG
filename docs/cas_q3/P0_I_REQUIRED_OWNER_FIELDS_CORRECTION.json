@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_APPLIED_INTELLIGENCE_OWNER_GATE_CORRECTION_19_REAL_MISSING_ZERO_ERRORS",
+  "cas_q3_status": "NOT_READY",
+  "verification_date": "2026-09-14",
+  "official_source": "https://link.springer.com/journal/10489/submission-guidelines",
+  "official_requirement_findings": {
+    "orcid": "IF_AVAILABLE_AND_RECOMMENDED_NOT_MANDATORY",
+    "separate_corresponding_postal_address": "NOT_LISTED_AS_INDEPENDENT_MANDATORY_FIELD_AFFILIATION_AND_ACTIVE_EMAIL_REQUIRED",
+    "acknowledgements": "CONDITIONAL_IF_APPLICABLE",
+    "author_contribution_statement": "RECOMMENDED_NO_FIXED_SET_OF_CREDIT_ROLES_MANDATED",
+    "funding_and_competing_interests": "DECLARATION_REQUIRED",
+    "all_author_and_responsible_authority_approval": "REQUIRED_BY_SUBMISSION"
+  },
+  "correction": {
+    "prior_snapshot_missing_fields": 30,
+    "optional_fields_removed_from_hard_gate": [
+      "authorship.authors_in_order[0].orcid",
+      "authorship.corresponding_author_postal_address",
+      "declarations.acknowledgements"
+    ],
+    "prior_forced_credit_roles_removed": 9,
+    "truthful_credit_gate_added": "authorship.authors_in_order[0].credit_role_assignment",
+    "net_missing_field_reduction": 11,
+    "current_real_missing_fields": 19,
+    "current_validation_errors": 0
+  },
+  "retained_hard_gate_classes": [
+    "department_and_corresponding_author_identity_email",
+    "at_least_one_truthful_credit_role_per_author",
+    "funding_competing_interests_ethics_and_ai_disclosures",
+    "originality_exclusive_submission_all_author_approval",
+    "institutional_manuscript_approval_decision_and_evidence",
+    "legal_code_holder_year_and_release_review",
+    "institution_recognized_cas_edition_year"
+  ],
+  "historical_private_builder_snapshot_mutated": false,
+  "real_owner_values_emitted": false,
+  "real_private_package_built": false,
+  "submission_authorized": false,
+  "distribution_authorized": false
+}

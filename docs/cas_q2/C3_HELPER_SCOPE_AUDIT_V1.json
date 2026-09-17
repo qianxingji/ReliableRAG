@@ -1,0 +1,205 @@
+{
+  "status": "VERIFIED_STATIC_HELPER_SCOPE_DEFECT",
+  "cas_q2_status": "NOT READY",
+  "utc": "2026-09-11T16:54:10.052835+00:00",
+  "diagnostic_only": true,
+  "failure_manifest": {
+    "path": "C:\\Users\\qianx\\Documents\\Codex\\2026-09-10\\reliablerag-research-project-lead-submission-ready\\outputs\\c3_bound_validation_v1\\FAILURE_MANIFEST.json",
+    "sha256": "45f6ebc715282c0098538f68d16bb35144a1c58b9a52cfe47e6e008f7b04c8f6",
+    "size_bytes": 2585
+  },
+  "failed_original_report": {
+    "path": "E:\\paper\\ReliableRAG-cas-q2-p0-1\\outputs\\cas_q2\\empirical_runtime_v1\\INDEPENDENT_VALIDATION.json",
+    "sha256": "ca90d4d03eca6f6d1620aa9c0c03c9d821dc498c815b3bc5e2a11d7d642442ce",
+    "size_bytes": 5505
+  },
+  "failed_report_matches_sealed_stdout": true,
+  "failed_private_files_verified": 16,
+  "original_runtime_files_unchanged": 14,
+  "current_runtime_namespace_exact_with_one_failed_report": true,
+  "native_source": {
+    "path": "E:\\paper\\ReliableRAG-cas-q2-p0-1\\scripts\\validate_roa_empirical_runtime.py",
+    "sha256": "3eb99ad55f93af8beaa0d316d8892ca8747a627bb80671d358312b758638915a",
+    "size_bytes": 16744
+  },
+  "original_helper": {
+    "path": "E:\\paper\\ReliableRAG\\outputs\\daa_v2_fresh_v1\\runtime_branch_freeze\\independent_validate.py",
+    "sha256": "12634390df5c76ae30baeb3172778a86fdae87b7ffc06491db4ab57fcb83fd0a",
+    "size_bytes": 23061
+  },
+  "historical_support": {
+    "path": "E:\\paper\\ReliableRAG\\outputs\\daa_v2_fresh_v1\\runtime_branch_freeze\\runtime_support.py",
+    "sha256": "d4bacc0112c06df55b924961fb0296204ae8f12e6a19de8020b1feeaca4039c7",
+    "size_bytes": 7267
+  },
+  "original_loader_prebound_names": [
+    "BRANCH_FIELDS",
+    "collections",
+    "jsha",
+    "math",
+    "np",
+    "re",
+    "require",
+    "trace_key",
+    "tsha"
+  ],
+  "compiled_helper_dependencies": {
+    "no_forbidden_fields": {
+      "global_reads": [
+        "FORBIDDEN",
+        "dict",
+        "list",
+        "no_forbidden_fields",
+        "require",
+        "set",
+        "str",
+        "type"
+      ],
+      "missing": []
+    },
+    "parsed_answer": {
+      "global_reads": [
+        "re"
+      ],
+      "missing": []
+    },
+    "parsed_query": {
+      "global_reads": [
+        "next",
+        "re",
+        "reversed"
+      ],
+      "missing": []
+    },
+    "render": {
+      "global_reads": [
+        "any",
+        "len",
+        "require",
+        "set",
+        "sum",
+        "zip"
+      ],
+      "missing": []
+    },
+    "validate_branch": {
+      "global_reads": [
+        "BRANCH_FIELDS",
+        "DATASETS",
+        "RETRIEVERS",
+        "all",
+        "dict",
+        "len",
+        "list",
+        "no_forbidden_fields",
+        "require",
+        "set",
+        "str",
+        "type"
+      ],
+      "missing": [
+        "DATASETS",
+        "RETRIEVERS"
+      ]
+    },
+    "rank_entries": {
+      "global_reads": [
+        "enumerate",
+        "float",
+        "len",
+        "np",
+        "range",
+        "require",
+        "sorted"
+      ],
+      "missing": []
+    },
+    "bm25_scores": {
+      "global_reads": [
+        "len",
+        "np",
+        "re"
+      ],
+      "missing": []
+    },
+    "rrf": {
+      "global_reads": [
+        "enumerate",
+        "sorted"
+      ],
+      "missing": []
+    },
+    "validate_rank": {
+      "global_reads": [
+        "enumerate",
+        "float",
+        "int",
+        "len",
+        "list",
+        "math",
+        "require",
+        "set",
+        "type"
+      ],
+      "missing": []
+    },
+    "replacement": {
+      "global_reads": [
+        "len",
+        "next",
+        "require",
+        "set"
+      ],
+      "missing": []
+    },
+    "validate_generation": {
+      "global_reads": [
+        "all",
+        "dict",
+        "int",
+        "len",
+        "list",
+        "no_forbidden_fields",
+        "parsed_answer",
+        "parsed_query",
+        "render",
+        "require",
+        "set",
+        "sum",
+        "trace_key",
+        "tsha",
+        "type"
+      ],
+      "missing": []
+    },
+    "expected_evidence": {
+      "global_reads": [
+        "enumerate"
+      ],
+      "missing": []
+    }
+  },
+  "missing_globals": [
+    "DATASETS",
+    "RETRIEVERS"
+  ],
+  "affected_helper": "validate_branch",
+  "constants": {
+    "DATASETS": [
+      "hotpotqa",
+      "2wikimultihopqa",
+      "musique"
+    ],
+    "RETRIEVERS": [
+      "bm25",
+      "dense",
+      "hybrid"
+    ]
+  },
+  "source_bodies_executed": false,
+  "current_payloads_decoded": false,
+  "neural_forwards": 0,
+  "scientific_fits": 0,
+  "fresh_gold_values": 0,
+  "total_scientific_fits": 185
+}

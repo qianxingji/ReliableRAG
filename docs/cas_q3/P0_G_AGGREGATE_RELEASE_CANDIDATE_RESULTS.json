@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "PASS_CAS_Q3_AGGREGATE_RELEASE_CANDIDATE_CONTENT_AND_ROUNDTRIP",
+  "source_head_before_release_changes": "dcb30529a659ec0768400d2f5f0e37c1cf9239e3",
+  "scope": "anonymous_aggregate_reporting_verification_only",
+  "archive_sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
+  "manifest_sha256": "6c8ca3a4d0a9d70ade6a09b7194337390ee74ab1f46c79d862e918418a341a1c",
+  "deterministic_second_build_archive_sha256": "b785890366995c2943007f5635e622814bc7961dc7b3ded4adee0707dfb7ca8d",
+  "deterministic_rebuild_equal": true,
+  "payload_members": 9,
+  "archive_members": 10,
+  "uncompressed_payload_bytes": 123936,
+  "validator_checks": 100,
+  "roundtrip_verifier_status": "PASS_CAS_Q3_STATISTICAL_STATEMENT_VERIFICATION",
+  "roundtrip_verifier_checks": 129,
+  "negative_integrity_tests": 4,
+  "total_release_tests": 6,
+  "distribution_authorized": false,
+  "project_license": "PENDING_OWNER_SELECTION",
+  "local_candidate_artifact": "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-e/paired_rag_repair_aggregate_candidate.zip",
+  "local_determinism_witness": "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-f/paired_rag_repair_aggregate_candidate.zip",
+  "preserved_prior_candidates": [
+    "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-a",
+    "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-b"
+  ],
+  "preserved_failed_empty_destinations": [
+    "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-c",
+    "E:/paper/ReliableRAG-cas-q3-aggregate-candidate-20260913-d"
+  ],
+  "boundaries": [
+    "no benchmark text or answers",
+    "no per-question outcomes actions or bootstrap multiplicities",
+    "no model weights indexes learned estimators or private archives",
+    "no identity metadata absolute-path receipts or git history",
+    "aggregate reporting verification only",
+    "public distribution remains blocked until owner selects project license"
+  ],
+  "scanner_regression_tests": 1
+}

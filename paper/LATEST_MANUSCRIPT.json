@@ -1,0 +1,116 @@
+{
+  "schema_version": 9,
+  "decision": "AUTHOR_DESIGNATED_LATEST_MANUSCRIPT",
+  "designated_by": "qianxingji",
+  "designated_date": "2026-09-16",
+  "registered_utc": "2026-09-16T13:47:14.8617028Z",
+  "cas_q3_status": "NOT_READY",
+  "authoritative_artifact": "output/pdf/JIIS_Final_With_Declarations_2026-09-16.pdf",
+  "source_filename": "JIIS_Final_With_Declarations.pdf",
+  "source_sha256": "60d9528b3d4a89fa8f704d6f831340b5c3d024ae14a37ddcffae5361c6a46a8f",
+  "sha256": "60d9528b3d4a89fa8f704d6f831340b5c3d024ae14a37ddcffae5361c6a46a8f",
+  "size_bytes": 835354,
+  "pages": 22,
+  "page_size": "595.276 x 841.89 pts (A4)",
+  "pdf_version": "1.7",
+  "preservation": {
+    "mode": "BYTE_IDENTICAL_COPY_NO_PDF_REWRITE",
+    "source_unchanged": true,
+    "previous_latest_receipt": "paper/manuscript_history/CORRESPONDING_AUTHORS_20260916_LATEST_MANUSCRIPT_968fde7c.json",
+    "previous_latest_artifact": "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf",
+    "previous_latest_sha256": "968fde7c778cb4cb9b850f0d31fa75a7b5aea3aaf5f25b1e01a3a8ffb2b5b179"
+  },
+  "title": "Selecting Between Original and Repaired RAG Answers: A Controlled Study of Accuracy and Harmful Replacements",
+  "authors": [
+    "Zhigang Xu",
+    "Xingji Qian",
+    "Xinhua Dong"
+  ],
+  "affiliation": "Hubei University of Technology, Wuhan, 430068, Hubei, China",
+  "contacts": {
+    "Xinhua Dong": "xhdong@hbut.edu.cn",
+    "Xingji Qian": "102511283@hbut.edu.cn"
+  },
+  "corresponding_authors_in_order": [
+    {
+      "order": 1,
+      "label": "1st",
+      "name": "Xinhua Dong",
+      "email": "xhdong@hbut.edu.cn"
+    },
+    {
+      "order": 2,
+      "label": "2nd",
+      "name": "Xingji Qian",
+      "email": "102511283@hbut.edu.cn"
+    }
+  ],
+  "declarations_present": {
+    "statements_and_declarations": true,
+    "funding": "The authors received no funding for this work.",
+    "competing_interests": "The authors have no competing interests to declare that are relevant to the content of this article.",
+    "author_contributions": true,
+    "all_author_approval_sentence": true,
+    "data_and_code_availability": true
+  },
+  "required_manuscript_markers": [
+    "Statements and Declarations",
+    "The authors received no funding for this work.",
+    "The authors have no competing interests to declare that are relevant to the content of this article.",
+    "Author contributions",
+    "All authors discussed the results, contributed to the final manuscript, and approved the submitted version.",
+    "Data and code availability",
+    "The development fit has 2,572 eligible traces (557 positive) and calibration has 630 (132 positive)."
+  ],
+  "public_repository": {
+    "url": "https://github.com/qianxingji/ReliableRAG-Code",
+    "commit": "038d769e96d092a2eec3bbc5df9f45f3c2a17ff0",
+    "binding_scope": "Manuscript commit and three bundle hashes checked against the local public checkout; no new experiment or refit",
+    "bundle_sha256": {
+      "DEVELOPMENT_NUMERIC.jsonl.gz": "8867daa8c8d827d5aa928627d8de068656e35760b47f784c38d328a369afe7f0",
+      "CURRENT_HEADS.json": "a519b80b08ece87c59d296a3b590a1cda31de16122c68a1e0efe5a2c27f1e5ea",
+      "TRACE_NUMERIC.jsonl.gz": "a930286d62bddf9f4837cb1beb4b863f0f94c1bc697b2311977a9b0eb18f09f7"
+    }
+  },
+  "visual_review": {
+    "status": "SPOT_CHECK_PAGES_1_12_13_22_NO_OBVIOUS_CLIPPING",
+    "pages_reviewed": [
+      1,
+      12,
+      13,
+      22
+    ],
+    "full_document_layout_review": false
+  },
+  "scientific_acceptance": {
+    "status": "PENDING_REVIEW_OF_THIS_EXACT_ARTIFACT",
+    "prior_artifact_audit_transferred": false,
+    "all_results_rechecked": false,
+    "declaration_truthfulness_audited": false,
+    "prior_response_letter": "paper/JIIS_R6_RESPONSE_TO_REVIEWER.md",
+    "prior_response_letter_rebound": false
+  },
+  "mechanical_verification": {
+    "receipt": "paper/JIIS_FINAL_DECLARATIONS_20260916_IDENTITY_VERIFICATION.json",
+    "status": "PASS_LATEST_MANUSCRIPT_IDENTITY_AND_MECHANICAL_CHECKS",
+    "check_count": 31,
+    "all_fonts_embedded": true,
+    "type_3_fonts": 0,
+    "repository_links": 4,
+    "total_links": 113
+  },
+  "usage": "Use this author-supplied, byte-identical 22-page PDF as the sole current manuscript baseline. Its scientific claims and declarations still require review against retained evidence and author facts.",
+  "supersedes_for_current_review": [
+    "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Corresponding_Authors.pdf",
+    "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Authors_Updated.pdf",
+    "output/pdf/JIIS_Revised_Manuscript_2026-09-16_Retitled.pdf",
+    "output/pdf/JIIS_Revised_Manuscript_2026-09-16.pdf",
+    "output/pdf/JIIS_Manuscript_R6_Major_Revision.pdf",
+    "output/pdf/JIIS_Manuscript_R5_Reproducible.pdf",
+    "output/pdf/JIIS_Manuscript_R4_Code_Aligned.pdf",
+    "paper/source_reference/JIIS_Manuscript_R3.pdf",
+    "output/pdf/ReliableRAG_Manuscript_with_Appendices.pdf",
+    "output/pdf/manuscript.pdf",
+    "output/pdf/supplement.pdf"
+  ]
+}

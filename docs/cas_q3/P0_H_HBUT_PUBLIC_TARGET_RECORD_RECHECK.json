@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "decision": "PASS_BOUNDED_HBUT_PUBLIC_TARGET_RECORD_RECHECK_NO_QUALIFYING_2025_INSTITUTIONAL_RECORD_FOUND",
+  "cas_q3_status": "NOT_READY",
+  "audit_date_local": "2026-09-15",
+  "search_scope": {
+    "domain_restricted": "hbut.edu.cn",
+    "queries": [
+      "site:hbut.edu.cn 2025 中科院 期刊分区表 升级版 Applied Intelligence",
+      "site:hbut.edu.cn Applied Intelligence 0924-669X 1573-7497 中科院",
+      "site:kjcy.hbut.edu.cn 中科院 分区 期刊 2025",
+      "site:yjs.hbut.edu.cn 中科院 分区 SCI 研究生"
+    ],
+    "search_engine_completeness_claimed": false,
+    "authenticated_or_internal_pages_searched": false,
+    "captcha_protected_attachments_inspected": false
+  },
+  "candidate_pages": [
+    {
+      "url": "https://scs.hbut.edu.cn/info/1092/4073.htm",
+      "issuer": "湖北工业大学计算机科学与人工智能学院",
+      "observation": "A 2022 Applied Intelligence article is labelled SCI 2区.",
+      "qualifies_for_current_gate": false,
+      "reasons": [
+        "article_year_is_2022",
+        "CAS_versus_JCR_basis_not_stated",
+        "CAS_edition_not_stated",
+        "major_category_not_stated",
+        "current_title_and_both_ISSNs_not_bound"
+      ]
+    },
+    {
+      "url": "https://bdai.hbut.edu.cn/info/1036/1785.htm",
+      "issuer": "湖北工业大学大数据与人工智能产业学院",
+      "observation": "Applied Intelligence articles from 2022 and 2023 are labelled SCI 2区.",
+      "qualifies_for_current_gate": false,
+      "reasons": [
+        "historical_article_descriptions_only",
+        "CAS_versus_JCR_basis_not_stated",
+        "2025_edition_not_stated",
+        "major_category_not_stated",
+        "current_title_and_both_ISSNs_not_bound"
+      ]
+    },
+    {
+      "url": "https://yjs.hbut.edu.cn/info/1125/17343.htm",
+      "issuer": "湖北工业大学研究生院",
+      "observation": "A 2026 Applied Intelligence article is listed without a partition label.",
+      "qualifies_for_current_gate": false,
+      "reasons": [
+        "no_partition_tier",
+        "no_CAS_edition_or_category",
+        "current_title_and_both_ISSNs_not_bound"
+      ]
+    },
+    {
+      "url": "https://kjcy.hbut.edu.cn/__local/9/41/18/C49957A2DB4BE3F2DE0669897D4_BFBDF3DD_EB0EC.pdf?e=.pdf",
+      "issuer": "湖北工业大学",
+      "observation": "A 2014 faculty assessment document distinguishes SCI 1/2 from SCI 3 and later.",
+      "qualifies_for_current_gate": false,
+      "reasons": [
+        "document_year_is_2014",
+        "CAS_upgraded_edition_not_stated",
+        "Applied_Intelligence_not_identified",
+        "current_title_and_both_ISSNs_not_bound"
+      ]
+    }
+  ],
+  "result": {
+    "qualifying_public_hbut_record_found": false,
+    "absence_of_any_institutional_record_proved": false,
+    "previous_official_hbut_policy_basis_invalidated": false,
+    "institution_recognized_2025_record_still_required": true,
+    "p0_h_closed": false
+  },
+  "engineering_validation_history": {
+    "initial_submission_gate_run": "FAIL_STALE_REVIEWER_VERIFICATION_RECEIPT_HASH_AFTER_MAP_EXTENSION",
+    "resolution": "REFRESH_EVIDENCE_INDEX_RECEIPT_PIN_AND_RERUN_FAIL_CLOSED_GATE",
+    "scientific_or_cas_result_failure": false
+  },
+  "submission_authorized": false,
+  "scientific_payloads_read": false,
+  "model_forwards": 0,
+  "scientific_fits": 0
+}
