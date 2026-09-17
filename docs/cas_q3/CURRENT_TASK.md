@@ -440,9 +440,11 @@ each of nine dataset-by-retriever cells. The fixed workload is 18 positions by
 seven operations: 126 exact receipt replays and 126 raw 32,768-element FP32
 first-token vectors totaling 16,515,072 bytes. The validator independently
 recomputes target-token identity and float64 log-softmax without importing the
-producer or loading a model. Five focused tests and the complete 128-test
-Mistral suite pass. No formal witness replay was executed because its accepted
-test predecessors do not exist yet.
+producer or loading a model. A prospective input-graph amendment now binds the
+complete direct source set and requires the independent validator to reconstruct
+it exactly before tokenizer or vector audit. Seven focused tests and the
+complete 178-test Mistral suite pass. No formal witness replay was executed
+because its accepted test predecessors do not exist yet.
 
 The label-blind test answer-semantics producer and independent tokenizer-only
 validator are now also implemented without executing the formal stage. They fix

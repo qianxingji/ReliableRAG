@@ -36,12 +36,15 @@ nor the neural reader. It reconstructs the 18 positions, evidence branches,
 canonical operations and likelihood first-target token with the pinned
 tokenizer. It hashes every vector and independently computes float64 log-softmax
 over all 32,768 FP32 values. Agreement with the canonical selected-token log
-probability must be within `2e-4`. Its expected terminal status is
+probability must be within `2e-4`. A prospective amendment additionally requires
+exact equality between the frozen direct input graph and an independently
+reconstructed set before tokenizer construction. Its expected terminal status is
 `PASS_INDEPENDENT_NO_MODEL_MISTRAL_TEST_WITNESS_REPLAY`.
 
-Five invented-only tests cover exact counts, test-only first/last selection,
+Seven invented-only tests cover exact counts, test-only first/last selection,
 durable vector identity, all three accepted predecessor gates and validator
-independence. All five pass. The complete Mistral suite passes 128/128.
+independence, exact input-graph closure and unexpected-file rejection. All seven
+pass. The complete Mistral suite passes 178/178.
 
 No source smoke can honestly claim canonical replay before the three accepted
 test predecessors exist. No formal witness namespace was created.
