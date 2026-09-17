@@ -328,8 +328,10 @@ def main() -> int:
             REPO / "scripts/validate_mistral_test_a0_query.py",
             REPO / "src/arbitration/mistral_reader_runtime.py",
             REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md",
+            REPO / "docs/cas_q3/MISTRAL_TEST_A1_INPUT_GRAPH_AMENDMENT_2026-09-17.md",
             original / "prompts/baseline_v1.txt",
             original / "prompts/repair_missing_v1.txt",
+            Path(sys.executable),
         ]
         records = [
             record(path) for path in sorted(

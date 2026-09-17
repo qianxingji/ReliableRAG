@@ -33,13 +33,16 @@ The shared GPU mutex prevents overlap with development acquisition.
 the neural reader. With the pinned tokenizer it reconstructs all generation and
 likelihood prompts, input and target token IDs, parsed answers, source hashes,
 journal records, operation order and likelihood summary arithmetic. It performs
-zero model loads and zero model forwards. Its expected terminal status is
+zero model loads and zero model forwards. A prospective amendment also requires
+exact equality between the frozen direct input graph and an independently
+reconstructed set before tokenizer construction. Its expected terminal status is
 `PASS_INDEPENDENT_NO_MODEL_MISTRAL_TEST_A1_LIKELIHOOD`.
 
-Five invented-only tests cover exact operation counts, rank-five evidence
+Seven invented-only tests cover exact operation counts, rank-five evidence
 replacement, generation and likelihood payload guards, both predecessor gates,
-four-cell semantics and validator independence. All five pass. The complete
-Mistral suite passes 123/123.
+four-cell semantics, validator independence, exact input-graph closure and
+unexpected-file rejection. All seven pass. The complete Mistral suite passes
+176/176.
 
 ## Preserved smoke attempts
 

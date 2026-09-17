@@ -13,6 +13,12 @@ if __package__ in {None, ""}:
 
 from scripts.mistral_reader_input_freeze_common import compact_document
 from scripts.validate_mistral_test_a0_query import (
+    DATASETS,
+    EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+    EXPECTED_TEST_POOL_MANIFEST_SHA256,
+    EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+    asset_member_paths,
+    current_manifest_member_paths,
     load_test_assets,
     object_sha,
     parse_answer,
@@ -20,6 +26,7 @@ from scripts.validate_mistral_test_a0_query import (
     require,
     sha256,
     source_pair,
+    validate_selected_manifest,
     validate_manifest,
     validate_test_binding,
 )
@@ -282,8 +289,50 @@ def main() -> int:
     frozen_paths = {
         Path(item["path"]).resolve() for item in freeze["inputs"]
     }
-    require(Path(__file__).resolve() in frozen_paths,
-            "VALIDATOR_FROZEN_AS_INPUT")
+    require(len(frozen_paths) == len(freeze["inputs"]),
+            "UNIQUE_FROZEN_INPUTS")
+    preparation = REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
+    pool_root = REPO / "outputs/cas_q2/empirical_candidate_pool_v2"
+    input_freeze = REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
+    pool_relatives = tuple(
+        f"{folder}/{dataset}.jsonl"
+        for folder in ("pools", "runtime") for dataset in DATASETS
+    ) + ("INDEPENDENT_VALIDATION.json",)
+    required_inputs = {
+        *{path.resolve() for path in validate_selected_manifest(
+            preparation, EXPECTED_TEST_PREPARATION_MANIFEST_SHA256,
+            ("TRACE_MANIFEST_PRIVATE.jsonl",),
+        )},
+        *{path.resolve() for path in validate_selected_manifest(
+            pool_root, EXPECTED_TEST_POOL_MANIFEST_SHA256, pool_relatives,
+        )},
+        *current_manifest_member_paths(
+            input_freeze, EXPECTED_INPUT_FREEZE_MANIFEST_SHA256,
+        ),
+        *current_manifest_member_paths(
+            a0_stage, sha256(a0_stage / "SHA256_MANIFEST.json"),
+        ),
+        *current_manifest_member_paths(
+            repair_stage, sha256(repair_stage / "SHA256_MANIFEST.json"),
+        ),
+        *asset_member_paths(asset),
+        (root / "a0_query_validation/VALIDATION.json").resolve(),
+        (root / "repair_validation/VALIDATION.json").resolve(),
+        (REPO / "scripts/run_mistral_test_a1_likelihood.py").resolve(),
+        Path(__file__).resolve(),
+        (REPO / "scripts/mistral_development_acquisition_common.py").resolve(),
+        (REPO / "scripts/mistral_reader_input_freeze_common.py").resolve(),
+        (REPO / "scripts/run_mistral_test_a0_query.py").resolve(),
+        (REPO / "scripts/run_mistral_test_repair.py").resolve(),
+        (REPO / "scripts/validate_mistral_test_a0_query.py").resolve(),
+        (REPO / "src/arbitration/mistral_reader_runtime.py").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_EXECUTION_PROTOCOL_2026-09-17.md").resolve(),
+        (REPO / "docs/cas_q3/MISTRAL_TEST_A1_INPUT_GRAPH_AMENDMENT_2026-09-17.md").resolve(),
+        (original / "prompts/baseline_v1.txt").resolve(),
+        (original / "prompts/repair_missing_v1.txt").resolve(),
+        Path(sys.executable).resolve(),
+    }
+    require(required_inputs == frozen_paths, "NONEXACT_FROZEN_INPUT_GRAPH")
 
     rows = read_rows(namespace / "MODEL_RECEIPTS.jsonl")
     events = read_rows(namespace / "CALL_JOURNAL.jsonl")
@@ -322,13 +371,10 @@ def main() -> int:
     answer_template = (
         original / "prompts/baseline_v1.txt"
     ).read_text(encoding="utf-8")
-    preparation = REPO / "outputs/cas_q2/empirical_runtime_preparation_v1"
-    pool_root = REPO / "outputs/cas_q2/empirical_candidate_pool_v2"
     traces = read_rows(preparation / "TRACE_MANIFEST_PRIVATE.jsonl")
     frozen_rows = validate_test_binding(
         traces,
-        read_rows(REPO / "outputs/cas_q3/mistral_reader_input_freeze_v1"
-                  / "INPUT_LENGTHS_PRIVATE.jsonl"),
+        read_rows(input_freeze / "INPUT_LENGTHS_PRIVATE.jsonl"),
     )
     assets = load_test_assets(pool_root)
     checks = 0

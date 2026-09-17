@@ -425,9 +425,12 @@ model load. The initial source smoke without the pinned dependency overlay
 failed before tokenizer construction because SentencePiece/protobuf were not on
 `PYTHONPATH`; that failure is retained. The corrected pinned-overlay smoke bound
 all 18,000 test traces and passed six synthetic first/last-dataset `E1` prompt
-checks with zero model forwards and zero Gold access. Five focused tests and the
-complete 123-test Mistral suite pass. No formal test `a1_likelihood` execution
-was started.
+checks with zero model forwards and zero Gold access. A prospective input-graph
+amendment now freezes the Python executable and amendment and makes the
+independent validator reconstruct the exact selected sources, predecessor
+members, model assets and direct controls before tokenizer construction. Seven
+focused tests and the complete 176-test Mistral suite pass. No formal test
+`a1_likelihood` execution was started.
 
 The test witness replay executor and independent tokenizer-only vector audit are
 now implemented in `scripts/run_mistral_test_witness_replay.py` and
